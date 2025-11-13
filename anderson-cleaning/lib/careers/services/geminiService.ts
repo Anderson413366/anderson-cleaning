@@ -53,7 +53,7 @@ export const generateCoverLetterSuggestion = async (
       model: GEMINI_TEXT_MODEL,
       contents: [{ role: "user", parts: [{text: prompt}] }],
     });
-    return response.text;
+    return response.text || "Error generating suggestion.";
   } catch (error) {
     console.error("Error generating cover letter suggestion:", error);
     return "Error generating suggestion.";
@@ -89,8 +89,8 @@ export const generateInterviewTips = async (
       contents: [{ role: "user", parts: [{text: prompt}] }],
       config: { responseMimeType: "application/json" }
     });
-    
-    const parsedResult = parseJsonFromString<InterviewPrepTip[]>(response.text);
+
+    const parsedResult = parseJsonFromString<InterviewPrepTip[]>(response.text || "[]");
     if (parsedResult) {
         return parsedResult;
     }
@@ -135,8 +135,8 @@ export const identifyStrengths = async (
       contents: [{ role: "user", parts: [{text: prompt}] }],
       config: { responseMimeType: "application/json" }
     });
-    
-    const parsedResult = parseJsonFromString<string[]>(response.text);
+
+    const parsedResult = parseJsonFromString<string[]>(response.text || "[]");
      if (parsedResult) {
         return parsedResult;
     }

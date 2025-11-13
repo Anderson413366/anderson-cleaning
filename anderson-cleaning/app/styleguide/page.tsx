@@ -192,7 +192,7 @@ export default function StyleGuidePage() {
                 <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-4">Variants</h3>
                 <div className="flex flex-wrap gap-4">
                   <Button variant="primary">Primary</Button>
-                  <Button variant="secondary">Secondary</Button>
+                  <Button variant="outline">Secondary (Outline)</Button>
                   <Button variant="accent">Accent (CTA)</Button>
                   <Button variant="outline">Outline</Button>
                   <Button variant="ghost">Ghost</Button>
@@ -205,7 +205,7 @@ export default function StyleGuidePage() {
                 <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-4">Sizes</h3>
                 <div className="flex flex-wrap items-center gap-4">
                   <Button size="sm">Small</Button>
-                  <Button size="md">Medium (Default)</Button>
+                  <Button size="default">Medium (Default)</Button>
                   <Button size="lg">Large</Button>
                 </div>
               </div>
