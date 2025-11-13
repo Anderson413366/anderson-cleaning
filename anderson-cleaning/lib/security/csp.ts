@@ -52,6 +52,7 @@ export const cspDirectives: CSPDirectives = {
     'data:',
     'blob:',
     'https://cdn.sanity.io',
+    'https://images.unsplash.com',
     'https://www.googletagmanager.com',
     'https://www.google-analytics.com',
     'https://maps.googleapis.com',

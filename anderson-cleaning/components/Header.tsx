@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { Button } from '@/components/ui/Button'
 import { Menu, X, Moon, Sun } from 'lucide-react'
 import { useTheme } from '@/lib/ThemeProvider'
@@ -35,14 +36,23 @@ export default function Header({ extraControls }: HeaderProps = {}) {
       <header className="sticky top-0 z-50 bg-white dark:bg-slate-900 shadow-md transition-colors duration-300">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
-            <Link href="/" className="flex items-center space-x-3">
-              <div className="flex items-center justify-center w-10 h-10 bg-primary-700 dark:bg-blue-600 rounded-lg transition-colors">
-                <span className="text-white font-bold text-xl">A</span>
-              </div>
-              <div>
-                <h1 className="text-xl font-bold text-gray-900 dark:text-white">Anderson Cleaning</h1>
-                <p className="text-xs text-gray-600 dark:text-gray-400">Commercial Services</p>
-              </div>
+            <Link href="/" className="flex items-center space-x-2 group">
+              <Image
+                src="/images/logo.svg"
+                alt="Anderson Cleaning Logo"
+                width={160}
+                height={40}
+                className="h-10 w-auto dark:hidden transition-transform group-hover:scale-105"
+                priority
+              />
+              <Image
+                src="/images/logo-dark.svg"
+                alt="Anderson Cleaning Logo"
+                width={160}
+                height={40}
+                className="h-10 w-auto hidden dark:block transition-transform group-hover:scale-105"
+                priority
+              />
             </Link>
           </div>
         </div>
@@ -55,14 +65,23 @@ export default function Header({ extraControls }: HeaderProps = {}) {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-3">
-            <div className="flex items-center justify-center w-10 h-10 bg-primary-700 dark:bg-blue-600 rounded-lg transition-colors">
-              <span className="text-white font-bold text-xl">A</span>
-            </div>
-            <div>
-              <h1 className="text-xl font-bold text-gray-900 dark:text-white">Anderson Cleaning</h1>
-              <p className="text-xs text-gray-600 dark:text-gray-400">Commercial Services</p>
-            </div>
+          <Link href="/" className="flex items-center space-x-2 group">
+            <Image
+              src="/images/logo.svg"
+              alt="Anderson Cleaning Logo"
+              width={160}
+              height={40}
+              className="h-10 w-auto dark:hidden transition-transform group-hover:scale-105"
+              priority
+            />
+            <Image
+              src="/images/logo-dark.svg"
+              alt="Anderson Cleaning Logo"
+              width={160}
+              height={40}
+              className="h-10 w-auto hidden dark:block transition-transform group-hover:scale-105"
+              priority
+            />
           </Link>
 
           {/* Desktop Navigation */}
