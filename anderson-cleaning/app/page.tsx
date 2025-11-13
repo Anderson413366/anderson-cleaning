@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { Button } from '@/components/ui/Button'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import BeforeAfterSlider from '@/components/sections/BeforeAfterSlider'
 import {
   Phone, Clock, Shield, Users, Award, Headphones, MapPin,
   CheckCircle2, Building2, Star, ArrowRight, Sparkles
@@ -408,44 +409,32 @@ export default function Home() {
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
               Our Work Speaks for Itself
             </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300">
-              See the Anderson Cleaning difference
+            <p className="text-xl text-gray-600 dark:text-gray-300 mb-8">
+              See the Anderson Cleaning difference with interactive before/after comparisons
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            <div className="bg-gradient-to-br from-gray-100 to-gray-200 dark:from-slate-800 dark:to-slate-700 rounded-xl p-8 text-center">
-              <Sparkles className="h-16 w-16 text-accent-500 mx-auto mb-4" />
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
-                Spotless Floors
-              </h3>
-              <p className="text-gray-600 dark:text-gray-300 mb-4">
-                Professional strip, wax, and buff services that restore shine and extend floor life
-              </p>
-              <div className="bg-accent-100 dark:bg-accent-900/30 rounded-lg p-4">
-                <p className="text-sm font-semibold text-accent-900 dark:text-accent-300">
-                  ✓ Before: Dull, scuffed surfaces<br />
-                  ✓ After: Mirror-like shine
-                </p>
-              </div>
-            </div>
-
-            <div className="bg-gradient-to-br from-gray-100 to-gray-200 dark:from-slate-800 dark:to-slate-700 rounded-xl p-8 text-center">
-              <Shield className="h-16 w-16 text-primary-500 mx-auto mb-4" />
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
-                Sanitized Spaces
-              </h3>
-              <p className="text-gray-600 dark:text-gray-300 mb-4">
-                Healthcare-grade disinfection that meets OSHA and CDC standards
-              </p>
-              <div className="bg-primary-100 dark:bg-primary-900/30 rounded-lg p-4">
-                <p className="text-sm font-semibold text-primary-900 dark:text-primary-300">
-                  ✓ Before: High-touch surfaces at risk<br />
-                  ✓ After: Certified clean & safe
-                </p>
-              </div>
-            </div>
-          </div>
+          <BeforeAfterSlider
+            items={[
+              {
+                beforeImage: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800&q=80',
+                afterImage: 'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=800&q=80',
+                beforeLabel: 'Before',
+                afterLabel: 'After',
+                title: 'Spotless Floors',
+                description: 'Professional strip, wax, and buff services that restore shine and extend floor life',
+              },
+              {
+                beforeImage: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&q=80',
+                afterImage: 'https://images.unsplash.com/photo-1600607687644-c7171b42498b?w=800&q=80',
+                beforeLabel: 'Before',
+                afterLabel: 'After',
+                title: 'Sanitized Spaces',
+                description: 'Healthcare-grade disinfection that meets OSHA and CDC standards',
+              },
+            ]}
+            height="h-[500px]"
+          />
 
           <div className="text-center mt-12">
             <p className="text-gray-600 dark:text-gray-400 mb-4">
