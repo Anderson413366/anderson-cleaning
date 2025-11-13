@@ -1,14 +1,19 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { Button } from '@/components/ui/Button'
-import { Menu, X, Moon, Sun, Briefcase } from 'lucide-react'
+import { Menu, X, Moon, Sun } from 'lucide-react'
 import { useTheme } from '@/lib/ThemeProvider'
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [mounted, setMounted] = useState(false)
   const { theme, toggleTheme } = useTheme()
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
   const navigation = [
     { name: 'Home', href: '/' },
@@ -16,6 +21,27 @@ export default function Header() {
     { name: 'Quote', href: '/quote' },
     { name: 'Careers', href: '/apply' },
   ]
+
+  // Prevent hydration mismatch
+  if (!mounted) {
+    return (
+      <header className="sticky top-0 z-50 bg-white dark:bg-slate-900 shadow-md transition-colors duration-300">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-16">
+            <Link href="/" className="flex items-center space-x-3">
+              <div className="flex items-center justify-center w-10 h-10 bg-primary-700 dark:bg-blue-600 rounded-lg transition-colors">
+                <span className="text-white font-bold text-xl">A</span>
+              </div>
+              <div>
+                <h1 className="text-xl font-bold text-gray-900 dark:text-white">Anderson Cleaning</h1>
+                <p className="text-xs text-gray-600 dark:text-gray-400">Commercial Services</p>
+              </div>
+            </Link>
+          </div>
+        </div>
+      </header>
+    )
+  }
 
   return (
     <header className="sticky top-0 z-50 bg-white dark:bg-slate-900 shadow-md transition-colors duration-300">
@@ -57,9 +83,11 @@ export default function Header() {
               )}
             </button>
 
-            <Button variant="primary" size="sm" onClick={() => window.location.href = '/quote'}>
-              Get a Quote
-            </Button>
+            <Link href="/quote">
+              <Button variant="primary" size="sm" asChild>
+                <span>Get a Quote</span>
+              </Button>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -105,16 +133,11 @@ export default function Header() {
                   {item.name}
                 </Link>
               ))}
-              <Button
-                variant="primary"
-                className="w-full"
-                onClick={() => {
-                  window.location.href = '/quote'
-                  setIsMobileMenuOpen(false)
-                }}
-              >
-                Get a Quote
-              </Button>
+              <Link href="/quote" className="w-full" onClick={() => setIsMobileMenuOpen(false)}>
+                <Button variant="primary" className="w-full" asChild>
+                  <span>Get a Quote</span>
+                </Button>
+              </Link>
             </div>
           </div>
         )}
