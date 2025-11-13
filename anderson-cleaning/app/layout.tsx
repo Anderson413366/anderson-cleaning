@@ -3,13 +3,21 @@ import { Inter } from 'next/font/google'
 import '../styles/globals.css'
 import { ThemeProvider } from '@/lib/ThemeProvider'
 import CookieBanner from '@/components/CookieBanner'
+import WebVitalsReporter from '@/components/WebVitalsReporter'
 import {
   generateOrganizationSchema,
   generateLocalBusinessSchema,
   generateWebsiteSchema,
 } from '@/lib/seo/jsonld'
 
-const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
+// Font optimization with display swap and preloading
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-inter',
+  display: 'swap',
+  preload: true,
+  fallback: ['system-ui', 'arial'],
+})
 
 const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://andersoncleaning.com'
 
@@ -98,6 +106,20 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.variable}>
       <head>
+        {/* Resource Hints - Preconnect to critical third-party origins */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://cdn.sanity.io" />
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="preconnect" href="https://www.google-analytics.com" />
+
+        {/* DNS Prefetch for additional third-party services */}
+        <link rel="dns-prefetch" href="https://www.clarity.ms" />
+        <link rel="dns-prefetch" href="https://client.crisp.chat" />
+        <link rel="dns-prefetch" href="https://calendly.com" />
+        <link rel="dns-prefetch" href="https://api.hubspot.com" />
+        <link rel="dns-prefetch" href="https://api.resend.com" />
+
         {/* Favicon and Icons */}
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -129,6 +151,7 @@ export default function RootLayout({
           {children}
           <CookieBanner />
         </ThemeProvider>
+        <WebVitalsReporter />
       </body>
     </html>
   )
