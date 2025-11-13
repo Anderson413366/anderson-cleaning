@@ -113,8 +113,8 @@ export default function Header({ extraControls }: HeaderProps = {}) {
             </button>
 
             <Link href="/quote">
-              <Button variant="primary" size="sm" asChild>
-                <span>Get a Quote</span>
+              <Button variant="primary" size="sm">
+                Get a Quote
               </Button>
             </Link>
           </div>
@@ -169,8 +169,8 @@ export default function Header({ extraControls }: HeaderProps = {}) {
                 </div>
               )}
               <Link href="/quote" className="w-full" onClick={() => setIsMobileMenuOpen(false)}>
-                <Button variant="primary" className="w-full" asChild>
-                  <span>Get a Quote</span>
+                <Button variant="primary" className="w-full">
+                  Get a Quote
                 </Button>
               </Link>
             </div>
