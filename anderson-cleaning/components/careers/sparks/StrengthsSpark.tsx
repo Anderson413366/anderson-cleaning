@@ -7,7 +7,7 @@ import { Button } from '@/components/ui/Button';
 import { AwardIconCareers, SparklesIconCareers } from '../icons';
 import Alert from '@/components/ui/Alert';
 import Spinner from '@/components/ui/Spinner';
-import { identifyStrengths } from '../../../services/geminiService';
+import { identifyStrengths } from '@/lib/careers/services/geminiService';
 
 const StrengthsSpark: React.FC = () => {
   const context = useAppContext();

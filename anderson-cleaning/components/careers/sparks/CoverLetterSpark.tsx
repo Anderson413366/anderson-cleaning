@@ -7,7 +7,7 @@ import { Button } from '@/components/ui/Button';
 import { SparklesIconCareers } from '../icons';
 import Alert from '@/components/ui/Alert';
 import Spinner from '@/components/ui/Spinner';
-import { generateCoverLetterSuggestion } from '../../../services/geminiService';
+import { generateCoverLetterSuggestion } from '@/lib/careers/services/geminiService';
 
 interface CoverLetterSparkProps {
   onSuggestion: (suggestion: string) => void;

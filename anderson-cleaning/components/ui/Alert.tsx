@@ -1,3 +1,4 @@
+'use client'
 
 import React from 'react';
 import { AlertCircleIconCareers, CheckIconCareers, LightbulbIconCareers } from '../careers/icons'; // Using CareersPage specific icons

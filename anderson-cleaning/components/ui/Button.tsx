@@ -52,6 +52,7 @@ const Button = forwardRef<HTMLButtonElement | HTMLDivElement, ButtonProps>(
 
     if (asChild) {
       // When asChild is true, render as div
+      // Extract only div-compatible props
       const {
         disabled,
         form,
@@ -63,6 +64,7 @@ const Button = forwardRef<HTMLButtonElement | HTMLDivElement, ButtonProps>(
         name,
         type,
         value,
+        onToggle,
         ...divCompatibleProps
       } = props
 
@@ -70,7 +72,7 @@ const Button = forwardRef<HTMLButtonElement | HTMLDivElement, ButtonProps>(
         <div
           className={finalClassName}
           ref={ref as React.Ref<HTMLDivElement>}
-          {...divCompatibleProps}
+          {...(divCompatibleProps as React.HTMLAttributes<HTMLDivElement>)}
         >
           {isLoading && <Loader2IconCareers className="mr-2 h-4 w-4 animate-spin" />}
           {children}

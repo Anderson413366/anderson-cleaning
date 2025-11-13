@@ -6,7 +6,7 @@ import { useAppContext } from '@/lib/careers/AppContext';
 import FormInput from '@/components/ui/FormInput';
 import { Button } from '@/components/ui/Button';
 import SectionWrapper from './SectionWrapper';
-import { ReferenceEntry } from '../../../types';
+import { ReferenceEntry } from '@/lib/careers/types';
 import { PlusCircleIconCareers, Trash2IconCareers } from '../icons';
 
 

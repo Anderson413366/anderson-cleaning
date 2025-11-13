@@ -4,12 +4,12 @@ import { GEMINI_TEXT_MODEL } from "../constants";
 import { InterviewPrepTip } from "../types";
 
 const getAiClient = (): GoogleGenAI | null => {
-  const apiKey = process.env.API_KEY;
+  const apiKey = process.env.NEXT_PUBLIC_GEMINI_API_KEY;
   if (!apiKey) {
-    console.error("API_KEY environment variable is not set.");
+    console.error("NEXT_PUBLIC_GEMINI_API_KEY environment variable is not set.");
     // In a real app, you might throw an error or handle this more gracefully
     // For this exercise, returning null and letting callers handle it.
-    return null; 
+    return null;
   }
   try {
     return new GoogleGenAI({ apiKey });

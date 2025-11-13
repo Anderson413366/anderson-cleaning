@@ -233,7 +233,7 @@ export interface IconProps {
 
 // ShadCN-like stubs (from user input, simplified)
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: 'default' | 'outline' | 'ghost' | 'link' | 'destructive';
+  variant?: 'default' | 'outline' | 'ghost' | 'link' | 'destructive' | 'primary' | 'accent';
   size?: 'default' | 'sm' | 'lg' | 'icon';
   asChild?: boolean;
   isLoading?: boolean;

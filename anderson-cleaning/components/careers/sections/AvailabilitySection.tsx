@@ -8,7 +8,7 @@ import FormSelect from '@/components/ui/FormSelect';
 import FormCheckboxGroup from '@/components/ui/FormCheckboxGroup';
 import FormTextarea from '@/components/ui/FormTextarea';
 import SectionWrapper from './SectionWrapper';
-import { LocationOptionKeys, DayOptionKeys, ShiftOptionKeys } from '../../../constants';
+import { LocationOptionKeys, DayOptionKeys, ShiftOptionKeys } from '@/lib/careers/constants';
 import FormRadioGroup from '@/components/ui/FormRadioGroup';
 
 const AvailabilitySection: React.FC = () => {

@@ -10,7 +10,7 @@ import FormCheckboxGroup from '@/components/ui/FormCheckboxGroup';
 import FormRadioGroup from '@/components/ui/FormRadioGroup';
 import FormTextarea from '@/components/ui/FormTextarea';
 import SectionWrapper from './SectionWrapper';
-import { ExperienceOptionKeys } from '../../../constants';
+import { ExperienceOptionKeys } from '@/lib/careers/constants';
 
 const JobDetailsSection: React.FC = () => {
   const context = useAppContext();

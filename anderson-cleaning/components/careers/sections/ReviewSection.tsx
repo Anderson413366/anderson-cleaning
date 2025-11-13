@@ -5,13 +5,13 @@ import React, { useContext } from 'react';
 import { useAppContext } from '@/lib/careers/AppContext';
 import { Button } from '@/components/ui/Button';
 import SectionWrapper from './SectionWrapper';
-import { SECTIONS_CONFIG } from '../../../constants';
+import { SECTIONS_CONFIG } from '@/lib/careers/constants';
 import { EditIconCareers } from '../icons';
 import InterviewPrepSpark from '../sparks/InterviewPrepSpark';
 import StrengthsSpark from '../sparks/StrengthsSpark';
 import Alert from '@/components/ui/Alert';
-import { validateSectionData, allSectionsValid } from '../../../utils/validation';
-import { FormDataShape, WorkHistoryEntry, ReferenceEntry } from '../../../types';
+import { validateSectionData, allSectionsValid } from '@/lib/careers/utils/validation';
+import { FormDataShape, WorkHistoryEntry, ReferenceEntry } from '@/lib/careers/types';
 
 
 const ReviewSection: React.FC = () => {

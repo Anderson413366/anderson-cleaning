@@ -7,7 +7,7 @@ import FormInput from '@/components/ui/FormInput';
 import FormSelect from '@/components/ui/FormSelect';
 import { Button } from '@/components/ui/Button';
 import SectionWrapper from './SectionWrapper';
-import { WorkHistoryEntry } from '../../../types';
+import { WorkHistoryEntry } from '@/lib/careers/types';
 import { PlusCircleIconCareers, Trash2IconCareers } from '../icons';
 
 const WorkHistorySection: React.FC = () => {

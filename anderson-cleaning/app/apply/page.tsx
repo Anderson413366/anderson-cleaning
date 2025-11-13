@@ -1,6 +1,5 @@
 'use client'
 
-import { Metadata } from 'next'
 import { AppProvider } from '@/lib/careers/AppContext'
 import CareersPage from '@/components/careers/CareersPage'
 

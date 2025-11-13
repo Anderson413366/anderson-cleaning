@@ -7,8 +7,8 @@ import { Button } from '@/components/ui/Button';
 import { LightbulbIconCareers, SparklesIconCareers } from '../icons';
 import Alert from '@/components/ui/Alert';
 import Spinner from '@/components/ui/Spinner';
-import { generateInterviewTips } from '../../../services/geminiService';
-import { InterviewPrepTip } from '../../../types';
+import { generateInterviewTips } from '@/lib/careers/services/geminiService';
+import { InterviewPrepTip } from '@/lib/careers/types';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/Card';
 
 const InterviewPrepSpark: React.FC = () => {

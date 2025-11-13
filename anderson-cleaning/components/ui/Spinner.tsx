@@ -1,3 +1,5 @@
+'use client'
+
 
 import React from 'react';
 import { Loader2IconCareers } from '../careers/icons'; // Using career-specific icon

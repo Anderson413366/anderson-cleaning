@@ -1,3 +1,5 @@
+'use client'
+
 
 import React, { forwardRef } from 'react';
 import { CardProps, CardHeaderProps, CardTitleProps, CardDescriptionProps, CardContentProps, CardFooterProps } from '@/lib/careers/types';

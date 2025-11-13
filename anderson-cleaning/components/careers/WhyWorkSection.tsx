@@ -22,25 +22,12 @@ const WhyWorkSection: React.FC = () => {
     "Competitive Benefits": ShieldCheckIcon,
   };
 
-  const cardVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: (i: number) => ({
-      opacity: 1,
-      y: 0,
-      transition: {
-        delay: i * 0.15,
-        duration: 0.5,
-        ease: "easeOut"
-      }
-    })
-  };
-
   const MotionCard = motion(Card);
 
   return (
     <section id="why-work" className="py-16 md:py-24 bg-gray-50 dark:bg-slate-900/50">
       <div className="container mx-auto px-6">
-        <motion.h2 
+        <motion.h2
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
@@ -50,14 +37,16 @@ const WhyWorkSection: React.FC = () => {
         </motion.h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {whyWorkItems.map((item, index) => {
-            const IconComponent = iconMap[item.title] || ShieldCheckIcon; 
+            const IconComponent = iconMap[item.title] || ShieldCheckIcon;
             return (
               <MotionCard
                 key={index}
-                custom={index}
-                variants={cardVariants}
-                initial="hidden"
-                animate="visible" 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{
+                  delay: index * 0.15,
+                  duration: 0.5
+                }} 
                 // whileInView="visible" // Use for scroll-triggered animations if preferred
                 // viewport={{ once: true, amount: 0.3 }}
                 className="h-full flex flex-col hover:shadow-xl transition-shadow duration-300 dark:bg-slate-800"
