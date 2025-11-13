@@ -9,9 +9,6 @@ import ProgressBar from '@/components/ui/ProgressBar';
 import CareersHero from './CareersHero';
 import WhyWorkSection from './WhyWorkSection';
 import ApplicationForm from './ApplicationForm'; // This will house the form sections
-import LanguageSwitcher from '@/components/ui/LanguageSwitcher';
-import ThemeSwitcher from '@/components/ui/ThemeSwitcher';
-import { BriefcaseIconCareers, MenuIconCareers, XIconCareers } from './icons';
 import Alert from '@/components/ui/Alert';
 import Modal from '@/components/ui/Modal';
 import { generateCoverLetterSuggestion, generateInterviewTips, identifyStrengths } from '@/lib/careers/services/geminiService';
@@ -30,7 +27,6 @@ const CareersPage: React.FC = () => {
     formErrors, setFormErrors
   } = context;
 
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [showIntro, setShowIntro] = useState(true);
 
 
@@ -65,17 +61,6 @@ const CareersPage: React.FC = () => {
       setShowIntro(true); // Go back to intro sections
     }
   }, [currentSectionIndex, setCurrentSectionIndex, setFormErrors]);
-  
-  const handleGoToSection = (index: number) => {
-    // Allow jumping only if target is review or already visited (or next immediate)
-    if (SECTIONS_CONFIG[index].id === 'review' || index <= currentSectionIndex + 1) {
-      // If jumping from review back to a section, we might not want to clear all errors
-      // For now, basic jump
-      setCurrentSectionIndex(index);
-      setIsMobileMenuOpen(false);
-      window.scrollTo(0, 0);
-    }
-  };
 
   const handleStartApplication = () => {
     setShowIntro(false);
@@ -135,68 +120,12 @@ const CareersPage: React.FC = () => {
     }
   };
 
-
-  const renderHeader = () => (
-    <header className="bg-card dark:bg-slate-800 shadow-md sticky top-0 z-40">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          <div className="flex items-center">
-            <BriefcaseIconCareers className="h-8 w-8 text-primary dark:text-blue-500" />
-            <h1 className="ml-3 text-2xl font-bold text-gray-800 dark:text-gray-100">{t('applicationTitle') as string}</h1>
-          </div>
-          <div className="hidden md:flex items-center space-x-4">
-            <LanguageSwitcher />
-            <ThemeSwitcher />
-          </div>
-          <div className="md:hidden">
-            <Button variant="ghost" size="icon" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
-              {isMobileMenuOpen ? <XIconCareers className="h-6 w-6" /> : <MenuIconCareers className="h-6 w-6" />}
-            </Button>
-          </div>
-        </div>
-        {isMobileMenuOpen && (
-          <div className="md:hidden py-2 border-t border-gray-200 dark:border-slate-700">
-            <div className="flex flex-col space-y-2">
-              <LanguageSwitcher />
-              <ThemeSwitcher />
-            </div>
-            {!showIntro && SECTIONS_CONFIG.map((section, index) => (
-              <Button
-                key={section.id}
-                variant={index === currentSectionIndex ? "default" : "ghost"}
-                className="w-full justify-start mt-1"
-                onClick={() => handleGoToSection(index)}
-                disabled={index > currentSectionIndex + 1 && SECTIONS_CONFIG[index].id !== 'review'}
-              >
-                {t(section.titleKey) as string}
-              </Button>
-            ))}
-             <Button variant="outline" className="w-full justify-start mt-1" onClick={() => { setShowIntro(true); setIsMobileMenuOpen(false); }}>
-                {t('heroTitle') as string}
-              </Button>
-          </div>
-        )}
-      </div>
-    </header>
-  );
-
-  const renderFooter = () => (
-     <footer className="py-8 text-center text-sm text-gray-500 dark:text-slate-400 border-t border-gray-200 dark:border-slate-700 mt-12">
-        &copy; {new Date().getFullYear()} Anderson Cleaning, Inc. All rights reserved.
-        <p className="mt-1">{t('applicationSubtitle') as string}</p>
-      </footer>
-  );
-
   if (showIntro) {
     return (
-      <>
-        {renderHeader()}
-        <main className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <CareersHero onStartApplication={handleStartApplication} />
-          <WhyWorkSection />
-        </main>
-        {renderFooter()}
-      </>
+      <main className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <CareersHero onStartApplication={handleStartApplication} />
+        <WhyWorkSection />
+      </main>
     );
   }
   
@@ -205,8 +134,6 @@ const CareersPage: React.FC = () => {
 
 
   return (
-    <>
-      {renderHeader()}
       <main className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="max-w-3xl mx-auto">
           <ProgressBar
@@ -268,8 +195,7 @@ const CareersPage: React.FC = () => {
       >
         <p>{t('submissionSuccessMessage') as string}</p>
       </Modal>
-      {renderFooter()}
-    </>
+    </main>
   );
 };
 
