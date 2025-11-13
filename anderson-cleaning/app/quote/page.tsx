@@ -1,33 +1,12 @@
-import { Metadata } from 'next'
-import { Phone, Mail, Clock, CheckCircle2 } from 'lucide-react'
+'use client'
 
-export const metadata: Metadata = {
-  title: 'Get a Free Quote | Anderson Cleaning',
-  description: 'Get a free, no-obligation quote for commercial cleaning services. We respond within 30 minutes, 24/7.',
-}
+import Header from '@/components/Header'
+import { Phone, Mail, Clock, CheckCircle2 } from 'lucide-react'
 
 export default function QuotePage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-green-50">
-      {/* Header */}
-      <header className="sticky top-0 z-50 bg-white shadow-md">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
-            <a href="/" className="flex items-center space-x-3">
-              <div className="flex items-center justify-center w-10 h-10 bg-primary-700 rounded-lg">
-                <span className="text-white font-bold text-xl">A</span>
-              </div>
-              <div>
-                <h1 className="text-xl font-bold text-gray-900">Anderson Cleaning</h1>
-                <p className="text-xs text-gray-600">Get a Free Quote</p>
-              </div>
-            </a>
-            <a href="/" className="text-primary-700 hover:text-primary-800 font-medium">
-              ← Back to Home
-            </a>
-          </div>
-        </div>
-      </header>
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-green-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 transition-colors duration-300">
+      <Header />
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="max-w-6xl mx-auto">

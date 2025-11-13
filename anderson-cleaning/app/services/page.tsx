@@ -2,6 +2,7 @@
 
 import { Building2, Sparkles, Users, CheckCircle2, Shield } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
+import Header from '@/components/Header'
 
 export default function ServicesPage() {
   const services = [
@@ -56,30 +57,8 @@ export default function ServicesPage() {
   ]
 
   return (
-    <div className="min-h-screen bg-white">
-      {/* Header */}
-      <header className="sticky top-0 z-50 bg-white shadow-md">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
-            <a href="/" className="flex items-center space-x-3">
-              <div className="flex items-center justify-center w-10 h-10 bg-primary-700 rounded-lg">
-                <span className="text-white font-bold text-xl">A</span>
-              </div>
-              <div>
-                <h1 className="text-xl font-bold text-gray-900">Anderson Cleaning</h1>
-                <p className="text-xs text-gray-600">Our Services</p>
-              </div>
-            </a>
-            <div className="hidden md:flex items-center space-x-6">
-              <a href="/" className="text-gray-700 hover:text-primary-700 font-medium">Home</a>
-              <a href="/quote" className="text-gray-700 hover:text-primary-700 font-medium">Get Quote</a>
-              <Button variant="primary" size="sm" onClick={() => window.location.href='/quote'}>
-                Get a Quote
-              </Button>
-            </div>
-          </div>
-        </div>
-      </header>
+    <div className="min-h-screen bg-white dark:bg-slate-900 transition-colors duration-300">
+      <Header />
 
       {/* Hero */}
       <section className="py-20 bg-gradient-to-br from-blue-700 via-blue-800 to-indigo-900 text-white">

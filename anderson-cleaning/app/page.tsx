@@ -1,31 +1,13 @@
+'use client'
+
 import { Button } from '@/components/ui/Button'
+import Header from '@/components/Header'
 import { Phone, Mail, MapPin, Clock, Shield, Users, Award, Headphones } from 'lucide-react'
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-white">
-      {/* Header */}
-      <header className="sticky top-0 z-50 bg-white shadow-md">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
-            <div className="flex items-center space-x-3">
-              <div className="flex items-center justify-center w-10 h-10 bg-primary-700 rounded-lg">
-                <span className="text-white font-bold text-xl">A</span>
-              </div>
-              <div>
-                <h1 className="text-xl font-bold text-gray-900">Anderson Cleaning</h1>
-                <p className="text-xs text-gray-600">Commercial Services</p>
-              </div>
-            </div>
-            <div className="hidden md:flex items-center space-x-6">
-              <a href="#services" className="text-gray-700 hover:text-primary-700 font-medium transition">Services</a>
-              <a href="#about" className="text-gray-700 hover:text-primary-700 font-medium transition">About</a>
-              <a href="#contact" className="text-gray-700 hover:text-primary-700 font-medium transition">Contact</a>
-              <Button variant="primary" size="sm">Get a Quote</Button>
-            </div>
-          </div>
-        </div>
-      </header>
+    <div className="min-h-screen bg-white dark:bg-slate-900 transition-colors duration-300">
+      <Header />
 
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-br from-blue-700 via-blue-800 to-indigo-900 text-white py-20 md:py-32">
@@ -75,11 +57,11 @@ export default function Home() {
       </section>
 
       {/* Services Grid */}
-      <section id="services" className="py-20 bg-gray-50">
+      <section id="services" className="py-20 bg-gray-50 dark:bg-slate-800 transition-colors">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Services</h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Our Services</h2>
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
               Comprehensive commercial cleaning solutions tailored to your facility's needs
             </p>
           </div>
@@ -117,10 +99,10 @@ export default function Home() {
                 icon: '📦'
               },
             ].map((service, i) => (
-              <div key={i} className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+              <div key={i} className="bg-white dark:bg-slate-700 rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                 <div className="text-5xl mb-4">{service.icon}</div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">{service.title}</h3>
-                <p className="text-gray-600 mb-4">{service.description}</p>
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">{service.title}</h3>
+                <p className="text-gray-600 dark:text-gray-300 mb-4">{service.description}</p>
                 <a href="#" className="text-primary-700 font-semibold hover:text-primary-800 inline-flex items-center">
                   Learn more →
                 </a>
@@ -131,11 +113,11 @@ export default function Home() {
       </section>
 
       {/* Value Props */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white dark:bg-slate-900 transition-colors">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">The Anderson Difference</h2>
-            <p className="text-xl text-gray-600">What sets us apart in commercial cleaning</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">The Anderson Difference</h2>
+            <p className="text-xl text-gray-600 dark:text-gray-300">What sets us apart in commercial cleaning</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -164,11 +146,11 @@ export default function Home() {
               const Icon = item.icon
               return (
                 <div key={i} className="text-center">
-                  <div className="inline-flex items-center justify-center w-16 h-16 bg-primary-100 rounded-full mb-4">
-                    <Icon className="h-8 w-8 text-primary-700" />
+                  <div className="inline-flex items-center justify-center w-16 h-16 bg-primary-100 dark:bg-blue-900/30 rounded-full mb-4">
+                    <Icon className="h-8 w-8 text-primary-700 dark:text-blue-400" />
                   </div>
-                  <h3 className="text-lg font-bold text-gray-900 mb-2">{item.title}</h3>
-                  <p className="text-gray-600">{item.description}</p>
+                  <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">{item.title}</h3>
+                  <p className="text-gray-600 dark:text-gray-300">{item.description}</p>
                 </div>
               )
             })}
