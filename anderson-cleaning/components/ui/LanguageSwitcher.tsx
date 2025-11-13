@@ -13,28 +13,33 @@ const LanguageSwitcher: React.FC = () => {
 
   const { currentLanguage, setCurrentLanguage, t } = context;
 
-  const languages: { code: LanguageCode; name: string }[] = [
-    { code: 'en', name: 'English' },
-    { code: 'es', name: 'Español' },
-    { code: 'pt', name: 'Português' },
+  const languages: { code: LanguageCode; name: string; short: string }[] = [
+    { code: 'en', name: 'English', short: 'EN' },
+    { code: 'es', name: 'Español', short: 'ES' },
+    { code: 'pt-BR', name: 'Português', short: 'PT' },
+    { code: 'ro', name: 'Română', short: 'RO' },
   ];
 
   return (
-    <div className="flex items-center space-x-2">
-       <GlobeIconCareers className="h-5 w-5 text-gray-600 dark:text-slate-400" />
-      <label htmlFor="language-select" className="sr-only">{t('selectLanguage') as string}</label>
-      <select
-        id="language-select"
-        value={currentLanguage}
-        onChange={(e) => setCurrentLanguage(e.target.value as LanguageCode)}
-        className="block w-full pl-3 pr-10 py-2 text-sm bg-card border-gray-300 dark:bg-slate-700 dark:border-slate-600 dark:text-white focus:outline-none focus:ring-primary focus:border-primary rounded-md"
-      >
-        {languages.map(lang => (
-          <option key={lang.code} value={lang.code}>
-            {lang.name}
-          </option>
+    <div className="flex items-center space-x-2" aria-label="Change application language">
+      <GlobeIconCareers className="h-5 w-5 text-gray-600 dark:text-slate-400" />
+      <div className="flex items-center divide-x divide-gray-300 dark:divide-slate-600 border border-gray-300 dark:border-slate-600 rounded-md overflow-hidden">
+        {languages.map((lang, index) => (
+          <button
+            key={lang.code}
+            onClick={() => setCurrentLanguage(lang.code)}
+            className={`px-3 py-1.5 text-sm font-medium transition-colors ${
+              currentLanguage === lang.code
+                ? 'bg-primary-600 text-white dark:bg-primary-500'
+                : 'bg-white dark:bg-slate-700 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-slate-600'
+            }`}
+            aria-label={`Switch to ${lang.name}`}
+            aria-pressed={currentLanguage === lang.code}
+          >
+            {lang.short}
+          </button>
         ))}
-      </select>
+      </div>
     </div>
   );
 };
