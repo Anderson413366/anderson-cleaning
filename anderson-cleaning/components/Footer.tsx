@@ -115,11 +115,27 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Copyright */}
-        <div className="border-t border-gray-800 pt-8 text-center">
-          <p className="text-sm text-gray-500">
-            &copy; {currentYear} Anderson Cleaning, Inc. All rights reserved.
-          </p>
+        {/* Copyright & Legal Links */}
+        <div className="border-t border-gray-800 pt-8">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className="text-sm text-gray-500">
+              &copy; {currentYear} Anderson Cleaning, Inc. All rights reserved.
+            </p>
+            <nav className="flex items-center gap-6" aria-label="Legal Links">
+              <Link
+                href="/legal/privacy"
+                className="text-sm text-gray-400 hover:text-accent-400 transition-colors"
+              >
+                Privacy Policy
+              </Link>
+              <Link
+                href="/legal/terms"
+                className="text-sm text-gray-400 hover:text-accent-400 transition-colors"
+              >
+                Terms of Service
+              </Link>
+            </nav>
+          </div>
         </div>
       </div>
     </footer>
