@@ -1,11 +1,7 @@
-import { Metadata } from 'next'
+'use client'
+
 import { Building2, Sparkles, Users, CheckCircle2, Shield } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
-
-export const metadata: Metadata = {
-  title: 'Commercial Cleaning Services | Anderson Cleaning',
-  description: 'Comprehensive commercial cleaning solutions for offices, medical facilities, education, manufacturing, and more. B2B only.',
-}
 
 export default function ServicesPage() {
   const services = [

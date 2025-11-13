@@ -1,11 +1,7 @@
-import { Metadata } from 'next'
+'use client'
+
 import { Button } from '@/components/ui/Button'
 import { CheckCircle2, Clock, Shield, Users, Sparkles } from 'lucide-react'
-
-export const metadata: Metadata = {
-  title: 'Office & Commercial Cleaning Services | Anderson Cleaning',
-  description: 'Professional office cleaning programs that keep your workplace spotless, safe, and productive. Daily, weekly, or custom schedules available.',
-}
 
 export default function OfficeCleaningPage() {
   return (
