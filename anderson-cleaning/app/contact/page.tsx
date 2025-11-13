@@ -2,45 +2,10 @@
 
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-import { Button } from '@/components/ui/Button'
-import Input from '@/components/ui/Input'
-import Select from '@/components/ui/Select'
-import Textarea from '@/components/ui/Textarea'
-import { useState } from 'react'
-import { Phone, Mail, MapPin, Clock, Send, CheckCircle2 } from 'lucide-react'
+import ContactForm from '@/components/forms/ContactForm'
+import { Phone, Mail, MapPin, Clock, CheckCircle2 } from 'lucide-react'
 
 export default function ContactPage() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    company: '',
-    subject: '',
-    message: '',
-  })
-
-  const [errors, setErrors] = useState<Record<string, string>>({})
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    // Add form validation and submission logic here
-    console.log('Form submitted:', formData)
-  }
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
-  ) => {
-    const { name, value } = e.target
-    setFormData((prev) => ({ ...prev, [name]: value }))
-    // Clear error for this field
-    if (errors[name]) {
-      setErrors((prev) => {
-        const newErrors = { ...prev }
-        delete newErrors[name]
-        return newErrors
-      })
-    }
-  }
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-green-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 transition-colors duration-300">
@@ -61,102 +26,7 @@ export default function ContactPage() {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {/* Contact Form */}
             <div className="lg:col-span-2">
-              <div className="bg-white dark:bg-slate-800 rounded-xl shadow-2xl p-8 md:p-12">
-                <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-6">
-                  Send Us a Message
-                </h2>
-
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <Input
-                      name="name"
-                      label="Your Name"
-                      placeholder="John Smith"
-                      value={formData.name}
-                      onChange={handleChange}
-                      error={errors.name}
-                      isRequired
-                    />
-
-                    <Input
-                      name="company"
-                      label="Company Name"
-                      placeholder="ABC Corporation"
-                      value={formData.company}
-                      onChange={handleChange}
-                    />
-                  </div>
-
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <Input
-                      name="email"
-                      type="email"
-                      label="Email Address"
-                      placeholder="john@company.com"
-                      value={formData.email}
-                      onChange={handleChange}
-                      error={errors.email}
-                      isRequired
-                    />
-
-                    <Input
-                      name="phone"
-                      type="tel"
-                      label="Phone Number"
-                      placeholder="(555) 123-4567"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      error={errors.phone}
-                      isRequired
-                    />
-                  </div>
-
-                  <Select
-                    name="subject"
-                    label="What can we help you with?"
-                    placeholder="Select a topic"
-                    value={formData.subject}
-                    onChange={handleChange}
-                    error={errors.subject}
-                    options={[
-                      { value: '', label: 'Select a topic' },
-                      { value: 'quote', label: 'Request a Quote' },
-                      { value: 'question', label: 'General Question' },
-                      { value: 'existing', label: 'Existing Client Support' },
-                      { value: 'careers', label: 'Career Opportunities' },
-                      { value: 'other', label: 'Other' },
-                    ]}
-                    isRequired
-                  />
-
-                  <Textarea
-                    name="message"
-                    label="Your Message"
-                    placeholder="Tell us about your cleaning needs, questions, or concerns..."
-                    rows={6}
-                    value={formData.message}
-                    onChange={handleChange}
-                    error={errors.message}
-                    maxLength={1000}
-                    showCharCount
-                    isRequired
-                  />
-
-                  <Button
-                    type="submit"
-                    variant="primary"
-                    size="lg"
-                    className="w-full"
-                  >
-                    <Send className="h-5 w-5 mr-2" />
-                    Send Message
-                  </Button>
-
-                  <p className="text-center text-sm text-gray-600 dark:text-gray-400">
-                    We typically respond within 30 minutes during business hours
-                  </p>
-                </form>
-              </div>
+              <ContactForm />
             </div>
 
             {/* Contact Information Sidebar */}
