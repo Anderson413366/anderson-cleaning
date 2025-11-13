@@ -2,7 +2,8 @@
 
 import { Button } from '@/components/ui/Button'
 import Header from '@/components/Header'
-import { Phone, Mail, MapPin, Clock, Shield, Users, Award, Headphones } from 'lucide-react'
+import Footer from '@/components/Footer'
+import { Phone, Clock, Shield, Users, Award, Headphones } from 'lucide-react'
 
 export default function Home() {
   return (
@@ -23,9 +24,11 @@ export default function Home() {
               Professional Commercial Cleaning with a{' '}
               <span className="text-accent-400">Personal Touch</span>
             </h1>
-            <p className="text-xl md:text-2xl text-blue-100 mb-8 animate-slide-up" style={{animationDelay: '0.1s'}}>
-              Small business care. Big business systems. Full-time salaried cleaners, 24/7 support, and corporate-grade quality—serving businesses within 100 miles of West Springfield, MA.
-            </p>
+            <div className="text-xl md:text-2xl text-blue-100 mb-8 space-y-2 animate-slide-up" style={{animationDelay: '0.1s'}}>
+              <p className="font-semibold">Small business care. Big business systems.</p>
+              <p>Full-time salaried cleaners • 24/7 support • Corporate-grade quality</p>
+              <p className="text-lg text-blue-200">Serving businesses within 100 miles of West Springfield, MA</p>
+            </div>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12 animate-slide-up" style={{animationDelay: '0.2s'}}>
               <Button variant="accent" size="lg" className="w-full sm:w-auto">
                 Get a Free Quote
@@ -177,54 +180,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer id="contact" className="bg-gray-900 text-gray-300 py-12">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-            <div>
-              <h3 className="text-white font-bold text-lg mb-4">Contact Us</h3>
-              <div className="space-y-3">
-                <div className="flex items-start space-x-3">
-                  <MapPin className="h-5 w-5 text-accent-400 mt-1" />
-                  <span>103 Wayside Avenue<br />West Springfield, MA 01089</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <Phone className="h-5 w-5 text-accent-400" />
-                  <span>(555) 123-4567</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <Mail className="h-5 w-5 text-accent-400" />
-                  <span>info@andersoncleaning.com</span>
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <h3 className="text-white font-bold text-lg mb-4">Quick Links</h3>
-              <ul className="space-y-2">
-                <li><a href="#services" className="hover:text-accent-400 transition">Services</a></li>
-                <li><a href="#about" className="hover:text-accent-400 transition">About Us</a></li>
-                <li><a href="/apply" className="hover:text-accent-400 transition">Careers - Apply Now</a></li>
-                <li><a href="#" className="hover:text-accent-400 transition">Privacy Policy</a></li>
-              </ul>
-            </div>
-
-            <div>
-              <h3 className="text-white font-bold text-lg mb-4">Service Area</h3>
-              <p className="mb-4">
-                Serving businesses within 100 miles of West Springfield, MA—including Springfield, Worcester, Northampton, Amherst, Hartford (CT), and more.
-              </p>
-              <p className="text-sm text-gray-400 border-t border-gray-700 pt-4">
-                <strong>B2B Only</strong> • No restaurants or 7-day/week cleaning
-              </p>
-            </div>
-          </div>
-
-          <div className="border-t border-gray-800 pt-8 text-center text-sm text-gray-500">
-            <p>&copy; {new Date().getFullYear()} Anderson Cleaning, Inc. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   )
 }

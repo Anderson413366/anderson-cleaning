@@ -1,8 +1,9 @@
 'use client'
 
-import { Building2, Sparkles, Users, CheckCircle2, Shield } from 'lucide-react'
+import { Sparkles, Users, CheckCircle2, Shield } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
 import Header from '@/components/Header'
+import Footer from '@/components/Footer'
 
 export default function ServicesPage() {
   const services = [
@@ -158,28 +159,56 @@ export default function ServicesPage() {
             {[
               {
                 q: 'Are you insured and bonded?',
-                a: 'Yes, we carry comprehensive general liability and workers\' compensation insurance. All staff undergo background checks.',
+                items: [
+                  'Comprehensive general liability insurance ✓',
+                  'Workers\' compensation insurance ✓',
+                  'All staff undergo background checks ✓',
+                ],
               },
               {
                 q: 'Do you provide cleaning supplies and equipment?',
-                a: 'Yes, all cleaning supplies and equipment are included. We can also manage your facility\'s consumables (paper products, soap, etc.) through our Supply Management service.',
+                items: [
+                  'All cleaning supplies included',
+                  'Professional equipment provided',
+                  'Optional: Supply Management service for consumables (paper, soap, etc.)',
+                ],
               },
               {
                 q: 'How do you ensure quality?',
-                a: 'We use detailed checklists, conduct regular quality audits, and provide corrective action within 24 hours if any issues arise.',
+                items: [
+                  'Detailed checklists for every service',
+                  'Regular quality audits',
+                  'Corrective action within 24 hours',
+                ],
               },
               {
                 q: 'What is your onboarding process?',
-                a: 'We start with a comprehensive facility walk-through, create custom SOPs for your space, train our team, and begin with supervised cleaning for the first week.',
+                items: [
+                  '1. Comprehensive facility walk-through',
+                  '2. Create custom SOPs for your space',
+                  '3. Train our team on your requirements',
+                  '4. Supervised cleaning for the first week',
+                ],
               },
               {
                 q: 'Can I get project/specialty work without a regular contract?',
-                a: 'No—project work (floor care, windows, post-construction) is available only to clients with active cleaning contracts. This ensures we can properly schedule and resource these specialized services.',
+                items: [
+                  'No—project work requires an active cleaning contract',
+                  'Includes: floor care, windows, post-construction',
+                  'Why: Ensures proper scheduling & resource allocation',
+                ],
               },
             ].map((faq, i) => (
               <div key={i} className="bg-white rounded-lg p-6 shadow-md">
-                <h3 className="text-lg font-bold text-gray-900 mb-2">{faq.q}</h3>
-                <p className="text-gray-600">{faq.a}</p>
+                <h3 className="text-lg font-bold text-gray-900 mb-3">{faq.q}</h3>
+                <ul className="space-y-2">
+                  {faq.items.map((item, j) => (
+                    <li key={j} className="flex items-start text-gray-700">
+                      <span className="text-accent-500 mr-2 mt-1 flex-shrink-0">•</span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
             ))}
           </div>
@@ -199,14 +228,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-gray-900 text-gray-300 py-8">
-        <div className="container mx-auto px-6 text-center">
-          <p className="text-sm text-gray-500">
-            &copy; {new Date().getFullYear()} Anderson Cleaning, Inc. All rights reserved. | B2B Only • No restaurants or 7-day/week cleaning
-          </p>
-        </div>
-      </footer>
+      <Footer />
     </div>
   )
 }

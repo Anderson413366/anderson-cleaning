@@ -1,6 +1,7 @@
 'use client'
 
 import Header from '@/components/Header'
+import Footer from '@/components/Footer'
 import { Phone, Mail, Clock, CheckCircle2 } from 'lucide-react'
 
 export default function QuotePage() {
@@ -315,14 +316,7 @@ export default function QuotePage() {
         </div>
       </div>
 
-      {/* Footer */}
-      <footer className="bg-gray-900 text-gray-300 py-8 mt-16">
-        <div className="container mx-auto px-6 text-center">
-          <p className="text-sm text-gray-500">
-            &copy; {new Date().getFullYear()} Anderson Cleaning, Inc. All rights reserved. | B2B Only
-          </p>
-        </div>
-      </footer>
+      <Footer />
     </div>
   )
 }
