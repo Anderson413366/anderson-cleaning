@@ -103,7 +103,7 @@ export default function SupplyManagementPage() {
                 icon: Truck,
                 step: '4',
                 title: 'Auto-Replenishment',
-                description: 'Supplies delivered before you run out. You approve the first order, then it's automatic.',
+                description: 'Supplies delivered before you run out. You approve the first order, then it\'s automatic.',
               },
             ].map((item, i) => {
               const Icon = item.icon
@@ -201,7 +201,7 @@ export default function SupplyManagementPage() {
                 {
                   icon: BarChart3,
                   title: 'Usage Forecasting',
-                  description: 'We track consumption patterns and predict when you'll need reorders, preventing stockouts.',
+                  description: 'We track consumption patterns and predict when you\'ll need reorders, preventing stockouts.',
                 },
                 {
                   icon: FileText,

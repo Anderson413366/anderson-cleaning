@@ -181,22 +181,22 @@ const CareersPage: React.FC = () => {
             )}
           </div>
         </div>
+
+        <Modal
+          isOpen={applicationStatus === 'success'}
+          onClose={() => {
+            setApplicationStatus('idle');
+            // Optionally reset form or redirect:
+            // setFormData(INITIAL_FORM_DATA);
+            // setCurrentSectionIndex(0);
+            setShowIntro(true); // Go back to intro
+          }}
+          title={t('submissionSuccessTitle') as string}
+        >
+          <p>{t('submissionSuccessMessage') as string}</p>
+        </Modal>
       </main>
-       <Modal
-        isOpen={applicationStatus === 'success'}
-        onClose={() => {
-          setApplicationStatus('idle');
-          // Optionally reset form or redirect:
-          // setFormData(INITIAL_FORM_DATA); 
-          // setCurrentSectionIndex(0);
-          setShowIntro(true); // Go back to intro
-        }}
-        title={t('submissionSuccessTitle') as string}
-      >
-        <p>{t('submissionSuccessMessage') as string}</p>
-      </Modal>
-    </main>
-  );
-};
+    );
+  };
 
 export default CareersPage;

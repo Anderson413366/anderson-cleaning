@@ -72,7 +72,7 @@ const industriesData: Record<string, IndustryData> = {
           'We typically clean after hours (evenings or weekends) to avoid disrupting your team. However, we can accommodate day porter services for high-traffic lobbies and restrooms if needed.',
       },
       {
-        question: 'What's included in daily office cleaning?',
+        question: 'What\'s included in daily office cleaning?',
         answer:
           'Daily cleaning includes: emptying trash/recycling, vacuuming/mopping floors, wiping down surfaces, sanitizing restrooms, cleaning break rooms, and dusting common areas. We create custom SOPs based on your office layout.',
       },

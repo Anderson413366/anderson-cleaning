@@ -110,7 +110,7 @@ const servicesData: Record<string, ServiceData> = {
     icon: '🧹',
     tagline: 'Reliable, consistent facility care',
     heroDescription:
-      'Comprehensive janitorial programs for commercial facilities requiring dependable, accountable cleaning teams. Perfect for facilities that need more than basic cleaning—they need a partner.',
+      'Comprehensive janitorial programs for commercial facilities requiring dependable, accountable cleaning teams. Perfect for facilities that need more than basic cleaning-they need a partner.',
     availability: 'all',
     benefits: [
       'Full-time, salaried cleaning professionals',
@@ -172,7 +172,7 @@ const servicesData: Record<string, ServiceData> = {
       {
         question: 'Do we get the same cleaning team every time?',
         answer:
-          'Yes! Consistency is core to our janitorial service. You'll have the same team members who learn your facility and preferences.',
+          'Yes! Consistency is core to our janitorial service. You\'ll have the same team members who learn your facility and preferences.',
       },
       {
         question: 'What kind of reporting do you provide?',
@@ -263,7 +263,7 @@ const servicesData: Record<string, ServiceData> = {
     icon: '🪟',
     tagline: 'Streak-free shine for great first impressions',
     heroDescription:
-      'Professional interior and exterior window cleaning for commercial buildings. Our certified teams deliver spotless, streak-free results that enhance your building's appearance.',
+      'Professional interior and exterior window cleaning for commercial buildings. Our certified teams deliver spotless, streak-free results that enhance your building\'s appearance.',
     availability: 'contracted',
     benefits: [
       'Interior and exterior window cleaning',
@@ -325,7 +325,7 @@ const servicesData: Record<string, ServiceData> = {
       {
         question: 'What if it rains after you clean the windows?',
         answer:
-          'Rain actually doesn't make clean windows dirty—only windows with existing dirt show rain spots. However, we'll return if you're not satisfied.',
+          'Rain actually doesn\'t make clean windows dirty-only windows with existing dirt show rain spots. However, we\'ll return if you\'re not satisfied.',
       },
       {
         question: 'Can you clean high-rise windows?',
@@ -402,7 +402,7 @@ const servicesData: Record<string, ServiceData> = {
       {
         question: 'Do you remove construction materials?',
         answer:
-          'We remove cleaning-related debris and dust. Large construction materials, equipment, and dumpster items are the contractor's responsibility.',
+          'We remove cleaning-related debris and dust. Large construction materials, equipment, and dumpster items are the contractor\'s responsibility.',
       },
       {
         question: 'Can I get post-construction cleaning as a one-time service?',

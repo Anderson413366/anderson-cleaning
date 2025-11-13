@@ -120,7 +120,7 @@ export default function AboutPage() {
                 icon: Shield,
                 title: 'Fully Insured & Bonded',
                 description:
-                  'Comprehensive general liability and workers' comp insurance. All staff undergo background checks.',
+                  'Comprehensive general liability and workers\' comp insurance. All staff undergo background checks.',
               },
               {
                 icon: CheckCircle2,
@@ -208,12 +208,12 @@ export default function AboutPage() {
                 {
                   title: 'Listen First',
                   description:
-                    'We start every relationship with a comprehensive facility walk-through. We don't just look at square footage—we understand your foot traffic, risk points, and priorities.',
+                    'We start every relationship with a comprehensive facility walk-through. We do not just look at square footage - we understand your foot traffic, risk points, and priorities.',
                 },
                 {
                   title: 'Create Custom SOPs',
                   description:
-                    'Every facility gets customized Standard Operating Procedures. No cookie-cutter checklists—we document exactly what needs to be done, when, and how.',
+                    'Every facility gets customized Standard Operating Procedures. No cookie-cutter checklists - we document exactly what needs to be done, when, and how.',
                 },
                 {
                   title: 'Train Our Teams',
@@ -311,7 +311,7 @@ export default function AboutPage() {
               <div>Enfield, CT</div>
             </div>
             <p className="text-sm text-gray-500 dark:text-gray-400 mt-8">
-              Don't see your city? Contact us—we may serve your area!
+              Don't see your city? Contact us-we may serve your area!
             </p>
           </div>
         </div>
