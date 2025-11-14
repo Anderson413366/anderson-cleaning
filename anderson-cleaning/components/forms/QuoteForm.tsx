@@ -93,23 +93,45 @@ export default function QuoteForm({ onSuccess }: QuoteFormProps) {
       setIsSubmitting(true)
       setSubmitError(null)
 
-      // Check honeypot field
+      // Check honeypot field (client-side check)
       if (data.website) {
         throw new Error('Invalid submission detected')
       }
 
-      // TODO: Send to backend API
-      console.log('Quote form submitted:', data)
+      // Send to backend API
+      const response = await fetch('/api/quote', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      })
 
-      // Simulate API call
-      await new Promise((resolve) => setTimeout(resolve, 2000))
+      const result = await response.json()
+
+      if (!response.ok || !result.success) {
+        throw new Error(result.error || 'Failed to submit quote request')
+      }
+
+      // Track with Google Analytics dataLayer
+      if (typeof window !== 'undefined' && (window as any).dataLayer) {
+        ;(window as any).dataLayer.push({
+          event: 'form_submission',
+          form_name: 'quote_request',
+          form_type: 'multi_step',
+          facility_type: data.facilityType,
+          cleaning_frequency: data.cleaningFrequency,
+        })
+      }
 
       // Success!
       onSuccess?.()
     } catch (error) {
       console.error('Quote submission error:', error)
       setSubmitError(
-        'There was an error submitting your quote request. Please try again or call us at (555) 123-4567.'
+        error instanceof Error
+          ? error.message
+          : 'There was an error submitting your quote request. Please try again or call us at (413) 306-5053.'
       )
     } finally {
       setIsSubmitting(false)
@@ -248,8 +270,9 @@ export default function QuoteForm({ onSuccess }: QuoteFormProps) {
                     {...register('phone')}
                     type="tel"
                     id="phone"
+                    autoComplete="tel"
                     className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-slate-800 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
-                    placeholder="(555) 123-4567"
+                    placeholder="(413) 306-5053"
                   />
                   {errors.phone && (
                     <p className="mt-1 text-sm text-red-600 dark:text-red-400">
@@ -659,11 +682,11 @@ export default function QuoteForm({ onSuccess }: QuoteFormProps) {
             <h3 className="font-bold text-gray-900 dark:text-gray-100 mb-4">Prefer to Call?</h3>
             <div className="space-y-3">
               <a
-                href="tel:+15551234567"
+                href="tel:+14133065053"
                 className="flex items-center gap-3 text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 transition-colors"
               >
                 <Phone className="h-5 w-5 flex-shrink-0" />
-                <span className="font-semibold">(555) 123-4567</span>
+                <span className="font-semibold">(413) 306-5053</span>
               </a>
               <a
                 href="mailto:info@andersoncleaning.com"
