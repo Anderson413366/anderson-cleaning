@@ -1,8 +1,9 @@
-import { Metadata } from 'next'
+'use client'
+
 import Link from 'next/link'
 import { Shield, Download, Mail } from 'lucide-react'
 
-export const metadata: Metadata = {
+const pageInfo = {
   title: 'Privacy Policy | Anderson Cleaning',
   description:
     'Learn how Anderson Cleaning collects, uses, and protects your personal information.',

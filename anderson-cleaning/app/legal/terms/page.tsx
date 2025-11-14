@@ -1,8 +1,9 @@
-import { Metadata } from 'next'
+'use client'
+
 import Link from 'next/link'
 import { Scale, Download, Mail } from 'lucide-react'
 
-export const metadata: Metadata = {
+const pageInfo = {
   title: 'Terms of Service | Anderson Cleaning',
   description: 'Terms and conditions for using Anderson Cleaning services and website.',
   robots: {
