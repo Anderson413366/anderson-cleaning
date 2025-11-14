@@ -3,6 +3,7 @@
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import { Button } from '@/components/ui/Button'
+import StatsBar from '@/components/sections/StatsBar'
 import { useRouter } from 'next/navigation'
 import {
   Users,
@@ -163,34 +164,8 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* By the Numbers */}
-      <section className="py-20">
-        <div className="container mx-auto px-6">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-gray-100 mb-12 text-center">
-            Anderson Cleaning By the Numbers
-          </h2>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto">
-            {[
-              { number: '20+', label: 'Years in Business', icon: Award },
-              { number: '50+', label: 'Active Clients', icon: Building2 },
-              { number: '40+', label: 'Trained Staff Members', icon: Users },
-              { number: '30min', label: 'Avg Response Time', icon: Clock },
-            ].map((stat, index) => {
-              const Icon = stat.icon
-              return (
-                <div key={index} className="text-center">
-                  <Icon className="h-12 w-12 text-primary-600 dark:text-primary-400 mx-auto mb-4" />
-                  <div className="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-gray-100 mb-2">
-                    {stat.number}
-                  </div>
-                  <div className="text-sm text-gray-600 dark:text-gray-400">{stat.label}</div>
-                </div>
-              )
-            })}
-          </div>
-        </div>
-      </section>
+      {/* By the Numbers - Animated Stats Bar */}
+      <StatsBar background="white" />
 
       {/* Our Approach */}
       <section className="py-20 bg-gray-50 dark:bg-slate-800/50">

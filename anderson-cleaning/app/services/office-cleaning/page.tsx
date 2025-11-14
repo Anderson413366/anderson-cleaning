@@ -2,6 +2,7 @@
 
 import { Button } from '@/components/ui/Button'
 import Header from '@/components/Header'
+import ProcessSteps from '@/components/sections/ProcessSteps'
 import { CheckCircle2, Clock, Shield, Users, Sparkles } from 'lucide-react'
 
 export default function OfficeCleaningPage() {
@@ -140,6 +141,9 @@ export default function OfficeCleaningPage() {
           </div>
         </div>
       </section>
+
+      {/* Our Process - 4-Step Onboarding */}
+      <ProcessSteps background="white" />
 
       {/* Who It's For */}
       <section className="py-20 bg-white">
