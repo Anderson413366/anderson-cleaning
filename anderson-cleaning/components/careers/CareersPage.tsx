@@ -240,6 +240,7 @@ const CareersPage: React.FC = () => {
           )}
         </div>
         </div>
+      </div>
 
       <Modal
         isOpen={applicationStatus === 'success'}
