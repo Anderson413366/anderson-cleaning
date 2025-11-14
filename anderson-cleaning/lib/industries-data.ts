@@ -11,14 +11,8 @@
  * 4. The page will automatically generate from this data
  */
 
-import { LucideIcon } from 'lucide-react'
-import {
-  Building2,
-  GraduationCap,
-  ShoppingBag,
-  Factory,
-  Heart,
-} from 'lucide-react'
+// Icons are now stored as strings and mapped to components via getIconComponent()
+// in consuming components. This prevents Server/Client boundary violations.
 
 // ============================================================================
 // TYPES & INTERFACES
@@ -46,7 +40,7 @@ export interface Industry {
   id: string
   name: string
   slug: string
-  icon: LucideIcon
+  icon: string // Icon name (e.g., 'Heart', 'Building2')
   shortDescription: string
   hero: IndustryHero
   overview: string[]
@@ -68,7 +62,7 @@ export const industries: Industry[] = [
     id: 'healthcare',
     name: 'Healthcare Facilities',
     slug: 'healthcare',
-    icon: Heart,
+    icon: 'Heart',
     shortDescription:
       'OSHA-compliant cleaning with EPA-registered disinfectants for medical offices and clinics. Protecting patients and staff with medical-grade sanitation.',
     hero: {
@@ -144,7 +138,7 @@ export const industries: Industry[] = [
     id: 'corporate',
     name: 'Corporate Offices',
     slug: 'corporate-offices',
-    icon: Building2,
+    icon: 'Building2',
     shortDescription:
       'Professional office cleaning that creates a positive impression on clients and boosts employee productivity. Flexible scheduling to fit your business hours.',
     hero: {
@@ -219,7 +213,7 @@ export const industries: Industry[] = [
     id: 'education',
     name: 'Educational Facilities',
     slug: 'educational-facilities',
-    icon: GraduationCap,
+    icon: 'GraduationCap',
     shortDescription:
       'School and university cleaning focused on student health and safety. Experience with classrooms, cafeterias, gyms, and common areas.',
     hero: {
@@ -295,7 +289,7 @@ export const industries: Industry[] = [
     id: 'retail',
     name: 'Retail Stores',
     slug: 'retail-stores',
-    icon: ShoppingBag,
+    icon: 'ShoppingBag',
     shortDescription:
       'Retail cleaning services that enhance customer experience and protect your brand image. Flexible scheduling for storefronts, fitting rooms, and sales floors.',
     hero: {
@@ -370,7 +364,7 @@ export const industries: Industry[] = [
     id: 'manufacturing',
     name: 'Manufacturing & Warehouses',
     slug: 'manufacturing-warehouses',
-    icon: Factory,
+    icon: 'Factory',
     shortDescription:
       'Industrial cleaning for manufacturing plants and warehouses. OSHA-compliant services including floor care, equipment cleaning, and facility maintenance.',
     hero: {

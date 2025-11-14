@@ -141,7 +141,7 @@ export default function FAQPage() {
   const filterQuestions = () => {
     if (!searchQuery) return faqCategories
 
-    const filtered: typeof faqCategories = {}
+    const filtered: Partial<typeof faqCategories> = {}
     Object.entries(faqCategories).forEach(([category, questions]) => {
       const matchingQuestions = questions.filter(
         (q) =>

@@ -1,19 +1,17 @@
 'use client'
 
 import React, { useContext } from 'react'
+import { useTheme } from '@/lib/ThemeProvider'
 import { AppContext } from '@/lib/careers/AppContext'
 import { Button } from './Button'
 import { SunIconCareers, MoonIconCareers } from '../careers/icons'
 
 const ThemeSwitcher: React.FC = () => {
+  const { theme, toggleTheme } = useTheme()
   const context = useContext(AppContext)
-  if (!context) throw new Error('AppContext not found')
 
-  const { theme, setTheme, t } = context
-
-  const toggleTheme = () => {
-    setTheme(theme === 'light' ? 'dark' : 'light')
-  }
+  // Get translation function if AppContext is available (for careers page)
+  const t = context?.t || ((key: string) => key)
 
   return (
     <Button

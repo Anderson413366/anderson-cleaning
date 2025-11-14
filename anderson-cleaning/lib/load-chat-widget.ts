@@ -82,7 +82,7 @@ function loadIntercom(config: IntercomConfig): void {
  */
 function loadDrift(config: DriftConfig): void {
   // Drift initialization code (from their docs)
-  // eslint-disable-next-line @typescript-eslint/no-extra-semi
+  // eslint-disable-next-line no-extra-semi
   ;(function () {
     const t = (window.driftt = window.drift = window.driftt || [])
 

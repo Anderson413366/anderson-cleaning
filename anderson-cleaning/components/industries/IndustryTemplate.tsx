@@ -27,6 +27,7 @@ import React from 'react'
 import Link from 'next/link'
 import { Button } from '@/components/ui/Button'
 import { Industry } from '@/lib/industries-data'
+import { getIconComponent } from '@/lib/icon-map'
 import {
   CheckCircle2,
   ArrowLeft,
@@ -54,7 +55,7 @@ export default function IndustryTemplate({
   industry,
   showQuoteForm = false,
 }: IndustryTemplateProps) {
-  const IconComponent = industry.icon
+  const IconComponent = getIconComponent(industry.icon)
 
   return (
     <div className="min-h-screen">

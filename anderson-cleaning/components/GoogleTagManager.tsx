@@ -65,6 +65,6 @@ export default function GoogleTagManager({ gtmId }: GTMProps) {
 // TypeScript declaration for dataLayer
 declare global {
   interface Window {
-    dataLayer: any[]
+    dataLayer?: any[]
   }
 }

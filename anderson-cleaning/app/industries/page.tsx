@@ -12,6 +12,7 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import { Button } from '@/components/ui/Button'
 import { industries } from '@/lib/industries-data'
+import { getIconComponent } from '@/lib/icon-map'
 import { ArrowRight } from 'lucide-react'
 
 export const metadata: Metadata = {
@@ -65,7 +66,7 @@ export default function IndustriesPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
             {filteredIndustries.map((industry) => {
-              const IconComponent = industry.icon
+              const IconComponent = getIconComponent(industry.icon)
 
               return (
                 <Link

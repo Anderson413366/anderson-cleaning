@@ -11,8 +11,8 @@
  * 4. Use descriptive slugs for URLs
  */
 
-import { LucideIcon } from 'lucide-react'
-import { Heart, Building2, Factory } from 'lucide-react'
+// Icons are now referenced by string name instead of importing components
+// This allows data to be serializable when passed from Server to Client Components
 
 // ============================================================================
 // TYPES & INTERFACES
@@ -64,7 +64,7 @@ export interface CaseStudy {
   client: CaseStudyClient
   featuredImage: string
   keyResult: string
-  icon: LucideIcon
+  icon: string // Icon name as string (e.g., 'Heart', 'Building2', 'Factory')
   challenge: CaseStudyChallenge
   solution: CaseStudySolution
   results: CaseStudyResults
@@ -92,7 +92,7 @@ export const caseStudies: CaseStudy[] = [
     },
     featuredImage: '/images/case-studies/medical-office-hero.jpg',
     keyResult: '40% reduction in employee sick days',
-    icon: Heart,
+    icon: 'Heart',
     publishedDate: '2024-09-15',
 
     challenge: {
@@ -186,7 +186,7 @@ export const caseStudies: CaseStudy[] = [
     },
     featuredImage: '/images/case-studies/corporate-office-hero.jpg',
     keyResult: '32% increase in workplace satisfaction scores',
-    icon: Building2,
+    icon: 'Building2',
     publishedDate: '2024-08-22',
 
     challenge: {
@@ -283,7 +283,7 @@ export const caseStudies: CaseStudy[] = [
     },
     featuredImage: '/images/case-studies/manufacturing-facility-hero.jpg',
     keyResult: 'Zero slip-and-fall incidents for 18+ months',
-    icon: Factory,
+    icon: 'Factory',
     publishedDate: '2024-07-10',
 
     challenge: {

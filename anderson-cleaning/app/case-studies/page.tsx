@@ -15,6 +15,7 @@ import Header from '@/components/Header'
 import { Button } from '@/components/ui/Button'
 import { caseStudies } from '@/lib/case-studies-data'
 import { ArrowRight, TrendingUp } from 'lucide-react'
+import { getIconComponent } from '@/lib/icon-map'
 
 export default function CaseStudiesPage() {
   return (
@@ -64,7 +65,7 @@ export default function CaseStudiesPage() {
             {/* Case Study Cards Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {caseStudies.map((study) => {
-                const IconComponent = study.icon
+                const IconComponent = getIconComponent(study.icon)
 
                 return (
                   <Link

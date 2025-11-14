@@ -36,8 +36,11 @@ import {
   TrendingUp,
   CheckCircle2,
   Quote,
+  Building2,
+  Clock,
 } from 'lucide-react'
 import { CaseStudy } from '@/lib/case-studies-data'
+import { getIconComponent } from '@/lib/icon-map'
 
 // ============================================================================
 // TYPES & INTERFACES
@@ -71,7 +74,8 @@ export default function CaseStudyTemplate({
   showPrintButton = true,
   showCTA = true,
 }: CaseStudyTemplateProps) {
-  const IconComponent = caseStudy.icon
+  // Get icon component from string name
+  const IconComponent = getIconComponent(caseStudy.icon)
 
   // Format date for display
   const formattedDate = new Date(caseStudy.publishedDate).toLocaleDateString('en-US', {

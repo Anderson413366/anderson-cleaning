@@ -26,6 +26,7 @@
 
 import React from 'react'
 import { processSteps } from '@/lib/process-steps-data'
+import { getIconComponent } from '@/lib/icon-map'
 
 // ============================================================================
 // TYPES & INTERFACES
@@ -108,7 +109,7 @@ export default function ProcessSteps({
             ></div>
 
             {processSteps.map((step, index) => {
-              const IconComponent = step.icon
+              const IconComponent = getIconComponent(step.icon)
 
               return (
                 <li key={step.number} className="relative z-10">
@@ -178,7 +179,7 @@ export default function ProcessSteps({
             ></div>
 
             {processSteps.map((step, index) => {
-              const IconComponent = step.icon
+              const IconComponent = getIconComponent(step.icon)
               const isLast = index === processSteps.length - 1
 
               return (
