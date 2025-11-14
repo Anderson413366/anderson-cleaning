@@ -1,5 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // React Strict Mode for better development experience
+  reactStrictMode: true,
+
   // Image Optimization
   images: {
     remotePatterns: [
@@ -37,6 +40,11 @@ const nextConfig = {
   // Performance optimizations
   poweredByHeader: false,
   generateEtags: true,
+
+  // Production URL (for absolute URLs in metadata)
+  env: {
+    NEXT_PUBLIC_VERCEL_ENV: process.env.VERCEL_ENV || 'development',
+  },
 
   // Incremental Static Regeneration
   async headers() {
