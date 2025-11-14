@@ -14,7 +14,8 @@ export default function IndustriesPage() {
       title: 'Office Buildings',
       slug: 'offices',
       icon: '🏢',
-      description: 'Corporate offices, coworking spaces, and business centers with daily or weekly cleaning programs.',
+      description:
+        'Corporate offices, coworking spaces, and business centers with daily or weekly cleaning programs.',
       features: [
         'Daily/weekly cleaning schedules',
         'Conference room preparation',
@@ -26,7 +27,8 @@ export default function IndustriesPage() {
       title: 'Medical Facilities',
       slug: 'medical',
       icon: '🏥',
-      description: 'Healthcare offices, clinics, and medical centers requiring specialized sanitation protocols.',
+      description:
+        'Healthcare offices, clinics, and medical centers requiring specialized sanitation protocols.',
       features: [
         'OSHA-compliant cleaning',
         'Exam room sanitization',
@@ -38,7 +40,8 @@ export default function IndustriesPage() {
       title: 'Educational Facilities',
       slug: 'education',
       icon: '🎓',
-      description: 'Schools, colleges, training centers, and childcare facilities with high-traffic cleaning needs.',
+      description:
+        'Schools, colleges, training centers, and childcare facilities with high-traffic cleaning needs.',
       features: [
         'Classroom deep cleaning',
         'Restroom sanitation',
@@ -50,7 +53,8 @@ export default function IndustriesPage() {
       title: 'Manufacturing & Warehouses',
       slug: 'manufacturing',
       icon: '🏭',
-      description: 'Industrial facilities, distribution centers, and warehouses requiring specialized cleaning.',
+      description:
+        'Industrial facilities, distribution centers, and warehouses requiring specialized cleaning.',
       features: [
         'Floor scrubbing & maintenance',
         'Break room & office areas',
@@ -62,7 +66,8 @@ export default function IndustriesPage() {
       title: 'Property Management',
       slug: 'property-management',
       icon: '🏘️',
-      description: 'Multi-tenant buildings, apartment complexes, and commercial real estate portfolios.',
+      description:
+        'Multi-tenant buildings, apartment complexes, and commercial real estate portfolios.',
       features: [
         'Common area cleaning',
         'Turnover cleaning',
@@ -74,7 +79,8 @@ export default function IndustriesPage() {
       title: 'Retail Spaces',
       slug: 'retail',
       icon: '🏬',
-      description: 'Non-food retail stores, showrooms, and shopping centers maintaining professional appearance.',
+      description:
+        'Non-food retail stores, showrooms, and shopping centers maintaining professional appearance.',
       features: [
         'After-hours cleaning',
         'Window cleaning',
@@ -91,17 +97,12 @@ export default function IndustriesPage() {
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-br from-blue-700 via-blue-800 to-indigo-900 text-white">
         <div className="container mx-auto px-6 text-center">
-          <h1 className="text-4xl md:text-5xl font-extrabold mb-6">
-            Industries We Serve
-          </h1>
+          <h1 className="text-4xl md:text-5xl font-extrabold mb-6">Industries We Serve</h1>
           <p className="text-xl text-blue-100 max-w-3xl mx-auto mb-8">
-            Specialized commercial cleaning solutions tailored to your industry's unique needs and compliance requirements.
+            Specialized commercial cleaning solutions tailored to your industry's unique needs and
+            compliance requirements.
           </p>
-          <Button
-            variant="accent"
-            size="lg"
-            onClick={() => router.push('/quote')}
-          >
+          <Button variant="accent" size="lg" onClick={() => router.push('/quote')}>
             Get Your Free Quote
           </Button>
         </div>
@@ -122,13 +123,17 @@ export default function IndustriesPage() {
                   Important: We Do NOT Service Restaurants
                 </h3>
                 <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-3">
-                  Anderson Cleaning specializes in B2B commercial and janitorial services for offices, medical facilities, schools, manufacturing, property management, and retail showrooms.
+                  Anderson Cleaning specializes in B2B commercial and janitorial services for
+                  offices, medical facilities, schools, manufacturing, property management, and
+                  retail showrooms.
                 </p>
                 <p className="text-gray-700 dark:text-gray-300 leading-relaxed font-medium">
-                  We do <strong>not</strong> provide cleaning services for restaurants, food service establishments, or facilities requiring 7-day-per-week coverage.
+                  We do <strong>not</strong> provide cleaning services for restaurants, food service
+                  establishments, or facilities requiring 7-day-per-week coverage.
                 </p>
                 <p className="text-sm text-gray-600 dark:text-gray-400 mt-3">
-                  This allows us to specialize in the industries we serve best and maintain our high quality standards.
+                  This allows us to specialize in the industries we serve best and maintain our high
+                  quality standards.
                 </p>
               </div>
             </div>
@@ -144,7 +149,8 @@ export default function IndustriesPage() {
               Facility Types We Clean
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-400">
-              From corporate offices to medical facilities, we understand the unique cleaning requirements of each industry.
+              From corporate offices to medical facilities, we understand the unique cleaning
+              requirements of each industry.
             </p>
           </div>
 
@@ -170,35 +176,34 @@ export default function IndustriesPage() {
                 {
                   icon: '📋',
                   title: 'Compliance Requirements',
-                  description: 'Each industry has specific regulations—OSHA for healthcare, safety standards for manufacturing, etc.',
+                  description:
+                    'Each industry has specific regulations—OSHA for healthcare, safety standards for manufacturing, etc.',
                 },
                 {
                   icon: '🧪',
                   title: 'Specialized Products',
-                  description: 'Medical facilities need EPA-approved disinfectants, schools require non-toxic cleaners.',
+                  description:
+                    'Medical facilities need EPA-approved disinfectants, schools require non-toxic cleaners.',
                 },
                 {
                   icon: '⏰',
                   title: 'Optimal Timing',
-                  description: 'Retail needs after-hours cleaning, offices prefer evenings, medical may need multiple shifts.',
+                  description:
+                    'Retail needs after-hours cleaning, offices prefer evenings, medical may need multiple shifts.',
                 },
                 {
                   icon: '👥',
                   title: 'Trained Staff',
-                  description: 'Our teams are trained on industry-specific protocols, risk areas, and best practices.',
+                  description:
+                    'Our teams are trained on industry-specific protocols, risk areas, and best practices.',
                 },
               ].map((item, index) => (
-                <div
-                  key={index}
-                  className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-md"
-                >
+                <div key={index} className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-md">
                   <div className="text-5xl mb-4">{item.icon}</div>
                   <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-3">
                     {item.title}
                   </h3>
-                  <p className="text-gray-600 dark:text-gray-400">
-                    {item.description}
-                  </p>
+                  <p className="text-gray-600 dark:text-gray-400">{item.description}</p>
                 </div>
               ))}
             </div>
@@ -215,11 +220,7 @@ export default function IndustriesPage() {
           <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
             Get a customized cleaning program designed specifically for your facility type.
           </p>
-          <Button
-            variant="accent"
-            size="lg"
-            onClick={() => router.push('/quote')}
-          >
+          <Button variant="accent" size="lg" onClick={() => router.push('/quote')}>
             Request Your Custom Quote
           </Button>
         </div>

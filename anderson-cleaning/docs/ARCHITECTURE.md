@@ -22,6 +22,7 @@ Technical architecture documentation for Anderson Cleaning website.
 ### Architecture Pattern
 
 **Next.js App Router with Server Components**
+
 - Server-Side Rendering (SSR) for dynamic content
 - Static Site Generation (SSG) for marketing pages
 - Incremental Static Regeneration (ISR) for CMS content
@@ -41,39 +42,39 @@ Technical architecture documentation for Anderson Cleaning website.
 
 ### Frontend
 
-| Layer | Technology | Purpose |
-|-------|-----------|---------|
-| **Framework** | Next.js 14 (App Router) | React framework with SSR/SSG |
-| **Language** | TypeScript 5.4 (strict) | Type-safe development |
-| **UI Library** | React 18 | Component-based UI |
-| **Styling** | Tailwind CSS 3.4 | Utility-first CSS |
-| **Forms** | React Hook Form 7 | Form state management |
-| **Validation** | Zod 3 | Schema validation |
-| **Animations** | Framer Motion 12 | Declarative animations |
-| **Icons** | Lucide React | SVG icon library |
+| Layer          | Technology              | Purpose                      |
+| -------------- | ----------------------- | ---------------------------- |
+| **Framework**  | Next.js 14 (App Router) | React framework with SSR/SSG |
+| **Language**   | TypeScript 5.4 (strict) | Type-safe development        |
+| **UI Library** | React 18                | Component-based UI           |
+| **Styling**    | Tailwind CSS 3.4        | Utility-first CSS            |
+| **Forms**      | React Hook Form 7       | Form state management        |
+| **Validation** | Zod 3                   | Schema validation            |
+| **Animations** | Framer Motion 12        | Declarative animations       |
+| **Icons**      | Lucide React            | SVG icon library             |
 
 ### Backend & Infrastructure
 
-| Layer | Technology | Purpose |
-|-------|-----------|---------|
-| **CMS** | Sanity v3 | Headless content management |
-| **Email** | Resend | Transactional email API |
-| **Analytics** | Google Analytics 4, Clarity | User behavior tracking |
-| **Monitoring** | Sentry | Error & performance tracking |
-| **Deployment** | Vercel | Serverless hosting |
-| **CDN** | Vercel Edge Network | Global content delivery |
-| **Database** | Sanity (document-based) | Content storage |
+| Layer          | Technology                  | Purpose                      |
+| -------------- | --------------------------- | ---------------------------- |
+| **CMS**        | Sanity v3                   | Headless content management  |
+| **Email**      | Resend                      | Transactional email API      |
+| **Analytics**  | Google Analytics 4, Clarity | User behavior tracking       |
+| **Monitoring** | Sentry                      | Error & performance tracking |
+| **Deployment** | Vercel                      | Serverless hosting           |
+| **CDN**        | Vercel Edge Network         | Global content delivery      |
+| **Database**   | Sanity (document-based)     | Content storage              |
 
 ### Development Tools
 
-| Tool | Purpose |
-|------|---------|
-| **Testing** | Jest, React Testing Library, Playwright | Unit, integration, E2E tests |
-| **Linting** | ESLint | Code quality |
-| **Formatting** | Prettier | Code formatting |
-| **Type Checking** | TypeScript | Static type analysis |
-| **Git Hooks** | Husky | Pre-commit checks |
-| **CI/CD** | GitHub Actions | Automated testing & deployment |
+| Tool              | Purpose                                 |
+| ----------------- | --------------------------------------- | ------------------------------ |
+| **Testing**       | Jest, React Testing Library, Playwright | Unit, integration, E2E tests   |
+| **Linting**       | ESLint                                  | Code quality                   |
+| **Formatting**    | Prettier                                | Code formatting                |
+| **Type Checking** | TypeScript                              | Static type analysis           |
+| **Git Hooks**     | Husky                                   | Pre-commit checks              |
+| **CI/CD**         | GitHub Actions                          | Automated testing & deployment |
 
 ---
 
@@ -141,17 +142,17 @@ app/
 
 ### Rendering Strategy
 
-| Route | Rendering | Revalidation | Reason |
-|-------|-----------|--------------|--------|
-| `/` (Homepage) | ISR | 60s | CMS content updates |
-| `/services/*` | ISR | 60s | CMS content updates |
-| `/about` | ISR | 60s | CMS content updates |
-| `/testimonials` | ISR | 60s | CMS content updates |
-| `/contact` | SSG | Static | No dynamic content |
-| `/quote` | SSG | Static | Form only |
-| `/[lang]/apply` | SSG | Static | Form only, i18n client-side |
-| `/studio/*` | Client | N/A | Interactive CMS |
-| `/api/*` | Server | N/A | API routes |
+| Route           | Rendering | Revalidation | Reason                      |
+| --------------- | --------- | ------------ | --------------------------- |
+| `/` (Homepage)  | ISR       | 60s          | CMS content updates         |
+| `/services/*`   | ISR       | 60s          | CMS content updates         |
+| `/about`        | ISR       | 60s          | CMS content updates         |
+| `/testimonials` | ISR       | 60s          | CMS content updates         |
+| `/contact`      | SSG       | Static       | No dynamic content          |
+| `/quote`        | SSG       | Static       | Form only                   |
+| `/[lang]/apply` | SSG       | Static       | Form only, i18n client-side |
+| `/studio/*`     | Client    | N/A          | Interactive CMS             |
+| `/api/*`        | Server    | N/A          | API routes                  |
 
 **ISR (Incremental Static Regeneration):** Generates static pages on-demand, revalidates every 60 seconds.
 
@@ -227,6 +228,7 @@ POST to /api/{form-type}
 **Method:** POST
 
 **Request Body:**
+
 ```typescript
 {
   name: string;
@@ -241,6 +243,7 @@ POST to /api/{form-type}
 ```
 
 **Response:**
+
 ```typescript
 {
   success: boolean;
@@ -250,6 +253,7 @@ POST to /api/{form-type}
 ```
 
 **Flow:**
+
 1. Rate limiting (5 requests/hour per IP)
 2. Input sanitization
 3. Zod validation
@@ -268,19 +272,21 @@ Similar to `/api/quote` but different fields and HubSpot form.
 **Method:** POST
 
 **Request Body:**
+
 ```typescript
 {
-  name: string;
-  email: string;
-  phone: string;
-  position: string;
-  resumeUrl: string; // After file upload
-  language: 'en' | 'es' | 'pt-BR' | 'ro';
-  captchaToken: string;
+  name: string
+  email: string
+  phone: string
+  position: string
+  resumeUrl: string // After file upload
+  language: 'en' | 'es' | 'pt-BR' | 'ro'
+  captchaToken: string
 }
 ```
 
 **Flow:**
+
 1. File upload validation (PDF/DOC, max 5MB, magic bytes)
 2. Rate limiting
 3. Input sanitization
@@ -295,6 +301,7 @@ Similar to `/api/quote` but different fields and HubSpot form.
 **Method:** GET
 
 **Query Parameters:**
+
 ```
 ?secret=YOUR_SECRET&slug=/path
 ```
@@ -308,6 +315,7 @@ Similar to `/api/quote` but different fields and HubSpot form.
 **Method:** GET
 
 **Query Parameters:**
+
 ```
 ?title=Page+Title
 ```
@@ -367,6 +375,7 @@ Similar to `/api/quote` but different fields and HubSpot form.
 Located in `lib/cms/queries.ts`:
 
 **Get All Services:**
+
 ```groq
 *[_type == "service"] | order(order asc) {
   _id,
@@ -379,6 +388,7 @@ Located in `lib/cms/queries.ts`:
 ```
 
 **Get Service by Slug:**
+
 ```groq
 *[_type == "service" && slug.current == $slug][0] {
   _id,
@@ -392,6 +402,7 @@ Located in `lib/cms/queries.ts`:
 ```
 
 **Get All Testimonials:**
+
 ```groq
 *[_type == "testimonial"] | order(_createdAt desc) {
   _id,
@@ -404,13 +415,13 @@ Located in `lib/cms/queries.ts`:
 
 ### Caching Strategy
 
-| Content Type | Cache Strategy | Revalidation |
-|--------------|---------------|--------------|
-| Services | ISR | 60s |
-| Industries | ISR | 60s |
-| Testimonials | ISR | 60s |
-| Site Settings | ISR | 60s |
-| Images | CDN | 1 year |
+| Content Type  | Cache Strategy | Revalidation |
+| ------------- | -------------- | ------------ |
+| Services      | ISR            | 60s          |
+| Industries    | ISR            | 60s          |
+| Testimonials  | ISR            | 60s          |
+| Site Settings | ISR            | 60s          |
+| Images        | CDN            | 1 year       |
 
 ---
 
@@ -419,28 +430,33 @@ Located in `lib/cms/queries.ts`:
 ### Defense in Depth
 
 **Layer 1: Network**
+
 - HTTPS enforced (HSTS)
 - DDoS protection (Vercel)
 - CDN security (Vercel Edge)
 
 **Layer 2: Application**
+
 - Content Security Policy (CSP)
 - Security headers (X-Frame-Options, etc.)
 - Rate limiting per route
 - CORS configuration
 
 **Layer 3: Input**
+
 - Client-side validation (Zod)
 - Server-side validation (Zod)
 - Input sanitization (strip HTML, escape)
 - Honeypot fields
 
 **Layer 4: Authentication**
+
 - CAPTCHA (reCAPTCHA v3 or Turnstile)
 - IP-based rate limiting
 - Basic Auth for Studio (optional)
 
 **Layer 5: Data**
+
 - Environment variable encryption
 - Sanity token permissions (read-only)
 - Sensitive data filtering (Sentry)
@@ -481,12 +497,14 @@ const rateLimits = {
 ### Image Optimization
 
 **next/image Component:**
+
 - Automatic WebP/AVIF conversion
 - Lazy loading
 - Responsive srcsets
 - Blur placeholders
 
 **Configuration (next.config.js):**
+
 ```javascript
 images: {
   formats: ['image/avif', 'image/webp'],
@@ -498,10 +516,12 @@ images: {
 ### Code Splitting
 
 **Automatic:**
+
 - Each page is its own bundle
 - Shared dependencies in vendor chunk
 
 **Manual (Dynamic Imports):**
+
 ```typescript
 const LazyComponent = dynamic(() => import('./HeavyComponent'), {
   loading: () => <Spinner />,
@@ -524,14 +544,14 @@ HTML Pages:
 
 ### Performance Budget
 
-| Metric | Budget | Enforcement |
-|--------|--------|-------------|
-| JavaScript | < 200KB | Lighthouse CI |
-| CSS | < 50KB | Lighthouse CI |
-| Images | < 500KB each | Manual review |
-| LCP | < 2.5s | Lighthouse CI |
-| CLS | < 0.1 | Lighthouse CI |
-| INP | < 200ms | Lighthouse CI |
+| Metric     | Budget       | Enforcement   |
+| ---------- | ------------ | ------------- |
+| JavaScript | < 200KB      | Lighthouse CI |
+| CSS        | < 50KB       | Lighthouse CI |
+| Images     | < 500KB each | Manual review |
+| LCP        | < 2.5s       | Lighthouse CI |
+| CLS        | < 0.1        | Lighthouse CI |
+| INP        | < 200ms      | Lighthouse CI |
 
 ---
 
@@ -566,17 +586,20 @@ HTML Pages:
 
 ### Environment Variables
 
-**Client-Side (NEXT_PUBLIC_*):**
+**Client-Side (NEXT*PUBLIC*\*):**
+
 - Exposed to browser
 - Safe for public consumption
 - Example: Google Analytics ID
 
 **Server-Side:**
+
 - Never sent to client
 - Secrets and API keys
 - Example: Resend API key
 
 **Environments:**
+
 1. **Development:** Local `.env.local`
 2. **Preview:** PR deployments (preview.vercel.app)
 3. **Production:** Main branch (andersoncleaning.com)
@@ -584,11 +607,13 @@ HTML Pages:
 ### Deployment Strategy
 
 **Automatic Deployments:**
+
 - Push to `main` → Production
 - Push to any branch → Preview URL
 - Pull Request → Preview URL with comment
 
 **Manual Deployments:**
+
 ```bash
 vercel --prod  # Deploy to production
 ```
@@ -599,17 +624,17 @@ vercel --prod  # Deploy to production
 
 ### Third-Party Services
 
-| Service | Purpose | Integration Point |
-|---------|---------|-------------------|
-| **Sanity** | Content management | GROQ queries, Studio embed |
-| **Resend** | Email sending | API routes |
-| **HubSpot** | CRM & lead management | API routes, form submissions |
-| **Google Analytics 4** | Analytics | Client-side script |
-| **Microsoft Clarity** | Session recordings | Client-side script |
-| **Sentry** | Error tracking | Client, server, edge |
-| **reCAPTCHA v3** | Bot protection | Forms |
-| **Crisp** | Live chat | Client-side widget |
-| **Calendly** | Appointment scheduling | Embeds (optional) |
+| Service                | Purpose                | Integration Point            |
+| ---------------------- | ---------------------- | ---------------------------- |
+| **Sanity**             | Content management     | GROQ queries, Studio embed   |
+| **Resend**             | Email sending          | API routes                   |
+| **HubSpot**            | CRM & lead management  | API routes, form submissions |
+| **Google Analytics 4** | Analytics              | Client-side script           |
+| **Microsoft Clarity**  | Session recordings     | Client-side script           |
+| **Sentry**             | Error tracking         | Client, server, edge         |
+| **reCAPTCHA v3**       | Bot protection         | Forms                        |
+| **Crisp**              | Live chat              | Client-side widget           |
+| **Calendly**           | Appointment scheduling | Embeds (optional)            |
 
 ### Integration Architecture
 
@@ -630,6 +655,7 @@ vercel --prod  # Deploy to production
 ### API Error Handling
 
 **Retry Logic:**
+
 ```typescript
 async function sendEmail(data) {
   const maxRetries = 3
@@ -645,6 +671,7 @@ async function sendEmail(data) {
 ```
 
 **Fallback Mechanisms:**
+
 1. Primary: Resend API
 2. Fallback: Log to Sentry, notify admin
 3. User: Show success message (email queued)
@@ -656,12 +683,14 @@ async function sendEmail(data) {
 ### Current Architecture
 
 **Serverless Benefits:**
+
 - Auto-scaling (0 to infinity)
 - Pay-per-use pricing
 - Global edge distribution
 - No server management
 
 **Limitations:**
+
 - Cold starts (mitigated by Vercel)
 - Execution time limits (10s for Hobby, 60s for Pro)
 - Memory limits (1GB default)
@@ -669,6 +698,7 @@ async function sendEmail(data) {
 ### Future Considerations
 
 **If traffic grows significantly:**
+
 1. **Enable Vercel Pro:**
    - Increased execution time (60s)
    - More concurrent executions
@@ -694,18 +724,21 @@ async function sendEmail(data) {
 ### Metrics Tracked
 
 **Performance:**
+
 - Core Web Vitals (LCP, FID/INP, CLS)
 - Page load times
 - API response times
 - Bundle sizes
 
 **Business:**
+
 - Form submissions
 - Error rates
 - Uptime percentage
 - Traffic sources
 
 **Technical:**
+
 - Server errors
 - Client errors
 - Failed API calls
@@ -714,11 +747,13 @@ async function sendEmail(data) {
 ### Logging
 
 **Client-Side:**
+
 - Sentry (errors only, no PII)
 - Web Vitals (performance metrics)
 - Google Analytics (user behavior)
 
 **Server-Side:**
+
 - Vercel logs (serverless function execution)
 - Sentry (API errors, performance)
 - HubSpot (form submissions)
@@ -752,6 +787,7 @@ git push
 ### CI/CD Pipeline
 
 **GitHub Actions (`.github/workflows/ci.yml`):**
+
 1. Lint & type check
 2. Run unit tests
 3. Run E2E tests
@@ -761,10 +797,12 @@ git push
 7. Security scan
 
 **On Success:**
+
 - Merge to main
 - Vercel deploys to production
 
 **On Failure:**
+
 - Block merge
 - Notify team
 

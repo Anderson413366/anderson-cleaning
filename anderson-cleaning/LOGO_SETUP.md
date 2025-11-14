@@ -7,6 +7,7 @@ This guide explains how to add your Anderson Cleaning logo and brand icons to th
 Place your logo files in the `/public` directory with these exact names:
 
 ### Main Logo Files
+
 ```
 /public/images/logo.png          - Main logo (transparent background, 400x100px recommended)
 /public/images/logo-dark.png     - Dark mode version (optional, white/light colored)
@@ -14,6 +15,7 @@ Place your logo files in the `/public` directory with these exact names:
 ```
 
 ### Favicon Files (Browser Tab Icons)
+
 ```
 /public/favicon.ico              - 32x32px ICO format
 /public/favicon-16x16.png        - 16x16px PNG
@@ -25,6 +27,7 @@ Place your logo files in the `/public` directory with these exact names:
 ```
 
 ### Social Media / Open Graph
+
 ```
 /public/images/og-image.jpg      - 1200x630px JPG (shows when sharing on social media)
 ```
@@ -62,6 +65,7 @@ Place your logo files in the `/public` directory with these exact names:
 You can use online tools to generate all favicon sizes from your square icon:
 
 **Recommended Tools:**
+
 - https://realfavicongenerator.net/
 - https://favicon.io/favicon-converter/
 
@@ -72,6 +76,7 @@ Upload your `logo-icon.png` and download the generated files.
 The Header component (`components/Header.tsx`) will automatically use your logo files once they're in place.
 
 **Current placeholder** (lines 59-66):
+
 ```tsx
 <div className="flex items-center justify-center w-10 h-10 bg-primary-700 dark:bg-blue-600 rounded-lg transition-colors">
   <span className="text-white font-bold text-xl">A</span>
@@ -79,6 +84,7 @@ The Header component (`components/Header.tsx`) will automatically use your logo 
 ```
 
 **Will be replaced with**:
+
 ```tsx
 <Image
   src="/images/logo.png"
@@ -100,34 +106,37 @@ The Header component (`components/Header.tsx`) will automatically use your logo 
 
 ### Recommended Dimensions
 
-| File | Size | Format | Purpose |
-|------|------|--------|---------|
-| logo.png | 400x100px | PNG | Main website logo (light mode) |
-| logo-dark.png | 400x100px | PNG | Dark mode logo |
-| logo-icon.png | 512x512px | PNG | Square icon for all uses |
-| favicon.ico | 32x32px | ICO | Browser tab icon |
-| favicon-16x16.png | 16x16px | PNG | Small browser icon |
-| favicon-32x32.png | 32x32px | PNG | Standard browser icon |
-| apple-touch-icon.png | 180x180px | PNG | iOS home screen |
-| android-chrome-192x192.png | 192x192px | PNG | Android icon |
-| android-chrome-512x512.png | 512x512px | PNG | Android hi-res |
-| og-image.jpg | 1200x630px | JPG | Social media preview |
+| File                       | Size       | Format | Purpose                        |
+| -------------------------- | ---------- | ------ | ------------------------------ |
+| logo.png                   | 400x100px  | PNG    | Main website logo (light mode) |
+| logo-dark.png              | 400x100px  | PNG    | Dark mode logo                 |
+| logo-icon.png              | 512x512px  | PNG    | Square icon for all uses       |
+| favicon.ico                | 32x32px    | ICO    | Browser tab icon               |
+| favicon-16x16.png          | 16x16px    | PNG    | Small browser icon             |
+| favicon-32x32.png          | 32x32px    | PNG    | Standard browser icon          |
+| apple-touch-icon.png       | 180x180px  | PNG    | iOS home screen                |
+| android-chrome-192x192.png | 192x192px  | PNG    | Android icon                   |
+| android-chrome-512x512.png | 512x512px  | PNG    | Android hi-res                 |
+| og-image.jpg               | 1200x630px | JPG    | Social media preview           |
 
 ### Design Guidelines
 
 **Colors:**
+
 - Use your brand colors
 - Ensure good contrast for accessibility
 - Light logo should work on white/light backgrounds
 - Dark logo should work on dark backgrounds
 
 **File Formats:**
+
 - **PNG**: For logos with transparency (logo.png, logo-dark.png)
 - **SVG**: For scalable vector graphics (optional, future enhancement)
 - **ICO**: For favicon.ico only
 - **JPG**: For og-image.jpg only
 
 **Optimization:**
+
 - Compress PNG files without losing quality (use TinyPNG.com)
 - Keep file sizes under 100KB for logos
 - OG image can be up to 1MB
@@ -135,19 +144,23 @@ The Header component (`components/Header.tsx`) will automatically use your logo 
 ## Where Logos Are Used
 
 ### 1. Header Navigation (`components/Header.tsx`)
+
 - Shows in top left corner on all pages
 - Responsive sizing for mobile/desktop
 - Supports dark mode
 
 ### 2. Footer (`components/Footer.tsx`)
+
 - May include logo (check implementation)
 
 ### 3. SEO & Social Media (`lib/seo/jsonld.ts`, `lib/seo/next-seo.config.ts`)
+
 - Organization schema (logo.png)
 - Open Graph images (og-image.jpg)
 - Twitter Card images
 
 ### 4. Browser & Mobile (`app/layout.tsx`)
+
 - Favicon in browser tab
 - iOS home screen icon
 - Android app icon
@@ -166,22 +179,26 @@ Once you've added all the logo files:
 ## Troubleshooting
 
 ### Logo not appearing?
+
 - Verify file paths are correct (case-sensitive!)
 - Check file permissions (should be readable)
 - Clear Next.js cache: `rm -rf .next` and rebuild
 - Hard refresh browser: Ctrl+Shift+R (Windows) or Cmd+Shift+R (Mac)
 
 ### Logo too large/small?
+
 - Adjust the `width` and `height` props in the Image component
 - Maintain aspect ratio for best results
 
 ### Favicon not updating?
+
 - Favicons are heavily cached by browsers
 - Try opening site in incognito/private mode
 - Clear browser cache completely
 - May take up to 24 hours to update in some browsers
 
 ### Dark mode logo not showing?
+
 - Ensure logo-dark.png exists in `/public/images/`
 - Check that image has light colors (will be invisible if dark on dark)
 - Verify dark mode is working on the site
@@ -215,6 +232,7 @@ npm run dev
 ## Need Help?
 
 If you need assistance:
+
 1. Check that all file paths match exactly (case-sensitive)
 2. Verify files are in correct format (PNG, ICO, JPG, SVG)
 3. Ensure files are not corrupted (try opening them)
@@ -223,6 +241,7 @@ If you need assistance:
 ## Next Steps
 
 After adding your logo:
+
 1. ✅ Update all logo files listed above
 2. ✅ Test in light and dark modes
 3. ✅ Check mobile responsiveness

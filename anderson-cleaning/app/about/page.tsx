@@ -5,8 +5,16 @@ import Footer from '@/components/Footer'
 import { Button } from '@/components/ui/Button'
 import { useRouter } from 'next/navigation'
 import {
-  Users, Heart, Shield, Award, Clock, Target,
-  CheckCircle2, TrendingUp, Building2, Sparkles
+  Users,
+  Heart,
+  Shield,
+  Award,
+  Clock,
+  Target,
+  CheckCircle2,
+  TrendingUp,
+  Building2,
+  Sparkles,
 } from 'lucide-react'
 
 export default function AboutPage() {
@@ -19,12 +27,10 @@ export default function AboutPage() {
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-br from-blue-700 via-blue-800 to-indigo-900 text-white">
         <div className="container mx-auto px-6 text-center">
-          <h1 className="text-4xl md:text-5xl font-extrabold mb-6">
-            About Anderson Cleaning
-          </h1>
+          <h1 className="text-4xl md:text-5xl font-extrabold mb-6">About Anderson Cleaning</h1>
           <p className="text-xl text-blue-100 max-w-3xl mx-auto">
-            Over 20 years of professional commercial cleaning with the personal touch
-            your facility deserves.
+            Over 20 years of professional commercial cleaning with the personal touch your facility
+            deserves.
           </p>
         </div>
       </section>
@@ -83,9 +89,9 @@ export default function AboutPage() {
                 })}
               </div>
               <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                Today, we serve dozens of commercial facilities across Massachusetts and Connecticut,
-                from small professional offices to large corporate campuses. Our secret? We treat
-                every client like they're our only client.
+                Today, we serve dozens of commercial facilities across Massachusetts and
+                Connecticut, from small professional offices to large corporate campuses. Our
+                secret? We treat every client like they're our only client.
               </p>
             </div>
           </div>
@@ -99,7 +105,8 @@ export default function AboutPage() {
             What Makes Us Different
           </h2>
           <p className="text-gray-600 dark:text-gray-400 text-center mb-12 max-w-2xl mx-auto">
-            We're not the biggest cleaning company, but we might be the most committed to your success
+            We're not the biggest cleaning company, but we might be the most committed to your
+            success
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
@@ -120,7 +127,7 @@ export default function AboutPage() {
                 icon: Shield,
                 title: 'Fully Insured & Bonded',
                 description:
-                  'Comprehensive general liability and workers\' comp insurance. All staff undergo background checks.',
+                  "Comprehensive general liability and workers' comp insurance. All staff undergo background checks.",
               },
               {
                 icon: CheckCircle2,
@@ -143,17 +150,12 @@ export default function AboutPage() {
             ].map((item, index) => {
               const Icon = item.icon
               return (
-                <div
-                  key={index}
-                  className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-md"
-                >
+                <div key={index} className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-md">
                   <Icon className="h-12 w-12 text-accent-500 mb-4" />
                   <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-3">
                     {item.title}
                   </h3>
-                  <p className="text-gray-600 dark:text-gray-400">
-                    {item.description}
-                  </p>
+                  <p className="text-gray-600 dark:text-gray-400">{item.description}</p>
                 </div>
               )
             })}
@@ -177,17 +179,12 @@ export default function AboutPage() {
             ].map((stat, index) => {
               const Icon = stat.icon
               return (
-                <div
-                  key={index}
-                  className="text-center"
-                >
+                <div key={index} className="text-center">
                   <Icon className="h-12 w-12 text-primary-600 dark:text-primary-400 mx-auto mb-4" />
                   <div className="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-gray-100 mb-2">
                     {stat.number}
                   </div>
-                  <div className="text-sm text-gray-600 dark:text-gray-400">
-                    {stat.label}
-                  </div>
+                  <div className="text-sm text-gray-600 dark:text-gray-400">{stat.label}</div>
                 </div>
               )
             })}
@@ -242,9 +239,7 @@ export default function AboutPage() {
                     <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-2">
                       {item.title}
                     </h3>
-                    <p className="text-gray-600 dark:text-gray-400">
-                      {item.description}
-                    </p>
+                    <p className="text-gray-600 dark:text-gray-400">{item.description}</p>
                   </div>
                 </div>
               ))}
@@ -261,7 +256,8 @@ export default function AboutPage() {
               Environmentally Responsible & Safety-First
             </h2>
             <p className="text-gray-600 dark:text-gray-400 text-center mb-12 max-w-3xl mx-auto">
-              We believe in protecting both your facility and our planet. Our cleaning practices prioritize health, safety, and environmental sustainability.
+              We believe in protecting both your facility and our planet. Our cleaning practices
+              prioritize health, safety, and environmental sustainability.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -273,25 +269,29 @@ export default function AboutPage() {
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="h-5 w-5 text-green-600 dark:text-green-400 flex-shrink-0 mt-0.5" />
                     <span className="text-gray-700 dark:text-gray-300">
-                      <strong>EPA Safer Choice Products:</strong> Where possible, we use cleaning products certified by the EPA as safer for people and the environment
+                      <strong>EPA Safer Choice Products:</strong> Where possible, we use cleaning
+                      products certified by the EPA as safer for people and the environment
                     </span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="h-5 w-5 text-green-600 dark:text-green-400 flex-shrink-0 mt-0.5" />
                     <span className="text-gray-700 dark:text-gray-300">
-                      <strong>HEPA Filtration:</strong> Our vacuums use HEPA filters to trap 99.97% of particles, improving indoor air quality
+                      <strong>HEPA Filtration:</strong> Our vacuums use HEPA filters to trap 99.97%
+                      of particles, improving indoor air quality
                     </span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="h-5 w-5 text-green-600 dark:text-green-400 flex-shrink-0 mt-0.5" />
                     <span className="text-gray-700 dark:text-gray-300">
-                      <strong>Microfiber Technology:</strong> Microfiber cloths reduce chemical use while cleaning more effectively than traditional materials
+                      <strong>Microfiber Technology:</strong> Microfiber cloths reduce chemical use
+                      while cleaning more effectively than traditional materials
                     </span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="h-5 w-5 text-green-600 dark:text-green-400 flex-shrink-0 mt-0.5" />
                     <span className="text-gray-700 dark:text-gray-300">
-                      <strong>Waste Reduction:</strong> Proper recycling protocols and concentrated product use to minimize environmental impact
+                      <strong>Waste Reduction:</strong> Proper recycling protocols and concentrated
+                      product use to minimize environmental impact
                     </span>
                   </li>
                 </ul>
@@ -305,25 +305,29 @@ export default function AboutPage() {
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="h-5 w-5 text-blue-600 dark:text-blue-400 flex-shrink-0 mt-0.5" />
                     <span className="text-gray-700 dark:text-gray-300">
-                      <strong>Background Checks:</strong> Every team member undergoes comprehensive criminal background screening before employment
+                      <strong>Background Checks:</strong> Every team member undergoes comprehensive
+                      criminal background screening before employment
                     </span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="h-5 w-5 text-blue-600 dark:text-blue-400 flex-shrink-0 mt-0.5" />
                     <span className="text-gray-700 dark:text-gray-300">
-                      <strong>Drug Testing:</strong> Pre-employment and random drug screening ensures a safe, reliable workforce
+                      <strong>Drug Testing:</strong> Pre-employment and random drug screening
+                      ensures a safe, reliable workforce
                     </span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="h-5 w-5 text-blue-600 dark:text-blue-400 flex-shrink-0 mt-0.5" />
                     <span className="text-gray-700 dark:text-gray-300">
-                      <strong>OSHA Compliance:</strong> All staff trained on safety data sheets, bloodborne pathogens, and hazard communication
+                      <strong>OSHA Compliance:</strong> All staff trained on safety data sheets,
+                      bloodborne pathogens, and hazard communication
                     </span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="h-5 w-5 text-blue-600 dark:text-blue-400 flex-shrink-0 mt-0.5" />
                     <span className="text-gray-700 dark:text-gray-300">
-                      <strong>Industry Certifications:</strong> Specialized training for medical facilities (HIPAA awareness), schools (child safety), and more
+                      <strong>Industry Certifications:</strong> Specialized training for medical
+                      facilities (HIPAA awareness), schools (child safety), and more
                     </span>
                   </li>
                 </ul>
@@ -341,15 +345,14 @@ export default function AboutPage() {
               Proud to Serve Our Community
             </h2>
             <p className="text-lg text-gray-700 dark:text-gray-300 mb-8">
-              Anderson Cleaning is more than just a business—we're active members of the Western Massachusetts and Northern Connecticut communities we serve.
+              Anderson Cleaning is more than just a business—we're active members of the Western
+              Massachusetts and Northern Connecticut communities we serve.
             </p>
             <div className="bg-white dark:bg-slate-800 rounded-xl p-8 shadow-lg">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div>
                   <div className="text-4xl mb-3">🤝</div>
-                  <h3 className="font-bold text-gray-900 dark:text-gray-100 mb-2">
-                    Local Hiring
-                  </h3>
+                  <h3 className="font-bold text-gray-900 dark:text-gray-100 mb-2">Local Hiring</h3>
                   <p className="text-sm text-gray-600 dark:text-gray-400">
                     We employ local residents, keeping jobs and economic benefits in our community
                   </p>
@@ -369,7 +372,8 @@ export default function AboutPage() {
                     Local Partnerships
                   </h3>
                   <p className="text-sm text-gray-600 dark:text-gray-400">
-                    We source supplies from local vendors whenever possible to support area businesses
+                    We source supplies from local vendors whenever possible to support area
+                    businesses
                   </p>
                 </div>
               </div>
@@ -384,20 +388,14 @@ export default function AboutPage() {
           <div className="max-w-4xl mx-auto">
             <div className="bg-gradient-to-br from-primary-700 to-primary-900 rounded-2xl p-8 md:p-12 text-white text-center">
               <Sparkles className="h-16 w-16 text-accent-400 mx-auto mb-6" />
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                Our Commitment to You
-              </h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">Our Commitment to You</h2>
               <p className="text-xl text-blue-100 mb-8">
-                We promise to treat your facility like it's our own. We show up on time, do the
-                work right, and fix any issues immediately. No excuses, no runarounds, just
-                professional cleaning you can count on.
+                We promise to treat your facility like it's our own. We show up on time, do the work
+                right, and fix any issues immediately. No excuses, no runarounds, just professional
+                cleaning you can count on.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button
-                  variant="accent"
-                  size="lg"
-                  onClick={() => router.push('/quote')}
-                >
+                <Button variant="accent" size="lg" onClick={() => router.push('/quote')}>
                   Get Your Free Quote
                 </Button>
                 <Button

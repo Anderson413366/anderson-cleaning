@@ -70,22 +70,34 @@ export default function TermsOfServicePage() {
           </h2>
           <ol className="space-y-2 text-sm">
             <li>
-              <a href="#acceptance" className="text-primary-600 dark:text-primary-400 hover:underline">
+              <a
+                href="#acceptance"
+                className="text-primary-600 dark:text-primary-400 hover:underline"
+              >
                 1. Acceptance of Terms
               </a>
             </li>
             <li>
-              <a href="#services" className="text-primary-600 dark:text-primary-400 hover:underline">
+              <a
+                href="#services"
+                className="text-primary-600 dark:text-primary-400 hover:underline"
+              >
                 2. Services Description
               </a>
             </li>
             <li>
-              <a href="#exclusions" className="text-primary-600 dark:text-primary-400 hover:underline">
+              <a
+                href="#exclusions"
+                className="text-primary-600 dark:text-primary-400 hover:underline"
+              >
                 3. Service Exclusions
               </a>
             </li>
             <li>
-              <a href="#service-area" className="text-primary-600 dark:text-primary-400 hover:underline">
+              <a
+                href="#service-area"
+                className="text-primary-600 dark:text-primary-400 hover:underline"
+              >
                 4. Service Area Limitation
               </a>
             </li>
@@ -95,22 +107,34 @@ export default function TermsOfServicePage() {
               </a>
             </li>
             <li>
-              <a href="#intellectual-property" className="text-primary-600 dark:text-primary-400 hover:underline">
+              <a
+                href="#intellectual-property"
+                className="text-primary-600 dark:text-primary-400 hover:underline"
+              >
                 6. Intellectual Property
               </a>
             </li>
             <li>
-              <a href="#liability" className="text-primary-600 dark:text-primary-400 hover:underline">
+              <a
+                href="#liability"
+                className="text-primary-600 dark:text-primary-400 hover:underline"
+              >
                 7. Limitation of Liability
               </a>
             </li>
             <li>
-              <a href="#dispute-resolution" className="text-primary-600 dark:text-primary-400 hover:underline">
+              <a
+                href="#dispute-resolution"
+                className="text-primary-600 dark:text-primary-400 hover:underline"
+              >
                 8. Dispute Resolution
               </a>
             </li>
             <li>
-              <a href="#governing-law" className="text-primary-600 dark:text-primary-400 hover:underline">
+              <a
+                href="#governing-law"
+                className="text-primary-600 dark:text-primary-400 hover:underline"
+              >
                 9. Governing Law
               </a>
             </li>

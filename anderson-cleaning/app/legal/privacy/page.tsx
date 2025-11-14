@@ -4,7 +4,8 @@ import { Shield, Download, Mail } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Privacy Policy | Anderson Cleaning',
-  description: 'Learn how Anderson Cleaning collects, uses, and protects your personal information.',
+  description:
+    'Learn how Anderson Cleaning collects, uses, and protects your personal information.',
   robots: {
     index: false,
     follow: true,
@@ -70,32 +71,50 @@ export default function PrivacyPolicyPage() {
           </h2>
           <ol className="space-y-2 text-sm">
             <li>
-              <a href="#introduction" className="text-primary-600 dark:text-primary-400 hover:underline">
+              <a
+                href="#introduction"
+                className="text-primary-600 dark:text-primary-400 hover:underline"
+              >
                 1. Introduction
               </a>
             </li>
             <li>
-              <a href="#information-we-collect" className="text-primary-600 dark:text-primary-400 hover:underline">
+              <a
+                href="#information-we-collect"
+                className="text-primary-600 dark:text-primary-400 hover:underline"
+              >
                 2. Information We Collect
               </a>
             </li>
             <li>
-              <a href="#how-we-use-information" className="text-primary-600 dark:text-primary-400 hover:underline">
+              <a
+                href="#how-we-use-information"
+                className="text-primary-600 dark:text-primary-400 hover:underline"
+              >
                 3. How We Use Information
               </a>
             </li>
             <li>
-              <a href="#third-party-services" className="text-primary-600 dark:text-primary-400 hover:underline">
+              <a
+                href="#third-party-services"
+                className="text-primary-600 dark:text-primary-400 hover:underline"
+              >
                 4. Third-Party Services
               </a>
             </li>
             <li>
-              <a href="#data-retention" className="text-primary-600 dark:text-primary-400 hover:underline">
+              <a
+                href="#data-retention"
+                className="text-primary-600 dark:text-primary-400 hover:underline"
+              >
                 5. Data Retention
               </a>
             </li>
             <li>
-              <a href="#your-rights" className="text-primary-600 dark:text-primary-400 hover:underline">
+              <a
+                href="#your-rights"
+                className="text-primary-600 dark:text-primary-400 hover:underline"
+              >
                 6. Your Rights
               </a>
             </li>
@@ -120,18 +139,22 @@ export default function PrivacyPolicyPage() {
               1. Introduction
             </h2>
             <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
-              Anderson Cleaning, Inc. (&quot;we,&quot; &quot;us,&quot; or &quot;our&quot;) is committed to protecting your
-              privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your
-              information when you visit our website{' '}
-              <a href="https://andersoncleaning.com" className="text-primary-600 dark:text-primary-400 hover:underline">
+              Anderson Cleaning, Inc. (&quot;we,&quot; &quot;us,&quot; or &quot;our&quot;) is
+              committed to protecting your privacy. This Privacy Policy explains how we collect,
+              use, disclose, and safeguard your information when you visit our website{' '}
+              <a
+                href="https://andersoncleaning.com"
+                className="text-primary-600 dark:text-primary-400 hover:underline"
+              >
                 andersoncleaning.com
               </a>
               , use our services, or interact with us.
             </p>
             <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-              We are a professional commercial cleaning and janitorial services company serving businesses
-              in Western Massachusetts and Northern Connecticut. We value your trust and are dedicated to
-              maintaining the confidentiality and security of your personal information.
+              We are a professional commercial cleaning and janitorial services company serving
+              businesses in Western Massachusetts and Northern Connecticut. We value your trust and
+              are dedicated to maintaining the confidentiality and security of your personal
+              information.
             </p>
           </section>
 
@@ -180,12 +203,13 @@ export default function PrivacyPolicyPage() {
             </p>
             <ul className="list-disc pl-6 space-y-2 text-gray-700 dark:text-gray-300 mb-4">
               <li>
-                <strong>Google Analytics 4:</strong> Anonymized data about page views, session duration, device
-                type, browser type, geographic location (city-level), and referral sources
+                <strong>Google Analytics 4:</strong> Anonymized data about page views, session
+                duration, device type, browser type, geographic location (city-level), and referral
+                sources
               </li>
               <li>
-                <strong>Microsoft Clarity:</strong> Session recordings and heatmaps (anonymized) to understand
-                user behavior and improve website usability
+                <strong>Microsoft Clarity:</strong> Session recordings and heatmaps (anonymized) to
+                understand user behavior and improve website usability
               </li>
               <li>IP address (anonymized)</li>
               <li>Device information and operating system</li>
@@ -200,21 +224,21 @@ export default function PrivacyPolicyPage() {
             </p>
             <ul className="list-disc pl-6 space-y-2 text-gray-700 dark:text-gray-300 mb-4">
               <li>
-                <strong>Technical Cookies:</strong> Essential for website functionality (e.g., remembering your
-                preferences, maintaining your session)
+                <strong>Technical Cookies:</strong> Essential for website functionality (e.g.,
+                remembering your preferences, maintaining your session)
               </li>
               <li>
-                <strong>Analytics Cookies:</strong> Help us understand how visitors interact with our website
-                (Google Analytics, Microsoft Clarity)
+                <strong>Analytics Cookies:</strong> Help us understand how visitors interact with
+                our website (Google Analytics, Microsoft Clarity)
               </li>
               <li>
-                <strong>Preference Cookies:</strong> Remember your language preference, dark mode setting, and
-                other customizations
+                <strong>Preference Cookies:</strong> Remember your language preference, dark mode
+                setting, and other customizations
               </li>
             </ul>
             <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-              You can control cookie preferences through your browser settings. However, disabling certain
-              cookies may limit website functionality.
+              You can control cookie preferences through your browser settings. However, disabling
+              certain cookies may limit website functionality.
             </p>
           </section>
 
@@ -274,8 +298,8 @@ export default function PrivacyPolicyPage() {
               4. Third-Party Services
             </h2>
             <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
-              We use the following third-party services to operate our business. Each service has its own
-              privacy policy, which we encourage you to review:
+              We use the following third-party services to operate our business. Each service has
+              its own privacy policy, which we encourage you to review:
             </p>
 
             <div className="space-y-6">
@@ -287,7 +311,8 @@ export default function PrivacyPolicyPage() {
                   <strong>Purpose:</strong> Lead and customer relationship management
                 </p>
                 <p className="text-gray-700 dark:text-gray-300 text-sm mb-2">
-                  <strong>Data Shared:</strong> Contact information, quote requests, communication history
+                  <strong>Data Shared:</strong> Contact information, quote requests, communication
+                  history
                 </p>
                 <p className="text-gray-700 dark:text-gray-300 text-sm">
                   <strong>Privacy Policy:</strong>{' '}
@@ -333,7 +358,8 @@ export default function PrivacyPolicyPage() {
                   <strong>Purpose:</strong> Website analytics and performance monitoring
                 </p>
                 <p className="text-gray-700 dark:text-gray-300 text-sm mb-2">
-                  <strong>Data Shared:</strong> Anonymized usage data, page views, device information
+                  <strong>Data Shared:</strong> Anonymized usage data, page views, device
+                  information
                 </p>
                 <p className="text-gray-700 dark:text-gray-300 text-sm">
                   <strong>Privacy Policy:</strong>{' '}
@@ -356,7 +382,8 @@ export default function PrivacyPolicyPage() {
                   <strong>Purpose:</strong> Session recordings and heatmaps for UX analysis
                 </p>
                 <p className="text-gray-700 dark:text-gray-300 text-sm mb-2">
-                  <strong>Data Shared:</strong> Anonymized session data, user interactions, page elements
+                  <strong>Data Shared:</strong> Anonymized session data, user interactions, page
+                  elements
                 </p>
                 <p className="text-gray-700 dark:text-gray-300 text-sm">
                   <strong>Privacy Policy:</strong>{' '}
@@ -425,8 +452,8 @@ export default function PrivacyPolicyPage() {
               5. Data Retention
             </h2>
             <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
-              We retain your personal information only as long as necessary to fulfill the purposes outlined
-              in this Privacy Policy:
+              We retain your personal information only as long as necessary to fulfill the purposes
+              outlined in this Privacy Policy:
             </p>
 
             <div className="space-y-4">
@@ -435,9 +462,9 @@ export default function PrivacyPolicyPage() {
                   Lead and Customer Data
                 </h3>
                 <p className="text-gray-700 dark:text-gray-300 text-sm">
-                  We retain contact information and quote requests until you request deletion or become a
-                  customer. Customer data is retained for the duration of the business relationship plus 3
-                  years for legal and accounting purposes.
+                  We retain contact information and quote requests until you request deletion or
+                  become a customer. Customer data is retained for the duration of the business
+                  relationship plus 3 years for legal and accounting purposes.
                 </p>
               </div>
 
@@ -446,9 +473,9 @@ export default function PrivacyPolicyPage() {
                   Job Applications
                 </h3>
                 <p className="text-gray-700 dark:text-gray-300 text-sm">
-                  Application materials are retained for 1 year from the date of submission. If you are
-                  hired, your information becomes part of your employee record and is subject to our
-                  employee data retention policies.
+                  Application materials are retained for 1 year from the date of submission. If you
+                  are hired, your information becomes part of your employee record and is subject to
+                  our employee data retention policies.
                 </p>
               </div>
 
@@ -458,8 +485,8 @@ export default function PrivacyPolicyPage() {
                 </h3>
                 <p className="text-gray-700 dark:text-gray-300 text-sm">
                   Analytics data (Google Analytics, Microsoft Clarity) is retained according to each
-                  service\&#39;s default retention periods: 14 months for Google Analytics 4, and 30 days
-                  for Microsoft Clarity session recordings.
+                  service\&#39;s default retention periods: 14 months for Google Analytics 4, and 30
+                  days for Microsoft Clarity session recordings.
                 </p>
               </div>
 
@@ -468,8 +495,8 @@ export default function PrivacyPolicyPage() {
                   Cookies
                 </h3>
                 <p className="text-gray-700 dark:text-gray-300 text-sm">
-                  Cookies expire based on their type: session cookies expire when you close your browser,
-                  while persistent cookies may last up to 2 years or until you delete them.
+                  Cookies expire based on their type: session cookies expire when you close your
+                  browser, while persistent cookies may last up to 2 years or until you delete them.
                 </p>
               </div>
             </div>
@@ -490,8 +517,8 @@ export default function PrivacyPolicyPage() {
                   Access and Correction
                 </h3>
                 <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                  You have the right to access the personal information we hold about you and request
-                  corrections if it is inaccurate or incomplete. Contact us at{' '}
+                  You have the right to access the personal information we hold about you and
+                  request corrections if it is inaccurate or incomplete. Contact us at{' '}
                   <a
                     href="mailto:privacy@andersoncleaning.com"
                     className="text-primary-600 dark:text-primary-400 hover:underline"
@@ -508,7 +535,8 @@ export default function PrivacyPolicyPage() {
                 </h3>
                 <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
                   You may request that we delete your personal information, subject to legal and
-                  contractual retention requirements. We will respond to deletion requests within 30 days.
+                  contractual retention requirements. We will respond to deletion requests within 30
+                  days.
                 </p>
               </div>
 
@@ -518,8 +546,9 @@ export default function PrivacyPolicyPage() {
                 </h3>
                 <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
                   You can opt out of receiving marketing communications at any time by clicking the
-                  &quot;unsubscribe&quot; link in our emails or contacting us directly. This will not
-                  affect transactional emails (e.g., quote confirmations, appointment reminders).
+                  &quot;unsubscribe&quot; link in our emails or contacting us directly. This will
+                  not affect transactional emails (e.g., quote confirmations, appointment
+                  reminders).
                 </p>
               </div>
 
@@ -528,9 +557,9 @@ export default function PrivacyPolicyPage() {
                   Cookie Preferences
                 </h3>
                 <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                  You can control cookies through your browser settings. Most browsers allow you to block
-                  or delete cookies. Note that blocking certain cookies may impact website functionality.
-                  To opt out of Google Analytics, visit{' '}
+                  You can control cookies through your browser settings. Most browsers allow you to
+                  block or delete cookies. Note that blocking certain cookies may impact website
+                  functionality. To opt out of Google Analytics, visit{' '}
                   <a
                     href="https://tools.google.com/dlpage/gaoptout"
                     target="_blank"
@@ -569,7 +598,9 @@ export default function PrivacyPolicyPage() {
                 <div className="flex items-start gap-3">
                   <Mail className="h-5 w-5 text-primary-600 dark:text-primary-400 mt-0.5 flex-shrink-0" />
                   <div>
-                    <p className="font-medium text-gray-900 dark:text-gray-100">Privacy Inquiries</p>
+                    <p className="font-medium text-gray-900 dark:text-gray-100">
+                      Privacy Inquiries
+                    </p>
                     <a
                       href="mailto:privacy@andersoncleaning.com"
                       className="text-primary-600 dark:text-primary-400 hover:underline"
@@ -581,7 +612,9 @@ export default function PrivacyPolicyPage() {
                 <div className="flex items-start gap-3">
                   <Mail className="h-5 w-5 text-primary-600 dark:text-primary-400 mt-0.5 flex-shrink-0" />
                   <div>
-                    <p className="font-medium text-gray-900 dark:text-gray-100">General Inquiries</p>
+                    <p className="font-medium text-gray-900 dark:text-gray-100">
+                      General Inquiries
+                    </p>
                     <a
                       href="mailto:info@andersoncleaning.com"
                       className="text-primary-600 dark:text-primary-400 hover:underline"
@@ -591,7 +624,9 @@ export default function PrivacyPolicyPage() {
                   </div>
                 </div>
                 <div className="pt-3 border-t border-gray-200 dark:border-slate-700">
-                  <p className="font-medium text-gray-900 dark:text-gray-100 mb-1">Mailing Address</p>
+                  <p className="font-medium text-gray-900 dark:text-gray-100 mb-1">
+                    Mailing Address
+                  </p>
                   <p className="text-gray-700 dark:text-gray-300 text-sm">
                     Anderson Cleaning, Inc.
                     <br />
@@ -610,8 +645,9 @@ export default function PrivacyPolicyPage() {
               8. Updates to This Policy
             </h2>
             <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
-              We may update this Privacy Policy from time to time to reflect changes in our practices,
-              technology, legal requirements, or other factors. When we make material changes, we will:
+              We may update this Privacy Policy from time to time to reflect changes in our
+              practices, technology, legal requirements, or other factors. When we make material
+              changes, we will:
             </p>
             <ul className="list-disc pl-6 space-y-2 text-gray-700 dark:text-gray-300 mb-4">
               <li>Update the &quot;Last Updated&quot; date at the top of this page</li>
@@ -622,8 +658,8 @@ export default function PrivacyPolicyPage() {
             </ul>
             <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
               We encourage you to review this Privacy Policy periodically. Your continued use of our
-              website and services after changes are posted constitutes your acceptance of the updated
-              policy.
+              website and services after changes are posted constitutes your acceptance of the
+              updated policy.
             </p>
           </section>
 

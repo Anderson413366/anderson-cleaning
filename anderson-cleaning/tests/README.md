@@ -41,21 +41,25 @@ Test individual components and utility functions in isolation.
 **Location**: `tests/unit/`
 
 **Files**:
+
 - `components/ui/Button.test.tsx` - Button component tests
 - `lib/security/sanitizer.test.ts` - Input sanitization tests
 - More to be added as needed
 
 **Run Command**:
+
 ```bash
 npm run test:unit
 ```
 
 **Coverage Command**:
+
 ```bash
 npm run test:coverage
 ```
 
 **Target Coverage**: 80% overall
+
 - Branches: 70%
 - Functions: 70%
 - Lines: 80%
@@ -68,11 +72,13 @@ Test complete user flows across multiple pages.
 **Location**: `tests/e2e/`
 
 **Files**:
+
 - `home.spec.ts` - Homepage functionality
 - `accessibility.spec.ts` - Accessibility compliance
 - More to be added (quote form, careers i18n, etc.)
 
 **Run Commands**:
+
 ```bash
 # Run all E2E tests
 npm run test:e2e
@@ -92,11 +98,13 @@ npm run test:a11y
 WCAG 2.2 Level AA compliance testing.
 
 **Run Command**:
+
 ```bash
 npm run test:a11y
 ```
 
 **What it tests**:
+
 - No automatically detectable violations
 - Keyboard navigation
 - Focus indicators
@@ -111,11 +119,13 @@ npm run test:a11y
 Lighthouse CI for performance auditing.
 
 **Run Command**:
+
 ```bash
 npm run lighthouse
 ```
 
 **Performance Budgets**:
+
 - Performance: ≥90
 - Accessibility: ≥95
 - Best Practices: ≥90
@@ -129,11 +139,13 @@ npm run lighthouse
 All tests combined.
 
 **Run Command**:
+
 ```bash
 npm run test:all
 ```
 
 This runs:
+
 1. ESLint
 2. TypeScript type check
 3. Unit tests
@@ -144,21 +156,25 @@ This runs:
 ### Locally
 
 **Watch mode (unit tests)**:
+
 ```bash
 npm test
 ```
 
 **Single run (unit tests)**:
+
 ```bash
 npm run test:unit
 ```
 
 **E2E tests**:
+
 ```bash
 npm run test:e2e
 ```
 
 **All tests**:
+
 ```bash
 npm run test:all
 ```
@@ -166,6 +182,7 @@ npm run test:all
 ### In CI/CD
 
 Tests run automatically on:
+
 - Every pull request
 - Every push to `main` or `develop`
 
@@ -178,6 +195,7 @@ See `.github/workflows/ci.yml` for CI configuration.
 Use Jest and React Testing Library for unit tests.
 
 **Example - Component Test**:
+
 ```typescript
 import { render, screen, fireEvent } from '@testing-library/react'
 import { Button } from '@/components/ui/Button'
@@ -199,6 +217,7 @@ describe('Button Component', () => {
 ```
 
 **Example - Utility Test**:
+
 ```typescript
 import { stripHtml } from '@/lib/security/sanitizer'
 
@@ -217,6 +236,7 @@ describe('stripHtml', () => {
 Use Playwright for E2E tests.
 
 **Example**:
+
 ```typescript
 import { test, expect } from '@playwright/test'
 
@@ -240,6 +260,7 @@ test.describe('Quote Form', () => {
 Use @axe-core/playwright for accessibility testing.
 
 **Example**:
+
 ```typescript
 import { test, expect } from '@playwright/test'
 import AxeBuilder from '@axe-core/playwright'
@@ -276,6 +297,7 @@ jest.mock('next/navigation', () => ({
 ### Mock API Calls
 
 **Using jest.fn()**:
+
 ```typescript
 global.fetch = jest.fn(() =>
   Promise.resolve({
@@ -286,6 +308,7 @@ global.fetch = jest.fn(() =>
 ```
 
 **Using MSW (Mock Service Worker)** (recommended for complex APIs):
+
 ```bash
 npm install --save-dev msw
 ```
@@ -308,6 +331,7 @@ afterAll(() => server.close())
 ### Mock Environment Variables
 
 In `jest.setup.js`:
+
 ```typescript
 process.env.NEXT_PUBLIC_SITE_URL = 'https://andersoncleaning.com'
 ```
@@ -315,6 +339,7 @@ process.env.NEXT_PUBLIC_SITE_URL = 'https://andersoncleaning.com'
 ### Mock External Libraries
 
 **framer-motion**:
+
 ```typescript
 jest.mock('framer-motion', () => ({
   motion: {
@@ -330,6 +355,7 @@ jest.mock('framer-motion', () => ({
 Located at `.github/workflows/ci.yml`
 
 **Jobs**:
+
 1. **Lint and Type Check**: ESLint + TypeScript
 2. **Unit Tests**: Jest with coverage
 3. **E2E Tests**: Playwright tests
@@ -339,10 +365,12 @@ Located at `.github/workflows/ci.yml`
 7. **Security Scan**: npm audit + dependency check
 
 **Triggers**:
+
 - Pull requests to `main` or `develop`
 - Pushes to `main` or `develop`
 
 **Artifacts**:
+
 - Playwright test reports
 - Lighthouse results
 - Coverage reports
@@ -350,6 +378,7 @@ Located at `.github/workflows/ci.yml`
 ### Pre-commit Hooks
 
 Husky runs on `git commit`:
+
 1. ESLint (with auto-fix)
 2. Prettier (auto-format)
 3. TypeScript type check
@@ -363,17 +392,20 @@ Husky runs on `git commit`:
 ### Debug Unit Tests
 
 **Run single test file**:
+
 ```bash
 npm test -- Button.test.tsx
 ```
 
 **Run tests matching pattern**:
+
 ```bash
 npm test -- --testNamePattern="renders with correct text"
 ```
 
 **Debug in VS Code**:
 Add to `.vscode/launch.json`:
+
 ```json
 {
   "type": "node",
@@ -388,21 +420,25 @@ Add to `.vscode/launch.json`:
 ### Debug E2E Tests
 
 **Run with UI mode** (recommended):
+
 ```bash
 npm run test:e2e:ui
 ```
 
 **Run in headed mode** (see browser):
+
 ```bash
 npm run test:e2e:headed
 ```
 
 **Debug specific test**:
+
 ```bash
 npx playwright test home.spec.ts --debug
 ```
 
 **Playwright Inspector**:
+
 - Pause test with `await page.pause()`
 - Step through code
 - Inspect selectors
@@ -411,11 +447,13 @@ npx playwright test home.spec.ts --debug
 ### Debug Accessibility Tests
 
 Run accessibility tests with Playwright UI:
+
 ```bash
 npx playwright test accessibility.spec.ts --ui
 ```
 
 View violations in the test report:
+
 ```bash
 npx playwright show-report
 ```
@@ -434,6 +472,7 @@ npm run test:coverage
 Shows after running `npm run test:coverage`
 
 **HTML Report**:
+
 ```bash
 open coverage/lcov-report/index.html
 ```
@@ -447,6 +486,7 @@ open coverage/lcov-report/index.html
 ### Coverage Configuration
 
 In `jest.config.js`:
+
 ```javascript
 coverageThreshold: {
   global: {
@@ -519,6 +559,7 @@ coverageThreshold: {
 
 **Issue**: Flaky E2E tests
 **Solution**:
+
 - Use `waitForLoadState('networkidle')`
 - Avoid fixed `setTimeout`, use `waitFor` instead
 - Check for race conditions
@@ -528,6 +569,7 @@ coverageThreshold: {
 
 **Issue**: Husky hooks not running
 **Solution**:
+
 ```bash
 npx husky install
 chmod +x .husky/pre-commit
@@ -553,6 +595,7 @@ When adding new features:
 ## Contact
 
 For questions about testing:
+
 - Review existing test files
 - Check this documentation
 - Ask in team chat or code review

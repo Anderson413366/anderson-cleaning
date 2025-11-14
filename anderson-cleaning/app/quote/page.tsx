@@ -21,11 +21,10 @@ export default function QuotePage() {
       {/* Hero Section */}
       <section className="py-12 bg-gradient-to-br from-blue-700 via-blue-800 to-indigo-900 text-white">
         <div className="container mx-auto px-6 text-center">
-          <h1 className="text-4xl md:text-5xl font-extrabold mb-4">
-            Get Your Free Quote
-          </h1>
+          <h1 className="text-4xl md:text-5xl font-extrabold mb-4">Get Your Free Quote</h1>
           <p className="text-xl text-blue-100 max-w-3xl mx-auto">
-            Tell us about your facility and we'll provide a customized cleaning proposal within 24 hours.
+            Tell us about your facility and we'll provide a customized cleaning proposal within 24
+            hours.
           </p>
         </div>
       </section>
@@ -47,7 +46,8 @@ export default function QuotePage() {
                       Quote Request Submitted Successfully!
                     </h2>
                     <p className="text-gray-700 dark:text-gray-300 mb-4">
-                      Thank you for requesting a quote from Anderson Cleaning. We've received your information and will contact you within 30 minutes during business hours.
+                      Thank you for requesting a quote from Anderson Cleaning. We've received your
+                      information and will contact you within 30 minutes during business hours.
                     </p>
                     <div className="bg-blue-50 dark:bg-blue-900/30 border border-blue-200 dark:border-blue-800 rounded-lg p-4">
                       <h3 className="font-semibold text-blue-900 dark:text-blue-300 mb-2">
@@ -60,7 +60,9 @@ export default function QuotePage() {
                         </li>
                         <li className="flex items-start gap-2">
                           <span className="font-bold">2.</span>
-                          <span>We'll schedule a free on-site walk-through at your convenience</span>
+                          <span>
+                            We'll schedule a free on-site walk-through at your convenience
+                          </span>
                         </li>
                         <li className="flex items-start gap-2">
                           <span className="font-bold">3.</span>
@@ -137,16 +139,25 @@ export default function QuotePage() {
               Prefer to Schedule a Walk-Through Directly?
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-400 mb-8">
-              If you already know what you need, skip the form and schedule your free on-site consultation directly.
+              If you already know what you need, skip the form and schedule your free on-site
+              consultation directly.
             </p>
             <div className="bg-gray-50 dark:bg-slate-800 rounded-xl p-8 border border-gray-200 dark:border-gray-700">
               <p className="text-gray-700 dark:text-gray-300 mb-6">
-                Call us at <a href="tel:+15551234567" className="font-bold text-primary-600 dark:text-primary-400 hover:underline">(555) 123-4567</a> to schedule your walk-through today.
+                Call us at{' '}
+                <a
+                  href="tel:+15551234567"
+                  className="font-bold text-primary-600 dark:text-primary-400 hover:underline"
+                >
+                  (555) 123-4567
+                </a>{' '}
+                to schedule your walk-through today.
               </p>
               {/* TODO: Add Calendly embed here */}
               <div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg p-4">
                 <p className="text-sm text-blue-800 dark:text-blue-400">
-                  <strong>Note:</strong> Online scheduling coming soon! For now, please call or submit the quote form above.
+                  <strong>Note:</strong> Online scheduling coming soon! For now, please call or
+                  submit the quote form above.
                 </p>
               </div>
             </div>

@@ -27,7 +27,7 @@ if (SENTRY_DSN) {
       if (event.request) {
         // Remove cookies
         if (event.request.cookies) {
-          event.request.cookies = '[Filtered]'
+          event.request.cookies = { filtered: '[Filtered]' }
         }
 
         // Remove auth headers
@@ -41,17 +41,14 @@ if (SENTRY_DSN) {
         }
 
         // Filter query params
-        if (event.request.query_string) {
+        if (event.request.query_string && typeof event.request.query_string === 'string') {
           const sensitiveParams = ['token', 'key', 'secret', 'password']
+          let queryString = event.request.query_string
           sensitiveParams.forEach((param) => {
             const regex = new RegExp(`${param}=[^&]+`, 'gi')
-            if (event.request?.query_string) {
-              event.request.query_string = event.request.query_string.replace(
-                regex,
-                `${param}=[Filtered]`
-              )
-            }
+            queryString = queryString.replace(regex, `${param}=[Filtered]`)
           })
+          event.request.query_string = queryString
         }
       }
 

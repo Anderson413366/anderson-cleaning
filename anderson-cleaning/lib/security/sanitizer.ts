@@ -170,11 +170,14 @@ export function cleanWhitespace(text: string): string {
  * Sanitize user input for general text fields
  * Combines multiple sanitization steps
  */
-export function sanitizeTextInput(input: string, options?: {
-  stripHtml?: boolean
-  maxLength?: number
-  allowNewlines?: boolean
-}): string {
+export function sanitizeTextInput(
+  input: string,
+  options?: {
+    stripHtml?: boolean
+    maxLength?: number
+    allowNewlines?: boolean
+  }
+): string {
   if (!input || typeof input !== 'string') return ''
 
   let sanitized = input
@@ -203,11 +206,14 @@ export function sanitizeTextInput(input: string, options?: {
 /**
  * Validate and sanitize integer input
  */
-export function sanitizeInteger(input: string | number, options?: {
-  min?: number
-  max?: number
-  default?: number
-}): number {
+export function sanitizeInteger(
+  input: string | number,
+  options?: {
+    min?: number
+    max?: number
+    default?: number
+  }
+): number {
   const parsed = typeof input === 'number' ? input : parseInt(input, 10)
 
   if (isNaN(parsed)) {
@@ -230,12 +236,15 @@ export function sanitizeInteger(input: string | number, options?: {
 /**
  * Validate and sanitize float input
  */
-export function sanitizeFloat(input: string | number, options?: {
-  min?: number
-  max?: number
-  decimals?: number
-  default?: number
-}): number {
+export function sanitizeFloat(
+  input: string | number,
+  options?: {
+    min?: number
+    max?: number
+    decimals?: number
+    default?: number
+  }
+): number {
   const parsed = typeof input === 'number' ? input : parseFloat(input)
 
   if (isNaN(parsed)) {
@@ -303,7 +312,10 @@ export function removeNullBytes(text: string): string {
  * Comprehensive sanitization for form inputs
  * Use this as a general-purpose sanitizer for user-submitted data
  */
-export function sanitizeFormInput(input: any, type: 'text' | 'email' | 'phone' | 'url' | 'number' | 'integer' | 'boolean'): any {
+export function sanitizeFormInput(
+  input: any,
+  type: 'text' | 'email' | 'phone' | 'url' | 'number' | 'integer' | 'boolean'
+): any {
   if (input === null || input === undefined) return ''
 
   switch (type) {

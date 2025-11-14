@@ -20,6 +20,7 @@ Modern Next.js 14 (App Router) website serving Anderson Cleaning's B2B commercia
 ## 🚀 Quick Start
 
 ### Prerequisites
+
 - Node.js 18+ installed
 - npm or yarn
 
@@ -41,6 +42,7 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 ### First-Time Setup
 
 1. **Configure Environment Variables** (`.env.local`):
+
    ```env
    # Required
    NEXT_PUBLIC_SITE_URL=http://localhost:3000
@@ -55,6 +57,7 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
    ```
 
 2. **Set up Sanity Studio**:
+
    ```bash
    # Access studio at /studio
    # Configure in sanity.config.ts
@@ -135,6 +138,7 @@ anderson-cleaning/
 ### ✅ Implemented (Production Ready)
 
 #### **Core Pages**
+
 - 🏠 Home page with hero, services, value props, CTAs
 - 📄 About page with company history and team
 - 🧹 Services pages (6 main services)
@@ -146,6 +150,7 @@ anderson-cleaning/
 - 💼 Careers page (multilingual: EN, ES, PT-BR, RO)
 
 #### **SEO & Marketing**
+
 - 🔍 Comprehensive SEO implementation
   - JSON-LD structured data (9 schema types)
   - Automated sitemap generation
@@ -159,6 +164,7 @@ anderson-cleaning/
   - Performance monitoring with Sentry
 
 #### **Security**
+
 - 🔒 Content Security Policy (CSP)
 - 🛡️ Security headers (HSTS, X-Frame-Options, etc.)
 - ⏱️ Rate limiting (per-route configuration)
@@ -170,6 +176,7 @@ anderson-cleaning/
 - 🔔 Error tracking with Sentry
 
 #### **Performance**
+
 - ⚡ Core Web Vitals optimized (LCP <2.5s, CLS <0.1, INP <200ms)
 - 🖼️ Image optimization (WebP/AVIF, lazy loading, blur placeholders)
 - 📝 Font optimization (display: swap, preloading)
@@ -180,6 +187,7 @@ anderson-cleaning/
 - 🚀 Next.js optimizations (SWC, compression)
 
 #### **Accessibility (WCAG 2.2 AA)**
+
 - ♿ Skip to main content link
 - ⌨️ Full keyboard navigation
 - 👁️ Visible focus indicators
@@ -191,6 +199,7 @@ anderson-cleaning/
 - 🧪 Automated testing (axe-core)
 
 #### **Content Management**
+
 - 📝 Sanity CMS v3 integration
 - 🖥️ Sanity Studio at /studio
 - 📋 8 content schemas (services, industries, testimonials, etc.)
@@ -198,6 +207,7 @@ anderson-cleaning/
 - 🔄 ISR with configurable revalidation
 
 #### **Forms & Validation**
+
 - React Hook Form + Zod validation
 - Multi-step quote form
 - Contact form
@@ -207,6 +217,7 @@ anderson-cleaning/
 - Honeypot spam protection
 
 #### **Internationalization**
+
 - Careers page: EN, ES, PT-BR, RO
 - Language switcher component
 - Persistent language preference
@@ -215,6 +226,7 @@ anderson-cleaning/
 ## 🎨 Design System
 
 ### Colors
+
 - **Primary**: `#1D4ED8` (blue-700) - Main brand color
 - **Accent**: `#10B981` (green-500) - CTAs and highlights
 - **Neutral**: Slate/Gray Tailwind scale
@@ -222,6 +234,7 @@ anderson-cleaning/
 - **Success**: `#10B981` (green-500)
 
 ### Typography
+
 - **Font**: Inter (Google Fonts)
 - **Display**: swap (prevents FOIT)
 - **Headings**: 700-900 weight
@@ -229,11 +242,13 @@ anderson-cleaning/
 - **Line height**: 1.5+ for readability
 
 ### Breakpoints
+
 - Mobile: <640px
 - Tablet: 640px - 1024px
 - Desktop: >1024px
 
 ### Touch Targets
+
 - Minimum: 44x44px (WCAG 2.2)
 
 ## 🔧 Development
@@ -256,12 +271,14 @@ npm run postbuild             # Generate sitemap (runs after build)
 See `.env.example` for all available variables.
 
 **Required:**
+
 - `NEXT_PUBLIC_SITE_URL`
 - `NEXT_PUBLIC_SANITY_PROJECT_ID`
 - `NEXT_PUBLIC_SANITY_DATASET`
 - `NEXT_PUBLIC_SANITY_API_VERSION`
 
 **Optional but Recommended:**
+
 - `RESEND_API_KEY` - Email service
 - `HUBSPOT_ACCESS_TOKEN` - CRM integration
 - `NEXT_PUBLIC_GA_MEASUREMENT_ID` - Analytics
@@ -273,6 +290,7 @@ See `.env.example` for all available variables.
 ### Testing
 
 #### Automated Testing
+
 ```bash
 # Development mode includes axe-core
 npm run dev
@@ -280,6 +298,7 @@ npm run dev
 ```
 
 #### Manual Testing
+
 - **Lighthouse**: Chrome DevTools > Lighthouse (Target: ≥90)
 - **WAVE**: Browser extension for accessibility
 - **Screen Readers**: NVDA (Windows), VoiceOver (Mac)
@@ -290,6 +309,7 @@ npm run dev
 ### Vercel (Recommended)
 
 1. **Connect Repository**:
+
    ```bash
    # Install Vercel CLI
    npm install -g vercel
@@ -326,6 +346,7 @@ Comprehensive documentation is available in the following locations:
 ## 🔒 Security
 
 ### Features
+
 - Content Security Policy (CSP)
 - Security headers
 - Rate limiting (5/hour for forms)
@@ -336,6 +357,7 @@ Comprehensive documentation is available in the following locations:
 - Error tracking with filtered sensitive data
 
 ### Reporting Security Issues
+
 Email: security@andersoncleaning.com
 
 ## ♿ Accessibility
@@ -343,6 +365,7 @@ Email: security@andersoncleaning.com
 This website conforms to **WCAG 2.2 Level AA** standards.
 
 ### Features
+
 - Semantic HTML
 - Keyboard navigation
 - Screen reader support
@@ -353,17 +376,20 @@ This website conforms to **WCAG 2.2 Level AA** standards.
 - Automated testing (axe-core)
 
 ### Feedback
+
 Email: accessibility@andersoncleaning.com
 
 ## 📊 Analytics & Monitoring
 
 ### Integrated Services
+
 - **Google Analytics 4** - User behavior tracking
 - **Microsoft Clarity** - Heatmaps and session recordings
 - **Sentry** - Error tracking and performance monitoring
 - **Web Vitals** - Core Web Vitals tracking
 
 ### Custom Events
+
 - Form submissions
 - Button clicks
 - Page views
@@ -390,6 +416,7 @@ This is a private project. For internal development team only.
 ## 📞 Support
 
 For questions, issues, or feature requests:
+
 - **Email**: dev@andersoncleaning.com
 - **Phone**: (413) 733-3334
 - **Address**: 103 Wayside Ave, West Springfield, MA 01089

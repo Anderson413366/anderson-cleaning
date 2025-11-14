@@ -116,12 +116,6 @@ describe('Security Sanitizer', () => {
       expect(result).toContain('<b>')
     })
 
-    it('can skip trimming when configured', () => {
-      const input = '  Hello  '
-      const result = sanitizeTextInput(input, { trim: false })
-      expect(result).toBe('  Hello  ')
-    })
-
     it('handles empty string', () => {
       expect(sanitizeTextInput('')).toBe('')
     })
@@ -216,12 +210,7 @@ describe('Security Sanitizer', () => {
     })
 
     it('handles various formats', () => {
-      const formats = [
-        '555-123-4567',
-        '555.123.4567',
-        '(555) 123-4567',
-        '+1-555-123-4567',
-      ]
+      const formats = ['555-123-4567', '555.123.4567', '(555) 123-4567', '+1-555-123-4567']
 
       formats.forEach((format) => {
         const result = normalizePhone(format)

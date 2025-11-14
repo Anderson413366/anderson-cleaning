@@ -229,9 +229,7 @@ export async function verifyCaptcha(
  */
 export function getCaptchaSiteKey(): string | null {
   return (
-    process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY ||
-    process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY ||
-    null
+    process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || null
   )
 }
 
@@ -254,13 +252,7 @@ export function getCaptchaProvider(): 'recaptcha' | 'turnstile' | null {
  */
 export function isCaptchaRequired(action: string): boolean {
   // Define which actions require CAPTCHA
-  const requireCaptcha = [
-    'contact',
-    'quote',
-    'application',
-    'comment',
-    'registration',
-  ]
+  const requireCaptcha = ['contact', 'quote', 'application', 'comment', 'registration']
 
   return requireCaptcha.includes(action.toLowerCase())
 }

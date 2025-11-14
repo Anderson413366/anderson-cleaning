@@ -92,7 +92,8 @@ export default function ContactForm({ onSuccess }: ContactFormProps) {
                 Submission Error
               </h4>
               <p className="text-sm text-red-700 dark:text-red-400">
-                There was an error sending your message. Please try again or call us at (555) 123-4567.
+                There was an error sending your message. Please try again or call us at (555)
+                123-4567.
               </p>
             </div>
           </div>
@@ -100,7 +101,10 @@ export default function ContactForm({ onSuccess }: ContactFormProps) {
 
         {/* Name */}
         <div>
-          <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+          <label
+            htmlFor="name"
+            className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+          >
             Name <span className="text-red-500">*</span>
           </label>
           <input
@@ -117,7 +121,10 @@ export default function ContactForm({ onSuccess }: ContactFormProps) {
 
         {/* Email */}
         <div>
-          <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+          <label
+            htmlFor="email"
+            className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+          >
             Email Address <span className="text-red-500">*</span>
           </label>
           <input
@@ -134,7 +141,10 @@ export default function ContactForm({ onSuccess }: ContactFormProps) {
 
         {/* Phone */}
         <div>
-          <label htmlFor="phone" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+          <label
+            htmlFor="phone"
+            className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+          >
             Phone Number <span className="text-red-500">*</span>
           </label>
           <input
@@ -151,7 +161,10 @@ export default function ContactForm({ onSuccess }: ContactFormProps) {
 
         {/* Message */}
         <div>
-          <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+          <label
+            htmlFor="message"
+            className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+          >
             Message <span className="text-red-500">*</span>
           </label>
           <textarea
@@ -201,7 +214,8 @@ export default function ContactForm({ onSuccess }: ContactFormProps) {
         </Button>
 
         <p className="text-xs text-gray-500 dark:text-gray-400 text-center">
-          By submitting this form, you agree to be contacted by Anderson Cleaning regarding your inquiry.
+          By submitting this form, you agree to be contacted by Anderson Cleaning regarding your
+          inquiry.
         </p>
       </form>
     </div>

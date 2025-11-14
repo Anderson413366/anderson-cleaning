@@ -26,6 +26,7 @@ Complete guide to the multilingual careers application implementation.
 ### Why This Approach?
 
 Anderson Cleaning's service area (Western MA & Northern CT) has diverse workforce demographics:
+
 - Spanish speakers (construction, facilities)
 - Brazilian Portuguese speakers (housekeeping, facilities)
 - Romanian speakers (labor, facilities)
@@ -35,6 +36,7 @@ Offering multilingual job applications increases applicant pool diversity and re
 ### Architecture Decision
 
 **Scoped i18n (not site-wide):**
+
 - Uses `i18next` for translations
 - Only loads on `/[lang]/apply` routes
 - Does not affect main website bundle size
@@ -44,18 +46,19 @@ Offering multilingual job applications increases applicant pool diversity and re
 
 ## Supported Languages
 
-| Language | Code | Native Name | Target Audience |
-|----------|------|-------------|-----------------|
-| English | `en` | English | Primary language |
-| Spanish | `es` | Español | Hispanic community |
+| Language             | Code    | Native Name        | Target Audience     |
+| -------------------- | ------- | ------------------ | ------------------- |
+| English              | `en`    | English            | Primary language    |
+| Spanish              | `es`    | Español            | Hispanic community  |
 | Brazilian Portuguese | `pt-BR` | Português (Brasil) | Brazilian community |
-| Romanian | `ro` | Română | Romanian community |
+| Romanian             | `ro`    | Română             | Romanian community  |
 
 ### Default Language
 
 **English (`en`)** is the default/fallback language.
 
 **Logic:**
+
 1. Check URL parameter: `?lang=es`
 2. Check localStorage: `careersLanguage`
 3. Fallback to English
@@ -101,21 +104,19 @@ import es from './es.json'
 import ptBR from './pt-BR.json'
 import ro from './ro.json'
 
-i18n
-  .use(initReactI18next)
-  .init({
-    resources: {
-      en: { translation: en },
-      es: { translation: es },
-      'pt-BR': { translation: ptBR },
-      ro: { translation: ro },
-    },
-    lng: 'en', // Default language
-    fallbackLng: 'en',
-    interpolation: {
-      escapeValue: false, // React already escapes
-    },
-  })
+i18n.use(initReactI18next).init({
+  resources: {
+    en: { translation: en },
+    es: { translation: es },
+    'pt-BR': { translation: ptBR },
+    ro: { translation: ro },
+  },
+  lng: 'en', // Default language
+  fallbackLng: 'en',
+  interpolation: {
+    escapeValue: false, // React already escapes
+  },
+})
 
 export default i18n
 ```
@@ -148,6 +149,7 @@ function CareersForm() {
 ### File Format
 
 **JSON structure:**
+
 ```json
 {
   "page": {
@@ -174,6 +176,7 @@ function CareersForm() {
 **Total Keys:** ~170
 
 **Categories:**
+
 1. **Page Content** (~20 keys)
    - Titles, headings, descriptions
    - Example: `page.title`, `page.heroSubtitle`
@@ -268,12 +271,13 @@ Edit `fr.json` and translate all values (not keys):
 ```json
 {
   "page": {
-    "title": "Carrières",  // ✅ Translate value
+    "title": "Carrières", // ✅ Translate value
     "subtitle": "Rejoignez Notre Équipe"
   },
   "form": {
-    "name": {  // ❌ DO NOT translate key
-      "label": "Nom Complet",  // ✅ Translate value
+    "name": {
+      // ❌ DO NOT translate key
+      "label": "Nom Complet", // ✅ Translate value
       "placeholder": "Jean Dupont"
     }
   }
@@ -293,8 +297,8 @@ i18n.init({
     es: { translation: es },
     'pt-BR': { translation: ptBR },
     ro: { translation: ro },
-    fr: { translation: fr },  // ← Add here
-  }
+    fr: { translation: fr }, // ← Add here
+  },
 })
 ```
 
@@ -308,7 +312,7 @@ const languages = [
   { code: 'es', name: 'Español', flag: '🇪🇸' },
   { code: 'pt-BR', name: 'Português', flag: '🇧🇷' },
   { code: 'ro', name: 'Română', flag: '🇷🇴' },
-  { code: 'fr', name: 'Français', flag: '🇫🇷' },  // ← Add here
+  { code: 'fr', name: 'Français', flag: '🇫🇷' }, // ← Add here
 ]
 ```
 
@@ -329,12 +333,12 @@ http://localhost:3000/fr/apply
 
 ### Routes
 
-| Language | URL | Description |
-|----------|-----|-------------|
-| English | `/en/apply` | Default language |
-| Spanish | `/es/apply` | Spanish version |
+| Language   | URL            | Description          |
+| ---------- | -------------- | -------------------- |
+| English    | `/en/apply`    | Default language     |
+| Spanish    | `/es/apply`    | Spanish version      |
 | Portuguese | `/pt-BR/apply` | Brazilian Portuguese |
-| Romanian | `/ro/apply` | Romanian version |
+| Romanian   | `/ro/apply`    | Romanian version     |
 
 ### Dynamic Route
 
@@ -379,12 +383,14 @@ async rewrites() {
 ### Strategy
 
 Store selected language in:
+
 1. **URL** (primary): `/es/apply`
 2. **localStorage** (secondary): `careersLanguage`
 
 ### Implementation
 
 **Save to localStorage:**
+
 ```typescript
 function changeLanguage(lang: string) {
   i18n.changeLanguage(lang)
@@ -394,6 +400,7 @@ function changeLanguage(lang: string) {
 ```
 
 **Load from localStorage:**
+
 ```typescript
 useEffect(() => {
   const savedLang = localStorage.getItem('careersLanguage')
@@ -408,12 +415,14 @@ useEffect(() => {
 **Component:** `components/careers/LanguageSwitcher.tsx`
 
 **Features:**
+
 - Dropdown or button group
 - Current language highlighted
 - Persist selection on page reload
 - Update URL when changed
 
 **Example:**
+
 ```typescript
 function LanguageSwitcher() {
   const { i18n } = useTranslation()
@@ -457,7 +466,7 @@ const emailTemplates = {
 
       Best regards,
       Anderson Cleaning HR Team
-    `
+    `,
   },
   es: {
     subject: 'Gracias por su solicitud',
@@ -471,7 +480,7 @@ const emailTemplates = {
 
       Saludos cordiales,
       Equipo de RRHH de Anderson Cleaning
-    `
+    `,
   },
   'pt-BR': {
     subject: 'Obrigado pela sua candidatura',
@@ -485,7 +494,7 @@ const emailTemplates = {
 
       Atenciosamente,
       Equipe de RH da Anderson Cleaning
-    `
+    `,
   },
   ro: {
     subject: 'Mulțumim pentru aplicație',
@@ -499,8 +508,8 @@ const emailTemplates = {
 
       Cu stimă,
       Echipa HR Anderson Cleaning
-    `
-  }
+    `,
+  },
 }
 ```
 
@@ -516,9 +525,7 @@ export async function POST(request: Request) {
   const template = emailTemplates[language] || emailTemplates.en
 
   // Replace placeholders
-  const body = template.body
-    .replace('{{name}}', name)
-    .replace('{{position}}', position)
+  const body = template.body.replace('{{name}}', name).replace('{{position}}', position)
 
   // Send email
   await resend.send({
@@ -536,6 +543,7 @@ export async function POST(request: Request) {
 ### Manual Testing Checklist
 
 **For Each Language:**
+
 - [ ] Visit `/{lang}/apply`
 - [ ] All text is translated (no English fallbacks)
 - [ ] Form labels in correct language
@@ -545,12 +553,14 @@ export async function POST(request: Request) {
 - [ ] Email confirmation in correct language
 
 **Language Switcher:**
+
 - [ ] Dropdown shows all languages
 - [ ] Clicking language updates URL
 - [ ] Page content changes immediately
 - [ ] Selection persists on refresh
 
 **Edge Cases:**
+
 - [ ] Invalid language code (`/xx/apply`) → redirect to `/en/apply`
 - [ ] Missing translation key → fallback to English
 - [ ] Special characters render correctly (ñ, ã, ă, etc.)
@@ -558,6 +568,7 @@ export async function POST(request: Request) {
 ### Automated Testing
 
 **Playwright E2E Test:**
+
 ```typescript
 // tests/e2e/careers-i18n.spec.ts
 test('language switching works', async ({ page }) => {
@@ -596,6 +607,7 @@ test('form validation in Spanish', async ({ page }) => {
 **Symptom:** Page shows translation keys instead of text (e.g., `form.name.label`)
 
 **Solution:**
+
 1. Check i18next is initialized: `i18n.isInitialized`
 2. Verify language file exists: `lib/careers-i18n/{lang}.json`
 3. Check JSON syntax (no trailing commas)
@@ -606,6 +618,7 @@ test('form validation in Spanish', async ({ page }) => {
 **Symptom:** Page reverts to English on refresh
 
 **Solution:**
+
 1. Check localStorage is working: `localStorage.getItem('careersLanguage')`
 2. Verify `useEffect` is running to load saved language
 3. Check URL parameter is being read correctly
@@ -615,6 +628,7 @@ test('form validation in Spanish', async ({ page }) => {
 **Symptom:** Some text in one language, some in another
 
 **Solution:**
+
 1. Check for hardcoded strings (should use `t()` function)
 2. Verify all keys exist in translation file
 3. Check fallback language is set correctly
@@ -624,6 +638,7 @@ test('form validation in Spanish', async ({ page }) => {
 **Symptom:** Characters like ñ, ã, ă display as �
 
 **Solution:**
+
 1. Ensure JSON files are UTF-8 encoded
 2. Check HTML has charset: `<meta charset="UTF-8">`
 3. Verify server response header: `Content-Type: text/html; charset=utf-8`
@@ -633,6 +648,7 @@ test('form validation in Spanish', async ({ page }) => {
 **Symptom:** User selects Spanish but receives English email
 
 **Solution:**
+
 1. Check `language` field is sent in API request
 2. Verify email template exists for that language
 3. Check fallback logic: `emailTemplates[language] || emailTemplates.en`
@@ -677,6 +693,7 @@ test('form validation in Spanish', async ({ page }) => {
 ### Potential Improvements
 
 1. **Auto-Detection:** Detect browser language
+
    ```typescript
    const browserLang = navigator.language.split('-')[0]
    ```
@@ -684,6 +701,7 @@ test('form validation in Spanish', async ({ page }) => {
 2. **Translation Management:** Use service like Lokalise or Crowdin
 
 3. **Pluralization:** Handle plural forms correctly
+
    ```json
    {
      "items": {
@@ -694,13 +712,16 @@ test('form validation in Spanish', async ({ page }) => {
    ```
 
 4. **Date/Number Formatting:** Locale-specific formats
+
    ```typescript
    new Intl.DateTimeFormat(language).format(date)
    ```
 
 5. **RTL Support:** If adding Arabic or Hebrew
    ```css
-   [dir="rtl"] { text-align: right; }
+   [dir='rtl'] {
+     text-align: right;
+   }
    ```
 
 ---

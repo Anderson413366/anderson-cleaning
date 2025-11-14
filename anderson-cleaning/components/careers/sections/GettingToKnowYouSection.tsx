@@ -1,20 +1,19 @@
 'use client'
 
-
-import React, { useContext } from 'react';
-import { useAppContext } from '@/lib/careers/AppContext';
-import FormTextarea from '@/components/ui/FormTextarea';
-import SectionWrapper from './SectionWrapper';
-import FormRadioGroup from '@/components/ui/FormRadioGroup'; // For yes/no questions like weekends/holidays
+import React, { useContext } from 'react'
+import { useAppContext } from '@/lib/careers/AppContext'
+import FormTextarea from '@/components/ui/FormTextarea'
+import SectionWrapper from './SectionWrapper'
+import FormRadioGroup from '@/components/ui/FormRadioGroup' // For yes/no questions like weekends/holidays
 
 const GettingToKnowYouSection: React.FC = () => {
-  const context = useAppContext();
-  if (!context) throw new Error('AppContext not found');
-  const { formData, handleChange, t, formErrors } = context;
-  const data = formData.gettingToKnowYou;
+  const context = useAppContext()
+  if (!context) throw new Error('AppContext not found')
+  const { formData, handleChange, t, formErrors } = context
+  const data = formData.gettingToKnowYou
   // const availabilityData = formData.availability; // If weekendsHolidays is moved back here
 
-  const getError = (field: string) => formErrors[`gettingToKnowYou.${field}`];
+  const getError = (field: string) => formErrors[`gettingToKnowYou.${field}`]
   // const getAvailabilityError = (field: string) => formErrors[`availability.${field}`];
 
   const questions: { key: keyof typeof data; labelKey: string }[] = [
@@ -32,11 +31,11 @@ const GettingToKnowYouSection: React.FC = () => {
     { key: 'busyOrDowntime', labelKey: 'busyOrDowntimeLabel' },
     { key: 'oneHourConversation', labelKey: 'oneHourConversationLabel' },
     { key: 'wishWeAsked', labelKey: 'wishWeAskedLabel' },
-  ];
+  ]
 
   return (
     <SectionWrapper titleKey="gettingToKnowYouSectionTitle" descriptionKey="gettingToKnowYouIntro">
-      {questions.map(q => (
+      {questions.map((q) => (
         <FormTextarea
           key={q.key}
           label={t(q.labelKey) as string}
@@ -61,7 +60,7 @@ const GettingToKnowYouSection: React.FC = () => {
       />
       */}
     </SectionWrapper>
-  );
-};
+  )
+}
 
-export default GettingToKnowYouSection;
+export default GettingToKnowYouSection

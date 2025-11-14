@@ -155,7 +155,8 @@ export function trackResourceTiming(resourceType: string) {
   })
 
   const totalDuration = filteredResources.reduce((sum, r) => sum + r.duration, 0)
-  const averageDuration = filteredResources.length > 0 ? totalDuration / filteredResources.length : 0
+  const averageDuration =
+    filteredResources.length > 0 ? totalDuration / filteredResources.length : 0
 
   trackPerformance(`resource_timing_${resourceType}`, {
     count: filteredResources.length,
@@ -185,7 +186,9 @@ export function trackPageLoad() {
     tcp_time: Math.round(navigation.connectEnd - navigation.connectStart),
     request_time: Math.round(navigation.responseStart - navigation.requestStart),
     response_time: Math.round(navigation.responseEnd - navigation.responseStart),
-    dom_processing: Math.round(navigation.domContentLoadedEventEnd - navigation.domContentLoadedEventStart),
+    dom_processing: Math.round(
+      navigation.domContentLoadedEventEnd - navigation.domContentLoadedEventStart
+    ),
     load_time: Math.round(navigation.loadEventEnd - navigation.loadEventStart),
     total_time: Math.round(navigation.loadEventEnd - navigation.fetchStart),
   }
@@ -199,7 +202,9 @@ export function trackPageLoad() {
 export function trackBundleSize() {
   if (typeof window === 'undefined' || !window.performance) return
 
-  const scripts = performance.getEntriesByType('resource').filter((r) => r.name.endsWith('.js')) as PerformanceResourceTiming[]
+  const scripts = performance
+    .getEntriesByType('resource')
+    .filter((r) => r.name.endsWith('.js')) as PerformanceResourceTiming[]
 
   const totalSize = scripts.reduce((sum, script) => sum + (script.transferSize || 0), 0)
 
@@ -215,10 +220,13 @@ export function trackBundleSize() {
 export function trackImagePerformance() {
   if (typeof window === 'undefined' || !window.performance) return
 
-  const images = performance.getEntriesByType('resource').filter((r) => /\.(jpg|jpeg|png|gif|webp|svg)$/i.test(r.name)) as PerformanceResourceTiming[]
+  const images = performance
+    .getEntriesByType('resource')
+    .filter((r) => /\.(jpg|jpeg|png|gif|webp|svg)$/i.test(r.name)) as PerformanceResourceTiming[]
 
   const totalSize = images.reduce((sum, img) => sum + (img.transferSize || 0), 0)
-  const averageLoadTime = images.length > 0 ? images.reduce((sum, img) => sum + img.duration, 0) / images.length : 0
+  const averageLoadTime =
+    images.length > 0 ? images.reduce((sum, img) => sum + img.duration, 0) / images.length : 0
 
   trackPerformance('image_performance', {
     total_kb: Math.round(totalSize / 1024),

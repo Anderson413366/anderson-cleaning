@@ -83,7 +83,9 @@ export default function CookieBanner() {
                     We Value Your Privacy
                   </h3>
                   <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
-                    We use cookies to enhance your browsing experience, serve personalized content, and analyze our traffic. By clicking "Accept All," you consent to our use of cookies.{' '}
+                    We use cookies to enhance your browsing experience, serve personalized content,
+                    and analyze our traffic. By clicking "Accept All," you consent to our use of
+                    cookies.{' '}
                     <a
                       href="/legal/privacy-policy"
                       className="text-primary-600 dark:text-primary-400 hover:underline font-medium"
@@ -139,15 +141,22 @@ export default function CookieBanner() {
                 <div className="mt-3 space-y-3 text-sm text-gray-600 dark:text-gray-400">
                   <div>
                     <strong className="text-gray-900 dark:text-gray-100">Essential Cookies:</strong>
-                    <p className="mt-1">Required for the website to function properly. These cannot be disabled.</p>
+                    <p className="mt-1">
+                      Required for the website to function properly. These cannot be disabled.
+                    </p>
                   </div>
                   <div>
                     <strong className="text-gray-900 dark:text-gray-100">Analytics Cookies:</strong>
-                    <p className="mt-1">Help us understand how visitors interact with our website by collecting and reporting information anonymously.</p>
+                    <p className="mt-1">
+                      Help us understand how visitors interact with our website by collecting and
+                      reporting information anonymously.
+                    </p>
                   </div>
                   <div>
                     <strong className="text-gray-900 dark:text-gray-100">Marketing Cookies:</strong>
-                    <p className="mt-1">Used to track visitors across websites to display relevant ads.</p>
+                    <p className="mt-1">
+                      Used to track visitors across websites to display relevant ads.
+                    </p>
                   </div>
                 </div>
               </details>

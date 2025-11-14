@@ -38,7 +38,7 @@ export default defineType({
     }),
     defineField({
       name: 'includes',
-      title: 'What\'s Included',
+      title: "What's Included",
       type: 'array',
       of: [{ type: 'string' }],
       description: 'List of items/services included',

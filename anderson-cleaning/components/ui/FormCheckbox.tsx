@@ -1,8 +1,7 @@
 'use client'
 
-
-import React, { forwardRef } from 'react';
-import { FormCheckboxProps } from '@/lib/careers/types';
+import React, { forwardRef } from 'react'
+import { FormCheckboxProps } from '@/lib/careers/types'
 
 const FormCheckbox = forwardRef<HTMLInputElement, FormCheckboxProps>(
   ({ label, name, className, error, ...props }, ref) => {
@@ -23,9 +22,9 @@ const FormCheckbox = forwardRef<HTMLInputElement, FormCheckboxProps>(
         </div>
         {error && <p className="mt-1 text-xs text-red-500 dark:text-red-400">{error}</p>}
       </div>
-    );
+    )
   }
-);
-FormCheckbox.displayName = "FormCheckbox";
+)
+FormCheckbox.displayName = 'FormCheckbox'
 
-export default FormCheckbox;
+export default FormCheckbox

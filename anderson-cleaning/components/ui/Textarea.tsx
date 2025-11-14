@@ -36,21 +36,24 @@ export interface TextareaProps extends TextareaHTMLAttributes<HTMLTextAreaElemen
  * />
  */
 const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
-  ({
-    label,
-    helperText,
-    error,
-    isRequired = false,
-    showCharCount = false,
-    maxLength,
-    className,
-    id,
-    disabled,
-    value,
-    defaultValue,
-    onChange,
-    ...props
-  }, ref) => {
+  (
+    {
+      label,
+      helperText,
+      error,
+      isRequired = false,
+      showCharCount = false,
+      maxLength,
+      className,
+      id,
+      disabled,
+      value,
+      defaultValue,
+      onChange,
+      ...props
+    },
+    ref
+  ) => {
     const [charCount, setCharCount] = useState(0)
     const textareaId = id || `textarea-${label?.toLowerCase().replace(/\s+/g, '-')}`
     const helperTextId = helperText ? `${textareaId}-helper` : undefined
@@ -146,10 +149,7 @@ const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
         <div className="mt-1.5 flex items-start justify-between gap-2">
           <div className="flex-1">
             {helperText && !error && (
-              <p
-                id={helperTextId}
-                className="text-xs text-gray-500 dark:text-slate-400"
-              >
+              <p id={helperTextId} className="text-xs text-gray-500 dark:text-slate-400">
                 {helperText}
               </p>
             )}

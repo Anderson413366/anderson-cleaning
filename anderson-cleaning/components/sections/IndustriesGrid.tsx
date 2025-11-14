@@ -104,10 +104,7 @@ export default function IndustriesGrid({
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, margin: '-100px' }}
-      className={cn(
-        'grid grid-cols-1 gap-6',
-        columnClasses[columns]
-      )}
+      className={cn('grid grid-cols-1 gap-6', columnClasses[columns])}
     >
       {sortedIndustries.map((industry, index) => {
         const isFeatured = featured.includes(industry.slug)

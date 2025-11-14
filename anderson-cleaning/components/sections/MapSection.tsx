@@ -37,7 +37,7 @@ export interface MapSectionProps {
 export default function MapSection({
   showServiceAreas = true,
   height = 'h-96',
-  center = [42.1070, -72.6209], // West Springfield, MA
+  center = [42.107, -72.6209], // West Springfield, MA
 }: MapSectionProps) {
   const serviceAreas = [
     { city: 'Springfield', state: 'MA' },
@@ -59,7 +59,9 @@ export default function MapSection({
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
         {/* Map */}
         <div className="order-2 lg:order-1">
-          <div className={`relative ${height} rounded-xl overflow-hidden shadow-lg border border-gray-200 dark:border-slate-700`}>
+          <div
+            className={`relative ${height} rounded-xl overflow-hidden shadow-lg border border-gray-200 dark:border-slate-700`}
+          >
             <iframe
               src={mapUrl}
               width="100%"

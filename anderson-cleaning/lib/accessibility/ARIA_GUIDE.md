@@ -14,6 +14,7 @@ Comprehensive guide to using ARIA (Accessible Rich Internet Applications) attrib
 ### Labeling
 
 **`aria-label`** - Provides accessible name for element
+
 ```tsx
 // Icon-only button
 <button aria-label="Close dialog">
@@ -27,6 +28,7 @@ Comprehensive guide to using ARIA (Accessible Rich Internet Applications) attrib
 ```
 
 **`aria-labelledby`** - References another element for label
+
 ```tsx
 <h2 id="dialog-title">Confirm Action</h2>
 <div role="dialog" aria-labelledby="dialog-title">
@@ -35,6 +37,7 @@ Comprehensive guide to using ARIA (Accessible Rich Internet Applications) attrib
 ```
 
 **`aria-describedby`** - Additional description
+
 ```tsx
 <input
   id="password"
@@ -48,6 +51,7 @@ Comprehensive guide to using ARIA (Accessible Rich Internet Applications) attrib
 ### States
 
 **`aria-expanded`** - Collapsible content state
+
 ```tsx
 <button
   aria-expanded={isOpen}
@@ -62,42 +66,34 @@ Comprehensive guide to using ARIA (Accessible Rich Internet Applications) attrib
 ```
 
 **`aria-selected`** - Selected state in tabs/lists
+
 ```tsx
 <div role="tablist">
-  <button
-    role="tab"
-    aria-selected={activeTab === 'home'}
-    aria-controls="home-panel"
-  >
+  <button role="tab" aria-selected={activeTab === 'home'} aria-controls="home-panel">
     Home
   </button>
 </div>
 ```
 
 **`aria-checked`** - Checkbox/radio/switch state
+
 ```tsx
 // Only use if not using native <input type="checkbox">
-<div
-  role="checkbox"
-  aria-checked={isChecked}
-  tabIndex={0}
-  onClick={() => setIsChecked(!isChecked)}
->
+<div role="checkbox" aria-checked={isChecked} tabIndex={0} onClick={() => setIsChecked(!isChecked)}>
   {isChecked ? '☑' : '☐'} Accept terms
 </div>
 ```
 
 **`aria-pressed`** - Toggle button state
+
 ```tsx
-<button
-  aria-pressed={isBold}
-  onClick={() => setIsBold(!isBold)}
->
+<button aria-pressed={isBold} onClick={() => setIsBold(!isBold)}>
   Bold
 </button>
 ```
 
 **`aria-disabled`** - Disabled state (when can't use `disabled`)
+
 ```tsx
 // Use native disabled when possible
 <button disabled>Can't click</button>
@@ -114,67 +110,59 @@ Comprehensive guide to using ARIA (Accessible Rich Internet Applications) attrib
 ```
 
 **`aria-current`** - Current item in navigation
+
 ```tsx
 <nav>
-  <a
-    href="/home"
-    aria-current={pathname === '/home' ? 'page' : undefined}
-  >
+  <a href="/home" aria-current={pathname === '/home' ? 'page' : undefined}>
     Home
   </a>
-  <a
-    href="/about"
-    aria-current={pathname === '/about' ? 'page' : undefined}
-  >
+  <a href="/about" aria-current={pathname === '/about' ? 'page' : undefined}>
     About
   </a>
 </nav>
 ```
 
 **`aria-invalid`** - Form validation error
+
 ```tsx
-<input
+;<input
   type="email"
   aria-invalid={hasError}
   aria-describedby={hasError ? 'email-error' : undefined}
 />
-{hasError && (
-  <span id="email-error" role="alert">
-    Please enter a valid email
-  </span>
-)}
+{
+  hasError && (
+    <span id="email-error" role="alert">
+      Please enter a valid email
+    </span>
+  )
+}
 ```
 
 ### Properties
 
 **`aria-required`** - Required field
+
 ```tsx
-<input
-  required
-  aria-required="true"
-/>
+<input required aria-required="true" />
 ```
 
 **`aria-readonly`** - Read-only field
+
 ```tsx
-<input
-  readOnly
-  aria-readonly="true"
-  value={email}
-/>
+<input readOnly aria-readonly="true" value={email} />
 ```
 
 **`aria-haspopup`** - Has popup menu/dialog
+
 ```tsx
-<button
-  aria-haspopup="menu"
-  aria-expanded={isOpen}
->
+<button aria-haspopup="menu" aria-expanded={isOpen}>
   Options
 </button>
 ```
 
 **`aria-controls`** - Controls another element
+
 ```tsx
 <button
   aria-controls="content-panel"
@@ -188,17 +176,25 @@ Comprehensive guide to using ARIA (Accessible Rich Internet Applications) attrib
 ```
 
 **`aria-owns`** - Owns child elements
+
 ```tsx
 <div role="listbox" aria-owns="option1 option2 option3">
-  <div id="option1" role="option">Option 1</div>
-  <div id="option2" role="option">Option 2</div>
-  <div id="option3" role="option">Option 3</div>
+  <div id="option1" role="option">
+    Option 1
+  </div>
+  <div id="option2" role="option">
+    Option 2
+  </div>
+  <div id="option3" role="option">
+    Option 3
+  </div>
 </div>
 ```
 
 ### Live Regions
 
 **`aria-live`** - Announces dynamic content changes
+
 ```tsx
 // Polite: Waits for user to finish
 <div aria-live="polite" role="status">
@@ -212,6 +208,7 @@ Comprehensive guide to using ARIA (Accessible Rich Internet Applications) attrib
 ```
 
 **`aria-atomic`** - Read entire region or just changes
+
 ```tsx
 <div aria-live="polite" aria-atomic="true">
   {/* Entire content will be read on update */}
@@ -220,11 +217,9 @@ Comprehensive guide to using ARIA (Accessible Rich Internet Applications) attrib
 ```
 
 **`aria-relevant`** - What changes trigger announcement
+
 ```tsx
-<div
-  aria-live="polite"
-  aria-relevant="additions removals text"
->
+<div aria-live="polite" aria-relevant="additions removals text">
   {/* Announces when content is added, removed, or text changes */}
 </div>
 ```
@@ -232,6 +227,7 @@ Comprehensive guide to using ARIA (Accessible Rich Internet Applications) attrib
 ### Visibility
 
 **`aria-hidden`** - Hidden from accessibility tree
+
 ```tsx
 // Decorative icon
 <span aria-hidden="true">
@@ -251,6 +247,7 @@ Comprehensive guide to using ARIA (Accessible Rich Internet Applications) attrib
 ### Modal Dialogs
 
 **`aria-modal`** - Indicates modal dialog
+
 ```tsx
 <div
   role="dialog"
@@ -259,9 +256,7 @@ Comprehensive guide to using ARIA (Accessible Rich Internet Applications) attrib
   aria-describedby="dialog-description"
 >
   <h2 id="dialog-title">Confirm Delete</h2>
-  <p id="dialog-description">
-    Are you sure you want to delete this item?
-  </p>
+  <p id="dialog-description">Are you sure you want to delete this item?</p>
   <button>Confirm</button>
   <button>Cancel</button>
 </div>
@@ -272,6 +267,7 @@ Comprehensive guide to using ARIA (Accessible Rich Internet Applications) attrib
 ### Landmark Roles
 
 **Already in HTML5 elements** (prefer native):
+
 - `<header>` = `role="banner"`
 - `<nav>` = `role="navigation"`
 - `<main>` = `role="main"`
@@ -295,6 +291,7 @@ Comprehensive guide to using ARIA (Accessible Rich Internet Applications) attrib
 ### Widget Roles
 
 **`role="button"`** - Button (use `<button>` if possible)
+
 ```tsx
 // DO: Use native button
 <button onClick={handleClick}>Click me</button>
@@ -315,6 +312,7 @@ Comprehensive guide to using ARIA (Accessible Rich Internet Applications) attrib
 ```
 
 **`role="tab"`** - Tab in tablist
+
 ```tsx
 <div role="tablist" aria-label="Content sections">
   <button
@@ -345,18 +343,16 @@ Comprehensive guide to using ARIA (Accessible Rich Internet Applications) attrib
 ```
 
 **`role="dialog"`** - Dialog/modal
+
 ```tsx
-<div
-  role="dialog"
-  aria-modal="true"
-  aria-labelledby="dialog-title"
->
+<div role="dialog" aria-modal="true" aria-labelledby="dialog-title">
   <h2 id="dialog-title">Dialog Title</h2>
   {/* dialog content */}
 </div>
 ```
 
 **`role="alert"`** - Important message
+
 ```tsx
 // Automatically announces to screen readers
 <div role="alert">
@@ -370,6 +366,7 @@ Comprehensive guide to using ARIA (Accessible Rich Internet Applications) attrib
 ```
 
 **`role="status"`** - Status message
+
 ```tsx
 // Less intrusive than alert
 <div role="status" aria-live="polite">
@@ -378,24 +375,28 @@ Comprehensive guide to using ARIA (Accessible Rich Internet Applications) attrib
 ```
 
 **`role="tooltip"`** - Tooltip
+
 ```tsx
-<button
+;<button
   aria-describedby="tooltip"
   onMouseEnter={() => setShowTooltip(true)}
   onMouseLeave={() => setShowTooltip(false)}
 >
   Help
 </button>
-{showTooltip && (
-  <div role="tooltip" id="tooltip">
-    Additional information
-  </div>
-)}
+{
+  showTooltip && (
+    <div role="tooltip" id="tooltip">
+      Additional information
+    </div>
+  )
+}
 ```
 
 ### List Roles
 
 **`role="list"`** and **`role="listitem"`**
+
 ```tsx
 // Only needed if you removed list styling
 <ul className="list-none" role="list">
@@ -406,6 +407,7 @@ Comprehensive guide to using ARIA (Accessible Rich Internet Applications) attrib
 ```
 
 **`role="listbox"`** - Select dropdown alternative
+
 ```tsx
 <div role="listbox" aria-label="Choose option">
   <div role="option" aria-selected={selected === 0}>

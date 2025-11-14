@@ -1,28 +1,32 @@
 'use client'
 
-
-import React, { useContext } from 'react';
-import { useAppContext } from '@/lib/careers/AppContext';
-import FormInput from '@/components/ui/FormInput';
-import FormSelect from '@/components/ui/FormSelect';
-import { Button } from '@/components/ui/Button';
-import SectionWrapper from './SectionWrapper';
-import { WorkHistoryEntry } from '@/lib/careers/types';
-import { PlusCircleIconCareers, Trash2IconCareers } from '../icons';
+import React, { useContext } from 'react'
+import { useAppContext } from '@/lib/careers/AppContext'
+import FormInput from '@/components/ui/FormInput'
+import FormSelect from '@/components/ui/FormSelect'
+import { Button } from '@/components/ui/Button'
+import SectionWrapper from './SectionWrapper'
+import { WorkHistoryEntry } from '@/lib/careers/types'
+import { PlusCircleIconCareers, Trash2IconCareers } from '../icons'
 
 const WorkHistorySection: React.FC = () => {
-  const context = useAppContext();
-  if (!context) throw new Error('AppContext not found');
-  const { formData, handleChange, addWorkHistoryEntry, removeWorkHistoryEntry, t, formErrors } = context;
-  const data = formData.workHistory;
+  const context = useAppContext()
+  if (!context) throw new Error('AppContext not found')
+  const { formData, handleChange, addWorkHistoryEntry, removeWorkHistoryEntry, t, formErrors } =
+    context
+  const data = formData.workHistory
 
-  const getError = (index: number, field: keyof WorkHistoryEntry) => formErrors[`workHistory.entries.${index}.${field}`];
-  
+  const getError = (index: number, field: keyof WorkHistoryEntry) =>
+    formErrors[`workHistory.entries.${index}.${field}`]
+
   const yesNoOptions = [
-    { value: "", label: t('prevMayWeContactPlaceholder', { defaultValue: "Select Yes/No" }) as string },
-    { value: "yes", label: t('yesLabel') as string },
-    { value: "no", label: t('noLabel') as string }
-  ];
+    {
+      value: '',
+      label: t('prevMayWeContactPlaceholder', { defaultValue: 'Select Yes/No' }) as string,
+    },
+    { value: 'yes', label: t('yesLabel') as string },
+    { value: 'no', label: t('noLabel') as string },
+  ]
 
   return (
     <SectionWrapper titleKey="workHistorySectionTitle">
@@ -38,16 +42,21 @@ const WorkHistorySection: React.FC = () => {
       />
 
       {data.entries.map((entry, index) => (
-        <div key={index} className="p-4 my-4 border border-gray-200 dark:border-slate-700 rounded-lg relative">
-          <h4 className="text-md font-semibold mb-3 text-gray-700 dark:text-gray-300">{t('employer', {defaultValue: 'Employer'}) as string} #{index + 1}</h4>
+        <div
+          key={index}
+          className="p-4 my-4 border border-gray-200 dark:border-slate-700 rounded-lg relative"
+        >
+          <h4 className="text-md font-semibold mb-3 text-gray-700 dark:text-gray-300">
+            {t('employer', { defaultValue: 'Employer' }) as string} #{index + 1}
+          </h4>
           {index > 0 && (
-             <Button
+            <Button
               type="button"
               variant="ghost"
               size="icon"
               onClick={() => removeWorkHistoryEntry(index)}
               className="absolute top-2 right-2 text-red-500 hover:text-red-700"
-              aria-label={t('removeEmployer', {defaultValue: 'Remove Employer'}) as string}
+              aria-label={t('removeEmployer', { defaultValue: 'Remove Employer' }) as string}
             >
               <Trash2IconCareers className="h-5 w-5" />
             </Button>
@@ -57,14 +66,18 @@ const WorkHistorySection: React.FC = () => {
               label={t('prevCompanyLabel') as string}
               name={`companyName-${index}`}
               value={entry.companyName}
-              onChange={(e) => handleChange('workHistory', 'entries', e.target.value, index, 'companyName')}
+              onChange={(e) =>
+                handleChange('workHistory', 'entries', e.target.value, index, 'companyName')
+              }
               error={getError(index, 'companyName')}
             />
             <FormInput
               label={t('prevPositionLabel') as string}
               name={`position-${index}`}
               value={entry.position}
-              onChange={(e) => handleChange('workHistory', 'entries', e.target.value, index, 'position')}
+              onChange={(e) =>
+                handleChange('workHistory', 'entries', e.target.value, index, 'position')
+              }
               error={getError(index, 'position')}
             />
             <FormInput
@@ -72,7 +85,9 @@ const WorkHistorySection: React.FC = () => {
               name={`fromDate-${index}`}
               value={entry.fromDate}
               placeholder="MM/YYYY"
-              onChange={(e) => handleChange('workHistory', 'entries', e.target.value, index, 'fromDate')}
+              onChange={(e) =>
+                handleChange('workHistory', 'entries', e.target.value, index, 'fromDate')
+              }
               error={getError(index, 'fromDate')}
             />
             <FormInput
@@ -80,14 +95,18 @@ const WorkHistorySection: React.FC = () => {
               name={`toDate-${index}`}
               value={entry.toDate}
               placeholder="MM/YYYY"
-              onChange={(e) => handleChange('workHistory', 'entries', e.target.value, index, 'toDate')}
+              onChange={(e) =>
+                handleChange('workHistory', 'entries', e.target.value, index, 'toDate')
+              }
               error={getError(index, 'toDate')}
             />
             <FormInput
               label={t('prevSupervisorLabel') as string}
               name={`supervisor-${index}`}
               value={entry.supervisor}
-              onChange={(e) => handleChange('workHistory', 'entries', e.target.value, index, 'supervisor')}
+              onChange={(e) =>
+                handleChange('workHistory', 'entries', e.target.value, index, 'supervisor')
+              }
               className="md:col-span-2"
               error={getError(index, 'supervisor')}
             />
@@ -95,16 +114,20 @@ const WorkHistorySection: React.FC = () => {
               label={t('prevReasonForLeavingLabel') as string}
               name={`reasonForLeaving-${index}`}
               value={entry.reasonForLeaving}
-              onChange={(e) => handleChange('workHistory', 'entries', e.target.value, index, 'reasonForLeaving')}
+              onChange={(e) =>
+                handleChange('workHistory', 'entries', e.target.value, index, 'reasonForLeaving')
+              }
               className="md:col-span-2"
               error={getError(index, 'reasonForLeaving')}
             />
-             <FormSelect
+            <FormSelect
               label={t('prevMayWeContactLabel') as string}
               name={`mayContact-${index}`}
               options={yesNoOptions}
               value={entry.mayContact}
-              onChange={(e) => handleChange('workHistory', 'entries', e.target.value, index, 'mayContact')}
+              onChange={(e) =>
+                handleChange('workHistory', 'entries', e.target.value, index, 'mayContact')
+              }
               error={getError(index, 'mayContact')}
             />
           </div>
@@ -114,7 +137,7 @@ const WorkHistorySection: React.FC = () => {
         <PlusCircleIconCareers className="h-5 w-5 mr-2" /> {t('addWorkHistoryButton') as string}
       </Button>
     </SectionWrapper>
-  );
-};
+  )
+}
 
-export default WorkHistorySection;
+export default WorkHistorySection

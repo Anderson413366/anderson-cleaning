@@ -5,7 +5,7 @@
  * MIME type validation, magic byte checking, and filename generation.
  */
 
-import { fileTypeFromBuffer } from 'file-type'
+import fileType from 'file-type'
 import crypto from 'crypto'
 
 /**
@@ -98,9 +98,9 @@ export async function validateFileType(
 ): Promise<{ valid: boolean; error?: string; detectedType?: string }> {
   try {
     // Use file-type library to detect actual MIME type
-    const fileType = await fileTypeFromBuffer(buffer)
+    const detectedFileType = await fileType.fromBuffer(buffer)
 
-    if (!fileType) {
+    if (!detectedFileType) {
       return {
         valid: false,
         error: 'Could not determine file type',
@@ -108,28 +108,28 @@ export async function validateFileType(
     }
 
     // Check if detected MIME type matches expected
-    if (fileType.mime !== expectedMimeType) {
+    if (detectedFileType.mime !== expectedMimeType) {
       // Special case: DOCX files are ZIP archives
       if (
         expectedMimeType ===
           'application/vnd.openxmlformats-officedocument.wordprocessingml.document' &&
-        fileType.mime === 'application/zip'
+        detectedFileType.mime === 'application/zip'
       ) {
         // Additional check for DOCX structure
         const isDocx = await validateDocxStructure(buffer)
         if (isDocx) {
-          return { valid: true, detectedType: fileType.mime }
+          return { valid: true, detectedType: detectedFileType.mime }
         }
       }
 
       return {
         valid: false,
-        error: `File type mismatch. Expected ${expectedMimeType}, but detected ${fileType.mime}`,
-        detectedType: fileType.mime,
+        error: `File type mismatch. Expected ${expectedMimeType}, but detected ${detectedFileType.mime}`,
+        detectedType: detectedFileType.mime,
       }
     }
 
-    return { valid: true, detectedType: fileType.mime }
+    return { valid: true, detectedType: detectedFileType.mime }
   } catch (error) {
     return {
       valid: false,
@@ -141,7 +141,7 @@ export async function validateFileType(
 /**
  * Validate DOCX structure (ZIP with specific files)
  */
-async function validateDocxStructure(buffer: Buffer): boolean {
+async function validateDocxStructure(buffer: Buffer): Promise<boolean> {
   // Check for ZIP signature
   if (!checkMagicBytes(buffer, MAGIC_BYTES.docx)) {
     return false

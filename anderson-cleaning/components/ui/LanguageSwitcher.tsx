@@ -1,24 +1,23 @@
 'use client'
 
-
-import React, { useContext } from 'react';
-import { AppContext } from '@/lib/careers/AppContext';
-import { LanguageCode } from '@/lib/careers/types';
-import { Button } from './Button';
-import { GlobeIconCareers } from '../careers/icons';
+import React, { useContext } from 'react'
+import { AppContext } from '@/lib/careers/AppContext'
+import { LanguageCode } from '@/lib/careers/types'
+import { Button } from './Button'
+import { GlobeIconCareers } from '../careers/icons'
 
 const LanguageSwitcher: React.FC = () => {
-  const context = useContext(AppContext);
-  if (!context) throw new Error('AppContext not found');
+  const context = useContext(AppContext)
+  if (!context) throw new Error('AppContext not found')
 
-  const { currentLanguage, setCurrentLanguage, t } = context;
+  const { currentLanguage, setCurrentLanguage, t } = context
 
   const languages: { code: LanguageCode; name: string; short: string }[] = [
     { code: 'en', name: 'English', short: 'EN' },
     { code: 'es', name: 'Español', short: 'ES' },
     { code: 'pt-BR', name: 'Português', short: 'PT' },
     { code: 'ro', name: 'Română', short: 'RO' },
-  ];
+  ]
 
   return (
     <div className="flex items-center space-x-2" aria-label="Change application language">
@@ -41,7 +40,7 @@ const LanguageSwitcher: React.FC = () => {
         ))}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default LanguageSwitcher;
+export default LanguageSwitcher

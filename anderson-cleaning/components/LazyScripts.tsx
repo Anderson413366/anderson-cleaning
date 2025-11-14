@@ -205,11 +205,7 @@ export function LazyLoadWrapper({
     return () => observer.disconnect()
   }, [ref, threshold, rootMargin])
 
-  return (
-    <div ref={setRef}>
-      {isVisible ? children : <div style={{ minHeight: '100px' }} />}
-    </div>
-  )
+  return <div ref={setRef}>{isVisible ? children : <div style={{ minHeight: '100px' }} />}</div>
 }
 
 /**

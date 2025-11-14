@@ -22,24 +22,26 @@ export default function WebVitalsReporter() {
     observeLongTasks()
 
     // Dynamically import web-vitals library
-    import('web-vitals').then((webVitals) => {
-      const { onCLS, onFCP, onLCP, onTTFB, onINP } = webVitals
+    import('web-vitals')
+      .then((webVitals) => {
+        const { onCLS, onFCP, onLCP, onTTFB, onINP } = webVitals
 
-      // Report Core Web Vitals
-      onCLS(reportWebVitals)
-      onFCP(reportWebVitals)
-      onLCP(reportWebVitals)
-      onTTFB(reportWebVitals)
-      onINP(reportWebVitals)
+        // Report Core Web Vitals
+        onCLS(reportWebVitals)
+        onFCP(reportWebVitals)
+        onLCP(reportWebVitals)
+        onTTFB(reportWebVitals)
+        onINP(reportWebVitals)
 
-      // onFID is deprecated in web-vitals v3, use onINP instead
-      // Try to use onFID if available (backwards compatibility)
-      if ('onFID' in webVitals && typeof webVitals.onFID === 'function') {
-        webVitals.onFID(reportWebVitals)
-      }
-    }).catch((error) => {
-      console.error('Failed to load web-vitals:', error)
-    })
+        // onFID is deprecated in web-vitals v3, use onINP instead
+        // Try to use onFID if available (backwards compatibility)
+        if ('onFID' in webVitals && typeof webVitals.onFID === 'function') {
+          webVitals.onFID(reportWebVitals)
+        }
+      })
+      .catch((error) => {
+        console.error('Failed to load web-vitals:', error)
+      })
   }, [])
 
   // This component doesn't render anything

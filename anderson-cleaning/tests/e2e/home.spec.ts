@@ -107,7 +107,7 @@ test.describe('Homepage', () => {
 
   test('phone number is clickable', async ({ page }) => {
     const phoneLink = page.locator('a[href^="tel:"]').first()
-    if (await phoneLink.count() > 0) {
+    if ((await phoneLink.count()) > 0) {
       await expect(phoneLink).toBeVisible()
     }
   })
@@ -136,7 +136,7 @@ test.describe('Homepage', () => {
 
     // Check if slider container exists
     const slider = page.locator('[role="img"]').filter({ hasText: /before and after/i })
-    if (await slider.count() > 0) {
+    if ((await slider.count()) > 0) {
       await expect(slider.first()).toBeVisible()
     }
   })
@@ -176,9 +176,7 @@ test.describe('Homepage', () => {
     // Allow some warnings but no critical errors
     const criticalErrors = consoleErrors.filter(
       (error) =>
-        !error.includes('favicon') &&
-        !error.includes('sourcemap') &&
-        !error.includes('DevTools')
+        !error.includes('favicon') && !error.includes('sourcemap') && !error.includes('DevTools')
     )
 
     expect(criticalErrors).toHaveLength(0)

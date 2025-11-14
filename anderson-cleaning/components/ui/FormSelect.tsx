@@ -1,21 +1,25 @@
 'use client'
 
-
-import React, { forwardRef } from 'react';
-import { FormSelectProps } from '@/lib/careers/types';
-import { AppContext } from '@/lib/careers/AppContext';
+import React, { forwardRef } from 'react'
+import { FormSelectProps } from '@/lib/careers/types'
+import { AppContext } from '@/lib/careers/AppContext'
 
 const FormSelect = forwardRef<HTMLSelectElement, FormSelectProps>(
   ({ label, name, options, className, error, isRequired, ...props }, ref) => {
-    const context = React.useContext(AppContext);
-    if (!context) throw new Error('AppContext not found');
-    const { t } = context;
+    const context = React.useContext(AppContext)
+    if (!context) throw new Error('AppContext not found')
+    const { t } = context
 
     return (
       <div className="mb-4">
-        <label htmlFor={name} className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+        <label
+          htmlFor={name}
+          className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+        >
           {label}
-          {isRequired && <span className="text-red-500 ml-1">{t('requiredFieldIndicator') as string}</span>}
+          {isRequired && (
+            <span className="text-red-500 ml-1">{t('requiredFieldIndicator') as string}</span>
+          )}
         </label>
         <select
           id={name}
@@ -26,7 +30,7 @@ const FormSelect = forwardRef<HTMLSelectElement, FormSelectProps>(
                       ${error ? 'border-red-500 dark:border-red-400' : ''} ${className || ''}`}
           {...props}
         >
-          {options.map(option => (
+          {options.map((option) => (
             <option key={option.value} value={option.value}>
               {option.label}
             </option>
@@ -34,9 +38,9 @@ const FormSelect = forwardRef<HTMLSelectElement, FormSelectProps>(
         </select>
         {error && <p className="mt-1 text-xs text-red-500 dark:text-red-400">{error}</p>}
       </div>
-    );
+    )
   }
-);
-FormSelect.displayName = "FormSelect";
+)
+FormSelect.displayName = 'FormSelect'
 
-export default FormSelect;
+export default FormSelect

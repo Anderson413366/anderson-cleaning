@@ -1,21 +1,25 @@
 'use client'
 
-
-import React, { forwardRef } from 'react';
-import { FormTextareaProps } from '@/lib/careers/types';
-import { AppContext } from '@/lib/careers/AppContext';
+import React, { forwardRef } from 'react'
+import { FormTextareaProps } from '@/lib/careers/types'
+import { AppContext } from '@/lib/careers/AppContext'
 
 const FormTextarea = forwardRef<HTMLTextAreaElement, FormTextareaProps>(
   ({ label, name, className, error, isRequired, ...props }, ref) => {
-    const context = React.useContext(AppContext);
-    if (!context) throw new Error('AppContext not found');
-    const { t } = context;
-    
+    const context = React.useContext(AppContext)
+    if (!context) throw new Error('AppContext not found')
+    const { t } = context
+
     return (
       <div className="mb-4">
-        <label htmlFor={name} className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+        <label
+          htmlFor={name}
+          className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+        >
           {label}
-          {isRequired && <span className="text-red-500 ml-1">{t('requiredFieldIndicator') as string}</span>}
+          {isRequired && (
+            <span className="text-red-500 ml-1">{t('requiredFieldIndicator') as string}</span>
+          )}
         </label>
         <textarea
           id={name}
@@ -29,9 +33,9 @@ const FormTextarea = forwardRef<HTMLTextAreaElement, FormTextareaProps>(
         />
         {error && <p className="mt-1 text-xs text-red-500 dark:text-red-400">{error}</p>}
       </div>
-    );
+    )
   }
-);
-FormTextarea.displayName = "FormTextarea";
+)
+FormTextarea.displayName = 'FormTextarea'
 
-export default FormTextarea;
+export default FormTextarea

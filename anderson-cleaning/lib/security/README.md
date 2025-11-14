@@ -510,16 +510,12 @@ Honeypots catch bots that auto-fill all form fields.
 ### HTML Implementation
 
 ```tsx
-{/* Hidden field that humans won't fill */}
-<div style={{ position: 'absolute', left: '-9999px' }} aria-hidden="true">
+{
+  /* Hidden field that humans won't fill */
+}
+;<div style={{ position: 'absolute', left: '-9999px' }} aria-hidden="true">
   <label htmlFor="website">Website</label>
-  <input
-    type="text"
-    id="website"
-    name="website"
-    tabIndex={-1}
-    autoComplete="off"
-  />
+  <input type="text" id="website" name="website" tabIndex={-1} autoComplete="off" />
 </div>
 ```
 

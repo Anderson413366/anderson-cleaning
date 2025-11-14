@@ -37,8 +37,7 @@ const industriesData: Record<string, IndustryData> = {
       },
       {
         title: 'After-Hours Access',
-        description:
-          'Cleaning must happen without disrupting business operations.',
+        description: 'Cleaning must happen without disrupting business operations.',
       },
     ],
     solutions: [
@@ -54,8 +53,7 @@ const industriesData: Record<string, IndustryData> = {
       },
       {
         title: 'Flexible Scheduling',
-        description:
-          'Evening, overnight, or weekend cleaning to avoid disrupting your team.',
+        description: 'Evening, overnight, or weekend cleaning to avoid disrupting your team.',
       },
     ],
     benefits: [
@@ -72,7 +70,7 @@ const industriesData: Record<string, IndustryData> = {
           'We typically clean after hours (evenings or weekends) to avoid disrupting your team. However, we can accommodate day porter services for high-traffic lobbies and restrooms if needed.',
       },
       {
-        question: 'What\'s included in daily office cleaning?',
+        question: "What's included in daily office cleaning?",
         answer:
           'Daily cleaning includes: emptying trash/recycling, vacuuming/mopping floors, wiping down surfaces, sanitizing restrooms, cleaning break rooms, and dusting common areas. We create custom SOPs based on your office layout.',
       },
@@ -101,8 +99,7 @@ const industriesData: Record<string, IndustryData> = {
       },
       {
         title: 'Sensitive Areas',
-        description:
-          'Exam rooms, waiting areas, and treatment spaces need specialized attention.',
+        description: 'Exam rooms, waiting areas, and treatment spaces need specialized attention.',
       },
     ],
     solutions: [
@@ -155,8 +152,7 @@ const industriesData: Record<string, IndustryData> = {
     challenges: [
       {
         title: 'High Student Volume',
-        description:
-          'Hundreds or thousands of students create constant cleaning demands.',
+        description: 'Hundreds or thousands of students create constant cleaning demands.',
       },
       {
         title: 'Safety Requirements',
@@ -172,8 +168,7 @@ const industriesData: Record<string, IndustryData> = {
     solutions: [
       {
         title: 'Green Cleaning Products',
-        description:
-          'Non-toxic, environmentally friendly cleaners safe for children and staff.',
+        description: 'Non-toxic, environmentally friendly cleaners safe for children and staff.',
       },
       {
         title: 'Daily Disinfection',
@@ -182,8 +177,7 @@ const industriesData: Record<string, IndustryData> = {
       },
       {
         title: 'Summer Deep Cleaning',
-        description:
-          'Intensive floor care, window cleaning, and facility refresh during breaks.',
+        description: 'Intensive floor care, window cleaning, and facility refresh during breaks.',
       },
     ],
     benefits: [
@@ -219,13 +213,11 @@ const industriesData: Record<string, IndustryData> = {
     challenges: [
       {
         title: 'Heavy Duty Conditions',
-        description:
-          'Industrial environments require specialized equipment and cleaning methods.',
+        description: 'Industrial environments require specialized equipment and cleaning methods.',
       },
       {
         title: 'Safety Compliance',
-        description:
-          'Maintaining clean walkways and work areas is critical for OSHA compliance.',
+        description: 'Maintaining clean walkways and work areas is critical for OSHA compliance.',
       },
       {
         title: 'Large Square Footage',
@@ -241,13 +233,11 @@ const industriesData: Record<string, IndustryData> = {
       },
       {
         title: 'Safety-First Approach',
-        description:
-          'Teams trained in facility-specific safety protocols and PPE requirements.',
+        description: 'Teams trained in facility-specific safety protocols and PPE requirements.',
       },
       {
         title: 'Office + Production Areas',
-        description:
-          'Comprehensive cleaning of both office spaces and production floor areas.',
+        description: 'Comprehensive cleaning of both office spaces and production floor areas.',
       },
     ],
     benefits: [
@@ -288,25 +278,21 @@ const industriesData: Record<string, IndustryData> = {
       },
       {
         title: 'Tenant Turnover',
-        description:
-          'Move-outs require fast turnaround cleaning to minimize vacancy periods.',
+        description: 'Move-outs require fast turnaround cleaning to minimize vacancy periods.',
       },
       {
         title: 'Common Area Maintenance',
-        description:
-          'Lobbies, hallways, amenities, and shared spaces need consistent upkeep.',
+        description: 'Lobbies, hallways, amenities, and shared spaces need consistent upkeep.',
       },
     ],
     solutions: [
       {
         title: 'Portfolio-Wide Service',
-        description:
-          'Single point of contact managing cleaning across all your properties.',
+        description: 'Single point of contact managing cleaning across all your properties.',
       },
       {
         title: 'Turnover Cleaning',
-        description:
-          'Fast, thorough cleaning of vacant units to prepare for new tenants.',
+        description: 'Fast, thorough cleaning of vacant units to prepare for new tenants.',
       },
       {
         title: 'Common Area Programs',
@@ -347,35 +333,29 @@ const industriesData: Record<string, IndustryData> = {
     challenges: [
       {
         title: 'Customer-Facing Appearance',
-        description:
-          'Retail spaces must always look pristine during business hours.',
+        description: 'Retail spaces must always look pristine during business hours.',
       },
       {
         title: 'High-Traffic Floors',
-        description:
-          'Constant foot traffic wears on floors and requires regular maintenance.',
+        description: 'Constant foot traffic wears on floors and requires regular maintenance.',
       },
       {
         title: 'After-Hours Access',
-        description:
-          'Cleaning must happen outside business hours without disrupting operations.',
+        description: 'Cleaning must happen outside business hours without disrupting operations.',
       },
     ],
     solutions: [
       {
         title: 'After-Hours Cleaning',
-        description:
-          'Evening or overnight cleaning ensures your store is spotless before opening.',
+        description: 'Evening or overnight cleaning ensures your store is spotless before opening.',
       },
       {
         title: 'Floor Care Programs',
-        description:
-          'Regular strip/wax, buffing, and maintenance to keep floors looking new.',
+        description: 'Regular strip/wax, buffing, and maintenance to keep floors looking new.',
       },
       {
         title: 'Window & Glass Cleaning',
-        description:
-          'Storefront windows and glass doors cleaned for maximum curb appeal.',
+        description: 'Storefront windows and glass doors cleaned for maximum curb appeal.',
       },
     ],
     benefits: [
@@ -424,9 +404,7 @@ export default function IndustryDetailPage() {
           <p className="text-gray-600 dark:text-gray-400 mb-8">
             The industry you're looking for doesn't exist or has been moved.
           </p>
-          <Button onClick={() => router.push('/industries')}>
-            View All Industries
-          </Button>
+          <Button onClick={() => router.push('/industries')}>View All Industries</Button>
         </div>
         <Footer />
       </div>
@@ -451,21 +429,13 @@ export default function IndustryDetailPage() {
           <div className="flex items-start gap-6">
             <div className="text-7xl">{industry.icon}</div>
             <div className="flex-1">
-              <h1 className="text-4xl md:text-5xl font-extrabold mb-4">
-                {industry.title}
-              </h1>
-              <p className="text-xl text-blue-100 max-w-3xl">
-                {industry.heroDescription}
-              </p>
+              <h1 className="text-4xl md:text-5xl font-extrabold mb-4">{industry.title}</h1>
+              <p className="text-xl text-blue-100 max-w-3xl">{industry.heroDescription}</p>
             </div>
           </div>
 
           <div className="mt-8">
-            <Button
-              variant="accent"
-              size="lg"
-              onClick={() => router.push('/quote')}
-            >
+            <Button variant="accent" size="lg" onClick={() => router.push('/quote')}>
               Get Your Free Quote
             </Button>
           </div>
@@ -479,21 +449,17 @@ export default function IndustryDetailPage() {
             Unique Challenges in {industry.title}
           </h2>
           <p className="text-gray-600 dark:text-gray-400 text-center mb-12 max-w-2xl mx-auto">
-            Every industry has specific cleaning challenges. Here's what makes {industry.title.toLowerCase()} different:
+            Every industry has specific cleaning challenges. Here's what makes{' '}
+            {industry.title.toLowerCase()} different:
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {industry.challenges.map((challenge, index) => (
-              <div
-                key={index}
-                className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-md"
-              >
+              <div key={index} className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-md">
                 <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-3">
                   {challenge.title}
                 </h3>
-                <p className="text-gray-600 dark:text-gray-400">
-                  {challenge.description}
-                </p>
+                <p className="text-gray-600 dark:text-gray-400">{challenge.description}</p>
               </div>
             ))}
           </div>
@@ -522,9 +488,7 @@ export default function IndustryDetailPage() {
                 <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-3">
                   {solution.title}
                 </h3>
-                <p className="text-gray-700 dark:text-gray-300">
-                  {solution.description}
-                </p>
+                <p className="text-gray-700 dark:text-gray-300">{solution.description}</p>
               </div>
             ))}
           </div>
@@ -542,10 +506,7 @@ export default function IndustryDetailPage() {
             <div className="bg-white dark:bg-slate-800 rounded-xl p-8 shadow-lg">
               <ul className="space-y-4">
                 {industry.benefits.map((benefit, index) => (
-                  <li
-                    key={index}
-                    className="flex items-start text-gray-700 dark:text-gray-300"
-                  >
+                  <li key={index} className="flex items-start text-gray-700 dark:text-gray-300">
                     <CheckCircle2 className="h-6 w-6 text-accent-500 mr-3 flex-shrink-0 mt-0.5" />
                     <span className="text-lg">{benefit}</span>
                   </li>
@@ -566,16 +527,11 @@ export default function IndustryDetailPage() {
 
             <div className="space-y-6">
               {industry.faqs.map((faq, index) => (
-                <div
-                  key={index}
-                  className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-md"
-                >
+                <div key={index} className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-md">
                   <h3 className="text-lg font-bold text-gray-900 dark:text-gray-100 mb-3">
                     {faq.question}
                   </h3>
-                  <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                    {faq.answer}
-                  </p>
+                  <p className="text-gray-700 dark:text-gray-300 leading-relaxed">{faq.answer}</p>
                 </div>
               ))}
             </div>
@@ -586,17 +542,12 @@ export default function IndustryDetailPage() {
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-primary-700 to-primary-900 text-white">
         <div className="container mx-auto px-6 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Ready to Get Started?
-          </h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Get Started?</h2>
           <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-            Get a customized cleaning program designed specifically for your {industry.title.toLowerCase()}.
+            Get a customized cleaning program designed specifically for your{' '}
+            {industry.title.toLowerCase()}.
           </p>
-          <Button
-            variant="accent"
-            size="lg"
-            onClick={() => router.push('/quote')}
-          >
+          <Button variant="accent" size="lg" onClick={() => router.push('/quote')}>
             Request Your Free Quote
           </Button>
         </div>

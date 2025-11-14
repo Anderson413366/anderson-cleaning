@@ -70,9 +70,7 @@ export async function getServiceBySlug(slug: string, preview = false) {
 }
 
 export async function getServiceSlugs() {
-  return client.fetch(
-    groq`*[_type == "service"]{"slug": slug.current}`
-  )
+  return client.fetch(groq`*[_type == "service"]{"slug": slug.current}`)
 }
 
 // ===== INDUSTRIES =====
@@ -117,9 +115,7 @@ export async function getIndustryBySlug(slug: string, preview = false) {
 }
 
 export async function getIndustrySlugs() {
-  return client.fetch(
-    groq`*[_type == "industry"]{"slug": slug.current}`
-  )
+  return client.fetch(groq`*[_type == "industry"]{"slug": slug.current}`)
 }
 
 // ===== TESTIMONIALS =====
@@ -241,9 +237,7 @@ export async function getPageBySlug(slug: string, preview = false) {
 }
 
 export async function getPageSlugs() {
-  return client.fetch(
-    groq`*[_type == "page"]{"slug": slug.current}`
-  )
+  return client.fetch(groq`*[_type == "page"]{"slug": slug.current}`)
 }
 
 // ===== BLOG POSTS =====
@@ -289,9 +283,7 @@ export async function getPostBySlug(slug: string, preview = false) {
 }
 
 export async function getPostSlugs() {
-  return client.fetch(
-    groq`*[_type == "post"]{"slug": slug.current}`
-  )
+  return client.fetch(groq`*[_type == "post"]{"slug": slug.current}`)
 }
 
 export async function getRecentPosts(limit = 5, preview = false) {

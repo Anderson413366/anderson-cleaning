@@ -33,13 +33,8 @@ export const quoteStep1Schema = z.object({
     .string()
     .min(2, 'Company name must be at least 2 characters')
     .max(200, 'Company name must be less than 200 characters'),
-  email: z
-    .string()
-    .email('Please enter a valid email address')
-    .toLowerCase(),
-  phone: z
-    .string()
-    .regex(phoneRegex, 'Please enter a valid phone number (e.g., 555-123-4567)'),
+  email: z.string().email('Please enter a valid email address').toLowerCase(),
+  phone: z.string().regex(phoneRegex, 'Please enter a valid phone number (e.g., 555-123-4567)'),
 })
 
 /**
@@ -54,9 +49,7 @@ export const quoteStep2Schema = z.object({
     .string()
     .min(2, 'City must be at least 2 characters')
     .max(100, 'City must be less than 100 characters'),
-  zipCode: z
-    .string()
-    .regex(zipRegex, 'Please enter a valid ZIP code (e.g., 01089 or 01089-1234)'),
+  zipCode: z.string().regex(zipRegex, 'Please enter a valid ZIP code (e.g., 01089 or 01089-1234)'),
   squareFootage: z
     .number()
     .positive('Square footage must be a positive number')
@@ -64,13 +57,21 @@ export const quoteStep2Schema = z.object({
     .optional()
     .or(z.literal('')),
   facilityType: z.enum(
-    ['office', 'medical', 'education', 'manufacturing', 'warehouse', 'retail', 'property-management', 'other'],
+    [
+      'office',
+      'medical',
+      'education',
+      'manufacturing',
+      'warehouse',
+      'retail',
+      'property-management',
+      'other',
+    ],
     { required_error: 'Please select a facility type' }
   ),
-  cleaningFrequency: z.enum(
-    ['daily', '2-3x-week', 'weekly', 'bi-weekly', 'monthly', 'one-time'],
-    { required_error: 'Please select a cleaning frequency' }
-  ),
+  cleaningFrequency: z.enum(['daily', '2-3x-week', 'weekly', 'bi-weekly', 'monthly', 'one-time'], {
+    required_error: 'Please select a cleaning frequency',
+  }),
   desiredStartDate: z
     .string()
     .optional()
@@ -112,11 +113,9 @@ export const quoteStep4Schema = z.object({
     .string()
     .max(500, 'Special requests must be less than 500 characters')
     .optional(),
-  consent: z
-    .boolean()
-    .refine((val) => val === true, {
-      message: 'You must agree to be contacted to submit this quote request',
-    }),
+  consent: z.boolean().refine((val) => val === true, {
+    message: 'You must agree to be contacted to submit this quote request',
+  }),
   // Honeypot field - should always be empty
   website: z.string().max(0, 'Invalid submission').optional(),
 })
@@ -148,13 +147,8 @@ export const contactFormSchema = z.object({
     .min(2, 'Name must be at least 2 characters')
     .max(100, 'Name must be less than 100 characters')
     .regex(/^[a-zA-Z\s'-]+$/, 'Name can only contain letters, spaces, hyphens, and apostrophes'),
-  email: z
-    .string()
-    .email('Please enter a valid email address')
-    .toLowerCase(),
-  phone: z
-    .string()
-    .regex(phoneRegex, 'Please enter a valid phone number (e.g., 555-123-4567)'),
+  email: z.string().email('Please enter a valid email address').toLowerCase(),
+  phone: z.string().regex(phoneRegex, 'Please enter a valid phone number (e.g., 555-123-4567)'),
   message: z
     .string()
     .min(10, 'Message must be at least 10 characters')
@@ -187,25 +181,25 @@ export function formatPhoneNumber(phone: string): string {
  * Facility type display names
  */
 export const facilityTypeLabels: Record<string, string> = {
-  'office': 'Office/Corporate',
-  'medical': 'Medical Facility',
-  'education': 'Educational Facility',
-  'manufacturing': 'Manufacturing',
-  'warehouse': 'Warehouse/Distribution',
-  'retail': 'Retail/Showroom',
+  office: 'Office/Corporate',
+  medical: 'Medical Facility',
+  education: 'Educational Facility',
+  manufacturing: 'Manufacturing',
+  warehouse: 'Warehouse/Distribution',
+  retail: 'Retail/Showroom',
   'property-management': 'Property Management',
-  'other': 'Other',
+  other: 'Other',
 }
 
 /**
  * Cleaning frequency display names
  */
 export const cleaningFrequencyLabels: Record<string, string> = {
-  'daily': 'Daily',
+  daily: 'Daily',
   '2-3x-week': '2-3 times per week',
-  'weekly': 'Weekly',
+  weekly: 'Weekly',
   'bi-weekly': 'Bi-weekly (every 2 weeks)',
-  'monthly': 'Monthly',
+  monthly: 'Monthly',
   'one-time': 'One-time cleaning',
 }
 

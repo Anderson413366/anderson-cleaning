@@ -5,12 +5,14 @@ Comprehensive performance optimizations for achieving excellent Core Web Vitals 
 ## 📊 Performance Targets
 
 ### Lighthouse Scores (Mobile)
+
 - ✅ **Performance**: ≥90
 - ✅ **Accessibility**: ≥95
 - ✅ **Best Practices**: ≥95
 - ✅ **SEO**: ≥95
 
 ### Core Web Vitals
+
 - ✅ **LCP (Largest Contentful Paint)**: <2.5s
 - ✅ **FID (First Input Delay)**: <100ms
 - ✅ **CLS (Cumulative Layout Shift)**: <0.1
@@ -18,6 +20,7 @@ Comprehensive performance optimizations for achieving excellent Core Web Vitals 
 - ✅ **INP (Interaction to Next Paint)**: <200ms
 
 ### Performance Budgets
+
 - **Total JavaScript**: <200KB (gzipped)
 - **Total CSS**: <50KB (gzipped)
 - **LCP Element**: <2.5s
@@ -28,6 +31,7 @@ Comprehensive performance optimizations for achieving excellent Core Web Vitals 
 ### 1. Image Optimization
 
 **next/image Configuration** (next.config.js):
+
 ```javascript
 images: {
   remotePatterns: [{ protocol: 'https', hostname: 'cdn.sanity.io' }],
@@ -39,6 +43,7 @@ images: {
 ```
 
 **OptimizedImage Component Usage**:
+
 ```tsx
 import OptimizedImage, { HeroImage, CardImage } from '@/components/OptimizedImage'
 
@@ -71,6 +76,7 @@ import OptimizedImage, { HeroImage, CardImage } from '@/components/OptimizedImag
 ```
 
 **Best Practices**:
+
 - ✅ Always set `width` and `height` to prevent CLS
 - ✅ Use `priority` for above-the-fold images (LCP)
 - ✅ Use `sizes` prop for responsive images
@@ -81,6 +87,7 @@ import OptimizedImage, { HeroImage, CardImage } from '@/components/OptimizedImag
 ### 2. Font Optimization
 
 **Inter Font with next/font** (app/layout.tsx):
+
 ```tsx
 import { Inter } from 'next/font/google'
 
@@ -94,6 +101,7 @@ const inter = Inter({
 ```
 
 **Benefits**:
+
 - ✅ Automatic font subsetting
 - ✅ Zero layout shift with `font-display: swap`
 - ✅ Preloading for faster load
@@ -103,6 +111,7 @@ const inter = Inter({
 ### 3. JavaScript Optimization
 
 **Code Splitting**:
+
 ```tsx
 // Dynamic imports for heavy components
 import dynamic from 'next/dynamic'
@@ -114,6 +123,7 @@ const HeavyComponent = dynamic(() => import('./HeavyComponent'), {
 ```
 
 **Lazy Scripts** (components/LazyScripts.tsx):
+
 ```tsx
 import { CrispChat, GoogleAnalytics, MicrosoftClarity } from '@/components/LazyScripts'
 
@@ -124,6 +134,7 @@ import { CrispChat, GoogleAnalytics, MicrosoftClarity } from '@/components/LazyS
 ```
 
 **Tree Shaking** (next.config.js):
+
 ```javascript
 experimental: {
   optimizePackageImports: ['lucide-react', 'framer-motion'],
@@ -131,6 +142,7 @@ experimental: {
 ```
 
 **Production Optimizations**:
+
 ```javascript
 compiler: {
   removeConsole: process.env.NODE_ENV === 'production' ? {
@@ -142,6 +154,7 @@ compiler: {
 ### 4. Resource Hints
 
 **Preconnect & DNS Prefetch** (app/layout.tsx):
+
 ```tsx
 <head>
   {/* Preconnect to critical origins */}
@@ -157,6 +170,7 @@ compiler: {
 ```
 
 **Benefits**:
+
 - ✅ Reduces DNS lookup time
 - ✅ Establishes early connections
 - ✅ Faster resource loading
@@ -164,6 +178,7 @@ compiler: {
 ### 5. Caching Strategy
 
 **Static Assets** (next.config.js):
+
 ```javascript
 async headers() {
   return [
@@ -187,19 +202,21 @@ async headers() {
 ```
 
 **ISR (Incremental Static Regeneration)**:
+
 ```tsx
 // In page.tsx
 export const revalidate = 3600 // Revalidate every hour
 
 // Or in fetch
 const data = await fetch('https://api.example.com/data', {
-  next: { revalidate: 3600 }
+  next: { revalidate: 3600 },
 })
 ```
 
 ### 6. Core Web Vitals Tracking
 
 **Automatic Reporting** (lib/utils/analytics.ts):
+
 ```tsx
 import { reportWebVitals } from '@/lib/utils/analytics'
 
@@ -207,6 +224,7 @@ import { reportWebVitals } from '@/lib/utils/analytics'
 ```
 
 **Performance Metrics Tracked**:
+
 - FCP (First Contentful Paint)
 - LCP (Largest Contentful Paint)
 - CLS (Cumulative Layout Shift)
@@ -218,11 +236,13 @@ import { reportWebVitals } from '@/lib/utils/analytics'
 - Page Load Metrics
 
 **View in Google Analytics**:
+
 1. Navigate to Events
 2. Filter by "Web Vitals" category
 3. View metrics: LCP, FID, CLS, etc.
 
 **View in Sentry**:
+
 1. Navigate to Performance
 2. View measurements tab
 3. Check poor metrics in Issues
@@ -230,17 +250,16 @@ import { reportWebVitals } from '@/lib/utils/analytics'
 ### 7. CSS Optimization
 
 **Tailwind Configuration** (tailwind.config.ts):
+
 ```typescript
 module.exports = {
-  content: [
-    './app/**/*.{js,ts,jsx,tsx,mdx}',
-    './components/**/*.{js,ts,jsx,tsx,mdx}',
-  ],
+  content: ['./app/**/*.{js,ts,jsx,tsx,mdx}', './components/**/*.{js,ts,jsx,tsx,mdx}'],
   // Purges unused CSS automatically
 }
 ```
 
 **Critical CSS**:
+
 - Next.js automatically inlines critical CSS
 - Route-based code splitting
 - CSS modules for component styles
@@ -248,6 +267,7 @@ module.exports = {
 ### 8. Webpack Optimizations
 
 **Code Splitting** (next.config.js):
+
 ```javascript
 webpack: (config, { isServer }) => {
   if (!isServer) {
@@ -278,26 +298,31 @@ webpack: (config, { isServer }) => {
 ### 9. Mobile Optimization
 
 **Responsive Breakpoints**:
+
 - Mobile: <640px
 - Tablet: 640px - 1024px
 - Desktop: >1024px
 
 **Touch Targets**:
+
 - Minimum size: 44x44px
 - Proper spacing between interactive elements
 
 **Viewport**:
+
 ```html
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 ```
 
 **Font Sizes**:
+
 - Minimum: 16px (prevents zoom on iOS)
 - Line height: 1.5 for readability
 
 ### 10. Performance Monitoring
 
 **Lighthouse CI** (Coming Soon):
+
 ```yaml
 # .github/workflows/lighthouse.yml
 name: Lighthouse CI
@@ -316,6 +341,7 @@ jobs:
 ```
 
 **Vercel Analytics**:
+
 1. Enable in Vercel dashboard
 2. View Real Experience Score
 3. Monitor Core Web Vitals over time
@@ -325,6 +351,7 @@ jobs:
 ### Local Testing
 
 **Run Lighthouse**:
+
 ```bash
 npm run build
 npm run start
@@ -334,6 +361,7 @@ npm run start
 ```
 
 **Test Slow Networks**:
+
 1. Chrome DevTools > Network tab
 2. Select "Slow 3G" or "Fast 3G"
 3. Reload page and test user experience
@@ -341,14 +369,17 @@ npm run start
 ### Real Device Testing
 
 **BrowserStack/LambdaTest**:
+
 - Test on real mobile devices
 - Check performance on slower devices
 - Verify touch interactions
 
 **WebPageTest**:
+
 ```
 https://webpagetest.org
 ```
+
 - Test from multiple locations
 - View filmstrip and waterfall
 - Check TTFB, Start Render, Speed Index
@@ -356,11 +387,13 @@ https://webpagetest.org
 ### Analytics
 
 **Google PageSpeed Insights**:
+
 ```
 https://pagespeed.web.dev/?url=https://andersoncleaning.com
 ```
 
 **Sentry Performance**:
+
 - View slow transactions
 - Identify bottlenecks
 - Monitor trends
@@ -368,6 +401,7 @@ https://pagespeed.web.dev/?url=https://andersoncleaning.com
 ## 📈 Optimization Checklist
 
 ### Images
+
 - [x] Use next/image for all images
 - [x] Set width and height to prevent CLS
 - [x] Use priority for LCP image
@@ -377,6 +411,7 @@ https://pagespeed.web.dev/?url=https://andersoncleaning.com
 - [x] Serve responsive sizes
 
 ### JavaScript
+
 - [x] Dynamic imports for heavy components
 - [x] Code splitting enabled
 - [x] Tree shaking configured
@@ -385,24 +420,28 @@ https://pagespeed.web.dev/?url=https://andersoncleaning.com
 - [x] Remove console.logs in production
 
 ### CSS
+
 - [x] Tailwind with purge enabled
 - [x] Critical CSS inlined
 - [x] Remove unused styles
 - [x] Minimize specificity
 
 ### Fonts
+
 - [x] Use next/font
 - [x] Font display swap
 - [x] Preload fonts
 - [x] Subset fonts
 
 ### Caching
+
 - [x] Long cache for static assets
 - [x] ETags enabled
 - [x] Compression enabled
 - [x] ISR for dynamic pages
 
 ### Monitoring
+
 - [x] Core Web Vitals tracking
 - [x] Sentry performance monitoring
 - [x] Google Analytics events
@@ -430,11 +469,13 @@ https://pagespeed.web.dev/?url=https://andersoncleaning.com
 ### High LCP
 
 **Causes**:
+
 - Large hero image
 - Slow server response
 - Render-blocking resources
 
 **Solutions**:
+
 - Use `priority` on LCP image
 - Optimize image size
 - Preconnect to image CDN
@@ -443,11 +484,13 @@ https://pagespeed.web.dev/?url=https://andersoncleaning.com
 ### High CLS
 
 **Causes**:
+
 - Images without dimensions
 - Web fonts causing layout shift
 - Dynamic content injection
 
 **Solutions**:
+
 - Set explicit width/height
 - Use `font-display: swap`
 - Reserve space for dynamic content
@@ -455,11 +498,13 @@ https://pagespeed.web.dev/?url=https://andersoncleaning.com
 ### High FID/INP
 
 **Causes**:
+
 - Long JavaScript tasks
 - Heavy third-party scripts
 - Unoptimized event handlers
 
 **Solutions**:
+
 - Code splitting
 - Defer third-party scripts
 - Use web workers for heavy computation

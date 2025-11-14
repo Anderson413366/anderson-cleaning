@@ -163,11 +163,7 @@ export default function Header({ extraControls }: HeaderProps = {}) {
                 </Link>
               ))}
               {/* Extra Controls in Mobile (e.g., Language Switcher) */}
-              {extraControls && (
-                <div className="px-4 py-2">
-                  {extraControls}
-                </div>
-              )}
+              {extraControls && <div className="px-4 py-2">{extraControls}</div>}
               <Link href="/quote" className="w-full" onClick={() => setIsMobileMenuOpen(false)}>
                 <Button variant="primary" className="w-full">
                   Get a Quote

@@ -18,7 +18,8 @@ export default function Footer() {
               <div className="flex items-start space-x-3">
                 <MapPin className="h-5 w-5 text-accent-400 mt-1 flex-shrink-0" aria-hidden="true" />
                 <address className="not-italic">
-                  103 Wayside Avenue<br />
+                  103 Wayside Avenue
+                  <br />
                   West Springfield, MA 01089
                 </address>
               </div>
@@ -51,10 +52,7 @@ export default function Footer() {
             <nav aria-label="Footer Navigation">
               <ul className="space-y-2">
                 <li>
-                  <Link
-                    href="/"
-                    className="hover:text-accent-400 transition-colors inline-block"
-                  >
+                  <Link href="/" className="hover:text-accent-400 transition-colors inline-block">
                     Home
                   </Link>
                 </li>
@@ -106,7 +104,8 @@ export default function Footer() {
           <div>
             <h3 className="text-white font-bold text-lg mb-4">Service Area</h3>
             <p className="mb-4 leading-relaxed">
-              Serving businesses within 100 miles of West Springfield, MA—including Springfield, Worcester, Northampton, Amherst, Hartford (CT), and more.
+              Serving businesses within 100 miles of West Springfield, MA—including Springfield,
+              Worcester, Northampton, Amherst, Hartford (CT), and more.
             </p>
             <div className="text-sm text-gray-400 border-t border-gray-700 pt-4">
               <p className="font-semibold text-gray-300 mb-1">B2B Only</p>

@@ -5,6 +5,7 @@ Complete checklist to verify successful deployment of Anderson Cleaning website.
 ## Pre-Flight Check
 
 **Before starting deployment:**
+
 - [ ] All code merged to main branch
 - [ ] All tests passing (`npm run test:all`)
 - [ ] Build successful locally (`npm run build`)
@@ -20,6 +21,7 @@ Complete checklist to verify successful deployment of Anderson Cleaning website.
 ### 1. Core Functionality
 
 #### Homepage
+
 - [ ] Homepage loads at https://andersoncleaning.com
 - [ ] All images load correctly
 - [ ] Logo displays in header
@@ -32,6 +34,7 @@ Complete checklist to verify successful deployment of Anderson Cleaning website.
 - [ ] No console errors in browser DevTools
 
 #### Navigation
+
 - [ ] All navigation links work
   - [ ] Home (/)
   - [ ] Services (/services)
@@ -47,6 +50,7 @@ Complete checklist to verify successful deployment of Anderson Cleaning website.
 ### 2. Forms & Submissions
 
 #### Quote Form (/quote)
+
 - [ ] Form loads correctly
 - [ ] All form fields present:
   - [ ] Name
@@ -68,6 +72,7 @@ Complete checklist to verify successful deployment of Anderson Cleaning website.
 - [ ] No errors in Sentry
 
 **Test submission:**
+
 ```
 Name: Test User
 Email: test@example.com
@@ -77,6 +82,7 @@ Facility: Office Building
 ```
 
 #### Contact Form (/contact)
+
 - [ ] Form loads correctly
 - [ ] All fields functional
 - [ ] Validation works
@@ -85,6 +91,7 @@ Facility: Office Building
 - [ ] HubSpot contact created
 
 #### Careers Application (/apply)
+
 - [ ] English version loads (/en/apply)
 - [ ] Spanish version loads (/es/apply)
 - [ ] Portuguese version loads (/pt-BR/apply)
@@ -101,6 +108,7 @@ Facility: Office Building
 ### 3. Internationalization (i18n)
 
 #### Language Switching
+
 - [ ] Default language is English
 - [ ] Language switcher visible on /apply
 - [ ] Switching to ES shows Spanish content
@@ -112,6 +120,7 @@ Facility: Office Building
 - [ ] Language persists on page refresh
 
 #### Content Verification
+
 - [ ] Check all translations for accuracy
 - [ ] Verify no English fallbacks on non-EN pages
 - [ ] Test special characters (accents, etc.)
@@ -120,6 +129,7 @@ Facility: Office Building
 ### 4. Sanity CMS Integration
 
 #### Studio Access
+
 - [ ] Sanity Studio accessible at /studio
 - [ ] Login page loads
 - [ ] Can authenticate with credentials
@@ -129,6 +139,7 @@ Facility: Office Building
 - [ ] Can upload images
 
 #### Content Display
+
 - [ ] Content from Sanity displays on website
 - [ ] Images from Sanity CDN load
 - [ ] Rich text formatting preserved
@@ -140,6 +151,7 @@ Facility: Office Building
 ### 5. Third-Party Integrations
 
 #### Google Analytics 4
+
 - [ ] Tracking code loads (check browser DevTools → Network)
 - [ ] Page views tracked in Real-Time report
 - [ ] Events firing correctly:
@@ -149,24 +161,28 @@ Facility: Office Building
 - [ ] Test with Google Analytics Debugger extension
 
 #### Microsoft Clarity
+
 - [ ] Clarity script loads
 - [ ] Session recording starts
 - [ ] Heatmap data collecting
 - [ ] Dashboard shows new session within 5 minutes
 
 #### Crisp Chat
+
 - [ ] Chat widget appears in bottom-right
 - [ ] Widget opens when clicked
 - [ ] Can send test message
 - [ ] Message appears in Crisp dashboard
 
 #### reCAPTCHA v3
+
 - [ ] reCAPTCHA badge appears (bottom-right)
 - [ ] Forms have invisible reCAPTCHA
 - [ ] Score being validated on backend
 - [ ] Low scores rejected appropriately
 
 #### HubSpot Forms
+
 - [ ] Quote submissions create contacts
 - [ ] Contact form submissions create contacts
 - [ ] Careers submissions create candidates
@@ -175,6 +191,7 @@ Facility: Office Building
 - [ ] Workflows triggering (if configured)
 
 #### Resend Email
+
 - [ ] Quote confirmation emails sending
 - [ ] Careers application emails sending
 - [ ] Contact form emails sending
@@ -184,6 +201,7 @@ Facility: Office Building
 - [ ] Attachments included (careers resumes)
 
 #### Calendly (if applicable)
+
 - [ ] Calendly embed loads
 - [ ] Can select date/time
 - [ ] Can complete booking
@@ -192,6 +210,7 @@ Facility: Office Building
 ### 6. SEO & Meta Tags
 
 #### Meta Tags
+
 - [ ] Title tag present and correct on all pages
 - [ ] Meta description present and unique per page
 - [ ] Open Graph tags present:
@@ -203,11 +222,13 @@ Facility: Office Building
 - [ ] Canonical URL correct on all pages
 
 **Test with:**
+
 - Facebook Sharing Debugger: https://developers.facebook.com/tools/debug/
 - Twitter Card Validator: https://cards-dev.twitter.com/validator
 - LinkedIn Post Inspector: https://www.linkedin.com/post-inspector/
 
 #### Structured Data
+
 - [ ] Organization schema present
 - [ ] Local Business schema present
 - [ ] Service schema present
@@ -216,10 +237,12 @@ Facility: Office Building
 - [ ] Review schema (if applicable)
 
 **Test with:**
+
 - Google Rich Results Test: https://search.google.com/test/rich-results
 - Schema.org Validator: https://validator.schema.org
 
 #### Sitemap & Robots
+
 - [ ] Sitemap accessible: /sitemap.xml
 - [ ] All pages listed in sitemap
 - [ ] Sitemap valid XML format
@@ -228,11 +251,13 @@ Facility: Office Building
 - [ ] Correct Allow/Disallow rules
 
 **Test sitemap:**
+
 ```bash
 curl https://andersoncleaning.com/sitemap.xml | xmllint --format -
 ```
 
 #### Google Search Console
+
 - [ ] Property verified
 - [ ] Sitemap submitted
 - [ ] No critical issues
@@ -243,18 +268,22 @@ curl https://andersoncleaning.com/sitemap.xml | xmllint --format -
 ### 7. Performance
 
 #### Lighthouse Scores
+
 Run Lighthouse audit (Incognito mode):
+
 - [ ] Performance: ≥ 90
 - [ ] Accessibility: ≥ 95
 - [ ] Best Practices: ≥ 90
 - [ ] SEO: ≥ 95
 
 **Run audit:**
+
 ```bash
 npm run lighthouse
 ```
 
 Or manually:
+
 1. Open Chrome DevTools
 2. Navigate to Lighthouse tab
 3. Select "Desktop" mode
@@ -262,23 +291,28 @@ Or manually:
 5. Repeat for "Mobile"
 
 #### Core Web Vitals
+
 - [ ] LCP < 2.5s (desktop and mobile)
 - [ ] FID/INP < 100ms / 200ms
 - [ ] CLS < 0.1
 
 **Check in:**
+
 - Vercel Speed Insights
 - Google Search Console → Core Web Vitals
 - PageSpeed Insights: https://pagespeed.web.dev
 
 #### Page Load Times
+
 Test with WebPageTest (https://www.webpagetest.org):
+
 - [ ] First Byte Time < 600ms
 - [ ] Start Render < 1.5s
 - [ ] Speed Index < 3.0s
 - [ ] Fully Loaded < 5.0s
 
 #### Image Optimization
+
 - [ ] All images using next/image
 - [ ] Images lazy loaded
 - [ ] Modern formats (WebP/AVIF) served
@@ -288,6 +322,7 @@ Test with WebPageTest (https://www.webpagetest.org):
 ### 8. Security
 
 #### HTTPS & SSL
+
 - [ ] Site accessible via HTTPS
 - [ ] HTTP redirects to HTTPS
 - [ ] SSL certificate valid
@@ -296,12 +331,14 @@ Test with WebPageTest (https://www.webpagetest.org):
 - [ ] HSTS header present
 
 **Test:**
+
 ```bash
 curl -I https://andersoncleaning.com | grep -i strict-transport
 # Should show: strict-transport-security: max-age=31536000
 ```
 
 #### Security Headers
+
 - [ ] Strict-Transport-Security present
 - [ ] X-Frame-Options: DENY
 - [ ] X-Content-Type-Options: nosniff
@@ -310,10 +347,12 @@ curl -I https://andersoncleaning.com | grep -i strict-transport
 - [ ] Permissions-Policy present
 
 **Test with:**
+
 - SecurityHeaders.com: https://securityheaders.com
 - Mozilla Observatory: https://observatory.mozilla.org
 
 #### Input Validation
+
 - [ ] Forms sanitize HTML input
 - [ ] XSS attempts blocked
 - [ ] SQL injection attempts blocked
@@ -323,18 +362,22 @@ curl -I https://andersoncleaning.com | grep -i strict-transport
 
 **Test XSS:**
 Try submitting:
+
 ```
 <script>alert('XSS')</script>
 ```
+
 Should be sanitized/escaped.
 
 #### Rate Limiting
+
 - [ ] API routes rate limited
 - [ ] Form submissions rate limited
 - [ ] Excessive requests return 429
 - [ ] Rate limit resets correctly
 
 **Test:**
+
 ```bash
 # Send 10 requests quickly
 for i in {1..10}; do curl -X POST https://andersoncleaning.com/api/quote; done
@@ -344,17 +387,21 @@ for i in {1..10}; do curl -X POST https://andersoncleaning.com/api/quote; done
 ### 9. Accessibility (A11y)
 
 #### Automated Testing
+
 Run axe DevTools:
+
 - [ ] No critical violations
 - [ ] No serious violations
 - [ ] Review moderate/minor violations
 
 **Or run via Playwright:**
+
 ```bash
 npm run test:a11y
 ```
 
 #### Keyboard Navigation
+
 - [ ] Can tab through all interactive elements
 - [ ] Focus indicators visible
 - [ ] Skip to main content link works
@@ -363,7 +410,9 @@ npm run test:a11y
 - [ ] Enter/Space activate buttons
 
 #### Screen Reader
+
 Test with NVDA (Windows) or VoiceOver (Mac):
+
 - [ ] All images have alt text
 - [ ] Form labels associated with inputs
 - [ ] Buttons have accessible names
@@ -372,15 +421,18 @@ Test with NVDA (Windows) or VoiceOver (Mac):
 - [ ] ARIA attributes used correctly
 
 #### Color Contrast
+
 - [ ] Text meets 4.5:1 contrast ratio (AA)
 - [ ] Large text meets 3:1 ratio
 - [ ] Interactive elements meet 3:1 ratio
 - [ ] No color-only information
 
 **Test with:**
+
 - WebAIM Contrast Checker: https://webaim.org/resources/contrastchecker/
 
 #### Touch Targets
+
 - [ ] All buttons ≥ 44x44px
 - [ ] Links have adequate spacing
 - [ ] Form inputs large enough for touch
@@ -388,7 +440,9 @@ Test with NVDA (Windows) or VoiceOver (Mac):
 ### 10. Responsive Design
 
 #### Breakpoints
+
 Test at these widths:
+
 - [ ] Mobile: 375px (iPhone SE)
 - [ ] Mobile: 414px (iPhone Pro Max)
 - [ ] Tablet: 768px (iPad)
@@ -397,6 +451,7 @@ Test at these widths:
 - [ ] Desktop: 1920px
 
 #### Device Testing
+
 - [ ] iPhone (Safari)
 - [ ] Android phone (Chrome)
 - [ ] iPad (Safari)
@@ -406,6 +461,7 @@ Test at these widths:
 - [ ] Desktop Edge
 
 #### Orientation
+
 - [ ] Portrait mode works
 - [ ] Landscape mode works
 - [ ] Content readable in both
@@ -413,6 +469,7 @@ Test at these widths:
 ### 11. Browser Compatibility
 
 Test in:
+
 - [ ] Chrome (latest)
 - [ ] Firefox (latest)
 - [ ] Safari (latest)
@@ -422,6 +479,7 @@ Test in:
 - [ ] Safari Mobile (iOS)
 
 **Check for:**
+
 - No JavaScript errors
 - CSS rendering correctly
 - All features functional
@@ -430,6 +488,7 @@ Test in:
 ### 12. Monitoring & Analytics
 
 #### Vercel
+
 - [ ] Deployment successful
 - [ ] No build errors
 - [ ] Correct environment variables set
@@ -437,6 +496,7 @@ Test in:
 - [ ] Speed Insights enabled
 
 #### Sentry
+
 - [ ] Error tracking active
 - [ ] Source maps uploaded
 - [ ] Releases tagged correctly
@@ -444,6 +504,7 @@ Test in:
 - [ ] Test error captures correctly
 
 #### UptimeRobot
+
 - [ ] Monitors created:
   - [ ] Homepage
   - [ ] /api/health
@@ -452,6 +513,7 @@ Test in:
 - [ ] Status page created (optional)
 
 #### Google Analytics
+
 - [ ] Real-time shows activity
 - [ ] Page views tracking
 - [ ] Events tracking
@@ -460,12 +522,14 @@ Test in:
 ### 13. Domain & DNS
 
 #### Domain
+
 - [ ] Custom domain configured in Vercel
 - [ ] andersoncleaning.com resolves to site
 - [ ] www.andersoncleaning.com redirects to non-www
 - [ ] SSL certificate issued
 
 #### DNS Records
+
 - [ ] A record points to Vercel
 - [ ] CNAME for www configured
 - [ ] MX records for email (if applicable)
@@ -473,6 +537,7 @@ Test in:
 - [ ] SPF record for email
 
 **Check DNS:**
+
 ```bash
 dig andersoncleaning.com
 dig www.andersoncleaning.com
@@ -481,6 +546,7 @@ dig www.andersoncleaning.com
 ### 14. Content Review
 
 #### Text Content
+
 - [ ] No typos or grammatical errors
 - [ ] Phone numbers correct
 - [ ] Email addresses correct
@@ -489,6 +555,7 @@ dig www.andersoncleaning.com
 - [ ] Pricing information accurate (if shown)
 
 #### Legal Pages
+
 - [ ] Privacy Policy page exists
 - [ ] Terms of Service page exists
 - [ ] Cookie Policy (if applicable)
@@ -496,6 +563,7 @@ dig www.andersoncleaning.com
 - [ ] Links to legal pages in footer
 
 #### Images
+
 - [ ] All images load correctly
 - [ ] No broken image links
 - [ ] Images optimized (< 500KB each)
@@ -509,6 +577,7 @@ dig www.andersoncleaning.com
 ### Smoke Tests
 
 **Critical Path Testing:**
+
 1. [ ] User can visit homepage
 2. [ ] User can navigate to services page
 3. [ ] User can fill out quote form
@@ -519,6 +588,7 @@ dig www.andersoncleaning.com
 ### Load Testing (Optional)
 
 Use tools like:
+
 - Apache Bench
 - Lighthouse
 - WebPageTest
@@ -542,6 +612,7 @@ ab -n 100 -c 10 https://andersoncleaning.com/
 ## Rollback Verification
 
 Test rollback procedure:
+
 - [ ] Previous deployment accessible in Vercel
 - [ ] Can promote previous deployment
 - [ ] Rollback completes successfully
@@ -564,6 +635,7 @@ Test rollback procedure:
 ## Handoff
 
 Before considering deployment complete:
+
 - [ ] Stakeholders notified of successful deployment
 - [ ] Monitoring dashboards shared
 - [ ] Access credentials provided (if needed)
@@ -575,15 +647,15 @@ Before considering deployment complete:
 
 ## Sign-Off
 
-**Deployed By:** ___________________________
+**Deployed By:** ************\_\_\_************
 
-**Date/Time:** ___________________________
+**Date/Time:** ************\_\_\_************
 
-**Deployment Version:** ___________________________
+**Deployment Version:** ************\_\_\_************
 
-**Verified By:** ___________________________
+**Verified By:** ************\_\_\_************
 
-**Issues Found:** ___________________________
+**Issues Found:** ************\_\_\_************
 
 **Status:** ⬜ Approved ⬜ Issues Found ⬜ Rolled Back
 
@@ -592,6 +664,7 @@ Before considering deployment complete:
 ## Post-Deployment
 
 ### Day 1
+
 - [ ] Monitor error rates (should be near zero)
 - [ ] Check form submissions working
 - [ ] Review analytics for traffic
@@ -599,6 +672,7 @@ Before considering deployment complete:
 - [ ] Check uptime (should be 100%)
 
 ### Week 1
+
 - [ ] Review Lighthouse scores
 - [ ] Check Core Web Vitals trend
 - [ ] Analyze user behavior in Clarity
@@ -606,6 +680,7 @@ Before considering deployment complete:
 - [ ] Optimize based on real user data
 
 ### Month 1
+
 - [ ] Performance audit
 - [ ] Security review
 - [ ] Content review

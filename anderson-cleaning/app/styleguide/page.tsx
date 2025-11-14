@@ -82,22 +82,30 @@ export default function StyleGuidePage() {
                 <div className="p-4 bg-success-light dark:bg-success-dark/20 border-l-4 border-success rounded-lg">
                   <CheckCircle2 className="h-6 w-6 text-success mb-2" />
                   <p className="font-semibold text-success-dark dark:text-success-light">Success</p>
-                  <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">Positive actions, completed states</p>
+                  <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">
+                    Positive actions, completed states
+                  </p>
                 </div>
                 <div className="p-4 bg-warning-light dark:bg-warning-dark/20 border-l-4 border-warning rounded-lg">
                   <AlertTriangle className="h-6 w-6 text-warning mb-2" />
                   <p className="font-semibold text-warning-dark dark:text-warning-light">Warning</p>
-                  <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">Caution states, important notices</p>
+                  <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">
+                    Caution states, important notices
+                  </p>
                 </div>
                 <div className="p-4 bg-error-light dark:bg-error-dark/20 border-l-4 border-error rounded-lg">
                   <AlertCircle className="h-6 w-6 text-error mb-2" />
                   <p className="font-semibold text-error-dark dark:text-error-light">Error</p>
-                  <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">Errors, destructive actions</p>
+                  <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">
+                    Errors, destructive actions
+                  </p>
                 </div>
                 <div className="p-4 bg-info-light dark:bg-info-dark/20 border-l-4 border-info rounded-lg">
                   <Info className="h-6 w-6 text-info mb-2" />
                   <p className="font-semibold text-info-dark dark:text-info-light">Info</p>
-                  <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">Informational messages</p>
+                  <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">
+                    Informational messages
+                  </p>
                 </div>
               </div>
             </div>
@@ -126,8 +134,8 @@ export default function StyleGuidePage() {
               </div>
               <div className="p-6 bg-gray-50 dark:bg-slate-800 rounded-lg">
                 <p className="text-xl text-gray-700 dark:text-gray-300">
-                  Body Large - Used for hero sections and important introductory text.
-                  Line height is optimized for readability.
+                  Body Large - Used for hero sections and important introductory text. Line height
+                  is optimized for readability.
                 </p>
                 <code className="text-xs text-gray-500">text-xl</code>
               </div>
@@ -151,7 +159,8 @@ export default function StyleGuidePage() {
           <section id="spacing">
             <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">Spacing Scale</h2>
             <p className="text-gray-600 dark:text-gray-400 mb-6">
-              Consistent spacing creates visual rhythm and improves scannability for users with ADHD.
+              Consistent spacing creates visual rhythm and improves scannability for users with
+              ADHD.
             </p>
             <div className="space-y-4">
               {[
@@ -170,10 +179,7 @@ export default function StyleGuidePage() {
                     {space.size}
                   </div>
                   <div className="flex-1 bg-gray-100 dark:bg-slate-800 rounded">
-                    <div
-                      className="bg-primary-500 h-8 rounded"
-                      style={{ width: space.rem }}
-                    />
+                    <div className="bg-primary-500 h-8 rounded" style={{ width: space.rem }} />
                   </div>
                   <div className="w-32 text-sm text-gray-600 dark:text-gray-400">
                     {space.rem} ({space.px})
@@ -189,7 +195,9 @@ export default function StyleGuidePage() {
             <div className="space-y-8">
               {/* Variants */}
               <div>
-                <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-4">Variants</h3>
+                <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-4">
+                  Variants
+                </h3>
                 <div className="flex flex-wrap gap-4">
                   <Button variant="primary">Primary</Button>
                   <Button variant="outline">Secondary (Outline)</Button>
@@ -202,7 +210,9 @@ export default function StyleGuidePage() {
 
               {/* Sizes */}
               <div>
-                <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-4">Sizes</h3>
+                <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-4">
+                  Sizes
+                </h3>
                 <div className="flex flex-wrap items-center gap-4">
                   <Button size="sm">Small</Button>
                   <Button size="default">Medium (Default)</Button>
@@ -212,11 +222,17 @@ export default function StyleGuidePage() {
 
               {/* States */}
               <div>
-                <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-4">States</h3>
+                <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-4">
+                  States
+                </h3>
                 <div className="flex flex-wrap gap-4">
                   <Button variant="primary">Default</Button>
-                  <Button variant="primary" disabled>Disabled</Button>
-                  <Button variant="primary" isLoading>Loading</Button>
+                  <Button variant="primary" disabled>
+                    Disabled
+                  </Button>
+                  <Button variant="primary" isLoading>
+                    Loading
+                  </Button>
                 </div>
               </div>
             </div>
@@ -269,7 +285,10 @@ export default function StyleGuidePage() {
                   id="checkbox-example"
                   className="w-4 h-4 text-primary-600 border-gray-300 rounded focus:ring-primary-500"
                 />
-                <label htmlFor="checkbox-example" className="text-sm text-gray-700 dark:text-gray-300">
+                <label
+                  htmlFor="checkbox-example"
+                  className="text-sm text-gray-700 dark:text-gray-300"
+                >
                   Checkbox example
                 </label>
               </div>
@@ -324,7 +343,9 @@ export default function StyleGuidePage() {
 
               {/* Accent Border Card */}
               <div className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-md border-l-4 border-accent-500">
-                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Accent Border</h3>
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
+                  Accent Border
+                </h3>
                 <p className="text-gray-600 dark:text-gray-400">
                   Left border accent for visual emphasis.
                 </p>
@@ -388,7 +409,9 @@ export default function StyleGuidePage() {
 
           {/* Design Principles */}
           <section id="principles">
-            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">Design Principles</h2>
+            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">
+              Design Principles
+            </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="p-6 bg-white dark:bg-slate-800 rounded-xl shadow-md">
                 <h3 className="text-xl font-bold text-primary-700 dark:text-primary-400 mb-3">
@@ -425,8 +448,8 @@ export default function StyleGuidePage() {
                   4. Performance Matters
                 </h3>
                 <p className="text-gray-600 dark:text-gray-400">
-                  Optimize images, minimize animations for reduced-motion users, and ensure
-                  fast page loads.
+                  Optimize images, minimize animations for reduced-motion users, and ensure fast
+                  page loads.
                 </p>
               </div>
             </div>

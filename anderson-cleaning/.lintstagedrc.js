@@ -1,9 +1,6 @@
 module.exports = {
   // Run ESLint on JS/TS files
-  '*.{js,jsx,ts,tsx}': [
-    'eslint --fix',
-    'prettier --write',
-  ],
+  '*.{js,jsx,ts,tsx}': ['eslint --fix', 'prettier --write'],
 
   // Run Prettier on other files
   '*.{json,md,yml,yaml,css,scss}': ['prettier --write'],

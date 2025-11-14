@@ -41,22 +41,26 @@ const servicesData: Record<string, ServiceData> = {
       {
         step: 1,
         title: 'Free Facility Walk-Through',
-        description: 'We tour your office to understand layout, high-traffic areas, and special requirements.',
+        description:
+          'We tour your office to understand layout, high-traffic areas, and special requirements.',
       },
       {
         step: 2,
         title: 'Custom Cleaning Plan',
-        description: 'We create detailed SOPs (Standard Operating Procedures) specific to your space.',
+        description:
+          'We create detailed SOPs (Standard Operating Procedures) specific to your space.',
       },
       {
         step: 3,
         title: 'Team Training',
-        description: 'Our staff learns your facility layout, access procedures, and cleaning priorities.',
+        description:
+          'Our staff learns your facility layout, access procedures, and cleaning priorities.',
       },
       {
         step: 4,
         title: 'Supervised Start',
-        description: 'First week includes extra supervision to ensure quality meets your standards.',
+        description:
+          'First week includes extra supervision to ensure quality meets your standards.',
       },
       {
         step: 5,
@@ -79,7 +83,10 @@ const servicesData: Record<string, ServiceData> = {
     pricing: [
       { factor: 'Square Footage', description: 'Total cleanable area of your facility' },
       { factor: 'Cleaning Frequency', description: 'Daily, 3x/week, weekly, etc.' },
-      { factor: 'Facility Complexity', description: 'Number of restrooms, conference rooms, special areas' },
+      {
+        factor: 'Facility Complexity',
+        description: 'Number of restrooms, conference rooms, special areas',
+      },
       { factor: 'Service Hours', description: 'Evening, overnight, or weekend cleaning' },
     ],
     faqs: [
@@ -105,7 +112,7 @@ const servicesData: Record<string, ServiceData> = {
       },
     ],
   },
-  'janitorial': {
+  janitorial: {
     title: 'Janitorial Services',
     icon: '🧹',
     tagline: 'Reliable, consistent facility care',
@@ -172,7 +179,7 @@ const servicesData: Record<string, ServiceData> = {
       {
         question: 'Do we get the same cleaning team every time?',
         answer:
-          'Yes! Consistency is core to our janitorial service. You\'ll have the same team members who learn your facility and preferences.',
+          "Yes! Consistency is core to our janitorial service. You'll have the same team members who learn your facility and preferences.",
       },
       {
         question: 'What kind of reporting do you provide?',
@@ -263,7 +270,7 @@ const servicesData: Record<string, ServiceData> = {
     icon: '🪟',
     tagline: 'Streak-free shine for great first impressions',
     heroDescription:
-      'Professional interior and exterior window cleaning for commercial buildings. Our certified teams deliver spotless, streak-free results that enhance your building\'s appearance.',
+      "Professional interior and exterior window cleaning for commercial buildings. Our certified teams deliver spotless, streak-free results that enhance your building's appearance.",
     availability: 'contracted',
     benefits: [
       'Interior and exterior window cleaning',
@@ -325,7 +332,7 @@ const servicesData: Record<string, ServiceData> = {
       {
         question: 'What if it rains after you clean the windows?',
         answer:
-          'Rain actually doesn\'t make clean windows dirty-only windows with existing dirt show rain spots. However, we\'ll return if you\'re not satisfied.',
+          "Rain actually doesn't make clean windows dirty-only windows with existing dirt show rain spots. However, we'll return if you're not satisfied.",
       },
       {
         question: 'Can you clean high-rise windows?',
@@ -389,7 +396,10 @@ const servicesData: Record<string, ServiceData> = {
     ],
     pricing: [
       { factor: 'Square Footage', description: 'Total area to be cleaned' },
-      { factor: 'Construction Type', description: 'Light remodel, heavy renovation, or new construction' },
+      {
+        factor: 'Construction Type',
+        description: 'Light remodel, heavy renovation, or new construction',
+      },
       { factor: 'Debris Level', description: 'Amount of dust and debris present' },
       { factor: 'Timeline', description: 'Rush service vs. standard schedule' },
     ],
@@ -402,7 +412,7 @@ const servicesData: Record<string, ServiceData> = {
       {
         question: 'Do you remove construction materials?',
         answer:
-          'We remove cleaning-related debris and dust. Large construction materials, equipment, and dumpster items are the contractor\'s responsibility.',
+          "We remove cleaning-related debris and dust. Large construction materials, equipment, and dumpster items are the contractor's responsibility.",
       },
       {
         question: 'Can I get post-construction cleaning as a one-time service?',
@@ -502,29 +512,29 @@ export default function ServiceDetailPage() {
     ? {
         '@context': 'https://schema.org',
         '@type': 'Service',
-        'name': service.title,
-        'description': service.heroDescription,
-        'provider': {
+        name: service.title,
+        description: service.heroDescription,
+        provider: {
           '@type': 'LocalBusiness',
-          'name': 'Anderson Cleaning',
-          'address': {
+          name: 'Anderson Cleaning',
+          address: {
             '@type': 'PostalAddress',
-            'streetAddress': '103 Wayside Avenue',
-            'addressLocality': 'West Springfield',
-            'addressRegion': 'MA',
-            'postalCode': '01089',
-            'addressCountry': 'US',
+            streetAddress: '103 Wayside Avenue',
+            addressLocality: 'West Springfield',
+            addressRegion: 'MA',
+            postalCode: '01089',
+            addressCountry: 'US',
           },
-          'telephone': '+1-555-123-4567',
+          telephone: '+1-555-123-4567',
         },
-        'areaServed': {
+        areaServed: {
           '@type': 'State',
-          'name': 'Massachusetts',
+          name: 'Massachusetts',
         },
-        'offers': {
+        offers: {
           '@type': 'Offer',
-          'availability': 'https://schema.org/InStock',
-          'priceCurrency': 'USD',
+          availability: 'https://schema.org/InStock',
+          priceCurrency: 'USD',
         },
       }
     : null
@@ -541,9 +551,7 @@ export default function ServiceDetailPage() {
           <p className="text-gray-600 dark:text-gray-400 mb-8">
             The service you're looking for doesn't exist or has been moved.
           </p>
-          <Button onClick={() => router.push('/services')}>
-            View All Services
-          </Button>
+          <Button onClick={() => router.push('/services')}>View All Services</Button>
         </div>
         <Footer />
       </div>
@@ -575,24 +583,14 @@ export default function ServiceDetailPage() {
           <div className="flex items-start gap-6">
             <div className="text-7xl">{service.icon}</div>
             <div className="flex-1">
-              <h1 className="text-4xl md:text-5xl font-extrabold mb-4">
-                {service.title}
-              </h1>
-              <p className="text-2xl text-accent-300 mb-4">
-                {service.tagline}
-              </p>
-              <p className="text-xl text-blue-100 max-w-3xl">
-                {service.heroDescription}
-              </p>
+              <h1 className="text-4xl md:text-5xl font-extrabold mb-4">{service.title}</h1>
+              <p className="text-2xl text-accent-300 mb-4">{service.tagline}</p>
+              <p className="text-xl text-blue-100 max-w-3xl">{service.heroDescription}</p>
             </div>
           </div>
 
           <div className="mt-8 flex items-center gap-4">
-            <Button
-              variant="accent"
-              size="lg"
-              onClick={() => router.push('/quote')}
-            >
+            <Button variant="accent" size="lg" onClick={() => router.push('/quote')}>
               Get Your Free Quote
             </Button>
             {service.availability === 'contracted' && (
@@ -648,9 +646,7 @@ export default function ServiceDetailPage() {
                   <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-2">
                     {step.title}
                   </h3>
-                  <p className="text-gray-700 dark:text-gray-300">
-                    {step.description}
-                  </p>
+                  <p className="text-gray-700 dark:text-gray-300">{step.description}</p>
                 </div>
               </div>
             ))}
@@ -669,10 +665,7 @@ export default function ServiceDetailPage() {
             <div className="bg-white dark:bg-slate-800 rounded-xl p-8 shadow-lg">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {service.included.map((item, index) => (
-                  <div
-                    key={index}
-                    className="flex items-start gap-3"
-                  >
+                  <div key={index} className="flex items-start gap-3">
                     <CheckCircle2 className="h-5 w-5 text-accent-500 flex-shrink-0 mt-0.5" />
                     <span className="text-gray-700 dark:text-gray-300">{item}</span>
                   </div>
@@ -702,9 +695,7 @@ export default function ServiceDetailPage() {
                 <h3 className="text-lg font-bold text-gray-900 dark:text-gray-100 mb-2">
                   {factor.factor}
                 </h3>
-                <p className="text-sm text-gray-600 dark:text-gray-400">
-                  {factor.description}
-                </p>
+                <p className="text-sm text-gray-600 dark:text-gray-400">{factor.description}</p>
               </div>
             ))}
           </div>
@@ -723,28 +714,46 @@ export default function ServiceDetailPage() {
                   <div className="bg-white dark:bg-slate-800 rounded-lg p-6">
                     <div className="flex justify-between items-start mb-2">
                       <div>
-                        <p className="font-bold text-gray-900 dark:text-gray-100">Small Office (2,000-5,000 sq ft)</p>
-                        <p className="text-sm text-gray-600 dark:text-gray-400">3x per week, after hours</p>
+                        <p className="font-bold text-gray-900 dark:text-gray-100">
+                          Small Office (2,000-5,000 sq ft)
+                        </p>
+                        <p className="text-sm text-gray-600 dark:text-gray-400">
+                          3x per week, after hours
+                        </p>
                       </div>
-                      <p className="text-xl font-bold text-primary-600 dark:text-primary-400">$800-1,500/mo</p>
+                      <p className="text-xl font-bold text-primary-600 dark:text-primary-400">
+                        $800-1,500/mo
+                      </p>
                     </div>
                   </div>
                   <div className="bg-white dark:bg-slate-800 rounded-lg p-6">
                     <div className="flex justify-between items-start mb-2">
                       <div>
-                        <p className="font-bold text-gray-900 dark:text-gray-100">Medium Office (5,000-15,000 sq ft)</p>
-                        <p className="text-sm text-gray-600 dark:text-gray-400">5x per week, nightly service</p>
+                        <p className="font-bold text-gray-900 dark:text-gray-100">
+                          Medium Office (5,000-15,000 sq ft)
+                        </p>
+                        <p className="text-sm text-gray-600 dark:text-gray-400">
+                          5x per week, nightly service
+                        </p>
                       </div>
-                      <p className="text-xl font-bold text-primary-600 dark:text-primary-400">$2,000-4,500/mo</p>
+                      <p className="text-xl font-bold text-primary-600 dark:text-primary-400">
+                        $2,000-4,500/mo
+                      </p>
                     </div>
                   </div>
                   <div className="bg-white dark:bg-slate-800 rounded-lg p-6">
                     <div className="flex justify-between items-start mb-2">
                       <div>
-                        <p className="font-bold text-gray-900 dark:text-gray-100">Large Office (15,000+ sq ft)</p>
-                        <p className="text-sm text-gray-600 dark:text-gray-400">Daily service, dedicated team</p>
+                        <p className="font-bold text-gray-900 dark:text-gray-100">
+                          Large Office (15,000+ sq ft)
+                        </p>
+                        <p className="text-sm text-gray-600 dark:text-gray-400">
+                          Daily service, dedicated team
+                        </p>
                       </div>
-                      <p className="text-xl font-bold text-primary-600 dark:text-primary-400">$5,000+/mo</p>
+                      <p className="text-xl font-bold text-primary-600 dark:text-primary-400">
+                        $5,000+/mo
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -753,24 +762,29 @@ export default function ServiceDetailPage() {
               {slug === 'janitorial' && (
                 <div className="space-y-4">
                   <p className="text-gray-700 dark:text-gray-300 text-center mb-4">
-                    Janitorial service pricing is similar to office cleaning but includes enhanced quality control and dedicated account management.
+                    Janitorial service pricing is similar to office cleaning but includes enhanced
+                    quality control and dedicated account management.
                   </p>
                   <div className="bg-white dark:bg-slate-800 rounded-lg p-6">
                     <p className="font-bold text-gray-900 dark:text-gray-100 text-center">
-                      Typically 10-15% premium over standard office cleaning for added services and oversight
+                      Typically 10-15% premium over standard office cleaning for added services and
+                      oversight
                     </p>
                   </div>
                 </div>
               )}
 
-              {(slug === 'floor-carpet-care' || slug === 'window-cleaning' || slug === 'post-construction') && (
+              {(slug === 'floor-carpet-care' ||
+                slug === 'window-cleaning' ||
+                slug === 'post-construction') && (
                 <div className="bg-white dark:bg-slate-800 rounded-lg p-6">
                   <p className="text-gray-700 dark:text-gray-300 text-center">
-                    <strong>Project-based pricing</strong> varies widely based on size and condition.
-                    Contact us for a free on-site estimate.
+                    <strong>Project-based pricing</strong> varies widely based on size and
+                    condition. Contact us for a free on-site estimate.
                   </p>
                   <p className="text-sm text-gray-600 dark:text-gray-400 text-center mt-3">
-                    Most {service.title.toLowerCase()} projects range from $500-$5,000 depending on facility size and scope.
+                    Most {service.title.toLowerCase()} projects range from $500-$5,000 depending on
+                    facility size and scope.
                   </p>
                 </div>
               )}
@@ -780,19 +794,31 @@ export default function ServiceDetailPage() {
                   <div className="bg-white dark:bg-slate-800 rounded-lg p-6">
                     <div className="flex justify-between items-start mb-2">
                       <div>
-                        <p className="font-bold text-gray-900 dark:text-gray-100">Small Facility (1-10 employees)</p>
-                        <p className="text-sm text-gray-600 dark:text-gray-400">Basic consumables + management</p>
+                        <p className="font-bold text-gray-900 dark:text-gray-100">
+                          Small Facility (1-10 employees)
+                        </p>
+                        <p className="text-sm text-gray-600 dark:text-gray-400">
+                          Basic consumables + management
+                        </p>
                       </div>
-                      <p className="text-xl font-bold text-primary-600 dark:text-primary-400">$150-300/mo</p>
+                      <p className="text-xl font-bold text-primary-600 dark:text-primary-400">
+                        $150-300/mo
+                      </p>
                     </div>
                   </div>
                   <div className="bg-white dark:bg-slate-800 rounded-lg p-6">
                     <div className="flex justify-between items-start mb-2">
                       <div>
-                        <p className="font-bold text-gray-900 dark:text-gray-100">Medium Facility (10-50 employees)</p>
-                        <p className="text-sm text-gray-600 dark:text-gray-400">Full consumables management</p>
+                        <p className="font-bold text-gray-900 dark:text-gray-100">
+                          Medium Facility (10-50 employees)
+                        </p>
+                        <p className="text-sm text-gray-600 dark:text-gray-400">
+                          Full consumables management
+                        </p>
                       </div>
-                      <p className="text-xl font-bold text-primary-600 dark:text-primary-400">$400-800/mo</p>
+                      <p className="text-xl font-bold text-primary-600 dark:text-primary-400">
+                        $400-800/mo
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -800,13 +826,10 @@ export default function ServiceDetailPage() {
 
               <div className="mt-6 pt-6 border-t border-gray-200 dark:border-slate-600 text-center">
                 <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
-                  <strong>Free On-Site Consultation:</strong> Get an exact quote tailored to your facility
+                  <strong>Free On-Site Consultation:</strong> Get an exact quote tailored to your
+                  facility
                 </p>
-                <Button
-                  variant="primary"
-                  size="lg"
-                  onClick={() => router.push('/quote')}
-                >
+                <Button variant="primary" size="lg" onClick={() => router.push('/quote')}>
                   Request Your Free Quote
                 </Button>
               </div>
@@ -825,16 +848,11 @@ export default function ServiceDetailPage() {
 
             <div className="space-y-6">
               {service.faqs.map((faq, index) => (
-                <div
-                  key={index}
-                  className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-md"
-                >
+                <div key={index} className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-md">
                   <h3 className="text-lg font-bold text-gray-900 dark:text-gray-100 mb-3">
                     {faq.question}
                   </h3>
-                  <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                    {faq.answer}
-                  </p>
+                  <p className="text-gray-700 dark:text-gray-300 leading-relaxed">{faq.answer}</p>
                 </div>
               ))}
             </div>
@@ -845,17 +863,11 @@ export default function ServiceDetailPage() {
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-primary-700 to-primary-900 text-white">
         <div className="container mx-auto px-6 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Ready to Get Started?
-          </h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Get Started?</h2>
           <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
             Get your free quote today and experience the Anderson Cleaning difference.
           </p>
-          <Button
-            variant="accent"
-            size="lg"
-            onClick={() => router.push('/quote')}
-          >
+          <Button variant="accent" size="lg" onClick={() => router.push('/quote')}>
             Request Your Free Quote
           </Button>
         </div>

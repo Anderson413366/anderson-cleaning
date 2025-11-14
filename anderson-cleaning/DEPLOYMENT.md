@@ -7,6 +7,7 @@ Comprehensive checklist for deploying the Anderson Cleaning website to productio
 ### 1. Environment Configuration
 
 - [ ] **Copy .env.example to .env.local**
+
   ```bash
   cp .env.example .env.local
   ```
@@ -34,6 +35,7 @@ Comprehensive checklist for deploying the Anderson Cleaning website to productio
 ### 2. Sanity CMS Setup
 
 - [ ] **Create Sanity Project**
+
   ```bash
   npm install -g @sanity/cli
   sanity init
@@ -60,17 +62,20 @@ Comprehensive checklist for deploying the Anderson Cleaning website to productio
 ### 3. Third-Party Service Setup
 
 #### Google Analytics
+
 - [ ] Create GA4 property
 - [ ] Get Measurement ID
 - [ ] Add to `NEXT_PUBLIC_GA_MEASUREMENT_ID`
 - [ ] Verify tracking with GA debugger
 
 #### Microsoft Clarity
+
 - [ ] Create Clarity project
 - [ ] Get Project ID
 - [ ] Add to `NEXT_PUBLIC_CLARITY_PROJECT_ID`
 
 #### Sentry
+
 - [ ] Create Sentry project
 - [ ] Get DSN
 - [ ] Add to `NEXT_PUBLIC_SENTRY_DSN`
@@ -78,6 +83,7 @@ Comprehensive checklist for deploying the Anderson Cleaning website to productio
 - [ ] Add to `SENTRY_AUTH_TOKEN`
 
 #### CAPTCHA (Choose One)
+
 - [ ] **Option A: Google reCAPTCHA v3**
   - [ ] Register site at https://www.google.com/recaptcha/admin
   - [ ] Get site key and secret key
@@ -89,6 +95,7 @@ Comprehensive checklist for deploying the Anderson Cleaning website to productio
   - [ ] Add to environment variables
 
 #### Email Service (Resend)
+
 - [ ] Create Resend account
 - [ ] Verify domain
 - [ ] Get API key
@@ -96,6 +103,7 @@ Comprehensive checklist for deploying the Anderson Cleaning website to productio
 - [ ] Configure from email
 
 #### HubSpot (Optional)
+
 - [ ] Get access token
 - [ ] Get portal ID
 - [ ] Add to environment variables
@@ -103,16 +111,19 @@ Comprehensive checklist for deploying the Anderson Cleaning website to productio
 ### 4. Code Quality Checks
 
 - [ ] **Run Linter**
+
   ```bash
   npm run lint
   ```
 
 - [ ] **Check TypeScript**
+
   ```bash
   npx tsc --noEmit
   ```
 
 - [ ] **Build Locally**
+
   ```bash
   npm run build
   ```
@@ -145,6 +156,7 @@ Comprehensive checklist for deploying the Anderson Cleaning website to productio
 ### 6. Accessibility Testing
 
 - [ ] **Automated Testing**
+
   ```bash
   npm run dev
   # Check console for axe-core violations
@@ -247,11 +259,13 @@ Comprehensive checklist for deploying the Anderson Cleaning website to productio
 ### 1. Initial Setup
 
 - [ ] **Install Vercel CLI**
+
   ```bash
   npm install -g vercel
   ```
 
 - [ ] **Connect to Vercel**
+
   ```bash
   vercel login
   ```
@@ -283,9 +297,11 @@ Comprehensive checklist for deploying the Anderson Cleaning website to productio
 ### 3. Deploy
 
 - [ ] **Preview Deployment**
+
   ```bash
   vercel
   ```
+
   - [ ] Test preview URL
   - [ ] Verify all features work
   - [ ] Check environment variables
@@ -294,6 +310,7 @@ Comprehensive checklist for deploying the Anderson Cleaning website to productio
   ```bash
   vercel --prod
   ```
+
   - [ ] Deployment succeeds
   - [ ] No build errors
   - [ ] Visit production URL
@@ -375,12 +392,14 @@ Comprehensive checklist for deploying the Anderson Cleaning website to productio
 ## 🔧 Maintenance Checklist
 
 ### Weekly
+
 - [ ] Check Sentry for new errors
 - [ ] Review Clarity heatmaps
 - [ ] Monitor Core Web Vitals
 - [ ] Backup Sanity content
 
 ### Monthly
+
 - [ ] Update dependencies
   ```bash
   npm outdated
@@ -396,6 +415,7 @@ Comprehensive checklist for deploying the Anderson Cleaning website to productio
 - [ ] Check for broken links
 
 ### Quarterly
+
 - [ ] Lighthouse audit
 - [ ] Accessibility review
 - [ ] Content review
@@ -407,6 +427,7 @@ Comprehensive checklist for deploying the Anderson Cleaning website to productio
 ### Build Failures
 
 **Issue**: Build fails with module errors
+
 ```bash
 # Solution: Use legacy peer deps
 npm install --legacy-peer-deps
@@ -414,6 +435,7 @@ npm run build
 ```
 
 **Issue**: Environment variables not found
+
 ```bash
 # Solution: Verify in Vercel dashboard
 # Check spelling and NEXT_PUBLIC_ prefix
@@ -422,6 +444,7 @@ npm run build
 ### Performance Issues
 
 **Issue**: Large bundle size
+
 ```bash
 # Solution: Check webpack-bundle-analyzer
 npm run build
@@ -429,6 +452,7 @@ npm run build
 ```
 
 **Issue**: Slow page loads
+
 ```bash
 # Solution: Check image optimization
 # Verify lazy loading
@@ -438,12 +462,14 @@ npm run build
 ### SEO Issues
 
 **Issue**: Pages not indexing
+
 - Check robots.txt
 - Verify sitemap.xml
 - Submit to Search Console
 - Check for noindex tags
 
 **Issue**: Missing structured data
+
 - Run Google Rich Results Test
 - Validate JSON-LD
 - Check Schema.org compliance
@@ -451,6 +477,7 @@ npm run build
 ## 📞 Support
 
 If you encounter issues:
+
 - **Email**: dev@andersoncleaning.com
 - **Sentry**: Check error logs
 - **Vercel**: Check deployment logs

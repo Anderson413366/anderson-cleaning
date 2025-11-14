@@ -26,7 +26,12 @@ export default function PrivacyPolicyPage() {
             Privacy Policy
           </h1>
           <p className="text-gray-600 dark:text-gray-400 mb-8">
-            Last Updated: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+            Last Updated:{' '}
+            {new Date().toLocaleDateString('en-US', {
+              year: 'numeric',
+              month: 'long',
+              day: 'numeric',
+            })}
           </p>
 
           <div className="prose prose-lg dark:prose-invert max-w-none">
@@ -35,9 +40,9 @@ export default function PrivacyPolicyPage() {
                 Introduction
               </h2>
               <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                Anderson Cleaning ("we," "our," or "us") is committed to protecting your privacy. This Privacy
-                Policy explains how we collect, use, disclose, and safeguard your information when you visit our
-                website or use our services.
+                Anderson Cleaning ("we," "our," or "us") is committed to protecting your privacy.
+                This Privacy Policy explains how we collect, use, disclose, and safeguard your
+                information when you visit our website or use our services.
               </p>
             </section>
 
@@ -96,8 +101,8 @@ export default function PrivacyPolicyPage() {
                 Cookies and Tracking Technologies
               </h2>
               <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
-                We use cookies and similar tracking technologies to collect information about your browsing
-                activities. Cookies help us:
+                We use cookies and similar tracking technologies to collect information about your
+                browsing activities. Cookies help us:
               </p>
               <ul className="list-disc pl-6 space-y-2 text-gray-700 dark:text-gray-300 mb-4">
                 <li>Remember your preferences and settings</li>
@@ -106,8 +111,8 @@ export default function PrivacyPolicyPage() {
                 <li>Provide relevant advertising</li>
               </ul>
               <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                You can control cookies through your browser settings. Note that disabling cookies may affect
-                website functionality.
+                You can control cookies through your browser settings. Note that disabling cookies
+                may affect website functionality.
               </p>
             </section>
 
@@ -120,19 +125,20 @@ export default function PrivacyPolicyPage() {
               </p>
               <ul className="list-disc pl-6 space-y-2 text-gray-700 dark:text-gray-300">
                 <li>
-                  <strong>Service Providers:</strong> Third-party vendors who help us operate our business
-                  (payment processors, email services, analytics providers)
+                  <strong>Service Providers:</strong> Third-party vendors who help us operate our
+                  business (payment processors, email services, analytics providers)
                 </li>
                 <li>
-                  <strong>Legal Requirements:</strong> When required by law, court order, or government
-                  regulation
+                  <strong>Legal Requirements:</strong> When required by law, court order, or
+                  government regulation
                 </li>
                 <li>
-                  <strong>Business Transfers:</strong> In connection with a merger, sale, or acquisition of
-                  our business
+                  <strong>Business Transfers:</strong> In connection with a merger, sale, or
+                  acquisition of our business
                 </li>
                 <li>
-                  <strong>With Your Consent:</strong> When you explicitly agree to share your information
+                  <strong>With Your Consent:</strong> When you explicitly agree to share your
+                  information
                 </li>
               </ul>
             </section>
@@ -142,9 +148,10 @@ export default function PrivacyPolicyPage() {
                 Data Security
               </h2>
               <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                We implement appropriate technical and organizational security measures to protect your personal
-                information. However, no method of transmission over the Internet or electronic storage is 100%
-                secure. While we strive to protect your information, we cannot guarantee absolute security.
+                We implement appropriate technical and organizational security measures to protect
+                your personal information. However, no method of transmission over the Internet or
+                electronic storage is 100% secure. While we strive to protect your information, we
+                cannot guarantee absolute security.
               </p>
             </section>
 
@@ -153,18 +160,35 @@ export default function PrivacyPolicyPage() {
                 Your Privacy Rights
               </h2>
               <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
-                Depending on your location, you may have certain rights regarding your personal information:
+                Depending on your location, you may have certain rights regarding your personal
+                information:
               </p>
               <ul className="list-disc pl-6 space-y-2 text-gray-700 dark:text-gray-300">
-                <li><strong>Access:</strong> Request a copy of the personal information we hold about you</li>
-                <li><strong>Correction:</strong> Request correction of inaccurate or incomplete information</li>
-                <li><strong>Deletion:</strong> Request deletion of your personal information</li>
-                <li><strong>Opt-Out:</strong> Unsubscribe from marketing communications</li>
-                <li><strong>Data Portability:</strong> Request a copy of your data in a portable format</li>
+                <li>
+                  <strong>Access:</strong> Request a copy of the personal information we hold about
+                  you
+                </li>
+                <li>
+                  <strong>Correction:</strong> Request correction of inaccurate or incomplete
+                  information
+                </li>
+                <li>
+                  <strong>Deletion:</strong> Request deletion of your personal information
+                </li>
+                <li>
+                  <strong>Opt-Out:</strong> Unsubscribe from marketing communications
+                </li>
+                <li>
+                  <strong>Data Portability:</strong> Request a copy of your data in a portable
+                  format
+                </li>
               </ul>
               <p className="text-gray-700 dark:text-gray-300 leading-relaxed mt-4">
                 To exercise these rights, please contact us at{' '}
-                <a href="mailto:privacy@andersoncleaning.com" className="text-primary-600 dark:text-primary-400 hover:underline">
+                <a
+                  href="mailto:privacy@andersoncleaning.com"
+                  className="text-primary-600 dark:text-primary-400 hover:underline"
+                >
                   privacy@andersoncleaning.com
                 </a>
               </p>
@@ -175,9 +199,9 @@ export default function PrivacyPolicyPage() {
                 Children's Privacy
               </h2>
               <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                Our services are not directed to children under 13 years of age. We do not knowingly collect
-                personal information from children under 13. If we learn we have collected such information,
-                we will delete it immediately.
+                Our services are not directed to children under 13 years of age. We do not knowingly
+                collect personal information from children under 13. If we learn we have collected
+                such information, we will delete it immediately.
               </p>
             </section>
 
@@ -186,9 +210,9 @@ export default function PrivacyPolicyPage() {
                 Changes to This Privacy Policy
               </h2>
               <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                We may update this Privacy Policy from time to time. We will notify you of any changes by
-                posting the new Privacy Policy on this page and updating the "Last Updated" date. We encourage
-                you to review this Privacy Policy periodically.
+                We may update this Privacy Policy from time to time. We will notify you of any
+                changes by posting the new Privacy Policy on this page and updating the "Last
+                Updated" date. We encourage you to review this Privacy Policy periodically.
               </p>
             </section>
 
@@ -201,17 +225,26 @@ export default function PrivacyPolicyPage() {
               </p>
               <div className="bg-gray-50 dark:bg-slate-800 rounded-lg p-6">
                 <p className="text-gray-700 dark:text-gray-300">
-                  <strong>Anderson Cleaning</strong><br />
-                  103 Wayside Avenue<br />
-                  West Springfield, MA 01089<br />
+                  <strong>Anderson Cleaning</strong>
+                  <br />
+                  103 Wayside Avenue
+                  <br />
+                  West Springfield, MA 01089
+                  <br />
                   <br />
                   Email:{' '}
-                  <a href="mailto:privacy@andersoncleaning.com" className="text-primary-600 dark:text-primary-400 hover:underline">
+                  <a
+                    href="mailto:privacy@andersoncleaning.com"
+                    className="text-primary-600 dark:text-primary-400 hover:underline"
+                  >
                     privacy@andersoncleaning.com
                   </a>
                   <br />
                   Phone:{' '}
-                  <a href="tel:+15551234567" className="text-primary-600 dark:text-primary-400 hover:underline">
+                  <a
+                    href="tel:+15551234567"
+                    className="text-primary-600 dark:text-primary-400 hover:underline"
+                  >
                     (555) 123-4567
                   </a>
                 </p>

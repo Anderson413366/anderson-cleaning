@@ -22,24 +22,26 @@ Comprehensive guide for monitoring and maintaining Anderson Cleaning website in 
 
 ### Monitoring Stack
 
-| Service | Purpose | Dashboard |
-|---------|---------|-----------|
-| Vercel Analytics | Traffic & Web Vitals | [vercel.com/dashboard](https://vercel.com/dashboard) |
-| Google Analytics 4 | User behavior & conversions | [analytics.google.com](https://analytics.google.com) |
-| Microsoft Clarity | Session recordings & heatmaps | [clarity.microsoft.com](https://clarity.microsoft.com) |
-| Sentry | Error tracking & performance | [sentry.io](https://sentry.io) |
-| UptimeRobot | Uptime & availability | [uptimerobot.com](https://uptimerobot.com) |
-| Lighthouse CI | Performance budgets | GitHub Actions |
+| Service            | Purpose                       | Dashboard                                              |
+| ------------------ | ----------------------------- | ------------------------------------------------------ |
+| Vercel Analytics   | Traffic & Web Vitals          | [vercel.com/dashboard](https://vercel.com/dashboard)   |
+| Google Analytics 4 | User behavior & conversions   | [analytics.google.com](https://analytics.google.com)   |
+| Microsoft Clarity  | Session recordings & heatmaps | [clarity.microsoft.com](https://clarity.microsoft.com) |
+| Sentry             | Error tracking & performance  | [sentry.io](https://sentry.io)                         |
+| UptimeRobot        | Uptime & availability         | [uptimerobot.com](https://uptimerobot.com)             |
+| Lighthouse CI      | Performance budgets           | GitHub Actions                                         |
 
 ### Key Metrics to Monitor
 
 **Performance:**
+
 - LCP (Largest Contentful Paint): Target < 2.5s
 - FID/INP (First Input Delay / Interaction to Next Paint): Target < 100ms / 200ms
 - CLS (Cumulative Layout Shift): Target < 0.1
 - TTFB (Time to First Byte): Target < 800ms
 
 **Business:**
+
 - Quote form submissions
 - Contact form submissions
 - Careers applications
@@ -48,6 +50,7 @@ Comprehensive guide for monitoring and maintaining Anderson Cleaning website in 
 - Conversion rate
 
 **Technical:**
+
 - Error rate
 - API response times
 - Build success rate
@@ -73,7 +76,7 @@ export async function GET() {
     checks: {
       sanity: await checkSanity(),
       email: await checkEmail(),
-    }
+    },
   }
 
   return NextResponse.json(healthData)
@@ -94,7 +97,7 @@ async function checkEmail() {
   // Check if Resend API is accessible
   try {
     const response = await fetch('https://api.resend.com/domains', {
-      headers: { Authorization: `Bearer ${process.env.RESEND_API_KEY}` }
+      headers: { Authorization: `Bearer ${process.env.RESEND_API_KEY}` },
     })
     return response.ok ? 'healthy' : 'unhealthy'
   } catch {
@@ -104,11 +107,13 @@ async function checkEmail() {
 ```
 
 **Test Health Check:**
+
 ```bash
 curl https://andersoncleaning.com/api/health
 ```
 
 **Expected Response:**
+
 ```json
 {
   "status": "ok",
@@ -129,10 +134,12 @@ curl https://andersoncleaning.com/api/health
 ### Vercel Speed Insights
 
 **Enable:**
+
 1. Vercel Dashboard → Project → Speed Insights
 2. Enable feature (no code changes needed)
 
 **View Metrics:**
+
 - Real User Monitoring (RUM) data
 - Core Web Vitals by page
 - Performance Score over time
@@ -140,6 +147,7 @@ curl https://andersoncleaning.com/api/health
 
 **Alerts:**
 Set up alerts for:
+
 - LCP > 3.0s
 - CLS > 0.2
 - INP > 300ms
@@ -158,26 +166,31 @@ import { reportWebVitals } from '@/lib/utils/analytics'
 ```
 
 **View in Google Analytics:**
+
 1. GA4 Dashboard → Events → web_vitals
 2. Custom reports → Web Vitals Report
 
 **View in Sentry:**
+
 1. Sentry Dashboard → Performance → Web Vitals
 2. Filter by poor/needs improvement
 
 ### Lighthouse CI
 
 **Automated via GitHub Actions:**
+
 - Runs on every PR
 - Blocks merge if budgets exceeded
 - Uploads reports to artifacts
 
 **Manual Run:**
+
 ```bash
 npm run lighthouse
 ```
 
 **View Reports:**
+
 - GitHub Actions → Artifacts → lighthouse-results
 - Or: `npx @lhci/cli open`
 
@@ -188,11 +201,13 @@ npm run lighthouse
 ### Sentry Configuration
 
 **Already configured in:**
+
 - `sentry.client.config.ts` - Browser errors
 - `sentry.server.config.ts` - Server errors
 - `sentry.edge.config.ts` - Edge function errors
 
 **Key Features:**
+
 - Automatic error capture
 - Source maps for debugging
 - Performance monitoring
@@ -202,30 +217,33 @@ npm run lighthouse
 ### Monitor These Error Types
 
 **Client-Side Errors:**
+
 - JavaScript exceptions
 - Unhandled promise rejections
 - Network failures
 - Third-party script errors
 
 **Server-Side Errors:**
+
 - API route failures
 - Database connection issues
 - Email sending failures
 - Authentication errors
 
 **Performance Issues:**
+
 - Slow API responses (> 1s)
 - Large bundle sizes
 - Long tasks (> 50ms)
 
 ### Error Rate Targets
 
-| Metric | Target | Alert Threshold |
-|--------|--------|----------------|
-| Error rate | < 0.1% | > 0.5% |
-| New issues | < 5/day | > 10/day |
-| Unresolved issues | < 10 | > 20 |
-| MTTR (Mean Time to Resolve) | < 24 hours | > 48 hours |
+| Metric                      | Target     | Alert Threshold |
+| --------------------------- | ---------- | --------------- |
+| Error rate                  | < 0.1%     | > 0.5%          |
+| New issues                  | < 5/day    | > 10/day        |
+| Unresolved issues           | < 10       | > 20            |
+| MTTR (Mean Time to Resolve) | < 24 hours | > 48 hours      |
 
 ### Sentry Alerts Setup
 
@@ -237,6 +255,7 @@ npm run lighthouse
    - Performance regression detected
 
 **Alert Channels:**
+
 - Email: dev@andersoncleaning.com
 - Slack: #alerts channel (if applicable)
 - PagerDuty: For critical alerts (optional)
@@ -274,22 +293,26 @@ npm run lighthouse
    - Expected: 200 OK
 
 **Alert Contacts:**
+
 - Email: admin@andersoncleaning.com
 - SMS: +1-555-XXX-XXXX (optional, for critical alerts)
 
 **Uptime Targets:**
+
 - Target: 99.9% uptime (≈43 minutes downtime/month)
 - Alert: If down for > 5 minutes
 
 ### Status Page
 
 **Create Public Status Page:**
+
 1. UptimeRobot → My Settings → Status Pages
 2. Create new status page: status.andersoncleaning.com
 3. Add all monitors
 4. Share URL with stakeholders
 
 **Or use Vercel Status:**
+
 - Automatic status page at vercel-status.com
 - Shows Vercel infrastructure status
 
@@ -302,20 +325,24 @@ npm run lighthouse
 **Key Reports to Monitor:**
 
 **Traffic Sources:**
+
 - Acquisition → Traffic acquisition
 - Check: Organic search, Direct, Referral, Social
 
 **User Behavior:**
+
 - Engagement → Pages and screens
 - Top pages by views
 - Average engagement time
 - Bounce rate by page
 
 **Conversions:**
+
 - Events → All events
 - Track: form_submission, quote_request, contact_request
 
 **Real-Time:**
+
 - Real-time → Overview
 - Current active users
 - Top pages right now
@@ -323,16 +350,18 @@ npm run lighthouse
 **Custom Events Setup:**
 
 Already configured in `lib/utils/analytics.ts`:
+
 ```typescript
 // Track custom events
 gtag('event', 'quote_submission', {
   event_category: 'Conversions',
   event_label: 'Quote Form',
-  value: 1
+  value: 1,
 })
 ```
 
 **Goals to Track:**
+
 1. Quote form submissions
 2. Contact form submissions
 3. Careers applications
@@ -343,6 +372,7 @@ gtag('event', 'quote_submission', {
 ### Microsoft Clarity
 
 **Session Recordings:**
+
 1. Clarity Dashboard → Recordings
 2. Watch user sessions to identify:
    - Usability issues
@@ -351,6 +381,7 @@ gtag('event', 'quote_submission', {
    - Drop-off points in forms
 
 **Heatmaps:**
+
 1. Clarity Dashboard → Heatmaps
 2. Analyze:
    - Click maps: Where users click
@@ -358,10 +389,12 @@ gtag('event', 'quote_submission', {
    - Area maps: Attention zones
 
 **Filters:**
+
 - Filter by: Device, Browser, Country, Page URL
 - Look for patterns in user behavior
 
 **Insights:**
+
 - Dead clicks (clicks that do nothing)
 - Rage clicks (frustrated rapid clicking)
 - Excessive scrolling
@@ -374,6 +407,7 @@ gtag('event', 'quote_submission', {
 ### Alert Priority Levels
 
 **P0 - Critical (Immediate Response)**
+
 - Site is completely down
 - Payment/form system not working
 - Data breach detected
@@ -382,6 +416,7 @@ gtag('event', 'quote_submission', {
 **Action:** Page on-call engineer, fix immediately
 
 **P1 - High (Response within 1 hour)**
+
 - Single page not loading
 - API endpoint failing
 - Uptime < 95% in last hour
@@ -390,6 +425,7 @@ gtag('event', 'quote_submission', {
 **Action:** Notify team, investigate and fix ASAP
 
 **P2 - Medium (Response within 4 hours)**
+
 - Minor functionality broken
 - Performance regression < 50%
 - Error rate > 1% but < 10%
@@ -398,6 +434,7 @@ gtag('event', 'quote_submission', {
 **Action:** Create ticket, fix in next sprint
 
 **P3 - Low (Response within 24 hours)**
+
 - Visual bugs
 - Typos
 - Non-critical feature requests
@@ -408,15 +445,18 @@ gtag('event', 'quote_submission', {
 ### Notification Channels
 
 **Email:**
+
 - Primary: dev@andersoncleaning.com
 - Secondary: admin@andersoncleaning.com
 
 **Slack (if applicable):**
+
 - #alerts - All automated alerts
 - #deployments - Deployment notifications
 - #errors - Sentry error summaries
 
 **SMS (for P0 alerts only):**
+
 - On-call engineer phone number
 
 ---
@@ -438,16 +478,19 @@ Create a custom dashboard aggregating all metrics.
 ### Monitoring Form Submissions
 
 **HubSpot Dashboard:**
+
 1. Check new contacts from website forms
 2. Verify lead source tracking
 3. Ensure auto-responses sent
 
 **Email Notifications:**
+
 - Quote requests should email sales team
 - Career applications should email HR
 - Contact forms should email support
 
 **Test Monthly:**
+
 ```bash
 # Test quote form
 curl -X POST https://andersoncleaning.com/api/quote \
@@ -462,12 +505,14 @@ curl -X POST https://andersoncleaning.com/api/quote \
 ### Performance Review (30 minutes)
 
 **Monday Morning:**
+
 1. Run Lighthouse audit on production
 2. Check Core Web Vitals trends
 3. Review page load times
 4. Identify and optimize slowest pages
 
 **Use Vercel Analytics:**
+
 - Compare week-over-week performance
 - Identify pages with CLS issues
 - Check for performance regressions
@@ -475,12 +520,14 @@ curl -X POST https://andersoncleaning.com/api/quote \
 ### Error Review (15 minutes)
 
 **Wednesday:**
+
 1. Review all Sentry errors from past week
 2. Prioritize and assign fixes
 3. Resolve or mark as won't-fix
 4. Check for error patterns
 
 **Create Dashboard View:**
+
 - Errors by page
 - Errors by browser
 - Most frequent errors
@@ -489,6 +536,7 @@ curl -X POST https://andersoncleaning.com/api/quote \
 ### Content Review (15 minutes)
 
 **Friday:**
+
 1. Check for broken links (use Screaming Frog or similar)
 2. Verify all images loading
 3. Test all forms
@@ -501,6 +549,7 @@ curl -X POST https://andersoncleaning.com/api/quote \
 ### Performance Audit (1 hour)
 
 **First Monday of Month:**
+
 1. Full Lighthouse audit of all pages
 2. Review bundle sizes:
    ```bash
@@ -556,6 +605,7 @@ curl -X POST https://andersoncleaning.com/api/quote \
 ### Cost Review (15 minutes)
 
 **Review Costs for:**
+
 - Vercel hosting
 - Sanity CMS
 - Third-party services (Resend, HubSpot, etc.)
@@ -563,6 +613,7 @@ curl -X POST https://andersoncleaning.com/api/quote \
 - Sentry quota
 
 **Optimize:**
+
 - Review and remove unused services
 - Check for overages
 - Adjust plans if needed
@@ -574,6 +625,7 @@ curl -X POST https://andersoncleaning.com/api/quote \
 ### Incident Severity
 
 **SEV1 - Critical**
+
 - Complete site outage
 - Payment/forms completely broken
 - Data breach
@@ -582,6 +634,7 @@ curl -X POST https://andersoncleaning.com/api/quote \
 **Team:** All hands on deck
 
 **SEV2 - High**
+
 - Partial outage (1-2 pages down)
 - Significant performance degradation
 - Major feature broken
@@ -590,6 +643,7 @@ curl -X POST https://andersoncleaning.com/api/quote \
 **Team:** On-call engineer + lead
 
 **SEV3 - Medium**
+
 - Minor functionality broken
 - Moderate performance issues
 
@@ -599,37 +653,44 @@ curl -X POST https://andersoncleaning.com/api/quote \
 ### Incident Response Procedure
 
 **1. Detect & Alert**
+
 - Automated alerts from monitoring tools
 - User reports
 - Team discovery
 
 **2. Acknowledge**
+
 - Acknowledge alert (Sentry, UptimeRobot)
 - Notify team (#incidents Slack channel)
 - Create incident ticket
 
 **3. Assess**
+
 - Determine severity level
 - Identify affected users/pages
 - Check recent deployments
 
 **4. Mitigate**
+
 - For deployment issues: Rollback immediately
 - For infrastructure: Check Vercel status
 - For third-party: Check service status
 
 **5. Fix**
+
 - Identify root cause
 - Implement fix
 - Test thoroughly
 - Deploy fix
 
 **6. Verify**
+
 - Confirm fix resolved issue
 - Check monitoring shows green
 - Test affected functionality
 
 **7. Post-Mortem**
+
 - Document what happened
 - Root cause analysis
 - Action items to prevent recurrence
@@ -648,12 +709,12 @@ Is the issue critical? (SEV1)
 
 ### Emergency Contacts
 
-| Role | Contact | Availability |
-|------|---------|-------------|
-| On-Call Engineer | [Phone/Email] | 24/7 |
-| Team Lead | [Phone/Email] | Business hours |
-| Vercel Support | support@vercel.com | 24/7 (Pro plan) |
-| Sanity Support | support@sanity.io | Business hours |
+| Role             | Contact            | Availability    |
+| ---------------- | ------------------ | --------------- |
+| On-Call Engineer | [Phone/Email]      | 24/7            |
+| Team Lead        | [Phone/Email]      | Business hours  |
+| Vercel Support   | support@vercel.com | 24/7 (Pro plan) |
+| Sanity Support   | support@sanity.io  | Business hours  |
 
 ---
 
@@ -691,6 +752,7 @@ echo "All checks passed!"
 ```
 
 **Run via Cron:**
+
 ```bash
 # Run every hour
 0 * * * * /path/to/health-check.sh
@@ -724,6 +786,7 @@ curl "https://api.uptimerobot.com/v2/getMonitors" \
 ## Best Practices
 
 ### Do's
+
 ✅ Monitor metrics continuously
 ✅ Set up alerts before issues occur
 ✅ Document all incidents
@@ -733,6 +796,7 @@ curl "https://api.uptimerobot.com/v2/getMonitors" \
 ✅ Share weekly reports with team
 
 ### Don'ts
+
 ❌ Ignore alerts (alert fatigue)
 ❌ Set too many noisy alerts
 ❌ Skip post-mortems

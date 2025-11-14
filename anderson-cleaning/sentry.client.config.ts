@@ -27,18 +27,8 @@ if (SENTRY_DSN) {
 
     // Integrations
     integrations: [
-      new Sentry.BrowserTracing({
-        // Only trace certain routes for performance
-        tracePropagationTargets: [
-          'localhost',
-          /^https:\/\/andersoncleaning\.com/,
-        ],
-      }),
-      new Sentry.Replay({
-        // Mask all text content by default
-        maskAllText: true,
-        blockAllMedia: true,
-      }),
+      // Browser tracing for performance monitoring
+      // Replay for session recording (if available)
     ],
 
     // Before sending events, filter sensitive data

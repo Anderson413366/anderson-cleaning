@@ -1,30 +1,35 @@
 'use client'
 
-
-import React, { useContext } from 'react';
-import { useAppContext } from '@/lib/careers/AppContext';
-import FormInput from '@/components/ui/FormInput';
-import FormSelect from '@/components/ui/FormSelect';
-import FormCheckboxGroup from '@/components/ui/FormCheckboxGroup';
-import FormTextarea from '@/components/ui/FormTextarea';
-import SectionWrapper from './SectionWrapper';
-import { LocationOptionKeys, DayOptionKeys, ShiftOptionKeys } from '@/lib/careers/constants';
-import FormRadioGroup from '@/components/ui/FormRadioGroup';
+import React, { useContext } from 'react'
+import { useAppContext } from '@/lib/careers/AppContext'
+import FormInput from '@/components/ui/FormInput'
+import FormSelect from '@/components/ui/FormSelect'
+import FormCheckboxGroup from '@/components/ui/FormCheckboxGroup'
+import FormTextarea from '@/components/ui/FormTextarea'
+import SectionWrapper from './SectionWrapper'
+import { LocationOptionKeys, DayOptionKeys, ShiftOptionKeys } from '@/lib/careers/constants'
+import FormRadioGroup from '@/components/ui/FormRadioGroup'
 
 const AvailabilitySection: React.FC = () => {
-  const context = useAppContext();
-  if (!context) throw new Error('AppContext not found');
-  const { formData, handleChange, handleMultiCheckboxChange, t, formErrors } = context;
-  const data = formData.availability;
+  const context = useAppContext()
+  if (!context) throw new Error('AppContext not found')
+  const { formData, handleChange, handleMultiCheckboxChange, t, formErrors } = context
+  const data = formData.availability
 
-  const getError = (field: string) => formErrors[`availability.${field}`];
+  const getError = (field: string) => formErrors[`availability.${field}`]
 
-  const generalAvailabilityOptions = t('generalAvailabilityOptions') as { value: string; label: string }[];
-   const yesNoOptions = [
-    { value: "", label: t('prevMayWeContactPlaceholder', { defaultValue: "Select Yes/No" }) as string },
-    { value: "yes", label: t('yesLabel') as string },
-    { value: "no", label: t('noLabel') as string }
-  ];
+  const generalAvailabilityOptions = t('generalAvailabilityOptions') as {
+    value: string
+    label: string
+  }[]
+  const yesNoOptions = [
+    {
+      value: '',
+      label: t('prevMayWeContactPlaceholder', { defaultValue: 'Select Yes/No' }) as string,
+    },
+    { value: 'yes', label: t('yesLabel') as string },
+    { value: 'no', label: t('noLabel') as string },
+  ]
 
   return (
     <SectionWrapper titleKey="availabilitySectionTitle">
@@ -33,7 +38,9 @@ const AvailabilitySection: React.FC = () => {
         namePrefix="workLocations"
         options={LocationOptionKeys}
         values={data.workLocations}
-        onChange={(option, checked) => handleMultiCheckboxChange('availability', 'workLocations', option, checked)}
+        onChange={(option, checked) =>
+          handleMultiCheckboxChange('availability', 'workLocations', option, checked)
+        }
         translationKeyPrefix="" // Labels are direct e.g. AgawamLabel
         error={getError('workLocations')}
       />
@@ -67,7 +74,9 @@ const AvailabilitySection: React.FC = () => {
         namePrefix="daysAvailable"
         options={DayOptionKeys}
         values={data.daysAvailable}
-        onChange={(option, checked) => handleMultiCheckboxChange('availability', 'daysAvailable', option, checked)}
+        onChange={(option, checked) =>
+          handleMultiCheckboxChange('availability', 'daysAvailable', option, checked)
+        }
         translationKeyPrefix="" // Labels are direct e.g. MondayLabel
         error={getError('daysAvailable')}
       />
@@ -76,7 +85,9 @@ const AvailabilitySection: React.FC = () => {
         namePrefix="shiftsAvailable"
         options={ShiftOptionKeys}
         values={data.shiftsAvailable}
-        onChange={(option, checked) => handleMultiCheckboxChange('availability', 'shiftsAvailable', option, checked)}
+        onChange={(option, checked) =>
+          handleMultiCheckboxChange('availability', 'shiftsAvailable', option, checked)
+        }
         translationKeyPrefix="" // Labels are direct e.g. MorningLabel
         error={getError('shiftsAvailable')}
       />
@@ -88,7 +99,7 @@ const AvailabilitySection: React.FC = () => {
         placeholder={t('otherShiftLabel') as string}
         error={getError('otherShiftText')}
       />
-       <FormRadioGroup
+      <FormRadioGroup
         label={t('weekendsHolidaysLabel') as string}
         name="weekendsHolidays"
         options={yesNoOptions}
@@ -98,7 +109,7 @@ const AvailabilitySection: React.FC = () => {
         isRequired
       />
     </SectionWrapper>
-  );
-};
+  )
+}
 
-export default AvailabilitySection;
+export default AvailabilitySection

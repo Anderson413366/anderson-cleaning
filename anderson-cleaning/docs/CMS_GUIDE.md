@@ -24,6 +24,7 @@ Complete guide to managing content for Anderson Cleaning website using Sanity CM
 ### What is Sanity?
 
 Sanity is a headless CMS (Content Management System) that provides:
+
 - **Structured Content**: Define schemas for different content types
 - **Real-time Editing**: Changes sync instantly across all editors
 - **Powerful Querying**: GROQ query language for flexible data retrieval
@@ -89,11 +90,13 @@ http://localhost:3000/studio
 ### Authentication
 
 **Sanity Login**:
+
 - Uses Google, GitHub, or email authentication
 - Configured in Sanity project settings
 - Role-based access control (Administrator, Editor, etc.)
 
 **Basic Auth Protection** (Production only):
+
 - Additional layer of security
 - Prevents unauthorized Studio access
 - Configured in Vercel environment variables
@@ -312,6 +315,7 @@ Our Sanity implementation includes 8 content types:
    - Click "Create new Service"
 
 2. **Fill Required Fields**:
+
    ```
    Title*: Office Cleaning Services
    Slug*: office-cleaning (auto-generated, editable)
@@ -322,7 +326,7 @@ Our Sanity implementation includes 8 content types:
 3. **Add Description** (Rich Text):
    - Click in description field
    - Use toolbar to format text:
-     - **Bold**, *Italic*, `Code`
+     - **Bold**, _Italic_, `Code`
      - Headings (H2, H3, H4)
      - Lists (bulleted, numbered)
      - Links
@@ -368,6 +372,7 @@ Our Sanity implementation includes 8 content types:
 ### Rich Text Editing (Block Content)
 
 **Available Blocks**:
+
 - Paragraphs
 - Headings (H2, H3, H4)
 - Lists (ordered, unordered)
@@ -377,11 +382,13 @@ Our Sanity implementation includes 8 content types:
 - Custom components (callouts, etc.)
 
 **Formatting**:
+
 - **Bold**: Ctrl+B (Cmd+B on Mac)
-- *Italic*: Ctrl+I (Cmd+I on Mac)
+- _Italic_: Ctrl+I (Cmd+I on Mac)
 - Link: Ctrl+K (Cmd+K on Mac)
 
 **Best Practices**:
+
 - Use H2 for main sections, H3 for subsections
 - Keep paragraphs concise (3-4 sentences)
 - Use lists for scannable content
@@ -406,12 +413,14 @@ Our Sanity implementation includes 8 content types:
 ### Scheduling (Future Feature)
 
 Currently, all published content is immediately visible. To schedule:
+
 1. Set `publishedAt` date to future
 2. Filter queries by `publishedAt <= now()`
 
 ### Unpublishing
 
 To remove content from website:
+
 - **Option 1**: Delete document (permanent)
 - **Option 2**: Add `hidden` field and set to `true`
 - **Option 3**: Set `publishedAt` to future date
@@ -427,11 +436,13 @@ Preview mode allows you to view draft content on the website before publishing.
 ### How to Use
 
 **Method 1: Preview Button in Studio** (if configured):
+
 1. Edit content in Studio
 2. Click "Preview" button
 3. Opens preview URL with draft content
 
 **Method 2: Manual URL**:
+
 ```
 https://andersoncleaning.com/api/preview?slug=/services/office-cleaning
 ```
@@ -443,6 +454,7 @@ Visit: `https://andersoncleaning.com/api/exit-preview`
 ### Technical Details
 
 Preview mode:
+
 - Uses Next.js Preview Mode API
 - Sets preview cookie
 - Fetches draft content instead of published
@@ -469,6 +481,7 @@ GROQ (Graph-Relational Object Queries) is Sanity's query language.
 ```
 
 **Breakdown**:
+
 - `*` - All documents
 - `[_type == "service"]` - Filter by type
 - `{ ... }` - Projection (select fields)
@@ -513,6 +526,7 @@ GROQ (Graph-Relational Object Queries) is Sanity's query language.
 ```
 
 **Usage**:
+
 ```typescript
 const service = await client.fetch(query, { slug: 'office-cleaning' })
 ```
@@ -602,6 +616,7 @@ All queries are in: `lib/cms/queries.ts`
 ### Image Specifications
 
 **Recommended Sizes**:
+
 - Hero images: 1920x1080px
 - Service images: 1200x800px
 - Testimonial photos: 400x400px
@@ -609,28 +624,33 @@ All queries are in: `lib/cms/queries.ts`
 - Blog featured images: 1200x630px (OG compatible)
 
 **File Formats**:
+
 - JPEG: Photos, complex images
 - PNG: Graphics with transparency
 - WebP: Modern format (best compression)
 
 **File Size**:
+
 - Target: < 500KB per image
 - Maximum: 5MB (Studio limit)
 
 ### Sanity Image Pipeline
 
 Sanity automatically:
+
 - Hosts images on CDN
 - Generates optimized formats (WebP, AVIF)
 - Creates responsive image sets
 - Provides on-the-fly transformations
 
 **Example URL**:
+
 ```
 https://cdn.sanity.io/images/[project]/production/[image-id]-1200x800.jpg?w=600&h=400&fit=crop&auto=format
 ```
 
 **Parameters**:
+
 - `w` - Width
 - `h` - Height
 - `fit` - crop, fill, max, min
@@ -754,6 +774,7 @@ const imageUrl = urlFor(image)
 **Problem**: Querying for a document that doesn't exist
 
 **Solution**:
+
 ```typescript
 // Add null check
 const service = await client.fetch(query, { slug })
@@ -765,11 +786,13 @@ if (!service) {
 #### Images Not Displaying
 
 **Possible Causes**:
+
 1. **CSP blocking**: Add `cdn.sanity.io` to Content Security Policy
 2. **Wrong project ID**: Check `.env.local`
 3. **Missing image asset**: Verify image uploaded in Studio
 
 **Debug**:
+
 ```typescript
 console.log('Image asset:', image?.asset?._ref)
 console.log('Image URL:', urlFor(image).url())
@@ -778,11 +801,13 @@ console.log('Image URL:', urlFor(image).url())
 #### Studio Won't Load
 
 **Possible Causes**:
+
 1. **Authentication issue**: Clear cookies, log in again
 2. **CORS error**: Check Sanity CORS settings
 3. **Network issue**: Check browser console
 
 **Solution**:
+
 ```bash
 # Clear Studio cache
 rm -rf node_modules/.sanity
@@ -792,11 +817,13 @@ npm run dev
 #### Content Not Updating on Website
 
 **Possible Causes**:
+
 1. **ISR cache**: Wait 60 seconds for revalidation
 2. **CDN cache**: Clear CDN cache in Vercel
 3. **Browser cache**: Hard refresh (Ctrl+Shift+R)
 
 **Solution**:
+
 ```bash
 # Force revalidation
 curl -X POST https://andersoncleaning.com/api/revalidate?secret=YOUR_SECRET
@@ -807,21 +834,23 @@ curl -X POST https://andersoncleaning.com/api/revalidate?secret=YOUR_SECRET
 **Symptoms**: Studio or website slow to load
 
 **Solutions**:
+
 1. **Optimize GROQ queries**:
    - Reduce projection fields
    - Add filters early in query
    - Avoid `references()` in large datasets
 
 2. **Add indexes** (Sanity schema):
+
    ```typescript
    fields: [
      {
        name: 'publishedAt',
        type: 'datetime',
        options: {
-         index: true // Add index for faster queries
-       }
-     }
+         index: true, // Add index for faster queries
+       },
+     },
    ]
    ```
 
@@ -837,6 +866,7 @@ curl -X POST https://andersoncleaning.com/api/revalidate?secret=YOUR_SECRET
 **Message**: `SyntaxError: Unexpected token`
 
 **Solution**: Check query syntax:
+
 - Missing brackets
 - Incorrect operators
 - Typos in field names
@@ -844,6 +874,7 @@ curl -X POST https://andersoncleaning.com/api/revalidate?secret=YOUR_SECRET
 #### "Cross-domain request blocked"
 
 **Solution**: Add domain to Sanity CORS settings:
+
 1. Go to sanity.io/manage
 2. Select project
 3. API settings → CORS Origins
@@ -852,6 +883,7 @@ curl -X POST https://andersoncleaning.com/api/revalidate?secret=YOUR_SECRET
 #### "Token expired"
 
 **Solution**: Refresh authentication:
+
 1. Log out of Studio
 2. Log back in
 3. If persists, revoke and create new token
@@ -872,6 +904,7 @@ curl -X POST https://andersoncleaning.com/api/revalidate?secret=YOUR_SECRET
 Add custom blocks to rich text editor:
 
 **1. Define component** (`lib/cms/components/Callout.tsx`):
+
 ```typescript
 export const Callout = ({ children, type = 'info' }) => (
   <div className={`callout callout-${type}`}>
@@ -881,6 +914,7 @@ export const Callout = ({ children, type = 'info' }) => (
 ```
 
 **2. Register in schema** (`lib/cms/schemas/blockContent.ts`):
+
 ```typescript
 {
   type: 'block',
@@ -898,6 +932,7 @@ export const Callout = ({ children, type = 'info' }) => (
 ```
 
 **3. Render on website**:
+
 ```typescript
 import { PortableText } from '@portabletext/react'
 
@@ -916,11 +951,13 @@ import { PortableText } from '@portabletext/react'
 Trigger actions when content changes:
 
 **1. Create webhook** (Sanity dashboard):
+
 - URL: `https://andersoncleaning.com/api/webhook`
 - Events: `create`, `update`, `delete`
 - Dataset: `production`
 
 **2. Handle webhook** (`app/api/webhook/route.ts`):
+
 ```typescript
 export async function POST(request: Request) {
   const body = await request.json()
@@ -951,17 +988,16 @@ const client = getCliClient()
 
 client
   .fetch('*[_type == "testimonial" && !defined(featured)]')
-  .then(testimonials => {
-    const patches = testimonials.map(doc =>
-      client.patch(doc._id).set({ featured: false })
-    )
-    return Promise.all(patches.map(patch => patch.commit()))
+  .then((testimonials) => {
+    const patches = testimonials.map((doc) => client.patch(doc._id).set({ featured: false }))
+    return Promise.all(patches.map((patch) => patch.commit()))
   })
   .then(() => console.log('Migration complete'))
-  .catch(err => console.error(err))
+  .catch((err) => console.error(err))
 ```
 
 **Run migration**:
+
 ```bash
 npx sanity exec migrations/add-featured-flag.js --with-user-token
 ```
@@ -970,33 +1006,36 @@ npx sanity exec migrations/add-featured-flag.js --with-user-token
 
 ## Keyboard Shortcuts
 
-| Action | Windows/Linux | Mac |
-|--------|--------------|-----|
-| Save | Ctrl+S | Cmd+S |
-| Publish | Ctrl+Alt+P | Cmd+Option+P |
-| Bold | Ctrl+B | Cmd+B |
-| Italic | Ctrl+I | Cmd+I |
-| Link | Ctrl+K | Cmd+K |
-| Search | Ctrl+/ | Cmd+/ |
-| Undo | Ctrl+Z | Cmd+Z |
-| Redo | Ctrl+Shift+Z | Cmd+Shift+Z |
+| Action  | Windows/Linux | Mac          |
+| ------- | ------------- | ------------ |
+| Save    | Ctrl+S        | Cmd+S        |
+| Publish | Ctrl+Alt+P    | Cmd+Option+P |
+| Bold    | Ctrl+B        | Cmd+B        |
+| Italic  | Ctrl+I        | Cmd+I        |
+| Link    | Ctrl+K        | Cmd+K        |
+| Search  | Ctrl+/        | Cmd+/        |
+| Undo    | Ctrl+Z        | Cmd+Z        |
+| Redo    | Ctrl+Shift+Z  | Cmd+Shift+Z  |
 
 ---
 
 ## Resources
 
 ### Official Documentation
+
 - **Sanity Docs**: https://www.sanity.io/docs
 - **GROQ Reference**: https://www.sanity.io/docs/groq
 - **Schema Reference**: https://www.sanity.io/docs/schema-types
 - **Image URLs**: https://www.sanity.io/docs/image-url
 
 ### Community
+
 - **Sanity Slack**: https://slack.sanity.io
 - **Sanity Exchange**: https://www.sanity.io/exchange
 - **GitHub Discussions**: https://github.com/sanity-io/sanity/discussions
 
 ### Internal Resources
+
 - **Schema Definitions**: `lib/cms/schemas/`
 - **Query Library**: `lib/cms/queries.ts`
 - **Sanity Client**: `lib/cms/sanity.client.ts`
@@ -1006,9 +1045,9 @@ npx sanity exec migrations/add-featured-flag.js --with-user-token
 
 ## Changelog
 
-| Version | Date | Changes |
-|---------|------|---------|
-| 1.0 | Nov 2024 | Initial CMS guide |
+| Version | Date     | Changes           |
+| ------- | -------- | ----------------- |
+| 1.0     | Nov 2024 | Initial CMS guide |
 
 ---
 

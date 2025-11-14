@@ -66,7 +66,9 @@ You can either:
 ## Content Types
 
 ### Settings
+
 Singleton document for site-wide configuration:
+
 - Site name
 - Company info (address, phone, email, hours)
 - Social media links
@@ -74,13 +76,17 @@ Singleton document for site-wide configuration:
 - Site notices
 
 ### Navigation
+
 Singleton document for navigation configuration:
+
 - Header links
 - Footer links (grouped by column)
 - CTA button
 
 ### Services
+
 Individual service pages:
+
 - Title, slug, summary
 - Contracted-only flag
 - Includes list
@@ -89,7 +95,9 @@ Individual service pages:
 - SEO fields
 
 ### Industries
+
 Industry-specific pages:
+
 - Title, slug, icon
 - Description
 - Pain points
@@ -98,7 +106,9 @@ Industry-specific pages:
 - Rich text body
 
 ### Testimonials
+
 Customer testimonials:
+
 - Quote text
 - Author details (name, title, company)
 - Company logo
@@ -107,28 +117,36 @@ Customer testimonials:
 - Industry/service references
 
 ### Before & After
+
 Visual transformation examples:
+
 - Before/after images
 - Caption
 - Service/industry references
 - Featured flag
 
 ### Badges
+
 Trust badges and certifications:
+
 - Label, icon
 - Description
 - Display order
 - Visibility toggle
 
 ### Pages
+
 Flexible content pages:
+
 - Title, slug
 - Rich text body with custom blocks
 - SEO fields
 - Open Graph image
 
 ### Posts
+
 Blog posts:
+
 - Title, slug, excerpt
 - Author, published date
 - Categories, tags
@@ -182,12 +200,12 @@ Recommended revalidation times are defined in `sanity.client.ts`:
 
 ```typescript
 export const REVALIDATE_TIME = {
-  HOMEPAGE: 60,       // 1 minute
-  SERVICES: 300,      // 5 minutes
-  INDUSTRIES: 300,    // 5 minutes
-  TESTIMONIALS: 600,  // 10 minutes
-  BLOG: 300,          // 5 minutes
-  SETTINGS: 3600,     // 1 hour
+  HOMEPAGE: 60, // 1 minute
+  SERVICES: 300, // 5 minutes
+  INDUSTRIES: 300, // 5 minutes
+  TESTIMONIALS: 600, // 10 minutes
+  BLOG: 300, // 5 minutes
+  SETTINGS: 3600, // 1 hour
 }
 ```
 
@@ -209,16 +227,19 @@ export const revalidate = REVALIDATE_TIME.SERVICES
 ## Troubleshooting
 
 ### Studio won't load
+
 - Check `NEXT_PUBLIC_SANITY_PROJECT_ID` is set
 - Verify project ID matches your Sanity project
 - Clear Next.js cache: `rm -rf .next`
 
 ### Preview not working
+
 - Verify `SANITY_API_READ_TOKEN` has read permissions
 - Check `SANITY_PREVIEW_SECRET` matches query parameter
 - Ensure draft mode is enabled
 
 ### Data not updating
+
 - Check ISR revalidation time
 - Force revalidation with `revalidatePath()` or `revalidateTag()`
 - Clear CDN cache if using one

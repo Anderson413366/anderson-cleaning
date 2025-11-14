@@ -87,7 +87,7 @@ export function generateLocalBusinessSchema() {
     },
     geo: {
       '@type': 'GeoCoordinates',
-      latitude: 42.1070,
+      latitude: 42.107,
       longitude: -72.6209,
     },
     openingHoursSpecification: [
@@ -102,7 +102,7 @@ export function generateLocalBusinessSchema() {
       '@type': 'GeoCircle',
       geoMidpoint: {
         '@type': 'GeoCoordinates',
-        latitude: 42.1070,
+        latitude: 42.107,
         longitude: -72.6209,
       },
       geoRadius: '100 miles',
@@ -133,12 +133,7 @@ export interface ServiceSchemaProps {
   url: string
 }
 
-export function generateServiceSchema({
-  name,
-  description,
-  serviceType,
-  url,
-}: ServiceSchemaProps) {
+export function generateServiceSchema({ name, description, serviceType, url }: ServiceSchemaProps) {
   return {
     '@context': 'https://schema.org',
     '@type': 'Service',
@@ -163,7 +158,7 @@ export function generateServiceSchema({
       '@type': 'GeoCircle',
       geoMidpoint: {
         '@type': 'GeoCoordinates',
-        latitude: 42.1070,
+        latitude: 42.107,
         longitude: -72.6209,
       },
       geoRadius: '100 miles',
@@ -284,10 +279,7 @@ export interface AggregateRatingProps {
   reviewCount: number
 }
 
-export function generateAggregateRatingSchema({
-  ratingValue,
-  reviewCount,
-}: AggregateRatingProps) {
+export function generateAggregateRatingSchema({ ratingValue, reviewCount }: AggregateRatingProps) {
   return {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
@@ -311,8 +303,7 @@ export function generateOfferSchema() {
     itemOffered: {
       '@type': 'Service',
       name: 'Commercial Cleaning Services',
-      description:
-        'Professional commercial cleaning and janitorial services for businesses',
+      description: 'Professional commercial cleaning and janitorial services for businesses',
     },
     seller: {
       '@type': 'Organization',
@@ -328,7 +319,7 @@ export function generateOfferSchema() {
       '@type': 'GeoCircle',
       geoMidpoint: {
         '@type': 'GeoCoordinates',
-        latitude: 42.1070,
+        latitude: 42.107,
         longitude: -72.6209,
       },
       geoRadius: '100 miles',

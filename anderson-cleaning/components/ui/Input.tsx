@@ -32,17 +32,20 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
  * />
  */
 const Input = forwardRef<HTMLInputElement, InputProps>(
-  ({
-    label,
-    helperText,
-    error,
-    isLoading = false,
-    isRequired = false,
-    className,
-    id,
-    disabled,
-    ...props
-  }, ref) => {
+  (
+    {
+      label,
+      helperText,
+      error,
+      isLoading = false,
+      isRequired = false,
+      className,
+      id,
+      disabled,
+      ...props
+    },
+    ref
+  ) => {
     const inputId = id || `input-${label?.toLowerCase().replace(/\s+/g, '-')}`
     const helperTextId = helperText ? `${inputId}-helper` : undefined
     const errorId = error ? `${inputId}-error` : undefined
@@ -111,10 +114,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
         </div>
 
         {helperText && !error && (
-          <p
-            id={helperTextId}
-            className="mt-1.5 text-xs text-gray-500 dark:text-slate-400"
-          >
+          <p id={helperTextId} className="mt-1.5 text-xs text-gray-500 dark:text-slate-400">
             {helperText}
           </p>
         )}

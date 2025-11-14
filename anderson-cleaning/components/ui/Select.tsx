@@ -43,18 +43,21 @@ export interface SelectProps extends SelectHTMLAttributes<HTMLSelectElement> {
  * />
  */
 const Select = forwardRef<HTMLSelectElement, SelectProps>(
-  ({
-    label,
-    helperText,
-    error,
-    options,
-    placeholder,
-    isRequired = false,
-    className,
-    id,
-    disabled,
-    ...props
-  }, ref) => {
+  (
+    {
+      label,
+      helperText,
+      error,
+      options,
+      placeholder,
+      isRequired = false,
+      className,
+      id,
+      disabled,
+      ...props
+    },
+    ref
+  ) => {
     const selectId = id || `select-${label?.toLowerCase().replace(/\s+/g, '-')}`
     const helperTextId = helperText ? `${selectId}-helper` : undefined
     const errorId = error ? `${selectId}-error` : undefined
@@ -121,21 +124,19 @@ const Select = forwardRef<HTMLSelectElement, SelectProps>(
               </option>
             )}
             {options.map((option) => (
-              <option
-                key={option.value}
-                value={option.value}
-                disabled={option.disabled}
-              >
+              <option key={option.value} value={option.value} disabled={option.disabled}>
                 {option.label}
               </option>
             ))}
           </select>
 
           {/* Custom dropdown icon */}
-          <div className={cn(
-            'absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none',
-            disabled ? 'text-gray-400 dark:text-slate-500' : 'text-gray-500 dark:text-slate-400'
-          )}>
+          <div
+            className={cn(
+              'absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none',
+              disabled ? 'text-gray-400 dark:text-slate-500' : 'text-gray-500 dark:text-slate-400'
+            )}
+          >
             <svg
               className="h-4 w-4"
               fill="none"
@@ -154,10 +155,7 @@ const Select = forwardRef<HTMLSelectElement, SelectProps>(
         </div>
 
         {helperText && !error && (
-          <p
-            id={helperTextId}
-            className="mt-1.5 text-xs text-gray-500 dark:text-slate-400"
-          >
+          <p id={helperTextId} className="mt-1.5 text-xs text-gray-500 dark:text-slate-400">
             {helperText}
           </p>
         )}

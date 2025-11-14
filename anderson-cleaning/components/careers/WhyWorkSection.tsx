@@ -1,28 +1,27 @@
 'use client'
 
-
-import React, { useContext } from 'react';
-import { useAppContext } from '@/lib/careers/AppContext';
-import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/Card';
-import { motion } from 'framer-motion';
-import { GrowthIcon, UsersIcon, HandshakeIcon, ShieldCheckIcon } from './icons'; 
+import React, { useContext } from 'react'
+import { useAppContext } from '@/lib/careers/AppContext'
+import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/Card'
+import { motion } from 'framer-motion'
+import { GrowthIcon, UsersIcon, HandshakeIcon, ShieldCheckIcon } from './icons'
 
 const WhyWorkSection: React.FC = () => {
-  const context = useAppContext();
-  if (!context) throw new Error('AppContext not found');
-  const { t } = context;
+  const context = useAppContext()
+  if (!context) throw new Error('AppContext not found')
+  const { t } = context
 
   // t function now returns Translations[string], so the cast is appropriate if the key maps to this structure.
-  const whyWorkItems = t('whyWorkItems') as { title: string; description: string }[];
+  const whyWorkItems = t('whyWorkItems') as { title: string; description: string }[]
 
   const iconMap: { [key: string]: React.FC<any> } = {
-    "Growth Opportunities": GrowthIcon,
-    "Supportive Culture": UsersIcon,
-    "Impactful Work": HandshakeIcon,
-    "Competitive Benefits": ShieldCheckIcon,
-  };
+    'Growth Opportunities': GrowthIcon,
+    'Supportive Culture': UsersIcon,
+    'Impactful Work': HandshakeIcon,
+    'Competitive Benefits': ShieldCheckIcon,
+  }
 
-  const MotionCard = motion(Card);
+  const MotionCard = motion(Card)
 
   return (
     <section id="why-work" className="py-16 md:py-24 bg-gray-50 dark:bg-slate-900/50">
@@ -37,7 +36,7 @@ const WhyWorkSection: React.FC = () => {
         </motion.h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {whyWorkItems.map((item, index) => {
-            const IconComponent = iconMap[item.title] || ShieldCheckIcon;
+            const IconComponent = iconMap[item.title] || ShieldCheckIcon
             return (
               <MotionCard
                 key={index}
@@ -45,8 +44,8 @@ const WhyWorkSection: React.FC = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{
                   delay: index * 0.15,
-                  duration: 0.5
-                }} 
+                  duration: 0.5,
+                }}
                 // whileInView="visible" // Use for scroll-triggered animations if preferred
                 // viewport={{ once: true, amount: 0.3 }}
                 className="h-full flex flex-col hover:shadow-xl transition-shadow duration-300 dark:bg-slate-800"
@@ -61,12 +60,12 @@ const WhyWorkSection: React.FC = () => {
                   <p className="text-muted-foreground dark:text-slate-400">{item.description}</p>
                 </CardContent>
               </MotionCard>
-            );
+            )
           })}
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default WhyWorkSection;
+export default WhyWorkSection

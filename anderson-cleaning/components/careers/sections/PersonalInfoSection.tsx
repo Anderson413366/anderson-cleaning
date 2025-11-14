@@ -1,18 +1,17 @@
 'use client'
 
-
-import React, { useContext } from 'react';
-import { useAppContext } from '@/lib/careers/AppContext';
-import FormInput from '@/components/ui/FormInput';
-import SectionWrapper from './SectionWrapper';
+import React, { useContext } from 'react'
+import { useAppContext } from '@/lib/careers/AppContext'
+import FormInput from '@/components/ui/FormInput'
+import SectionWrapper from './SectionWrapper'
 
 const PersonalInfoSection: React.FC = () => {
-  const context = useAppContext();
-  if (!context) throw new Error('AppContext not found');
-  const { formData, handleChange, t, formErrors } = context;
-  const data = formData.personalInfo;
+  const context = useAppContext()
+  if (!context) throw new Error('AppContext not found')
+  const { formData, handleChange, t, formErrors } = context
+  const data = formData.personalInfo
 
-  const getError = (field: string) => formErrors[`personalInfo.${field}`];
+  const getError = (field: string) => formErrors[`personalInfo.${field}`]
 
   return (
     <SectionWrapper titleKey="personalInfoSectionTitle">
@@ -81,7 +80,7 @@ const PersonalInfoSection: React.FC = () => {
           error={getError('zipCode')}
           isRequired
         />
-         <FormInput
+        <FormInput
           label={t('emailLabel') as string}
           name="email"
           type="email"
@@ -103,7 +102,7 @@ const PersonalInfoSection: React.FC = () => {
         />
       </div>
     </SectionWrapper>
-  );
-};
+  )
+}
 
-export default PersonalInfoSection;
+export default PersonalInfoSection

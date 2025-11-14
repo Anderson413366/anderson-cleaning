@@ -11,6 +11,7 @@ Anderson Cleaning is committed to ensuring digital accessibility for people with
 This website aims to conform to **WCAG 2.2 Level AA** standards.
 
 **Conformance Status**: Partial conformance
+
 - We are actively working towards full WCAG 2.2 AA compliance
 - Some areas may not yet meet all success criteria
 - We welcome feedback and will address issues promptly
@@ -89,11 +90,12 @@ This website aims to conform to **WCAG 2.2 Level AA** standards.
 Allows keyboard users to skip navigation and jump to main content.
 
 **Usage:**
+
 ```tsx
 import SkipLink from '@/components/SkipLink'
 
 // In root layout
-<body>
+;<body>
   <SkipLink />
   <Navigation />
   <main id="main-content" tabIndex={-1}>
@@ -103,6 +105,7 @@ import SkipLink from '@/components/SkipLink'
 ```
 
 **Features:**
+
 - Visible only when focused
 - First element in tab order
 - Smooth scroll to main content
@@ -113,6 +116,7 @@ import SkipLink from '@/components/SkipLink'
 Located in `lib/utils/accessibility.ts`.
 
 **Generate Unique IDs:**
+
 ```tsx
 import { generateId } from '@/lib/utils/accessibility'
 
@@ -120,6 +124,7 @@ const id = generateId('email') // "email-1-1234567890"
 ```
 
 **Announce to Screen Readers:**
+
 ```tsx
 import { announceToScreenReader } from '@/lib/utils/accessibility'
 
@@ -131,6 +136,7 @@ announceToScreenReader('Error: Please fix form errors', 'assertive')
 ```
 
 **Focus Management:**
+
 ```tsx
 import { trapFocus, restoreFocus } from '@/lib/utils/accessibility'
 
@@ -145,6 +151,7 @@ restoreFocus(previouslyFocusedElement)
 ```
 
 **Handle Escape Key:**
+
 ```tsx
 import { handleEscapeKey } from '@/lib/utils/accessibility'
 
@@ -158,6 +165,7 @@ cleanup()
 ```
 
 **Check Color Contrast:**
+
 ```tsx
 import { getContrastRatio, meetsContrastRequirement } from '@/lib/utils/accessibility'
 
@@ -166,6 +174,7 @@ const meetsAA = meetsContrastRequirement(ratio, 'AA', false) // true
 ```
 
 **Reduced Motion:**
+
 ```tsx
 import { prefersReducedMotion, getAnimationDuration } from '@/lib/utils/accessibility'
 
@@ -177,16 +186,16 @@ const duration = getAnimationDuration(300) // 0 if reduced motion preferred
 Runs axe-core accessibility testing in development.
 
 **Usage:**
+
 ```tsx
 // In root layout
 import AccessibilityProvider from '@/components/AccessibilityProvider'
 
-<AccessibilityProvider>
-  {children}
-</AccessibilityProvider>
+;<AccessibilityProvider>{children}</AccessibilityProvider>
 ```
 
 **Features:**
+
 - Only runs in development mode
 - Reports violations to console
 - Zero production bundle impact
@@ -196,11 +205,13 @@ import AccessibilityProvider from '@/components/AccessibilityProvider'
 ### Screen Reader Only
 
 **`.sr-only`** - Visually hidden, accessible to screen readers:
+
 ```tsx
 <span className="sr-only">Loading...</span>
 ```
 
 **`.sr-only-focusable`** - Hidden until focused:
+
 ```tsx
 <a href="#main" className="sr-only-focusable">
   Skip navigation
@@ -210,6 +221,7 @@ import AccessibilityProvider from '@/components/AccessibilityProvider'
 ### Focus Styles
 
 Focus styles are automatically applied with `focus-visible`:
+
 - Standard elements: 2px outline
 - Interactive elements: 3px outline with shadow
 - Dark mode support
@@ -218,15 +230,15 @@ Focus styles are automatically applied with `focus-visible`:
 ### Error Styling
 
 **`aria-invalid`** - Applied automatically:
+
 ```tsx
 <input aria-invalid="true" />
 ```
 
 **Error messages:**
+
 ```tsx
-<span className="error-message">
-  This field is required
-</span>
+<span className="error-message">This field is required</span>
 ```
 
 ### Message Types
@@ -342,26 +354,28 @@ const errorId = `${fieldId}-error`
 
 ### Keyboard Shortcuts
 
-| Key | Action |
-|-----|--------|
-| `Tab` | Move to next focusable element |
-| `Shift+Tab` | Move to previous focusable element |
-| `Enter` | Activate button/link |
-| `Space` | Activate button, toggle checkbox |
-| `Escape` | Close modal/dialog |
-| `Arrow keys` | Navigate within custom components |
-| `Home` | Jump to start (in text fields) |
-| `End` | Jump to end (in text fields) |
+| Key          | Action                             |
+| ------------ | ---------------------------------- |
+| `Tab`        | Move to next focusable element     |
+| `Shift+Tab`  | Move to previous focusable element |
+| `Enter`      | Activate button/link               |
+| `Space`      | Activate button, toggle checkbox   |
+| `Escape`     | Close modal/dialog                 |
+| `Arrow keys` | Navigate within custom components  |
+| `Home`       | Jump to start (in text fields)     |
+| `End`        | Jump to end (in text fields)       |
 
 ### Focus Management
 
 All interactive elements must be focusable:
+
 - Buttons
 - Links
 - Form inputs
 - Custom controls (with `tabindex="0"`)
 
 Elements that should NOT be focusable:
+
 - Decorative elements
 - Disabled elements
 - Hidden elements (use `tabindex="-1"`)
@@ -371,6 +385,7 @@ Elements that should NOT be focusable:
 ### Automated Testing
 
 **Run axe-core in Development:**
+
 ```bash
 npm run dev
 # Open browser console
@@ -378,6 +393,7 @@ npm run dev
 ```
 
 **Lighthouse Audit:**
+
 ```bash
 npm run build
 npm run start
@@ -388,6 +404,7 @@ npm run start
 ### Manual Testing
 
 **Keyboard Navigation:**
+
 1. Unplug mouse
 2. Use `Tab` to navigate entire site
 3. Verify all interactive elements are reachable
@@ -397,30 +414,35 @@ npm run start
 **Screen Reader Testing:**
 
 **Windows - NVDA (Free):**
+
 ```
 Download: https://www.nvaccess.org/
 Shortcut: Ctrl + Alt + N (start/stop)
 ```
 
 **Windows - JAWS (Paid):**
+
 ```
 Download: https://www.freedomscientific.com/products/software/jaws/
 Free trial available
 ```
 
 **Mac - VoiceOver (Built-in):**
+
 ```
 Enable: Cmd + F5
 Quick start: Cmd + F5, then Ctrl + Opt + Arrow keys
 ```
 
 **iOS - VoiceOver:**
+
 ```
 Settings > Accessibility > VoiceOver
 Shortcut: Triple-click home/side button
 ```
 
 **Android - TalkBack:**
+
 ```
 Settings > Accessibility > TalkBack
 ```
@@ -428,18 +450,21 @@ Settings > Accessibility > TalkBack
 ### Browser Extensions
 
 **WAVE (Web Accessibility Evaluation Tool):**
+
 ```
 Chrome: https://chrome.google.com/webstore/detail/wave-evaluation-tool/...
 Firefox: https://addons.mozilla.org/en-US/firefox/addon/wave-accessibility-tool/
 ```
 
 **axe DevTools:**
+
 ```
 Chrome: https://chrome.google.com/webstore/detail/axe-devtools-web-accessib/...
 Firefox: https://addons.mozilla.org/en-US/firefox/addon/axe-devtools/
 ```
 
 **Accessibility Insights:**
+
 ```
 Chrome/Edge: https://accessibilityinsights.io/
 ```
@@ -447,22 +472,26 @@ Chrome/Edge: https://accessibilityinsights.io/
 ### Color Contrast Checkers
 
 **Online Tools:**
+
 - [WebAIM Contrast Checker](https://webaim.org/resources/contrastchecker/)
 - [Coolors Contrast Checker](https://coolors.co/contrast-checker)
 - [Color Review](https://color.review/)
 
 **Browser Extensions:**
+
 - [Colorblindly](https://chrome.google.com/webstore/detail/colorblindly/)
 - [Let's get color blind](https://chromewebstore.google.com/detail/lets-get-color-blind/)
 
 ### Validation Tools
 
 **AChecker:**
+
 ```
 https://achecker.achecks.ca/checker/index.php
 ```
 
 **WAVE API:**
+
 ```
 https://wave.webaim.org/api/
 ```
@@ -474,6 +503,7 @@ https://wave.webaim.org/api/
 **Problem:** Text is hard to read on background
 
 **Solution:**
+
 ```css
 /* Ensure 4.5:1 contrast for normal text */
 color: #1f2937; /* Dark gray on white */
@@ -489,6 +519,7 @@ background: #f3f4f6;
 **Problem:** Images without alternative text
 
 **Solution:**
+
 ```tsx
 // Informative image
 <img src="/service.jpg" alt="Janitor mopping office floor" />
@@ -511,6 +542,7 @@ background: #f3f4f6;
 **Problem:** Elements not reachable with keyboard
 
 **Solution:**
+
 ```tsx
 // DON'T: Use div for button
 <div onClick={handleClick}>Click me</div>
@@ -538,6 +570,7 @@ background: #f3f4f6;
 **Problem:** Screen readers can't identify form fields
 
 **Solution:**
+
 ```tsx
 // DO: Associate label with input
 <label htmlFor="email">Email Address</label>
@@ -560,6 +593,7 @@ background: #f3f4f6;
 **Problem:** Content changes not communicated to screen readers
 
 **Solution:**
+
 ```tsx
 // Loading state
 <div role="status" aria-live="polite">
@@ -582,6 +616,7 @@ announceToScreenReader('Form submitted successfully')
 **Problem:** Focus escapes modal
 
 **Solution:**
+
 ```tsx
 import { trapFocus, handleEscapeKey } from '@/lib/utils/accessibility'
 
@@ -604,23 +639,27 @@ useEffect(() => {
 ## 📚 Resources
 
 ### WCAG Guidelines
+
 - [WCAG 2.2 Overview](https://www.w3.org/WAI/WCAG22/quickref/)
 - [Understanding WCAG 2.2](https://www.w3.org/WAI/WCAG22/Understanding/)
 - [How to Meet WCAG](https://www.w3.org/WAI/WCAG22/quickref/)
 
 ### Testing Tools
+
 - [axe DevTools](https://www.deque.com/axe/devtools/)
 - [WAVE](https://wave.webaim.org/)
 - [Accessibility Insights](https://accessibilityinsights.io/)
 - [Pa11y](https://pa11y.org/)
 
 ### Screen Readers
+
 - [NVDA (Windows)](https://www.nvaccess.org/)
 - [JAWS (Windows)](https://www.freedomscientific.com/products/software/jaws/)
 - [VoiceOver (Mac/iOS)](https://www.apple.com/accessibility/voiceover/)
 - [TalkBack (Android)](https://support.google.com/accessibility/android/answer/6283677)
 
 ### Learning Resources
+
 - [WebAIM](https://webaim.org/)
 - [A11y Project](https://www.a11yproject.com/)
 - [MDN Accessibility](https://developer.mozilla.org/en-US/docs/Web/Accessibility)

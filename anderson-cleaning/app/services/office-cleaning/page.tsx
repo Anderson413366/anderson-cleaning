@@ -18,9 +18,10 @@ export default function OfficeCleaningPage() {
               Office & Commercial Cleaning
             </h1>
             <p className="text-xl text-blue-100 mb-8">
-              Nightly and weekly cleaning programs that keep your workplace spotless, safe, and productive.
+              Nightly and weekly cleaning programs that keep your workplace spotless, safe, and
+              productive.
             </p>
-            <Button variant="accent" size="lg" onClick={() => window.location.href='/quote'}>
+            <Button variant="accent" size="lg" onClick={() => (window.location.href = '/quote')}>
               Get Your Free Quote
             </Button>
           </div>
@@ -32,7 +33,9 @@ export default function OfficeCleaningPage() {
         <div className="container mx-auto px-6 max-w-6xl">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">What's Included</h2>
-            <p className="text-xl text-gray-600">Comprehensive cleaning tailored to your office environment</p>
+            <p className="text-xl text-gray-600">
+              Comprehensive cleaning tailored to your office environment
+            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -91,7 +94,9 @@ export default function OfficeCleaningPage() {
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-6 max-w-6xl">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">How We Ensure Quality</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              How We Ensure Quality
+            </h2>
             <p className="text-xl text-gray-600">Corporate-grade standards for every clean</p>
           </div>
 
@@ -100,12 +105,14 @@ export default function OfficeCleaningPage() {
               {
                 icon: Users,
                 title: 'Trained Teams',
-                description: 'Every team member completes 40+ hours of training before their first assignment.',
+                description:
+                  'Every team member completes 40+ hours of training before their first assignment.',
               },
               {
                 icon: CheckCircle2,
                 title: 'Detailed Checklists',
-                description: 'Custom cleaning checklists for your facility ensure nothing is missed.',
+                description:
+                  'Custom cleaning checklists for your facility ensure nothing is missed.',
               },
               {
                 icon: Shield,
@@ -115,7 +122,8 @@ export default function OfficeCleaningPage() {
               {
                 icon: Clock,
                 title: 'Consistent Schedule',
-                description: 'Same team, same time, every visit. Build familiarity with your space.',
+                description:
+                  'Same team, same time, every visit. Build familiarity with your space.',
               },
             ].map((item, i) => {
               const Icon = item.icon
@@ -142,14 +150,41 @@ export default function OfficeCleaningPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
-              { icon: '🏢', title: 'Corporate Offices', desc: 'Professional environments requiring consistent, high-quality cleaning' },
-              { icon: '⚕️', title: 'Medical Offices', desc: 'Healthcare settings with strict sanitation requirements' },
-              { icon: '🏦', title: 'Financial Services', desc: 'Professional spaces where image matters' },
-              { icon: '💼', title: 'Law Firms', desc: 'Client-facing offices requiring meticulous attention' },
-              { icon: '🏛️', title: 'Property Management', desc: 'Multi-tenant buildings and common areas' },
-              { icon: '🏪', title: 'Retail Offices', desc: 'Corporate headquarters and back-office spaces' },
+              {
+                icon: '🏢',
+                title: 'Corporate Offices',
+                desc: 'Professional environments requiring consistent, high-quality cleaning',
+              },
+              {
+                icon: '⚕️',
+                title: 'Medical Offices',
+                desc: 'Healthcare settings with strict sanitation requirements',
+              },
+              {
+                icon: '🏦',
+                title: 'Financial Services',
+                desc: 'Professional spaces where image matters',
+              },
+              {
+                icon: '💼',
+                title: 'Law Firms',
+                desc: 'Client-facing offices requiring meticulous attention',
+              },
+              {
+                icon: '🏛️',
+                title: 'Property Management',
+                desc: 'Multi-tenant buildings and common areas',
+              },
+              {
+                icon: '🏪',
+                title: 'Retail Offices',
+                desc: 'Corporate headquarters and back-office spaces',
+              },
             ].map((item, i) => (
-              <div key={i} className="bg-gray-50 rounded-lg p-6 text-center hover:shadow-lg transition-all">
+              <div
+                key={i}
+                className="bg-gray-50 rounded-lg p-6 text-center hover:shadow-lg transition-all"
+              >
                 <div className="text-4xl mb-3">{item.icon}</div>
                 <h3 className="font-bold text-gray-900 mb-2">{item.title}</h3>
                 <p className="text-sm text-gray-600">{item.desc}</p>
@@ -164,7 +199,9 @@ export default function OfficeCleaningPage() {
         <div className="container mx-auto px-6 max-w-4xl">
           <div className="bg-white rounded-2xl shadow-2xl p-8 md:p-12">
             <div className="text-center mb-8">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">Custom Pricing Based on Your Needs</h2>
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">
+                Custom Pricing Based on Your Needs
+              </h2>
               <p className="text-gray-600">
                 Every facility is unique. We create custom proposals based on:
               </p>
@@ -187,7 +224,7 @@ export default function OfficeCleaningPage() {
             </div>
 
             <div className="text-center">
-              <Button variant="primary" size="lg" onClick={() => window.location.href='/quote'}>
+              <Button variant="primary" size="lg" onClick={() => (window.location.href = '/quote')}>
                 Get Your Custom Quote
               </Button>
               <p className="text-sm text-gray-600 mt-4">
@@ -209,10 +246,14 @@ export default function OfficeCleaningPage() {
             Schedule a free walk-through and get your customized cleaning proposal.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button variant="accent" size="lg" onClick={() => window.location.href='/quote'}>
+            <Button variant="accent" size="lg" onClick={() => (window.location.href = '/quote')}>
               Get Your Free Quote
             </Button>
-            <Button variant="outline" size="lg" className="border-white text-white hover:bg-white/10">
+            <Button
+              variant="outline"
+              size="lg"
+              className="border-white text-white hover:bg-white/10"
+            >
               Call (555) 123-4567
             </Button>
           </div>
@@ -223,7 +264,9 @@ export default function OfficeCleaningPage() {
       <footer className="bg-gray-900 text-gray-300 py-8">
         <div className="container mx-auto px-6 text-center">
           <div className="mb-4">
-            <a href="/services" className="text-accent-400 hover:text-accent-300">← Back to All Services</a>
+            <a href="/services" className="text-accent-400 hover:text-accent-300">
+              ← Back to All Services
+            </a>
           </div>
           <p className="text-sm text-gray-500">
             &copy; {new Date().getFullYear()} Anderson Cleaning, Inc. All rights reserved.

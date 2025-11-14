@@ -1,41 +1,45 @@
 'use client'
 
-
-import React, { useContext } from 'react';
-import { useAppContext } from '@/lib/careers/AppContext';
-import FormInput from '@/components/ui/FormInput';
-import FormSelect from '@/components/ui/FormSelect';
-import FormCheckbox from '@/components/ui/FormCheckbox';
-import FormCheckboxGroup from '@/components/ui/FormCheckboxGroup';
-import FormRadioGroup from '@/components/ui/FormRadioGroup';
-import FormTextarea from '@/components/ui/FormTextarea';
-import SectionWrapper from './SectionWrapper';
-import { ExperienceOptionKeys } from '@/lib/careers/constants';
+import React, { useContext } from 'react'
+import { useAppContext } from '@/lib/careers/AppContext'
+import FormInput from '@/components/ui/FormInput'
+import FormSelect from '@/components/ui/FormSelect'
+import FormCheckbox from '@/components/ui/FormCheckbox'
+import FormCheckboxGroup from '@/components/ui/FormCheckboxGroup'
+import FormRadioGroup from '@/components/ui/FormRadioGroup'
+import FormTextarea from '@/components/ui/FormTextarea'
+import SectionWrapper from './SectionWrapper'
+import { ExperienceOptionKeys } from '@/lib/careers/constants'
 
 const JobDetailsSection: React.FC = () => {
-  const context = useAppContext();
-  if (!context) throw new Error('AppContext not found');
-  const { formData, handleChange, handleMultiCheckboxChange, t, formErrors } = context;
-  const data = formData.jobDetails;
+  const context = useAppContext()
+  if (!context) throw new Error('AppContext not found')
+  const { formData, handleChange, handleMultiCheckboxChange, t, formErrors } = context
+  const data = formData.jobDetails
 
-  const getError = (field: string) => formErrors[`jobDetails.${field}`];
+  const getError = (field: string) => formErrors[`jobDetails.${field}`]
 
-  const positionOptions = t('positionOptions') as { value: string; label: string }[];
-  const liftOptions = t('liftOptions') as { value: string; label: string }[];
-  const physicalAbilityOptions = t('physicalAbilityOptions') as { value: string; label: string }[];
-  
+  const positionOptions = t('positionOptions') as { value: string; label: string }[]
+  const liftOptions = t('liftOptions') as { value: string; label: string }[]
+  const physicalAbilityOptions = t('physicalAbilityOptions') as { value: string; label: string }[]
+
   const yesNoOptions = [
-    { value: "", label: t('prevMayWeContactPlaceholder', { defaultValue: "Select Yes/No" }) as string },
-    { value: "yes", label: t('yesLabel') as string },
-    { value: "no", label: t('noLabel') as string }
-  ];
-   const performDutiesOptions = [
-    { value: "", label: t('prevMayWeContactPlaceholder', { defaultValue: "Select Yes/No/Other" }) as string },
-    { value: "yes", label: t('yesLabel') as string },
-    { value: "no", label: t('noLabel') as string },
-    { value: "other", label: t('otherLabel') as string }
-  ];
-
+    {
+      value: '',
+      label: t('prevMayWeContactPlaceholder', { defaultValue: 'Select Yes/No' }) as string,
+    },
+    { value: 'yes', label: t('yesLabel') as string },
+    { value: 'no', label: t('noLabel') as string },
+  ]
+  const performDutiesOptions = [
+    {
+      value: '',
+      label: t('prevMayWeContactPlaceholder', { defaultValue: 'Select Yes/No/Other' }) as string,
+    },
+    { value: 'yes', label: t('yesLabel') as string },
+    { value: 'no', label: t('noLabel') as string },
+    { value: 'other', label: t('otherLabel') as string },
+  ]
 
   return (
     <SectionWrapper titleKey="jobDescSectionTitle">
@@ -123,7 +127,9 @@ const JobDetailsSection: React.FC = () => {
         namePrefix="experienceWith"
         options={ExperienceOptionKeys}
         values={data.experienceWith}
-        onChange={(option, checked) => handleMultiCheckboxChange('jobDetails', 'experienceWith', option, checked)}
+        onChange={(option, checked) =>
+          handleMultiCheckboxChange('jobDetails', 'experienceWith', option, checked)
+        }
         translationKeyPrefix="experienceWith" // For fetching "experienceWith_houseCleaningLabel", etc.
         error={getError('experienceWith')}
       />
@@ -136,7 +142,7 @@ const JobDetailsSection: React.FC = () => {
         error={getError('otherExperienceText')}
       />
     </SectionWrapper>
-  );
-};
+  )
+}
 
-export default JobDetailsSection;
+export default JobDetailsSection

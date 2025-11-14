@@ -216,11 +216,7 @@ export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl
 
   // Skip middleware for static files and Next.js internals
-  if (
-    pathname.startsWith('/_next') ||
-    pathname.startsWith('/static') ||
-    pathname.includes('.')
-  ) {
+  if (pathname.startsWith('/_next') || pathname.startsWith('/static') || pathname.includes('.')) {
     return NextResponse.next()
   }
 
@@ -232,9 +228,7 @@ export function middleware(request: NextRequest) {
       status: 429,
       headers: {
         'Retry-After': String(retryAfter),
-        'X-RateLimit-Limit': String(
-          getRateLimitConfig(pathname).maxRequests
-        ),
+        'X-RateLimit-Limit': String(getRateLimitConfig(pathname).maxRequests),
         'X-RateLimit-Remaining': '0',
         'X-RateLimit-Reset': String(rateLimit.resetAt),
       },
@@ -264,10 +258,7 @@ export function middleware(request: NextRequest) {
   })
 
   // Add rate limit headers
-  response.headers.set(
-    'X-RateLimit-Limit',
-    String(getRateLimitConfig(pathname).maxRequests)
-  )
+  response.headers.set('X-RateLimit-Limit', String(getRateLimitConfig(pathname).maxRequests))
   response.headers.set('X-RateLimit-Remaining', String(rateLimit.remaining))
   response.headers.set('X-RateLimit-Reset', String(rateLimit.resetAt))
 

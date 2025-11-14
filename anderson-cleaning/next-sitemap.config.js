@@ -3,15 +3,7 @@ module.exports = {
   siteUrl: process.env.NEXT_PUBLIC_SITE_URL || 'https://andersoncleaning.com',
   generateRobotsTxt: true,
   generateIndexSitemap: false, // Set to true if you expect > 50k URLs
-  exclude: [
-    '/studio',
-    '/studio/*',
-    '/api/*',
-    '/apply/success',
-    '/_next/*',
-    '/404',
-    '/500',
-  ],
+  exclude: ['/studio', '/studio/*', '/api/*', '/apply/success', '/_next/*', '/404', '/500'],
 
   // Priority rules for different page types
   transform: async (config, path) => {
@@ -75,22 +67,13 @@ module.exports = {
       {
         userAgent: '*',
         allow: '/',
-        disallow: [
-          '/studio',
-          '/studio/*',
-          '/api/*',
-          '/_next/*',
-          '/apply/success',
-        ],
+        disallow: ['/studio', '/studio/*', '/api/*', '/_next/*', '/apply/success'],
       },
       // Special rules for specific bots (if needed)
       {
         userAgent: 'Googlebot',
         allow: '/',
-        disallow: [
-          '/studio',
-          '/api/*',
-        ],
+        disallow: ['/studio', '/api/*'],
       },
     ],
     additionalSitemaps: [

@@ -204,9 +204,7 @@ export default function BeforeAfterSlider({
           {currentItem.title}
         </h3>
         {currentItem.description && (
-          <p className="text-gray-600 dark:text-gray-400 mb-4">
-            {currentItem.description}
-          </p>
+          <p className="text-gray-600 dark:text-gray-400 mb-4">{currentItem.description}</p>
         )}
       </div>
 
@@ -242,9 +240,7 @@ export default function BeforeAfterSlider({
                   setSliderPosition(initialPosition)
                 }}
                 className={`w-2 h-2 rounded-full transition-colors ${
-                  index === currentIndex
-                    ? 'bg-primary-600 w-8'
-                    : 'bg-gray-300 dark:bg-slate-600'
+                  index === currentIndex ? 'bg-primary-600 w-8' : 'bg-gray-300 dark:bg-slate-600'
                 }`}
                 aria-label={`Go to comparison ${index + 1}`}
                 aria-current={index === currentIndex ? 'true' : 'false'}
@@ -263,12 +259,7 @@ export default function BeforeAfterSlider({
               stroke="currentColor"
               viewBox="0 0 24 24"
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M9 5l7 7-7 7"
-              />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>
           </button>
         </div>

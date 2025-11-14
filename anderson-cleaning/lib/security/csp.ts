@@ -62,12 +62,7 @@ export const cspDirectives: CSPDirectives = {
     'https://storage.crisp.chat',
   ],
 
-  'font-src': [
-    "'self'",
-    'data:',
-    'https://fonts.gstatic.com',
-    'https://client.crisp.chat',
-  ],
+  'font-src': ["'self'", 'data:', 'https://fonts.gstatic.com', 'https://client.crisp.chat'],
 
   'connect-src': [
     "'self'",

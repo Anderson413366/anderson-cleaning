@@ -23,7 +23,7 @@ import {
   ArrowRight,
   ArrowLeft,
   AlertCircle,
-  Loader2
+  Loader2,
 } from 'lucide-react'
 
 const TOTAL_STEPS = 4
@@ -172,7 +172,10 @@ export default function QuoteForm({ onSuccess }: QuoteFormProps) {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {/* Full Name */}
                 <div>
-                  <label htmlFor="fullName" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                  <label
+                    htmlFor="fullName"
+                    className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                  >
                     Full Name <span className="text-red-500">*</span>
                   </label>
                   <input
@@ -183,13 +186,18 @@ export default function QuoteForm({ onSuccess }: QuoteFormProps) {
                     placeholder="John Smith"
                   />
                   {errors.fullName && (
-                    <p className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.fullName.message}</p>
+                    <p className="mt-1 text-sm text-red-600 dark:text-red-400">
+                      {errors.fullName.message}
+                    </p>
                   )}
                 </div>
 
                 {/* Company */}
                 <div>
-                  <label htmlFor="company" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                  <label
+                    htmlFor="company"
+                    className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                  >
                     Company Name <span className="text-red-500">*</span>
                   </label>
                   <input
@@ -200,13 +208,18 @@ export default function QuoteForm({ onSuccess }: QuoteFormProps) {
                     placeholder="ABC Corporation"
                   />
                   {errors.company && (
-                    <p className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.company.message}</p>
+                    <p className="mt-1 text-sm text-red-600 dark:text-red-400">
+                      {errors.company.message}
+                    </p>
                   )}
                 </div>
 
                 {/* Email */}
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                  <label
+                    htmlFor="email"
+                    className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                  >
                     Email Address <span className="text-red-500">*</span>
                   </label>
                   <input
@@ -217,13 +230,18 @@ export default function QuoteForm({ onSuccess }: QuoteFormProps) {
                     placeholder="john@abccorp.com"
                   />
                   {errors.email && (
-                    <p className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.email.message}</p>
+                    <p className="mt-1 text-sm text-red-600 dark:text-red-400">
+                      {errors.email.message}
+                    </p>
                   )}
                 </div>
 
                 {/* Phone */}
                 <div>
-                  <label htmlFor="phone" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                  <label
+                    htmlFor="phone"
+                    className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                  >
                     Phone Number <span className="text-red-500">*</span>
                   </label>
                   <input
@@ -234,7 +252,9 @@ export default function QuoteForm({ onSuccess }: QuoteFormProps) {
                     placeholder="(555) 123-4567"
                   />
                   {errors.phone && (
-                    <p className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.phone.message}</p>
+                    <p className="mt-1 text-sm text-red-600 dark:text-red-400">
+                      {errors.phone.message}
+                    </p>
                   )}
                 </div>
               </div>
@@ -255,7 +275,10 @@ export default function QuoteForm({ onSuccess }: QuoteFormProps) {
 
               {/* Address */}
               <div>
-                <label htmlFor="address" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                <label
+                  htmlFor="address"
+                  className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                >
                   Street Address <span className="text-red-500">*</span>
                 </label>
                 <input
@@ -266,14 +289,19 @@ export default function QuoteForm({ onSuccess }: QuoteFormProps) {
                   placeholder="123 Main Street"
                 />
                 {errors.address && (
-                  <p className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.address.message}</p>
+                  <p className="mt-1 text-sm text-red-600 dark:text-red-400">
+                    {errors.address.message}
+                  </p>
                 )}
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {/* City */}
                 <div>
-                  <label htmlFor="city" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                  <label
+                    htmlFor="city"
+                    className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                  >
                     City <span className="text-red-500">*</span>
                   </label>
                   <input
@@ -284,13 +312,18 @@ export default function QuoteForm({ onSuccess }: QuoteFormProps) {
                     placeholder="Springfield"
                   />
                   {errors.city && (
-                    <p className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.city.message}</p>
+                    <p className="mt-1 text-sm text-red-600 dark:text-red-400">
+                      {errors.city.message}
+                    </p>
                   )}
                 </div>
 
                 {/* ZIP Code */}
                 <div>
-                  <label htmlFor="zipCode" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                  <label
+                    htmlFor="zipCode"
+                    className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                  >
                     ZIP Code <span className="text-red-500">*</span>
                   </label>
                   <input
@@ -301,13 +334,18 @@ export default function QuoteForm({ onSuccess }: QuoteFormProps) {
                     placeholder="01089"
                   />
                   {errors.zipCode && (
-                    <p className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.zipCode.message}</p>
+                    <p className="mt-1 text-sm text-red-600 dark:text-red-400">
+                      {errors.zipCode.message}
+                    </p>
                   )}
                 </div>
 
                 {/* Square Footage */}
                 <div>
-                  <label htmlFor="squareFootage" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                  <label
+                    htmlFor="squareFootage"
+                    className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                  >
                     Approximate Square Footage
                   </label>
                   <input
@@ -318,13 +356,18 @@ export default function QuoteForm({ onSuccess }: QuoteFormProps) {
                     placeholder="5000"
                   />
                   {errors.squareFootage && (
-                    <p className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.squareFootage.message}</p>
+                    <p className="mt-1 text-sm text-red-600 dark:text-red-400">
+                      {errors.squareFootage.message}
+                    </p>
                   )}
                 </div>
 
                 {/* Desired Start Date */}
                 <div>
-                  <label htmlFor="desiredStartDate" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                  <label
+                    htmlFor="desiredStartDate"
+                    className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                  >
                     Desired Start Date
                   </label>
                   <input
@@ -335,7 +378,9 @@ export default function QuoteForm({ onSuccess }: QuoteFormProps) {
                     className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-slate-800 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
                   />
                   {errors.desiredStartDate && (
-                    <p className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.desiredStartDate.message}</p>
+                    <p className="mt-1 text-sm text-red-600 dark:text-red-400">
+                      {errors.desiredStartDate.message}
+                    </p>
                   )}
                 </div>
               </div>
@@ -343,7 +388,10 @@ export default function QuoteForm({ onSuccess }: QuoteFormProps) {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {/* Facility Type */}
                 <div>
-                  <label htmlFor="facilityType" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                  <label
+                    htmlFor="facilityType"
+                    className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                  >
                     Facility Type <span className="text-red-500">*</span>
                   </label>
                   <select
@@ -359,13 +407,18 @@ export default function QuoteForm({ onSuccess }: QuoteFormProps) {
                     ))}
                   </select>
                   {errors.facilityType && (
-                    <p className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.facilityType.message}</p>
+                    <p className="mt-1 text-sm text-red-600 dark:text-red-400">
+                      {errors.facilityType.message}
+                    </p>
                   )}
                 </div>
 
                 {/* Cleaning Frequency */}
                 <div>
-                  <label htmlFor="cleaningFrequency" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                  <label
+                    htmlFor="cleaningFrequency"
+                    className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                  >
                     Cleaning Frequency <span className="text-red-500">*</span>
                   </label>
                   <select
@@ -381,7 +434,9 @@ export default function QuoteForm({ onSuccess }: QuoteFormProps) {
                     ))}
                   </select>
                   {errors.cleaningFrequency && (
-                    <p className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.cleaningFrequency.message}</p>
+                    <p className="mt-1 text-sm text-red-600 dark:text-red-400">
+                      {errors.cleaningFrequency.message}
+                    </p>
                   )}
                 </div>
               </div>
@@ -434,7 +489,9 @@ export default function QuoteForm({ onSuccess }: QuoteFormProps) {
                             />
                             <div className="flex-1">
                               <div className="flex items-center gap-2">
-                                <span className="font-medium text-gray-900 dark:text-gray-100">{label}</span>
+                                <span className="font-medium text-gray-900 dark:text-gray-100">
+                                  {label}
+                                </span>
                                 {isClientOnly && (
                                   <span className="text-xs bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 px-2 py-0.5 rounded-full">
                                     Clients Only
@@ -449,7 +506,9 @@ export default function QuoteForm({ onSuccess }: QuoteFormProps) {
                   )}
                 />
                 {errors.services && (
-                  <p className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.services.message}</p>
+                  <p className="mt-1 text-sm text-red-600 dark:text-red-400">
+                    {errors.services.message}
+                  </p>
                 )}
               </div>
             </div>
@@ -469,7 +528,10 @@ export default function QuoteForm({ onSuccess }: QuoteFormProps) {
 
               {/* Special Requests */}
               <div>
-                <label htmlFor="specialRequests" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                <label
+                  htmlFor="specialRequests"
+                  className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                >
                   Special Requests or Notes
                 </label>
                 <textarea
@@ -484,7 +546,9 @@ export default function QuoteForm({ onSuccess }: QuoteFormProps) {
                   {watch('specialRequests')?.length || 0}/500 characters
                 </p>
                 {errors.specialRequests && (
-                  <p className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.specialRequests.message}</p>
+                  <p className="mt-1 text-sm text-red-600 dark:text-red-400">
+                    {errors.specialRequests.message}
+                  </p>
                 )}
               </div>
 
@@ -496,12 +560,19 @@ export default function QuoteForm({ onSuccess }: QuoteFormProps) {
                   id="consent"
                   className="mt-1 h-4 w-4 text-primary-600 focus:ring-primary-500 border-gray-300 rounded"
                 />
-                <label htmlFor="consent" className="flex-1 text-sm text-gray-700 dark:text-gray-300">
-                  I agree to be contacted by Anderson Cleaning regarding this quote request. We typically respond within 30 minutes during business hours. <span className="text-red-500">*</span>
+                <label
+                  htmlFor="consent"
+                  className="flex-1 text-sm text-gray-700 dark:text-gray-300"
+                >
+                  I agree to be contacted by Anderson Cleaning regarding this quote request. We
+                  typically respond within 30 minutes during business hours.{' '}
+                  <span className="text-red-500">*</span>
                 </label>
               </div>
               {errors.consent && (
-                <p className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.consent.message}</p>
+                <p className="mt-1 text-sm text-red-600 dark:text-red-400">
+                  {errors.consent.message}
+                </p>
               )}
 
               {/* Honeypot field - hidden from users */}
@@ -536,11 +607,7 @@ export default function QuoteForm({ onSuccess }: QuoteFormProps) {
 
             <div className="flex gap-3">
               {currentStep < TOTAL_STEPS ? (
-                <Button
-                  type="button"
-                  variant="primary"
-                  onClick={handleNext}
-                >
+                <Button type="button" variant="primary" onClick={handleNext}>
                   Next Step
                   <ArrowRight className="h-4 w-4 ml-2" />
                 </Button>
@@ -589,9 +656,7 @@ export default function QuoteForm({ onSuccess }: QuoteFormProps) {
 
           {/* Contact Information */}
           <div className="bg-white dark:bg-slate-800 border border-gray-200 dark:border-gray-700 rounded-xl p-6">
-            <h3 className="font-bold text-gray-900 dark:text-gray-100 mb-4">
-              Prefer to Call?
-            </h3>
+            <h3 className="font-bold text-gray-900 dark:text-gray-100 mb-4">Prefer to Call?</h3>
             <div className="space-y-3">
               <a
                 href="tel:+15551234567"
@@ -610,9 +675,12 @@ export default function QuoteForm({ onSuccess }: QuoteFormProps) {
             </div>
             <div className="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
               <p className="text-xs text-gray-600 dark:text-gray-400">
-                <strong>Business Hours:</strong><br />
-                Monday - Friday: 8 AM - 6 PM<br />
-                Saturday: 9 AM - 2 PM<br />
+                <strong>Business Hours:</strong>
+                <br />
+                Monday - Friday: 8 AM - 6 PM
+                <br />
+                Saturday: 9 AM - 2 PM
+                <br />
                 24/7 Emergency Support
               </p>
             </div>
@@ -620,9 +688,7 @@ export default function QuoteForm({ onSuccess }: QuoteFormProps) {
 
           {/* What Happens Next */}
           <div className="bg-gray-50 dark:bg-slate-800/50 border border-gray-200 dark:border-gray-700 rounded-xl p-6">
-            <h3 className="font-bold text-gray-900 dark:text-gray-100 mb-4">
-              What Happens Next?
-            </h3>
+            <h3 className="font-bold text-gray-900 dark:text-gray-100 mb-4">What Happens Next?</h3>
             <ol className="space-y-3">
               <li className="flex items-start gap-3">
                 <span className="flex items-center justify-center w-6 h-6 bg-primary-600 text-white rounded-full text-sm font-bold flex-shrink-0">

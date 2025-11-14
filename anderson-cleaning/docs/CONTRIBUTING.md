@@ -34,17 +34,20 @@ Before you begin, ensure you have:
 ### Initial Setup
 
 1. **Clone the repository**:
+
    ```bash
    git clone https://github.com/anderson-cleaning/website.git
    cd website/anderson-cleaning
    ```
 
 2. **Install dependencies**:
+
    ```bash
    npm install --legacy-peer-deps
    ```
 
 3. **Copy environment variables**:
+
    ```bash
    cp .env.example .env.local
    ```
@@ -55,6 +58,7 @@ Before you begin, ensure you have:
    - Request API keys for third-party services
 
 5. **Start development server**:
+
    ```bash
    npm run dev
    ```
@@ -93,9 +97,7 @@ Install these extensions for the best development experience:
     "source.fixAll.eslint": true
   },
   "typescript.tsdk": "node_modules/typescript/lib",
-  "tailwindCSS.experimental.classRegex": [
-    ["cn\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"]
-  ]
+  "tailwindCSS.experimental.classRegex": [["cn\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"]]
 }
 ```
 
@@ -108,12 +110,14 @@ Install these extensions for the best development experience:
 ### Daily Workflow
 
 1. **Pull latest changes**:
+
    ```bash
    git checkout main
    git pull origin main
    ```
 
 2. **Create feature branch**:
+
    ```bash
    git checkout -b feature/your-feature-name
    ```
@@ -124,12 +128,14 @@ Install these extensions for the best development experience:
    - Run linter
 
 4. **Commit changes**:
+
    ```bash
    git add .
    git commit -m "feat: add new feature"
    ```
 
 5. **Push to GitHub**:
+
    ```bash
    git push origin feature/your-feature-name
    ```
@@ -152,6 +158,7 @@ Use descriptive branch names with prefixes:
 - `chore/` - Maintenance tasks
 
 **Examples**:
+
 ```
 feature/add-contact-form
 fix/testimonials-layout-bug
@@ -164,16 +171,19 @@ chore/update-dependencies
 ### Environment Management
 
 **Development**:
+
 - Use `.env.local` for local development
 - Never commit `.env.local` to git
 - Use test API keys, not production
 
 **Staging**:
+
 - Uses `.env.staging` (if applicable)
 - Preview deployments on Vercel
 - Connected to production Sanity dataset
 
 **Production**:
+
 - Uses `.env.production`
 - Environment variables set in Vercel dashboard
 - Production API keys and services
@@ -185,6 +195,7 @@ chore/update-dependencies
 ### TypeScript
 
 **Always use TypeScript**:
+
 ```typescript
 // ✅ Good
 interface ServiceProps {
@@ -204,6 +215,7 @@ export function ServiceCard({ title, description, image }) {
 ```
 
 **Avoid `any` type**:
+
 ```typescript
 // ✅ Good
 function processData(data: ServiceData[]): ProcessedData {
@@ -217,6 +229,7 @@ function processData(data: any): any {
 ```
 
 **Use type inference when obvious**:
+
 ```typescript
 // ✅ Good
 const count = 5 // TypeScript infers number
@@ -229,6 +242,7 @@ const count: number = 5
 ### React Components
 
 **Use functional components**:
+
 ```typescript
 // ✅ Good
 export function Button({ children, onClick }: ButtonProps) {
@@ -242,16 +256,18 @@ export class Button extends React.Component {
 ```
 
 **Use named exports for components**:
+
 ```typescript
 // ✅ Good
-export function ServiceCard() { }
-export function TestimonialCard() { }
+export function ServiceCard() {}
+export function TestimonialCard() {}
 
 // ❌ Bad
 export default ServiceCard
 ```
 
 **Component file structure**:
+
 ```typescript
 // 1. Imports
 import { useState } from 'react'
@@ -290,24 +306,26 @@ function formatDescription(desc: string) {
 ### Naming Conventions
 
 **Files and folders**:
+
 - Components: `PascalCase.tsx` (e.g., `ServiceCard.tsx`)
 - Utilities: `camelCase.ts` (e.g., `formatDate.ts`)
 - Hooks: `useCamelCase.ts` (e.g., `useServiceData.ts`)
 - Types: `camelCase.types.ts` (e.g., `service.types.ts`)
 
 **Variables and functions**:
+
 ```typescript
 // Variables: camelCase
 const serviceList = []
 const isLoading = false
 
 // Functions: camelCase, verb prefix
-function fetchServices() { }
-function handleClick() { }
-function validateEmail() { }
+function fetchServices() {}
+function handleClick() {}
+function validateEmail() {}
 
 // Components: PascalCase
-function ServiceCard() { }
+function ServiceCard() {}
 
 // Constants: UPPER_SNAKE_CASE
 const API_BASE_URL = 'https://api.example.com'
@@ -315,6 +333,7 @@ const MAX_ITEMS = 10
 ```
 
 **Boolean naming**:
+
 ```typescript
 // ✅ Good (descriptive, verb prefix)
 const isLoading = true
@@ -330,6 +349,7 @@ const error = false
 ### Tailwind CSS
 
 **Use utility classes**:
+
 ```typescript
 // ✅ Good
 <div className="flex items-center justify-between p-4 bg-white rounded-lg shadow-md">
@@ -339,6 +359,7 @@ const error = false
 ```
 
 **Use `cn()` helper for conditional classes**:
+
 ```typescript
 import { cn } from '@/lib/utils'
 
@@ -352,11 +373,13 @@ import { cn } from '@/lib/utils'
 ```
 
 **Responsive design**:
+
 ```typescript
 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
 ```
 
 **Avoid inline styles**:
+
 ```typescript
 // ✅ Good
 <div className="w-full h-64" />
@@ -368,6 +391,7 @@ import { cn } from '@/lib/utils'
 ### Accessibility
 
 **Always include ARIA attributes**:
+
 ```typescript
 <button
   onClick={handleClick}
@@ -379,6 +403,7 @@ import { cn } from '@/lib/utils'
 ```
 
 **Semantic HTML**:
+
 ```typescript
 // ✅ Good
 <nav>
@@ -396,6 +421,7 @@ import { cn } from '@/lib/utils'
 ```
 
 **Alt text for images**:
+
 ```typescript
 // ✅ Good
 <Image
@@ -412,6 +438,7 @@ import { cn } from '@/lib/utils'
 ### Comments
 
 **Use JSDoc for functions**:
+
 ```typescript
 /**
  * Fetches service data from Sanity CMS
@@ -426,15 +453,15 @@ export async function fetchService(slug: string): Promise<Service | null> {
 ```
 
 **Inline comments for complex logic**:
+
 ```typescript
 // Calculate revalidation time based on content freshness
 // Recent content: 60s, older content: 3600s
-const revalidate = isRecent
-  ? 60
-  : 3600
+const revalidate = isRecent ? 60 : 3600
 ```
 
 **Avoid obvious comments**:
+
 ```typescript
 // ❌ Bad
 // Set count to 0
@@ -462,6 +489,7 @@ Follow **Conventional Commits** format:
 ```
 
 **Types**:
+
 - `feat`: New feature
 - `fix`: Bug fix
 - `docs`: Documentation only
@@ -472,6 +500,7 @@ Follow **Conventional Commits** format:
 - `perf`: Performance improvement
 
 **Examples**:
+
 ```bash
 feat(services): add office cleaning page
 
@@ -487,12 +516,13 @@ chore(deps): update Next.js to 14.2.0
 ```
 
 **Best practices**:
+
 - Use imperative mood ("add" not "added")
 - Keep subject line under 72 characters
 - Capitalize subject line
 - No period at end of subject
 - Separate subject from body with blank line
-- Use body to explain *what* and *why*, not *how*
+- Use body to explain _what_ and _why_, not _how_
 
 ### Branching Strategy
 
@@ -506,6 +536,7 @@ main (production)
 ```
 
 **Rules**:
+
 1. `main` branch is always deployable
 2. Create descriptive feature branches
 3. Commit early and often
@@ -516,6 +547,7 @@ main (production)
 ### Pull Request Workflow
 
 1. **Create PR**:
+
    ```bash
    git push origin feature/your-feature
    # Then open PR on GitHub
@@ -549,15 +581,18 @@ Create `.github/PULL_REQUEST_TEMPLATE.md`:
 
 ```markdown
 ## Description
+
 Brief description of changes
 
 ## Type of Change
+
 - [ ] Bug fix
 - [ ] New feature
 - [ ] Breaking change
 - [ ] Documentation update
 
 ## Testing
+
 - [ ] Unit tests pass
 - [ ] E2E tests pass
 - [ ] Lighthouse scores maintained
@@ -565,9 +600,11 @@ Brief description of changes
 - [ ] Mobile responsive
 
 ## Screenshots
+
 (if applicable)
 
 ## Checklist
+
 - [ ] Code follows style guidelines
 - [ ] Self-review completed
 - [ ] Comments added for complex code
@@ -576,6 +613,7 @@ Brief description of changes
 - [ ] Accessibility tested
 
 ## Related Issues
+
 Closes #123
 ```
 
@@ -602,6 +640,7 @@ npm run test:e2e
 ```
 
 **Pre-commit hook automatically runs**:
+
 - ESLint
 - Prettier
 - TypeScript type check
@@ -613,6 +652,7 @@ npm run test:e2e
 **Location**: `tests/unit/`
 
 **Example**:
+
 ```typescript
 // tests/unit/components/ServiceCard.test.tsx
 import { render, screen } from '@testing-library/react'
@@ -638,6 +678,7 @@ describe('ServiceCard', () => {
 **Location**: `tests/e2e/`
 
 **Example**:
+
 ```typescript
 // tests/e2e/contact-form.spec.ts
 import { test, expect } from '@playwright/test'
@@ -658,11 +699,13 @@ test('submits contact form successfully', async ({ page }) => {
 #### Accessibility Tests
 
 **Run automatically**:
+
 ```bash
 npm run test:a11y
 ```
 
 **Manual testing**:
+
 - Tab through all interactive elements
 - Test with screen reader (NVDA, VoiceOver)
 - Check color contrast
@@ -671,12 +714,14 @@ npm run test:a11y
 ### Coverage Requirements
 
 **Minimum thresholds**:
+
 - Branches: 70%
 - Functions: 70%
 - Lines: 80%
 - Statements: 80%
 
 **Check coverage**:
+
 ```bash
 npm run test:coverage
 ```
@@ -690,7 +735,8 @@ npm run test:coverage
 ### Code Documentation
 
 **Document public APIs**:
-```typescript
+
+````typescript
 /**
  * Validates email address format
  *
@@ -706,9 +752,10 @@ npm run test:coverage
 export function validateEmail(email: string): boolean {
   // Implementation
 }
-```
+````
 
 **Document complex logic**:
+
 ```typescript
 // Calculate ISR revalidation time using exponential backoff
 // based on content age to balance freshness and performance
@@ -721,6 +768,7 @@ const revalidate = Math.min(
 ### README Updates
 
 When adding a major feature:
+
 1. Update main README.md
 2. Add entry to Features section
 3. Update table of contents
@@ -729,6 +777,7 @@ When adding a major feature:
 ### Creating Documentation
 
 **New feature documentation checklist**:
+
 - [ ] Add to README.md Features section
 - [ ] Create dedicated doc in `docs/` if complex
 - [ ] Add JSDoc comments to public functions
@@ -743,6 +792,7 @@ When adding a major feature:
 ### Creating a PR
 
 1. **Ensure your branch is up to date**:
+
    ```bash
    git checkout main
    git pull origin main
@@ -751,12 +801,14 @@ When adding a major feature:
    ```
 
 2. **Run all checks**:
+
    ```bash
    npm run test:all
    npm run build
    ```
 
 3. **Push to GitHub**:
+
    ```bash
    git push origin feature/your-feature
    ```
@@ -785,6 +837,7 @@ Before requesting review:
 ### Review Process
 
 **As Author**:
+
 1. Address all feedback
 2. Reply to each comment
 3. Push additional commits
@@ -792,6 +845,7 @@ Before requesting review:
 5. Don't merge your own PRs
 
 **As Reviewer**:
+
 1. Review within 24 hours
 2. Test locally if UI changes
 3. Check for security issues
@@ -802,6 +856,7 @@ Before requesting review:
 ### Merging
 
 **Merge requirements**:
+
 - ✅ At least 1 approval
 - ✅ All CI checks pass
 - ✅ No merge conflicts
@@ -810,6 +865,7 @@ Before requesting review:
 **Merge method**: Squash and merge
 
 **After merge**:
+
 - Delete feature branch
 - Close related issues
 - Monitor deployment
@@ -821,34 +877,40 @@ Before requesting review:
 ### What to Look For
 
 **Correctness**:
+
 - Does the code do what it's supposed to?
 - Are edge cases handled?
 - Are there any bugs?
 
 **Security**:
+
 - Input validation present?
 - No XSS vulnerabilities?
 - No sensitive data exposed?
 - Environment variables used correctly?
 
 **Performance**:
+
 - Unnecessary re-renders avoided?
 - Images optimized?
 - Queries efficient?
 - Bundle size impact minimal?
 
 **Accessibility**:
+
 - Semantic HTML used?
 - ARIA attributes present?
 - Keyboard navigation works?
 - Alt text on images?
 
 **Testing**:
+
 - Are there tests?
 - Do tests cover edge cases?
 - Are tests meaningful?
 
 **Documentation**:
+
 - Is complex code commented?
 - Is public API documented?
 - Is README updated?
@@ -856,18 +918,21 @@ Before requesting review:
 ### Providing Feedback
 
 **Be specific**:
+
 ```
 ❌ "This could be better"
 ✅ "Consider using useMemo here to avoid recalculating on every render"
 ```
 
 **Be kind**:
+
 ```
 ❌ "This code is terrible"
 ✅ "This works, but we could make it more maintainable by extracting this logic into a separate function"
 ```
 
 **Suggest solutions**:
+
 ```
 ✅ "This query could be optimized by adding a projection:
 *[_type == 'service'] { _id, title, slug }
@@ -875,6 +940,7 @@ instead of fetching all fields"
 ```
 
 **Ask questions**:
+
 ```
 ✅ "What happens if the image is null here? Should we add a fallback?"
 ```
@@ -883,28 +949,31 @@ instead of fetching all fields"
 
 Use GitHub's suggestion feature:
 
-```typescript
+````typescript
 // Reviewers can suggest code changes directly:
 ```suggestion
 const isValid = validateEmail(email) && validatePhone(phone)
 \`\`\`
-```
+````
 
 ### Approval Criteria
 
 **Approve** if:
+
 - Code works as intended
 - Tests are adequate
 - No major issues
 - Minor issues noted as non-blocking
 
 **Request changes** if:
+
 - Code doesn't work
 - Security vulnerabilities
 - Major performance issues
 - Tests missing or inadequate
 
 **Comment** if:
+
 - Just asking questions
 - Suggesting improvements
 - Not ready to approve/reject
@@ -916,10 +985,12 @@ const isValid = validateEmail(email) && validatePhone(phone)
 ### Development
 
 **Auto-deploys**:
+
 - Every push to any branch
 - Preview URL provided in PR
 
 **Test deployment**:
+
 1. Push branch
 2. Wait for Vercel deploy
 3. Check preview URL
@@ -928,6 +999,7 @@ const isValid = validateEmail(email) && validatePhone(phone)
 ### Staging (if applicable)
 
 **Manual deploy**:
+
 ```bash
 npm run build
 vercel --prod
@@ -936,6 +1008,7 @@ vercel --prod
 ### Production
 
 **Deploy process**:
+
 1. Merge PR to `main`
 2. Automatic deployment to production
 3. Monitor Sentry for errors
@@ -943,6 +1016,7 @@ vercel --prod
 5. Verify on production URL
 
 **Post-deployment checklist**:
+
 - [ ] Homepage loads
 - [ ] No console errors
 - [ ] Forms work
@@ -952,6 +1026,7 @@ vercel --prod
 - [ ] Mobile responsive
 
 **Rollback procedure**:
+
 1. Go to Vercel dashboard
 2. Find previous deployment
 3. Click "Promote to Production"
@@ -964,12 +1039,14 @@ vercel --prod
 ### Resources
 
 **Documentation**:
+
 - [README.md](../README.md) - Project overview
 - [ARCHITECTURE.md](./ARCHITECTURE.md) - System architecture
 - [DEPLOYMENT_GUIDE.md](./DEPLOYMENT_GUIDE.md) - Deployment instructions
 - [CMS_GUIDE.md](./CMS_GUIDE.md) - Sanity CMS usage
 
 **External Docs**:
+
 - [Next.js Docs](https://nextjs.org/docs)
 - [React Docs](https://react.dev)
 - [Tailwind Docs](https://tailwindcss.com/docs)
@@ -978,12 +1055,14 @@ vercel --prod
 ### Communication
 
 **Slack channels** (if applicable):
+
 - `#dev-general` - General development discussion
 - `#dev-help` - Ask for help
 - `#deployments` - Deployment notifications
 - `#bugs` - Bug reports
 
 **Email**:
+
 - Technical lead: dev@andersoncleaning.com
 - DevOps: devops@andersoncleaning.com
 
@@ -992,6 +1071,7 @@ vercel --prod
 **Common issues**:
 
 1. **Build fails**:
+
    ```bash
    # Clear cache and reinstall
    rm -rf node_modules .next
@@ -1000,6 +1080,7 @@ vercel --prod
    ```
 
 2. **Tests fail**:
+
    ```bash
    # Update snapshots
    npm run test:unit -- -u
@@ -1009,6 +1090,7 @@ vercel --prod
    ```
 
 3. **Sanity Studio won't load**:
+
    ```bash
    # Check environment variables
    echo $NEXT_PUBLIC_SANITY_PROJECT_ID
@@ -1030,6 +1112,7 @@ vercel --prod
 Before submitting a PR, ensure:
 
 ### Code Quality
+
 - [ ] No TypeScript errors (`npx tsc --noEmit`)
 - [ ] No ESLint errors (`npm run lint`)
 - [ ] Formatted with Prettier (`npm run format`)
@@ -1038,6 +1121,7 @@ Before submitting a PR, ensure:
 - [ ] No hardcoded values
 
 ### Testing
+
 - [ ] Unit tests added for new functions
 - [ ] E2E tests added for new pages/features
 - [ ] All tests pass (`npm run test:all`)
@@ -1045,6 +1129,7 @@ Before submitting a PR, ensure:
 - [ ] Manual testing completed
 
 ### Performance
+
 - [ ] Images optimized (WebP, compressed)
 - [ ] No unnecessary re-renders
 - [ ] Code splitting used for large components
@@ -1052,6 +1137,7 @@ Before submitting a PR, ensure:
 - [ ] Bundle size impact minimal
 
 ### Accessibility
+
 - [ ] Semantic HTML used
 - [ ] ARIA attributes added
 - [ ] Keyboard navigation works
@@ -1060,6 +1146,7 @@ Before submitting a PR, ensure:
 - [ ] Focus indicators visible
 
 ### Security
+
 - [ ] Input validation implemented
 - [ ] XSS prevention in place
 - [ ] No sensitive data exposed
@@ -1067,6 +1154,7 @@ Before submitting a PR, ensure:
 - [ ] CSP compliant
 
 ### Documentation
+
 - [ ] JSDoc comments added
 - [ ] README updated (if needed)
 - [ ] Code comments for complex logic
@@ -1077,6 +1165,7 @@ Before submitting a PR, ensure:
 ## Version Control Etiquette
 
 ### Do's
+
 ✅ Commit early and often
 ✅ Write descriptive commit messages
 ✅ Keep commits focused (one logical change)
@@ -1085,6 +1174,7 @@ Before submitting a PR, ensure:
 ✅ Delete merged branches
 
 ### Don'ts
+
 ❌ Commit directly to main
 ❌ Force push to shared branches
 ❌ Commit secrets or API keys

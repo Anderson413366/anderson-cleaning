@@ -5,6 +5,7 @@ This directory contains comprehensive SEO configuration for the Anderson Cleanin
 ## Overview
 
 The SEO implementation includes:
+
 - **Default SEO Configuration** (next-seo.config.ts)
 - **JSON-LD Structured Data** (jsonld.ts)
 - **Sitemap Generation** (next-sitemap.config.js)
@@ -13,7 +14,9 @@ The SEO implementation includes:
 ## Files
 
 ### next-seo.config.ts
+
 Default SEO settings for the entire site, including:
+
 - Title templates
 - Meta descriptions
 - Open Graph tags
@@ -22,7 +25,9 @@ Default SEO settings for the entire site, including:
 - Page-specific SEO configs
 
 ### jsonld.ts
+
 Structured data generators for:
+
 - Organization schema
 - LocalBusiness schema
 - Service schema
@@ -95,6 +100,7 @@ export const metadata: Metadata = {
 ```
 
 Parameters:
+
 - `title` - Page title (required)
 - `description` - Page description (optional)
 - `type` - Image type: default, service, industry, blog (optional)
@@ -102,6 +108,7 @@ Parameters:
 ### Page-Specific SEO Examples
 
 #### Service Page
+
 ```typescript
 import { Metadata } from 'next'
 import { generateServiceSchema } from '@/lib/seo/jsonld'
@@ -135,6 +142,7 @@ export default function OfficeCleaning() {
 ```
 
 #### Testimonials Page with Reviews
+
 ```typescript
 import { generateAggregateRatingSchema, generateReviewSchema } from '@/lib/seo/jsonld'
 
@@ -157,6 +165,7 @@ export default function TestimonialsPage() {
 ```
 
 #### FAQ Page
+
 ```typescript
 import { generateFAQPageSchema, FAQItem } from '@/lib/seo/jsonld'
 
@@ -193,10 +202,12 @@ The sitemap is automatically generated after each build via the `postbuild` scri
 Configuration: `next-sitemap.config.js`
 
 Generated files:
+
 - `/public/sitemap.xml` - Main sitemap
 - `/public/robots.txt` - Robots file
 
 ### Priority Structure
+
 - Homepage: 1.0
 - Services & Quote: 0.9
 - About & Contact: 0.8
@@ -205,6 +216,7 @@ Generated files:
 - Testimonials: 0.7
 
 ### Excluded Paths
+
 - `/studio` - Sanity CMS
 - `/api/*` - API routes
 - `/apply/success` - Success pages
@@ -213,23 +225,29 @@ Generated files:
 ## Testing SEO
 
 ### 1. Google Rich Results Test
+
 Test structured data:
 https://search.google.com/test/rich-results
 
 ### 2. Schema.org Validator
+
 Validate JSON-LD:
 https://validator.schema.org/
 
 ### 3. Facebook Sharing Debugger
+
 Test Open Graph tags:
 https://developers.facebook.com/tools/debug/
 
 ### 4. Twitter Card Validator
+
 Test Twitter Cards:
 https://cards-dev.twitter.com/validator
 
 ### 5. Lighthouse SEO Audit
+
 Run in Chrome DevTools:
+
 - Open DevTools (F12)
 - Go to Lighthouse tab
 - Select "SEO" category
@@ -273,16 +291,19 @@ NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION=your-verification-code
 ## Troubleshooting
 
 ### Sitemap not generating
+
 - Check `postbuild` script in package.json
 - Verify next-sitemap.config.js exists
 - Run `npm run postbuild` manually
 
 ### OG images not loading
+
 - Check `/api/og` route is accessible
 - Verify @vercel/og is installed
 - Check browser console for errors
 
 ### Structured data not validating
+
 - Use Google Rich Results Test
 - Check JSON-LD syntax
 - Verify required fields are present

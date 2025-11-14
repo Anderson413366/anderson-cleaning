@@ -6,7 +6,6 @@ import ContactForm from '@/components/forms/ContactForm'
 import { Phone, Mail, MapPin, Clock, CheckCircle2 } from 'lucide-react'
 
 export default function ContactPage() {
-
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-green-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 transition-colors duration-300">
       <Header />
@@ -19,7 +18,8 @@ export default function ContactPage() {
               Get in Touch
             </h1>
             <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-              Have a question? Need a quote? Want to discuss your cleaning needs? We're here to help.
+              Have a question? Need a quote? Want to discuss your cleaning needs? We're here to
+              help.
             </p>
           </div>
 
@@ -53,45 +53,35 @@ export default function ContactPage() {
                   <div className="flex items-start space-x-3">
                     <Phone className="h-5 w-5 text-accent-500 mt-1 flex-shrink-0" />
                     <div>
-                      <p className="font-semibold text-gray-900 dark:text-gray-100">
-                        Phone
-                      </p>
+                      <p className="font-semibold text-gray-900 dark:text-gray-100">Phone</p>
                       <a
                         href="tel:+15551234567"
                         className="text-primary-600 dark:text-primary-400 hover:underline"
                       >
                         (555) 123-4567
                       </a>
-                      <p className="text-sm text-gray-600 dark:text-gray-400">
-                        24/7 Support Line
-                      </p>
+                      <p className="text-sm text-gray-600 dark:text-gray-400">24/7 Support Line</p>
                     </div>
                   </div>
 
                   <div className="flex items-start space-x-3">
                     <Mail className="h-5 w-5 text-accent-500 mt-1 flex-shrink-0" />
                     <div>
-                      <p className="font-semibold text-gray-900 dark:text-gray-100">
-                        Email
-                      </p>
+                      <p className="font-semibold text-gray-900 dark:text-gray-100">Email</p>
                       <a
                         href="mailto:info@andersoncleaning.com"
                         className="text-primary-600 dark:text-primary-400 hover:underline"
                       >
                         info@andersoncleaning.com
                       </a>
-                      <p className="text-sm text-gray-600 dark:text-gray-400">
-                        General Inquiries
-                      </p>
+                      <p className="text-sm text-gray-600 dark:text-gray-400">General Inquiries</p>
                     </div>
                   </div>
 
                   <div className="flex items-start space-x-3">
                     <MapPin className="h-5 w-5 text-accent-500 mt-1 flex-shrink-0" />
                     <div>
-                      <p className="font-semibold text-gray-900 dark:text-gray-100">
-                        Office
-                      </p>
+                      <p className="font-semibold text-gray-900 dark:text-gray-100">Office</p>
                       <address className="text-gray-700 dark:text-gray-300 not-italic">
                         103 Wayside Avenue
                         <br />
@@ -103,9 +93,7 @@ export default function ContactPage() {
                   <div className="flex items-start space-x-3">
                     <Clock className="h-5 w-5 text-accent-500 mt-1 flex-shrink-0" />
                     <div>
-                      <p className="font-semibold text-gray-900 dark:text-gray-100">
-                        Office Hours
-                      </p>
+                      <p className="font-semibold text-gray-900 dark:text-gray-100">Office Hours</p>
                       <p className="text-gray-700 dark:text-gray-300">
                         Monday - Friday: 8am - 6pm
                         <br />
@@ -149,7 +137,8 @@ export default function ContactPage() {
                   Current Client Emergency?
                 </p>
                 <p className="text-sm text-gray-700 dark:text-gray-300">
-                  If you're an existing client with an urgent issue, please call our 24/7 support line immediately:
+                  If you're an existing client with an urgent issue, please call our 24/7 support
+                  line immediately:
                 </p>
                 <a
                   href="tel:+15551234567"

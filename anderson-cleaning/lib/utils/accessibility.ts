@@ -120,11 +120,7 @@ export function restoreFocus(element: HTMLElement | null) {
  * Check if element is visible
  */
 export function isElementVisible(element: HTMLElement): boolean {
-  return !!(
-    element.offsetWidth ||
-    element.offsetHeight ||
-    element.getClientRects().length
-  )
+  return !!(element.offsetWidth || element.offsetHeight || element.getClientRects().length)
 }
 
 /**

@@ -72,8 +72,7 @@ export const metadata: Metadata = {
     site: '@andersoncleaning',
     creator: '@andersoncleaning',
     title: 'Anderson Cleaning - Commercial Cleaning Services',
-    description:
-      'Professional B2B commercial cleaning and janitorial services in Western MA & CT',
+    description: 'Professional B2B commercial cleaning and janitorial services in Western MA & CT',
     images: ['/images/og-image.jpg'],
   },
   robots: {
@@ -95,11 +94,7 @@ export const metadata: Metadata = {
   },
 }
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   // Generate JSON-LD structured data
   const organizationSchema = generateOrganizationSchema()
   const localBusinessSchema = generateLocalBusinessSchema()

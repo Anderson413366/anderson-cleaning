@@ -5,8 +5,18 @@ import Footer from '@/components/Footer'
 import { Button } from '@/components/ui/Button'
 import { useRouter } from 'next/navigation'
 import {
-  Package, TrendingDown, ClipboardList, Calendar, FileText, AlertCircle,
-  CheckCircle2, BarChart3, DollarSign, Clock, ShoppingCart, Truck
+  Package,
+  TrendingDown,
+  ClipboardList,
+  Calendar,
+  FileText,
+  AlertCircle,
+  CheckCircle2,
+  BarChart3,
+  DollarSign,
+  Clock,
+  ShoppingCart,
+  Truck,
 } from 'lucide-react'
 
 export default function SupplyManagementPage() {
@@ -16,16 +26,17 @@ export default function SupplyManagementPage() {
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Service',
-    'name': 'Supply Management Service',
-    'description': 'Comprehensive inventory management for commercial facility consumables including paper products, soap, and cleaning supplies',
-    'provider': {
+    name: 'Supply Management Service',
+    description:
+      'Comprehensive inventory management for commercial facility consumables including paper products, soap, and cleaning supplies',
+    provider: {
       '@type': 'LocalBusiness',
-      'name': 'Anderson Cleaning',
+      name: 'Anderson Cleaning',
     },
-    'serviceType': 'Supply Management',
-    'areaServed': {
+    serviceType: 'Supply Management',
+    areaServed: {
       '@type': 'State',
-      'name': 'Massachusetts',
+      name: 'Massachusetts',
     },
   }
 
@@ -46,21 +57,17 @@ export default function SupplyManagementPage() {
               Available to Contracted Cleaning Clients Only
             </div>
 
-            <h1 className="text-4xl md:text-5xl font-extrabold mb-6">
-              Never Run Out Again
-            </h1>
+            <h1 className="text-4xl md:text-5xl font-extrabold mb-6">Never Run Out Again</h1>
             <p className="text-xl text-blue-100 mb-4">
-              Comprehensive supply management that eliminates stockouts, reduces costs, and frees up your time.
+              Comprehensive supply management that eliminates stockouts, reduces costs, and frees up
+              your time.
             </p>
             <p className="text-lg text-blue-200 mb-8">
-              We track, forecast, and automatically replenish toilet paper, paper towels, soap, trash liners, and all facility consumables.
+              We track, forecast, and automatically replenish toilet paper, paper towels, soap,
+              trash liners, and all facility consumables.
             </p>
 
-            <Button
-              variant="accent"
-              size="lg"
-              onClick={() => router.push('/contact')}
-            >
+            <Button variant="accent" size="lg" onClick={() => router.push('/contact')}>
               Add to Your Account
             </Button>
           </div>
@@ -85,30 +92,37 @@ export default function SupplyManagementPage() {
                 icon: ClipboardList,
                 step: '1',
                 title: 'Initial Assessment',
-                description: 'We audit your current usage, storage capacity, and identify all consumable needs.',
+                description:
+                  'We audit your current usage, storage capacity, and identify all consumable needs.',
               },
               {
                 icon: BarChart3,
                 step: '2',
                 title: 'Set Par Levels',
-                description: 'Establish minimum quantities for each item that trigger automatic reorders.',
+                description:
+                  'Establish minimum quantities for each item that trigger automatic reorders.',
               },
               {
                 icon: Calendar,
                 step: '3',
                 title: 'Regular Monitoring',
-                description: 'Our cleaning team checks inventory during each visit and tracks usage patterns.',
+                description:
+                  'Our cleaning team checks inventory during each visit and tracks usage patterns.',
               },
               {
                 icon: Truck,
                 step: '4',
                 title: 'Auto-Replenishment',
-                description: 'Supplies delivered before you run out. You approve the first order, then it\'s automatic.',
+                description:
+                  "Supplies delivered before you run out. You approve the first order, then it's automatic.",
               },
             ].map((item, i) => {
               const Icon = item.icon
               return (
-                <div key={i} className="relative bg-gradient-to-br from-primary-50 to-accent-50 dark:from-slate-800 dark:to-slate-700 rounded-xl p-6 shadow-md text-center">
+                <div
+                  key={i}
+                  className="relative bg-gradient-to-br from-primary-50 to-accent-50 dark:from-slate-800 dark:to-slate-700 rounded-xl p-6 shadow-md text-center"
+                >
                   <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-10 h-10 bg-primary-600 text-white rounded-full flex items-center justify-center font-bold text-lg shadow-lg">
                     {item.step}
                   </div>
@@ -116,9 +130,7 @@ export default function SupplyManagementPage() {
                   <h3 className="text-lg font-bold text-gray-900 dark:text-gray-100 mb-3">
                     {item.title}
                   </h3>
-                  <p className="text-sm text-gray-700 dark:text-gray-300">
-                    {item.description}
-                  </p>
+                  <p className="text-sm text-gray-700 dark:text-gray-300">{item.description}</p>
                 </div>
               )
             })}
@@ -196,17 +208,20 @@ export default function SupplyManagementPage() {
                 {
                   icon: Calendar,
                   title: 'Weekly/Bi-Weekly Checks',
-                  description: 'Our cleaning team inventories supplies during regular service visits. You choose the frequency.',
+                  description:
+                    'Our cleaning team inventories supplies during regular service visits. You choose the frequency.',
                 },
                 {
                   icon: BarChart3,
                   title: 'Usage Forecasting',
-                  description: 'We track consumption patterns and predict when you\'ll need reorders, preventing stockouts.',
+                  description:
+                    "We track consumption patterns and predict when you'll need reorders, preventing stockouts.",
                 },
                 {
                   icon: FileText,
                   title: 'Monthly Reports',
-                  description: 'Detailed usage reports show consumption trends, costs, and opportunities for savings.',
+                  description:
+                    'Detailed usage reports show consumption trends, costs, and opportunities for savings.',
                 },
               ].map((item, i) => {
                 const Icon = item.icon
@@ -216,9 +231,7 @@ export default function SupplyManagementPage() {
                     <h3 className="text-lg font-bold text-gray-900 dark:text-gray-100 mb-3">
                       {item.title}
                     </h3>
-                    <p className="text-sm text-gray-700 dark:text-gray-300">
-                      {item.description}
-                    </p>
+                    <p className="text-sm text-gray-700 dark:text-gray-300">{item.description}</p>
                   </div>
                 )
               })}
@@ -240,45 +253,52 @@ export default function SupplyManagementPage() {
                 {
                   icon: Clock,
                   title: 'Save Time',
-                  description: 'Stop running to the store or placing emergency orders. We handle everything.',
+                  description:
+                    'Stop running to the store or placing emergency orders. We handle everything.',
                 },
                 {
                   icon: DollarSign,
                   title: 'Reduce Costs',
-                  description: 'Bulk purchasing power and elimination of emergency orders save 15-25% on average.',
+                  description:
+                    'Bulk purchasing power and elimination of emergency orders save 15-25% on average.',
                 },
                 {
                   icon: TrendingDown,
                   title: 'Prevent Stockouts',
-                  description: 'Never run out of toilet paper, soap, or trash bags again. Guaranteed.',
+                  description:
+                    'Never run out of toilet paper, soap, or trash bags again. Guaranteed.',
                 },
                 {
                   icon: FileText,
                   title: 'One Invoice',
-                  description: 'Supplies consolidated into your monthly cleaning invoice. Simplify accounting.',
+                  description:
+                    'Supplies consolidated into your monthly cleaning invoice. Simplify accounting.',
                 },
                 {
                   icon: BarChart3,
                   title: 'Usage Insights',
-                  description: 'Monthly reports help you understand consumption patterns and identify savings.',
+                  description:
+                    'Monthly reports help you understand consumption patterns and identify savings.',
                 },
                 {
                   icon: CheckCircle2,
                   title: 'Approved SKUs',
-                  description: 'Choose your preferred brands or use our cost-effective alternatives.',
+                  description:
+                    'Choose your preferred brands or use our cost-effective alternatives.',
                 },
               ].map((item, i) => {
                 const Icon = item.icon
                 return (
-                  <div key={i} className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-md flex items-start gap-4">
+                  <div
+                    key={i}
+                    className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-md flex items-start gap-4"
+                  >
                     <Icon className="h-8 w-8 text-primary-600 dark:text-primary-400 flex-shrink-0 mt-1" />
                     <div>
                       <h3 className="text-lg font-bold text-gray-900 dark:text-gray-100 mb-2">
                         {item.title}
                       </h3>
-                      <p className="text-sm text-gray-700 dark:text-gray-300">
-                        {item.description}
-                      </p>
+                      <p className="text-sm text-gray-700 dark:text-gray-300">{item.description}</p>
                     </div>
                   </div>
                 )
@@ -320,7 +340,8 @@ export default function SupplyManagementPage() {
                       Management Fee
                     </h3>
                     <p className="text-gray-700 dark:text-gray-300">
-                      Small monthly fee covers inventory tracking, forecasting, and ordering (typically $50-150/month depending on facility size)
+                      Small monthly fee covers inventory tracking, forecasting, and ordering
+                      (typically $50-150/month depending on facility size)
                     </p>
                   </div>
                 </div>
@@ -332,7 +353,8 @@ export default function SupplyManagementPage() {
                       Typical Savings
                     </h3>
                     <p className="text-gray-700 dark:text-gray-300">
-                      Most clients save 15-25% compared to their previous supply costs, even with the management fee
+                      Most clients save 15-25% compared to their previous supply costs, even with
+                      the management fee
                     </p>
                   </div>
                 </div>
@@ -340,7 +362,8 @@ export default function SupplyManagementPage() {
 
               <div className="mt-8 pt-8 border-t border-gray-200 dark:border-slate-600">
                 <p className="text-center text-gray-700 dark:text-gray-300 font-medium">
-                  Example: A 10,000 sq ft office typically spends $300-500/month on supplies + $75 management fee = $375-575/month total
+                  Example: A 10,000 sq ft office typically spends $300-500/month on supplies + $75
+                  management fee = $375-575/month total
                 </p>
               </div>
             </div>
@@ -360,13 +383,17 @@ export default function SupplyManagementPage() {
                     Available to Contracted Cleaning Clients Only
                   </h3>
                   <p className="text-yellow-800 dark:text-yellow-200 mb-4">
-                    Supply Management is exclusively available to facilities with an active Anderson Cleaning service contract.
+                    Supply Management is exclusively available to facilities with an active Anderson
+                    Cleaning service contract.
                   </p>
                   <p className="text-yellow-800 dark:text-yellow-200 mb-4">
-                    <strong>Why?</strong> Our cleaning teams perform the inventory checks during regular service visits. This ensures accurate tracking and allows us to guarantee you'll never run out.
+                    <strong>Why?</strong> Our cleaning teams perform the inventory checks during
+                    regular service visits. This ensures accurate tracking and allows us to
+                    guarantee you'll never run out.
                   </p>
                   <p className="text-sm text-yellow-700 dark:text-yellow-300">
-                    Don't have cleaning service yet? No problem! Get a quote for our janitorial services and add Supply Management at the same time.
+                    Don't have cleaning service yet? No problem! Get a quote for our janitorial
+                    services and add Supply Management at the same time.
                   </p>
                 </div>
               </div>
@@ -385,11 +412,7 @@ export default function SupplyManagementPage() {
             Add Supply Management to your cleaning contract and never worry about running out again.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button
-              variant="accent"
-              size="lg"
-              onClick={() => router.push('/contact')}
-            >
+            <Button variant="accent" size="lg" onClick={() => router.push('/contact')}>
               Add to My Account
             </Button>
             <Button

@@ -136,10 +136,7 @@ const Modal: React.FC<ModalProps> = ({
             aria-labelledby={titleId}
           >
             <div className="flex items-start justify-between mb-4">
-              <h2
-                id={titleId}
-                className="text-xl font-semibold text-gray-900 dark:text-gray-100"
-              >
+              <h2 id={titleId} className="text-xl font-semibold text-gray-900 dark:text-gray-100">
                 {title}
               </h2>
               <Button
@@ -152,9 +149,7 @@ const Modal: React.FC<ModalProps> = ({
                 <XIconCareers className="h-5 w-5" />
               </Button>
             </div>
-            <div className="text-sm text-gray-700 dark:text-gray-300 mb-6">
-              {children}
-            </div>
+            <div className="text-sm text-gray-700 dark:text-gray-300 mb-6">{children}</div>
             {footerActions && (
               <div className="flex justify-end space-x-3 pt-4 border-t border-gray-200 dark:border-slate-700">
                 {footerActions}

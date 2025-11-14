@@ -7,8 +7,18 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import BeforeAfterSlider from '@/components/sections/BeforeAfterSlider'
 import {
-  Phone, Clock, Shield, Users, Award, Headphones, MapPin,
-  CheckCircle2, Building2, Star, ArrowRight, Sparkles
+  Phone,
+  Clock,
+  Shield,
+  Users,
+  Award,
+  Headphones,
+  MapPin,
+  CheckCircle2,
+  Building2,
+  Star,
+  ArrowRight,
+  Sparkles,
 } from 'lucide-react'
 
 export default function Home() {
@@ -37,7 +47,9 @@ export default function Home() {
               <div className="space-y-3 mb-8 text-lg">
                 <div className="flex items-start space-x-3">
                   <CheckCircle2 className="h-6 w-6 text-accent-400 flex-shrink-0 mt-1" />
-                  <span className="text-blue-100">Full-time salaried cleaners — stable, trained professionals</span>
+                  <span className="text-blue-100">
+                    Full-time salaried cleaners — stable, trained professionals
+                  </span>
                 </div>
                 <div className="flex items-start space-x-3">
                   <CheckCircle2 className="h-6 w-6 text-accent-400 flex-shrink-0 mt-1" />
@@ -45,11 +57,15 @@ export default function Home() {
                 </div>
                 <div className="flex items-start space-x-3">
                   <CheckCircle2 className="h-6 w-6 text-accent-400 flex-shrink-0 mt-1" />
-                  <span className="text-blue-100">Corporate-grade systems with small business care</span>
+                  <span className="text-blue-100">
+                    Corporate-grade systems with small business care
+                  </span>
                 </div>
                 <div className="flex items-start space-x-3">
                   <CheckCircle2 className="h-6 w-6 text-accent-400 flex-shrink-0 mt-1" />
-                  <span className="text-blue-100">Licensed, insured & background-checked teams</span>
+                  <span className="text-blue-100">
+                    Licensed, insured & background-checked teams
+                  </span>
                 </div>
               </div>
 
@@ -77,7 +93,11 @@ export default function Home() {
                   </Button>
                 </Link>
                 <a href="tel:+15551234567" className="flex-1">
-                  <Button variant="outline" size="lg" className="w-full border-white text-white hover:bg-white/10">
+                  <Button
+                    variant="outline"
+                    size="lg"
+                    className="w-full border-white text-white hover:bg-white/10"
+                  >
                     <Phone className="h-5 w-5 mr-2" />
                     Call Now
                   </Button>
@@ -92,14 +112,15 @@ export default function Home() {
                   <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
                     Get Your Free Quote
                   </h2>
-                  <p className="text-gray-600 dark:text-gray-400">
-                    Response in 30 minutes or less
-                  </p>
+                  <p className="text-gray-600 dark:text-gray-400">Response in 30 minutes or less</p>
                 </div>
 
                 <form className="space-y-4">
                   <div>
-                    <label htmlFor="hero-name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                    <label
+                      htmlFor="hero-name"
+                      className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+                    >
                       Your Name <span className="text-error">*</span>
                     </label>
                     <input
@@ -112,7 +133,10 @@ export default function Home() {
                   </div>
 
                   <div>
-                    <label htmlFor="hero-company" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                    <label
+                      htmlFor="hero-company"
+                      className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+                    >
                       Company Name <span className="text-error">*</span>
                     </label>
                     <input
@@ -125,7 +149,10 @@ export default function Home() {
                   </div>
 
                   <div>
-                    <label htmlFor="hero-phone" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                    <label
+                      htmlFor="hero-phone"
+                      className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+                    >
                       Phone Number <span className="text-error">*</span>
                     </label>
                     <input
@@ -138,7 +165,10 @@ export default function Home() {
                   </div>
 
                   <div>
-                    <label htmlFor="hero-facility" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                    <label
+                      htmlFor="hero-facility"
+                      className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+                    >
                       Facility Type <span className="text-error">*</span>
                     </label>
                     <select
@@ -194,37 +224,37 @@ export default function Home() {
                 title: 'Office & Commercial Cleaning',
                 description: 'Daily/weekly programs for spotless workplaces',
                 icon: '🏢',
-                available: true
+                available: true,
               },
               {
                 title: 'Janitorial Services',
                 description: 'Reliable, accountable facility care',
                 icon: '🧹',
-                available: true
+                available: true,
               },
               {
                 title: 'Floor & Carpet Care',
                 description: 'Strip, wax, buff, and deep cleaning',
                 icon: '✨',
-                available: false
+                available: false,
               },
               {
                 title: 'Window Cleaning',
                 description: 'Interior & exterior, streak-free results',
                 icon: '🪟',
-                available: false
+                available: false,
               },
               {
                 title: 'Post-Construction',
                 description: 'Move-in ready cleanup after renovations',
                 icon: '🏗️',
-                available: false
+                available: false,
               },
               {
                 title: 'Supply Management',
                 description: 'Auto-replenishment of consumables',
                 icon: '📦',
-                available: false
+                available: false,
               },
             ].map((service, i) => (
               <div
@@ -330,8 +360,8 @@ export default function Home() {
 
             <div className="bg-info-light dark:bg-info-dark/20 border-l-4 border-info rounded-lg p-6">
               <p className="text-info-dark dark:text-info-light">
-                <strong>Note:</strong> We focus exclusively on B2B commercial cleaning.
-                We do not service restaurants or facilities requiring 7-day/week cleaning.
+                <strong>Note:</strong> We focus exclusively on B2B commercial cleaning. We do not
+                service restaurants or facilities requiring 7-day/week cleaning.
               </p>
             </div>
           </div>
@@ -350,36 +380,34 @@ export default function Home() {
                 <Star key={star} className="h-6 w-6 text-accent-500 fill-accent-500" />
               ))}
             </div>
-            <p className="text-gray-600 dark:text-gray-400">
-              5.0 stars from satisfied clients
-            </p>
+            <p className="text-gray-600 dark:text-gray-400">5.0 stars from satisfied clients</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
-                quote: "Anderson Cleaning transformed our medical office. Their attention to detail and OSHA compliance gives us complete peace of mind.",
-                author: "Dr. Sarah Mitchell",
-                company: "Springfield Family Medicine",
-                rating: 5
+                quote:
+                  'Anderson Cleaning transformed our medical office. Their attention to detail and OSHA compliance gives us complete peace of mind.',
+                author: 'Dr. Sarah Mitchell',
+                company: 'Springfield Family Medicine',
+                rating: 5,
               },
               {
-                quote: "We've tried three cleaning companies before Anderson. The difference is night and day. Their team is professional, consistent, and truly cares.",
-                author: "Michael Chen",
-                company: "TechStart Solutions",
-                rating: 5
+                quote:
+                  "We've tried three cleaning companies before Anderson. The difference is night and day. Their team is professional, consistent, and truly cares.",
+                author: 'Michael Chen',
+                company: 'TechStart Solutions',
+                rating: 5,
               },
               {
-                quote: "The 24/7 support isn't just marketing – they really do respond in minutes. When we had an emergency spill, they had someone there within the hour.",
-                author: "Jennifer Rodriguez",
-                company: "Northeast Manufacturing",
-                rating: 5
+                quote:
+                  "The 24/7 support isn't just marketing – they really do respond in minutes. When we had an emergency spill, they had someone there within the hour.",
+                author: 'Jennifer Rodriguez',
+                company: 'Northeast Manufacturing',
+                rating: 5,
               },
             ].map((testimonial, i) => (
-              <div
-                key={i}
-                className="bg-white dark:bg-slate-700 rounded-xl p-6 shadow-md"
-              >
+              <div key={i} className="bg-white dark:bg-slate-700 rounded-xl p-6 shadow-md">
                 <div className="flex items-center space-x-1 mb-4">
                   {[...Array(testimonial.rating)].map((_, j) => (
                     <Star key={j} className="h-5 w-5 text-accent-500 fill-accent-500" />
@@ -392,9 +420,7 @@ export default function Home() {
                   <p className="font-semibold text-gray-900 dark:text-white">
                     {testimonial.author}
                   </p>
-                  <p className="text-sm text-gray-600 dark:text-gray-400">
-                    {testimonial.company}
-                  </p>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">{testimonial.company}</p>
                 </div>
               </div>
             ))}
@@ -417,16 +443,21 @@ export default function Home() {
           <BeforeAfterSlider
             items={[
               {
-                beforeImage: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800&q=80',
-                afterImage: 'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=800&q=80',
+                beforeImage:
+                  'https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800&q=80',
+                afterImage:
+                  'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=800&q=80',
                 beforeLabel: 'Before',
                 afterLabel: 'After',
                 title: 'Spotless Floors',
-                description: 'Professional strip, wax, and buff services that restore shine and extend floor life',
+                description:
+                  'Professional strip, wax, and buff services that restore shine and extend floor life',
               },
               {
-                beforeImage: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&q=80',
-                afterImage: 'https://images.unsplash.com/photo-1600607687644-c7171b42498b?w=800&q=80',
+                beforeImage:
+                  'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&q=80',
+                afterImage:
+                  'https://images.unsplash.com/photo-1600607687644-c7171b42498b?w=800&q=80',
                 beforeLabel: 'Before',
                 afterLabel: 'After',
                 title: 'Sanitized Spaces',
@@ -482,9 +513,7 @@ export default function Home() {
                   <h3 className="font-bold text-gray-900 dark:text-white mb-1 text-sm">
                     {badge.label}
                   </h3>
-                  <p className="text-xs text-gray-600 dark:text-gray-400">
-                    {badge.desc}
-                  </p>
+                  <p className="text-xs text-gray-600 dark:text-gray-400">{badge.desc}</p>
                 </div>
               )
             })}
@@ -499,27 +528,39 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="flex items-start space-x-3">
                 <CheckCircle2 className="h-5 w-5 text-accent-500 flex-shrink-0 mt-0.5" />
-                <span className="text-gray-700 dark:text-gray-300">Bonded & insured for your protection</span>
+                <span className="text-gray-700 dark:text-gray-300">
+                  Bonded & insured for your protection
+                </span>
               </div>
               <div className="flex items-start space-x-3">
                 <CheckCircle2 className="h-5 w-5 text-accent-500 flex-shrink-0 mt-0.5" />
-                <span className="text-gray-700 dark:text-gray-300">Full-time W2 employees only</span>
+                <span className="text-gray-700 dark:text-gray-300">
+                  Full-time W2 employees only
+                </span>
               </div>
               <div className="flex items-start space-x-3">
                 <CheckCircle2 className="h-5 w-5 text-accent-500 flex-shrink-0 mt-0.5" />
-                <span className="text-gray-700 dark:text-gray-300">40+ hours of training per cleaner</span>
+                <span className="text-gray-700 dark:text-gray-300">
+                  40+ hours of training per cleaner
+                </span>
               </div>
               <div className="flex items-start space-x-3">
                 <CheckCircle2 className="h-5 w-5 text-accent-500 flex-shrink-0 mt-0.5" />
-                <span className="text-gray-700 dark:text-gray-300">Quality audits & checklists</span>
+                <span className="text-gray-700 dark:text-gray-300">
+                  Quality audits & checklists
+                </span>
               </div>
               <div className="flex items-start space-x-3">
                 <CheckCircle2 className="h-5 w-5 text-accent-500 flex-shrink-0 mt-0.5" />
-                <span className="text-gray-700 dark:text-gray-300">EPA-registered disinfectants</span>
+                <span className="text-gray-700 dark:text-gray-300">
+                  EPA-registered disinfectants
+                </span>
               </div>
               <div className="flex items-start space-x-3">
                 <CheckCircle2 className="h-5 w-5 text-accent-500 flex-shrink-0 mt-0.5" />
-                <span className="text-gray-700 dark:text-gray-300">Custom SOPs for your facility</span>
+                <span className="text-gray-700 dark:text-gray-300">
+                  Custom SOPs for your facility
+                </span>
               </div>
             </div>
           </div>
@@ -530,8 +571,12 @@ export default function Home() {
       <section className="py-20 bg-white dark:bg-slate-900 transition-colors">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">The Anderson Difference</h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300">What sets us apart in commercial cleaning</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+              The Anderson Difference
+            </h2>
+            <p className="text-xl text-gray-600 dark:text-gray-300">
+              What sets us apart in commercial cleaning
+            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -539,22 +584,22 @@ export default function Home() {
               {
                 icon: Users,
                 title: 'Personalized Attention',
-                description: 'Local team, dedicated account manager, and site-specific SOPs.'
+                description: 'Local team, dedicated account manager, and site-specific SOPs.',
               },
               {
                 icon: Shield,
                 title: 'Corporate-Grade Standards',
-                description: 'Checklists, quality audits, and documented processes.'
+                description: 'Checklists, quality audits, and documented processes.',
               },
               {
                 icon: Award,
                 title: 'Full-Time Salaried Staff',
-                description: 'Stable, trained, background-checked professionals.'
+                description: 'Stable, trained, background-checked professionals.',
               },
               {
                 icon: Headphones,
                 title: '24/7 Support',
-                description: 'We respond within 30 minutes—day or night.'
+                description: 'We respond within 30 minutes—day or night.',
               },
             ].map((item, i) => {
               const Icon = item.icon
@@ -563,7 +608,9 @@ export default function Home() {
                   <div className="inline-flex items-center justify-center w-16 h-16 bg-primary-100 dark:bg-blue-900/30 rounded-full mb-4">
                     <Icon className="h-8 w-8 text-primary-700 dark:text-blue-400" />
                   </div>
-                  <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">{item.title}</h3>
+                  <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">
+                    {item.title}
+                  </h3>
                   <p className="text-gray-600 dark:text-gray-300">{item.description}</p>
                 </div>
               )
@@ -575,7 +622,9 @@ export default function Home() {
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-primary-700 to-primary-900 text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready for a cleaner, healthier workplace?</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            Ready for a cleaner, healthier workplace?
+          </h2>
           <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
             Get your free, no-obligation quote today. We respond within 30 minutes.
           </p>
@@ -583,7 +632,11 @@ export default function Home() {
             <Button variant="accent" size="lg">
               Get Your Free Quote
             </Button>
-            <Button variant="outline" size="lg" className="border-white text-white hover:bg-white/10">
+            <Button
+              variant="outline"
+              size="lg"
+              className="border-white text-white hover:bg-white/10"
+            >
               <Phone className="h-5 w-5 mr-2" />
               Call Now
             </Button>

@@ -1,18 +1,17 @@
 'use client'
 
-
-import React, { useContext } from 'react';
-import { useAppContext } from '@/lib/careers/AppContext';
-import FormInput from '@/components/ui/FormInput';
-import SectionWrapper from './SectionWrapper';
+import React, { useContext } from 'react'
+import { useAppContext } from '@/lib/careers/AppContext'
+import FormInput from '@/components/ui/FormInput'
+import SectionWrapper from './SectionWrapper'
 
 const MilitaryServiceSection: React.FC = () => {
-  const context = useAppContext();
-  if (!context) throw new Error('AppContext not found');
-  const { formData, handleChange, t, formErrors } = context;
-  const data = formData.militaryService;
+  const context = useAppContext()
+  if (!context) throw new Error('AppContext not found')
+  const { formData, handleChange, t, formErrors } = context
+  const data = formData.militaryService
 
-  const getError = (field: string) => formErrors[`militaryService.${field}`];
+  const getError = (field: string) => formErrors[`militaryService.${field}`]
 
   return (
     <SectionWrapper titleKey="militaryServiceSectionTitle">
@@ -57,7 +56,7 @@ const MilitaryServiceSection: React.FC = () => {
         />
       </div>
     </SectionWrapper>
-  );
-};
+  )
+}
 
-export default MilitaryServiceSection;
+export default MilitaryServiceSection

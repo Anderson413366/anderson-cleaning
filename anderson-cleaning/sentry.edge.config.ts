@@ -27,7 +27,7 @@ if (SENTRY_DSN) {
       if (event.request) {
         // Remove cookies
         if (event.request.cookies) {
-          event.request.cookies = '[Filtered]'
+          event.request.cookies = { filtered: '[Filtered]' }
         }
 
         // Remove auth headers
