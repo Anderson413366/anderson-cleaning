@@ -51,6 +51,7 @@
     "react-dom": "^18.3.0",
     "react-hook-form": "^7.51.0",
     "react-i18next": "^16.3.2",
+    "react-is": "^19.2.0",
     "resend": "^3.2.0",
     "sanity": "^3.57.4",
     "styled-components": "^6.1.19",
