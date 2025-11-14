@@ -1,19 +1,21 @@
-# Anderson Cleaning - Commercial Cleaning Website
+# Anderson Cleaning - B2B Commercial Cleaning Website
 
-Professional B2B commercial cleaning website built with Next.js 14, TypeScript, and Tailwind CSS. Enterprise-grade implementation with SEO, security, performance, and accessibility optimizations.
+Professional, conversion-optimized website for Anderson Cleaning's commercial janitorial services.
 
-## 🎯 Overview
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone)
+![License](https://img.shields.io/badge/license-Proprietary-red)
+![Next.js](https://img.shields.io/badge/Next.js-14-black)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.4-blue)
 
-Anderson Cleaning provides commercial janitorial services to businesses in Western Massachusetts and Northern Connecticut. This website serves as the primary digital presence with:
+---
 
-- **Service Information** - Detailed pages for all cleaning services
-- **Quote Request System** - Multi-step form with validation
-- **Careers Portal** - Multilingual job application system (EN, ES, PT-BR, RO)
-- **CMS Integration** - Sanity CMS for content management
-- **SEO Optimized** - Structured data, sitemaps, OG images
-- **Secure** - CSP, rate limiting, input sanitization, CAPTCHA
-- **Performant** - Core Web Vitals tracking, optimized assets
-- **Accessible** - WCAG 2.2 Level AA compliant
+## Overview
+
+Modern Next.js 14 (App Router) website serving Anderson Cleaning's B2B commercial janitorial services.
+
+**Service Area:** 100-mile radius from West Springfield, MA (Western Massachusetts & Northern Connecticut)
+
+**Focus:** Office buildings, medical facilities, educational institutions, retail stores, and warehouses. **No residential cleaning, restaurants, or 7-day/week services.**
 
 ## 🚀 Quick Start
 
