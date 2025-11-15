@@ -201,7 +201,7 @@ class LinkCrawler {
     try {
       console.log(`[${this.visited.size}/${this.maxPages}] Crawling: ${url} (depth: ${depth})`)
 
-      const { status, statusText, body } = await fetchUrl(url)
+      const { status, statusText, body } = await this.fetchUrl(url)
 
       // Record result
       this.results.push({
