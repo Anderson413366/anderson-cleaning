@@ -1,0 +1,103 @@
+name: Link Integrity Check
+
+# Runs after successful Vercel deployments to check for broken internal links
+# This prevents 3xx/4xx/5xx link rot from reaching production
+
+on:
+  # Trigger manually with a deployment URL
+  workflow_dispatch:
+    inputs:
+      deploy_url:
+        description: 'Deployment URL to crawl (e.g., https://your-preview.vercel.app)'
+        required: true
+        type: string
+
+  # Can also be triggered by other workflows
+  workflow_call:
+    inputs:
+      deploy_url:
+        description: 'Deployment URL to crawl'
+        required: true
+        type: string
+
+jobs:
+  crawl:
+    name: Crawl Internal Links
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: 'anderson-cleaning/package-lock.json'
+
+      - name: Install dependencies
+        run: |
+          cd anderson-cleaning
+          npm ci
+
+      - name: Run link integrity crawler
+        id: crawl
+        run: |
+          cd anderson-cleaning
+          npm run crawl:prod
+        env:
+          DEPLOY_URL: ${{ inputs.deploy_url || github.event.inputs.deploy_url }}
+          MAX_DEPTH: 3
+          MAX_PAGES: 100
+        continue-on-error: true
+
+      - name: Comment on PR with results
+        if: github.event_name == 'pull_request' && steps.crawl.outcome == 'failure'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const comment = `## ⚠️ Link Integrity Check Failed
+
+            The internal link crawler detected broken links on the deployed preview.
+
+            **Deployment URL**: ${{ inputs.deploy_url || github.event.inputs.deploy_url }}
+
+            ### Action Required:
+
+            1. Review the [failed workflow logs](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})
+            2. Fix the broken links (4xx/5xx errors)
+            3. Verify fixes locally: \`DEPLOY_URL=http://localhost:3000 npm run crawl:prod\`
+            4. Re-run the workflow or push updated code
+
+            ### Common Issues:
+
+            - Missing pages (404)
+            - Incorrect internal links
+            - Case-sensitive URLs
+            - Trailing slash mismatches
+            - Broken redirects (3xx chains)
+
+            ---
+            *This check prevents link rot and ensures all internal navigation works correctly.*
+            `;
+
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: comment
+            });
+
+      - name: Fail if links are broken
+        if: steps.crawl.outcome == 'failure'
+        run: |
+          echo "❌ Link integrity check failed. See logs above for details."
+          exit 1
+
+      - name: Success message
+        if: steps.crawl.outcome == 'success'
+        run: |
+          echo "✅ Link integrity check passed!"
+          echo "All internal links returned successful status codes (2xx)"

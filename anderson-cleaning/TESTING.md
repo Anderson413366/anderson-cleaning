@@ -14,6 +14,7 @@ This document provides comprehensive testing and QA procedures for the Anderson 
 6. [Accessibility Testing](#accessibility-testing)
 7. [CI/CD Pipeline](#cicd-pipeline)
 8. [Performance Optimization](#performance-optimization)
+9. [Link Integrity Crawler](#link-integrity-crawler)
 
 ---
 
@@ -549,9 +550,230 @@ Test on:
 
 ---
 
+## Link Integrity Crawler
+
+### What is Link Integrity Testing?
+
+The link integrity crawler checks deployed sites (preview or production) for broken internal links. It crawls all internal pages up to a configurable depth and reports any links returning 3xx/4xx/5xx status codes.
+
+### Why Link Integrity Matters
+
+- Prevents **404 errors** from broken navigation
+- Catches **redirect chains** (3xx) that slow down user experience
+- Detects **server errors** (5xx) before users encounter them
+- Ensures **consistent navigation** across all pages
+- Prevents **link rot** as the site evolves
+
+### How It Works
+
+The crawler:
+1. Starts from a base URL (deployment URL)
+2. Extracts all internal links from each page (same hostname only)
+3. Follows links up to depth 3 (configurable)
+4. Records HTTP status codes for each URL
+5. Fails if any internal link returns 3xx/4xx/5xx
+
+**Excluded from crawling:**
+- External links (different hostname)
+- `mailto:` links
+- `tel:` links
+- `javascript:` links
+- Fragment-only links (`#section`)
+
+### Running Locally
+
+**Against local dev server:**
+```bash
+# Start dev server
+npm run dev
+
+# In another terminal
+DEPLOY_URL=http://localhost:3000 npm run crawl:prod
+```
+
+**Against a deployed preview:**
+```bash
+DEPLOY_URL=https://your-preview.vercel.app npm run crawl:prod
+```
+
+**Against production:**
+```bash
+DEPLOY_URL=https://andersoncleaning.com npm run crawl:prod
+```
+
+### Configuration
+
+Environment variables:
+
+| Variable | Description | Default |
+|----------|-------------|---------|
+| `DEPLOY_URL` | Base URL to crawl | *Required* |
+| `MAX_DEPTH` | Maximum crawl depth | 3 |
+| `MAX_PAGES` | Maximum pages to crawl | 100 |
+
+**Example with custom settings:**
+```bash
+DEPLOY_URL=http://localhost:3000 MAX_DEPTH=2 MAX_PAGES=50 npm run crawl:prod
+```
+
+### Output Examples
+
+**Success (no broken links):**
+```
+================================================================================
+📊 CRAWL STATISTICS
+================================================================================
+Total pages crawled: 47
+✅ Success (2xx):     47
+↪️  Redirects (3xx):   0
+❌ Client errors (4xx): 0
+🔥 Server errors (5xx): 0
+⏭️  Skipped:           0
+
+================================================================================
+✅ SUCCESS: Internal link integrity OK
+================================================================================
+```
+
+**Failure (broken links detected):**
+```
+================================================================================
+📊 CRAWL STATISTICS
+================================================================================
+Total pages crawled: 52
+✅ Success (2xx):     50
+↪️  Redirects (3xx):   0
+❌ Client errors (4xx): 2
+🔥 Server errors (5xx): 0
+⏭️  Skipped:           0
+
+================================================================================
+❌ BROKEN LINKS DETECTED
+================================================================================
+
+404 - Not Found (2 URLs)
+--------------------------------------------------------------------------------
+  URL:      https://example.com/old-page
+  Referrer: https://example.com/about
+  Depth:    1
+
+  URL:      https://example.com/missing-image.jpg
+  Referrer: https://example.com/services
+  Depth:    2
+
+================================================================================
+
+❌ FAIL: 2 broken internal link(s) found
+```
+
+### CI/CD Integration
+
+The link integrity check can be triggered manually via GitHub Actions:
+
+**Workflow: `.github/workflows/link-integrity.yml`**
+
+#### Manual Trigger
+
+1. Go to GitHub Actions → Link Integrity Check
+2. Click "Run workflow"
+3. Enter deployment URL (e.g., `https://your-preview.vercel.app`)
+4. Click "Run workflow"
+
+The crawler will:
+- Crawl all internal links
+- Report broken links in the workflow logs
+- Comment on PR if triggered from a PR
+- Fail the workflow if broken links are found
+
+#### After Vercel Deployment
+
+When Vercel creates a preview deployment:
+
+1. Get the preview URL from Vercel comment
+2. Manually trigger the Link Integrity workflow
+3. Enter the preview URL
+4. Review results before merging
+
+**Future enhancement:** Automate this with Vercel deployment webhooks.
+
+### Fixing Broken Links
+
+Common broken link issues and fixes:
+
+#### 404 - Page Not Found
+
+**Cause:** Link points to non-existent page
+
+**Fix:**
+- Update the link to the correct URL
+- Create the missing page
+- Add a redirect in `next.config.js`
+
+#### 301/302 - Redirects
+
+**Cause:** Link goes through one or more redirects
+
+**Fix:**
+- Update link to point directly to final destination
+- Avoid redirect chains (A → B → C)
+- Use canonical URLs
+
+#### 500 - Server Error
+
+**Cause:** Page crashes or has runtime errors
+
+**Fix:**
+- Check server logs for errors
+- Fix the page component
+- Verify API endpoints work
+
+#### Case-Sensitive URLs
+
+**Cause:** `/About` vs `/about` treated as different URLs
+
+**Fix:**
+- Standardize all links to lowercase
+- Ensure Next.js routing uses consistent casing
+
+### Best Practices
+
+1. **Run locally before pushing:**
+   ```bash
+   DEPLOY_URL=http://localhost:3000 npm run crawl:prod
+   ```
+
+2. **Test preview deployments:**
+   - Always run crawler on Vercel preview before merging
+   - Fix broken links found during review
+
+3. **Add to PR checklist:**
+   - [ ] No broken internal links (run crawler)
+   - [ ] All redirects necessary and working
+   - [ ] No 404s from navigation
+
+4. **Monitor production regularly:**
+   - Schedule weekly crawls of production
+   - Set up alerts for broken links
+   - Track link health over time
+
+### Limitations
+
+- **JavaScript-rendered links:** May miss links added by client-side JS
+- **Dynamic routes:** May not crawl all possible parameter combinations
+- **Authentication:** Cannot crawl authenticated pages
+- **External links:** Not checked (only internal same-host links)
+
+For comprehensive link checking including external links, consider tools like:
+- [Broken Link Checker](https://github.com/stevenvachon/broken-link-checker)
+- [linkinator](https://github.com/JustinBeckwith/linkinator)
+- [lychee](https://github.com/lycheeverse/lychee)
+
+---
+
 ## Resources
 
 - [Cypress Documentation](https://docs.cypress.io/)
+- [Playwright Documentation](https://playwright.dev/)
 - [Lighthouse CI](https://github.com/GoogleChrome/lighthouse-ci)
 - [Next.js Testing](https://nextjs.org/docs/testing)
 - [Web Vitals](https://web.dev/vitals/)
