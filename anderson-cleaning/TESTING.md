@@ -7,11 +7,13 @@ This document provides comprehensive testing and QA procedures for the Anderson 
 ## Table of Contents
 
 1. [Running Tests Locally](#running-tests-locally)
-2. [Cypress E2E Tests](#cypress-e2e-tests)
-3. [Lighthouse Audits](#lighthouse-audits)
-4. [Accessibility Testing](#accessibility-testing)
-5. [CI/CD Pipeline](#cicd-pipeline)
-6. [Performance Optimization](#performance-optimization)
+2. [Playwright E2E Tests](#playwright-e2e-tests)
+3. [Visual Regression Testing (VRT)](#visual-regression-testing-vrt)
+4. [Cypress E2E Tests](#cypress-e2e-tests)
+5. [Lighthouse Audits](#lighthouse-audits)
+6. [Accessibility Testing](#accessibility-testing)
+7. [CI/CD Pipeline](#cicd-pipeline)
+8. [Performance Optimization](#performance-optimization)
 
 ---
 
@@ -27,24 +29,223 @@ npm install
 ### Available Test Commands
 
 ```bash
-# Run Cypress tests (interactive)
-npm run cypress:open
+# Playwright E2E tests
+npm run test:e2e                    # Run all Playwright tests
+npm run test:e2e:ui                 # Run with interactive UI
+npm run test:e2e:snapshots          # Run visual regression tests only
+npm run test:e2e:update             # Update all snapshots
+npm run test:e2e:snapshots:update   # Update VRT snapshots only
 
-# Run Cypress tests (headless)
-npm run cypress:run
+# Cypress tests (legacy)
+npm run cypress:open                # Run Cypress tests (interactive)
+npm run cypress:run                 # Run Cypress tests (headless)
 
-# Run Lighthouse audit
+# Lighthouse audit
 npm run lighthouse
 
-# Run type checking
+# Type checking
 npm run type-check
 
-# Run linting
+# Linting
 npm run lint
-
-# Run all tests
-npm run test:all
 ```
+
+---
+
+## Playwright E2E Tests
+
+### Overview
+
+Playwright is our primary E2E testing framework. It provides:
+- Cross-browser testing (Chromium, Firefox, WebKit)
+- Mobile viewport testing
+- Visual regression testing (VRT)
+- Screenshot comparison
+- Trace viewer for debugging
+
+### Test Files
+
+Located in `tests/e2e/`:
+
+- **home.spec.ts** - Homepage functionality tests
+- **accessibility.spec.ts** - WCAG compliance tests
+- **apply.spec.ts** - Apply/Careers page tests
+- **apply-header.spec.ts** - Duplicate header detection tests
+- **snapshots.spec.ts** - Visual regression tests (VRT)
+
+### Running Playwright Tests
+
+**All E2E Tests:**
+```bash
+npm run test:e2e
+```
+
+**Interactive UI Mode (Recommended for Development):**
+```bash
+npm run test:e2e:ui
+```
+
+**Visual Regression Tests Only:**
+```bash
+npm run test:e2e:snapshots
+```
+
+**Specific Test File:**
+```bash
+npx playwright test tests/e2e/home.spec.ts
+```
+
+**Specific Browser:**
+```bash
+npx playwright test --project=chromium
+```
+
+### Configuration
+
+Playwright is configured in `playwright.config.ts`:
+
+- **Base URL**: `http://localhost:3000`
+- **Test timeout**: 30 seconds
+- **Retries**: 2 on CI, 0 locally
+- **Browsers**: Chromium, Firefox, WebKit, Mobile Chrome, Mobile Safari
+- **Web server**: Auto-starts `npm run dev`
+
+---
+
+## Visual Regression Testing (VRT)
+
+### What is Visual Regression Testing?
+
+Visual regression testing captures full-page screenshots and compares them to baseline images. If pixels differ beyond a threshold, the test fails, catching unintended visual changes.
+
+### Routes Tested
+
+The snapshot tests (`snapshots.spec.ts`) cover these key routes:
+
+- `/` (Home)
+- `/services`
+- `/industries`
+- `/about`
+- `/apply`
+- `/contact`
+- `/faq`
+
+### Viewports Tested
+
+Each route is tested at 3 viewport sizes:
+
+| Viewport | Size | Description |
+|----------|------|-------------|
+| Mobile | 360×800 | Smartphone |
+| Tablet | 768×1024 | Tablet |
+| Desktop | 1366×768 | Laptop/Desktop |
+
+**Total snapshots**: 7 routes × 3 viewports = **21 snapshots per browser**
+
+### Layout Parity Assertions
+
+For each route × viewport combination, we automatically assert:
+
+1. ✅ **Exactly 1 header and 1 footer** (no duplicates)
+2. ✅ **Consistent container max-width** (`.container` CSS class)
+3. ✅ **No horizontal scrollbars** (responsive design check)
+4. ✅ **No console errors** (JavaScript health check)
+
+### Cross-Route Consistency Checks
+
+We also verify:
+- Header height is consistent across all routes (±5px tolerance)
+- Footer structure has the same number of links
+- Theme colors are consistent (header background)
+
+### Running Snapshot Tests
+
+**Run snapshot tests:**
+```bash
+npm run test:e2e:snapshots
+```
+
+**View test report (shows visual diffs):**
+```bash
+npx playwright show-report
+```
+
+### Updating Snapshots
+
+⚠️ **Only update snapshots after reviewing the visual diffs!**
+
+**When to update:**
+- You've made intentional design changes (colors, fonts, spacing)
+- You've updated component layouts
+- You've modified responsive breakpoints
+
+**How to update:**
+
+1. **Run tests to see failures:**
+   ```bash
+   npm run test:e2e:snapshots
+   ```
+
+2. **Review visual diffs:**
+   ```bash
+   npx playwright show-report
+   ```
+   Opens an HTML report showing Expected vs Actual screenshots.
+
+3. **Update snapshots if changes are correct:**
+   ```bash
+   npm run test:e2e:snapshots:update
+   ```
+
+4. **Commit updated snapshots:**
+   ```bash
+   git add tests/e2e/__snapshots__
+   git commit -m "test(vrt): update visual snapshots after design changes"
+   git push
+   ```
+
+### Snapshot Storage
+
+Snapshots are stored in `tests/e2e/__snapshots__/` with naming:
+
+```
+{route-name}-{viewport-name}.png
+```
+
+Examples:
+- `home-mobile.png`
+- `services-desktop.png`
+- `apply-tablet.png`
+
+These files are committed to Git so CI can compare against the baseline.
+
+### Handling Snapshot Failures in CI
+
+If the GitHub Actions workflow fails due to snapshot mismatches:
+
+1. **Download artifacts**: Go to Actions → Failed run → Artifacts → `snapshot-diff`
+2. **Review locally**: Run `npm run test:e2e:snapshots` to reproduce
+3. **Update if correct**: Run `npm run test:e2e:snapshots:update`
+4. **Commit and push**: The updated snapshots will make CI pass
+
+The CI will automatically comment on your PR with update instructions if snapshots fail.
+
+### Troubleshooting Snapshots
+
+**Flaky snapshots (random failures):**
+- Disable animations: Already configured in `snapshots.spec.ts`
+- Mask dynamic content: Add `data-testid="dynamic-content"` to changing elements
+- Increase wait time: Already set to 500ms after page load
+
+**Font rendering differences:**
+- CI uses Ubuntu (Linux), which may render fonts differently than macOS/Windows
+- Solution: Commit snapshots generated on CI, or increase `threshold` to 0.3
+
+**Threshold too strict:**
+- Edit `tests/e2e/snapshots.spec.ts`:
+  ```ts
+  threshold: 0.3, // Increase from 0.2
+  ```
 
 ---
 
