@@ -7,15 +7,17 @@ This document provides comprehensive testing and QA procedures for the Anderson 
 ## Table of Contents
 
 1. [Running Tests Locally](#running-tests-locally)
-2. [Playwright E2E Tests](#playwright-e2e-tests)
-3. [Visual Regression Testing (VRT)](#visual-regression-testing-vrt)
-4. [Cookie Consent & Privacy Compliance](#cookie-consent--privacy-compliance)
-5. [Cypress E2E Tests](#cypress-e2e-tests)
-6. [Lighthouse Audits](#lighthouse-audits)
-7. [Accessibility Testing](#accessibility-testing)
-8. [CI/CD Pipeline](#cicd-pipeline)
-9. [Performance Optimization](#performance-optimization)
-10. [Link Integrity Crawler](#link-integrity-crawler)
+2. [Unit Tests (Vitest)](#unit-tests-vitest)
+3. [Playwright E2E Tests](#playwright-e2e-tests)
+4. [Visual Regression Testing (VRT)](#visual-regression-testing-vrt)
+5. [Cookie Consent & Privacy Compliance](#cookie-consent--privacy-compliance)
+6. [Error Tracking & Monitoring (Sentry)](#error-tracking--monitoring-sentry)
+7. [Cypress E2E Tests](#cypress-e2e-tests)
+8. [Lighthouse Audits](#lighthouse-audits)
+9. [Accessibility Testing](#accessibility-testing)
+10. [CI/CD Pipeline](#cicd-pipeline)
+11. [Performance Optimization](#performance-optimization)
+12. [Link Integrity Crawler](#link-integrity-crawler)
 
 ---
 
@@ -31,6 +33,11 @@ npm install
 ### Available Test Commands
 
 ```bash
+# Unit tests (Vitest)
+npm test                            # Run all unit tests in watch mode
+npm run test:ui                     # Run with interactive UI
+npm run test:coverage               # Run with coverage report
+
 # Playwright E2E tests
 npm run test:e2e                    # Run all Playwright tests
 npm run test:e2e:ui                 # Run with interactive UI
@@ -51,6 +58,96 @@ npm run type-check
 # Linting
 npm run lint
 ```
+
+---
+
+## Unit Tests (Vitest)
+
+### Overview
+
+Vitest is our unit testing framework for TypeScript/JavaScript code. It provides:
+- Fast test execution with watch mode
+- TypeScript support out of the box
+- Coverage reporting with V8
+- Interactive UI for test debugging
+- Compatible with Jest API
+
+### Test Files
+
+Unit tests are located alongside the code they test:
+
+```
+lib/
+  sentry/
+    pii-scrubber.ts
+    __tests__/
+      pii-scrubber.test.ts
+```
+
+### Running Unit Tests
+
+**Watch mode (recommended for development):**
+```bash
+npm test
+```
+
+**Run once:**
+```bash
+npm test -- --run
+```
+
+**Interactive UI:**
+```bash
+npm run test:ui
+```
+
+**With coverage:**
+```bash
+npm run test:coverage
+```
+
+Coverage reports are generated in `coverage/` directory.
+
+### Writing Unit Tests
+
+**Example test structure:**
+
+```typescript
+import { describe, it, expect } from 'vitest'
+import { scrubPII } from '../pii-scrubber'
+
+describe('scrubPII', () => {
+  it('should remove email addresses', () => {
+    const event = {
+      user: { email: 'user@example.com' }
+    }
+
+    const result = scrubPII(event)
+
+    expect(result.user?.email).not.toContain('@example.com')
+  })
+})
+```
+
+### Test Coverage Requirements
+
+We aim for:
+- **80%+ overall coverage**
+- **100% coverage for critical utilities** (e.g., PII scrubbing, consent management)
+- **90%+ coverage for business logic**
+
+Check coverage with:
+```bash
+npm run test:coverage
+```
+
+### Best Practices
+
+1. **Test file naming:** `*.test.ts` or place in `__tests__/` directory
+2. **Describe blocks:** Group related tests logically
+3. **It blocks:** Clear, descriptive test names
+4. **AAA pattern:** Arrange, Act, Assert
+5. **Mock external dependencies:** Use `vi.mock()` for APIs, databases, etc.
 
 ---
 
@@ -489,6 +586,366 @@ Ensure your privacy policy (`/legal/privacy-policy`) includes:
 - **Regional Defaults:** Auto-deny in EU/CA, auto-grant elsewhere
 - **Consent History:** Track consent changes over time
 - **Cookie Declaration:** Auto-generate list of all cookies
+
+---
+
+## Error Tracking & Monitoring (Sentry)
+
+### Overview
+
+Sentry provides real-time error tracking and performance monitoring for both server and client-side code. Our implementation prioritizes:
+
+- **Privacy compliance** (GDPR, CCPA) with comprehensive PII scrubbing
+- **Server-only initialization** to minimize client bundle size
+- **Environment-driven configuration** for flexible deployment
+- **Slack alerts** for critical errors
+- **Release tracking** with git commit SHAs
+
+### Architecture
+
+We use three separate Sentry configurations:
+
+1. **sentry.server.config.ts** - Node.js server errors (API routes, SSR)
+2. **sentry.edge.config.ts** - Edge runtime errors (middleware)
+3. **sentry.client.config.ts** - Browser errors (client-side)
+
+### Configuration
+
+#### Environment Variables
+
+Add these to your `.env` or Vercel environment:
+
+```bash
+# Server-side DSN (private, not exposed to client)
+SENTRY_DSN=https://xxx@xxx.ingest.sentry.io/xxx
+
+# Client-side DSN (public, exposed to browser)
+NEXT_PUBLIC_SENTRY_DSN=https://xxx@xxx.ingest.sentry.io/xxx
+
+# Dynamic sample rates (0.0 to 1.0)
+SENTRY_TRACES_SAMPLE_RATE=0.1                      # Server: 10% sampling
+NEXT_PUBLIC_SENTRY_TRACES_SAMPLE_RATE=0.1          # Client: 10% sampling
+
+# Slack webhook for critical error alerts (optional)
+SLACK_WEBHOOK_URL=https://hooks.slack.com/services/xxx
+
+# Build-time authentication (for source maps)
+SENTRY_AUTH_TOKEN=sntrys_xxx
+SENTRY_ORG=anderson-cleaning
+SENTRY_PROJECT=anderson-cleaning-website
+```
+
+#### Sample Rate Recommendations
+
+| Environment | Server | Edge | Client | Reasoning |
+|-------------|--------|------|--------|-----------|
+| Production  | 0.1 (10%) | 0.01 (1%) | 0.1 (10%) | Reduce costs, edge has high volume |
+| Preview     | 0.5 (50%) | 0.1 (10%) | 0.5 (50%) | More debugging during testing |
+| Development | 1.0 (100%) | 0.2 (20%) | 1.0 (100%) | Full error visibility |
+
+Adjust these based on your traffic and Sentry quota.
+
+### PII Scrubbing
+
+All PII (Personally Identifiable Information) is automatically scrubbed before sending to Sentry:
+
+#### What Gets Scrubbed
+
+**Automatically removed fields:**
+- Email addresses (partially redacted: `jo***@example.com`)
+- Phone numbers (last 4 digits kept: `***-***-4567`)
+- Names (first, last, full name)
+- Addresses (street, city, state, zip, country)
+- Passwords and authentication tokens
+- API keys and secrets
+- Credit card numbers and financial data
+- IP addresses
+
+**Automatically redacted:**
+- Request cookies
+- Authorization headers
+- Sensitive query parameters (`?email=`, `?phone=`, `?token=`)
+
+#### Implementation
+
+PII scrubbing is handled by `lib/sentry/pii-scrubber.ts`:
+
+```typescript
+import { scrubPII } from '@/lib/sentry/pii-scrubber'
+
+// Used in beforeSend hooks
+beforeSend(event, hint) {
+  const scrubbedEvent = scrubPII(event, hint)
+  return scrubbedEvent
+}
+```
+
+#### Testing PII Scrubbing
+
+Run unit tests to verify scrubbing:
+
+```bash
+npm test lib/sentry/__tests__/pii-scrubber.test.ts
+```
+
+Tests cover:
+- Email redaction in event data
+- Phone number masking
+- Header scrubbing (Authorization, Cookie)
+- Query parameter redaction
+- Nested object scrubbing
+- Exception message sanitization
+
+### Slack Alerts
+
+Critical errors (level: `error` or `fatal`) automatically send Slack notifications:
+
+**Setup:**
+
+1. Create a Slack webhook URL: https://api.slack.com/messaging/webhooks
+2. Add to environment:
+   ```bash
+   SLACK_WEBHOOK_URL=https://hooks.slack.com/services/T.../B.../xxx
+   ```
+
+**Alert Format:**
+
+```
+🚨 Error
+
+Error: Failed to process payment
+Environment: production
+Level: error
+Release: anderson-cleaning@a1b2c3d
+User: user123
+URL: https://andersoncleaning.com/api/checkout
+
+Event ID: abc123def456
+```
+
+**Deduplication:**
+
+Alerts are deduplicated per-session to prevent spam. Only the first occurrence of each error is sent to Slack.
+
+### Release Tagging
+
+Errors are automatically tagged with git commit SHAs for tracking:
+
+**Vercel (automatic):**
+```bash
+# Uses VERCEL_GIT_COMMIT_SHA from Vercel environment
+# Format: anderson-cleaning@a1b2c3d
+```
+
+**Manual/Local:**
+```bash
+export VERCEL_GIT_COMMIT_SHA=$(git rev-parse HEAD)
+```
+
+This allows you to:
+- Track which deployment introduced an error
+- Correlate errors with code changes
+- Filter issues by release in Sentry dashboard
+
+### Environment Tagging
+
+Errors are tagged with deployment environment:
+
+- **production** - Live site
+- **preview** - Vercel preview deployments
+- **development** - Local development
+
+**Vercel (automatic):**
+Uses `VERCEL_ENV` environment variable.
+
+**Manual:**
+```bash
+export VERCEL_ENV=production
+```
+
+### Testing Error Tracking
+
+#### Trigger Test Errors
+
+**Server-side (API route):**
+
+Create a test API route that throws an error:
+
+```typescript
+// app/api/test-sentry/route.ts
+export async function GET() {
+  throw new Error('Test Sentry server error')
+}
+```
+
+Visit: `http://localhost:3000/api/test-sentry`
+
+**Client-side (button click):**
+
+```typescript
+<button onClick={() => {
+  throw new Error('Test Sentry client error')
+}}>
+  Trigger Error
+</button>
+```
+
+#### Verify in Sentry
+
+1. Go to https://sentry.io
+2. Select your project
+3. Check "Issues" tab for new errors
+4. Verify:
+   - PII is scrubbed (no emails, phones, tokens visible)
+   - Release tag is present (`anderson-cleaning@xxx`)
+   - Environment is correct (`production`, `preview`, etc.)
+   - Stack trace is readable (source maps working)
+
+### Source Maps
+
+Source maps are automatically uploaded during `next build` via Sentry's Next.js plugin.
+
+**Verify source maps:**
+
+1. Trigger an error
+2. Open error in Sentry
+3. Check stack trace shows original TypeScript/JSX code (not minified)
+
+**Troubleshooting:**
+
+If stack traces show minified code:
+
+```bash
+# Ensure auth token is set
+echo $SENTRY_AUTH_TOKEN
+
+# Re-build with source maps
+npm run build
+
+# Check for source map uploads in build output
+# Look for: "Sentry: Uploaded X source maps"
+```
+
+### Performance Monitoring
+
+Sentry tracks:
+- Page load times
+- API response times
+- Database query performance
+- Third-party API calls
+
+**View performance:**
+
+1. Go to Sentry dashboard
+2. Click "Performance" tab
+3. See slowest transactions
+4. Identify bottlenecks
+
+**Sample rates** control how much performance data is collected (see Configuration above).
+
+### Ignoring Errors
+
+Some errors are expected and should not be tracked. These are automatically ignored:
+
+**Server:**
+- Database connection errors (`ECONNREFUSED`, `ETIMEDOUT`)
+- Rate limit errors (`Too Many Requests`)
+- Client aborted requests (`ECONNRESET`)
+- Next.js navigation errors (`NEXT_NOT_FOUND`, `NEXT_REDIRECT`)
+
+**Client:**
+- Browser extension errors (`chrome-extension://`)
+- Network errors (`Failed to fetch`)
+- ResizeObserver errors (benign)
+- AbortController errors (user navigated away)
+
+**Add more ignored errors:**
+
+Edit `sentry.*.config.ts`:
+
+```typescript
+ignoreErrors: [
+  // Add custom patterns
+  'My expected error pattern',
+  /regex-pattern/i,
+],
+```
+
+### Best Practices
+
+1. **Never log PII:** Even before Sentry, avoid logging sensitive data
+2. **Use structured errors:** Provide context without exposing secrets
+3. **Test scrubbing:** Run `npm test` to verify PII is removed
+4. **Monitor quota:** Check Sentry usage regularly to avoid overages
+5. **Set up alerts:** Configure Sentry alerts for critical errors
+6. **Review issues weekly:** Triage and fix errors proactively
+7. **Tag releases:** Always deploy with proper release tagging
+
+### Troubleshooting
+
+**Errors not appearing in Sentry:**
+
+```bash
+# Check DSN is configured
+echo $SENTRY_DSN
+echo $NEXT_PUBLIC_SENTRY_DSN
+
+# Check sample rate (1.0 = 100% of errors)
+echo $SENTRY_TRACES_SAMPLE_RATE
+
+# Enable debug mode (add to sentry.*.config.ts)
+debug: true
+
+# Check console for Sentry logs
+```
+
+**PII leaking through:**
+
+```bash
+# Run unit tests to verify scrubbing
+npm test lib/sentry/__tests__/pii-scrubber.test.ts
+
+# Check event in Sentry dashboard
+# If PII visible, add pattern to pii-scrubber.ts
+```
+
+**Slack alerts not working:**
+
+```bash
+# Verify webhook URL is set
+echo $SLACK_WEBHOOK_URL
+
+# Test webhook manually
+curl -X POST $SLACK_WEBHOOK_URL \
+  -H 'Content-Type: application/json' \
+  -d '{"text":"Test from Anderson Cleaning"}'
+
+# Check Sentry error level (must be "error" or "fatal")
+```
+
+**High quota usage:**
+
+```bash
+# Reduce sample rates
+SENTRY_TRACES_SAMPLE_RATE=0.05  # 5% instead of 10%
+
+# Add more ignored errors (see Ignoring Errors above)
+
+# Filter noisy errors in Sentry dashboard → Settings → Inbound Filters
+```
+
+### Compliance Checklist
+
+- [x] PII is scrubbed before sending to Sentry
+- [x] IP addresses are removed from events
+- [x] Emails are partially redacted (jo***@example.com)
+- [x] Phone numbers show only last 4 digits
+- [x] Authentication tokens are filtered
+- [x] Query parameters with sensitive data are redacted
+- [x] Request cookies are removed
+- [x] Unit tests verify PII scrubbing
+- [x] Server-only DSN prevents client exposure
+- [x] Sample rates reduce data collection
 
 ---
 
