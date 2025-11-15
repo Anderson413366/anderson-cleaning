@@ -52,3 +52,48 @@ jobs:
           name: build-${{ matrix.node-version }}
           path: anderson-cleaning/.next
           retention-days: 7
+
+  # E2E and Accessibility Tests
+  e2e-tests:
+    name: E2E & Accessibility Tests
+    runs-on: ubuntu-latest
+    needs: build
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20.x
+          cache: 'npm'
+          cache-dependency-path: anderson-cleaning/package-lock.json
+
+      - name: Install dependencies
+        working-directory: ./anderson-cleaning
+        run: npm ci
+
+      - name: Install Playwright browsers
+        working-directory: ./anderson-cleaning
+        run: npx playwright install --with-deps chromium
+
+      - name: Run E2E tests
+        working-directory: ./anderson-cleaning
+        run: npx playwright test --project=chromium
+
+      - name: Upload test results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report
+          path: anderson-cleaning/playwright-report/
+          retention-days: 7
+
+      - name: Upload test videos
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-videos
+          path: anderson-cleaning/test-results/
+          retention-days: 7
