@@ -41,13 +41,13 @@ export default function GoogleTagManager() {
       <Script
         id="gtm-script"
         strategy="afterInteractive"
-        src={\`https://www.googletagmanager.com/gtm.js?id=\${GTM_ID}\`}
+        src={`https://www.googletagmanager.com/gtm.js?id=${GTM_ID}`}
       />
 
       {/* Google Tag Manager NoScript Fallback */}
       <noscript>
         <iframe
-          src={\`https://www.googletagmanager.com/ns.html?id=\${GTM_ID}\`}
+          src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
           height="0"
           width="0"
           style={{ display: 'none', visibility: 'hidden' }}
