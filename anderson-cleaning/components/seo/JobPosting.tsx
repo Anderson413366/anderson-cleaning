@@ -117,9 +117,12 @@ export default function JobPosting({
     ...(job.skills && { skills: job.skills }),
   }
 
+  // Generate unique ID based on job title (for multiple job postings on same page)
+  const scriptId = `job-posting-schema-${job.title.replace(/\s+/g, '-').toLowerCase()}`
+
   return (
     <Script
-      id="job-posting-schema"
+      id={scriptId}
       type="application/ld+json"
       dangerouslySetInnerHTML={{
         __html: JSON.stringify(jobPostingSchema),

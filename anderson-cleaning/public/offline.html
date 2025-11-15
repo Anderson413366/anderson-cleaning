@@ -88,26 +88,16 @@
             Don't worry—once you're back online, you can continue browsing our site.
         </p>
         
-        <a href="/" class="button" onclick="window.location.reload(); return false;">
+        <a href="/" class="button">
             <span class="icon">↻</span>
             Try Again
         </a>
     </div>
-    
-    <script>
-        // Auto-retry when online
-        window.addEventListener('online', () => {
-            window.location.reload()
-        })
-        
-        // Check connection periodically
-        setInterval(() => {
-            if (navigator.onLine) {
-                fetch('/', { method: 'HEAD', cache: 'no-cache' })
-                    .then(() => window.location.reload())
-                    .catch(() => {})
-            }
-        }, 5000)
-    </script>
+
+    <!--
+        Note: Auto-retry logic removed to comply with Content Security Policy (CSP).
+        The offline.html file cannot use inline scripts without a nonce.
+        Users can manually click "Try Again" to reload when back online.
+    -->
 </body>
 </html>

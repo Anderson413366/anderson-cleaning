@@ -10,7 +10,6 @@
 'use client'
 
 import Script from 'next/script'
-import { useEffect } from 'react'
 
 const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID
 
@@ -20,20 +19,22 @@ export default function GoogleTagManager() {
     return null
   }
 
-  useEffect(() => {
-    // Initialize dataLayer if not already done by ConsentInit
+  // Initialize dataLayer before GTM loads (done synchronously, not in useEffect)
+  if (typeof window !== 'undefined') {
     window.dataLayer = window.dataLayer || []
 
-    // Push GTM initialization event
-    window.dataLayer.push({
-      'gtm.start': new Date().getTime(),
-      event: 'gtm.js',
-    })
+    // Push GTM initialization event before Script loads
+    if (!window.dataLayer.some((item: any) => item.event === 'gtm.js')) {
+      window.dataLayer.push({
+        'gtm.start': new Date().getTime(),
+        event: 'gtm.js',
+      })
 
-    if (process.env.NODE_ENV === 'development') {
-      console.log('[GTM] Google Tag Manager initialized:', GTM_ID)
+      if (process.env.NODE_ENV === 'development') {
+        console.log('[GTM] Google Tag Manager initialized:', GTM_ID)
+      }
     }
-  }, [])
+  }
 
   return (
     <>

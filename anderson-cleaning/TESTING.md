@@ -65,6 +65,8 @@ Playwright provides comprehensive testing including:
 
 The visual regression test suite (`tests/e2e/snapshots.spec.ts`) automatically detects layout drift, spacing issues, duplicate headers/footers, and design inconsistencies by comparing screenshots against baseline images.
 
+> **⚠️ Important:** Visual regression tests require baseline snapshots to be generated and committed to the repository. If you're running these tests for the first time or after cloning the repository, you must generate the baselines using `npm run test:e2e:update` before the tests will pass. See [Generate Baseline Snapshots](#generate-baseline-snapshots-first-time) below.
+
 #### Routes Tested
 
 - `/` (Homepage)

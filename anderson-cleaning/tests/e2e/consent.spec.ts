@@ -1,4 +1,4 @@
-import { test, expect, Page } from '@playwright/test'
+import { test, expect } from '@playwright/test'
 
 /**
  * Consent Mode v2 Tests
@@ -55,8 +55,11 @@ test.describe('Consent Mode v2', () => {
     await page.goto('/')
     await page.waitForLoadState('networkidle')
 
-    // Wait for consent initialization
-    await page.waitForTimeout(1000)
+    // Wait for consent_default event to be pushed
+    await page.waitForFunction(
+      () => window.dataLayer?.some((e: any) => e.event === 'consent_default'),
+      { timeout: 3000 }
+    )
 
     // Check that consent_default event was pushed
     const consentDefaultEvent = dataLayerEvents.find((e) => e.event === 'consent_default')
@@ -77,12 +80,9 @@ test.describe('Consent Mode v2', () => {
   test('should show cookie banner on first visit', async ({ page }) => {
     await page.goto('/')
 
-    // Wait for cookie banner to appear (appears after 1s delay)
-    await page.waitForTimeout(1500)
-
-    // Check if cookie banner is visible
+    // Wait for cookie banner to appear
     const banner = page.locator('text=/We Value Your Privacy/i')
-    await expect(banner).toBeVisible()
+    await expect(banner).toBeVisible({ timeout: 5000 })
 
     // Verify buttons are present
     await expect(page.getByRole('button', { name: /Accept All/i })).toBeVisible()
@@ -97,7 +97,9 @@ test.describe('Consent Mode v2', () => {
     })
 
     await page.goto('/')
-    await page.waitForTimeout(1500)
+
+    // Wait for page to be fully loaded
+    await page.waitForLoadState('networkidle')
 
     // Cookie banner should not appear
     const banner = page.locator('text=/We Value Your Privacy/i')
@@ -124,13 +126,17 @@ test.describe('Consent Mode v2', () => {
     })
 
     await page.goto('/')
-    await page.waitForTimeout(1500)
 
-    // Click "Accept All"
-    await page.getByRole('button', { name: /Accept All/i }).click()
+    // Wait for cookie banner and click "Accept All"
+    const acceptButton = page.getByRole('button', { name: /Accept All/i })
+    await expect(acceptButton).toBeVisible({ timeout: 5000 })
+    await acceptButton.click()
 
-    // Wait for consent update
-    await page.waitForTimeout(500)
+    // Wait for consent update event to be pushed
+    await page.waitForFunction(
+      () => window.dataLayer?.some((e: any) => e.event === 'consent_update'),
+      { timeout: 3000 }
+    )
 
     // Check that consent_update event was pushed with granted status
     const consentUpdateEvent = dataLayerEvents.find((e) => e.event === 'consent_update')
@@ -151,38 +157,34 @@ test.describe('Consent Mode v2', () => {
 
   test('should keep consent denied when "Decline" is clicked', async ({ page }) => {
     await page.goto('/')
-    await page.waitForTimeout(1500)
 
-    // Click "Decline"
-    await page.getByRole('button', { name: /Decline/i }).click()
+    // Wait for cookie banner and click "Decline"
+    const declineButton = page.getByRole('button', { name: /Decline/i })
+    await expect(declineButton).toBeVisible({ timeout: 5000 })
+    await declineButton.click()
 
-    // Wait for update
-    await page.waitForTimeout(500)
+    // Wait for banner to be hidden
+    const banner = page.locator('text=/We Value Your Privacy/i')
+    await expect(banner).not.toBeVisible({ timeout: 3000 })
 
     // Verify consent is saved to localStorage as declined
     const savedConsent = await page.evaluate(() => localStorage.getItem('cookie-consent'))
     expect(savedConsent).toBe('declined')
-
-    // Cookie banner should be hidden
-    const banner = page.locator('text=/We Value Your Privacy/i')
-    await expect(banner).not.toBeVisible()
   })
 
   test('should hide banner when "Dismiss" is clicked without saving consent', async ({
     page,
   }) => {
     await page.goto('/')
-    await page.waitForTimeout(1500)
 
-    // Click "Dismiss"
-    await page.getByRole('button', { name: /Dismiss/i }).click()
+    // Wait for cookie banner and click "Dismiss"
+    const dismissButton = page.getByRole('button', { name: /Dismiss/i })
+    await expect(dismissButton).toBeVisible({ timeout: 5000 })
+    await dismissButton.click()
 
-    // Wait for animation
-    await page.waitForTimeout(500)
-
-    // Cookie banner should be hidden
+    // Wait for banner to be hidden
     const banner = page.locator('text=/We Value Your Privacy/i')
-    await expect(banner).not.toBeVisible()
+    await expect(banner).not.toBeVisible({ timeout: 3000 })
 
     // Consent should NOT be saved (banner will appear on next visit)
     const savedConsent = await page.evaluate(() => localStorage.getItem('cookie-consent'))
@@ -191,21 +193,19 @@ test.describe('Consent Mode v2', () => {
 
   test('should have link to privacy policy', async ({ page }) => {
     await page.goto('/')
-    await page.waitForTimeout(1500)
 
-    // Find privacy policy link
+    // Find privacy policy link in cookie banner
     const privacyLink = page.getByRole('link', { name: /Privacy Policy/i })
-    await expect(privacyLink).toBeVisible()
+    await expect(privacyLink).toBeVisible({ timeout: 5000 })
     await expect(privacyLink).toHaveAttribute('href', '/legal/privacy-policy')
   })
 
   test('should show cookie details when expanded', async ({ page }) => {
     await page.goto('/')
-    await page.waitForTimeout(1500)
 
     // Click on "Cookie Details" to expand
     const detailsToggle = page.locator('summary', { hasText: /Cookie Details/i })
-    await expect(detailsToggle).toBeVisible()
+    await expect(detailsToggle).toBeVisible({ timeout: 5000 })
     await detailsToggle.click()
 
     // Check that cookie categories are visible
@@ -216,18 +216,21 @@ test.describe('Consent Mode v2', () => {
 
   test('should persist consent across page navigations', async ({ page }) => {
     await page.goto('/')
-    await page.waitForTimeout(1500)
 
     // Accept cookies
-    await page.getByRole('button', { name: /Accept All/i }).click()
-    await page.waitForTimeout(500)
+    const acceptButton = page.getByRole('button', { name: /Accept All/i })
+    await expect(acceptButton).toBeVisible({ timeout: 5000 })
+    await acceptButton.click()
+
+    // Wait for banner to be hidden
+    const banner = page.locator('text=/We Value Your Privacy/i')
+    await expect(banner).not.toBeVisible({ timeout: 3000 })
 
     // Navigate to another page
     await page.goto('/contact')
-    await page.waitForTimeout(1500)
+    await page.waitForLoadState('networkidle')
 
     // Cookie banner should not appear
-    const banner = page.locator('text=/We Value Your Privacy/i')
     await expect(banner).not.toBeVisible()
 
     // Consent should still be saved
@@ -247,14 +250,19 @@ test.describe('Consent Mode v2', () => {
     })
 
     await page.goto('/')
-    await page.waitForTimeout(1500)
+
+    // Wait for page to load and accept cookies
+    const acceptButton = page.getByRole('button', { name: /Accept All/i })
+    await expect(acceptButton).toBeVisible({ timeout: 5000 })
 
     // Before consent, no GA requests should be made (except maybe initial pageview with denied consent)
     // Since Consent Mode v2 allows pings with denied consent, we just check that requests respect consent
 
-    // Accept cookies
-    await page.getByRole('button', { name: /Accept All/i }).click()
-    await page.waitForTimeout(1000)
+    await acceptButton.click()
+
+    // Wait for banner to be hidden (indicating consent was processed)
+    const banner = page.locator('text=/We Value Your Privacy/i')
+    await expect(banner).not.toBeVisible({ timeout: 3000 })
 
     // After consent, GA should be able to send requests
     // Note: Actual GA requests depend on GTM_ID being configured
