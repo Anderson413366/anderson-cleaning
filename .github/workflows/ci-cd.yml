@@ -30,6 +30,22 @@ jobs:
       - name: Install npm 11.3.0
         run: npm install -g npm@11.3.0
 
+      - name: Debug - Check package-lock.json
+        working-directory: ./anderson-cleaning
+        run: |
+          echo "=== Package-lock.json info ==="
+          ls -lh package-lock.json
+          echo "=== First 50 lines ==="
+          head -50 package-lock.json
+          echo "=== Package count ==="
+          grep -c '"node_modules/' package-lock.json || echo "0"
+          echo "=== npm version ==="
+          npm --version
+          echo "=== Node version ==="
+          node --version
+          echo "=== Check for webpack in lock file ==="
+          grep -c '"webpack"' package-lock.json || echo "0"
+
       - name: Install dependencies
         working-directory: ./anderson-cleaning
         run: npm ci
