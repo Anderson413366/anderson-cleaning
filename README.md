@@ -2,6 +2,8 @@
 
 This repo is intentionally trimmed down so future maintainers can focus on the `anderson-cleaning/` Next.js application that powers the live Vercel deployment.
 
+> **Note:** The legacy root-level `package.json`, `package-lock.json`, and `node_modules/` have been removed so there is zero ambiguity about where dependencies live. `anderson-cleaning/` is the only package root in this repository.
+
 ## Why `anderson-cleaning/` is the production app
 - `package.json` defines the expected Next.js 14 workflow (dev/build/start), QA tooling (lint, `tsc --noEmit`, Playwright visual suites), and link/i18n audit scripts that the current Vercel project runs before shipping.
 - `README.md` already documents the site map, content focus, and App Router structure (marketing pages, CMS-powered studio, APIs, careers flows), matching what is in production today.
