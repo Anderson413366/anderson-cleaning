@@ -3,7 +3,7 @@
 ## ✅ Option 1: Netlify (EASIEST - 2 minutes)
 
 ### Step 1: Build Your Website
-In Terminal (inside the web_3_blue/web_3_blue folder):
+In Terminal (inside your project folder):
 ```bash
 npm run build
 ```
@@ -15,7 +15,7 @@ npm run build
 
 ### Step 3: Upload Your Site
 1. Open Finder on your Mac
-2. Go to: `Desktop/web_3_blue/web_3_blue/`
+2. Go to your project folder (for example: `Desktop/anderson-cleaning/`)
 3. Find the folder called `dist`
 4. Drag the `dist` folder onto the Netlify Drop website
 5. Wait 10-20 seconds
@@ -44,7 +44,7 @@ vercel login
 - Click the email link they send you
 
 ### Step 3: Deploy
-In Terminal (inside web_3_blue/web_3_blue):
+In Terminal (inside your project folder):
 ```bash
 vercel --prod
 ```

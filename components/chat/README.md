@@ -16,7 +16,7 @@ Switch between providers by changing a single configuration value. No code chang
 ## 📦 File Structure
 
 ```
-anderson-cleaning/
+project-root/
 ├── lib/
 │   ├── chat-config.ts           ← Configuration file (EDIT THIS)
 │   └── load-chat-widget.ts      ← Loader utility (don't edit)

@@ -37,7 +37,7 @@ Before you begin, ensure you have:
 
    ```bash
    git clone https://github.com/anderson-cleaning/website.git
-   cd website/anderson-cleaning
+   cd website
    ```
 
 2. **Install dependencies**:

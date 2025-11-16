@@ -207,7 +207,7 @@ Once you've added all the logo files:
 
 ```bash
 # Navigate to project directory
-cd /path/to/anderson-cleaning
+cd /path/to/project
 
 # Create images directory if it doesn't exist
 mkdir -p public/images

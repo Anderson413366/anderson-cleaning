@@ -15,7 +15,7 @@ The case studies system showcases Anderson Cleaning's real-world results using a
 ## 📂 File Structure
 
 ```
-anderson-cleaning/
+project-root/
 ├── lib/
 │   └── case-studies-data.ts          ← All case study data (add new studies here)
 ├── components/
@@ -244,7 +244,7 @@ Currently using gradient placeholders with icons. To add real images:
 ### Step 1: Add Images to Public Folder
 
 ```
-anderson-cleaning/
+project-root/
 └── public/
     └── images/
         └── case-studies/

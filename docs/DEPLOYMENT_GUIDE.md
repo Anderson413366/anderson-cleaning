@@ -46,13 +46,13 @@ Before deploying to production, ensure:
 # Option 1: Via Vercel Dashboard
 1. Click "Add New Project"
 2. Import from GitHub: Anderson413366/web_3_blue
-3. Select root directory: anderson-cleaning/
+3. Select root directory: project root (`/`)
 4. Framework Preset: Next.js (auto-detected)
 5. Click "Deploy"
 
 # Option 2: Via Vercel CLI
 npm i -g vercel
-cd anderson-cleaning
+cd /path/to/project
 vercel --prod
 ```
 
@@ -68,7 +68,7 @@ vercel --prod
 
 **Root Directory:**
 
-- Set to `anderson-cleaning/` (important!)
+- Set to `/` (project root)
 
 **Node.js Version:**
 

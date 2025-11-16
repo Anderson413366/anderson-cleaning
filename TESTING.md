@@ -20,7 +20,7 @@ This document provides comprehensive testing and QA procedures for the Anderson 
 ### Prerequisites
 
 ```bash
-cd anderson-cleaning
+cd /path/to/project
 npm install
 ```
 
