@@ -140,7 +140,7 @@ test.describe('Visual Regression Tests - Desktop', () => {
   })
 
   test('Privacy Policy Page', async ({ page }) => {
-    await page.goto('/legal/privacy-policy')
+    await page.goto('/legal/privacy')
     await page.waitForLoadState('networkidle')
 
     await expect(page).toHaveScreenshot('privacy-policy.png', {
@@ -281,7 +281,10 @@ test.describe('Component Visual Regression', () => {
     // Wait for cookie banner to appear
     await page.waitForTimeout(1500) // Cookie banner appears after 1s
 
-    const cookieBanner = page.locator('div').filter({ hasText: /we value your privacy/i }).first()
+    const cookieBanner = page
+      .locator('div')
+      .filter({ hasText: /we value your privacy/i })
+      .first()
 
     if (await cookieBanner.isVisible()) {
       await expect(cookieBanner).toHaveScreenshot('cookie-banner.png', {
@@ -295,7 +298,10 @@ test.describe('Component Visual Regression', () => {
     await page.waitForLoadState('networkidle')
 
     // Get the services grid/container
-    const servicesSection = page.locator('section').filter({ has: page.locator('h2') }).first()
+    const servicesSection = page
+      .locator('section')
+      .filter({ has: page.locator('h2') })
+      .first()
     await expect(servicesSection).toHaveScreenshot('services-cards.png', {
       animations: 'disabled',
     })

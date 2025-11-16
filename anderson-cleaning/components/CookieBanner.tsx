@@ -92,7 +92,7 @@ export default function CookieBanner() {
                     and analyze our traffic. By clicking "Accept All," you consent to our use of
                     cookies.{' '}
                     <a
-                      href="/legal/privacy-policy"
+                      href="/legal/privacy"
                       className="text-primary-600 dark:text-primary-400 hover:underline font-medium"
                     >
                       Read our Privacy Policy
