@@ -24,7 +24,7 @@ export default function Home() {
     <div className="min-h-screen bg-white dark:bg-slate-900 transition-colors duration-300">
 
       {/* Promotional Banner */}
-      <div className="bg-gradient-to-r from-accent-500 to-accent-600 text-white py-3">
+      <div className="bg-gradient-to-r from-accent-500 to-accent-600 text-white py-3 mt-16 lg:mt-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 text-center sm:text-left">
             <Sparkles className="h-5 w-5 flex-shrink-0" />

@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import '../styles/globals.css'
 import { ThemeProvider } from '@/lib/ThemeProvider'
+import Header from '@/components/Header'
+import Footer from '@/components/Footer'
 import {
   generateOrganizationSchema,
   generateLocalBusinessSchema,
@@ -143,7 +145,11 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       </head>
       <body className="antialiased">
         <ThemeProvider>
-          {children}
+          <Header />
+          <main className="min-h-screen">
+            {children}
+          </main>
+          <Footer />
         </ThemeProvider>
       </body>
     </html>
