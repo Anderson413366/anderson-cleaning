@@ -96,10 +96,10 @@ export const metadata: Metadata = {
   },
 }
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
   // Get CSP nonce for this request
-  // Returns empty string for static pages - middleware handles CSP at runtime
-  const nonce = getNonce()
+  // This makes the layout dynamic, but ensures proper CSP protection
+  const nonce = await getNonce()
 
   // Generate JSON-LD structured data
   const organizationSchema = generateOrganizationSchema()
