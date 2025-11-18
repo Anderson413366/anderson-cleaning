@@ -316,14 +316,180 @@ export async function getPostsByCategory(category: string, preview = false) {
   )
 }
 
+// ===== PROMOTIONS =====
+
+export async function getActivePromotions(preview = false) {
+  const now = new Date().toISOString()
+
+  return getClient(preview).fetch(
+    groq`*[_type == "promo"
+      && isActive == true
+      && startDate <= $now
+      && endDate >= $now
+    ] | order(priority desc, startDate desc){
+      _id,
+      title,
+      description,
+      discount,
+      discountType,
+      ctaText,
+      ctaLink,
+      displayType,
+      startDate,
+      endDate,
+      priority,
+      "image": image.asset->url,
+      "imageAlt": image.alt,
+      "imageLqip": image.asset->metadata.lqip,
+      backgroundColor,
+      textColor,
+      conditions
+    }`,
+    { now }
+  )
+}
+
+export async function getModalPromotion(preview = false) {
+  const now = new Date().toISOString()
+
+  return getClient(preview).fetch(
+    groq`*[_type == "promo"
+      && isActive == true
+      && displayType == "modal"
+      && startDate <= $now
+      && endDate >= $now
+    ] | order(priority desc)[0]{
+      _id,
+      title,
+      description,
+      discount,
+      discountType,
+      ctaText,
+      ctaLink,
+      "image": image.asset->url,
+      "imageAlt": image.alt,
+      "imageLqip": image.asset->metadata.lqip,
+      backgroundColor,
+      textColor,
+      conditions
+    }`,
+    { now }
+  )
+}
+
+export async function getBannerPromotion(preview = false) {
+  const now = new Date().toISOString()
+
+  return getClient(preview).fetch(
+    groq`*[_type == "promo"
+      && isActive == true
+      && displayType == "banner"
+      && startDate <= $now
+      && endDate >= $now
+    ] | order(priority desc)[0]{
+      _id,
+      title,
+      description,
+      discount,
+      discountType,
+      ctaText,
+      ctaLink,
+      backgroundColor,
+      textColor
+    }`,
+    { now }
+  )
+}
+
+// ===== FAQs =====
+
+export async function getAllFAQs(preview = false) {
+  return getClient(preview).fetch(
+    groq`*[_type == "faq" && isActive == true] | order(order asc){
+      _id,
+      question,
+      answer,
+      category,
+      order
+    }`
+  )
+}
+
+export async function getFAQsByCategory(category: string, preview = false) {
+  return getClient(preview).fetch(
+    groq`*[_type == "faq" && isActive == true && category == $category] | order(order asc){
+      _id,
+      question,
+      answer
+    }`,
+    { category }
+  )
+}
+
+// ===== HERO SECTIONS =====
+
+export async function getHeroByPage(page: string, preview = false) {
+  return getClient(preview).fetch(
+    groq`*[_type == "hero" && page == $page && isActive == true][0]{
+      _id,
+      headline,
+      subheadline,
+      "backgroundImage": backgroundImage.asset->url,
+      "backgroundImageAlt": backgroundImage.alt,
+      "backgroundImageLqip": backgroundImage.asset->metadata.lqip,
+      primaryCTA,
+      secondaryCTA,
+      trustSignals
+    }`,
+    { page }
+  )
+}
+
+// ===== PRICING =====
+
+export async function getAllPricingPlans(preview = false) {
+  return getClient(preview).fetch(
+    groq`*[_type == "pricing" && isActive == true] | order(order asc){
+      _id,
+      name,
+      tagline,
+      basePrice,
+      pricingUnit,
+      features,
+      isPopular,
+      ctaText,
+      ctaLink,
+      minimumCommitment,
+      serviceArea
+    }`
+  )
+}
+
+export async function getPopularPricing(preview = false) {
+  return getClient(preview).fetch(
+    groq`*[_type == "pricing" && isActive == true && isPopular == true] | order(order asc)[0]{
+      _id,
+      name,
+      tagline,
+      basePrice,
+      pricingUnit,
+      features,
+      ctaText,
+      ctaLink,
+      minimumCommitment
+    }`
+  )
+}
+
 // ===== SEARCH =====
 
 export async function searchContent(searchTerm: string, preview = false) {
   return getClient(preview).fetch(
     groq`*[
-      _type in ["service", "industry", "post", "page"] &&
+      _type in ["service", "industry", "post", "page", "faq"] &&
       (
         title match $searchTerm ||
+        question match $searchTerm ||
         summary match $searchTerm ||
         excerpt match $searchTerm ||
         description match $searchTerm
@@ -333,7 +499,7 @@ export async function searchContent(searchTerm: string, preview = false) {
       _id,
       title,
       "slug": slug.current,
-      "preview": coalesce(summary, excerpt, description)
+      "preview": coalesce(summary, excerpt, description, question)
     }`,
     { searchTerm: `${searchTerm}*` }
   )

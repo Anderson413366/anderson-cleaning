@@ -7,6 +7,10 @@ import beforeAfter from './beforeAfter'
 import badge from './badge'
 import page from './page'
 import post from './post'
+import promo from './promo'
+import faq from './faq'
+import hero from './hero'
+import pricing from './pricing'
 
 export const schemaTypes = [
   // Site configuration
@@ -21,4 +25,8 @@ export const schemaTypes = [
   badge,
   page,
   post,
+  promo,
+  faq,
+  hero,
+  pricing,
 ]
