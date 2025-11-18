@@ -283,7 +283,7 @@ export default function Home() {
                     </p>
                     {!service.available && (
                       <span className="inline-block px-2 py-1 bg-warning-light dark:bg-warning-dark/30 text-warning-dark dark:text-warning-light text-xs rounded">
-                        Contracted clients only
+                        Premium add-on
                       </span>
                     )}
                   </div>

@@ -31,9 +31,9 @@ export default defineType({
     }),
     defineField({
       name: 'contractedOnly',
-      title: 'Contracted Clients Only',
+      title: 'Premium Add-on',
       type: 'boolean',
-      description: 'Is this service only available to contracted clients?',
+      description: 'Is this a premium add-on service for regular cleaning clients?',
       initialValue: false,
     }),
     defineField({

@@ -259,7 +259,7 @@ const servicesData: Record<string, ServiceData> = {
       {
         question: 'Can I get floor care without regular cleaning service?',
         answer:
-          'Floor care services are available to contracted cleaning clients only. This ensures we can properly schedule and resource the work.',
+          'Floor care services are premium add-ons for our regular cleaning clients. This ensures we can properly schedule and resource the work.',
       },
     ],
   },
@@ -415,7 +415,7 @@ const servicesData: Record<string, ServiceData> = {
       {
         question: 'Can I get post-construction cleaning as a one-time service?',
         answer:
-          'Post-construction cleaning is available to contracted clients only. This ensures proper scheduling and resource allocation.',
+          'Post-construction cleaning is a premium add-on for our regular cleaning clients. This ensures proper scheduling and resource allocation.',
       },
     ],
   },
@@ -590,7 +590,7 @@ export default function ServiceDetailPage() {
             </Button>
             {service.availability === 'contracted' && (
               <span className="inline-block px-4 py-2 bg-yellow-500/20 border border-yellow-400/30 rounded-full text-yellow-300 text-sm font-medium">
-                Available to Contracted Clients Only
+                Premium Add-on Service
               </span>
             )}
           </div>

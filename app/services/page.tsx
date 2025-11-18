@@ -274,7 +274,7 @@ export default function ServicesPage() {
                   </h3>
                   {service.available === 'contracted' && (
                     <span className="inline-block px-3 py-1 bg-yellow-100 dark:bg-yellow-900/30 text-yellow-800 dark:text-yellow-300 text-xs font-semibold rounded-full mb-3">
-                      Contracted Clients Only
+                      Premium Add-on
                     </span>
                   )}
                   <p className="text-gray-600 dark:text-gray-400 mb-4">{service.description}</p>

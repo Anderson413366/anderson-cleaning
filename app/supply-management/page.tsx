@@ -51,7 +51,7 @@ export default function SupplyManagementPage() {
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
             <div className="inline-block px-4 py-2 bg-yellow-500/20 border border-yellow-400/30 rounded-full text-yellow-300 text-sm font-medium mb-6">
-              Available to Contracted Cleaning Clients Only
+              Premium Add-on Service
             </div>
 
             <h1 className="text-4xl md:text-5xl font-extrabold mb-6">Never Run Out Again</h1>
@@ -377,7 +377,7 @@ export default function SupplyManagementPage() {
                 <AlertCircle className="h-8 w-8 text-yellow-600 dark:text-yellow-400 flex-shrink-0 mt-1" />
                 <div>
                   <h3 className="text-xl font-bold text-yellow-900 dark:text-yellow-300 mb-3">
-                    Available to Contracted Cleaning Clients Only
+                    Premium Add-on Service
                   </h3>
                   <p className="text-yellow-800 dark:text-yellow-200 mb-4">
                     Supply Management is exclusively available to facilities with an active Anderson
