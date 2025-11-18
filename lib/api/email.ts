@@ -27,7 +27,8 @@ export interface EmailAttachment {
 async function sendViaResend(options: EmailOptions): Promise<{ success: boolean; id?: string }> {
   const apiKey = process.env.RESEND_API_KEY
   if (!apiKey) {
-    throw new Error('RESEND_API_KEY not configured')
+    console.warn('[EMAIL] RESEND_API_KEY not configured - skipping email send')
+    return { success: false, id: 'no-api-key' }
   }
 
   const fromEmail = options.from || process.env.RESEND_FROM_EMAIL || 'noreply@anderson-cleaning-site.vercel.app'
