@@ -19,6 +19,8 @@ export const metadata: Metadata = {
     'Specialized commercial cleaning services for healthcare, corporate offices, schools, retail stores, and manufacturing facilities. Expert solutions for your industry.',
 }
 
+export const revalidate = 86400
+
 export default function IndustriesPage() {
   const filteredIndustries = industries.filter(ind =>
     ['healthcare', 'corporate-offices', 'educational-facilities', 'retail-stores', 'manufacturing-warehouses'].includes(ind.slug)

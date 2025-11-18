@@ -1,8 +1,9 @@
-'use client'
-
+import Link from 'next/link'
 import { Button } from '@/components/ui/Button'
 import ProcessSteps from '@/components/sections/ProcessSteps'
 import { CheckCircle2, Clock, Shield, Users, Sparkles } from 'lucide-react'
+
+export const revalidate = 86400
 
 export default function OfficeCleaningPage() {
   return (
@@ -19,9 +20,11 @@ export default function OfficeCleaningPage() {
               Nightly and weekly cleaning programs that keep your workplace spotless, safe, and
               productive.
             </p>
-            <Button variant="accent" size="lg" onClick={() => (window.location.href = '/quote')}>
-              Get Your Free Quote
-            </Button>
+            <Link href="/quote">
+              <Button variant="accent" size="lg">
+                Get Your Free Quote
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
@@ -225,9 +228,11 @@ export default function OfficeCleaningPage() {
             </div>
 
             <div className="text-center">
-              <Button variant="primary" size="lg" onClick={() => (window.location.href = '/quote')}>
-                Get Your Custom Quote
-              </Button>
+              <Link href="/quote">
+                <Button variant="primary" size="lg">
+                  Get Your Custom Quote
+                </Button>
+              </Link>
               <p className="text-sm text-gray-600 mt-4">
                 We respond within 30 minutes with your personalized proposal
               </p>
@@ -247,9 +252,11 @@ export default function OfficeCleaningPage() {
             Schedule a free walk-through and get your customized cleaning proposal.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button variant="accent" size="lg" onClick={() => (window.location.href = '/quote')}>
-              Get Your Free Quote
-            </Button>
+            <Link href="/quote">
+              <Button variant="accent" size="lg">
+                Get Your Free Quote
+              </Button>
+            </Link>
             <Button
               variant="outline"
               size="lg"

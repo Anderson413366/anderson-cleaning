@@ -1,6 +1,3 @@
-'use client'
-
-import { useState } from 'react'
 import Link from 'next/link'
 import { Button } from '@/components/ui/Button'
 import BeforeAfterSlider from '@/components/sections/BeforeAfterSlider'
@@ -19,6 +16,8 @@ import {
   ArrowRight,
   Sparkles,
 } from 'lucide-react'
+
+export const revalidate = 86400
 
 export default function Home() {
   return (

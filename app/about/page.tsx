@@ -1,8 +1,7 @@
-'use client'
 
+import Link from 'next/link'
 import { Button } from '@/components/ui/Button'
 import StatsBar from '@/components/sections/StatsBar'
-import { useRouter } from 'next/navigation'
 import {
   Users,
   Heart,
@@ -16,8 +15,9 @@ import {
   Sparkles,
 } from 'lucide-react'
 
+export const revalidate = 86400
+
 export default function AboutPage() {
-  const router = useRouter()
 
   return (
     <div className="min-h-screen bg-white dark:bg-slate-900 transition-colors duration-300">
@@ -367,17 +367,16 @@ export default function AboutPage() {
                 cleaning you can count on.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button variant="accent" size="lg" onClick={() => router.push('/quote')}>
-                  Get Your Free Quote
-                </Button>
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="border-white text-white hover:bg-white/10"
-                  onClick={() => router.push('/services')}
-                >
-                  View Our Services
-                </Button>
+                <Link href="/quote">
+                  <Button variant="accent" size="lg">
+                    Get Your Free Quote
+                  </Button>
+                </Link>
+                <Link href="/services">
+                  <Button variant="outline" size="lg" className="border-white text-white hover:bg-white/10">
+                    View Our Services
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>

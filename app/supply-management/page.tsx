@@ -1,7 +1,5 @@
-'use client'
-
+import Link from 'next/link'
 import { Button } from '@/components/ui/Button'
-import { useRouter } from 'next/navigation'
 import StructuredData from '@/components/StructuredData'
 import {
   Package,
@@ -18,8 +16,9 @@ import {
   Truck,
 } from 'lucide-react'
 
+export const revalidate = 86400
+
 export default function SupplyManagementPage() {
-  const router = useRouter()
 
   // JSON-LD Structured Data for SEO
   const jsonLd = {
@@ -62,9 +61,11 @@ export default function SupplyManagementPage() {
               trash liners, and all facility consumables.
             </p>
 
-            <Button variant="accent" size="lg" onClick={() => router.push('/contact')}>
-              Add to Your Account
-            </Button>
+            <Link href="/contact">
+              <Button variant="accent" size="lg">
+                Add to Your Account
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
@@ -407,17 +408,16 @@ export default function SupplyManagementPage() {
             Add Supply Management to your cleaning contract and never worry about running out again.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="accent" size="lg" onClick={() => router.push('/contact')}>
-              Add to My Account
-            </Button>
-            <Button
-              variant="outline"
-              size="lg"
-              className="border-white text-white hover:bg-white/10"
-              onClick={() => router.push('/quote')}
-            >
-              Get Cleaning Service First
-            </Button>
+            <Link href="/contact">
+              <Button variant="accent" size="lg">
+                Add to My Account
+              </Button>
+            </Link>
+            <Link href="/quote">
+              <Button variant="outline" size="lg" className="border-white text-white hover:bg-white/10">
+                Get Cleaning Service First
+              </Button>
+            </Link>
           </div>
         </div>
       </section>

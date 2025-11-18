@@ -1,5 +1,4 @@
-'use client'
-
+import Link from 'next/link'
 import {
   Sparkles,
   Users,
@@ -12,6 +11,8 @@ import {
 } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
 import StructuredData from '@/components/StructuredData'
+
+export const revalidate = 86400
 
 export default function ServicesPage() {
   // JSON-LD Structured Data for SEO
@@ -171,16 +172,16 @@ export default function ServicesPage() {
             and compliance.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button variant="accent" size="lg" onClick={() => (window.location.href = '/quote')}>
-              Request a Quote
-            </Button>
-            <Button
-              variant="outline"
-              size="lg"
-              className="border-white text-white hover:bg-white/10"
-            >
-              Schedule Walk-Through
-            </Button>
+            <Link href="/quote">
+              <Button variant="accent" size="lg">
+                Request a Quote
+              </Button>
+            </Link>
+            <Link href="/contact">
+              <Button variant="outline" size="lg" className="border-white text-white hover:bg-white/10">
+                Schedule Walk-Through
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
@@ -408,9 +409,11 @@ export default function ServicesPage() {
           <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
             Get your free quote today and discover why businesses trust us with their facilities.
           </p>
-          <Button variant="accent" size="lg" onClick={() => (window.location.href = '/quote')}>
-            Get Your Free Quote
-          </Button>
+          <Link href="/quote">
+            <Button variant="accent" size="lg">
+              Get Your Free Quote
+            </Button>
+          </Link>
         </div>
       </section>
     </div>

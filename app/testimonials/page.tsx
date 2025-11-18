@@ -1,21 +1,12 @@
-'use client'
 
-import { useState } from 'react'
+import Link from 'next/link'
 import { Button } from '@/components/ui/Button'
-import { Star, ExternalLink, Filter } from 'lucide-react'
+import { Star, ExternalLink } from 'lucide-react'
 import StructuredData from '@/components/StructuredData'
+import TestimonialsExplorer from '@/components/testimonials/TestimonialsExplorer'
+import { Testimonial } from '@/lib/testimonials/types'
 
-interface Testimonial {
-  id: string
-  quote: string
-  name: string
-  title: string
-  company: string
-  industry: string
-  service: string
-  rating: number
-  date: string
-}
+export const revalidate = 86400
 
 const testimonials: Testimonial[] = [
   {
@@ -165,42 +156,9 @@ const testimonials: Testimonial[] = [
 ]
 
 export default function TestimonialsPage() {
-  const [selectedIndustry, setSelectedIndustry] = useState<string>('All')
-  const [selectedService, setSelectedService] = useState<string>('All')
-
-  // Get unique industries and services for filters
-  const industries = ['All', ...Array.from(new Set(testimonials.map((t) => t.industry)))]
-  const services = ['All', ...Array.from(new Set(testimonials.map((t) => t.service)))]
-
-  // Filter testimonials
-  const filteredTestimonials = testimonials.filter((testimonial) => {
-    const matchesIndustry = selectedIndustry === 'All' || testimonial.industry === selectedIndustry
-    const matchesService = selectedService === 'All' || testimonial.service === selectedService
-    return matchesIndustry && matchesService
-  })
-
-  // Calculate average rating
   const averageRating = (
     testimonials.reduce((sum, t) => sum + t.rating, 0) / testimonials.length
   ).toFixed(1)
-
-  // Render star rating
-  const renderStars = (rating: number) => {
-    return (
-      <div className="flex items-center gap-1" aria-label={`${rating} out of 5 stars`}>
-        {[1, 2, 3, 4, 5].map((star) => (
-          <Star
-            key={star}
-            className={`h-5 w-5 ${
-              star <= rating
-                ? 'fill-yellow-400 text-yellow-400'
-                : 'fill-gray-200 text-gray-200 dark:fill-gray-700 dark:text-gray-700'
-            }`}
-          />
-        ))}
-      </div>
-    )
-  }
 
   // JSON-LD Schema for Review Aggregate
   const jsonLd = {
@@ -249,129 +207,20 @@ export default function TestimonialsPage() {
             Don't just take our word for it. Here's what our clients have to say about Anderson
             Cleaning's professional commercial cleaning services.
           </p>
-          <Button
-            variant="outline"
-            size="lg"
-            className="border-white text-white hover:bg-white/10"
-            onClick={() =>
-              window.open('https://www.google.com/search?q=Anderson+Cleaning+reviews', '_blank')
-            }
+          <a
+            href="https://www.google.com/search?q=Anderson+Cleaning+reviews"
+            target="_blank"
+            rel="noreferrer"
           >
-            <ExternalLink className="h-5 w-5 mr-2" />
-            Read & Leave a Google Review
-          </Button>
+            <Button variant="outline" size="lg" className="border-white text-white hover:bg-white/10">
+              <ExternalLink className="h-5 w-5 mr-2" />
+              Read & Leave a Google Review
+            </Button>
+          </a>
         </div>
       </section>
 
-      {/* Filters */}
-      <section className="py-12 bg-gray-50 dark:bg-slate-800/50 border-b border-gray-200 dark:border-slate-700">
-        <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto">
-            <div className="flex items-center gap-2 mb-4">
-              <Filter className="h-5 w-5 text-primary-600 dark:text-primary-400" />
-              <h2 className="text-lg font-semibold text-gray-900 dark:text-gray-100">
-                Filter Testimonials
-              </h2>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div>
-                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                  Industry
-                </label>
-                <select
-                  value={selectedIndustry}
-                  onChange={(e) => setSelectedIndustry(e.target.value)}
-                  className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-slate-800 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
-                >
-                  {industries.map((industry) => (
-                    <option key={industry} value={industry}>
-                      {industry === 'All' ? 'All Industries' : industry}
-                    </option>
-                  ))}
-                </select>
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                  Service
-                </label>
-                <select
-                  value={selectedService}
-                  onChange={(e) => setSelectedService(e.target.value)}
-                  className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-slate-800 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
-                >
-                  {services.map((service) => (
-                    <option key={service} value={service}>
-                      {service === 'All' ? 'All Services' : service}
-                    </option>
-                  ))}
-                </select>
-              </div>
-            </div>
-            {(selectedIndustry !== 'All' || selectedService !== 'All') && (
-              <div className="mt-4">
-                <p className="text-sm text-gray-600 dark:text-gray-400">
-                  Showing {filteredTestimonials.length} of {testimonials.length} testimonials
-                </p>
-              </div>
-            )}
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials Grid */}
-      <section className="py-20">
-        <div className="container mx-auto px-6">
-          <div className="max-w-7xl mx-auto">
-            {filteredTestimonials.length === 0 ? (
-              <div className="text-center py-12">
-                <p className="text-xl text-gray-600 dark:text-gray-400">
-                  No testimonials match your filter criteria. Try adjusting your filters.
-                </p>
-              </div>
-            ) : (
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {filteredTestimonials.map((testimonial) => (
-                  <div
-                    key={testimonial.id}
-                    className="bg-white dark:bg-slate-800 rounded-xl p-8 shadow-lg hover:shadow-2xl transition-shadow duration-300 flex flex-col"
-                  >
-                    {/* Rating */}
-                    <div className="mb-4">{renderStars(testimonial.rating)}</div>
-
-                    {/* Quote */}
-                    <blockquote className="flex-1 mb-6">
-                      <p className="text-gray-700 dark:text-gray-300 leading-relaxed italic">
-                        "{testimonial.quote}"
-                      </p>
-                    </blockquote>
-
-                    {/* Author Info */}
-                    <div className="border-t border-gray-200 dark:border-gray-700 pt-4">
-                      <p className="font-bold text-gray-900 dark:text-gray-100">
-                        {testimonial.name}
-                      </p>
-                      <p className="text-sm text-gray-600 dark:text-gray-400">
-                        {testimonial.title}
-                      </p>
-                      <p className="text-sm text-gray-600 dark:text-gray-400">
-                        {testimonial.company}
-                      </p>
-                      <div className="flex gap-2 mt-3">
-                        <span className="inline-block px-3 py-1 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 text-xs font-medium rounded-full">
-                          {testimonial.industry}
-                        </span>
-                        <span className="inline-block px-3 py-1 bg-accent-100 dark:bg-accent-900/30 text-accent-700 dark:text-accent-300 text-xs font-medium rounded-full">
-                          {testimonial.service}
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            )}
-          </div>
-        </div>
-      </section>
+      <TestimonialsExplorer testimonials={testimonials} />
 
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-primary-700 to-primary-900 text-white">
@@ -384,20 +233,21 @@ export default function TestimonialsPage() {
             Cleaning with their facilities.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="accent" size="lg" onClick={() => (window.location.href = '/quote')}>
-              Get Your Free Quote
-            </Button>
-            <Button
-              variant="outline"
-              size="lg"
-              className="border-white text-white hover:bg-white/10"
-              onClick={() =>
-                window.open('https://www.google.com/search?q=Anderson+Cleaning+reviews', '_blank')
-              }
+            <Link href="/quote">
+              <Button variant="accent" size="lg">
+                Get Your Free Quote
+              </Button>
+            </Link>
+            <a
+              href="https://www.google.com/search?q=Anderson+Cleaning+reviews"
+              target="_blank"
+              rel="noreferrer"
             >
-              <ExternalLink className="h-5 w-5 mr-2" />
-              Leave a Review
-            </Button>
+              <Button variant="outline" size="lg" className="border-white text-white hover:bg-white/10">
+                <ExternalLink className="h-5 w-5 mr-2" />
+                Leave a Review
+              </Button>
+            </a>
           </div>
         </div>
       </section>

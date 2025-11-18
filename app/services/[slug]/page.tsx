@@ -1,9 +1,10 @@
-'use client'
-
-import { useParams, useRouter } from 'next/navigation'
+import Link from 'next/link'
+import { notFound } from 'next/navigation'
 import { Button } from '@/components/ui/Button'
 import { CheckCircle2, ArrowLeft, Clock, Shield, Users, Award } from 'lucide-react'
 import StructuredData from '@/components/StructuredData'
+
+export const revalidate = 86400
 
 // Service data structure
 interface ServiceData {
@@ -499,60 +500,41 @@ const servicesData: Record<string, ServiceData> = {
   },
 }
 
-export default function ServiceDetailPage() {
-  const params = useParams()
-  const router = useRouter()
-  const slug = params.slug as string
-
-  const service = servicesData[slug]
+export default function ServiceDetailPage({ params }: { params: { slug: string } }) {
+  const service = servicesData[params.slug]
 
   // JSON-LD Structured Data for SEO
-  const jsonLd = service
-    ? {
-        '@context': 'https://schema.org',
-        '@type': 'Service',
-        name: service.title,
-        description: service.heroDescription,
-        provider: {
-          '@type': 'LocalBusiness',
-          name: 'Anderson Cleaning',
-          address: {
-            '@type': 'PostalAddress',
-            streetAddress: '103 Wayside Avenue',
-            addressLocality: 'West Springfield',
-            addressRegion: 'MA',
-            postalCode: '01089',
-            addressCountry: 'US',
-          },
-          telephone: '+1-555-123-4567',
-        },
-        areaServed: {
-          '@type': 'State',
-          name: 'Massachusetts',
-        },
-        offers: {
-          '@type': 'Offer',
-          availability: 'https://schema.org/InStock',
-          priceCurrency: 'USD',
-        },
-      }
-    : null
-
-  // If service not found, show 404-like message
   if (!service) {
-    return (
-      <div className="min-h-screen bg-white dark:bg-slate-900">
-        <div className="container mx-auto px-6 py-20 text-center">
-          <h1 className="text-4xl font-bold text-gray-900 dark:text-gray-100 mb-4">
-            Service Not Found
-          </h1>
-          <p className="text-gray-600 dark:text-gray-400 mb-8">
-            The service you're looking for doesn't exist or has been moved.
-          </p>
-          <Button onClick={() => router.push('/services')}>View All Services</Button>
-        </div>
-      </div>
-    )
+    notFound()
+  }
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: service.title,
+    description: service.heroDescription,
+    provider: {
+      '@type': 'LocalBusiness',
+      name: 'Anderson Cleaning',
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: '103 Wayside Avenue',
+        addressLocality: 'West Springfield',
+        addressRegion: 'MA',
+        postalCode: '01089',
+        addressCountry: 'US',
+      },
+      telephone: '+1-555-123-4567',
+    },
+    areaServed: {
+      '@type': 'State',
+      name: 'Massachusetts',
+    },
+    offers: {
+      '@type': 'Offer',
+      availability: 'https://schema.org/InStock',
+      priceCurrency: 'USD',
+    },
   }
 
   return (
@@ -563,13 +545,13 @@ export default function ServiceDetailPage() {
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-br from-blue-700 via-blue-800 to-indigo-900 text-white">
         <div className="container mx-auto px-6">
-          <button
-            onClick={() => router.push('/services')}
+          <Link
+            href="/services"
             className="flex items-center text-blue-200 hover:text-white mb-6 transition-colors"
           >
             <ArrowLeft className="h-4 w-4 mr-2" />
             Back to All Services
-          </button>
+          </Link>
 
           <div className="flex items-start gap-6">
             <div className="text-7xl">{service.icon}</div>
@@ -581,9 +563,11 @@ export default function ServiceDetailPage() {
           </div>
 
           <div className="mt-8 flex items-center gap-4">
-            <Button variant="accent" size="lg" onClick={() => router.push('/quote')}>
-              Get Your Free Quote
-            </Button>
+            <Link href="/quote">
+              <Button variant="accent" size="lg">
+                Get Your Free Quote
+              </Button>
+            </Link>
             {service.availability === 'contracted' && (
               <span className="inline-block px-4 py-2 bg-yellow-500/20 border border-yellow-400/30 rounded-full text-yellow-300 text-sm font-medium">
                 Premium Add-on Service
@@ -820,9 +804,11 @@ export default function ServiceDetailPage() {
                   <strong>Free On-Site Consultation:</strong> Get an exact quote tailored to your
                   facility
                 </p>
-                <Button variant="primary" size="lg" onClick={() => router.push('/quote')}>
-                  Request Your Free Quote
-                </Button>
+                <Link href="/quote">
+                  <Button variant="primary" size="lg">
+                    Request Your Free Quote
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>
@@ -858,9 +844,11 @@ export default function ServiceDetailPage() {
           <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
             Get your free quote today and experience the Anderson Cleaning difference.
           </p>
-          <Button variant="accent" size="lg" onClick={() => router.push('/quote')}>
-            Request Your Free Quote
-          </Button>
+          <Link href="/quote">
+            <Button variant="accent" size="lg">
+              Request Your Free Quote
+            </Button>
+          </Link>
         </div>
       </section>
     </div>

@@ -1,4 +1,4 @@
-'use client'
+export const revalidate = 86400
 
 import Link from 'next/link'
 import Image from 'next/image'
