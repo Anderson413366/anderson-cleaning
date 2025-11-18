@@ -72,6 +72,8 @@ export const quoteStep2Schema = z.object({
   cleaningFrequency: z.enum(['daily', '2-3x-week', 'weekly', 'bi-weekly', 'monthly', 'one-time'], {
     required_error: 'Please select a cleaning frequency',
   }),
+  numRestrooms: z.string().optional(),
+  numFloors: z.string().optional(),
   desiredStartDate: z
     .string()
     .optional()
@@ -113,6 +115,15 @@ export const quoteStep4Schema = z.object({
     .string()
     .max(500, 'Special requests must be less than 500 characters')
     .optional(),
+  specialRequirements: z
+    .string()
+    .max(500, 'Special requirements must be less than 500 characters')
+    .optional(),
+  startDate: z.string().optional(),
+  currentProvider: z.string().optional(),
+  budgetRange: z.string().optional(),
+  howHeard: z.string().optional(),
+  additionalNotes: z.string().max(1000).optional(),
   consent: z.boolean().refine((val) => val === true, {
     message: 'You must agree to be contacted to submit this quote request',
   }),
@@ -149,6 +160,7 @@ export const contactFormSchema = z.object({
     .regex(/^[a-zA-Z\s'-]+$/, 'Name can only contain letters, spaces, hyphens, and apostrophes'),
   email: z.string().email('Please enter a valid email address').toLowerCase(),
   phone: z.string().regex(phoneRegex, 'Please enter a valid phone number (e.g., 555-123-4567)'),
+  company: z.string().max(200, 'Company name must be less than 200 characters').optional(),
   message: z
     .string()
     .min(10, 'Message must be at least 10 characters')
