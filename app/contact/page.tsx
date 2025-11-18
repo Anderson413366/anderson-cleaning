@@ -65,10 +65,10 @@ export default function ContactPage() {
                     <div>
                       <p className="font-semibold text-gray-900 dark:text-gray-100">Email</p>
                       <a
-                        href="mailto:info@anderson-cleaning-site.vercel.app"
+                        href="mailto:info@andersoncleaning.com"
                         className="text-primary-600 dark:text-primary-400 hover:underline"
                       >
-                        info@anderson-cleaning-site.vercel.app
+                        info@andersoncleaning.com
                       </a>
                       <p className="text-sm text-gray-600 dark:text-gray-400">General Inquiries</p>
                     </div>

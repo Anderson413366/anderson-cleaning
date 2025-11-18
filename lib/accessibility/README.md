@@ -670,7 +670,7 @@ useEffect(() => {
 We welcome feedback on the accessibility of this website. If you encounter any accessibility barriers, please contact us:
 
 **Email:** accessibility@andersoncleaning.com
-**Phone:** (413) 733-3334
+**Phone:** (413) 306-5053
 **Address:** 103 Wayside Ave, West Springfield, MA 01089
 
 We aim to respond within 5 business days.
