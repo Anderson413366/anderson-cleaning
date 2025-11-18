@@ -3,7 +3,8 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { Menu, X, Phone, Mail } from 'lucide-react'
+import { Menu, X, Phone, Mail, Moon, Sun } from 'lucide-react'
+import { useTheme } from '@/lib/ThemeProvider'
 
 const navigation = [
   { name: 'Home', href: '/' },
@@ -21,6 +22,7 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const pathname = usePathname()
+  const { theme, toggleTheme } = useTheme()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -82,8 +84,19 @@ export default function Header() {
           ))}
         </div>
 
-        {/* CTA Button */}
-        <div className="hidden lg:flex lg:flex-1 lg:justify-end">
+        {/* Dark Mode Toggle & CTA Button */}
+        <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:items-center lg:gap-4">
+          <button
+            onClick={toggleTheme}
+            className="rounded-md p-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+            aria-label="Toggle dark mode"
+          >
+            {theme === 'dark' ? (
+              <Sun className="h-5 w-5" />
+            ) : (
+              <Moon className="h-5 w-5" />
+            )}
+          </button>
           <Link
             href="/quote"
             className="rounded-md bg-blue-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-blue-500 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
@@ -141,6 +154,22 @@ export default function Header() {
                     Get a Quote
                   </Link>
                   <div className="mt-4 space-y-2">
+                    <button
+                      onClick={toggleTheme}
+                      className="flex items-center gap-2 text-sm text-gray-600 hover:text-blue-600 w-full"
+                    >
+                      {theme === 'dark' ? (
+                        <>
+                          <Sun className="h-4 w-4" />
+                          Light Mode
+                        </>
+                      ) : (
+                        <>
+                          <Moon className="h-4 w-4" />
+                          Dark Mode
+                        </>
+                      )}
+                    </button>
                     <a
                       href="tel:4133065053"
                       className="flex items-center gap-2 text-sm text-gray-600 hover:text-blue-600"

@@ -84,7 +84,7 @@ export async function POST(request: NextRequest) {
         source_page: request.headers.get('referer') || '/contact',
         ip_address: request.headers.get('x-forwarded-for') || request.headers.get('x-real-ip') || null,
         user_agent: request.headers.get('user-agent') || null,
-      })
+      } as any)
 
       if (dbError) {
         console.error('[CONTACT] Database error:', dbError)
