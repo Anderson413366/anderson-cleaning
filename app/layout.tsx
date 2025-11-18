@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { headers } from 'next/headers'
 import { Inter } from 'next/font/google'
 import '../styles/globals.css'
 import { ThemeProvider } from '@/lib/ThemeProvider'
@@ -98,13 +99,14 @@ export const metadata: Metadata = {
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+  const nonce = headers().get('x-nonce')
   // Generate JSON-LD structured data
   const organizationSchema = generateOrganizationSchema()
   const localBusinessSchema = generateLocalBusinessSchema()
   const websiteSchema = generateWebsiteSchema()
 
   return (
-    <NonceProvider>
+    <NonceProvider nonce={nonce}>
       <html lang="en" className={inter.variable}>
         <head>
         {/* Resource Hints - Preconnect to critical third-party origins */}

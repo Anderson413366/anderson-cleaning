@@ -1,7 +1,7 @@
 'use client'
 
 import { useContext } from 'react'
-import { NonceContext } from './nonce-context'
+import { NonceContext } from './NonceProvider'
 
 export function useNonce() {
   const nonce = useContext(NonceContext)

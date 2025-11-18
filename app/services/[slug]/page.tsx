@@ -501,7 +501,8 @@ const servicesData: Record<string, ServiceData> = {
 }
 
 export default function ServiceDetailPage({ params }: { params: { slug: string } }) {
-  const service = servicesData[params.slug]
+  const slug = params.slug
+  const service = servicesData[slug]
 
   // JSON-LD Structured Data for SEO
   if (!service) {

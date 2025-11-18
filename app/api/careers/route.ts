@@ -15,8 +15,7 @@ import { checkRateLimit, getClientIdentifier } from '@/lib/api/rateLimit'
 import { sanitizeObject, sanitizeFilename } from '@/lib/api/sanitize'
 import { sendEmail, getNotificationEmail, logEmailSend } from '@/lib/api/email'
 import { generateCareersEmail } from '@/lib/api/emailTemplates'
-import { createSupabaseServer } from '@/lib/supabase/server'
-import type { Database } from '@/lib/supabase/types'
+import { submitCareerApplication } from '@/lib/forms/submissions'
 
 // Use Node.js runtime for file upload handling
 export const runtime = 'nodejs'
@@ -131,30 +130,22 @@ export async function POST(request: NextRequest) {
       }
     }
 
-    // Save to Supabase database (resume file is NOT saved to DB, only sent via email)
-    try {
-      const supabase = createSupabaseServer()
-      const { error: dbError } = await supabase.from('career_applications').insert({
-        name: `${validData.firstName} ${validData.lastName}`,
-        email: validData.email,
-        phone: validData.phone,
-        position: validData.applyingFor || 'General Application',
-        cover_letter: validData.message || null,
-        resume_filename: resumeAttachment?.filename || null,
-        source_page: request.headers.get('referer') || '/apply',
-        ip_address: request.headers.get('x-forwarded-for') || request.headers.get('x-real-ip') || null,
-        user_agent: request.headers.get('user-agent') || null,
-      } as any)
+    const dbResult = await submitCareerApplication({
+      name: `${validData.firstName} ${validData.lastName}`,
+      email: validData.email,
+      phone: validData.phone,
+      position: validData.applyingFor || 'General Application',
+      cover_letter: validData.message || null,
+      resume_filename: resumeAttachment?.filename || null,
+      source_page: request.headers.get('referer') || '/careers',
+      ip_address: request.headers.get('x-forwarded-for') || request.headers.get('x-real-ip') || null,
+      user_agent: request.headers.get('user-agent') || null,
+    })
 
-      if (dbError) {
-        console.error('[CAREERS] Database error:', dbError)
-        // Continue anyway - we still want to send email even if DB fails
-      } else {
-        console.log('[CAREERS] Saved to database successfully')
-      }
-    } catch (dbError) {
-      console.error('[CAREERS] Database save failed:', dbError)
-      // Continue anyway
+    if (!dbResult.success) {
+      console.error('[CAREERS] Database error:', dbResult.error)
+    } else {
+      console.log('[CAREERS] Saved to database successfully')
     }
 
     // Generate email content

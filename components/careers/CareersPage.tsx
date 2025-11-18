@@ -12,7 +12,6 @@ import EmployeeStoriesSection from './EmployeeStoriesSection'
 import CompanyCultureSection from './CompanyCultureSection'
 import ApplicationProcessSection from './ApplicationProcessSection'
 import CareerFAQSection from './CareerFAQSection'
-import ApplicationForm from './ApplicationForm' // This will house the form sections
 import Alert from '@/components/ui/Alert'
 import Modal from '@/components/ui/Modal'
 import { SectionConfig, SectionError } from '@/lib/careers/types'

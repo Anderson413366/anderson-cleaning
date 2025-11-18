@@ -15,7 +15,7 @@ import { checkRateLimit, getClientIdentifier } from '@/lib/api/rateLimit'
 import { sanitizeObject, validateHoneypot } from '@/lib/api/sanitize'
 import { sendEmail, getNotificationEmail, logEmailSend } from '@/lib/api/email'
 import { generateQuoteEmail } from '@/lib/api/emailTemplates'
-import { createSupabaseServer } from '@/lib/supabase/server'
+import { submitQuote } from '@/lib/forms/submissions'
 
 export const runtime = 'edge' // Use Edge Runtime for faster responses
 
@@ -73,41 +73,33 @@ export async function POST(request: NextRequest) {
 
     const data = validationResult.data
 
-    // Save to Supabase database
-    try {
-      const supabase = createSupabaseServer()
-      const { error: dbError } = await supabase.from('quote_requests').insert({
-        company_name: data.company,
-        contact_name: data.fullName,
-        email: data.email,
-        phone: data.phone,
-        facility_type: data.facilityType,
-        square_footage: data.squareFootage,
-        num_restrooms: data.numRestrooms || null,
-        num_floors: data.numFloors || null,
-        address: data.address || null,
-        services: data.services,
-        cleaning_frequency: data.cleaningFrequency,
-        special_requirements: data.specialRequirements || null,
-        start_date: data.startDate || null,
-        current_provider: data.currentProvider || null,
-        budget_range: data.budgetRange || null,
-        how_heard: data.howHeard || null,
-        additional_notes: data.additionalNotes || null,
-        source_page: request.headers.get('referer') || '/quote',
-        ip_address: request.headers.get('x-forwarded-for') || request.headers.get('x-real-ip') || null,
-        user_agent: request.headers.get('user-agent') || null,
-      } as any)
+    const dbResult = await submitQuote({
+      company_name: data.company,
+      contact_name: data.fullName,
+      email: data.email,
+      phone: data.phone,
+      facility_type: data.facilityType,
+      square_footage: String(data.squareFootage),
+      num_restrooms: data.numRestrooms || null,
+      num_floors: data.numFloors || null,
+      address: data.address || null,
+      services: data.services,
+      cleaning_frequency: data.cleaningFrequency,
+      special_requirements: data.specialRequirements || null,
+      start_date: data.startDate || null,
+      current_provider: data.currentProvider || null,
+      budget_range: data.budgetRange || null,
+      how_heard: data.howHeard || null,
+      additional_notes: data.additionalNotes || null,
+      source_page: request.headers.get('referer') || '/quote',
+      ip_address: request.headers.get('x-forwarded-for') || request.headers.get('x-real-ip') || null,
+      user_agent: request.headers.get('user-agent') || null,
+    })
 
-      if (dbError) {
-        console.error('[QUOTE] Database error:', dbError)
-        // Continue anyway - we still want to send email even if DB fails
-      } else {
-        console.log('[QUOTE] Saved to database successfully')
-      }
-    } catch (dbError) {
-      console.error('[QUOTE] Database save failed:', dbError)
-      // Continue anyway
+    if (!dbResult.success) {
+      console.error('[QUOTE] Database error:', dbResult.error)
+    } else {
+      console.log('[QUOTE] Saved to database successfully')
     }
 
     // Generate email content
