@@ -8,7 +8,76 @@ import { SECTIONS_CONFIG } from '@/lib/careers/constants'
 import { Edit } from 'lucide-react'
 import Alert from '@/components/ui/Alert'
 import { validateSectionData, allSectionsValid } from '@/lib/careers/utils/validation'
-import { FormDataShape, WorkHistoryEntry, ReferenceEntry } from '@/lib/careers/types'
+import { FormDataShape, WorkHistoryEntry, ReferenceEntry, SectionError } from '@/lib/careers/types'
+
+const API_FIELD_TO_FORM_FIELD: Record<string, string> = {
+  firstName: 'personalInfo.firstName',
+  lastName: 'personalInfo.lastName',
+  email: 'personalInfo.email',
+  phone: 'personalInfo.phone',
+  applyingFor: 'jobDetails.applyingFor',
+  message: 'uploads.coverLetterText',
+}
+
+const serializeApplicationData = (formData: FormDataShape): string => {
+  return JSON.stringify(formData, (key, value) => {
+    if (typeof File !== 'undefined' && value instanceof File) {
+      return {
+        name: value.name,
+        size: value.size,
+        type: value.type,
+      }
+    }
+    return value
+  })
+}
+
+const buildSubmissionPayload = (formData: FormDataShape): FormData => {
+  const payload = new FormData()
+  payload.append('firstName', formData.personalInfo.firstName?.trim() || '')
+  payload.append('lastName', formData.personalInfo.lastName?.trim() || '')
+  payload.append('email', formData.personalInfo.email?.trim().toLowerCase() || '')
+  payload.append('phone', formData.personalInfo.phone?.trim() || '')
+  payload.append(
+    'applyingFor',
+    formData.jobDetails.applyingFor?.trim() || 'General Application'
+  )
+
+  const message =
+    formData.uploads.coverLetterText ||
+    formData.gettingToKnowYou.wishWeAsked ||
+    'Career application submitted via website.'
+  payload.append('message', message)
+
+  if (formData.uploads.resume) {
+    payload.append('resume', formData.uploads.resume, formData.uploads.resume.name)
+  }
+
+  if (formData.uploads.driversLicense) {
+    payload.append(
+      'driversLicense',
+      formData.uploads.driversLicense,
+      formData.uploads.driversLicense.name
+    )
+  }
+
+  payload.append('applicationDetails', serializeApplicationData(formData))
+
+  return payload
+}
+
+const mapApiErrorsToFormErrors = (details?: Record<string, string | string[]>): SectionError => {
+  if (!details) return {}
+
+  return Object.entries(details).reduce<SectionError>((acc, [apiField, value]) => {
+    const mappedField = API_FIELD_TO_FORM_FIELD[apiField] || apiField
+    const message = Array.isArray(value) ? value[0] : value
+    if (mappedField && message) {
+      acc[mappedField] = message
+    }
+    return acc
+  }, {})
+}
 
 const ReviewSection: React.FC = () => {
   const context = useAppContext()
@@ -65,36 +134,32 @@ const ReviewSection: React.FC = () => {
       return
     }
 
-    // Simulate API call
     try {
-      // console.log("Submitting application Data:", JSON.stringify(formData, (key, value) => value instanceof File ? value.name : value, 2));
-      // Create a FormData object for actual submission if files are involved
-      const submissionFormData = new FormData()
-      Object.entries(formData).forEach(([sectionKey, sectionValue]) => {
-        Object.entries(sectionValue as object).forEach(([fieldKey, fieldValue]) => {
-          if (fieldValue instanceof File) {
-            submissionFormData.append(`${sectionKey}.${fieldKey}`, fieldValue, fieldValue.name)
-          } else if (
-            Array.isArray(fieldValue) &&
-            fieldKey === 'entries' &&
-            (sectionKey === 'workHistory' || sectionKey === 'references')
-          ) {
-            submissionFormData.append(`${sectionKey}.${fieldKey}`, JSON.stringify(fieldValue))
-          } else if (typeof fieldValue === 'object' && fieldValue !== null) {
-            submissionFormData.append(`${sectionKey}.${fieldKey}`, JSON.stringify(fieldValue))
-          } else {
-            submissionFormData.append(`${sectionKey}.${fieldKey}`, String(fieldValue))
-          }
-        })
+      const submissionFormData = buildSubmissionPayload(formData)
+
+      const response = await fetch('/api/careers', {
+        method: 'POST',
+        body: submissionFormData,
       })
 
-      // For testing, log the FormData keys/values
-      // for (let pair of submissionFormData.entries()) {
-      //   console.log(pair[0]+ ', ' + pair[1]);
-      // }
+      const result = await response.json().catch(() => null)
 
-      await new Promise((resolve) => setTimeout(resolve, 2000)) // Simulate network delay
-      console.log('Simulated submission successful for:', formData.personalInfo.firstName)
+      if (!response.ok || !result?.success) {
+        const mappedErrors = mapApiErrorsToFormErrors(result?.details)
+        if (Object.keys(mappedErrors).length > 0) {
+          setFormErrors(mappedErrors)
+          const firstField = Object.keys(mappedErrors)[0]
+          const sectionId = firstField.split('.')[0]
+          const sectionIndex = SECTIONS_CONFIG.findIndex((section) => section.id === sectionId)
+          if (sectionIndex !== -1) {
+            setCurrentSectionIndex(sectionIndex)
+            window.scrollTo(0, 0)
+          }
+        }
+        setApplicationStatus('error')
+        return
+      }
+
       setApplicationStatus('success')
     } catch (error) {
       console.error('Submission error:', error)

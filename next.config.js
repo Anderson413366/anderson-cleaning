@@ -130,9 +130,9 @@ const nextConfig = {
         permanent: true,
       },
       {
-        source: '/careers',
-        destination: '/apply',
-        permanent: false,
+        source: '/apply',
+        destination: '/careers',
+        permanent: true,
       },
     ]
   },
