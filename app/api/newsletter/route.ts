@@ -10,6 +10,7 @@
 
 import { NextRequest, NextResponse } from 'next/server'
 import { z } from 'zod'
+import { captureException, captureMessage } from '@sentry/nextjs'
 import { checkRateLimit, getClientIdentifier } from '@/lib/api/rateLimit'
 import { sanitizeEmail } from '@/lib/api/sanitize'
 import { sendEmail, getNotificationEmail, logEmailSend } from '@/lib/api/email'
@@ -68,9 +69,9 @@ export async function POST(request: NextRequest) {
     })
 
     if (!dbResult.success) {
-      console.error('[NEWSLETTER] Database error:', dbResult.error)
+      captureException(new Error(dbResult.error), { tags: { route: 'newsletter' } })
     } else {
-      console.log('[NEWSLETTER] Saved to database successfully')
+      captureMessage('newsletter_saved_to_db', { level: 'info', extra: { route: 'newsletter' } })
     }
 
     // Generate email notification
@@ -95,9 +96,9 @@ export async function POST(request: NextRequest) {
     )
 
     // Log successful subscription
-    console.log('[NEWSLETTER] New subscription:', {
-      email,
-      timestamp: new Date().toISOString(),
+    captureMessage('newsletter_subscription_success', {
+      level: 'info',
+      extra: { route: 'newsletter', submittedAt: new Date().toISOString() },
     })
 
     return NextResponse.json(
@@ -108,7 +109,7 @@ export async function POST(request: NextRequest) {
       { status: 200 }
     )
   } catch (error) {
-    console.error('[NEWSLETTER] Error:', error)
+    captureException(error, { tags: { route: 'newsletter' } })
 
     return NextResponse.json(
       {

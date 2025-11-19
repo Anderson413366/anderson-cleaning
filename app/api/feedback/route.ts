@@ -6,8 +6,10 @@
 
 import { NextRequest, NextResponse } from 'next/server'
 import { z } from 'zod'
+import { captureException, captureMessage } from '@sentry/nextjs'
 import { checkRateLimit, getClientIdentifier } from '@/lib/api/rateLimit'
 import { sanitizeObject } from '@/lib/api/sanitize'
+import { submitFeedback } from '@/lib/forms/submissions'
 
 export const runtime = 'edge'
 
@@ -46,24 +48,26 @@ export async function POST(request: NextRequest) {
 
     const data = validationResult.data
 
-    // Log feedback (in production, save to database)
-    console.log('[FEEDBACK]', {
-      pageId: data.pageId,
+    const dbResult = await submitFeedback({
+      page_id: data.pageId,
       vote: data.vote,
-      hasFeedback: !!data.feedback,
-      timestamp: data.timestamp,
+      feedback: data.feedback ?? null,
+      submitted_at: data.timestamp,
+      user_agent: data.userAgent ?? null,
     })
 
-    // TODO: Save to database or send notification
-    // Example: await saveFeedbackToDatabase(data)
-    // Example: await sendFeedbackNotification(data)
+    if (!dbResult.success) {
+      captureException(new Error(dbResult.error), { tags: { route: 'feedback' } })
+    } else {
+      captureMessage('feedback_saved_to_db', { level: 'info', extra: { route: 'feedback' } })
+    }
 
     return NextResponse.json(
       { success: true, message: 'Thank you for your feedback!' },
       { status: 200 }
     )
   } catch (error) {
-    console.error('[FEEDBACK] Error:', error)
+    captureException(error, { tags: { route: 'feedback' } })
     return NextResponse.json(
       { success: false, error: 'Internal server error' },
       { status: 500 }

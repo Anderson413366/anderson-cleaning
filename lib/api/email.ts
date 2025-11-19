@@ -1,3 +1,5 @@
+import { captureException, captureMessage } from '@sentry/nextjs'
+
 /**
  * Email Service
  *
@@ -27,7 +29,7 @@ export interface EmailAttachment {
 async function sendViaResend(options: EmailOptions): Promise<{ success: boolean; id?: string }> {
   const apiKey = process.env.RESEND_API_KEY
   if (!apiKey) {
-    console.warn('[EMAIL] RESEND_API_KEY not configured - skipping email send')
+    captureMessage('email_api_key_missing', { level: 'warning' })
     return { success: false, id: 'no-api-key' }
   }
 
@@ -64,7 +66,7 @@ async function sendViaResend(options: EmailOptions): Promise<{ success: boolean;
     const data = await response.json()
     return { success: true, id: data.id }
   } catch (error) {
-    console.error('Email send error:', error)
+    captureException(error, { tags: { module: 'email' } })
     throw error
   }
 }
@@ -104,11 +106,8 @@ export function getNotificationEmail(): string {
  * Log email send attempt (for debugging)
  */
 export function logEmailSend(options: EmailOptions, result: { success: boolean; id?: string }) {
-  console.log('[EMAIL]', {
-    to: options.to,
-    subject: options.subject,
-    success: result.success,
-    id: result.id,
-    timestamp: new Date().toISOString(),
+  captureMessage('email_send_attempt', {
+    level: result.success ? 'info' : 'warning',
+    extra: { success: result.success, id: result.id ?? 'n/a' },
   })
 }

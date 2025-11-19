@@ -10,6 +10,7 @@
  */
 
 import { NextRequest, NextResponse } from 'next/server'
+import { captureException, captureMessage } from '@sentry/nextjs'
 import { quoteFormSchema } from '@/lib/validation/quote'
 import { checkRateLimit, getClientIdentifier } from '@/lib/api/rateLimit'
 import { sanitizeObject, validateHoneypot } from '@/lib/api/sanitize'
@@ -49,7 +50,10 @@ export async function POST(request: NextRequest) {
 
     // Check honeypot
     if (!validateHoneypot(body.website)) {
-      console.warn('[SECURITY] Honeypot triggered:', clientId)
+      captureMessage('quote_honeypot_triggered', {
+        level: 'warning',
+        extra: { clientId },
+      })
       // Return success to avoid revealing the honeypot
       return NextResponse.json({ success: true, message: 'Quote request submitted successfully' })
     }
@@ -97,9 +101,9 @@ export async function POST(request: NextRequest) {
     })
 
     if (!dbResult.success) {
-      console.error('[QUOTE] Database error:', dbResult.error)
+      captureException(new Error(dbResult.error), { tags: { route: 'quote' } })
     } else {
-      console.log('[QUOTE] Saved to database successfully')
+      captureMessage('quote_saved_to_db', { level: 'info', extra: { route: 'quote' } })
     }
 
     // Generate email content
@@ -125,12 +129,12 @@ export async function POST(request: NextRequest) {
     )
 
     // Log successful submission
-    console.log('[QUOTE] Submission successful:', {
-      name: data.fullName,
-      company: data.company,
-      email: data.email,
-      facilityType: data.facilityType,
-      timestamp: new Date().toISOString(),
+    captureMessage('quote_submission_success', {
+      level: 'info',
+      extra: {
+        route: 'quote',
+        submittedAt: new Date().toISOString(),
+      },
     })
 
     // Track in Google Analytics dataLayer (if GTM is configured)
@@ -151,7 +155,7 @@ export async function POST(request: NextRequest) {
       }
     )
   } catch (error) {
-    console.error('[QUOTE] Error:', error)
+    captureException(error, { tags: { route: 'quote' } })
 
     // Don't expose internal errors to client
     return NextResponse.json(

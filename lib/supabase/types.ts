@@ -176,6 +176,35 @@ export interface Database {
           user_agent?: string | null
         }
       }
+      page_feedback: {
+        Row: {
+          id: string
+          created_at: string
+          page_id: string
+          vote: Database['public']['Enums']['feedback_vote']
+          feedback: string | null
+          submitted_at: string
+          user_agent: string | null
+        }
+        Insert: {
+          id?: string
+          created_at?: string
+          page_id: string
+          vote: Database['public']['Enums']['feedback_vote']
+          feedback?: string | null
+          submitted_at: string
+          user_agent?: string | null
+        }
+        Update: {
+          id?: string
+          created_at?: string
+          page_id?: string
+          vote?: Database['public']['Enums']['feedback_vote']
+          feedback?: string | null
+          submitted_at?: string
+          user_agent?: string | null
+        }
+      }
       newsletter_subscriptions: {
         Row: {
           id: string
@@ -213,7 +242,7 @@ export interface Database {
       [_ in never]: never
     }
     Enums: {
-      [_ in never]: never
+      feedback_vote: 'yes' | 'no'
     }
   }
 }

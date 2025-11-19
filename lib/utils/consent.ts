@@ -1,3 +1,5 @@
+import { captureException, captureMessage } from '@sentry/nextjs'
+
 /**
  * Google Consent Mode v2 Integration
  *
@@ -50,7 +52,7 @@ export function initializeConsentMode() {
 
   // Check if gtag is available
   if (!window.gtag) {
-    console.warn('[Consent] gtag not available. Make sure Google Analytics is loaded.')
+    captureMessage('consent_gtag_missing', { level: 'warning' })
     return
   }
 
@@ -68,7 +70,7 @@ export function initializeConsentMode() {
   }
 
   if (process.env.NODE_ENV === 'development') {
-    console.log('[Consent Mode v2] Initialized with default:', DEFAULT_CONSENT)
+    captureMessage('consent_initialized', { level: 'debug' })
   }
 }
 
@@ -87,10 +89,10 @@ export function updateConsent(accepted: boolean) {
   saveConsentChoice(accepted ? 'accepted' : 'declined')
 
   if (process.env.NODE_ENV === 'development') {
-    console.log(
-      `[Consent Mode v2] Updated to ${accepted ? 'ACCEPTED' : 'DECLINED'}:`,
-      consentSettings
-    )
+    captureMessage('consent_updated', {
+      level: 'info',
+      extra: { accepted },
+    })
   }
 }
 
@@ -120,7 +122,7 @@ export function getSavedConsent(): 'accepted' | 'declined' | null {
       return consent
     }
   } catch (error) {
-    console.error('[Consent] Error reading consent from localStorage:', error)
+    captureException(error, { tags: { module: 'consent' } })
   }
 
   return null
@@ -136,7 +138,7 @@ function saveConsentChoice(choice: 'accepted' | 'declined') {
     localStorage.setItem('cookie-consent', choice)
     localStorage.setItem('cookie-consent-date', new Date().toISOString())
   } catch (error) {
-    console.error('[Consent] Error saving consent to localStorage:', error)
+    captureException(error, { tags: { module: 'consent' } })
   }
 }
 
@@ -172,10 +174,10 @@ export function resetConsent() {
     }
 
     if (process.env.NODE_ENV === 'development') {
-      console.log('[Consent Mode v2] Reset to default')
+      captureMessage('consent_reset', { level: 'debug' })
     }
   } catch (error) {
-    console.error('[Consent] Error resetting consent:', error)
+    captureException(error, { tags: { module: 'consent' } })
   }
 }
 

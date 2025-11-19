@@ -10,6 +10,7 @@
  */
 
 import { NextRequest, NextResponse } from 'next/server'
+import { captureException, captureMessage } from '@sentry/nextjs'
 import { contactFormSchema } from '@/lib/validation/quote'
 import { checkRateLimit, getClientIdentifier } from '@/lib/api/rateLimit'
 import { sanitizeObject, validateHoneypot } from '@/lib/api/sanitize'
@@ -49,7 +50,10 @@ export async function POST(request: NextRequest) {
 
     // Check honeypot
     if (!validateHoneypot(body.website)) {
-      console.warn('[SECURITY] Honeypot triggered:', clientId)
+      captureMessage('contact_honeypot_triggered', {
+        level: 'warning',
+        extra: { clientId },
+      })
       return NextResponse.json({ success: true, message: 'Message sent successfully' })
     }
 
@@ -84,9 +88,9 @@ export async function POST(request: NextRequest) {
     })
 
     if (!dbResult.success) {
-      console.error('[CONTACT] Database error:', dbResult.error)
+      captureException(new Error(dbResult.error), { tags: { route: 'contact' } })
     } else {
-      console.log('[CONTACT] Saved to database successfully')
+      captureMessage('contact_saved_to_db', { level: 'info', extra: { route: 'contact' } })
     }
 
     // Generate email content
@@ -112,10 +116,9 @@ export async function POST(request: NextRequest) {
     )
 
     // Log successful submission
-    console.log('[CONTACT] Submission successful:', {
-      name: data.name,
-      email: data.email,
-      timestamp: new Date().toISOString(),
+    captureMessage('contact_submission_success', {
+      level: 'info',
+      extra: { route: 'contact', submittedAt: new Date().toISOString() },
     })
 
     return NextResponse.json(
@@ -133,7 +136,7 @@ export async function POST(request: NextRequest) {
       }
     )
   } catch (error) {
-    console.error('[CONTACT] Error:', error)
+    captureException(error, { tags: { route: 'contact' } })
 
     return NextResponse.json(
       {

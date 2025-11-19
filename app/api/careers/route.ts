@@ -11,6 +11,7 @@
 
 import { NextRequest, NextResponse } from 'next/server'
 import { z } from 'zod'
+import { captureException, captureMessage } from '@sentry/nextjs'
 import { checkRateLimit, getClientIdentifier } from '@/lib/api/rateLimit'
 import { sanitizeObject, sanitizeFilename } from '@/lib/api/sanitize'
 import { sendEmail, getNotificationEmail, logEmailSend } from '@/lib/api/email'
@@ -143,9 +144,9 @@ export async function POST(request: NextRequest) {
     })
 
     if (!dbResult.success) {
-      console.error('[CAREERS] Database error:', dbResult.error)
+      captureException(new Error(dbResult.error), { tags: { route: 'careers' } })
     } else {
-      console.log('[CAREERS] Saved to database successfully')
+      captureMessage('careers_saved_to_db', { level: 'info', extra: { route: 'careers' } })
     }
 
     // Generate email content
@@ -175,12 +176,13 @@ export async function POST(request: NextRequest) {
     )
 
     // Log successful application
-    console.log('[CAREERS] Application submitted:', {
-      name: `${validData.firstName} ${validData.lastName}`,
-      email: validData.email,
-      position: validData.applyingFor,
-      hasResume: !!resumeAttachment,
-      timestamp: new Date().toISOString(),
+    captureMessage('careers_application_submitted', {
+      level: 'info',
+      extra: {
+        route: 'careers',
+        position: validData.applyingFor ?? 'General Application',
+        hasResume: !!resumeAttachment,
+      },
     })
 
     return NextResponse.json(
@@ -191,7 +193,7 @@ export async function POST(request: NextRequest) {
       { status: 200 }
     )
   } catch (error) {
-    console.error('[CAREERS] Error:', error)
+    captureException(error, { tags: { route: 'careers' } })
 
     return NextResponse.json(
       {

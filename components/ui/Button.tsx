@@ -1,8 +1,8 @@
 'use client'
 
 import React, { forwardRef } from 'react'
-import { ButtonProps } from '@/lib/careers/types'
 import { Loader2 } from 'lucide-react'
+import type { ButtonProps } from './button.types'
 
 const Button = forwardRef<HTMLButtonElement | HTMLDivElement, ButtonProps>(
   ({ className, variant, size, asChild = false, isLoading = false, children, ...props }, ref) => {

@@ -1,3 +1,5 @@
+import { captureMessage } from '@sentry/nextjs'
+
 /**
  * Rate Limiting Middleware
  *
@@ -73,6 +75,10 @@ export function checkRateLimit(
   // Window still active
   if (entry.count >= limit) {
     // Rate limit exceeded
+    captureMessage('rate_limit_exceeded', {
+      level: 'warning',
+      extra: { identifier },
+    })
     return {
       success: false,
       limit,
