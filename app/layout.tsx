@@ -120,22 +120,16 @@ export default async function RootLayout({ children }: { children: React.ReactNo
                   return;
                 }
                 window.customElements.define = function(name, constructor, options) {
-                  var stack = (new Error().stack || '').split('\n');
+                  var stack = (new Error().stack || '').split('\\n');
                   var caller = stack[2] || 'unknown';
                   if (window.customElements.get(name)) {
-                    console.warn(
-                      '[CustomElementsGuard] BLOCKED duplicate registration:',
-                      name,
-                      '\nAttempted by:', caller,
-                      '\nFirst registered by:', registry[name] || 'unknown'
-                    );
+                    console.warn('[CustomElementsGuard] BLOCKED duplicate registration:', name);
+                    console.warn('Attempted by:', caller);
+                    console.warn('First registered by:', registry[name] || 'unknown');
                     return;
                   }
-                  console.log(
-                    '[CustomElementsGuard] Registering:',
-                    name,
-                    '\nBy:', caller
-                  );
+                  console.log('[CustomElementsGuard] Registering:', name);
+                  console.log('By:', caller);
                   registry[name] = caller;
                   return originalDefine.call(window.customElements, name, constructor, options);
                 };
