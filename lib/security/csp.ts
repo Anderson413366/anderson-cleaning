@@ -37,6 +37,7 @@ export const cspDirectives: CSPDirectives = {
     'https://client.crisp.chat',
     'https://assets.calendly.com',
     'https://cdn.sanity.io',
+    'https://vercel.live',
   ],
 
   'style-src': [

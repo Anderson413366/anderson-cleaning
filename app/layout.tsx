@@ -16,7 +16,6 @@ import {
   generateWebsiteSchema,
 } from '@/lib/seo/jsonld'
 import StructuredData from '@/components/StructuredData'
-import CustomElementPatch from '@/components/CustomElementPatch'
 
 // Load Inter font with Next.js font optimization
 const inter = Inter({
@@ -139,7 +138,6 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       </head>
       <body className="antialiased">
         <ConsentInit />
-        <CustomElementPatch />
         <AccessibilityProvider>
           <ThemeProvider>
             <SkipLink />
