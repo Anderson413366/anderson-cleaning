@@ -13,7 +13,7 @@ const Button = forwardRef<HTMLButtonElement | HTMLDivElement, ButtonProps>(
     switch (variant) {
       case 'outline':
         variantStyles =
-          'border border-input hover:bg-accent hover:text-accent-foreground dark:border-slate-700 dark:hover:bg-slate-800 dark:hover:text-slate-100'
+          'border border-input hover:bg-accent hover:text-accent-foreground dark:border-slate-700 dark:text-white dark:hover:bg-slate-800 dark:hover:text-slate-100'
         break
       case 'ghost':
         variantStyles =

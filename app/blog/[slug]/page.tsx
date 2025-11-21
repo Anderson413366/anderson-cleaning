@@ -505,7 +505,7 @@ export default async function BlogPost({
   return (
     <div className="min-h-screen bg-white dark:bg-slate-900">
       {/* Article Header */}
-      <article className="py-12">
+      <article className="pt-28 pb-12">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           {/* Back Button */}
           <div className="mb-8">
