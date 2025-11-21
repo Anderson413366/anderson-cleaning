@@ -4,7 +4,7 @@
  * Clean, accessible HTML email templates for form submissions
  */
 
-import type { QuoteFormData, ContactFormData } from '@/lib/validation/quote'
+import type { QuoteFormData, ContactFormData, QuickQuoteFormData } from '@/lib/validation/quote'
 import {
   facilityTypeLabels,
   cleaningFrequencyLabels,
@@ -226,6 +226,83 @@ ${data.specialRequests ? `Special Requests:\n${data.specialRequests}` : ''}
 
 ---
 Respond within 30 minutes to maintain your service promise!
+  `.trim()
+
+  return {
+    html: getBaseTemplate(content),
+    text,
+  }
+}
+
+/**
+ * Quick Quote Email Template
+ */
+export function generateQuickQuoteEmail(data: QuickQuoteFormData): { html: string; text: string } {
+  const facilityLabel = facilityTypeLabels[data.facilityType] || data.facilityType
+  const sourceLabel =
+    {
+      hero: 'Homepage Hero Form',
+      inline: 'Inline Quote Form',
+      'inline-compact': 'Inline Quote Form (Compact)',
+    }[data.source ?? 'inline'] ?? 'Inline Quote Form'
+
+  const content = `
+    <div class="content">
+      <p style="font-size: 16px; margin: 0 0 24px 0;">
+        You have received a new <strong>quick quote request</strong> from your website (${sourceLabel}).
+      </p>
+
+      <div class="section">
+        <h2 class="section-title">Contact Information</h2>
+        <div class="field">
+          <span class="field-label">Name:</span>
+          <span class="field-value">${escapeHtml(data.name)}</span>
+        </div>
+        ${
+          data.company
+            ? `<div class="field">
+          <span class="field-label">Company:</span>
+          <span class="field-value">${escapeHtml(data.company)}</span>
+        </div>`
+            : ''
+        }
+        <div class="field">
+          <span class="field-label">Email:</span>
+          <span class="field-value"><a href="mailto:${escapeHtml(data.email)}">${escapeHtml(
+            data.email
+          )}</a></span>
+        </div>
+        <div class="field">
+          <span class="field-label">Phone:</span>
+          <span class="field-value"><a href="tel:${data.phone}">${formatPhoneNumber(
+            data.phone
+          )}</a></span>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2 class="section-title">Project Overview</h2>
+        <div class="field">
+          <span class="field-label">Facility Type:</span>
+          <span class="field-value">${facilityLabel}</span>
+        </div>
+        <p style="margin-top: 16px; color: #1f2937;">
+          This lead submitted the quick quote form. Follow up within 30 minutes to keep the promise displayed on the site.
+        </p>
+      </div>
+    </div>
+  `
+
+  const text = `
+NEW QUICK QUOTE REQUEST - Anderson Cleaning (${sourceLabel})
+
+Contact:
+- Name: ${data.name}
+${data.company ? `- Company: ${data.company}\n` : ''}- Email: ${data.email}
+- Phone: ${formatPhoneNumber(data.phone)}
+- Facility Type: ${facilityLabel}
+
+Follow up within 30 minutes.
   `.trim()
 
   return {

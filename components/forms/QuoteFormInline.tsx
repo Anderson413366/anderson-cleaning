@@ -25,6 +25,16 @@
 
 import React, { useState, FormEvent, ChangeEvent } from 'react'
 import { Button } from '@/components/ui/Button'
+import { submitQuickQuoteRequest } from '@/lib/forms/quickQuoteClient'
+import {
+  FACILITY_TYPES,
+  ERROR_MESSAGES,
+  RESPONSE_TIME_TEXT,
+  formatPhoneNumber,
+  isValidEmail,
+  isValidPhone,
+  isValidName,
+} from '@/components/forms/quickQuoteHelpers'
 
 // ============================================================================
 // TYPES & INTERFACES
@@ -64,73 +74,6 @@ interface QuoteFormInlineProps {
 }
 
 // ============================================================================
-// CONSTANTS
-// ============================================================================
-
-const FACILITY_TYPES = [
-  { value: '', label: 'Select facility type...' },
-  { value: 'office', label: 'Office Building' },
-  { value: 'medical', label: 'Medical Office/Clinic' },
-  { value: 'educational', label: 'Educational Facility' },
-  { value: 'retail', label: 'Retail Store' },
-  { value: 'manufacturing', label: 'Manufacturing/Warehouse' },
-  { value: 'other', label: 'Other' },
-]
-
-const ERROR_MESSAGES = {
-  name: 'Please enter your full name (at least 2 characters)',
-  email: 'Please enter a valid business email address',
-  phone: 'Please enter a valid phone number',
-  facilityType: 'Please select your facility type',
-}
-
-const RESPONSE_TIME_TEXT = '✓ We respond in 30 minutes or less'
-
-// ============================================================================
-// UTILITY FUNCTIONS
-// ============================================================================
-
-/**
- * Format phone number as (555) 123-4567
- */
-const formatPhoneNumber = (value: string): string => {
-  // Remove all non-numeric characters
-  const phoneNumber = value.replace(/\D/g, '')
-
-  // Format as (555) 123-4567
-  if (phoneNumber.length <= 3) {
-    return phoneNumber
-  } else if (phoneNumber.length <= 6) {
-    return `(${phoneNumber.slice(0, 3)}) ${phoneNumber.slice(3)}`
-  } else {
-    return `(${phoneNumber.slice(0, 3)}) ${phoneNumber.slice(3, 6)}-${phoneNumber.slice(6, 10)}`
-  }
-}
-
-/**
- * Validate email format
- */
-const isValidEmail = (email: string): boolean => {
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-  return emailRegex.test(email)
-}
-
-/**
- * Validate phone number (must be 10 digits)
- */
-const isValidPhone = (phone: string): boolean => {
-  const phoneDigits = phone.replace(/\D/g, '')
-  return phoneDigits.length === 10
-}
-
-/**
- * Validate name (at least 2 characters)
- */
-const isValidName = (name: string): boolean => {
-  return name.trim().length >= 2
-}
-
-// ============================================================================
 // COMPONENT
 // ============================================================================
 
@@ -157,6 +100,8 @@ export default function QuoteFormInline({
   // Form submission states
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSuccess, setIsSuccess] = useState(false)
+  const [submitError, setSubmitError] = useState<string | null>(null)
+  const [honeypot, setHoneypot] = useState('')
 
   // Track which fields have been touched (for validation UX)
   const [touched, setTouched] = useState<Record<string, boolean>>({})
@@ -265,6 +210,8 @@ export default function QuoteFormInline({
     })
     setTouched({})
     setIsSuccess(false)
+    setSubmitError(null)
+    setHoneypot('')
   }
 
   /**
@@ -287,17 +234,27 @@ export default function QuoteFormInline({
     }
 
     setIsSubmitting(true)
+    setSubmitError(null)
 
     try {
-      await new Promise((resolve) => setTimeout(resolve, 1000))
+      await submitQuickQuoteRequest({
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        facilityType: formData.facilityType,
+        source: variant === 'compact' ? 'inline-compact' : 'inline',
+        website: honeypot,
+      })
+
       setIsSuccess(true)
       onSubmitSuccess?.(formData)
       setTimeout(resetInlineForm, 3000)
     } catch (error) {
-      setErrors((prev) => ({
-        ...prev,
-        form: 'Unable to submit your request right now. Please try again shortly.',
-      }))
+      setSubmitError(
+        error instanceof Error
+          ? error.message
+          : 'Unable to submit your request right now. Please try again shortly.'
+      )
     } finally {
       setIsSubmitting(false)
     }
@@ -353,6 +310,22 @@ export default function QuoteFormInline({
 
       {/* Form */}
       <form onSubmit={handleSubmit} noValidate>
+        <div className="sr-only" aria-hidden="true">
+          <label htmlFor="website" className="block text-sm font-semibold text-gray-700">
+            Website
+          </label>
+          <input
+            id="website"
+            name="website"
+            type="text"
+            tabIndex={-1}
+            autoComplete="off"
+            value={honeypot}
+            onChange={(event) => setHoneypot(event.target.value)}
+            className="hidden"
+          />
+        </div>
+
         {/* Name Field */}
         <div className="mb-4">
           <label
@@ -404,6 +377,16 @@ export default function QuoteFormInline({
             </p>
           )}
         </div>
+
+        {/* Submission Error */}
+        {submitError && (
+          <div
+            className="mb-4 rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700"
+            role="alert"
+          >
+            {submitError}
+          </div>
+        )}
 
         {/* Email Field */}
         <div className="mb-4">

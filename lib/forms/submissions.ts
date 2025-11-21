@@ -19,6 +19,11 @@ async function insertRecord<TableName extends keyof Database['public']['Tables']
     const { error } = await supabase.from(table).insert(payload as any)
 
     if (error) {
+      console.error('Supabase insert error', {
+        table: String(table),
+        message: error.message,
+        details: error,
+      })
       captureException(error, { tags: { module: 'supabase', table: String(table) } })
       return { success: false, error: error.message }
     }
@@ -28,6 +33,10 @@ async function insertRecord<TableName extends keyof Database['public']['Tables']
     })
     return { success: true }
   } catch (error) {
+    console.error('Unexpected Supabase submission error', {
+      table: String(table),
+      error,
+    })
     captureException(error, { tags: { module: 'supabase', table: String(table) } })
     return { success: false, error: error instanceof Error ? error.message : 'Unknown error' }
   }

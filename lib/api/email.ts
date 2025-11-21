@@ -34,6 +34,7 @@ export interface EmailAttachment {
 async function sendViaResend(options: EmailOptions): Promise<{ success: boolean; id?: string }> {
   const apiKey = process.env.RESEND_API_KEY
   if (!apiKey) {
+    console.error('Resend API key missing. Set RESEND_API_KEY in your environment.')
     captureMessage('email_api_key_missing', { level: 'warning' })
     return { success: false, id: 'no-api-key' }
   }
@@ -65,12 +66,17 @@ async function sendViaResend(options: EmailOptions): Promise<{ success: boolean;
 
     if (!response.ok) {
       const error = await response.text()
+      console.error('Resend API response error', {
+        status: response.status,
+        body: error,
+      })
       throw new Error(`Resend API error: ${error}`)
     }
 
     const data = await response.json()
     return { success: true, id: data.id }
   } catch (error) {
+    console.error('Resend email send error', error)
     captureException(error, { tags: { module: 'email' } })
     throw error
   }

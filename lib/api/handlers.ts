@@ -74,14 +74,37 @@ export async function handleSubmission<T>({
     const dbResult = await store(validationResult.data, submissionContext)
 
     if (!dbResult.success) {
+      console.error('Supabase submission store failed', {
+        source: 'supabase',
+        error: dbResult.error,
+      })
       captureException(new Error(dbResult.error), { tags: { module: 'submission-handler' } })
       return NextResponse.json(
-        { success: false, error: 'Unable to save submission. Please try again later.' },
+        {
+          success: false,
+          error: 'Unable to save submission. Please try again later.',
+          source: 'supabase',
+        },
         { status: 500 }
       )
     }
 
-    await notify?.(validationResult.data, submissionContext)
+    if (notify) {
+      try {
+        await notify(validationResult.data, submissionContext)
+      } catch (error) {
+        console.error('Notification send failed', { error })
+        captureException(error, { tags: { module: 'submission-handler', source: 'notify' } })
+        return NextResponse.json(
+          {
+            success: false,
+            error: 'Unable to send notification. Please try again later.',
+            source: 'notify',
+          },
+          { status: 502 }
+        )
+      }
+    }
     captureMessage('submission_success', { level: 'info' })
 
     return successResponse(successMessage, limitResult)
@@ -90,6 +113,7 @@ export async function handleSubmission<T>({
       return NextResponse.json({ success: false, error: error.message }, { status: error.status })
     }
 
+    console.error('Unexpected submission handler error', error)
     captureException(error, { tags: { module: 'submission-handler' } })
     return NextResponse.json(
       { success: false, error: 'Internal server error. Please try again later.' },

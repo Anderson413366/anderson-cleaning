@@ -172,6 +172,40 @@ export const contactFormSchema = z.object({
 export type ContactFormData = z.infer<typeof contactFormSchema>
 
 // ============================================================================
+// Quick Quote Validation Schema (Hero + Inline forms)
+// ============================================================================
+
+const quickQuoteFacilityOptions = [
+  'office',
+  'medical',
+  'educational',
+  'retail',
+  'manufacturing',
+  'warehouse',
+  'other',
+] as const
+
+export const quickQuoteFormSchema = z.object({
+  name: z
+    .string()
+    .min(2, 'Name must be at least 2 characters')
+    .max(100, 'Name must be less than 100 characters')
+    .regex(/^[a-zA-Z\s'-]+$/, 'Name can only contain letters, spaces, hyphens, and apostrophes'),
+  company: z.string().max(200, 'Company name must be less than 200 characters').optional(),
+  email: z.string().email('Please enter a valid email address').toLowerCase(),
+  phone: z.string().regex(phoneRegex, 'Please enter a valid phone number (e.g., 555-123-4567)'),
+  facilityType: z.enum(quickQuoteFacilityOptions, {
+    required_error: 'Please select your facility type',
+  }),
+  source: z.enum(['hero', 'inline', 'inline-compact'], {
+    invalid_type_error: 'Invalid source',
+  }).optional(),
+  website: z.string().max(0, 'Invalid submission').optional(),
+})
+
+export type QuickQuoteFormData = z.infer<typeof quickQuoteFormSchema>
+
+// ============================================================================
 // Helper Functions
 // ============================================================================
 

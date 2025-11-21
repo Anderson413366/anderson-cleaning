@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { Button } from '@/components/ui/Button'
+import HeroQuickQuoteForm from '@/components/forms/HeroQuickQuoteForm'
 import BeforeAfterSlider from '@/components/sections/BeforeAfterSlider'
 import PromotionalModal from '@/components/PromotionalModal'
 import {
@@ -108,101 +109,7 @@ export default function Home() {
 
             {/* Right Column - Quick Quote Form */}
             <div className="hidden lg:block">
-              <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-2xl p-8">
-                <div className="text-center mb-6">
-                  <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
-                    Get Your Free Quote
-                  </h2>
-                  <p className="text-gray-600 dark:text-gray-400">Response in 30 minutes or less</p>
-                </div>
-
-                <form className="space-y-4">
-                  <div>
-                    <label
-                      htmlFor="hero-name"
-                      className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
-                    >
-                      Your Name <span className="text-error">*</span>
-                    </label>
-                    <input
-                      type="text"
-                      id="hero-name"
-                      required
-                      className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-slate-700 text-gray-900 dark:text-gray-100"
-                      placeholder="John Smith"
-                    />
-                  </div>
-
-                  <div>
-                    <label
-                      htmlFor="hero-company"
-                      className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
-                    >
-                      Company Name <span className="text-error">*</span>
-                    </label>
-                    <input
-                      type="text"
-                      id="hero-company"
-                      required
-                      className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-slate-700 text-gray-900 dark:text-gray-100"
-                      placeholder="ABC Corp"
-                    />
-                  </div>
-
-                  <div>
-                    <label
-                      htmlFor="hero-phone"
-                      className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
-                    >
-                      Phone Number <span className="text-error">*</span>
-                    </label>
-                    <input
-                      type="tel"
-                      id="hero-phone"
-                      required
-                      autoComplete="tel"
-                      className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-slate-700 text-gray-900 dark:text-gray-100"
-                      placeholder="(413) 306-5053"
-                    />
-                  </div>
-
-                  <div>
-                    <label
-                      htmlFor="hero-facility"
-                      className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
-                    >
-                      Facility Type <span className="text-error">*</span>
-                    </label>
-                    <select
-                      id="hero-facility"
-                      required
-                      className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-slate-700 text-gray-900 dark:text-gray-100"
-                    >
-                      <option value="">Select facility type</option>
-                      <option>Office Building</option>
-                      <option>Medical Office/Clinic</option>
-                      <option>Educational Facility</option>
-                      <option>Retail Store</option>
-                      <option>Manufacturing/Warehouse</option>
-                      <option>Other</option>
-                    </select>
-                  </div>
-
-                  <Button
-                    type="submit"
-                    variant="primary"
-                    size="lg"
-                    className="w-full bg-accent-500 hover:bg-accent-600 text-white"
-                  >
-                    Get My Free Quote
-                    <ArrowRight className="ml-2 h-5 w-5" />
-                  </Button>
-
-                  <p className="text-xs text-center text-gray-500 dark:text-gray-400">
-                    We respond within 30 minutes • No obligations
-                  </p>
-                </form>
-              </div>
+              <HeroQuickQuoteForm />
             </div>
           </div>
         </div>
