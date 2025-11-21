@@ -17,7 +17,7 @@ export const ERROR_MESSAGES = {
   company: 'Please enter your company name',
 }
 
-export const RESPONSE_TIME_TEXT = '✓ We respond in 30 minutes or less'
+export const RESPONSE_TIME_TEXT = '✓ We respond within 24 hours (Mon – Fri, 9 AM – 5 PM EST)'
 
 export const formatPhoneNumber = (value: string): string => {
   const phoneNumber = value.replace(/\D/g, '')

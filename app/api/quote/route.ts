@@ -57,7 +57,7 @@ export function POST(request: NextRequest) {
         emailResult
       )
     },
-    successMessage: 'Quote request submitted successfully. We will contact you within 30 minutes!',
+    successMessage: 'Quote request submitted successfully. We will contact you within 24 hours (Mon–Fri, 9 AM – 5 PM EST)!',
   })
 }
 

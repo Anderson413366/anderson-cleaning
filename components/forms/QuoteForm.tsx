@@ -588,7 +588,7 @@ export default function QuoteForm({ onSuccess }: QuoteFormProps) {
                   className="flex-1 text-sm text-gray-700 dark:text-gray-300"
                 >
                   I agree to be contacted by Anderson Cleaning regarding this quote request. We
-                  typically respond within 30 minutes during business hours.{' '}
+                  respond within 24 hours during office hours (Monday – Friday, 9 AM – 5 PM EST).{' '}
                   <span className="text-red-500">*</span>
                 </label>
               </div>
@@ -668,10 +668,12 @@ export default function QuoteForm({ onSuccess }: QuoteFormProps) {
               <Clock className="h-6 w-6 text-primary-600 dark:text-primary-400 flex-shrink-0" />
               <div>
                 <h3 className="font-bold text-gray-900 dark:text-gray-100 mb-1">
-                  ≤30-Minute Response
+                  24-Hour Response Promise
                 </h3>
                 <p className="text-sm text-gray-700 dark:text-gray-300">
-                  We respond to all quote requests within 30 minutes during business hours.
+                  We respond to all quote requests within 24 hours (Monday – Friday, 9 AM – 5 PM
+                  EST). Current clients also have access to 24/7 emergency support with on-site
+                  arrival in 2 hours or less.
                 </p>
               </div>
             </div>
@@ -700,11 +702,9 @@ export default function QuoteForm({ onSuccess }: QuoteFormProps) {
               <p className="text-xs text-gray-600 dark:text-gray-400">
                 <strong>Business Hours:</strong>
                 <br />
-                Monday - Friday: 8 AM - 6 PM
+                Monday – Friday: 9 AM – 5 PM EST
                 <br />
-                Saturday: 9 AM - 2 PM
-                <br />
-                24/7 Emergency Support
+                24/7 emergency support for current clients
               </p>
             </div>
           </div>
@@ -718,7 +718,7 @@ export default function QuoteForm({ onSuccess }: QuoteFormProps) {
                   1
                 </span>
                 <span className="text-sm text-gray-700 dark:text-gray-300">
-                  We'll contact you within 30 minutes to discuss your needs
+                  We'll contact you within 24 hours to discuss your needs
                 </span>
               </li>
               <li className="flex items-start gap-3">

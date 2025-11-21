@@ -271,7 +271,7 @@ export default function CaseStudiesPage() {
               </Button>
             </div>
             <p className="text-sm text-blue-200 mt-6">
-              ✓ Free facility walk-through • ✓ Custom proposal • ✓ 30-minute response time
+              ✓ Free facility walk-through • ✓ Custom proposal • ✓ 24-hour response time (Mon–Fri)
             </p>
           </div>
         </div>

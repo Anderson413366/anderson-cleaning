@@ -98,7 +98,7 @@ export const servicesData: Record<string, ServiceData> = {
       {
         question: 'What if something is missed during cleaning?',
         answer:
-          'Call or email us anytime. We respond within 30 minutes and send someone back to address the issue the same day or within 24 hours.',
+          'Call or email us anytime. We respond within 24 hours during office hours, and current clients have 24/7 emergency support with on-site arrival in 2 hours or less.',
       },
     ],
   },
@@ -115,7 +115,7 @@ export const servicesData: Record<string, ServiceData> = {
       'Comprehensive facility care programs',
       'Quality checklists and documentation',
       'Regular performance audits',
-      '24/7 emergency response available',
+      '24/7 emergency response available for current clients',
     ],
     process: [
       {

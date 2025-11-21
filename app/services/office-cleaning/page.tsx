@@ -234,7 +234,7 @@ export default function OfficeCleaningPage() {
                 </Button>
               </Link>
               <p className="text-sm text-gray-600 mt-4">
-                We respond within 30 minutes with your personalized proposal
+                We respond within 24 hours (Monday – Friday, 9 AM – 5 PM EST)
               </p>
             </div>
           </div>

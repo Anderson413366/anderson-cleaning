@@ -43,7 +43,8 @@ export default function QuotePage() {
                     </h2>
                     <p className="text-gray-700 dark:text-gray-300 mb-4">
                       Thank you for requesting a quote from Anderson Cleaning. We've received your
-                      information and will contact you within 30 minutes during business hours.
+                      information and will contact you within 24 hours (Monday – Friday, 9 AM – 5 PM
+                      EST).
                     </p>
                     <div className="bg-blue-50 dark:bg-blue-900/30 border border-blue-200 dark:border-blue-800 rounded-lg p-4">
                       <h3 className="font-semibold text-blue-900 dark:text-blue-300 mb-2">

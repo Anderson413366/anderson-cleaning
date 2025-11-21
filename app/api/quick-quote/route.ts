@@ -45,7 +45,7 @@ export function POST(request: NextRequest) {
         emailResult
       )
     },
-    successMessage: 'Thank you! A specialist will reach out within 30 minutes.',
+    successMessage: 'Thank you! A specialist will reach out within 24 hours (Mon–Fri, 9 AM – 5 PM EST).',
   })
 }
 

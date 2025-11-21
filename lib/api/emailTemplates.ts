@@ -197,7 +197,7 @@ export function generateQuoteEmail(data: QuoteFormData): { html: string; text: s
 
       <div style="margin-top: 32px; padding: 16px; background-color: #fef3c7; border-left: 4px solid #f59e0b; border-radius: 4px;">
         <p style="margin: 0; color: #92400e;">
-          <strong>⚡ Action Required:</strong> Respond within 30 minutes to maintain your service promise!
+          <strong>⚡ Action Required:</strong> Respond within 24 hours (Mon–Fri, 9 AM – 5 PM EST) to maintain your service promise!
         </p>
       </div>
     </div>
@@ -225,7 +225,7 @@ ${data.services.map((service) => `- ${serviceLabels[service] || service}`).join(
 ${data.specialRequests ? `Special Requests:\n${data.specialRequests}` : ''}
 
 ---
-Respond within 30 minutes to maintain your service promise!
+Respond within 24 hours (Mon–Fri, 9 AM – 5 PM EST) to maintain your service promise!
   `.trim()
 
   return {
@@ -287,7 +287,7 @@ export function generateQuickQuoteEmail(data: QuickQuoteFormData): { html: strin
           <span class="field-value">${facilityLabel}</span>
         </div>
         <p style="margin-top: 16px; color: #1f2937;">
-          This lead submitted the quick quote form. Follow up within 30 minutes to keep the promise displayed on the site.
+          This lead submitted the quick quote form. Follow up within 24 hours (Mon–Fri, 9 AM – 5 PM EST) to keep the promise displayed on the site.
         </p>
       </div>
     </div>
@@ -302,7 +302,7 @@ ${data.company ? `- Company: ${data.company}\n` : ''}- Email: ${data.email}
 - Phone: ${formatPhoneNumber(data.phone)}
 - Facility Type: ${facilityLabel}
 
-Follow up within 30 minutes.
+Follow up within 24 hours (Mon–Fri, 9 AM – 5 PM EST).
   `.trim()
 
   return {

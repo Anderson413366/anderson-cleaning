@@ -30,12 +30,14 @@ export default function ContactPage() {
               {/* Fast Response */}
               <div className="bg-primary-700 text-white rounded-xl p-6 shadow-lg">
                 <Clock className="h-12 w-12 mb-4 text-yellow-400" />
-                <h3 className="text-xl font-bold mb-2">Fast Response</h3>
+                <h3 className="text-xl font-bold mb-2">Here When You Need Us</h3>
                 <p className="text-blue-100 mb-4">
-                  We respond to all inquiries within 30 minutes or less, 24/7.
+                  Office hours: Monday – Friday, 9 AM – 5 PM EST. We respond to all inquiries within
+                  24 hours.
                 </p>
                 <div className="text-sm text-blue-100">
-                  Average response: <strong className="text-yellow-400">15 minutes</strong>
+                  Current clients receive 24/7 emergency support with on-site arrival in 2 hours or
+                  less (premium service).
                 </div>
               </div>
 
@@ -56,7 +58,9 @@ export default function ContactPage() {
                       >
                         (413) 306-5053
                       </a>
-                      <p className="text-sm text-gray-600 dark:text-gray-400">24/7 Support Line</p>
+                      <p className="text-sm text-gray-600 dark:text-gray-400">
+                        24/7 emergency line for current clients
+                      </p>
                     </div>
                   </div>
 
@@ -91,12 +95,11 @@ export default function ContactPage() {
                     <div>
                       <p className="font-semibold text-gray-900 dark:text-gray-100">Office Hours</p>
                       <p className="text-gray-700 dark:text-gray-300">
-                        Monday - Friday: 8am - 6pm
-                        <br />
-                        Saturday - Sunday: By appointment
+                        Monday – Friday: 9 AM – 5 PM EST
                       </p>
                       <p className="text-sm text-accent-600 dark:text-accent-400 font-medium mt-1">
-                        Support available 24/7
+                        24/7 emergency support for current clients. On-site in 2 hours or less;
+                        premium rates apply.
                       </p>
                     </div>
                   </div>
@@ -142,6 +145,9 @@ export default function ContactPage() {
                 >
                   (413) 306-5053
                 </a>
+                <p className="text-xs text-gray-600 dark:text-gray-400 mt-2">
+                  Premium emergency service with on-site arrival in 2 hours or less.
+                </p>
               </div>
             </div>
           </div>

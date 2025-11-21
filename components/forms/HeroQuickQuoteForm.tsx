@@ -113,7 +113,9 @@ export default function HeroQuickQuoteForm() {
     <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-2xl p-8">
       <div className="text-center mb-6">
         <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">Get Your Free Quote</h2>
-        <p className="text-gray-600 dark:text-gray-400">Response in 30 minutes or less</p>
+        <p className="text-gray-600 dark:text-gray-400">
+          Response within 24 hours (Monday – Friday, 9 AM – 5 PM EST)
+        </p>
       </div>
 
       {isSuccess && (
@@ -302,7 +304,7 @@ export default function HeroQuickQuoteForm() {
         </Button>
 
         <p className="text-xs text-center text-gray-500 dark:text-gray-400">
-          We respond within 30 minutes • No obligations
+          We respond within 24 hours • Current clients have 24/7 emergency support
         </p>
       </form>
     </div>

@@ -351,7 +351,7 @@ export default function IndustryTemplate({
                     </li>
                     <li className="flex items-start gap-3">
                       <CheckCircle2 className="h-6 w-6 text-green-300 flex-shrink-0 mt-0.5" />
-                      <span>Response within 30 minutes</span>
+                      <span>Response within 24 hours</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <CheckCircle2 className="h-6 w-6 text-green-300 flex-shrink-0 mt-0.5" />

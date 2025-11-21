@@ -55,7 +55,9 @@ export default function Home() {
                 </div>
                 <div className="flex items-start space-x-3">
                   <CheckCircle2 className="h-6 w-6 text-accent-400 flex-shrink-0 mt-1" />
-                  <span className="text-blue-100">24/7 support with ≤30 minute response time</span>
+                  <span className="text-blue-100">
+                    24/7 emergency support for current clients — on-site within 2 hours
+                  </span>
                 </div>
                 <div className="flex items-start space-x-3">
                   <CheckCircle2 className="h-6 w-6 text-accent-400 flex-shrink-0 mt-1" />
@@ -419,7 +421,7 @@ export default function Home() {
               { icon: Star, label: '100% Satisfaction', desc: 'Guaranteed results' },
               { icon: CheckCircle2, label: 'OSHA Compliant', desc: 'Safety trained' },
               { icon: Sparkles, label: 'Eco-Friendly', desc: 'Green cleaning' },
-              { icon: Clock, label: '24/7 Support', desc: '≤30 min response' },
+              { icon: Clock, label: '24/7 Support', desc: 'Current clients on-site ≤2 hrs' },
               { icon: Building2, label: 'B2B Focused', desc: 'Commercial only' },
             ].map((badge, i) => {
               const Icon = badge.icon
@@ -643,7 +645,7 @@ export default function Home() {
               {
                 icon: Headphones,
                 title: '24/7 Support',
-                description: 'We respond within 30 minutes—day or night.',
+                description: 'Current clients get emergency dispatch with on-site arrival in ≤2 hours.',
               },
             ].map((item, i) => {
               const Icon = item.icon
@@ -670,7 +672,7 @@ export default function Home() {
             Ready for a cleaner, healthier workplace?
           </h2>
           <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-            Get your free, no-obligation quote today. We respond within 30 minutes.
+            Get your free, no-obligation quote today. We respond to all inquiries within 24 hours.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link href="/quote">

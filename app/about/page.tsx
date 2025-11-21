@@ -119,7 +119,7 @@ export default function AboutPage() {
                 icon: Clock,
                 title: '24/7 Support',
                 description:
-                  'Real people answer the phone, day or night. We respond to all requests within 30 minutes or less.',
+                  'Real people answer the phone, day or night. Current clients receive emergency support with on-site arrival in 2 hours or less.',
               },
               {
                 icon: Shield,
@@ -197,7 +197,7 @@ export default function AboutPage() {
                 {
                   title: 'Stay Responsive',
                   description:
-                    'Something missed? Call or text us anytime. We respond within 30 minutes and fix issues the same day or within 24 hours.',
+                    'Something missed? Call or text us anytime. We respond within 24 hours during office hours and provide 24/7 emergency support for current clients with on-site arrival in 2 hours or less.',
                 },
               ].map((item, index) => (
                 <div

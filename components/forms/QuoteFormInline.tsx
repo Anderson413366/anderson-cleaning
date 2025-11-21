@@ -283,7 +283,8 @@ export default function QuoteFormInline({
         Get Your Free Quote
       </h3>
       <p className="text-[var(--color-text-secondary)] mb-6">
-        Fill out the form below and we'll get back to you within 30 minutes.
+        Fill out the form below and we'll get back to you within 24 hours (Monday – Friday, 9 AM – 5
+        PM EST).
       </p>
 
       {/* Success Message */}
@@ -302,7 +303,10 @@ export default function QuoteFormInline({
             <span className="text-xl">✓</span>
             <div>
               <p className="font-semibold">Thank you for your request!</p>
-              <p className="text-sm mt-1">We'll contact you within 30 minutes during business hours.</p>
+              <p className="text-sm mt-1">
+                We'll contact you within 24 hours during office hours. Current clients have 24/7
+                emergency support.
+              </p>
             </div>
           </div>
         </div>

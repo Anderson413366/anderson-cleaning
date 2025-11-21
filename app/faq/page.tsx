@@ -113,12 +113,12 @@ const faqCategories = {
     {
       question: 'How quickly do you respond to service requests?',
       answer:
-        'We guarantee a response within 30 minutes during business hours (7 AM - 7 PM). For emergency cleaning needs (spills, urgent situations), we have 24/7 coverage and can typically have a team on-site within 2-4 hours depending on location and availability.',
+        'We respond to all inquiries within 24 hours during our office hours (Monday – Friday, 9 AM – 5 PM EST). For emergency cleaning needs involving current clients, we provide 24/7 coverage with on-site arrival in 2 hours or less.',
     },
     {
       question: 'What if we have an emergency cleaning need?',
       answer:
-        'Call our 24/7 emergency line and we\'ll dispatch a team immediately. Emergency services include spills, water damage cleanup, urgent sanitization, and post-event cleaning. Emergency rates may apply for same-day or after-hours service.',
+        'Current clients can call our 24/7 emergency line and we\'ll dispatch a team immediately. Emergencies include pipe bursts, bathroom accidents, urgent spills, and similar facility incidents. We guarantee on-site arrival within 2 hours or less and premium rates apply for after-hours service.',
     },
     {
       question: 'Can I get a quote without an on-site visit?',
@@ -283,8 +283,7 @@ export default function FAQPage() {
               Still Have Questions?
             </h2>
             <p className="text-xl text-blue-100 mb-8">
-              Our team is here to help! We respond to all inquiries within 30 minutes during
-              business hours.
+              Our team is here to help! We respond to all inquiries within 24 hours.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/contact">
@@ -305,7 +304,7 @@ export default function FAQPage() {
               </a>
             </div>
             <p className="text-sm text-blue-200 mt-6">
-              Monday - Friday: 7 AM - 7 PM | 24/7 Emergency Support Available
+              Monday – Friday: 9 AM – 5 PM EST | 24/7 emergency support for current clients
             </p>
           </div>
         </div>

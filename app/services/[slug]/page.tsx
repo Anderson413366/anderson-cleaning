@@ -150,7 +150,8 @@ export default async function ServiceDetailPage({
               {
                 icon: Clock,
                 title: 'Flexible Scheduling',
-                description: 'Day, night, weekend, and emergency service available within 30 minutes response.',
+                description:
+                  'Day, night, weekend, and emergency coverage. Current clients get 24/7 dispatch with on-site arrival in 2 hours or less.',
               },
               {
                 icon: Shield,
