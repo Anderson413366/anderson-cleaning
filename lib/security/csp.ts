@@ -84,6 +84,7 @@ export const cspDirectives: CSPDirectives = {
     'https://calendly.com',
     'https://www.google.com',
     'https://maps.google.com',
+    'https://vercel.live',
   ],
 
   'media-src': [
