@@ -114,22 +114,32 @@ export default async function RootLayout({ children }: { children: React.ReactNo
             __html: `
               (function() {
                 if (typeof window === 'undefined' || !window.customElements) return;
+                var registry = {};
                 var originalDefine = window.customElements.define;
-                if (!originalDefine.__patched) {
-                  var defined = new Set();
-                  var registry = window.customElements;
-                  var patched = function(name, constructor, options) {
-                    if (defined.has(name) || registry.get(name)) {
-                      console.warn('Prevented duplicate custom element:', name);
-                      return;
-                    }
-                    defined.add(name);
-                    return originalDefine.call(registry, name, constructor, options);
-                  };
-                  patched.__patched = true;
-                  registry.define = patched;
-                  originalDefine.__patched = true;
+                if (originalDefine.__patched) {
+                  return;
                 }
+                window.customElements.define = function(name, constructor, options) {
+                  var stack = (new Error().stack || '').split('\n');
+                  var caller = stack[2] || 'unknown';
+                  if (window.customElements.get(name)) {
+                    console.warn(
+                      '[CustomElementsGuard] BLOCKED duplicate registration:',
+                      name,
+                      '\nAttempted by:', caller,
+                      '\nFirst registered by:', registry[name] || 'unknown'
+                    );
+                    return;
+                  }
+                  console.log(
+                    '[CustomElementsGuard] Registering:',
+                    name,
+                    '\nBy:', caller
+                  );
+                  registry[name] = caller;
+                  return originalDefine.call(window.customElements, name, constructor, options);
+                };
+                window.customElements.define.__patched = true;
               })();
             `,
           }}
