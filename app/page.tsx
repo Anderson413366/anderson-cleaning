@@ -81,7 +81,7 @@ export default function Home() {
                 </div>
                 <div className="flex items-center space-x-2">
                   <Award className="h-5 w-5 text-accent-400" aria-hidden="true" />
-                  <span>20+ Years Experience</span>
+                  <span>18+ Years Experience</span>
                 </div>
                 <div className="flex items-center space-x-2">
                   <Star className="h-5 w-5 text-accent-400" aria-hidden="true" />
@@ -417,7 +417,7 @@ export default function Home() {
             {[
               { icon: Shield, label: 'Licensed & Insured', desc: 'Full liability coverage' },
               { icon: Users, label: 'Background Checked', desc: 'All staff verified' },
-              { icon: Award, label: '20+ Years', desc: 'Industry experience' },
+              { icon: Award, label: '18+ Years', desc: 'Industry experience' },
               { icon: Star, label: '100% Satisfaction', desc: 'Guaranteed results' },
               { icon: CheckCircle2, label: 'OSHA Compliant', desc: 'Safety trained' },
               { icon: Sparkles, label: 'Eco-Friendly', desc: 'Green cleaning' },

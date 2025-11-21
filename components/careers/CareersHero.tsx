@@ -117,7 +117,7 @@ const CareersHero: React.FC<CareersHeroProps> = ({ onStartApplication }) => {
             </div>
             <div className="flex items-center space-x-2">
               <Award className="h-5 w-5 text-accent-400" aria-hidden="true" />
-              <span>20+ Years in Business</span>
+              <span>18+ Years in Business</span>
             </div>
             <div className="flex items-center space-x-2">
               <TrendingUp className="h-5 w-5 text-accent-400" aria-hidden="true" />

@@ -39,7 +39,7 @@ export default function Page() {
 ```
 
 This displays the default Anderson Cleaning stats:
-- **20+** Years in Business
+- **18+** Years in Business
 - **50+** Active Clients
 - **2M+** Sq Ft Cleaned Monthly
 - **100%** Client Satisfaction
@@ -104,7 +104,7 @@ export default function Page() {
 ```typescript
 interface Stat {
   id: string | number          // Unique identifier
-  value: string                // Display value (e.g., "20+", "100%")
+  value: string                // Display value (e.g., "18+", "100%")
   label: string                // Label below the number
   icon?: LucideIcon            // Optional Lucide React icon
   numericValue?: number        // Number to animate to (for count-up)
@@ -278,7 +278,7 @@ Stats work perfectly without icons too:
 
 ```tsx
 const stats = [
-  { id: 1, value: '20+', label: 'Years', numericValue: 20, suffix: '+' },
+  { id: 1, value: '18+', label: 'Years', numericValue: 18, suffix: '+' },
   { id: 2, value: '100%', label: 'Satisfaction', numericValue: 100, suffix: '%' },
   // No icon property = no icon displayed
 ]
@@ -289,7 +289,7 @@ const stats = [
 ### Screen Reader Support
 
 - Component includes hidden `<h2>` with "Company Statistics"
-- Each stat has `aria-label` with full context: "20+ Years in Business"
+- Each stat has `aria-label` with full context: "18+ Years in Business"
 - Icons marked `aria-hidden="true"` (decorative only)
 - Semantic HTML structure
 
@@ -450,7 +450,7 @@ For very large numbers, animate to a smaller value and use a suffix:
 ### Writing Effective Stats
 
 **✅ Good stats**:
-- Specific and quantifiable: "20+ Years", "100% Satisfaction"
+- Specific and quantifiable: "18+ Years", "100% Satisfaction"
 - Impressive and credible: Don't inflate numbers
 - Relevant to audience: B2B buyers care about experience, clients, scale
 - Easy to understand: Avoid jargon or complex metrics

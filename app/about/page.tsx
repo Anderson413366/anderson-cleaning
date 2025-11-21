@@ -27,71 +27,71 @@ export default function AboutPage() {
         <div className="container mx-auto px-6 text-center">
           <h1 className="text-4xl md:text-5xl font-extrabold mb-6">About Anderson Cleaning</h1>
           <p className="text-xl text-blue-100 max-w-3xl mx-auto">
-            Over 20 years of professional commercial cleaning with the personal touch your facility
+            Over 18 years of professional commercial cleaning with the personal touch your facility
             deserves.
           </p>
         </div>
       </section>
 
       {/* Our Story */}
-      <section className="py-20 story-section">
+      <section className="py-20 bg-white dark:bg-slate-900">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-gray-100 mb-6 text-center">
               Our Story
             </h2>
-            <div className="prose prose-lg dark:prose-invert max-w-none">
-              <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+            <div className="space-y-6 text-lg leading-relaxed text-gray-700 dark:text-gray-300 text-center md:text-left">
+              <p>
                 Anderson Cleaning was founded with a simple but powerful vision: to provide
                 corporate-grade commercial cleaning services with the accountability and personal
                 attention of a family business.
               </p>
-              <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+              <p>
                 After years of watching businesses struggle with unreliable cleaning contractors,
                 high turnover, and inconsistent quality, we knew there had to be a better way. We
                 built Anderson Cleaning on three core principles:
               </p>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 my-8">
-                {[
-                  {
-                    icon: Users,
-                    title: 'Invest in People',
-                    description: 'Full-time salaried employees, not contractors',
-                  },
-                  {
-                    icon: Target,
-                    title: 'Systems & Standards',
-                    description: 'Corporate-grade processes and quality control',
-                  },
-                  {
-                    icon: Heart,
-                    title: 'Personal Touch',
-                    description: '24/7 support with real accountability',
-                  },
-                ].map((principle, index) => {
-                  const Icon = principle.icon
-                  return (
-                    <div
-                      key={index}
-                      className="bg-gradient-to-br from-primary-50 to-accent-50 dark:from-slate-800 dark:to-slate-700 rounded-xl p-6 text-center"
-                    >
-                      <Icon className="h-12 w-12 text-primary-600 dark:text-primary-400 mx-auto mb-4" />
-                      <h3 className="font-bold text-gray-900 dark:text-gray-100 mb-2">
-                        {principle.title}
-                      </h3>
-                      <p className="text-sm text-gray-600 dark:text-gray-400">
-                        {principle.description}
-                      </p>
-                    </div>
-                  )
-                })}
-              </div>
-              <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                Today, we serve dozens of commercial facilities across Massachusetts and
-                Connecticut, from small professional offices to large corporate campuses. Our
-                secret? We treat every client like they're our only client.
-              </p>
             </div>
+            <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
+              {[
+                {
+                  icon: Users,
+                  title: 'Invest in People',
+                  description: 'Full-time salaried employees, not contractors',
+                },
+                {
+                  icon: Target,
+                  title: 'Systems & Standards',
+                  description: 'Corporate-grade processes and quality control',
+                },
+                {
+                  icon: Heart,
+                  title: 'Personal Touch',
+                  description: '24/7 support with real accountability',
+                },
+              ].map((principle, index) => {
+                const Icon = principle.icon
+                return (
+                  <div
+                    key={index}
+                    className="bg-gradient-to-br from-primary-50 to-accent-50 dark:from-slate-800 dark:to-slate-700 rounded-xl p-6 text-center"
+                  >
+                    <Icon className="h-12 w-12 text-primary-600 dark:text-primary-400 mx-auto mb-4" />
+                    <h3 className="font-bold text-gray-900 dark:text-gray-100 mb-2">
+                      {principle.title}
+                    </h3>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">
+                      {principle.description}
+                    </p>
+                  </div>
+                )
+              })}
+            </div>
+            <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300 mt-10 text-center md:text-left">
+              Today, we serve dozens of commercial facilities across Massachusetts and Connecticut,
+              from small professional offices to large corporate campuses. Our secret? We treat
+              every client like they're our only client.
+            </p>
           </div>
         </div>
       </section>
