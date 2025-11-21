@@ -113,27 +113,74 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           dangerouslySetInnerHTML={{
             __html: `
               (function() {
-                if (typeof window === 'undefined' || !window.customElements) return;
+                if (typeof window === 'undefined') return;
+
                 var registry = {};
-                var originalDefine = window.customElements.define;
-                if (originalDefine.__patched) {
-                  return;
+                var loggedReplacement = false;
+
+                function getActualDefine() {
+                  var ce = window.customElements;
+                  if (!ce) return null;
+                  var proto = Object.getPrototypeOf(ce);
+                  if (proto && typeof proto.define === 'function') {
+                    return proto.define;
+                  }
+                  return ce.define;
                 }
-                window.customElements.define = function(name, constructor, options) {
+
+                function guardedDefine(name, constructor, options) {
+                  var ce = window.customElements;
+                  if (!ce) return;
                   var stack = (new Error().stack || '').split('\\n');
                   var caller = stack[2] || 'unknown';
-                  if (window.customElements.get(name)) {
+
+                  if (typeof ce.get === 'function' && ce.get(name)) {
                     console.warn('[CustomElementsGuard] BLOCKED duplicate registration:', name);
                     console.warn('Attempted by:', caller);
                     console.warn('First registered by:', registry[name] || 'unknown');
                     return;
                   }
+
                   console.log('[CustomElementsGuard] Registering:', name);
                   console.log('By:', caller);
                   registry[name] = caller;
-                  return originalDefine.call(window.customElements, name, constructor, options);
-                };
-                window.customElements.define.__patched = true;
+
+                  var actualDefine = getActualDefine();
+                  if (typeof actualDefine === 'function') {
+                    return actualDefine.call(ce, name, constructor, options);
+                  }
+                }
+
+                function applyGuard(target) {
+                  if (!target || target.__customElementsGuarded) return;
+                  Object.defineProperty(target, 'define', {
+                    value: guardedDefine,
+                    writable: false,
+                    configurable: false,
+                    enumerable: true,
+                  });
+                  target.__customElementsGuarded = true;
+                }
+
+                var currentCustomElements = window.customElements;
+                if (currentCustomElements) {
+                  applyGuard(currentCustomElements);
+                }
+
+                Object.defineProperty(window, 'customElements', {
+                  get: function() {
+                    return currentCustomElements;
+                  },
+                  set: function(value) {
+                    currentCustomElements = value;
+                    if (!loggedReplacement) {
+                      console.warn('[CustomElementsGuard] Detected customElements replacement. Reapplying guard.');
+                      loggedReplacement = true;
+                    }
+                    applyGuard(value);
+                  },
+                  configurable: true,
+                });
               })();
             `,
           }}
