@@ -6,15 +6,12 @@ import { usePathname } from 'next/navigation'
 import { Menu, X, Phone, Mail, Moon, Sun } from 'lucide-react'
 import { useTheme } from '@/lib/ThemeProvider'
 
+// Simplified navigation - FAQ, Blog, Testimonials, Careers moved to Footer Quick Links
 const navigation = [
   { name: 'Home', href: '/' },
   { name: 'Services', href: '/services' },
   { name: 'Industries', href: '/industries' },
   { name: 'About', href: '/about' },
-  { name: 'FAQ', href: '/faq' },
-  { name: 'Blog', href: '/blog' },
-  { name: 'Testimonials', href: '/testimonials' },
-  { name: 'Careers', href: '/careers' },
   { name: 'Contact', href: '/contact' },
 ]
 
@@ -119,8 +116,8 @@ export default function Header() {
       {/* Mobile menu */}
       {mobileMenuOpen && (
         <div className="lg:hidden">
-          <div className="fixed inset-0 z-50 bg-black/20 backdrop-blur-sm" onClick={() => setMobileMenuOpen(false)} />
-          <div className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white dark:bg-brand-deep-blue px-6 py-6 sm:max-w-sm sm:shadow-2xl">
+          <div className="fixed inset-0 z-[9998] bg-black/20 backdrop-blur-sm" onClick={() => setMobileMenuOpen(false)} />
+          <div className="fixed inset-y-0 right-0 z-[9999] w-full overflow-y-auto bg-white dark:bg-brand-deep-blue px-6 py-6 sm:max-w-sm sm:shadow-2xl">
             <div className="flex items-center justify-between">
               <Link href="/" className="-m-1.5 p-1.5" onClick={() => setMobileMenuOpen(false)}>
                 <span className="sr-only">Anderson Cleaning</span>

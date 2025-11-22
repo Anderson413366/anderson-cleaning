@@ -200,23 +200,20 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <link rel="dns-prefetch" href="https://api.resend.com" />
 
         {/* Favicon and Icons - Light Mode */}
-        <link rel="icon" type="image/png" sizes="16x16" href="/brand/color/favicon-16.png" media="(prefers-color-scheme: light)" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/brand/color/favicon-32.png" media="(prefers-color-scheme: light)" />
-        <link rel="icon" type="image/png" sizes="48x48" href="/brand/color/favicon-48.png" media="(prefers-color-scheme: light)" />
-        <link rel="icon" type="image/png" sizes="64x64" href="/brand/color/favicon-64.png" media="(prefers-color-scheme: light)" />
-        <link rel="icon" type="image/png" sizes="128x128" href="/brand/color/favicon-128.png" media="(prefers-color-scheme: light)" />
+        <link rel="icon" sizes="32x32" href="/brand/color/favicon-32.png" media="(prefers-color-scheme: light)" />
+        <link rel="icon" sizes="16x16" href="/brand/color/favicon-16.png" media="(prefers-color-scheme: light)" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/brand/color/favicon-180.png" media="(prefers-color-scheme: light)" />
+        <link rel="icon" sizes="192x192" href="/brand/color/favicon-192.png" media="(prefers-color-scheme: light)" />
+        <link rel="icon" sizes="512x512" href="/brand/color/favicon-512.png" media="(prefers-color-scheme: light)" />
 
         {/* Favicon and Icons - Dark Mode */}
-        <link rel="icon" type="image/png" sizes="16x16" href="/brand/white/favicon-16-white.png" media="(prefers-color-scheme: dark)" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/brand/white/favicon-32-white.png" media="(prefers-color-scheme: dark)" />
-        <link rel="icon" type="image/png" sizes="48x48" href="/brand/white/favicon-48-white.png" media="(prefers-color-scheme: dark)" />
-        <link rel="icon" type="image/png" sizes="64x64" href="/brand/white/favicon-64-white.png" media="(prefers-color-scheme: dark)" />
-        <link rel="icon" type="image/png" sizes="128x128" href="/brand/white/favicon-128-white.png" media="(prefers-color-scheme: dark)" />
+        <link rel="icon" sizes="32x32" href="/brand/white/favicon-32-white.png" media="(prefers-color-scheme: dark)" />
+        <link rel="icon" sizes="16x16" href="/brand/white/favicon-16-white.png" media="(prefers-color-scheme: dark)" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/brand/white/favicon-180-white.png" media="(prefers-color-scheme: dark)" />
+        <link rel="icon" sizes="192x192" href="/brand/white/favicon-192-white.png" media="(prefers-color-scheme: dark)" />
+        <link rel="icon" sizes="512x512" href="/brand/white/favicon-512-white.png" media="(prefers-color-scheme: dark)" />
 
-        {/* Apple Touch Icon and PWA */}
-        <link rel="apple-touch-icon" sizes="180x180" href="/brand/color/favicon-180.png" />
-        <link rel="icon" type="image/png" sizes="192x192" href="/brand/color/favicon-192.png" />
-        <link rel="icon" type="image/png" sizes="512x512" href="/brand/color/favicon-512.png" />
+        {/* PWA Manifest */}
         <link rel="manifest" href="/manifest.json" />
 
         {/* Theme Color - Official Anderson Cleaning Deep Blue */}
