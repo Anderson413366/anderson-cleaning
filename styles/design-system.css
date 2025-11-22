@@ -125,3 +125,54 @@ html.dark {
   --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
   --shadow-lg: 0 10px 24px rgba(0, 0, 0, 0.5);
 }
+
+/* ====================================================================
+   RESPONSIVE LOGO SYSTEM - Clean swap at mobile breakpoint
+   ==================================================================== */
+
+/* Desktop logo - Default (shows on larger screens) */
+.logo-desktop {
+  display: block;
+  height: 3rem; /* 48px */
+  width: auto;
+  content: url('/brand/color/logo-full-2000.png');
+}
+
+/* Mobile logo - Hidden by default */
+.logo-mobile {
+  display: none;
+  height: 2.5rem; /* 40px */
+  width: auto;
+  content: url('/brand/color/logo-icon-512.png');
+}
+
+/* Mobile breakpoint (≤767px) - Swap logos */
+@media (max-width: 767px) {
+  .logo-desktop {
+    display: none;
+  }
+
+  .logo-mobile {
+    display: block;
+  }
+}
+
+/* Dark mode - Swap to white logos using content property */
+@media (prefers-color-scheme: dark) {
+  .logo-desktop {
+    content: url('/brand/white/logo-full-2000-white.png');
+  }
+
+  .logo-mobile {
+    content: url('/brand/white/logo-icon-512-white.png');
+  }
+}
+
+/* Manual dark mode toggle support */
+html.dark .logo-desktop {
+  content: url('/brand/white/logo-full-2000-white.png');
+}
+
+html.dark .logo-mobile {
+  content: url('/brand/white/logo-icon-512-white.png');
+}

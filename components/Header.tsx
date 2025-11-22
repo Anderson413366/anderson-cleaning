@@ -47,35 +47,17 @@ export default function Header() {
         <div className="flex lg:flex-1">
           <Link href="/" className="-m-1.5 p-1.5 transition-opacity hover:opacity-80">
             <span className="sr-only">Anderson Cleaning</span>
-            {/* Desktop Logo */}
+            {/* Desktop Logo - Swaps to white in dark mode, hidden on mobile */}
             <img
               src="/brand/color/logo-full-2000.png"
               alt="Anderson Cleaning"
-              className="hidden h-12 w-auto dark:hidden md:block"
-              width="200"
-              height="48"
+              className="logo-desktop"
             />
-            <img
-              src="/brand/white/logo-full-2000-white.png"
-              alt="Anderson Cleaning"
-              className="hidden h-12 w-auto dark:md:block"
-              width="200"
-              height="48"
-            />
-            {/* Mobile Logo Icon */}
+            {/* Mobile Logo Icon - Swaps to white in dark mode, shows only on mobile */}
             <img
               src="/brand/color/logo-icon-512.png"
               alt="Anderson Cleaning"
-              className="block h-10 w-auto dark:hidden md:hidden"
-              width="40"
-              height="40"
-            />
-            <img
-              src="/brand/white/logo-icon-512-white.png"
-              alt="Anderson Cleaning"
-              className="hidden h-10 w-auto dark:block md:dark:hidden"
-              width="40"
-              height="40"
+              className="logo-mobile"
             />
           </Link>
         </div>
