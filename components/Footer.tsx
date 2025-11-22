@@ -55,7 +55,7 @@ export default function Footer() {
           <div className="space-y-8 xl:col-span-1">
             <div>
               <h3 className="text-h3 font-bold text-white">Anderson Cleaning</h3>
-              <p className="mt-4 text-sm leading-6 text-neutral-off-white">
+              <p className="mt-4 text-sm leading-6 text-neutral-off-white dark:text-gray-200">
                 Professional commercial cleaning services for businesses in Western Massachusetts and Northern Connecticut.
               </p>
             </div>
@@ -64,7 +64,7 @@ export default function Footer() {
                 <Phone className="h-5 w-5 text-brand-emerald" aria-hidden="true" />
                 <a
                   href="tel:+14133065053"
-                  className="text-sm leading-6 text-neutral-off-white hover:text-brand-emerald transition-colors"
+                  className="text-sm leading-6 text-neutral-off-white dark:text-gray-200 hover:text-brand-emerald transition-colors"
                 >
                   (413) 306-5053
                 </a>
@@ -73,14 +73,14 @@ export default function Footer() {
                 <Mail className="h-5 w-5 text-brand-emerald" aria-hidden="true" />
                 <a
                   href="mailto:info@andersoncleaning.com"
-                  className="text-sm leading-6 text-neutral-off-white hover:text-brand-emerald transition-colors break-words"
+                  className="text-sm leading-6 text-neutral-off-white dark:text-gray-200 hover:text-brand-emerald transition-colors break-words"
                 >
                   info@andersoncleaning.com
                 </a>
               </div>
               <div className="flex flex-col sm:flex-row items-center justify-center sm:justify-start gap-3">
                 <MapPin className="h-5 w-5 text-brand-emerald flex-shrink-0" aria-hidden="true" />
-                <div className="text-sm leading-6 text-neutral-off-white">
+                <div className="text-sm leading-6 text-neutral-off-white dark:text-gray-200">
                   <span className="block">103 Wayside Avenue</span>
                   <span className="block">West Springfield, MA 01089</span>
                 </div>
@@ -116,7 +116,7 @@ export default function Footer() {
                 <a
                   key={item.name}
                   href={item.href}
-                  className="text-neutral-off-white/70 hover:text-brand-emerald transition-colors"
+                  className="text-neutral-off-white/70 dark:text-gray-300 hover:text-brand-emerald transition-colors"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -137,7 +137,7 @@ export default function Footer() {
                     <li key={item.name}>
                       <Link
                         href={item.href}
-                        className="text-sm leading-6 text-neutral-off-white hover:text-brand-emerald transition-colors"
+                        className="text-sm leading-6 text-neutral-off-white dark:text-gray-300 hover:text-brand-emerald transition-colors"
                       >
                         {item.name}
                       </Link>
@@ -152,7 +152,7 @@ export default function Footer() {
                     <li key={item.name}>
                       <Link
                         href={item.href}
-                        className="text-sm leading-6 text-neutral-off-white hover:text-brand-emerald transition-colors"
+                        className="text-sm leading-6 text-neutral-off-white dark:text-gray-300 hover:text-brand-emerald transition-colors"
                       >
                         {item.name}
                       </Link>
@@ -169,7 +169,7 @@ export default function Footer() {
                     <li key={item.name}>
                       <Link
                         href={item.href}
-                        className="text-sm leading-6 text-neutral-off-white hover:text-brand-emerald transition-colors"
+                        className="text-sm leading-6 text-neutral-off-white dark:text-gray-300 hover:text-brand-emerald transition-colors"
                       >
                         {item.name}
                       </Link>
@@ -184,7 +184,7 @@ export default function Footer() {
                     <li key={item.name}>
                       <Link
                         href={item.href}
-                        className="text-sm leading-6 text-neutral-off-white hover:text-brand-emerald transition-colors"
+                        className="text-sm leading-6 text-neutral-off-white dark:text-gray-300 hover:text-brand-emerald transition-colors"
                       >
                         {item.name}
                       </Link>
@@ -208,7 +208,7 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="mt-16 border-t border-white/10 pt-8 sm:mt-20 lg:mt-24">
-          <p className="text-xs leading-5 text-neutral-off-white/80 text-center">
+          <p className="text-xs leading-5 text-neutral-off-white/80 dark:text-gray-300 text-center">
             &copy; {currentYear} Anderson Cleaning, Inc. All rights reserved.
           </p>
         </div>

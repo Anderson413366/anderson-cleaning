@@ -97,7 +97,7 @@ export default function QuotePage() {
                   <h3 className="text-h3 font-semibold text-neutral-charcoal dark:text-white mb-2">
                     No Obligation
                   </h3>
-                <p className="text-sm text-neutral-charcoal/70 dark:text-neutral-charcoal/50">
+                <p className="text-sm text-neutral-charcoal/70 dark:text-white/80">
                   Free consultation and walk-through with zero commitment or pressure to sign
                 </p>
               </div>
@@ -108,7 +108,7 @@ export default function QuotePage() {
                 <h3 className="text-body font-bold text-neutral-charcoal dark:text-white mb-2">
                   Transparent Pricing
                 </h3>
-                <p className="text-sm text-neutral-charcoal/70 dark:text-neutral-charcoal/50">
+                <p className="text-sm text-neutral-charcoal/70 dark:text-white/80">
                   Clear, itemized proposals with no hidden fees or surprise charges
                 </p>
               </div>
@@ -119,7 +119,7 @@ export default function QuotePage() {
                 <h3 className="text-body font-bold text-neutral-charcoal dark:text-white mb-2">
                   Fast Turnaround
                 </h3>
-                <p className="text-sm text-neutral-charcoal/70 dark:text-neutral-charcoal/50">
+                <p className="text-sm text-neutral-charcoal/70 dark:text-white/80">
                   Receive your detailed proposal within 24 hours of our site visit
                 </p>
               </div>
@@ -135,7 +135,7 @@ export default function QuotePage() {
             <h2 className="text-h2 font-bold text-neutral-charcoal dark:text-white mb-4">
               Prefer to Schedule a Walk-Through Directly?
             </h2>
-            <p className="text-body text-neutral-charcoal/70 dark:text-neutral-charcoal/50 mb-8">
+            <p className="text-body text-neutral-charcoal/70 dark:text-white/80 mb-8">
               If you already know what you need, skip the form and schedule your free on-site
               consultation directly.
             </p>

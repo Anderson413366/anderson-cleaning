@@ -529,7 +529,7 @@ export default async function BlogPost({
               {post.title}
             </h1>
 
-            <div className="flex flex-wrap items-center gap-6 text-neutral-charcoal/70 dark:text-neutral-charcoal/50 mb-8">
+            <div className="flex flex-wrap items-center gap-6 text-neutral-charcoal/70 dark:text-white/80 mb-8">
               <div className="flex items-center">
                 <Calendar className="h-5 w-5 mr-2" />
                 {new Date(post.publishedDate).toLocaleDateString('en-US', {
@@ -551,7 +551,7 @@ export default async function BlogPost({
             <div className="flex items-center gap-4 pb-8 border-b border-neutral-light-grey dark:border-slate-700">
               <span className="text-sm font-medium text-neutral-charcoal/80 dark:text-white/80">Share:</span>
               <button className="p-2 rounded-lg hover:bg-neutral-light-grey dark:hover:bg-slate-800 transition-colors" aria-label="Share this article">
-                <Share2 className="h-5 w-5 text-neutral-charcoal/70 dark:text-white/70" />
+                <Share2 className="h-5 w-5 text-neutral-charcoal/70 dark:text-white/80" />
               </button>
             </div>
           </div>
@@ -576,7 +576,7 @@ export default async function BlogPost({
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
             <div
-              className="prose prose-lg dark:prose-invert max-w-none prose-headings:font-bold prose-headings:text-neutral-charcoal dark:prose-headings:text-white prose-h2:text-h2 prose-h2:mt-12 prose-h2:mb-6 prose-h3:text-h3 prose-h3:mt-8 prose-h3:mb-4 prose-p:text-neutral-charcoal/80 dark:prose-p:text-white/80 prose-p:leading-relaxed prose-p:mb-6 prose-ul:my-6 prose-ul:space-y-2 prose-li:text-neutral-charcoal/80 dark:prose-li:text-white/80 prose-strong:text-neutral-charcoal dark:prose-strong:text-white prose-a:text-brand-emerald dark:prose-a:text-brand-emerald prose-a:no-underline hover:prose-a:underline"
+              className="prose prose-lg dark:prose-invert max-w-none prose-headings:font-bold prose-headings:text-neutral-charcoal dark:text-white prose-h2:text-h2 prose-h2:mt-12 prose-h2:mb-6 prose-h3:text-h3 prose-h3:mt-8 prose-h3:mb-4 prose-p:text-neutral-charcoal/80 dark:prose-p:text-white/80 prose-p:leading-relaxed prose-p:mb-6 prose-ul:my-6 prose-ul:space-y-2 prose-li:text-neutral-charcoal/80 dark:prose-li:text-white/80 prose-strong:text-neutral-charcoal dark:text-white prose-a:text-brand-emerald dark:prose-a:text-brand-emerald prose-a:no-underline hover:prose-a:underline"
               dangerouslySetInnerHTML={{ __html: post.content }}
             />
 

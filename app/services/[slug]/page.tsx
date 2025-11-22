@@ -96,7 +96,7 @@ export default async function ServiceDetailPage({
           <h2 className="text-h2 leading-tight font-bold text-neutral-charcoal dark:text-white mb-4 text-center">
             Our Process
           </h2>
-          <p className="text-neutral-charcoal/70 dark:text-neutral-charcoal/50 text-center mb-12 max-w-2xl mx-auto">
+          <p className="text-neutral-charcoal/70 dark:text-white/80 text-center mb-12 max-w-2xl mx-auto">
             Here's how we deliver exceptional {service.title.toLowerCase()}
           </p>
 
@@ -190,7 +190,7 @@ export default async function ServiceDetailPage({
           <h2 className="text-h2 leading-tight font-bold text-neutral-charcoal dark:text-white mb-4 text-center">
             Pricing Factors
           </h2>
-          <p className="text-neutral-charcoal/70 dark:text-neutral-charcoal/50 text-center mb-12 max-w-2xl mx-auto">
+          <p className="text-neutral-charcoal/70 dark:text-white/80 text-center mb-12 max-w-2xl mx-auto">
             Your custom quote considers these factors
           </p>
 
@@ -203,7 +203,7 @@ export default async function ServiceDetailPage({
                 <h3 className="text-body font-bold text-neutral-charcoal dark:text-white mb-2">
                   {factor.factor}
                 </h3>
-                <p className="text-sm text-neutral-charcoal/70 dark:text-neutral-charcoal/50">{factor.description}</p>
+                <p className="text-sm text-neutral-charcoal/70 dark:text-white/80">{factor.description}</p>
               </div>
             ))}
           </div>
@@ -225,7 +225,7 @@ export default async function ServiceDetailPage({
                         <p className="font-bold text-neutral-charcoal dark:text-white">
                           Small Office (2,000-5,000 sq ft)
                         </p>
-                        <p className="text-sm text-neutral-charcoal/70 dark:text-neutral-charcoal/50">
+                        <p className="text-sm text-neutral-charcoal/70 dark:text-white/80">
                           3x per week, after hours
                         </p>
                       </div>
@@ -240,7 +240,7 @@ export default async function ServiceDetailPage({
                         <p className="font-bold text-neutral-charcoal dark:text-white">
                           Medium Office (5,000-15,000 sq ft)
                         </p>
-                        <p className="text-sm text-neutral-charcoal/70 dark:text-neutral-charcoal/50">
+                        <p className="text-sm text-neutral-charcoal/70 dark:text-white/80">
                           5x per week, nightly service
                         </p>
                       </div>
@@ -255,7 +255,7 @@ export default async function ServiceDetailPage({
                         <p className="font-bold text-neutral-charcoal dark:text-white">
                           Large Office (15,000+ sq ft)
                         </p>
-                        <p className="text-sm text-neutral-charcoal/70 dark:text-neutral-charcoal/50">
+                        <p className="text-sm text-neutral-charcoal/70 dark:text-white/80">
                           Daily service, dedicated team
                         </p>
                       </div>
@@ -290,7 +290,7 @@ export default async function ServiceDetailPage({
                     <strong>Project-based pricing</strong> varies widely based on size and
                     condition. Contact us for a free on-site estimate.
                   </p>
-                  <p className="text-sm text-neutral-charcoal/70 dark:text-neutral-charcoal/50 text-center mt-3">
+                  <p className="text-sm text-neutral-charcoal/70 dark:text-white/80 text-center mt-3">
                     Most {service.title.toLowerCase()} projects range from $500-$5,000 depending on
                     facility size and scope.
                   </p>
@@ -305,7 +305,7 @@ export default async function ServiceDetailPage({
                         <p className="font-bold text-neutral-charcoal dark:text-white">
                           Small Facility (1-10 employees)
                         </p>
-                        <p className="text-sm text-neutral-charcoal/70 dark:text-neutral-charcoal/50">
+                        <p className="text-sm text-neutral-charcoal/70 dark:text-white/80">
                           Basic consumables + management
                         </p>
                       </div>
@@ -320,7 +320,7 @@ export default async function ServiceDetailPage({
                         <p className="font-bold text-neutral-charcoal dark:text-white">
                           Medium Facility (10-50 employees)
                         </p>
-                        <p className="text-sm text-neutral-charcoal/70 dark:text-neutral-charcoal/50">
+                        <p className="text-sm text-neutral-charcoal/70 dark:text-white/80">
                           Full consumables management
                         </p>
                       </div>
@@ -333,7 +333,7 @@ export default async function ServiceDetailPage({
               )}
 
               <div className="mt-6 pt-6 border-t border-gray-200 dark:border-slate-600 text-center">
-                <p className="text-sm text-neutral-charcoal/70 dark:text-neutral-charcoal/50 mb-4">
+                <p className="text-sm text-neutral-charcoal/70 dark:text-white/80 mb-4">
                   <strong>Free On-Site Consultation:</strong> Get an exact quote tailored to your
                   facility
                 </p>

@@ -186,11 +186,11 @@ export default function CareersPage() {
                   className="bg-white rounded-lg border-2 border-neutral-light-grey hover:border-brand-emerald transition-colors p-6"
                 >
                   <h3 className="text-h3 mb-2">{role.title}</h3>
-                  <div className="flex items-center gap-2 text-neutral-charcoal mb-1">
+                  <div className="flex items-center gap-2 text-neutral-charcoal dark:text-white mb-1">
                     {role.locationIcon}
                     <span className="text-body-sm">{role.locationLabel}</span>
                   </div>
-                  <div className="flex items-center gap-2 text-neutral-charcoal mb-4">
+                  <div className="flex items-center gap-2 text-neutral-charcoal dark:text-white mb-4">
                     {role.rateIcon}
                     <span className="text-body-sm font-semibold">{role.rateLabel}</span>
                   </div>

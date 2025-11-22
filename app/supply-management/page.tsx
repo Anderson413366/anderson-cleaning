@@ -77,7 +77,7 @@ export default function SupplyManagementPage() {
             <h2 className="text-h2 leading-tight font-bold text-neutral-charcoal dark:text-white mb-4">
               How Our Inventory System Works
             </h2>
-            <p className="text-body text-neutral-charcoal/70 dark:text-neutral-charcoal/50">
+            <p className="text-body text-neutral-charcoal/70 dark:text-white/80">
               Automated tracking and replenishment with zero effort on your part
             </p>
           </div>
@@ -311,7 +311,7 @@ export default function SupplyManagementPage() {
             <h2 className="text-h2 leading-tight font-bold text-neutral-charcoal dark:text-white mb-6 text-center">
               How Pricing Works
             </h2>
-            <p className="text-body text-neutral-charcoal/70 dark:text-neutral-charcoal/50 text-center mb-12">
+            <p className="text-body text-neutral-charcoal/70 dark:text-white/80 text-center mb-12">
               Transparent pricing with no hidden fees
             </p>
 

@@ -215,10 +215,10 @@ const ReviewSection: React.FC = () => {
 
     return (
       <div className="py-2 sm:grid sm:grid-cols-3 sm:gap-4">
-        <dt className="text-sm font-medium text-neutral-charcoal/70 dark:text-slate-400">
+        <dt className="text-sm font-medium text-neutral-charcoal/70 dark:text-white/80">
           {t(labelKey, { defaultValue: labelKey.replace(/Label$/, '') }) as string}:
         </dt>
-        <dd className="mt-1 text-sm text-neutral-charcoal dark:text-white/90 sm:mt-0 sm:col-span-2 break-words whitespace-pre-wrap">
+        <dd className="mt-1 text-sm text-neutral-charcoal dark:text-white sm:mt-0 sm:col-span-2 break-words whitespace-pre-wrap">
           {String(displayValue)}
         </dd>
       </div>

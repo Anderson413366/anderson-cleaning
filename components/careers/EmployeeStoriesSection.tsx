@@ -49,7 +49,7 @@ const EmployeeStoriesSection: React.FC = () => {
               </blockquote>
               <div className="border-t border-gray-200 dark:border-gray-600 pt-4">
                 <p className="font-semibold text-neutral-charcoal dark:text-white">{testimonial.name}</p>
-                <p className="text-sm text-neutral-charcoal/70 dark:text-neutral-charcoal/50">{testimonial.position}</p>
+                <p className="text-sm text-neutral-charcoal/70 dark:text-white/80">{testimonial.position}</p>
               </div>
             </div>
           ))}

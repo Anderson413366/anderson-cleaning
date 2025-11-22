@@ -39,7 +39,7 @@ const FormRadioGroup: React.FC<FormRadioGroupProps> = ({
             />
             <label
               htmlFor={`${name}-${option.value}`}
-              className="ml-2 block text-sm text-neutral-charcoal dark:text-white/90"
+              className="ml-2 block text-sm text-neutral-charcoal dark:text-white"
             >
               {option.label}
             </label>

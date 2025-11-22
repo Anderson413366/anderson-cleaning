@@ -94,7 +94,7 @@ const TestimonialsExplorer = ({ testimonials }: TestimonialsExplorerProps) => {
             </div>
             {showCount && (
               <div className="mt-4">
-                <p className="text-sm text-neutral-charcoal/70 dark:text-neutral-charcoal/50">
+                <p className="text-sm text-neutral-charcoal/70 dark:text-white/80">
                   Showing {filteredTestimonials.length} of {totalCount} testimonials
                 </p>
               </div>
@@ -109,7 +109,7 @@ const TestimonialsExplorer = ({ testimonials }: TestimonialsExplorerProps) => {
           <div className="max-w-7xl mx-auto">
             {filteredTestimonials.length === 0 ? (
               <div className="text-center py-12">
-                <p className="text-body text-neutral-charcoal/70 dark:text-neutral-charcoal/50">
+                <p className="text-body text-neutral-charcoal/70 dark:text-white/80">
                   No testimonials match your filter criteria. Try adjusting your filters.
                 </p>
               </div>
@@ -130,10 +130,10 @@ const TestimonialsExplorer = ({ testimonials }: TestimonialsExplorerProps) => {
                       <p className="font-bold text-neutral-charcoal dark:text-white">
                         {testimonial.name}
                       </p>
-                      <p className="text-sm text-neutral-charcoal/70 dark:text-neutral-charcoal/50">
+                      <p className="text-sm text-neutral-charcoal/70 dark:text-white/80">
                         {testimonial.title}
                       </p>
-                      <p className="text-sm text-neutral-charcoal/70 dark:text-neutral-charcoal/50">
+                      <p className="text-sm text-neutral-charcoal/70 dark:text-white/80">
                         {testimonial.company}
                       </p>
                       <div className="flex gap-2 mt-3">

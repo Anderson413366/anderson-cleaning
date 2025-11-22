@@ -68,7 +68,7 @@ const ApplicationProcessSection: React.FC<ApplicationProcessSectionProps> = ({
                   <h3 className="text-body font-bold text-neutral-charcoal dark:text-white mb-2">
                     {step.title}
                   </h3>
-                  <p className="text-neutral-charcoal/70 dark:text-neutral-charcoal/50 text-sm">{step.description}</p>
+                  <p className="text-neutral-charcoal/70 dark:text-white/80 text-sm">{step.description}</p>
                 </div>
               </div>
             )

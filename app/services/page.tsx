@@ -212,7 +212,7 @@ export default function ServicesPage() {
             <h2 className="text-h2 leading-tight font-bold text-neutral-charcoal dark:text-white mb-4">
               How We Get Started
             </h2>
-            <p className="text-body text-neutral-charcoal/70 dark:text-neutral-charcoal/50">
+            <p className="text-body text-neutral-charcoal/70 dark:text-white/80">
               From first contact to consistent quality—here's our onboarding process
             </p>
           </div>
@@ -268,7 +268,7 @@ export default function ServicesPage() {
           </div>
 
           <div className="mt-12 text-center">
-            <p className="text-neutral-charcoal/70 dark:text-neutral-charcoal/50 mb-4">
+            <p className="text-neutral-charcoal/70 dark:text-white/80 mb-4">
               <strong>Timeline:</strong> Most clients are fully onboarded within 7-10 business days
             </p>
           </div>
@@ -330,10 +330,10 @@ export default function ServicesPage() {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center mb-16">
-            <h2 className="text-h2 leading-tight font-bold text-neutral-charcoal mb-4">
+            <h2 className="text-h2 leading-tight font-bold text-neutral-charcoal dark:text-white mb-4">
               Our Quality Assurance Process
             </h2>
-            <p className="text-body text-neutral-charcoal/70">
+            <p className="text-body text-neutral-charcoal/70 dark:text-white/80">
               Every service includes our corporate-grade quality standards
             </p>
           </div>
@@ -352,7 +352,7 @@ export default function ServicesPage() {
                     <Icon className="h-8 w-8" />
                   </div>
                   <h3 className="font-bold text-neutral-charcoal dark:text-white mb-2">{item.title}</h3>
-                  <p className="text-body-sm text-neutral-charcoal/70 dark:text-white/70">{item.desc}</p>
+                  <p className="text-body-sm text-neutral-charcoal/70 dark:text-white/80">{item.desc}</p>
                 </div>
               )
             })}
@@ -363,7 +363,7 @@ export default function ServicesPage() {
       {/* FAQ */}
       <section className="py-20 bg-neutral-off-white">
         <div className="container mx-auto px-6 max-w-4xl">
-          <h2 className="text-h2 font-bold text-neutral-charcoal mb-12 text-center">
+          <h2 className="text-h2 font-bold text-neutral-charcoal dark:text-white mb-12 text-center">
             Frequently Asked Questions
           </h2>
           <div className="space-y-6">

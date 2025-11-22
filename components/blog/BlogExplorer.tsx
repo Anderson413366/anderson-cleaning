@@ -116,7 +116,7 @@ export default function BlogExplorer({ posts, categories }: BlogExplorerProps) {
                 </div>
 
                 <div className="p-6">
-                  <div className="flex items-center space-x-4 text-sm text-neutral-charcoal/60 dark:text-neutral-charcoal/50 mb-3">
+                  <div className="flex items-center space-x-4 text-sm text-neutral-charcoal/60 dark:text-white/70 mb-3">
                     <div className="flex items-center">
                       <Calendar className="h-4 w-4 mr-1" />
                       {new Date(post.publishedDate).toLocaleDateString('en-US', {
@@ -182,7 +182,7 @@ export default function BlogExplorer({ posts, categories }: BlogExplorerProps) {
             {newsletterStatus === 'success' && (
               <p className="text-sm text-brand-emerald mt-2">Thanks! Check your inbox to confirm.</p>
             )}
-            <p className="text-xs text-neutral-charcoal/60 dark:text-neutral-charcoal/50 mt-4">
+            <p className="text-xs text-neutral-charcoal/60 dark:text-white/70 mt-4">
               We respect your privacy. Unsubscribe anytime.
             </p>
           </div>

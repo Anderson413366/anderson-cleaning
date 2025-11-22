@@ -282,7 +282,7 @@ export default function CaseStudiesPage() {
           =================================================================== */}
       <footer className="bg-brand-navy text-neutral-charcoal/40 py-8">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-sm text-neutral-charcoal/60">
+          <p className="text-sm text-neutral-charcoal/60 dark:text-white/70">
             &copy; {new Date().getFullYear()} Anderson Cleaning, Inc. All rights reserved.
           </p>
         </div>

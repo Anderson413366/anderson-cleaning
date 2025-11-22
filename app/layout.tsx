@@ -10,6 +10,7 @@ import CookieBanner from '@/components/CookieBanner'
 import WebVitalsReporter from '@/components/WebVitalsReporter'
 import SkipLink from '@/components/SkipLink'
 import AccessibilityProvider from '@/components/AccessibilityProvider'
+import DarkModeLogger from '@/components/DarkModeLogger'
 import {
   generateOrganizationSchema,
   generateLocalBusinessSchema,
@@ -217,6 +218,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <ConsentInit />
         <AccessibilityProvider>
           <ThemeProvider>
+            <DarkModeLogger />
             <SkipLink />
             <Header />
             <main className="min-h-screen" id="main-content" tabIndex={-1}>

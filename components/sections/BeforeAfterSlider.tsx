@@ -230,7 +230,7 @@ export default function BeforeAfterSlider({
           {currentItem.title}
         </h3>
         {currentItem.description && (
-          <p className="text-neutral-charcoal/70 dark:text-neutral-charcoal/50 mb-4">{currentItem.description}</p>
+          <p className="text-neutral-charcoal/70 dark:text-white/80 mb-4">{currentItem.description}</p>
         )}
       </div>
 

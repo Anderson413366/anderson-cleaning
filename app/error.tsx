@@ -88,11 +88,11 @@ export default function Error({
           Oops!
         </h1>
 
-        <h2 className="text-h3 font-semibold text-neutral-charcoal dark:text-white/90 mb-4">
+        <h2 className="text-h3 font-semibold text-neutral-charcoal dark:text-white mb-4">
           Something went wrong
         </h2>
 
-        <p className="text-body text-neutral-charcoal/70 dark:text-neutral-charcoal/50 mb-2 max-w-md mx-auto">
+        <p className="text-body text-neutral-charcoal/70 dark:text-white/80 mb-2 max-w-md mx-auto">
           We encountered an unexpected error. Our team has been notified and
           we're working to fix it.
         </p>
@@ -107,7 +107,7 @@ export default function Error({
         )}
 
         {error.digest && (
-          <p className="mt-4 text-sm text-neutral-charcoal/60 dark:text-neutral-charcoal/60">
+          <p className="mt-4 text-sm text-neutral-charcoal/60 dark:text-white/70">
             Error ID: {error.digest}
           </p>
         )}
@@ -127,7 +127,7 @@ export default function Error({
 
         {/* Support Information */}
         <div className="mt-12 pt-8 border-t border-gray-200 dark:border-gray-700">
-          <p className="text-sm text-neutral-charcoal/70 dark:text-neutral-charcoal/50 mb-4">
+          <p className="text-sm text-neutral-charcoal/70 dark:text-white/80 mb-4">
             Need immediate assistance?
           </p>
 

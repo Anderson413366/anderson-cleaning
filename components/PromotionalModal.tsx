@@ -72,7 +72,7 @@ export default function PromotionalModal() {
           className="absolute top-4 right-4 p-2 rounded-full hover:bg-neutral-light-grey dark:hover:bg-slate-700 transition-colors"
           aria-label="Close promotional offer"
         >
-          <X className="h-5 w-5 text-neutral-charcoal/60 dark:text-neutral-charcoal/50" />
+          <X className="h-5 w-5 text-neutral-charcoal/60 dark:text-white/70" />
         </button>
 
         {/* Content */}
@@ -109,7 +109,7 @@ export default function PromotionalModal() {
             <p className="text-sm font-semibold text-neutral-charcoal dark:text-white mb-1">
               Plus: $100 Referral Rewards
             </p>
-            <p className="text-xs text-neutral-charcoal/70 dark:text-neutral-charcoal/50">
+            <p className="text-xs text-neutral-charcoal/70 dark:text-white/80">
               Refer another business and you both get $100 credit
             </p>
           </div>
@@ -130,7 +130,7 @@ export default function PromotionalModal() {
           </div>
 
           {/* Fine Print */}
-          <p className="text-xs text-neutral-charcoal/60 dark:text-neutral-charcoal/50 mt-4">
+          <p className="text-xs text-neutral-charcoal/60 dark:text-white/70 mt-4">
             New commercial clients only. Some restrictions may apply.
           </p>
         </div>

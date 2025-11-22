@@ -152,7 +152,7 @@ export default function QuoteForm({ onSuccess }: QuoteFormProps) {
               <h3 className="text-body font-semibold text-neutral-charcoal dark:text-white">
                 Step {currentStep} of {TOTAL_STEPS}
               </h3>
-              <span className="text-sm text-neutral-charcoal/70 dark:text-neutral-charcoal/50">
+              <span className="text-sm text-neutral-charcoal/70 dark:text-white/80">
                 {Math.round((currentStep / TOTAL_STEPS) * 100)}% Complete
               </span>
             </div>
@@ -186,7 +186,7 @@ export default function QuoteForm({ onSuccess }: QuoteFormProps) {
                 <h2 className="text-h3 font-bold text-neutral-charcoal dark:text-white mb-2">
                   Contact Information
                 </h2>
-                <p className="text-neutral-charcoal/70 dark:text-neutral-charcoal/50">
+                <p className="text-neutral-charcoal/70 dark:text-white/80">
                   Let us know who to contact about your quote.
                 </p>
               </div>
@@ -291,7 +291,7 @@ export default function QuoteForm({ onSuccess }: QuoteFormProps) {
                 <h2 className="text-h3 font-bold text-neutral-charcoal dark:text-white mb-2">
                   Facility Information
                 </h2>
-                <p className="text-neutral-charcoal/70 dark:text-neutral-charcoal/50">
+                <p className="text-neutral-charcoal/70 dark:text-white/80">
                   Tell us about your facility to help us prepare an accurate quote.
                 </p>
               </div>
@@ -473,7 +473,7 @@ export default function QuoteForm({ onSuccess }: QuoteFormProps) {
                 <h2 className="text-h3 font-bold text-neutral-charcoal dark:text-white mb-2">
                   Services Needed
                 </h2>
-                <p className="text-neutral-charcoal/70 dark:text-neutral-charcoal/50">
+                <p className="text-neutral-charcoal/70 dark:text-white/80">
                   Select all the services you're interested in. You can choose multiple.
                 </p>
               </div>
@@ -544,7 +544,7 @@ export default function QuoteForm({ onSuccess }: QuoteFormProps) {
                 <h2 className="text-h3 font-bold text-neutral-charcoal dark:text-white mb-2">
                   Additional Information
                 </h2>
-                <p className="text-neutral-charcoal/70 dark:text-neutral-charcoal/50">
+                <p className="text-neutral-charcoal/70 dark:text-white/80">
                   Any special requests or additional details we should know?
                 </p>
               </div>
@@ -565,7 +565,7 @@ export default function QuoteForm({ onSuccess }: QuoteFormProps) {
                   className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-slate-800 text-neutral-charcoal dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
                   placeholder="e.g., We need eco-friendly products due to allergies, prefer evening cleaning, have specific compliance requirements..."
                 />
-                <p className="mt-1 text-sm text-neutral-charcoal/60 dark:text-neutral-charcoal/50">
+                <p className="mt-1 text-sm text-neutral-charcoal/60 dark:text-white/70">
                   {watch('specialRequests')?.length || 0}/500 characters
                 </p>
                 {errors.specialRequests && (
@@ -692,14 +692,14 @@ export default function QuoteForm({ onSuccess }: QuoteFormProps) {
               </a>
               <a
                 href="mailto:info@andersoncleaning.com"
-                className="flex items-center gap-3 text-neutral-charcoal/70 dark:text-neutral-charcoal/50 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+                className="flex items-center gap-3 text-neutral-charcoal/70 dark:text-white/80 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
               >
                 <Mail className="h-5 w-5 flex-shrink-0" />
                 <span className="text-sm">info@andersoncleaning.com</span>
               </a>
             </div>
             <div className="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
-              <p className="text-xs text-neutral-charcoal/70 dark:text-neutral-charcoal/50">
+              <p className="text-xs text-neutral-charcoal/70 dark:text-white/80">
                 <strong>Business Hours:</strong>
                 <br />
                 Monday – Friday: 9 AM – 5 PM EST

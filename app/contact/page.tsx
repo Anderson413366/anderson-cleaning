@@ -13,7 +13,7 @@ export default function ContactPage() {
             <h1 className="text-h1 md:text-h1 font-extrabold text-neutral-charcoal dark:text-white mb-4">
               Get in Touch
             </h1>
-            <p className="text-body text-neutral-charcoal/70 dark:text-neutral-charcoal/50 max-w-2xl mx-auto">
+            <p className="text-body text-neutral-charcoal/70 dark:text-white/80 max-w-2xl mx-auto">
               Have a question? Need a quote? Want to discuss your cleaning needs? We're here to
               help.
             </p>
@@ -58,7 +58,7 @@ export default function ContactPage() {
                       >
                         (413) 306-5053
                       </a>
-                      <p className="text-sm text-neutral-charcoal/70 dark:text-neutral-charcoal/50">
+                      <p className="text-sm text-neutral-charcoal/70 dark:text-white/80">
                         24/7 emergency line for current clients
                       </p>
                     </div>
@@ -74,7 +74,7 @@ export default function ContactPage() {
                       >
                         info@andersoncleaning.com
                       </a>
-                      <p className="text-sm text-neutral-charcoal/70 dark:text-neutral-charcoal/50">General Inquiries</p>
+                      <p className="text-sm text-neutral-charcoal/70 dark:text-white/80">General Inquiries</p>
                     </div>
                   </div>
 
@@ -145,7 +145,7 @@ export default function ContactPage() {
                 >
                   (413) 306-5053
                 </a>
-                <p className="text-xs text-neutral-charcoal/70 dark:text-neutral-charcoal/50 mt-2">
+                <p className="text-xs text-neutral-charcoal/70 dark:text-white/80 mt-2">
                   Premium emergency service with on-site arrival in 2 hours or less.
                 </p>
               </div>

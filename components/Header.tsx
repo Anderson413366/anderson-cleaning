@@ -57,7 +57,7 @@ export default function Header() {
         <div className="flex lg:hidden">
           <button
             type="button"
-            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-neutral-charcoal"
+            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-neutral-charcoal dark:text-white"
             onClick={() => setMobileMenuOpen(true)}
           >
             <span className="sr-only">Open main menu</span>
@@ -74,7 +74,7 @@ export default function Header() {
               className={`text-sm font-semibold leading-6 transition-colors ${
                 pathname === item.href
                   ? 'text-brand-emerald'
-                  : 'text-neutral-charcoal hover:text-brand-emerald'
+                  : 'text-neutral-charcoal dark:text-white hover:text-brand-emerald dark:hover:text-brand-emerald/90'
               }`}
             >
               {item.name}
@@ -86,7 +86,7 @@ export default function Header() {
         <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:items-center lg:gap-4">
           <button
             onClick={toggleTheme}
-            className="rounded-md p-2 text-neutral-charcoal dark:text-white/80 hover:bg-neutral-light-grey dark:hover:bg-gray-800 transition-colors"
+            className="rounded-md p-2 text-neutral-charcoal dark:text-white hover:bg-neutral-light-grey dark:hover:bg-gray-800 transition-colors"
             aria-label="Toggle dark mode"
           >
             {theme === 'dark' ? (
@@ -118,7 +118,7 @@ export default function Header() {
               </Link>
               <button
                 type="button"
-                className="-m-2.5 rounded-md p-2.5 text-neutral-charcoal"
+                className="-m-2.5 rounded-md p-2.5 text-neutral-charcoal dark:text-white"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 <span className="sr-only">Close menu</span>
@@ -132,10 +132,10 @@ export default function Header() {
                     <Link
                       key={item.name}
                       href={item.href}
-                      className={`-mx-3 block rounded-lg px-3 py-2 text-body-sm font-semibold leading-7 hover:bg-neutral-light-grey ${
+                      className={`-mx-3 block rounded-lg px-3 py-2 text-body-sm font-semibold leading-7 hover:bg-neutral-light-grey dark:hover:bg-slate-800 ${
                         pathname === item.href
-                          ? 'text-brand-emerald bg-neutral-light-grey'
-                          : 'text-neutral-charcoal'
+                          ? 'text-brand-emerald bg-neutral-light-grey dark:bg-slate-800'
+                          : 'text-neutral-charcoal dark:text-white'
                       }`}
                       onClick={() => setMobileMenuOpen(false)}
                     >
@@ -154,7 +154,7 @@ export default function Header() {
                   <div className="mt-4 space-y-2">
                     <button
                       onClick={toggleTheme}
-                      className="flex w-full items-center gap-2 text-sm text-neutral-charcoal hover:text-brand-emerald"
+                      className="flex w-full items-center gap-2 text-sm text-neutral-charcoal dark:text-white hover:text-brand-emerald dark:hover:text-brand-emerald/90"
                     >
                       {theme === 'dark' ? (
                         <>
@@ -170,14 +170,14 @@ export default function Header() {
                     </button>
                     <a
                       href="tel:4133065053"
-                      className="flex items-center gap-2 text-sm text-neutral-charcoal hover:text-brand-emerald"
+                      className="flex items-center gap-2 text-sm text-neutral-charcoal dark:text-white hover:text-brand-emerald dark:hover:text-brand-emerald/90"
                     >
                       <Phone className="h-4 w-4" />
                       (413) 306-5053
                     </a>
                     <a
                       href="mailto:info@andersoncleaning.com"
-                      className="flex items-center gap-2 text-sm text-neutral-charcoal hover:text-brand-emerald"
+                      className="flex items-center gap-2 text-sm text-neutral-charcoal dark:text-white hover:text-brand-emerald dark:hover:text-brand-emerald/90"
                     >
                       <Mail className="h-4 w-4" />
                       info@andersoncleaning.com

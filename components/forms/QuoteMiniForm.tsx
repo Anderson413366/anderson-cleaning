@@ -100,42 +100,50 @@ export default function QuoteMiniForm({
       />
 
       <div>
-        <label className="block text-body-sm font-semibold mb-1">Name *</label>
+        <label className="block text-body-sm font-semibold mb-1 text-neutral-charcoal dark:text-white">
+          Name *
+        </label>
         <input
           {...register('name')}
-          className="w-full border-2 border-neutral-light-grey rounded px-4 py-2 focus:border-brand-emerald outline-none"
+          className="w-full border-2 border-neutral-light-grey rounded px-4 py-2 focus:border-brand-emerald outline-none bg-white dark:bg-slate-800 text-neutral-charcoal dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-500 dark:placeholder:text-gray-400"
           placeholder="Your name"
         />
         {errors.name && <p className="text-sm text-red-600 mt-1">{errors.name.message}</p>}
       </div>
 
       <div>
-        <label className="block text-body-sm font-semibold mb-1">Company</label>
+        <label className="block text-body-sm font-semibold mb-1 text-neutral-charcoal dark:text-white">
+          Company
+        </label>
         <input
           {...register('company')}
-          className="w-full border-2 border-neutral-light-grey rounded px-4 py-2 focus:border-brand-emerald outline-none"
+          className="w-full border-2 border-neutral-light-grey rounded px-4 py-2 focus:border-brand-emerald outline-none bg-white dark:bg-slate-800 text-neutral-charcoal dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-500 dark:placeholder:text-gray-400"
           placeholder="Optional"
         />
       </div>
 
       <div>
-        <label className="block text-body-sm font-semibold mb-1">Phone *</label>
+        <label className="block text-body-sm font-semibold mb-1 text-neutral-charcoal dark:text-white">
+          Phone *
+        </label>
         <input
           {...register('phone')}
           type="tel"
           maxLength={10}
-          className="w-full border-2 border-neutral-light-grey rounded px-4 py-2 focus:border-brand-emerald outline-none"
+          className="w-full border-2 border-neutral-light-grey rounded px-4 py-2 focus:border-brand-emerald outline-none bg-white dark:bg-slate-800 text-neutral-charcoal dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-500 dark:placeholder:text-gray-400"
           placeholder="1234567890"
         />
         {errors.phone && <p className="text-sm text-red-600 mt-1">{errors.phone.message}</p>}
       </div>
 
       <div>
-        <label className="block text-body-sm font-semibold mb-1">Message *</label>
+        <label className="block text-body-sm font-semibold mb-1 text-neutral-charcoal dark:text-white">
+          Message *
+        </label>
         <textarea
           {...register('message')}
           rows={3}
-          className="w-full border-2 border-neutral-light-grey rounded px-4 py-2 focus:border-brand-emerald outline-none"
+          className="w-full border-2 border-neutral-light-grey rounded px-4 py-2 focus:border-brand-emerald outline-none bg-white dark:bg-slate-800 text-neutral-charcoal dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-500 dark:placeholder:text-gray-400"
           placeholder="Tell us about your cleaning needs..."
         />
         {errors.message && <p className="text-sm text-red-600 mt-1">{errors.message.message}</p>}
@@ -145,7 +153,7 @@ export default function QuoteMiniForm({
         {isSubmitting ? 'Sending...' : 'Get Free Quote'}
       </Button>
 
-      <p className="text-sm text-center text-neutral-charcoal">
+      <p className="text-sm text-center text-neutral-charcoal dark:text-white">
         <button
           type="button"
           onClick={() => onOpenAdvanced?.()}

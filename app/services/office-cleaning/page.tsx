@@ -47,15 +47,15 @@ export default function OfficeCleaningPage() {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-6 max-w-6xl">
           <div className="text-center mb-16">
-            <h2 className="text-h2 leading-tight font-bold text-neutral-charcoal mb-4">What's Included</h2>
-            <p className="text-body text-neutral-charcoal/70">
+            <h2 className="text-h2 leading-tight font-bold text-neutral-charcoal dark:text-white mb-4">What's Included</h2>
+            <p className="text-body text-neutral-charcoal/70 dark:text-white/80">
               Comprehensive cleaning tailored to your office environment
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="bg-neutral-off-white rounded-xl p-8">
-              <h3 className="text-body font-bold text-neutral-charcoal mb-6 flex items-center">
+              <h3 className="text-body font-bold text-neutral-charcoal dark:text-white mb-6 flex items-center">
                 <CheckCircle2 className="h-6 w-6 text-green-500 mr-3" />
                 Daily Cleaning Tasks
               </h3>
@@ -79,7 +79,7 @@ export default function OfficeCleaningPage() {
             </div>
 
             <div className="bg-neutral-off-white rounded-xl p-8">
-              <h3 className="text-body font-bold text-neutral-charcoal mb-6 flex items-center">
+              <h3 className="text-body font-bold text-neutral-charcoal dark:text-white mb-6 flex items-center">
                 <CheckCircle2 className="h-6 w-6 text-green-500 mr-3" />
                 Weekly/Monthly Deep Cleaning
               </h3>
@@ -109,10 +109,10 @@ export default function OfficeCleaningPage() {
       <section className="py-20 bg-neutral-off-white">
         <div className="container mx-auto px-6 max-w-6xl">
           <div className="text-center mb-16">
-            <h2 className="text-h2 leading-tight font-bold text-neutral-charcoal mb-4">
+            <h2 className="text-h2 leading-tight font-bold text-neutral-charcoal dark:text-white mb-4">
               How We Ensure Quality
             </h2>
-            <p className="text-body text-neutral-charcoal/70">Corporate-grade standards for every clean</p>
+            <p className="text-body text-neutral-charcoal/70 dark:text-white/80">Corporate-grade standards for every clean</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
@@ -147,8 +147,8 @@ export default function OfficeCleaningPage() {
                   <div className="inline-flex items-center justify-center w-16 h-16 bg-primary-100 rounded-full mb-4">
                     <Icon className="h-8 w-8 text-primary-700" />
                   </div>
-                  <h3 className="text-body font-bold text-neutral-charcoal mb-2">{item.title}</h3>
-                  <p className="text-neutral-charcoal/70 text-sm">{item.description}</p>
+                  <h3 className="text-body font-bold text-neutral-charcoal dark:text-white mb-2">{item.title}</h3>
+                  <p className="text-neutral-charcoal/70 dark:text-white/80 text-sm">{item.description}</p>
                 </div>
               )
             })}
@@ -163,7 +163,7 @@ export default function OfficeCleaningPage() {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-6 max-w-4xl">
           <div className="text-center mb-16">
-            <h2 className="text-h2 leading-tight font-bold text-neutral-charcoal mb-4">Perfect For</h2>
+            <h2 className="text-h2 leading-tight font-bold text-neutral-charcoal dark:text-white mb-4">Perfect For</h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -208,8 +208,8 @@ export default function OfficeCleaningPage() {
                   <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-xl bg-neutral-off-white text-brand-emerald">
                     <Icon className="h-6 w-6" aria-hidden="true" />
                   </div>
-                  <h3 className="font-bold text-neutral-charcoal mb-2">{item.title}</h3>
-                  <p className="text-sm text-neutral-charcoal/70">{item.desc}</p>
+                  <h3 className="font-bold text-neutral-charcoal dark:text-white mb-2">{item.title}</h3>
+                  <p className="text-sm text-neutral-charcoal/70 dark:text-white/80">{item.desc}</p>
                 </div>
               )
             })}
@@ -222,10 +222,10 @@ export default function OfficeCleaningPage() {
         <div className="container mx-auto px-6 max-w-4xl">
           <div className="bg-white rounded-2xl shadow-2xl p-8 md:p-12">
             <div className="text-center mb-8">
-              <h2 className="text-h2 font-bold text-neutral-charcoal mb-4">
+              <h2 className="text-h2 font-bold text-neutral-charcoal dark:text-white mb-4">
                 Custom Pricing Based on Your Needs
               </h2>
-              <p className="text-neutral-charcoal/70">
+              <p className="text-neutral-charcoal/70 dark:text-white/80">
                 Every facility is unique. We create custom proposals based on:
               </p>
             </div>
@@ -252,7 +252,7 @@ export default function OfficeCleaningPage() {
                   Get Your Custom Quote
                 </Button>
               </Link>
-              <p className="text-sm text-neutral-charcoal/70 mt-4">
+              <p className="text-sm text-neutral-charcoal/70 dark:text-white/80 mt-4">
                 We respond within 24 hours (Monday – Friday, 9 AM – 5 PM EST)
               </p>
             </div>
@@ -295,7 +295,7 @@ export default function OfficeCleaningPage() {
               ← Back to All Services
             </a>
           </div>
-          <p className="text-sm text-neutral-charcoal/60">
+          <p className="text-sm text-neutral-charcoal/60 dark:text-white/70">
             &copy; {new Date().getFullYear()} Anderson Cleaning, Inc. All rights reserved.
           </p>
         </div>

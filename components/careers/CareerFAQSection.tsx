@@ -51,14 +51,14 @@ const CareerFAQSection: React.FC<CareerFAQSectionProps> = ({ onStartApplication 
                   {faq.question}
                 </span>
                 <ChevronDown
-                  className={`h-5 w-5 text-neutral-charcoal/70 dark:text-neutral-charcoal/50 transform transition-transform ${
+                  className={`h-5 w-5 text-neutral-charcoal/70 dark:text-white/80 transform transition-transform ${
                     openIndex === index ? 'rotate-180' : ''
                   }`}
                 />
               </button>
               {openIndex === index && (
                 <div className="p-6 bg-white dark:bg-slate-900">
-                  <p className="text-neutral-charcoal/70 dark:text-neutral-charcoal/50">{faq.answer}</p>
+                  <p className="text-neutral-charcoal/70 dark:text-white/80">{faq.answer}</p>
                 </div>
               )}
             </div>

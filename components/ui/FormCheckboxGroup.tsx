@@ -47,7 +47,7 @@ const FormCheckboxGroup: React.FC<FormCheckboxGroupProps> = ({
             />
             <label
               htmlFor={`${namePrefix}-${optionKey}`}
-              className="ml-2 block text-sm text-neutral-charcoal dark:text-white/90"
+              className="ml-2 block text-sm text-neutral-charcoal dark:text-white"
             >
               {cleanLabel || optionKey}
             </label>

@@ -105,7 +105,7 @@ export default function AboutPage() {
           <h2 className="text-h2 leading-tight font-bold text-neutral-charcoal dark:text-white mb-4 text-center">
             What Makes Us Different
           </h2>
-          <p className="text-neutral-charcoal/70 dark:text-neutral-charcoal/50 text-center mb-12 max-w-2xl mx-auto">
+          <p className="text-neutral-charcoal/70 dark:text-white/80 text-center mb-12 max-w-2xl mx-auto">
             We're not the biggest cleaning company, but we might be the most committed to your
             success
           </p>
@@ -233,7 +233,7 @@ export default function AboutPage() {
             <h2 className="text-h2 leading-tight font-bold text-neutral-charcoal dark:text-white mb-4 text-center">
               Environmentally Responsible & Safety-First
             </h2>
-            <p className="text-neutral-charcoal/70 dark:text-neutral-charcoal/50 text-center mb-12 max-w-3xl mx-auto">
+            <p className="text-neutral-charcoal/70 dark:text-white/80 text-center mb-12 max-w-3xl mx-auto">
               We believe in protecting both your facility and our planet. Our cleaning practices
               prioritize health, safety, and environmental sustainability.
             </p>
@@ -360,7 +360,7 @@ export default function AboutPage() {
                       <h3 className="font-bold text-neutral-charcoal dark:text-white mb-2">
                         {item.title}
                       </h3>
-                      <p className="text-body-sm text-neutral-charcoal/70 dark:text-white/70">
+                      <p className="text-body-sm text-neutral-charcoal/70 dark:text-white/80">
                         {item.description}
                       </p>
                     </div>
@@ -408,7 +408,7 @@ export default function AboutPage() {
             <h2 className="text-h2 leading-tight font-bold text-neutral-charcoal dark:text-white mb-6">
               Proudly Serving Massachusetts & Connecticut
             </h2>
-            <p className="text-body text-neutral-charcoal/70 dark:text-neutral-charcoal/50 mb-8">
+            <p className="text-body text-neutral-charcoal/70 dark:text-white/80 mb-8">
               Based in West Springfield, MA, we provide commercial cleaning services throughout
               Western Massachusetts and Northern Connecticut within a 100-mile radius.
             </p>
@@ -422,7 +422,7 @@ export default function AboutPage() {
               <div>Westfield, MA</div>
               <div>Enfield, CT</div>
             </div>
-            <p className="text-sm text-neutral-charcoal/60 dark:text-neutral-charcoal/50 mt-8">
+            <p className="text-sm text-neutral-charcoal/60 dark:text-white/70 mt-8">
               Don't see your city? Contact us-we may serve your area!
             </p>
           </div>

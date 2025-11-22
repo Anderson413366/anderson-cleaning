@@ -26,7 +26,7 @@ const FormTextarea = forwardRef<HTMLTextAreaElement, FormTextareaProps>(
           name={name}
           ref={ref}
           rows={4}
-          className={`mt-1 block w-full px-3 py-2 bg-white dark:bg-slate-800 border border-gray-300 dark:border-slate-600 rounded-md shadow-sm placeholder-gray-400 dark:placeholder-slate-500
+          className={`mt-1 block w-full px-3 py-2 bg-white dark:bg-slate-800 border border-gray-300 dark:border-slate-600 rounded-md shadow-sm placeholder-gray-400 dark:placeholder-gray-500 dark:placeholder-gray-400 dark:placeholder-gray-500 dark:placeholder-gray-400
                       focus:outline-none focus:ring-primary focus:border-primary sm:text-sm
                       ${error ? 'border-red-500 dark:border-red-400' : ''} ${className || ''}`}
           {...props}

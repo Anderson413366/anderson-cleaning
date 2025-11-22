@@ -147,7 +147,7 @@ export default function CareerApplicationForm() {
           <div className="bg-neutral-off-white p-4 rounded">
             <p className="text-body-sm font-semibold">Your Recovery Code:</p>
             <p className="text-h3 text-brand-navy font-mono">{recoveryCode}</p>
-            <p className="text-body-sm text-neutral-charcoal mt-2">
+            <p className="text-body-sm text-neutral-charcoal dark:text-white mt-2">
               Save this code to check your application status.
             </p>
           </div>
@@ -165,7 +165,9 @@ export default function CareerApplicationForm() {
           <div key={s} className="flex items-center w-full">
             <div
               className={`w-10 h-10 rounded-full flex items-center justify-center font-semibold ${
-                step >= s ? 'bg-brand-emerald text-white' : 'bg-neutral-light-grey text-neutral-charcoal'
+                step >= s
+                  ? 'bg-brand-emerald text-white'
+                  : 'bg-neutral-light-grey text-neutral-charcoal dark:text-white/80'
               }`}
             >
               {s}
@@ -179,36 +181,44 @@ export default function CareerApplicationForm() {
         {step === 1 && (
           <div className="space-y-5">
             <div>
-              <label className="block text-body-sm font-semibold mb-2">Full Name *</label>
+              <label className="block text-body-sm font-semibold mb-2 text-neutral-charcoal dark:text-white">
+                Full Name *
+              </label>
               <input
                 {...register('full_name')}
                 onFocus={generateRecoveryCode}
-                className="w-full border-2 border-neutral-light-grey rounded px-4 py-2 focus:border-brand-emerald outline-none"
+                className="w-full border-2 border-neutral-light-grey rounded px-4 py-2 focus:border-brand-emerald outline-none bg-white dark:bg-slate-800 text-neutral-charcoal dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-500 dark:placeholder:text-gray-400"
               />
               {errors.full_name && <p className="text-sm text-red-600 mt-1">{errors.full_name.message}</p>}
             </div>
             <div>
-              <label className="block text-body-sm font-semibold mb-2">Email *</label>
+              <label className="block text-body-sm font-semibold mb-2 text-neutral-charcoal dark:text-white">
+                Email *
+              </label>
               <input
                 {...register('email')}
                 type="email"
-                className="w-full border-2 border-neutral-light-grey rounded px-4 py-2 focus:border-brand-emerald outline-none"
+                className="w-full border-2 border-neutral-light-grey rounded px-4 py-2 focus:border-brand-emerald outline-none bg-white dark:bg-slate-800 text-neutral-charcoal dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-500 dark:placeholder:text-gray-400"
               />
               {errors.email && <p className="text-sm text-red-600 mt-1">{errors.email.message}</p>}
             </div>
             <div>
-              <label className="block text-body-sm font-semibold mb-2">Phone *</label>
+              <label className="block text-body-sm font-semibold mb-2 text-neutral-charcoal dark:text-white">
+                Phone *
+              </label>
               <input
                 {...register('phone')}
                 type="tel"
                 placeholder="1234567890"
                 maxLength={10}
-                className="w-full border-2 border-neutral-light-grey rounded px-4 py-2 focus:border-brand-emerald outline-none"
+                className="w-full border-2 border-neutral-light-grey rounded px-4 py-2 focus:border-brand-emerald outline-none bg-white dark:bg-slate-800 text-neutral-charcoal dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-500 dark:placeholder:text-gray-400"
               />
               {errors.phone && <p className="text-sm text-red-600 mt-1">{errors.phone.message}</p>}
             </div>
             <div>
-              <label className="block text-body-sm font-semibold mb-2">Resume (PDF/DOC, max 5MB)</label>
+              <label className="block text-body-sm font-semibold mb-2 text-neutral-charcoal dark:text-white">
+                Resume (PDF/DOC, max 5MB)
+              </label>
               <label className="flex items-center justify-center gap-2 border-2 border-dashed border-neutral-light-grey rounded px-4 py-6 cursor-pointer hover:border-brand-emerald transition-colors">
                 <Upload className="h-5 w-5" />
                 <span>Upload File</span>
@@ -216,7 +226,7 @@ export default function CareerApplicationForm() {
                 <input type="file" accept=".pdf,.doc,.docx" onChange={handleFileUpload} className="hidden" />
               </label>
               {recoveryCode && (
-                <p className="text-body-sm text-neutral-charcoal mt-2">
+                <p className="text-body-sm text-neutral-charcoal dark:text-white mt-2">
                   Recovery Code: <span className="font-semibold">{recoveryCode}</span>
                 </p>
               )}
@@ -235,10 +245,12 @@ export default function CareerApplicationForm() {
         {step === 2 && (
           <div className="space-y-5">
             <div>
-              <label className="block text-body-sm font-semibold mb-2">Position Applying For *</label>
+              <label className="block text-body-sm font-semibold mb-2 text-neutral-charcoal dark:text-white">
+                Position Applying For *
+              </label>
               <select
                 {...register('position')}
-                className="w-full border-2 border-neutral-light-grey rounded px-4 py-2 focus:border-brand-emerald outline-none"
+                className="w-full border-2 border-neutral-light-grey rounded px-4 py-2 focus:border-brand-emerald outline-none bg-white dark:bg-slate-800 text-neutral-charcoal dark:text-white"
               >
                 <option value="">Select a position...</option>
                 {POSITIONS.map((pos) => (
@@ -250,12 +262,14 @@ export default function CareerApplicationForm() {
               {errors.position && <p className="text-sm text-red-600 mt-1">{errors.position.message}</p>}
             </div>
             <div>
-              <label className="block text-body-sm font-semibold mb-2">Why Anderson Cleaning? *</label>
+              <label className="block text-body-sm font-semibold mb-2 text-neutral-charcoal dark:text-white">
+                Why Anderson Cleaning? *
+              </label>
               <textarea
                 {...register('why_anderson')}
                 rows={4}
                 placeholder="Tell us why you want to join our team..."
-                className="w-full border-2 border-neutral-light-grey rounded px-4 py-2 focus:border-brand-emerald outline-none"
+                className="w-full border-2 border-neutral-light-grey rounded px-4 py-2 focus:border-brand-emerald outline-none bg-white dark:bg-slate-800 text-neutral-charcoal dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-500 dark:placeholder:text-gray-400"
               />
               {errors.why_anderson && (
                 <p className="text-sm text-red-600 mt-1">{errors.why_anderson.message}</p>
@@ -280,7 +294,9 @@ export default function CareerApplicationForm() {
         {step === 3 && (
           <div className="space-y-5">
             <div>
-              <label className="block text-body-sm font-semibold mb-2">Availability *</label>
+              <label className="block text-body-sm font-semibold mb-2 text-neutral-charcoal dark:text-white">
+                Availability *
+              </label>
               <div className="space-y-2">
                 {AVAILABILITY_OPTIONS.map((option) => (
                   <label key={option} className="flex items-center gap-2">
@@ -291,7 +307,7 @@ export default function CareerApplicationForm() {
                       onChange={(e) => handleAvailabilityChange(option, e.target.checked)}
                       className="w-5 h-5"
                     />
-                    <span>{option}</span>
+                    <span className="text-neutral-charcoal dark:text-white">{option}</span>
                   </label>
                 ))}
               </div>
@@ -300,12 +316,14 @@ export default function CareerApplicationForm() {
               )}
             </div>
             <div>
-              <label className="block text-body-sm font-semibold mb-2">Cover Letter (Optional)</label>
+              <label className="block text-body-sm font-semibold mb-2 text-neutral-charcoal dark:text-white">
+                Cover Letter (Optional)
+              </label>
               <textarea
                 {...register('cover_letter')}
                 rows={4}
                 placeholder="Additional information..."
-                className="w-full border-2 border-neutral-light-grey rounded px-4 py-2 focus:border-brand-emerald outline-none"
+                className="w-full border-2 border-neutral-light-grey rounded px-4 py-2 focus:border-brand-emerald outline-none bg-white dark:bg-slate-800 text-neutral-charcoal dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-500 dark:placeholder:text-gray-400"
               />
             </div>
             <div className="flex gap-4">

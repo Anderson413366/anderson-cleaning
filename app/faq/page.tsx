@@ -202,7 +202,7 @@ export default function FAQPage() {
           <div className="max-w-4xl mx-auto">
             {Object.entries(filteredFAQs).length === 0 ? (
               <div className="text-center py-12">
-                <p className="text-neutral-charcoal/70 dark:text-neutral-charcoal/50 text-body">
+                <p className="text-neutral-charcoal/70 dark:text-white/80 text-body">
                   No questions found matching "{searchQuery}". Try a different search term or browse
                   all categories.
                 </p>

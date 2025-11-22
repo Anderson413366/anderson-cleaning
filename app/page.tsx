@@ -361,14 +361,14 @@ export default function Home() {
                     <Star key={j} className="h-5 w-5 text-brand-emerald fill-brand-emerald" aria-hidden="true" />
                   ))}
                 </div>
-                <blockquote className="text-body leading-relaxed text-neutral-charcoal dark:text-white/80 mb-4">
+                <blockquote className="text-body leading-relaxed text-neutral-charcoal dark:text-white mb-4">
                   "{testimonial.quote}"
                 </blockquote>
                 <div className="border-t border-neutral-light-grey dark:border-slate-700 pt-4">
                   <p className="font-semibold text-neutral-charcoal dark:text-white">
                     {testimonial.author}
                   </p>
-                  <p className="text-body-sm text-neutral-charcoal/70 dark:text-white/70">{testimonial.company}</p>
+                  <p className="text-body-sm text-neutral-charcoal/70 dark:text-white/80">{testimonial.company}</p>
                 </div>
               </div>
             ))}
@@ -416,7 +416,7 @@ export default function Home() {
           />
 
           <div className="text-center mt-12">
-            <p className="text-neutral-charcoal/70 dark:text-neutral-charcoal/50 mb-4">
+            <p className="text-neutral-charcoal/70 dark:text-white/80 mb-4">
               Want to see more examples of our work?
             </p>
             <Link href="/quote">
@@ -465,7 +465,7 @@ export default function Home() {
                   <h3 className="font-bold text-neutral-charcoal dark:text-white mb-1 text-body-sm">
                     {badge.label}
                   </h3>
-                  <p className="text-body-sm text-neutral-charcoal/70 dark:text-white/70">{badge.desc}</p>
+                  <p className="text-body-sm text-neutral-charcoal/70 dark:text-white/80">{badge.desc}</p>
                 </div>
               )
             })}
@@ -543,19 +543,19 @@ export default function Home() {
                 <ul className="space-y-3 mb-6">
                   <li className="flex items-start">
                     <CheckCircle2 className="h-5 w-5 text-brand-emerald mr-2 flex-shrink-0 mt-0.5" />
-                    <span className="text-body text-neutral-charcoal dark:text-white/80">
+                    <span className="text-body text-neutral-charcoal dark:text-white">
                       Office Cleaning Best Practices
                     </span>
                   </li>
                   <li className="flex items-start">
                     <CheckCircle2 className="h-5 w-5 text-brand-emerald mr-2 flex-shrink-0 mt-0.5" />
-                    <span className="text-body text-neutral-charcoal dark:text-white/80">
+                    <span className="text-body text-neutral-charcoal dark:text-white">
                       Green Cleaning Benefits
                     </span>
                   </li>
                   <li className="flex items-start">
                     <CheckCircle2 className="h-5 w-5 text-brand-emerald mr-2 flex-shrink-0 mt-0.5" />
-                    <span className="text-body text-neutral-charcoal dark:text-white/80">
+                    <span className="text-body text-neutral-charcoal dark:text-white">
                       Healthcare Facility Standards
                     </span>
                   </li>
@@ -580,17 +580,17 @@ export default function Home() {
                 <ul className="space-y-3 mb-6">
                   <li className="flex items-start">
                     <CheckCircle2 className="h-5 w-5 text-brand-emerald mr-2 flex-shrink-0 mt-0.5" />
-                    <span className="text-body text-neutral-charcoal dark:text-white/80">Contract & Pricing Info</span>
+                    <span className="text-body text-neutral-charcoal dark:text-white">Contract & Pricing Info</span>
                   </li>
                   <li className="flex items-start">
                     <CheckCircle2 className="h-5 w-5 text-brand-emerald mr-2 flex-shrink-0 mt-0.5" />
-                    <span className="text-body text-neutral-charcoal dark:text-white/80">
+                    <span className="text-body text-neutral-charcoal dark:text-white">
                       Staff Vetting & Training
                     </span>
                   </li>
                   <li className="flex items-start">
                     <CheckCircle2 className="h-5 w-5 text-brand-emerald mr-2 flex-shrink-0 mt-0.5" />
-                    <span className="text-body text-neutral-charcoal dark:text-white/80">
+                    <span className="text-body text-neutral-charcoal dark:text-white">
                       Service Area & Scheduling
                     </span>
                   </li>
@@ -615,19 +615,19 @@ export default function Home() {
                 <ul className="space-y-3 mb-6">
                   <li className="flex items-start">
                     <CheckCircle2 className="h-5 w-5 text-brand-emerald mr-2 flex-shrink-0 mt-0.5" />
-                    <span className="text-body text-neutral-charcoal dark:text-white/80">
+                    <span className="text-body text-neutral-charcoal dark:text-white">
                       10% Off First Month for New Clients
                     </span>
                   </li>
                   <li className="flex items-start">
                     <CheckCircle2 className="h-5 w-5 text-brand-emerald mr-2 flex-shrink-0 mt-0.5" />
-                    <span className="text-body text-neutral-charcoal dark:text-white/80">
+                    <span className="text-body text-neutral-charcoal dark:text-white">
                       $100 Referral Bonus Program
                     </span>
                   </li>
                   <li className="flex items-start">
                     <CheckCircle2 className="h-5 w-5 text-brand-emerald mr-2 flex-shrink-0 mt-0.5" />
-                    <span className="text-body text-neutral-charcoal dark:text-white/80">
+                    <span className="text-body text-neutral-charcoal dark:text-white">
                       Seasonal Promotions
                     </span>
                   </li>

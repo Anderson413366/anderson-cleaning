@@ -143,7 +143,7 @@ const Modal: React.FC<ModalProps> = ({
                 variant="ghost"
                 size="icon"
                 onClick={onClose}
-                className="text-neutral-charcoal/50 hover:text-neutral-charcoal/70 dark:text-slate-400 dark:hover:text-slate-200"
+                className="text-neutral-charcoal/50 hover:text-neutral-charcoal/70 dark:text-white/80 dark:hover:text-slate-200"
                 aria-label="Close modal"
               >
                 <X className="h-5 w-5" />

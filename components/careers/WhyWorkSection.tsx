@@ -43,11 +43,11 @@ const WhyWorkSection: React.FC = () => {
                 <h3 className="text-body font-bold text-neutral-charcoal dark:text-white mb-3">
                   {item.title}
                 </h3>
-                <p className="text-neutral-charcoal/70 dark:text-neutral-charcoal/50 mb-3">{item.description}</p>
+                <p className="text-neutral-charcoal/70 dark:text-white/80 mb-3">{item.description}</p>
                 {item.benefits && item.benefits.length > 0 && (
                   <ul className="space-y-2">
                     {item.benefits.map((benefit, idx) => (
-                      <li key={idx} className="flex items-start text-sm text-neutral-charcoal/70 dark:text-neutral-charcoal/50">
+                      <li key={idx} className="flex items-start text-sm text-neutral-charcoal/70 dark:text-white/80">
                         <span className="text-accent-500 mr-2">•</span>
                         <span>{benefit}</span>
                       </li>

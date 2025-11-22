@@ -63,11 +63,11 @@ export default function NotFound() {
           404
         </h1>
 
-        <h2 className="text-h3 font-semibold text-neutral-charcoal dark:text-white/90 mb-4">
+        <h2 className="text-h3 font-semibold text-neutral-charcoal dark:text-white mb-4">
           Page Not Found
         </h2>
 
-        <p className="text-body text-neutral-charcoal/70 dark:text-neutral-charcoal/50 mb-8 max-w-md mx-auto">
+        <p className="text-body text-neutral-charcoal/70 dark:text-white/80 mb-8 max-w-md mx-auto">
           The page you're looking for doesn't exist or has been moved. Let's
           get you back on track.
         </p>
@@ -89,7 +89,7 @@ export default function NotFound() {
 
         {/* Helpful Links */}
         <div className="mt-12 pt-8 border-t border-gray-200 dark:border-gray-700">
-          <p className="text-sm text-neutral-charcoal/60 dark:text-neutral-charcoal/60 mb-4">
+          <p className="text-sm text-neutral-charcoal/60 dark:text-white/70 mb-4">
             Maybe you were looking for:
           </p>
 

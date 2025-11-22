@@ -54,7 +54,7 @@ const CompanyCultureSection: React.FC = () => {
                 <h3 className="text-body font-bold text-neutral-charcoal dark:text-white mb-3">
                   {value.title}
                 </h3>
-                <p className="text-neutral-charcoal/70 dark:text-neutral-charcoal/50">{value.description}</p>
+                <p className="text-neutral-charcoal/70 dark:text-white/80">{value.description}</p>
               </div>
             )
           })}
@@ -62,7 +62,7 @@ const CompanyCultureSection: React.FC = () => {
 
         {/* Internal Links */}
         <div className="mt-12 text-center">
-          <p className="text-neutral-charcoal/70 dark:text-neutral-charcoal/50 mb-6">
+          <p className="text-neutral-charcoal/70 dark:text-white/80 mb-6">
             Learn more about our company and services
           </p>
           <div className="flex flex-wrap justify-center gap-4">

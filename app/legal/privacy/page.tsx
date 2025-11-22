@@ -38,14 +38,14 @@ export default function PrivacyPolicyPage() {
         <div className="mb-12">
           <Link
             href="/"
-            className="inline-flex items-center text-sm text-neutral-charcoal/70 dark:text-neutral-charcoal/50 hover:text-primary-600 dark:hover:text-primary-400 mb-4"
+            className="inline-flex items-center text-sm text-neutral-charcoal/70 dark:text-white/80 hover:text-primary-600 dark:hover:text-primary-400 mb-4"
           >
             ← Back to Home
           </Link>
           <h1 className="text-h1 md:text-h1 font-bold text-neutral-charcoal dark:text-white mb-4">
             Privacy Policy
           </h1>
-          <p className="text-body text-neutral-charcoal/70 dark:text-neutral-charcoal/50">
+          <p className="text-body text-neutral-charcoal/70 dark:text-white/80">
             Last Updated: <time dateTime="2025-01-15">{lastUpdated}</time>
           </p>
           <div className="mt-4 flex flex-wrap gap-4">
