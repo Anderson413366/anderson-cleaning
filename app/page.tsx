@@ -49,9 +49,14 @@ export default function Home() {
                 </span>
               </div>
               <h1 className="text-h1 font-extrabold mb-6 leading-tight">
-                Professional Commercial Cleaning with a{' '}
-                <span className="text-brand-emerald">Personal Touch</span>
+                Western Massachusetts' Premier Commercial Cleaning Partner
               </h1>
+
+              <div className="mb-4">
+                <span className="inline-block px-4 py-2 rounded-full bg-brand-emerald text-white text-body-sm font-semibold">
+                  Serving Western MA & Northern CT
+                </span>
+              </div>
 
               {/* Key Selling Points */}
               <div className="space-y-3 mb-8 text-body text-white/90">
