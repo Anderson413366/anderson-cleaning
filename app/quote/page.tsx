@@ -13,7 +13,7 @@ export default function QuotePage() {
   }
 
   return (
-    <div className="min-h-screen bg-neutral-off-white dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 transition-colors duration-300">
+    <div className="min-h-screen bg-neutral-off-white dark:bg-slate-900 transition-colors duration-300">
       {/* Hero Section */}
       <section className="pt-28 pb-12 md:pt-32 bg-brand-navy text-white">
         <div className="container mx-auto px-6 text-center">
@@ -27,13 +27,13 @@ export default function QuotePage() {
 
       {/* Success Message */}
       {showSuccess && (
-        <section className="py-8 bg-green-50 dark:bg-green-900/20 border-b border-green-200 dark:border-green-800">
+        <section className="py-8 bg-brand-emerald/10 border-b border-brand-emerald/30">
           <div className="container mx-auto px-6">
             <div className="max-w-4xl mx-auto">
-              <div className="bg-white dark:bg-slate-800 rounded-xl p-8 border-2 border-green-500 dark:border-green-600 shadow-xl">
+              <div className="bg-white dark:bg-slate-800 rounded-xl p-8 border border-brand-emerald/40 shadow-sm">
                 <div className="flex items-start gap-4">
                   <div className="flex-shrink-0">
-                    <div className="h-12 w-12 rounded-full bg-green-500 dark:bg-green-600 flex items-center justify-center">
+                    <div className="h-12 w-12 rounded-full bg-brand-emerald flex items-center justify-center">
                       <CheckCircle2 className="h-7 w-7 text-white" />
                     </div>
                   </div>
@@ -47,10 +47,10 @@ export default function QuotePage() {
                       EST).
                     </p>
                     <div className="bg-blue-50 dark:bg-blue-900/30 border border-blue-200 dark:border-blue-800 rounded-lg p-4">
-                      <h3 className="font-semibold text-blue-900 dark:text-blue-300 mb-2">
-                        What happens next?
-                      </h3>
-                      <ol className="space-y-2 text-sm text-blue-800 dark:text-blue-400">
+                    <h3 className="font-semibold text-brand-navy dark:text-white mb-2">
+                      What happens next?
+                    </h3>
+                    <ol className="space-y-2 text-sm text-brand-navy dark:text-white/80">
                         <li className="flex items-start gap-2">
                           <span className="font-bold">1.</span>
                           <span>We'll call or email you to discuss your specific needs</span>
@@ -91,12 +91,12 @@ export default function QuotePage() {
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-md text-center">
-                <div className="inline-flex items-center justify-center w-14 h-14 bg-primary-100 dark:bg-primary-900/30 rounded-full mb-4">
-                  <Sparkles className="h-7 w-7 text-primary-600 dark:text-primary-400" />
-                </div>
-                <h3 className="text-body font-bold text-neutral-charcoal dark:text-white mb-2">
-                  No Obligation
-                </h3>
+                  <div className="inline-flex items-center justify-center w-14 h-14 bg-brand-navy/10 text-brand-navy dark:bg-white/10 dark:text-white rounded-full mb-4">
+                    <Sparkles className="h-7 w-7" />
+                  </div>
+                  <h3 className="text-h3 font-semibold text-neutral-charcoal dark:text-white mb-2">
+                    No Obligation
+                  </h3>
                 <p className="text-sm text-neutral-charcoal/70 dark:text-neutral-charcoal/50">
                   Free consultation and walk-through with zero commitment or pressure to sign
                 </p>
@@ -139,7 +139,7 @@ export default function QuotePage() {
               If you already know what you need, skip the form and schedule your free on-site
               consultation directly.
             </p>
-            <div className="bg-neutral-off-white dark:bg-slate-800 rounded-xl p-8 border border-gray-200 dark:border-gray-700">
+              <div className="bg-white dark:bg-slate-800 rounded-xl p-8 border border-neutral-light-grey dark:border-slate-700">
               <p className="text-neutral-charcoal/80 dark:text-white/80 mb-6">
                 Call us at{' '}
                 <a
@@ -151,8 +151,8 @@ export default function QuotePage() {
                 to schedule your walk-through today.
               </p>
               {/* TODO: Add Calendly embed here */}
-              <div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg p-4">
-                <p className="text-sm text-blue-800 dark:text-blue-400">
+              <div className="bg-brand-navy/5 dark:bg-white/5 border border-brand-navy/30 dark:border-white/20 rounded-lg p-4">
+                <p className="text-sm text-brand-navy dark:text-white/80">
                   <strong>Note:</strong> Online scheduling coming soon! For now, please call or
                   submit the quote form above.
                 </p>

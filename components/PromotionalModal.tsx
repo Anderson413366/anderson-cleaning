@@ -91,10 +91,10 @@ export default function PromotionalModal() {
           </h2>
 
           {/* Offer Details */}
-          <div className="bg-gradient-to-br from-accent-50 to-primary-50 dark:from-accent-900/20 dark:to-primary-900/20 rounded-xl p-6 mb-6">
+          <div className="bg-neutral-off-white dark:bg-slate-800 rounded-xl p-6 mb-6 border-2 border-brand-emerald/20">
             <div className="flex items-center justify-center gap-2 mb-3">
-              <Sparkles className="h-6 w-6 text-accent-600 dark:text-accent-400" />
-              <span className="text-h2 font-bold text-accent-600 dark:text-accent-400">10% OFF</span>
+              <Sparkles className="h-6 w-6 text-brand-emerald" />
+              <span className="text-h2 font-bold text-brand-emerald">10% OFF</span>
             </div>
             <p className="text-body font-semibold text-neutral-charcoal dark:text-white mb-2">
               Your First Month of Service

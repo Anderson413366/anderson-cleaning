@@ -123,7 +123,7 @@ export default function IndustryTemplate({
       {/* ================================================================
           CHALLENGES SECTION
           ================================================================ */}
-      <section className="py-16 md:py-20 bg-neutral-off-white dark:bg-slate-800">
+      <section className="py-16 md:py-20 bg-neutral-off-white dark:bg-slate-900">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto">
             {/* Section Header */}
@@ -191,26 +191,26 @@ export default function IndustryTemplate({
                 <div
                   key={index}
                   className="
-                    bg-neutral-off-white
-                    dark:from-slate-800 dark:to-slate-700
+                    bg-white
+                    dark:bg-slate-800
                     rounded-[var(--border-radius-lg)]
                     shadow-[var(--shadow-card)]
                     p-8
-                    border border-gray-200 dark:border-slate-600
+                    border border-neutral-light-grey dark:border-slate-700
                   "
                 >
                   {/* Number Badge */}
                   <div className="flex items-center gap-4 mb-4">
-                    <div className="w-10 h-10 rounded-full bg-[var(--color-primary-base)] text-white flex items-center justify-center font-bold text-body flex-shrink-0">
+                    <div className="w-10 h-10 rounded-full bg-brand-navy text-white flex items-center justify-center font-bold text-body flex-shrink-0">
                       {index + 1}
                     </div>
-                    <h3 className="text-body font-bold text-[var(--color-text-primary)]">
+                    <h3 className="text-h3 leading-normal font-semibold text-[var(--color-text-primary)]">
                       {solution.title}
                     </h3>
                   </div>
 
                   {/* Description */}
-                  <p className="text-[var(--color-text-secondary)] leading-relaxed">
+                  <p className="text-body text-[var(--color-text-secondary)] leading-relaxed">
                     {solution.description}
                   </p>
                 </div>
@@ -223,7 +223,7 @@ export default function IndustryTemplate({
       {/* ================================================================
           STANDARDS & COMPLIANCE SECTION
           ================================================================ */}
-      <section className="py-16 md:py-20 bg-neutral-off-white dark:bg-slate-800">
+      <section className="py-16 md:py-20 bg-neutral-off-white dark:bg-slate-900">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto">
             {/* Section Header */}
@@ -248,17 +248,17 @@ export default function IndustryTemplate({
                     p-6
                     flex flex-col items-center justify-center
                     text-center
-                    border border-gray-200 dark:border-slate-700
+                    border border-neutral-light-grey dark:border-slate-700
                   "
                 >
                   {/* Icon */}
                   <div className="mb-3">
                     {index % 3 === 0 ? (
-                      <Shield className="h-8 w-8 text-[var(--color-success-base)]" aria-hidden="true" />
+                      <Shield className="h-8 w-8 text-brand-emerald" aria-hidden="true" />
                     ) : index % 3 === 1 ? (
-                      <Award className="h-8 w-8 text-[var(--color-primary-base)]" aria-hidden="true" />
+                      <Award className="h-8 w-8 text-brand-navy" aria-hidden="true" />
                     ) : (
-                      <Users className="h-8 w-8 text-[var(--color-accent-base)]" aria-hidden="true" />
+                      <Users className="h-8 w-8 text-brand-emerald" aria-hidden="true" />
                     )}
                   </div>
 
@@ -288,39 +288,38 @@ export default function IndustryTemplate({
 
             {/* Testimonials Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {industry.testimonials.map((testimonial, index) => (
-                <div
-                  key={index}
-                  className="
-                    bg-gradient-to-br from-gray-50 to-blue-50
-                    dark:from-slate-800 dark:to-slate-700
+            {industry.testimonials.map((testimonial, index) => (
+              <div
+                key={index}
+                className="
+                    bg-white dark:bg-slate-800
                     rounded-[var(--border-radius-lg)]
                     shadow-[var(--shadow-card)]
                     p-8
-                    border border-gray-200 dark:border-slate-600
+                    border border-neutral-light-grey dark:border-slate-700
                   "
-                >
-                  {/* Quote */}
-                  <div className="mb-6">
-                    <p className="text-body text-[var(--color-text-primary)] leading-relaxed italic">
-                      "{testimonial.quote}"
-                    </p>
-                  </div>
-
-                  {/* Author */}
-                  <div className="border-t border-gray-300 dark:border-slate-600 pt-4">
-                    <p className="font-bold text-[var(--color-text-primary)]">
-                      {testimonial.author}
-                    </p>
-                    <p className="text-sm text-[var(--color-text-secondary)]">
-                      {testimonial.role}
-                    </p>
-                    <p className="text-sm text-[var(--color-text-tertiary)]">
-                      {testimonial.company}
-                    </p>
-                  </div>
+              >
+                {/* Quote */}
+                <div className="mb-6">
+                  <p className="text-body text-[var(--color-text-primary)] leading-relaxed italic">
+                    "{testimonial.quote}"
+                  </p>
                 </div>
-              ))}
+
+                {/* Author */}
+                <div className="border-t border-neutral-light-grey dark:border-slate-700 pt-4">
+                  <p className="font-bold text-[var(--color-text-primary)]">
+                    {testimonial.author}
+                  </p>
+                  <p className="text-sm text-[var(--color-text-secondary)]">
+                    {testimonial.role}
+                  </p>
+                  <p className="text-sm text-[var(--color-text-tertiary)]">
+                    {testimonial.company}
+                  </p>
+                </div>
+              </div>
+            ))}
             </div>
           </div>
         </div>
@@ -329,7 +328,7 @@ export default function IndustryTemplate({
       {/* ================================================================
           CTA SECTION
           ================================================================ */}
-      <section className="py-16 md:py-20 bg-gradient-to-br from-blue-600 to-indigo-700">
+      <section className="py-16 md:py-20 bg-brand-navy text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto">
             {showQuoteForm ? (
@@ -346,15 +345,15 @@ export default function IndustryTemplate({
                   </p>
                   <ul className="space-y-3">
                     <li className="flex items-start gap-3">
-                      <CheckCircle2 className="h-6 w-6 text-green-300 flex-shrink-0 mt-0.5" />
+                      <CheckCircle2 className="h-6 w-6 text-brand-emerald flex-shrink-0 mt-0.5" />
                       <span>Free, no-obligation quote</span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <CheckCircle2 className="h-6 w-6 text-green-300 flex-shrink-0 mt-0.5" />
+                      <CheckCircle2 className="h-6 w-6 text-brand-emerald flex-shrink-0 mt-0.5" />
                       <span>Response within 24 hours</span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <CheckCircle2 className="h-6 w-6 text-green-300 flex-shrink-0 mt-0.5" />
+                      <CheckCircle2 className="h-6 w-6 text-brand-emerald flex-shrink-0 mt-0.5" />
                       <span>Industry-specific solutions</span>
                     </li>
                   </ul>
@@ -388,7 +387,7 @@ export default function IndustryTemplate({
                     <Button
                       variant="outline"
                       size="lg"
-                      className="min-w-[200px] bg-white text-blue-700 border-white hover:bg-blue-50"
+                      className="min-w-[200px] border-white text-white hover:bg-white/10"
                     >
                       Contact Us
                     </Button>

@@ -24,7 +24,7 @@
 'use client'
 
 import React, { useState, FormEvent, ChangeEvent } from 'react'
-import { CheckCircle2 } from 'lucide-react'
+import { CheckCircle2, AlertTriangle } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
 import { submitQuickQuoteRequest } from '@/lib/forms/quickQuoteClient'
 import {
@@ -377,7 +377,7 @@ export default function QuoteFormInline({
               role="alert"
               className="mt-2 text-sm text-[var(--color-error-base)] flex items-start gap-1"
             >
-              <span aria-hidden="true">⚠</span>
+                  <AlertTriangle className="h-4 w-4" aria-hidden="true" />
               <span>{errors.name}</span>
             </p>
           )}
@@ -439,7 +439,7 @@ export default function QuoteFormInline({
               role="alert"
               className="mt-2 text-sm text-[var(--color-error-base)] flex items-start gap-1"
             >
-              <span aria-hidden="true">⚠</span>
+              <AlertTriangle className="h-4 w-4" aria-hidden="true" />
               <span>{errors.email}</span>
             </p>
           )}
@@ -492,7 +492,7 @@ export default function QuoteFormInline({
               role="alert"
               className="mt-2 text-sm text-[var(--color-error-base)] flex items-start gap-1"
             >
-              <span aria-hidden="true">⚠</span>
+              <AlertTriangle className="h-4 w-4" aria-hidden="true" />
               <span>{errors.phone}</span>
             </p>
           )}
@@ -548,7 +548,7 @@ export default function QuoteFormInline({
               role="alert"
               className="mt-2 text-sm text-[var(--color-error-base)] flex items-start gap-1"
             >
-              <span aria-hidden="true">⚠</span>
+              <AlertTriangle className="h-4 w-4" aria-hidden="true" />
               <span>{errors.facilityType}</span>
             </p>
           )}
