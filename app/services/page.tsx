@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import dynamic from 'next/dynamic'
 
 import type { LucideIcon } from 'lucide-react'
 import {
@@ -28,6 +29,16 @@ import { Button } from '@/components/ui/Button'
 import StructuredData from '@/components/StructuredData'
 import QuoteMiniForm from '@/components/forms/QuoteMiniForm'
 import QuoteAdvancedModal from '@/components/forms/QuoteAdvancedModal'
+
+// Dynamic import for ServiceAreaMap to avoid SSR issues
+const ServiceAreaMap = dynamic(() => import('@/components/maps/ServiceAreaMap'), {
+  ssr: false,
+  loading: () => (
+    <div className="h-[500px] w-full rounded-xl border-2 border-neutral-light-grey dark:border-slate-700 bg-neutral-light-grey dark:bg-slate-800 flex items-center justify-center">
+      <span className="text-neutral-charcoal/70 dark:text-white/80">Loading map...</span>
+    </div>
+  ),
+})
 
 export default function ServicesPage() {
   const [showAdvancedModal, setShowAdvancedModal] = useState(false)
@@ -464,15 +475,9 @@ export default function ServicesPage() {
           </div>
 
           <div className="max-w-4xl mx-auto">
-            <div className="relative rounded-xl overflow-hidden border-2 border-neutral-light-grey dark:border-slate-700 mb-8">
-              {/* TODO: Add static map image at public/images/service-area-map.png */}
-              {/* Map should show 50-mile radius around zip code 01089 (West Springfield, MA) */}
-              <div className="aspect-[3/2] bg-neutral-light-grey dark:bg-slate-800 flex items-center justify-center text-neutral-charcoal/70 dark:text-white/80">
-                <span>Service area map image goes here (50-mile radius from zip 01089)</span>
-              </div>
-            </div>
+            <ServiceAreaMap />
 
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid md:grid-cols-2 gap-6 mt-8">
               <div className="bg-neutral-off-white dark:bg-slate-800 rounded-lg p-6">
                 <h3 className="text-h3 font-semibold text-neutral-charcoal dark:text-white mb-3">
                   Primary Service Area
