@@ -61,6 +61,8 @@ export const cspDirectives: CSPDirectives = {
     'https://client.crisp.chat',
     'https://image.crisp.chat',
     'https://storage.crisp.chat',
+    'https://*.tile.openstreetmap.org', // OpenStreetMap tiles for service area map
+    'https://cdnjs.cloudflare.com', // Leaflet marker icons
   ],
 
   'font-src': ["'self'", 'data:', 'https://fonts.gstatic.com', 'https://client.crisp.chat'],
