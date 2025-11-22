@@ -218,7 +218,7 @@ export default function BeforeAfterSlider({
           </div>
         </div>
 
-        {/* Keyboard hint */}
+        {/* Keyboard hint (hidden until the slider receives focus for keyboard users) */}
         <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/60 text-white text-xs px-3 py-1 rounded-full opacity-0 focus-within:opacity-100 transition-opacity z-10">
           Use ← → arrow keys to compare
         </div>

@@ -2,10 +2,11 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-import { Phone, Mail, MapPin, Facebook, Twitter, Instagram, Linkedin } from 'lucide-react'
+import { Phone, Mail, MapPin, Facebook, Twitter, Instagram, Linkedin, Sun, Moon } from 'lucide-react'
 
 import QuoteMiniForm from '@/components/forms/QuoteMiniForm'
 import QuoteAdvancedModal from '@/components/forms/QuoteAdvancedModal'
+import { useTheme } from '@/lib/ThemeProvider'
 
 const navigation = {
   services: [
@@ -40,6 +41,7 @@ const navigation = {
 
 export default function Footer() {
   const [showModal, setShowModal] = useState(false)
+  const { theme, toggleTheme } = useTheme()
   const currentYear = new Date().getFullYear()
 
   return (
@@ -57,11 +59,9 @@ export default function Footer() {
                 Professional commercial cleaning services for businesses in Western Massachusetts and Northern Connecticut.
               </p>
             </div>
-            <div className="mt-10 space-y-5">
-              <div className="flex items-start gap-4">
-                <div className="w-7 flex-shrink-0 text-neutral-off-white mt-1">
-                  <Phone className="h-5 w-5" aria-hidden="true" />
-                </div>
+            <div className="mt-10 space-y-5 text-center sm:text-left">
+              <div className="flex flex-col sm:flex-row items-center justify-center sm:justify-start gap-3">
+                <Phone className="h-5 w-5 text-brand-emerald" aria-hidden="true" />
                 <a
                   href="tel:+14133065053"
                   className="text-sm leading-6 text-neutral-off-white hover:text-brand-emerald transition-colors"
@@ -69,26 +69,46 @@ export default function Footer() {
                   (413) 306-5053
                 </a>
               </div>
-              <div className="flex items-start gap-4">
-                <div className="w-7 flex-shrink-0 text-neutral-off-white mt-1">
-                  <Mail className="h-5 w-5" aria-hidden="true" />
-                </div>
+              <div className="flex flex-col sm:flex-row items-center justify-center sm:justify-start gap-3">
+                <Mail className="h-5 w-5 text-brand-emerald" aria-hidden="true" />
                 <a
                   href="mailto:info@andersoncleaning.com"
-                  className="text-sm leading-6 text-neutral-off-white hover:text-brand-emerald transition-colors"
+                  className="text-sm leading-6 text-neutral-off-white hover:text-brand-emerald transition-colors break-words"
                 >
                   info@andersoncleaning.com
                 </a>
               </div>
-              <div className="flex items-start gap-4">
-                <div className="w-7 flex-shrink-0 text-neutral-off-white mt-1">
-                  <MapPin className="h-5 w-5" aria-hidden="true" />
+              <div className="flex flex-col sm:flex-row items-center justify-center sm:justify-start gap-3">
+                <MapPin className="h-5 w-5 text-brand-emerald flex-shrink-0" aria-hidden="true" />
+                <div className="text-sm leading-6 text-neutral-off-white">
+                  <span className="block">103 Wayside Avenue</span>
+                  <span className="block">West Springfield, MA 01089</span>
                 </div>
-                <p className="text-sm leading-6 text-neutral-off-white">
-                  103 Wayside Avenue
-                  <br />
-                  West Springfield, MA 01089
-                </p>
+              </div>
+              <div className="flex flex-col items-center justify-center gap-3 pt-4 sm:flex-row sm:justify-start sm:items-center">
+                <span className="text-xs font-semibold tracking-wide text-white/70 uppercase">
+                  Theme
+                </span>
+                <button
+                  type="button"
+                  onClick={toggleTheme}
+                  className="inline-flex items-center gap-2 rounded-full border border-white/30 px-4 py-2 text-sm font-semibold text-white hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white transition"
+                  aria-label="Toggle dark mode"
+                >
+                  <span className="relative h-5 w-5 text-brand-emerald" aria-hidden="true">
+                    <Sun
+                      className={`absolute inset-0 h-5 w-5 transition-all duration-200 ${
+                        theme === 'dark' ? 'opacity-0 scale-75 rotate-90' : 'opacity-100 scale-100 rotate-0'
+                      }`}
+                    />
+                    <Moon
+                      className={`absolute inset-0 h-5 w-5 transition-all duration-200 ${
+                        theme === 'dark' ? 'opacity-100 scale-100 rotate-0' : 'opacity-0 scale-75 -rotate-90'
+                      }`}
+                    />
+                  </span>
+                  <span>{theme === 'dark' ? 'Light Mode' : 'Dark Mode'}</span>
+                </button>
               </div>
             </div>
             <div className="flex space-x-6">

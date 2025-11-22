@@ -75,11 +75,10 @@ interface StatsBarProps {
 const DEFAULT_STATS: Stat[] = [
   {
     id: 1,
-    value: '18+',
-    label: 'Years in Business',
+    value: '18',
+    label: 'Years of Excellence',
     icon: Calendar,
     numericValue: 18,
-    suffix: '+',
   },
   {
     id: 2,
@@ -324,17 +323,6 @@ export default function StatsBar({
             ))}
           </div>
 
-          {/* Optional: Decorative separator lines between stats (desktop only) */}
-          <div className="hidden lg:block absolute inset-0 pointer-events-none">
-            <div className="max-w-7xl mx-auto h-full flex">
-              {stats.slice(0, -1).map((stat, index) => (
-                <div key={`separator-${stat.id}`} className="flex-1 relative">
-                  <div className="absolute right-0 top-1/2 -translate-y-1/2 h-24 w-px bg-gray-200 dark:bg-gray-700"></div>
-                </div>
-              ))}
-              <div className="flex-1"></div>
-            </div>
-          </div>
         </div>
       </div>
     </section>

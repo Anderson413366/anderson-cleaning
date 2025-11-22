@@ -30,8 +30,8 @@ export default function AboutPage() {
         <div className="container mx-auto px-6 text-center">
           <h1 className="text-h1 md:text-h1 font-extrabold mb-6">About Anderson Cleaning</h1>
           <p className="text-body text-white/80 max-w-3xl mx-auto">
-            Over 18 years of professional commercial cleaning with the personal touch your facility
-            deserves.
+            18 Years of Excellence delivering professional commercial cleaning with the personal
+            touch your facility deserves.
           </p>
         </div>
       </section>

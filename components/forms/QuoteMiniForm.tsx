@@ -90,6 +90,7 @@ export default function QuoteMiniForm({
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+      {/* Honeypot field to catch bots; intentionally hidden from human visitors */}
       <input
         {...register('leave_blank')}
         type="text"

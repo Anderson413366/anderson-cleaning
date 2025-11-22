@@ -315,6 +315,7 @@ export default function QuoteFormInline({
 
       {/* Form */}
       <form onSubmit={handleSubmit} noValidate>
+        {/* Honeypot field for spam prevention (intentionally hidden from real users) */}
         <div className="sr-only" aria-hidden="true">
           <label htmlFor="website" className="block text-sm font-semibold text-neutral-charcoal/80">
             Website
@@ -327,7 +328,6 @@ export default function QuoteFormInline({
             autoComplete="off"
             value={honeypot}
             onChange={(event) => setHoneypot(event.target.value)}
-            className="hidden"
           />
         </div>
 

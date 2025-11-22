@@ -212,6 +212,7 @@ export default function CareerApplicationForm() {
               <label className="flex items-center justify-center gap-2 border-2 border-dashed border-neutral-light-grey rounded px-4 py-6 cursor-pointer hover:border-brand-emerald transition-colors">
                 <Upload className="h-5 w-5" />
                 <span>Upload File</span>
+                {/* Hidden native input lets screen readers trigger uploads while keeping the custom UI */}
                 <input type="file" accept=".pdf,.doc,.docx" onChange={handleFileUpload} className="hidden" />
               </label>
               {recoveryCode && (
