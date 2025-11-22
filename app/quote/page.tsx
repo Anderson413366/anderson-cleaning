@@ -1,8 +1,9 @@
 'use client'
 
 import { useState } from 'react'
-import QuoteForm from '@/components/forms/QuoteForm'
+import QuoteFormSimplified from '@/components/forms/QuoteFormSimplified'
 import { CheckCircle2, Sparkles } from 'lucide-react'
+import { CONTACT_INFO } from '@/lib/constants'
 
 export default function QuotePage() {
   const [showSuccess, setShowSuccess] = useState(false)
@@ -78,7 +79,7 @@ export default function QuotePage() {
       {/* Main Content */}
       <section className="py-12">
         <div className="container mx-auto px-6">
-          <QuoteForm onSuccess={handleSuccess} />
+          <QuoteFormSimplified onSuccess={handleSuccess} />
         </div>
       </section>
 
