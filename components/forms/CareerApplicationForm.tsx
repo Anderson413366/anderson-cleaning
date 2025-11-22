@@ -23,9 +23,9 @@ const formSchema = z.object({
 type FormData = z.infer<typeof formSchema>
 
 const POSITIONS = [
-  'Commercial Cleaner - Springfield/Hartford',
-  'Crew Leader - West Springfield',
-  'Night Shift Specialist',
+  'Cleaning Specialist - Springfield/Hartford',
+  'Field Supervisor - West Springfield',
+  'Operations Assistant - Evening Shift',
   'Other - Specify in cover letter',
 ]
 
@@ -33,7 +33,7 @@ const AVAILABILITY_OPTIONS = [
   'Weekday Mornings',
   'Weekday Evenings',
   'Weekends',
-  'Night Shift (10 PM - 6 AM)',
+  'Evening Shift (4:30 PM - 10 PM)',
   'Flexible',
 ]
 

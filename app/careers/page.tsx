@@ -17,9 +17,9 @@ import { generateJobPostingSchema, generateBreadcrumbSchema } from '@/lib/seo/js
 const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://anderson-cleaning-site.vercel.app'
 
 export const metadata: Metadata = {
-  title: 'Careers at Anderson Cleaning - Join Our Team',
+  title: 'Careers - Cleaning Specialist, Field Supervisor, Operations Assistant | Anderson Cleaning',
   description:
-    "Join Anderson Cleaning's professional team. Full-time W-2 positions with health insurance, paid training, career advancement, and comprehensive benefits. Multiple locations in MA & CT. Apply now!",
+    'Join Anderson Cleaning! Now hiring Cleaning Specialists ($15-20/hr), Field Supervisors ($20-25/hr), and Operations Assistants (Premium Pay). Apply today!',
   keywords: [
     'cleaning jobs',
     'commercial cleaning careers',
@@ -37,9 +37,10 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: `${baseUrl}/careers`,
     siteName: 'Anderson Cleaning',
-    title: 'Careers at Anderson Cleaning - Join Our Team',
+    title:
+      'Careers - Cleaning Specialist, Field Supervisor, Operations Assistant | Anderson Cleaning',
     description:
-      'Full-time W-2 positions with health insurance, paid training, and career advancement. Join our professional cleaning team in MA & CT.',
+      'Join Anderson Cleaning! Cleaning Specialists ($15-20/hr), Field Supervisors ($20-25/hr), and Operations Assistants (Premium Pay). Apply today!',
     images: [
       {
         url: '/images/og-careers.jpg',
@@ -53,8 +54,9 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@andersoncleaning',
     creator: '@andersoncleaning',
-    title: 'Careers at Anderson Cleaning - Join Our Team',
-    description: 'Full-time positions with benefits. Join our professional cleaning team in MA & CT.',
+    title: 'Careers - Cleaning Specialist, Field Supervisor, Operations Assistant',
+    description:
+      'Now hiring Cleaning Specialists ($15-20/hr), Field Supervisors ($20-25/hr), and Operations Assistants (Premium Pay). Apply today!',
     images: ['/images/og-careers.jpg'],
   },
   robots: {
@@ -142,11 +144,11 @@ export default function CareersPage() {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
               {[
                 {
-                  title: 'Commercial Cleaner',
+                  title: 'Cleaning Specialist',
                   locationIcon: <MapPin className="h-4 w-4" />,
                   locationLabel: 'Springfield/Hartford Area',
                   rateIcon: <DollarSign className="h-4 w-4" />,
-                  rateLabel: '$18–22/hour',
+                  rateLabel: '$15–20/hour',
                   bullets: [
                     'Part-time & Full-time available',
                     'Evening/Night shifts',
@@ -154,11 +156,11 @@ export default function CareersPage() {
                   ],
                 },
                 {
-                  title: 'Crew Leader',
+                  title: 'Field Supervisor',
                   locationIcon: <MapPin className="h-4 w-4" />,
                   locationLabel: 'West Springfield',
                   rateIcon: <DollarSign className="h-4 w-4" />,
-                  rateLabel: '$22–27/hour',
+                  rateLabel: '$20–25/hour',
                   bullets: [
                     'Full-time W-2 position',
                     '2+ years experience required',
@@ -166,12 +168,13 @@ export default function CareersPage() {
                   ],
                 },
                 {
-                  title: 'Night Shift Specialist',
+                  title: 'Operations Assistant',
                   locationIcon: <Clock className="h-4 w-4" />,
-                  locationLabel: '10 PM – 6 AM',
+                  locationLabel: '4:30 PM – 10 PM',
                   rateIcon: <Sparkles className="h-4 w-4" />,
                   rateLabel: 'Premium Pay',
                   bullets: [
+                    'Evening hours (4:30 PM – 10 PM)',
                     'Night differential + base pay',
                     'Full-time or Part-time',
                     'Fewer distractions',
