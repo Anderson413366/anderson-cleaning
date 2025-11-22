@@ -24,7 +24,7 @@ const CareersHero: React.FC<CareersHeroProps> = ({ onStartApplication }) => {
 
   return (
     <section
-      className="relative overflow-hidden bg-gradient-to-br from-blue-700 via-blue-800 to-indigo-900 text-white py-16 md:py-24"
+      className="relative overflow-hidden bg-brand-navy text-white py-16 md:py-24"
     >
       {/* Background Pattern */}
       <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10" aria-hidden="true"></div>
@@ -39,29 +39,29 @@ const CareersHero: React.FC<CareersHeroProps> = ({ onStartApplication }) => {
           </div>
 
           {/* Main Heading */}
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight">
+          <h1 className="text-h1 leading-tight font-extrabold mb-6 leading-tight">
             {t('heroTitle') as string}
           </h1>
 
-          <p className="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto mb-8 leading-relaxed">
+          <p className="text-body md:text-h3 text-white/80 max-w-3xl mx-auto mb-8 leading-relaxed">
             {t('heroSubtitle') as string}
           </p>
 
           {/* Key Highlights */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-10 max-w-3xl mx-auto">
-            <div className="flex items-center justify-center space-x-2 text-blue-100">
+            <div className="flex items-center justify-center space-x-2 text-white/80">
               <CheckCircle2 className="h-5 w-5 text-accent-400 flex-shrink-0" aria-hidden="true" />
               <span className="text-sm">Full-Time W-2 Positions</span>
             </div>
-            <div className="flex items-center justify-center space-x-2 text-blue-100">
+            <div className="flex items-center justify-center space-x-2 text-white/80">
               <CheckCircle2 className="h-5 w-5 text-accent-400 flex-shrink-0" aria-hidden="true" />
               <span className="text-sm">40+ Hours Paid Training</span>
             </div>
-            <div className="flex items-center justify-center space-x-2 text-blue-100">
+            <div className="flex items-center justify-center space-x-2 text-white/80">
               <CheckCircle2 className="h-5 w-5 text-accent-400 flex-shrink-0" aria-hidden="true" />
               <span className="text-sm">Health Insurance</span>
             </div>
-            <div className="flex items-center justify-center space-x-2 text-blue-100">
+            <div className="flex items-center justify-center space-x-2 text-white/80">
               <CheckCircle2 className="h-5 w-5 text-accent-400 flex-shrink-0" aria-hidden="true" />
               <span className="text-sm">Career Advancement</span>
             </div>

@@ -40,9 +40,9 @@ const StatementsSection: React.FC = () => {
               stmt.key === 'partTimeStatementAck')) && ( // Render if required or conditionally required and condition met
             <div
               key={stmt.key}
-              className="mb-6 p-4 border border-gray-200 dark:border-slate-700 rounded-md bg-gray-50 dark:bg-slate-800/50"
+              className="mb-6 p-4 border border-gray-200 dark:border-slate-700 rounded-md bg-neutral-off-white dark:bg-slate-800/50"
             >
-              <p className="text-sm text-gray-700 dark:text-gray-300 mb-3 whitespace-pre-line">
+              <p className="text-sm text-neutral-charcoal/80 dark:text-white/80 mb-3 whitespace-pre-line">
                 {t(stmt.statementKey) as string}
               </p>
               <FormCheckbox

@@ -13,12 +13,12 @@ export default function QuotePage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-green-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 transition-colors duration-300">
+    <div className="min-h-screen bg-neutral-off-white dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 transition-colors duration-300">
       {/* Hero Section */}
-      <section className="pt-28 pb-12 md:pt-32 bg-gradient-to-br from-blue-700 via-blue-800 to-indigo-900 text-white">
+      <section className="pt-28 pb-12 md:pt-32 bg-brand-navy text-white">
         <div className="container mx-auto px-6 text-center">
-          <h1 className="text-4xl md:text-5xl font-extrabold mb-4">Get Your Free Quote</h1>
-          <p className="text-xl text-blue-100 max-w-3xl mx-auto">
+          <h1 className="text-h1 md:text-h1 font-extrabold mb-4">Get Your Free Quote</h1>
+          <p className="text-body text-white/80 max-w-3xl mx-auto">
             Tell us about your facility and we'll provide a customized cleaning proposal within 24
             hours.
           </p>
@@ -38,10 +38,10 @@ export default function QuotePage() {
                     </div>
                   </div>
                   <div className="flex-1">
-                    <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-2">
+                    <h2 className="text-h3 font-bold text-neutral-charcoal dark:text-white mb-2">
                       Quote Request Submitted Successfully!
                     </h2>
-                    <p className="text-gray-700 dark:text-gray-300 mb-4">
+                    <p className="text-neutral-charcoal/80 dark:text-white/80 mb-4">
                       Thank you for requesting a quote from Anderson Cleaning. We've received your
                       information and will contact you within 24 hours (Monday – Friday, 9 AM – 5 PM
                       EST).
@@ -83,10 +83,10 @@ export default function QuotePage() {
       </section>
 
       {/* Trust Elements Section */}
-      <section className="py-16 bg-gray-50 dark:bg-slate-800/50">
+      <section className="py-16 bg-neutral-off-white dark:bg-slate-800/50">
         <div className="container mx-auto px-6">
           <div className="max-w-5xl mx-auto">
-            <h2 className="text-3xl font-bold text-center text-gray-900 dark:text-gray-100 mb-12">
+            <h2 className="text-h2 font-bold text-center text-neutral-charcoal dark:text-white mb-12">
               Why Request a Quote from Anderson Cleaning?
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -94,10 +94,10 @@ export default function QuotePage() {
                 <div className="inline-flex items-center justify-center w-14 h-14 bg-primary-100 dark:bg-primary-900/30 rounded-full mb-4">
                   <Sparkles className="h-7 w-7 text-primary-600 dark:text-primary-400" />
                 </div>
-                <h3 className="text-lg font-bold text-gray-900 dark:text-gray-100 mb-2">
+                <h3 className="text-body font-bold text-neutral-charcoal dark:text-white mb-2">
                   No Obligation
                 </h3>
-                <p className="text-sm text-gray-600 dark:text-gray-400">
+                <p className="text-sm text-neutral-charcoal/70 dark:text-neutral-charcoal/50">
                   Free consultation and walk-through with zero commitment or pressure to sign
                 </p>
               </div>
@@ -105,21 +105,21 @@ export default function QuotePage() {
                 <div className="inline-flex items-center justify-center w-14 h-14 bg-green-100 dark:bg-green-900/30 rounded-full mb-4">
                   <CheckCircle2 className="h-7 w-7 text-green-600 dark:text-green-400" />
                 </div>
-                <h3 className="text-lg font-bold text-gray-900 dark:text-gray-100 mb-2">
+                <h3 className="text-body font-bold text-neutral-charcoal dark:text-white mb-2">
                   Transparent Pricing
                 </h3>
-                <p className="text-sm text-gray-600 dark:text-gray-400">
+                <p className="text-sm text-neutral-charcoal/70 dark:text-neutral-charcoal/50">
                   Clear, itemized proposals with no hidden fees or surprise charges
                 </p>
               </div>
               <div className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-md text-center">
                 <div className="inline-flex items-center justify-center w-14 h-14 bg-blue-100 dark:bg-blue-900/30 rounded-full mb-4">
-                  <span className="text-2xl font-bold text-blue-600 dark:text-blue-400">24h</span>
+                  <span className="text-h3 font-bold text-blue-600 dark:text-blue-400">24h</span>
                 </div>
-                <h3 className="text-lg font-bold text-gray-900 dark:text-gray-100 mb-2">
+                <h3 className="text-body font-bold text-neutral-charcoal dark:text-white mb-2">
                   Fast Turnaround
                 </h3>
-                <p className="text-sm text-gray-600 dark:text-gray-400">
+                <p className="text-sm text-neutral-charcoal/70 dark:text-neutral-charcoal/50">
                   Receive your detailed proposal within 24 hours of our site visit
                 </p>
               </div>
@@ -132,15 +132,15 @@ export default function QuotePage() {
       <section className="py-16 bg-white dark:bg-slate-900">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-4">
+            <h2 className="text-h2 font-bold text-neutral-charcoal dark:text-white mb-4">
               Prefer to Schedule a Walk-Through Directly?
             </h2>
-            <p className="text-lg text-gray-600 dark:text-gray-400 mb-8">
+            <p className="text-body text-neutral-charcoal/70 dark:text-neutral-charcoal/50 mb-8">
               If you already know what you need, skip the form and schedule your free on-site
               consultation directly.
             </p>
-            <div className="bg-gray-50 dark:bg-slate-800 rounded-xl p-8 border border-gray-200 dark:border-gray-700">
-              <p className="text-gray-700 dark:text-gray-300 mb-6">
+            <div className="bg-neutral-off-white dark:bg-slate-800 rounded-xl p-8 border border-gray-200 dark:border-gray-700">
+              <p className="text-neutral-charcoal/80 dark:text-white/80 mb-6">
                 Call us at{' '}
                 <a
                   href="tel:+15551234567"

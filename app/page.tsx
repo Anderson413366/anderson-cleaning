@@ -2,33 +2,41 @@ import Link from 'next/link'
 import { Button } from '@/components/ui/Button'
 import HeroQuickQuoteForm from '@/components/forms/HeroQuickQuoteForm'
 import BeforeAfterSlider from '@/components/sections/BeforeAfterSlider'
+import StatsBar from '@/components/sections/StatsBar'
 import PromotionalModal from '@/components/PromotionalModal'
 import {
-  Phone,
-  Clock,
-  Shield,
-  Users,
-  Award,
-  Headphones,
-  MapPin,
-  CheckCircle2,
-  Building2,
-  Star,
   ArrowRight,
+  Award,
+  BookOpen,
+  Building2,
+  CheckCircle2,
+  Clock,
+  HardHat,
+  Headphones,
+  HelpCircle,
+  MapPin,
+  Package,
+  Phone,
+  Shield,
   Sparkles,
+  Square,
+  Star,
+  Users,
+  Zap,
+  Gift,
 } from 'lucide-react'
 
 export const revalidate = 86400
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-white dark:bg-slate-900 transition-colors duration-300">
+    <div className="min-h-screen bg-neutral-off-white dark:bg-slate-900 transition-colors duration-300">
       {/* Promotional Modal */}
       <PromotionalModal />
 
       {/* Hero Section with Quote Form */}
       <section
-        className="relative overflow-hidden bg-gradient-to-br from-blue-700 via-blue-800 to-indigo-900 text-white pt-28 pb-16 md:pt-32 md:pb-24"
+        className="relative overflow-hidden bg-brand-navy text-white pt-28 pb-16 md:pt-32 md:pb-24"
       >
         <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10"></div>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -36,55 +44,51 @@ export default function Home() {
             {/* Left Column - Value Proposition */}
             <div>
               <div className="mb-4">
-                <span className="inline-block px-4 py-2 bg-accent-500/20 border border-accent-400/30 rounded-full text-accent-300 text-sm font-medium">
+                <span className="inline-block px-4 py-2 rounded-full border border-brand-emerald/40 bg-brand-emerald/10 text-brand-emerald text-body-sm font-medium">
                   B2B Commercial Cleaning Experts
                 </span>
               </div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight">
+              <h1 className="text-h1 font-extrabold mb-6 leading-tight">
                 Professional Commercial Cleaning with a{' '}
-                <span className="text-accent-400">Personal Touch</span>
+                <span className="text-brand-emerald">Personal Touch</span>
               </h1>
 
               {/* Key Selling Points */}
-              <div className="space-y-3 mb-8 text-lg">
+              <div className="space-y-3 mb-8 text-body text-white/90">
                 <div className="flex items-start space-x-3">
-                  <CheckCircle2 className="h-6 w-6 text-accent-400 flex-shrink-0 mt-1" />
-                  <span className="text-blue-100">
+                  <CheckCircle2 className="h-6 w-6 text-brand-emerald flex-shrink-0 mt-1" />
+                  <span>
                     Full-time salaried cleaners — stable, trained professionals
                   </span>
                 </div>
                 <div className="flex items-start space-x-3">
-                  <CheckCircle2 className="h-6 w-6 text-accent-400 flex-shrink-0 mt-1" />
-                  <span className="text-blue-100">
+                  <CheckCircle2 className="h-6 w-6 text-brand-emerald flex-shrink-0 mt-1" />
+                  <span>
                     24/7 emergency support for current clients — on-site within 2 hours
                   </span>
                 </div>
                 <div className="flex items-start space-x-3">
-                  <CheckCircle2 className="h-6 w-6 text-accent-400 flex-shrink-0 mt-1" />
-                  <span className="text-blue-100">
-                    Corporate-grade systems with small business care
-                  </span>
+                  <CheckCircle2 className="h-6 w-6 text-brand-emerald flex-shrink-0 mt-1" />
+                  <span>Corporate-grade systems with small business care</span>
                 </div>
                 <div className="flex items-start space-x-3">
-                  <CheckCircle2 className="h-6 w-6 text-accent-400 flex-shrink-0 mt-1" />
-                  <span className="text-blue-100">
-                    Licensed, insured & background-checked teams
-                  </span>
+                  <CheckCircle2 className="h-6 w-6 text-brand-emerald flex-shrink-0 mt-1" />
+                  <span>Licensed, insured & background-checked teams</span>
                 </div>
               </div>
 
               {/* Trust Badges */}
-              <div className="flex flex-wrap items-center gap-6 text-sm mb-8">
+              <div className="flex flex-wrap items-center gap-6 text-body-sm text-white/80 mb-8">
                 <div className="flex items-center space-x-2">
-                  <Shield className="h-5 w-5 text-accent-400" aria-hidden="true" />
+                  <Shield className="h-5 w-5 text-brand-emerald" aria-hidden="true" />
                   <span>Licensed & Insured</span>
                 </div>
                 <div className="flex items-center space-x-2">
-                  <Award className="h-5 w-5 text-accent-400" aria-hidden="true" />
+                  <Award className="h-5 w-5 text-brand-emerald" aria-hidden="true" />
                   <span>18+ Years Experience</span>
                 </div>
                 <div className="flex items-center space-x-2">
-                  <Star className="h-5 w-5 text-accent-400" aria-hidden="true" />
+                  <Star className="h-5 w-5 text-brand-emerald" aria-hidden="true" />
                   <span>100% Satisfaction</span>
                 </div>
               </div>
@@ -117,14 +121,16 @@ export default function Home() {
         </div>
       </section>
 
+      <StatsBar background="gray" className="border-y border-neutral-light-grey/70" />
+
       {/* Services Overview Section */}
-      <section id="services" className="py-20 bg-gray-50 dark:bg-slate-800 transition-colors">
+      <section id="services" className="py-20 bg-white dark:bg-slate-900 transition-colors">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+            <h2 className="text-h2 leading-tight font-bold text-neutral-charcoal dark:text-white mb-4">
               Our Services
             </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+            <p className="text-body text-neutral-charcoal/70 dark:text-white/80 max-w-2xl mx-auto">
               Comprehensive commercial cleaning solutions tailored to your facility
             </p>
           </div>
@@ -134,72 +140,76 @@ export default function Home() {
               {
                 title: 'Office & Commercial Cleaning',
                 description: 'Daily/weekly programs for spotless workplaces',
-                icon: '🏢',
-                iconLabel: 'Office building',
+                icon: Building2,
+                label: 'Office building icon',
                 available: true,
               },
               {
                 title: 'Janitorial Services',
                 description: 'Reliable, accountable facility care',
-                icon: '🧹',
-                iconLabel: 'Broom',
+                icon: Sparkles,
+                label: 'Janitorial icon',
                 available: true,
               },
               {
                 title: 'Floor & Carpet Care',
                 description: 'Strip, wax, buff, and deep cleaning',
-                icon: '✨',
-                iconLabel: 'Sparkles',
+                icon: Zap,
+                label: 'Floor care icon',
                 available: false,
               },
               {
                 title: 'Window Cleaning',
                 description: 'Interior & exterior, streak-free results',
-                icon: '🪟',
-                iconLabel: 'Window',
+                icon: Square,
+                label: 'Window cleaning icon',
                 available: false,
               },
               {
                 title: 'Post-Construction',
                 description: 'Move-in ready cleanup after renovations',
-                icon: '🏗️',
-                iconLabel: 'Construction',
+                icon: HardHat,
+                label: 'Construction icon',
                 available: false,
               },
               {
                 title: 'Supply Management',
                 description: 'Auto-replenishment of consumables',
-                icon: '📦',
-                iconLabel: 'Package',
+                icon: Package,
+                label: 'Supply management icon',
                 available: false,
               },
-            ].map((service, i) => (
-              <div
-                key={i}
-                className="bg-white dark:bg-slate-700 rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 min-h-[190px] flex"
-              >
-                <div className="flex items-start space-x-4 w-full">
-                  <div className="text-4xl flex-shrink-0" role="img" aria-label={service.iconLabel}>
-                    {service.icon}
-                  </div>
-                  <div className="flex-1 flex flex-col justify-between">
-                    <div>
-                      <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">
-                        {service.title}
-                      </h3>
-                      <p className="text-sm text-gray-600 dark:text-gray-300 mb-3">
-                        {service.description}
-                      </p>
+            ].map((service, i) => {
+              const Icon = service.icon
+              return (
+                <div
+                  key={i}
+                  className="bg-white dark:bg-slate-800 border-2 border-neutral-light-grey dark:border-slate-700 rounded-xl p-6 shadow-sm hover:-translate-y-1 hover:border-brand-emerald transition-all duration-300 min-h-[190px] flex"
+                >
+                  <div className="flex items-start space-x-4 w-full">
+                    <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-neutral-off-white text-brand-emerald">
+                      <Icon className="h-6 w-6" aria-hidden="true" />
+                      <span className="sr-only">{service.label}</span>
                     </div>
-                    {!service.available && (
-                      <span className="inline-block px-2 py-1 bg-warning-light dark:bg-warning-dark/30 text-warning-dark dark:text-warning-light text-xs rounded">
-                        Premium add-on
-                      </span>
-                    )}
+                    <div className="flex-1 flex flex-col justify-between">
+                      <div>
+                        <h3 className="text-h3 leading-normal font-semibold text-neutral-charcoal dark:text-white mb-2">
+                          {service.title}
+                        </h3>
+                        <p className="text-body text-neutral-charcoal/80 dark:text-white/80 mb-3">
+                          {service.description}
+                        </p>
+                      </div>
+                      {!service.available && (
+                        <span className="inline-block px-3 py-1 text-body-sm rounded-full bg-neutral-off-white text-brand-navy dark:bg-slate-800 dark:text-white">
+                          Premium add-on
+                        </span>
+                      )}
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              )
+            })}
           </div>
 
           <div className="text-center">
@@ -218,60 +228,60 @@ export default function Home() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+              <h2 className="text-h2 leading-tight font-bold text-neutral-charcoal dark:text-white mb-4">
                 Serving Massachusetts & Connecticut
               </h2>
-              <p className="text-xl text-gray-600 dark:text-gray-300">
+              <p className="text-body text-neutral-charcoal/70 dark:text-white/80">
                 Within 100 miles of West Springfield, MA
               </p>
             </div>
 
-            <div className="bg-gradient-to-br from-blue-50 to-green-50 dark:from-slate-800 dark:to-slate-700 rounded-2xl p-8 mb-8">
+            <div className="bg-neutral-off-white dark:bg-slate-800 rounded-2xl p-8 mb-8">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div>
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4 flex items-center">
-                    <MapPin className="h-6 w-6 text-primary-600 dark:text-primary-400 mr-2" />
+                  <h3 className="text-h3 leading-normal font-semibold text-neutral-charcoal dark:text-white mb-4 flex items-center">
+                    <MapPin className="h-6 w-6 text-brand-navy dark:text-brand-emerald mr-2" />
                     Primary Service Areas
                   </h3>
-                  <ul className="space-y-2 text-gray-700 dark:text-gray-300">
+                  <ul className="space-y-2 text-body text-neutral-charcoal/80 dark:text-white/80">
                     <li className="flex items-center">
-                      <CheckCircle2 className="h-4 w-4 text-accent-500 mr-2 flex-shrink-0" />
+                      <CheckCircle2 className="h-4 w-4 text-brand-emerald mr-2 flex-shrink-0" />
                       Springfield & West Springfield
                     </li>
                     <li className="flex items-center">
-                      <CheckCircle2 className="h-4 w-4 text-accent-500 mr-2 flex-shrink-0" />
+                      <CheckCircle2 className="h-4 w-4 text-brand-emerald mr-2 flex-shrink-0" />
                       Worcester County
                     </li>
                     <li className="flex items-center">
-                      <CheckCircle2 className="h-4 w-4 text-accent-500 mr-2 flex-shrink-0" />
+                      <CheckCircle2 className="h-4 w-4 text-brand-emerald mr-2 flex-shrink-0" />
                       Northampton & Amherst
                     </li>
                     <li className="flex items-center">
-                      <CheckCircle2 className="h-4 w-4 text-accent-500 mr-2 flex-shrink-0" />
+                      <CheckCircle2 className="h-4 w-4 text-brand-emerald mr-2 flex-shrink-0" />
                       Hartford, CT area
                     </li>
                   </ul>
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4 flex items-center">
-                    <Building2 className="h-6 w-6 text-primary-600 dark:text-primary-400 mr-2" />
+                  <h3 className="text-h3 leading-normal font-semibold text-neutral-charcoal dark:text-white mb-4 flex items-center">
+                    <Building2 className="h-6 w-6 text-brand-navy dark:text-brand-emerald mr-2" />
                     We Serve
                   </h3>
-                  <ul className="space-y-2 text-gray-700 dark:text-gray-300">
+                  <ul className="space-y-2 text-body text-neutral-charcoal/80 dark:text-white/80">
                     <li className="flex items-center">
-                      <CheckCircle2 className="h-4 w-4 text-accent-500 mr-2 flex-shrink-0" />
+                      <CheckCircle2 className="h-4 w-4 text-brand-emerald mr-2 flex-shrink-0" />
                       Office buildings & corporate campuses
                     </li>
                     <li className="flex items-center">
-                      <CheckCircle2 className="h-4 w-4 text-accent-500 mr-2 flex-shrink-0" />
+                      <CheckCircle2 className="h-4 w-4 text-brand-emerald mr-2 flex-shrink-0" />
                       Medical offices & clinics
                     </li>
                     <li className="flex items-center">
-                      <CheckCircle2 className="h-4 w-4 text-accent-500 mr-2 flex-shrink-0" />
+                      <CheckCircle2 className="h-4 w-4 text-brand-emerald mr-2 flex-shrink-0" />
                       Educational facilities & schools
                     </li>
                     <li className="flex items-center">
-                      <CheckCircle2 className="h-4 w-4 text-accent-500 mr-2 flex-shrink-0" />
+                      <CheckCircle2 className="h-4 w-4 text-brand-emerald mr-2 flex-shrink-0" />
                       Retail stores & warehouses
                     </li>
                   </ul>
@@ -279,8 +289,8 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="bg-info-light dark:bg-info-dark/20 border-l-4 border-info rounded-lg p-6">
-              <p className="text-info-dark dark:text-info-light">
+            <div className="bg-brand-navy text-white rounded-lg p-6">
+              <p className="text-body leading-relaxed text-white/90">
                 <strong>Note:</strong> We focus exclusively on B2B commercial cleaning. We do not
                 service restaurants or facilities requiring 7-day/week cleaning.
               </p>
@@ -290,18 +300,18 @@ export default function Home() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-20 bg-gray-50 dark:bg-slate-800">
+      <section className="py-20 bg-neutral-off-white dark:bg-slate-900">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+            <h2 className="text-h2 leading-tight font-bold text-neutral-charcoal dark:text-white mb-4">
               What Our Clients Say
             </h2>
             <div className="flex items-center justify-center space-x-1 mb-2" role="img" aria-label="5 out of 5 stars">
               {[1, 2, 3, 4, 5].map((star) => (
-                <Star key={star} className="h-6 w-6 text-accent-500 fill-accent-500" aria-hidden="true" />
+                <Star key={star} className="h-6 w-6 text-brand-emerald fill-brand-emerald" aria-hidden="true" />
               ))}
             </div>
-            <p className="text-gray-600 dark:text-gray-400">5.0 stars from satisfied clients</p>
+            <p className="text-body text-neutral-charcoal/80 dark:text-white/70">5.0 stars from satisfied clients</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -328,20 +338,23 @@ export default function Home() {
                 rating: 5,
               },
             ].map((testimonial, i) => (
-              <div key={i} className="bg-white dark:bg-slate-700 rounded-xl p-6 shadow-md">
+              <div
+                key={i}
+                className="bg-white dark:bg-slate-800 border border-neutral-light-grey dark:border-slate-700 rounded-xl p-6 shadow-sm"
+              >
                 <div className="flex items-center space-x-1 mb-4" role="img" aria-label={`${testimonial.rating} out of 5 stars`}>
                   {[...Array(testimonial.rating)].map((_, j) => (
-                    <Star key={j} className="h-5 w-5 text-accent-500 fill-accent-500" aria-hidden="true" />
+                    <Star key={j} className="h-5 w-5 text-brand-emerald fill-brand-emerald" aria-hidden="true" />
                   ))}
                 </div>
-                <blockquote className="text-gray-700 dark:text-gray-300 mb-4">
+                <blockquote className="text-body leading-relaxed text-neutral-charcoal dark:text-white/80 mb-4">
                   "{testimonial.quote}"
                 </blockquote>
-                <div className="border-t border-gray-200 dark:border-gray-600 pt-4">
-                  <p className="font-semibold text-gray-900 dark:text-white">
+                <div className="border-t border-neutral-light-grey dark:border-slate-700 pt-4">
+                  <p className="font-semibold text-neutral-charcoal dark:text-white">
                     {testimonial.author}
                   </p>
-                  <p className="text-sm text-gray-600 dark:text-gray-400">{testimonial.company}</p>
+                  <p className="text-body-sm text-neutral-charcoal/70 dark:text-white/70">{testimonial.company}</p>
                 </div>
               </div>
             ))}
@@ -353,10 +366,10 @@ export default function Home() {
       <section className="py-20 bg-white dark:bg-slate-900">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+            <h2 className="text-h2 leading-tight font-bold text-neutral-charcoal dark:text-white mb-4">
               Our Work Speaks for Itself
             </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300 mb-8">
+            <p className="text-body text-neutral-charcoal/70 dark:text-white/80 mb-8">
               See the Anderson Cleaning difference with interactive before/after comparisons
             </p>
           </div>
@@ -389,7 +402,7 @@ export default function Home() {
           />
 
           <div className="text-center mt-12">
-            <p className="text-gray-600 dark:text-gray-400 mb-4">
+            <p className="text-neutral-charcoal/70 dark:text-neutral-charcoal/50 mb-4">
               Want to see more examples of our work?
             </p>
             <Link href="/quote">
@@ -402,13 +415,13 @@ export default function Home() {
       </section>
 
       {/* Certifications & Trust Badges */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50 dark:from-slate-800 dark:to-slate-900">
+      <section className="py-20 bg-white dark:bg-slate-900">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+            <h2 className="text-h2 leading-tight font-bold text-neutral-charcoal dark:text-white mb-4">
               Licensed, Certified & Trusted
             </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300">
+            <p className="text-body text-neutral-charcoal/70 dark:text-white/80">
               We meet the highest industry standards
             </p>
           </div>
@@ -428,58 +441,58 @@ export default function Home() {
               return (
                 <div
                   key={i}
-                  className="bg-white dark:bg-slate-700 rounded-xl p-6 shadow-md text-center"
+                  className="bg-neutral-off-white dark:bg-slate-800 border border-neutral-light-grey dark:border-slate-700 rounded-xl p-6 text-center shadow-sm"
                 >
-                  <Icon className="h-12 w-12 text-primary-600 dark:text-primary-400 mx-auto mb-3" />
-                  <h3 className="font-bold text-gray-900 dark:text-white mb-1 text-sm">
+                  <Icon className="h-12 w-12 text-brand-navy dark:text-brand-emerald mx-auto mb-3" />
+                  <h3 className="font-bold text-neutral-charcoal dark:text-white mb-1 text-body-sm">
                     {badge.label}
                   </h3>
-                  <p className="text-xs text-gray-600 dark:text-gray-400">{badge.desc}</p>
+                  <p className="text-body-sm text-neutral-charcoal/70 dark:text-white/70">{badge.desc}</p>
                 </div>
               )
             })}
           </div>
 
-          <div className="bg-white dark:bg-slate-800 rounded-2xl p-8 max-w-3xl mx-auto shadow-xl">
+          <div className="bg-white dark:bg-slate-800 rounded-2xl p-8 max-w-3xl mx-auto border border-neutral-light-grey dark:border-slate-700 shadow-sm">
             <div className="text-center mb-6">
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
+              <h3 className="text-h3 font-bold text-neutral-charcoal dark:text-white mb-2">
                 Our Commitment to You
               </h3>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="flex items-start space-x-3">
-                <CheckCircle2 className="h-5 w-5 text-accent-500 flex-shrink-0 mt-0.5" />
-                <span className="text-gray-700 dark:text-gray-300">
+                <CheckCircle2 className="h-5 w-5 text-brand-emerald flex-shrink-0 mt-0.5" />
+                <span className="text-body text-neutral-charcoal/80 dark:text-white/80">
                   Bonded & insured for your protection
                 </span>
               </div>
               <div className="flex items-start space-x-3">
-                <CheckCircle2 className="h-5 w-5 text-accent-500 flex-shrink-0 mt-0.5" />
-                <span className="text-gray-700 dark:text-gray-300">
+                <CheckCircle2 className="h-5 w-5 text-brand-emerald flex-shrink-0 mt-0.5" />
+                <span className="text-body text-neutral-charcoal/80 dark:text-white/80">
                   Full-time W2 employees only
                 </span>
               </div>
               <div className="flex items-start space-x-3">
-                <CheckCircle2 className="h-5 w-5 text-accent-500 flex-shrink-0 mt-0.5" />
-                <span className="text-gray-700 dark:text-gray-300">
+                <CheckCircle2 className="h-5 w-5 text-brand-emerald flex-shrink-0 mt-0.5" />
+                <span className="text-body text-neutral-charcoal/80 dark:text-white/80">
                   40+ hours of training per cleaner
                 </span>
               </div>
               <div className="flex items-start space-x-3">
-                <CheckCircle2 className="h-5 w-5 text-accent-500 flex-shrink-0 mt-0.5" />
-                <span className="text-gray-700 dark:text-gray-300">
+                <CheckCircle2 className="h-5 w-5 text-brand-emerald flex-shrink-0 mt-0.5" />
+                <span className="text-body text-neutral-charcoal/80 dark:text-white/80">
                   Quality audits & checklists
                 </span>
               </div>
               <div className="flex items-start space-x-3">
-                <CheckCircle2 className="h-5 w-5 text-accent-500 flex-shrink-0 mt-0.5" />
-                <span className="text-gray-700 dark:text-gray-300">
+                <CheckCircle2 className="h-5 w-5 text-brand-emerald flex-shrink-0 mt-0.5" />
+                <span className="text-body text-neutral-charcoal/80 dark:text-white/80">
                   EPA-registered disinfectants
                 </span>
               </div>
               <div className="flex items-start space-x-3">
-                <CheckCircle2 className="h-5 w-5 text-accent-500 flex-shrink-0 mt-0.5" />
-                <span className="text-gray-700 dark:text-gray-300">
+                <CheckCircle2 className="h-5 w-5 text-brand-emerald flex-shrink-0 mt-0.5" />
+                <span className="text-body text-neutral-charcoal/80 dark:text-white/80">
                   Custom SOPs for your facility
                 </span>
               </div>
@@ -489,42 +502,42 @@ export default function Home() {
       </section>
 
       {/* Resources & Learning Center */}
-      <section className="py-20 bg-gradient-to-br from-blue-50 to-green-50 dark:from-slate-800 dark:to-slate-900">
+      <section className="py-20 bg-neutral-off-white dark:bg-slate-900">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+            <h2 className="text-h2 leading-tight font-bold text-neutral-charcoal dark:text-white mb-4">
               Resources & Learning Center
             </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300">
+            <p className="text-body text-neutral-charcoal/70 dark:text-white/80">
               Expert tips, answers to your questions, and special offers
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Blog/Resources Card */}
-            <div className="bg-white dark:bg-slate-700 rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
-              <div className="bg-gradient-to-r from-blue-600 to-blue-700 p-6 text-white">
-                <div className="text-4xl mb-3" role="img" aria-label="Books">📚</div>
-                <h3 className="text-2xl font-bold mb-2">Blog & Resources</h3>
-                <p className="text-blue-100">Expert cleaning tips and industry insights</p>
+            <div className="bg-white dark:bg-slate-800 border border-neutral-light-grey dark:border-slate-700 rounded-xl shadow-sm overflow-hidden hover:-translate-y-1 transition-all duration-300">
+              <div className="bg-brand-navy p-6 text-white">
+                <BookOpen className="h-8 w-8 mb-3" aria-hidden="true" />
+                <h3 className="text-h3 font-bold mb-2">Blog & Resources</h3>
+                <p className="text-body text-white/80">Expert cleaning tips and industry insights</p>
               </div>
               <div className="p-6">
                 <ul className="space-y-3 mb-6">
                   <li className="flex items-start">
-                    <CheckCircle2 className="h-5 w-5 text-accent-500 mr-2 flex-shrink-0 mt-0.5" />
-                    <span className="text-gray-700 dark:text-gray-300">
+                    <CheckCircle2 className="h-5 w-5 text-brand-emerald mr-2 flex-shrink-0 mt-0.5" />
+                    <span className="text-body text-neutral-charcoal dark:text-white/80">
                       Office Cleaning Best Practices
                     </span>
                   </li>
                   <li className="flex items-start">
-                    <CheckCircle2 className="h-5 w-5 text-accent-500 mr-2 flex-shrink-0 mt-0.5" />
-                    <span className="text-gray-700 dark:text-gray-300">
+                    <CheckCircle2 className="h-5 w-5 text-brand-emerald mr-2 flex-shrink-0 mt-0.5" />
+                    <span className="text-body text-neutral-charcoal dark:text-white/80">
                       Green Cleaning Benefits
                     </span>
                   </li>
                   <li className="flex items-start">
-                    <CheckCircle2 className="h-5 w-5 text-accent-500 mr-2 flex-shrink-0 mt-0.5" />
-                    <span className="text-gray-700 dark:text-gray-300">
+                    <CheckCircle2 className="h-5 w-5 text-brand-emerald mr-2 flex-shrink-0 mt-0.5" />
+                    <span className="text-body text-neutral-charcoal dark:text-white/80">
                       Healthcare Facility Standards
                     </span>
                   </li>
@@ -539,27 +552,27 @@ export default function Home() {
             </div>
 
             {/* FAQ Card */}
-            <div className="bg-white dark:bg-slate-700 rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
-              <div className="bg-gradient-to-r from-green-600 to-green-700 p-6 text-white">
-                <div className="text-4xl mb-3" role="img" aria-label="Question mark">❓</div>
-                <h3 className="text-2xl font-bold mb-2">Frequently Asked Questions</h3>
-                <p className="text-green-100">Get answers to common questions</p>
+            <div className="bg-white dark:bg-slate-800 border border-neutral-light-grey dark:border-slate-700 rounded-xl shadow-sm overflow-hidden hover:-translate-y-1 transition-all duration-300">
+              <div className="bg-brand-emerald p-6 text-white">
+                <HelpCircle className="h-8 w-8 mb-3" aria-hidden="true" />
+                <h3 className="text-h3 font-bold mb-2">Frequently Asked Questions</h3>
+                <p className="text-body text-white/80">Get answers to common questions</p>
               </div>
               <div className="p-6">
                 <ul className="space-y-3 mb-6">
                   <li className="flex items-start">
-                    <CheckCircle2 className="h-5 w-5 text-accent-500 mr-2 flex-shrink-0 mt-0.5" />
-                    <span className="text-gray-700 dark:text-gray-300">Contract & Pricing Info</span>
+                    <CheckCircle2 className="h-5 w-5 text-brand-emerald mr-2 flex-shrink-0 mt-0.5" />
+                    <span className="text-body text-neutral-charcoal dark:text-white/80">Contract & Pricing Info</span>
                   </li>
                   <li className="flex items-start">
-                    <CheckCircle2 className="h-5 w-5 text-accent-500 mr-2 flex-shrink-0 mt-0.5" />
-                    <span className="text-gray-700 dark:text-gray-300">
+                    <CheckCircle2 className="h-5 w-5 text-brand-emerald mr-2 flex-shrink-0 mt-0.5" />
+                    <span className="text-body text-neutral-charcoal dark:text-white/80">
                       Staff Vetting & Training
                     </span>
                   </li>
                   <li className="flex items-start">
-                    <CheckCircle2 className="h-5 w-5 text-accent-500 mr-2 flex-shrink-0 mt-0.5" />
-                    <span className="text-gray-700 dark:text-gray-300">
+                    <CheckCircle2 className="h-5 w-5 text-brand-emerald mr-2 flex-shrink-0 mt-0.5" />
+                    <span className="text-body text-neutral-charcoal dark:text-white/80">
                       Service Area & Scheduling
                     </span>
                   </li>
@@ -574,29 +587,29 @@ export default function Home() {
             </div>
 
             {/* Promotions Card */}
-            <div className="bg-white dark:bg-slate-700 rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
-              <div className="bg-gradient-to-r from-accent-500 to-accent-600 p-6 text-white">
-                <div className="text-4xl mb-3" role="img" aria-label="Gift">🎁</div>
-                <h3 className="text-2xl font-bold mb-2">Special Offers</h3>
-                <p className="text-accent-100">Exclusive promotions and referral rewards</p>
+            <div className="bg-white dark:bg-slate-800 border border-neutral-light-grey dark:border-slate-700 rounded-xl shadow-sm overflow-hidden hover:-translate-y-1 transition-all duration-300">
+              <div className="bg-brand-navy p-6 text-white">
+                <Gift className="h-8 w-8 mb-3" aria-hidden="true" />
+                <h3 className="text-h3 font-bold mb-2">Special Offers</h3>
+                <p className="text-body text-white/80">Exclusive promotions and referral rewards</p>
               </div>
               <div className="p-6">
                 <ul className="space-y-3 mb-6">
                   <li className="flex items-start">
-                    <CheckCircle2 className="h-5 w-5 text-accent-500 mr-2 flex-shrink-0 mt-0.5" />
-                    <span className="text-gray-700 dark:text-gray-300">
+                    <CheckCircle2 className="h-5 w-5 text-brand-emerald mr-2 flex-shrink-0 mt-0.5" />
+                    <span className="text-body text-neutral-charcoal dark:text-white/80">
                       10% Off First Month for New Clients
                     </span>
                   </li>
                   <li className="flex items-start">
-                    <CheckCircle2 className="h-5 w-5 text-accent-500 mr-2 flex-shrink-0 mt-0.5" />
-                    <span className="text-gray-700 dark:text-gray-300">
+                    <CheckCircle2 className="h-5 w-5 text-brand-emerald mr-2 flex-shrink-0 mt-0.5" />
+                    <span className="text-body text-neutral-charcoal dark:text-white/80">
                       $100 Referral Bonus Program
                     </span>
                   </li>
                   <li className="flex items-start">
-                    <CheckCircle2 className="h-5 w-5 text-accent-500 mr-2 flex-shrink-0 mt-0.5" />
-                    <span className="text-gray-700 dark:text-gray-300">
+                    <CheckCircle2 className="h-5 w-5 text-brand-emerald mr-2 flex-shrink-0 mt-0.5" />
+                    <span className="text-body text-neutral-charcoal dark:text-white/80">
                       Seasonal Promotions
                     </span>
                   </li>
@@ -617,10 +630,10 @@ export default function Home() {
       <section className="py-20 bg-white dark:bg-slate-900 transition-colors">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+            <h2 className="text-h2 leading-tight font-bold text-neutral-charcoal dark:text-white mb-4">
               The Anderson Difference
             </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300">
+            <p className="text-body text-neutral-charcoal/70 dark:text-white/80">
               What sets us apart in commercial cleaning
             </p>
           </div>
@@ -651,13 +664,13 @@ export default function Home() {
               const Icon = item.icon
               return (
                 <div key={i} className="text-center">
-                  <div className="inline-flex items-center justify-center w-16 h-16 bg-primary-100 dark:bg-blue-900/30 rounded-full mb-4">
-                    <Icon className="h-8 w-8 text-primary-700 dark:text-blue-400" />
+                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-full mb-4 bg-brand-navy/10 text-brand-navy dark:bg-white/10 dark:text-white">
+                    <Icon className="h-8 w-8" />
                   </div>
-                  <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">
+                  <h3 className="text-h3 leading-normal font-semibold text-neutral-charcoal dark:text-white mb-2">
                     {item.title}
                   </h3>
-                  <p className="text-gray-600 dark:text-gray-300">{item.description}</p>
+                  <p className="text-body text-neutral-charcoal/80 dark:text-white/80">{item.description}</p>
                 </div>
               )
             })}
@@ -666,12 +679,12 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-primary-700 to-primary-900 text-white">
+      <section className="py-20 bg-brand-navy text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+          <h2 className="text-h2 leading-tight font-bold mb-6">
             Ready for a cleaner, healthier workplace?
           </h2>
-          <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+          <p className="text-body text-white/80 mb-8 max-w-2xl mx-auto">
             Get your free, no-obligation quote today. We respond to all inquiries within 24 hours.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

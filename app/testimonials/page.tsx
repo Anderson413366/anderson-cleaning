@@ -194,7 +194,7 @@ export default function TestimonialsPage() {
       <StructuredData schema={jsonLd} />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 bg-gradient-to-br from-blue-700 via-blue-800 to-indigo-900 text-white">
+      <section className="pt-32 pb-20 bg-brand-navy text-white">
         <div className="container mx-auto px-6 text-center">
           <div className="inline-flex items-center gap-2 bg-yellow-500/20 border border-yellow-400/30 rounded-full px-6 py-2 mb-6">
             <Star className="h-5 w-5 fill-yellow-400 text-yellow-400" />
@@ -202,8 +202,8 @@ export default function TestimonialsPage() {
               {averageRating}/5 stars from {testimonials.length} clients
             </span>
           </div>
-          <h1 className="text-4xl md:text-5xl font-extrabold mb-6">Client Testimonials</h1>
-          <p className="text-xl text-blue-100 max-w-3xl mx-auto mb-8">
+          <h1 className="text-h1 md:text-h1 font-extrabold mb-6">Client Testimonials</h1>
+          <p className="text-body text-white/80 max-w-3xl mx-auto mb-8">
             Don't just take our word for it. Here's what our clients have to say about Anderson
             Cleaning's professional commercial cleaning services.
           </p>
@@ -223,12 +223,12 @@ export default function TestimonialsPage() {
       <TestimonialsExplorer testimonials={testimonials} />
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-primary-700 to-primary-900 text-white">
+      <section className="py-20 bg-brand-navy text-white">
         <div className="container mx-auto px-6 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+          <h2 className="text-h2 leading-tight font-bold mb-6">
             Ready to Experience the Anderson Difference?
           </h2>
-          <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+          <p className="text-body text-white/80 mb-8 max-w-2xl mx-auto">
             Join dozens of satisfied clients across Massachusetts and Connecticut who trust Anderson
             Cleaning with their facilities.
           </p>

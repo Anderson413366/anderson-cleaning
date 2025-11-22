@@ -24,6 +24,7 @@
 'use client'
 
 import React, { useState, FormEvent, ChangeEvent } from 'react'
+import { CheckCircle2 } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
 import { submitQuickQuoteRequest } from '@/lib/forms/quickQuoteClient'
 import {
@@ -279,7 +280,7 @@ export default function QuoteFormInline({
       `}
     >
       {/* Form Title */}
-      <h3 className="text-2xl font-bold text-[var(--color-text-primary)] mb-2">
+      <h3 className="text-h3 font-bold text-[var(--color-text-primary)] mb-2">
         Get Your Free Quote
       </h3>
       <p className="text-[var(--color-text-secondary)] mb-6">
@@ -300,7 +301,7 @@ export default function QuoteFormInline({
           aria-live="polite"
         >
           <div className="flex items-start gap-2">
-            <span className="text-xl">✓</span>
+            <CheckCircle2 className="h-5 w-5 text-brand-emerald flex-shrink-0 mt-0.5" />
             <div>
               <p className="font-semibold">Thank you for your request!</p>
               <p className="text-sm mt-1">
@@ -315,7 +316,7 @@ export default function QuoteFormInline({
       {/* Form */}
       <form onSubmit={handleSubmit} noValidate>
         <div className="sr-only" aria-hidden="true">
-          <label htmlFor="website" className="block text-sm font-semibold text-gray-700">
+          <label htmlFor="website" className="block text-sm font-semibold text-neutral-charcoal/80">
             Website
           </label>
           <input
@@ -351,7 +352,7 @@ export default function QuoteFormInline({
               w-full
               min-h-[44px]
               px-4 py-2
-              text-base
+              text-body-sm
               bg-white dark:bg-slate-900
               border-2
               ${errors.name && touched.name
@@ -413,7 +414,7 @@ export default function QuoteFormInline({
               w-full
               min-h-[44px]
               px-4 py-2
-              text-base
+              text-body-sm
               bg-white dark:bg-slate-900
               border-2
               ${errors.email && touched.email
@@ -465,7 +466,7 @@ export default function QuoteFormInline({
               w-full
               min-h-[44px]
               px-4 py-2
-              text-base
+              text-body-sm
               bg-white dark:bg-slate-900
               border-2
               ${errors.phone && touched.phone
@@ -517,7 +518,7 @@ export default function QuoteFormInline({
               w-full
               min-h-[44px]
               px-4 py-2
-              text-base
+              text-body-sm
               bg-white dark:bg-slate-900
               border-2
               ${errors.facilityType && touched.facilityType
@@ -557,7 +558,7 @@ export default function QuoteFormInline({
         <Button
           type="submit"
           variant="accent"
-          className="w-full min-h-[48px] text-base font-semibold"
+          className="w-full min-h-[48px] text-body-sm font-semibold"
           disabled={isSubmitting || isSuccess}
         >
           {isSubmitting ? 'Submitting...' : isSuccess ? 'Submitted!' : 'Get Free Quote'}

@@ -26,9 +26,9 @@ const WhyWorkSection: React.FC = () => {
   }
 
   return (
-    <section className="py-20 bg-gray-50 dark:bg-slate-800 transition-colors">
+    <section className="py-20 bg-neutral-off-white dark:bg-slate-800 transition-colors">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-900 dark:text-white">
+        <h2 className="text-h2 leading-tight font-bold text-center mb-12 text-neutral-charcoal dark:text-white">
           {t('whyWorkTitle') as string}
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -40,14 +40,14 @@ const WhyWorkSection: React.FC = () => {
                 className="bg-white dark:bg-slate-700 rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
               >
                 <Icon className="h-12 w-12 text-accent-500 mb-4" />
-                <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-3">
+                <h3 className="text-body font-bold text-neutral-charcoal dark:text-white mb-3">
                   {item.title}
                 </h3>
-                <p className="text-gray-600 dark:text-gray-400 mb-3">{item.description}</p>
+                <p className="text-neutral-charcoal/70 dark:text-neutral-charcoal/50 mb-3">{item.description}</p>
                 {item.benefits && item.benefits.length > 0 && (
                   <ul className="space-y-2">
                     {item.benefits.map((benefit, idx) => (
-                      <li key={idx} className="flex items-start text-sm text-gray-600 dark:text-gray-400">
+                      <li key={idx} className="flex items-start text-sm text-neutral-charcoal/70 dark:text-neutral-charcoal/50">
                         <span className="text-accent-500 mr-2">•</span>
                         <span>{benefit}</span>
                       </li>

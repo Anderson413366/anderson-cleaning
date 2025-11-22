@@ -31,18 +31,18 @@ export default function IndustriesPage() {
   return (
     <div className="min-h-screen bg-white dark:bg-slate-900 transition-colors duration-300">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-blue-700 via-blue-800 to-indigo-900 text-white pt-28 pb-16 md:pt-32 md:pb-24">
+      <section className="relative overflow-hidden bg-brand-navy text-white pt-28 pb-16 md:pt-32 md:pb-24">
         <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10"></div>
 
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6">
+            <h1 className="text-h1 leading-tight font-extrabold mb-6">
               Industries We Serve
             </h1>
-            <p className="text-lg md:text-xl lg:text-2xl text-blue-100 mb-8">
+            <p className="text-body md:text-body lg:text-h3 text-white/80 mb-8">
               Specialized commercial cleaning solutions tailored to your industry's unique needs
             </p>
-            <p className="text-base md:text-lg text-blue-200 max-w-3xl mx-auto">
+            <p className="text-body-sm md:text-body text-blue-200 max-w-3xl mx-auto">
               With decades of experience across multiple sectors, we understand that each industry
               has specific cleaning requirements, compliance standards, and operational challenges.
               Our customized approach ensures your facility receives the specialized care it deserves.
@@ -52,13 +52,13 @@ export default function IndustriesPage() {
       </section>
 
       {/* Industry Cards Grid */}
-      <section className="py-16 md:py-20 bg-gray-50 dark:bg-slate-800">
+      <section className="py-16 md:py-20 bg-neutral-off-white dark:bg-slate-800">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-[var(--color-text-primary)] mb-4">
+            <h2 className="text-h2 leading-tight font-bold text-[var(--color-text-primary)] mb-4">
               Explore Our Industry Expertise
             </h2>
-            <p className="text-lg text-[var(--color-text-secondary)] max-w-3xl mx-auto">
+            <p className="text-body text-[var(--color-text-secondary)] max-w-3xl mx-auto">
               Select your industry to learn about our specialized cleaning solutions,
               compliance standards, and proven approach.
             </p>
@@ -107,7 +107,7 @@ export default function IndustriesPage() {
                       </div>
                     </div>
 
-                    <h3 className="text-2xl font-bold text-[var(--color-text-primary)] mb-4 group-hover:text-[var(--color-primary-base)] transition-colors">
+                    <h3 className="text-h3 font-bold text-[var(--color-text-primary)] mb-4 group-hover:text-[var(--color-primary-base)] transition-colors">
                       {industry.name}
                     </h3>
 
@@ -133,18 +133,18 @@ export default function IndustriesPage() {
           <div
             className="
               max-w-4xl mx-auto
-              bg-gradient-to-br from-blue-600 to-indigo-700
+              bg-brand-navy
               rounded-[var(--border-radius-lg)]
               shadow-2xl
               p-8 md:p-12
               text-center
             "
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            <h2 className="text-h2 leading-tight font-bold text-white mb-4">
               Not Sure Which Category Fits Your Business?
             </h2>
 
-            <p className="text-lg md:text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+            <p className="text-body md:text-body text-white/80 mb-8 max-w-2xl mx-auto">
               We serve a wide range of commercial facilities beyond these categories.
               Contact us to discuss your specific cleaning needs and how we can help.
             </p>
@@ -165,7 +165,7 @@ export default function IndustriesPage() {
                 <Button
                   variant="outline"
                   size="lg"
-                  className="min-w-[200px] bg-white text-blue-700 border-white hover:bg-blue-50 dark:bg-slate-800 dark:text-white dark:border-slate-600"
+                  className="min-w-[200px] border-white text-white hover:bg-white/10"
                   aria-label="Get a free quote for your facility"
                 >
                   Get Free Quote

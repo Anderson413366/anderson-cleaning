@@ -11,73 +11,62 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Brand Colors - Blue for trust, professionalism
+        'brand-navy': '#0A2342',
+        'brand-emerald': '#00A57E',
+        'neutral-off-white': '#F7F7F7',
+        'neutral-light-grey': '#EDEDED',
+        'neutral-charcoal': '#1A1A1A',
         primary: {
-          DEFAULT: '#1D4ED8', // blue-700
-          50: '#eff6ff',
-          100: '#dbeafe',
-          200: '#bfdbfe',
-          300: '#93c5fd',
-          400: '#60a5fa',
-          500: '#3b82f6',
-          600: '#2563eb',
-          700: '#1d4ed8',
-          800: '#1e40af',
-          900: '#1e3a8a',
-          950: '#172554',
+          DEFAULT: '#0A2342',
+          50: '#E6EBF2',
+          100: '#CDD7E5',
+          200: '#9BAECB',
+          300: '#6986B1',
+          400: '#375D97',
+          500: '#0A2342',
+          600: '#081C35',
+          700: '#061528',
+          800: '#040E1A',
+          900: '#02070D',
         },
-        // Accent Colors - Green for calls-to-action, success
         accent: {
-          DEFAULT: '#10B981', // green-500
-          50: '#ecfdf5',
-          100: '#d1fae5',
-          200: '#a7f3d0',
-          300: '#6ee7b7',
-          400: '#34d399',
-          500: '#10b981',
-          600: '#059669',
-          700: '#047857',
-          800: '#065f46',
-          900: '#064e3b',
-          950: '#022c22',
+          DEFAULT: '#00A57E',
+          50: '#E6F7F3',
+          100: '#CCEFE7',
+          200: '#99DFCF',
+          300: '#66CFB7',
+          400: '#33BF9F',
+          500: '#00A57E',
+          600: '#008465',
+          700: '#00634C',
+          800: '#004232',
+          900: '#002119',
         },
-        // Semantic Colors
-        success: {
-          DEFAULT: '#10B981',
-          light: '#D1FAE5',
-          dark: '#047857',
-        },
-        warning: {
-          DEFAULT: '#F59E0B',
-          light: '#FEF3C7',
-          dark: '#D97706',
-        },
-        error: {
-          DEFAULT: '#EF4444',
-          light: '#FEE2E2',
-          dark: '#DC2626',
-        },
-        info: {
-          DEFAULT: '#3B82F6',
-          light: '#DBEAFE',
-          dark: '#1D4ED8',
+        slate: {
+          50: '#f8fafc',
+          100: '#f1f5f9',
+          200: '#e2e8f0',
+          300: '#cbd5e1',
+          400: '#94a3b8',
+          500: '#64748b',
+          600: '#475569',
+          700: '#334155',
+          800: '#1e293b',
+          900: '#0f172a',
+          950: '#020617',
         },
       },
       fontFamily: {
-        sans: ['var(--font-inter)', 'Inter', 'system-ui', 'sans-serif'],
+        sans: ['Inter', 'system-ui', 'sans-serif'],
       },
       fontSize: {
-        // Typography Scale - WCAG compliant sizes
-        xs: ['0.75rem', { lineHeight: '1rem' }], // 12px
-        sm: ['0.875rem', { lineHeight: '1.25rem' }], // 14px
-        base: ['1rem', { lineHeight: '1.5rem' }], // 16px
-        lg: ['1.125rem', { lineHeight: '1.75rem' }], // 18px
-        xl: ['1.25rem', { lineHeight: '1.75rem' }], // 20px
-        '2xl': ['1.5rem', { lineHeight: '2rem' }], // 24px
-        '3xl': ['1.875rem', { lineHeight: '2.25rem' }], // 30px
-        '4xl': ['2.25rem', { lineHeight: '2.5rem' }], // 36px
-        '5xl': ['3rem', { lineHeight: '1' }], // 48px
-        '6xl': ['3.75rem', { lineHeight: '1' }], // 60px
+        h1: ['40px', { lineHeight: '1.3', fontWeight: '700' }],
+        h2: ['32px', { lineHeight: '1.3', fontWeight: '700' }],
+        h3: ['24px', { lineHeight: '1.4', fontWeight: '600' }],
+        body: ['18px', { lineHeight: '1.5', fontWeight: '400' }],
+        'body-sm': ['16px', { lineHeight: '1.5', fontWeight: '400' }],
+        button: ['18px', { lineHeight: '1.3', fontWeight: '500' }],
+        'button-sm': ['16px', { lineHeight: '1.3', fontWeight: '500' }],
       },
       spacing: {
         // Consistent spacing scale for OCD-friendly layouts

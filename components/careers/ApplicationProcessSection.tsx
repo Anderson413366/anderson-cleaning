@@ -44,13 +44,13 @@ const ApplicationProcessSection: React.FC<ApplicationProcessSectionProps> = ({
   ]
 
   return (
-    <section className="py-20 bg-gray-50 dark:bg-slate-800 transition-colors">
+    <section className="py-20 bg-neutral-off-white dark:bg-slate-800 transition-colors">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+          <h2 className="text-h2 leading-tight font-bold text-neutral-charcoal dark:text-white mb-4">
             {t('applicationProcessTitle') as string}
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          <p className="text-body text-neutral-charcoal/70 dark:text-white/80 max-w-2xl mx-auto">
             {t('applicationProcessSubtitle') as string}
           </p>
         </div>
@@ -61,14 +61,14 @@ const ApplicationProcessSection: React.FC<ApplicationProcessSectionProps> = ({
             return (
               <div key={step.number} className="relative">
                 <div className="bg-white dark:bg-slate-700 rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-300 h-full">
-                  <div className="flex items-center justify-center w-12 h-12 bg-accent-500 text-white rounded-full font-bold text-xl mb-4">
+                  <div className="flex items-center justify-center w-12 h-12 bg-accent-500 text-white rounded-full font-bold text-body mb-4">
                     {step.number}
                   </div>
                   <Icon className="h-10 w-10 text-accent-500 mb-4" />
-                  <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">
+                  <h3 className="text-body font-bold text-neutral-charcoal dark:text-white mb-2">
                     {step.title}
                   </h3>
-                  <p className="text-gray-600 dark:text-gray-400 text-sm">{step.description}</p>
+                  <p className="text-neutral-charcoal/70 dark:text-neutral-charcoal/50 text-sm">{step.description}</p>
                 </div>
               </div>
             )
@@ -76,7 +76,7 @@ const ApplicationProcessSection: React.FC<ApplicationProcessSectionProps> = ({
         </div>
 
         <div className="text-center">
-          <p className="text-gray-600 dark:text-gray-300 mb-6">
+          <p className="text-neutral-charcoal/70 dark:text-white/80 mb-6">
             {t('processTimeframe') as string}
           </p>
           <Button variant="accent" size="lg" onClick={onStartApplication} className="group">

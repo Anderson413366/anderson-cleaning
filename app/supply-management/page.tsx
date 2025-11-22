@@ -44,19 +44,19 @@ export default function SupplyManagementPage() {
       <StructuredData schema={jsonLd} />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 bg-gradient-to-br from-blue-700 via-blue-800 to-indigo-900 text-white">
+      <section className="pt-32 pb-20 bg-brand-navy text-white">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
             <div className="inline-block px-4 py-2 bg-yellow-500/20 border border-yellow-400/30 rounded-full text-yellow-300 text-sm font-medium mb-6">
               Premium Add-on Service
             </div>
 
-            <h1 className="text-4xl md:text-5xl font-extrabold mb-6">Never Run Out Again</h1>
-            <p className="text-xl text-blue-100 mb-4">
+            <h1 className="text-h1 md:text-h1 font-extrabold mb-6">Never Run Out Again</h1>
+            <p className="text-body text-white/80 mb-4">
               Comprehensive supply management that eliminates stockouts, reduces costs, and frees up
               your time.
             </p>
-            <p className="text-lg text-blue-200 mb-8">
+            <p className="text-body text-blue-200 mb-8">
               We track, forecast, and automatically replenish toilet paper, paper towels, soap,
               trash liners, and all facility consumables.
             </p>
@@ -74,10 +74,10 @@ export default function SupplyManagementPage() {
       <section className="py-20 bg-white dark:bg-slate-900">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-gray-100 mb-4">
+            <h2 className="text-h2 leading-tight font-bold text-neutral-charcoal dark:text-white mb-4">
               How Our Inventory System Works
             </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-400">
+            <p className="text-body text-neutral-charcoal/70 dark:text-neutral-charcoal/50">
               Automated tracking and replenishment with zero effort on your part
             </p>
           </div>
@@ -117,16 +117,16 @@ export default function SupplyManagementPage() {
               return (
                 <div
                   key={i}
-                  className="relative bg-gradient-to-br from-primary-50 to-accent-50 dark:from-slate-800 dark:to-slate-700 rounded-xl p-6 shadow-md text-center"
+                  className="relative bg-neutral-off-white dark:bg-slate-800 rounded-xl p-6 shadow-md text-center"
                 >
-                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-10 h-10 bg-primary-600 text-white rounded-full flex items-center justify-center font-bold text-lg shadow-lg">
+                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-10 h-10 bg-primary-600 text-white rounded-full flex items-center justify-center font-bold text-body shadow-lg">
                     {item.step}
                   </div>
                   <Icon className="h-12 w-12 text-primary-600 dark:text-primary-400 mx-auto mb-4 mt-4" />
-                  <h3 className="text-lg font-bold text-gray-900 dark:text-gray-100 mb-3">
+                  <h3 className="text-body font-bold text-neutral-charcoal dark:text-white mb-3">
                     {item.title}
                   </h3>
-                  <p className="text-sm text-gray-700 dark:text-gray-300">{item.description}</p>
+                  <p className="text-sm text-neutral-charcoal/80 dark:text-white/80">{item.description}</p>
                 </div>
               )
             })}
@@ -135,16 +135,16 @@ export default function SupplyManagementPage() {
       </section>
 
       {/* What's Included */}
-      <section className="py-20 bg-gray-50 dark:bg-slate-800/50">
+      <section className="py-20 bg-neutral-off-white dark:bg-slate-800/50">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-gray-100 mb-12 text-center">
+            <h2 className="text-h2 leading-tight font-bold text-neutral-charcoal dark:text-white mb-12 text-center">
               Supplies We Manage
             </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
               <div className="bg-white dark:bg-slate-800 rounded-xl p-8 shadow-lg">
-                <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-4 flex items-center">
+                <h3 className="text-body font-bold text-neutral-charcoal dark:text-white mb-4 flex items-center">
                   <Package className="h-6 w-6 text-primary-600 dark:text-primary-400 mr-2" />
                   Restroom Supplies
                 </h3>
@@ -157,7 +157,7 @@ export default function SupplyManagementPage() {
                     'Seat covers',
                     'Feminine hygiene products',
                   ].map((item, i) => (
-                    <li key={i} className="flex items-start text-gray-700 dark:text-gray-300">
+                    <li key={i} className="flex items-start text-neutral-charcoal/80 dark:text-white/80">
                       <CheckCircle2 className="h-5 w-5 text-accent-500 mr-2 flex-shrink-0 mt-0.5" />
                       <span>{item}</span>
                     </li>
@@ -166,7 +166,7 @@ export default function SupplyManagementPage() {
               </div>
 
               <div className="bg-white dark:bg-slate-800 rounded-xl p-8 shadow-lg">
-                <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-4 flex items-center">
+                <h3 className="text-body font-bold text-neutral-charcoal dark:text-white mb-4 flex items-center">
                   <ShoppingCart className="h-6 w-6 text-primary-600 dark:text-primary-400 mr-2" />
                   Facility Supplies
                 </h3>
@@ -179,7 +179,7 @@ export default function SupplyManagementPage() {
                     'Cleaning supplies (for your staff)',
                     'Custom items upon request',
                   ].map((item, i) => (
-                    <li key={i} className="flex items-start text-gray-700 dark:text-gray-300">
+                    <li key={i} className="flex items-start text-neutral-charcoal/80 dark:text-white/80">
                       <CheckCircle2 className="h-5 w-5 text-accent-500 mr-2 flex-shrink-0 mt-0.5" />
                       <span>{item}</span>
                     </li>
@@ -195,7 +195,7 @@ export default function SupplyManagementPage() {
       <section className="py-20 bg-white dark:bg-slate-900">
         <div className="container mx-auto px-6">
           <div className="max-w-5xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-gray-100 mb-12 text-center">
+            <h2 className="text-h2 leading-tight font-bold text-neutral-charcoal dark:text-white mb-12 text-center">
               Inventory Cadence & Reporting
             </h2>
 
@@ -222,12 +222,12 @@ export default function SupplyManagementPage() {
               ].map((item, i) => {
                 const Icon = item.icon
                 return (
-                  <div key={i} className="bg-gray-50 dark:bg-slate-800 rounded-xl p-6 text-center">
+                  <div key={i} className="bg-neutral-off-white dark:bg-slate-800 rounded-xl p-6 text-center">
                     <Icon className="h-12 w-12 text-accent-500 mx-auto mb-4" />
-                    <h3 className="text-lg font-bold text-gray-900 dark:text-gray-100 mb-3">
+                    <h3 className="text-body font-bold text-neutral-charcoal dark:text-white mb-3">
                       {item.title}
                     </h3>
-                    <p className="text-sm text-gray-700 dark:text-gray-300">{item.description}</p>
+                    <p className="text-sm text-neutral-charcoal/80 dark:text-white/80">{item.description}</p>
                   </div>
                 )
               })}
@@ -237,10 +237,10 @@ export default function SupplyManagementPage() {
       </section>
 
       {/* Benefits */}
-      <section className="py-20 bg-gray-50 dark:bg-slate-800/50">
+      <section className="py-20 bg-neutral-off-white dark:bg-slate-800/50">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-gray-100 mb-12 text-center">
+            <h2 className="text-h2 leading-tight font-bold text-neutral-charcoal dark:text-white mb-12 text-center">
               Why Add Supply Management?
             </h2>
 
@@ -291,10 +291,10 @@ export default function SupplyManagementPage() {
                   >
                     <Icon className="h-8 w-8 text-primary-600 dark:text-primary-400 flex-shrink-0 mt-1" />
                     <div>
-                      <h3 className="text-lg font-bold text-gray-900 dark:text-gray-100 mb-2">
+                      <h3 className="text-body font-bold text-neutral-charcoal dark:text-white mb-2">
                         {item.title}
                       </h3>
-                      <p className="text-sm text-gray-700 dark:text-gray-300">{item.description}</p>
+                      <p className="text-sm text-neutral-charcoal/80 dark:text-white/80">{item.description}</p>
                     </div>
                   </div>
                 )
@@ -308,22 +308,22 @@ export default function SupplyManagementPage() {
       <section className="py-20 bg-white dark:bg-slate-900">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-gray-100 mb-6 text-center">
+            <h2 className="text-h2 leading-tight font-bold text-neutral-charcoal dark:text-white mb-6 text-center">
               How Pricing Works
             </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-400 text-center mb-12">
+            <p className="text-body text-neutral-charcoal/70 dark:text-neutral-charcoal/50 text-center mb-12">
               Transparent pricing with no hidden fees
             </p>
 
-            <div className="bg-gradient-to-br from-primary-50 to-accent-50 dark:from-slate-800 dark:to-slate-700 rounded-xl p-8 md:p-12 shadow-lg">
+            <div className="bg-neutral-off-white dark:bg-slate-800 rounded-xl p-8 md:p-12 shadow-lg">
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
                   <DollarSign className="h-6 w-6 text-primary-600 dark:text-primary-400 flex-shrink-0 mt-1" />
                   <div>
-                    <h3 className="text-lg font-bold text-gray-900 dark:text-gray-100 mb-2">
+                    <h3 className="text-body font-bold text-neutral-charcoal dark:text-white mb-2">
                       Product Cost
                     </h3>
-                    <p className="text-gray-700 dark:text-gray-300">
+                    <p className="text-neutral-charcoal/80 dark:text-white/80">
                       You pay our cost for products (bulk purchasing means lower prices than retail)
                     </p>
                   </div>
@@ -332,10 +332,10 @@ export default function SupplyManagementPage() {
                 <div className="flex items-start gap-4">
                   <FileText className="h-6 w-6 text-primary-600 dark:text-primary-400 flex-shrink-0 mt-1" />
                   <div>
-                    <h3 className="text-lg font-bold text-gray-900 dark:text-gray-100 mb-2">
+                    <h3 className="text-body font-bold text-neutral-charcoal dark:text-white mb-2">
                       Management Fee
                     </h3>
-                    <p className="text-gray-700 dark:text-gray-300">
+                    <p className="text-neutral-charcoal/80 dark:text-white/80">
                       Small monthly fee covers inventory tracking, forecasting, and ordering
                       (typically $50-150/month depending on facility size)
                     </p>
@@ -345,10 +345,10 @@ export default function SupplyManagementPage() {
                 <div className="flex items-start gap-4">
                   <TrendingDown className="h-6 w-6 text-accent-600 dark:text-accent-400 flex-shrink-0 mt-1" />
                   <div>
-                    <h3 className="text-lg font-bold text-gray-900 dark:text-gray-100 mb-2">
+                    <h3 className="text-body font-bold text-neutral-charcoal dark:text-white mb-2">
                       Typical Savings
                     </h3>
-                    <p className="text-gray-700 dark:text-gray-300">
+                    <p className="text-neutral-charcoal/80 dark:text-white/80">
                       Most clients save 15-25% compared to their previous supply costs, even with
                       the management fee
                     </p>
@@ -357,7 +357,7 @@ export default function SupplyManagementPage() {
               </div>
 
               <div className="mt-8 pt-8 border-t border-gray-200 dark:border-slate-600">
-                <p className="text-center text-gray-700 dark:text-gray-300 font-medium">
+                <p className="text-center text-neutral-charcoal/80 dark:text-white/80 font-medium">
                   Example: A 10,000 sq ft office typically spends $300-500/month on supplies + $75
                   management fee = $375-575/month total
                 </p>
@@ -368,14 +368,14 @@ export default function SupplyManagementPage() {
       </section>
 
       {/* Important Notice */}
-      <section className="py-20 bg-gray-50 dark:bg-slate-800/50">
+      <section className="py-20 bg-neutral-off-white dark:bg-slate-800/50">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto">
             <div className="bg-yellow-50 dark:bg-yellow-900/20 border-l-4 border-yellow-500 rounded-lg p-8">
               <div className="flex items-start gap-4">
                 <AlertCircle className="h-8 w-8 text-yellow-600 dark:text-yellow-400 flex-shrink-0 mt-1" />
                 <div>
-                  <h3 className="text-xl font-bold text-yellow-900 dark:text-yellow-300 mb-3">
+                  <h3 className="text-body font-bold text-yellow-900 dark:text-yellow-300 mb-3">
                     Premium Add-on Service
                   </h3>
                   <p className="text-yellow-800 dark:text-yellow-200 mb-4">
@@ -399,12 +399,12 @@ export default function SupplyManagementPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 bg-gradient-to-r from-primary-700 to-primary-900 text-white">
+      <section className="py-20 bg-brand-navy text-white">
         <div className="container mx-auto px-6 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+          <h2 className="text-h2 leading-tight font-bold mb-6">
             Ready to Eliminate Supply Headaches?
           </h2>
-          <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+          <p className="text-body text-white/80 mb-8 max-w-2xl mx-auto">
             Add Supply Management to your cleaning contract and never worry about running out again.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

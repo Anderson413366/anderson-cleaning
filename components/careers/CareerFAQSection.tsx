@@ -29,10 +29,10 @@ const CareerFAQSection: React.FC<CareerFAQSectionProps> = ({ onStartApplication 
     <section className="py-20 bg-white dark:bg-slate-900 transition-colors">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+          <h2 className="text-h2 leading-tight font-bold text-neutral-charcoal dark:text-white mb-4">
             {t('careerFAQTitle') as string}
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          <p className="text-body text-neutral-charcoal/70 dark:text-white/80 max-w-2xl mx-auto">
             {t('careerFAQSubtitle') as string}
           </p>
         </div>
@@ -45,20 +45,20 @@ const CareerFAQSection: React.FC<CareerFAQSectionProps> = ({ onStartApplication 
             >
               <button
                 onClick={() => toggleFAQ(index)}
-                className="w-full flex items-center justify-between p-6 bg-gray-50 dark:bg-slate-800 hover:bg-gray-100 dark:hover:bg-slate-700 transition-colors"
+                className="w-full flex items-center justify-between p-6 bg-neutral-off-white dark:bg-slate-800 hover:bg-neutral-light-grey dark:hover:bg-slate-700 transition-colors"
               >
-                <span className="font-semibold text-left text-gray-900 dark:text-white">
+                <span className="font-semibold text-left text-neutral-charcoal dark:text-white">
                   {faq.question}
                 </span>
                 <ChevronDown
-                  className={`h-5 w-5 text-gray-600 dark:text-gray-400 transform transition-transform ${
+                  className={`h-5 w-5 text-neutral-charcoal/70 dark:text-neutral-charcoal/50 transform transition-transform ${
                     openIndex === index ? 'rotate-180' : ''
                   }`}
                 />
               </button>
               {openIndex === index && (
                 <div className="p-6 bg-white dark:bg-slate-900">
-                  <p className="text-gray-600 dark:text-gray-400">{faq.answer}</p>
+                  <p className="text-neutral-charcoal/70 dark:text-neutral-charcoal/50">{faq.answer}</p>
                 </div>
               )}
             </div>
@@ -66,7 +66,7 @@ const CareerFAQSection: React.FC<CareerFAQSectionProps> = ({ onStartApplication 
         </div>
 
         <div className="text-center">
-          <p className="text-gray-600 dark:text-gray-300 mb-6">
+          <p className="text-neutral-charcoal/70 dark:text-white/80 mb-6">
             {t('stillHaveQuestions') as string}
           </p>
           <Button variant="accent" size="lg" onClick={onStartApplication} className="group">

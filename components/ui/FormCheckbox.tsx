@@ -13,10 +13,10 @@ const FormCheckbox = forwardRef<HTMLInputElement, FormCheckboxProps>(
             name={name}
             type="checkbox"
             ref={ref}
-            className={`h-4 w-4 text-primary dark:text-blue-500 bg-gray-100 dark:bg-slate-700 border-gray-300 dark:border-slate-600 rounded focus:ring-primary dark:focus:ring-blue-600 ${className || ''}`}
+            className={`h-4 w-4 text-primary dark:text-blue-500 bg-neutral-light-grey dark:bg-slate-700 border-gray-300 dark:border-slate-600 rounded focus:ring-primary dark:focus:ring-blue-600 ${className || ''}`}
             {...props}
           />
-          <label htmlFor={name} className="ml-2 block text-sm text-gray-900 dark:text-gray-200">
+          <label htmlFor={name} className="ml-2 block text-sm text-neutral-charcoal dark:text-white/90">
             {label}
           </label>
         </div>

@@ -203,7 +203,7 @@ export default function BeforeAfterSlider({
         >
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 bg-white rounded-full shadow-lg flex items-center justify-center">
             <svg
-              className="w-5 h-5 text-gray-700"
+              className="w-5 h-5 text-neutral-charcoal/80"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -226,11 +226,11 @@ export default function BeforeAfterSlider({
 
       {/* Content */}
       <div className="mt-6 text-center">
-        <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-2">
+        <h3 className="text-h3 font-bold text-neutral-charcoal dark:text-white mb-2">
           {currentItem.title}
         </h3>
         {currentItem.description && (
-          <p className="text-gray-600 dark:text-gray-400 mb-4">{currentItem.description}</p>
+          <p className="text-neutral-charcoal/70 dark:text-neutral-charcoal/50 mb-4">{currentItem.description}</p>
         )}
       </div>
 
@@ -239,11 +239,11 @@ export default function BeforeAfterSlider({
         <div className="flex items-center justify-center gap-4 mt-4">
           <button
             onClick={goToPrevious}
-            className="p-2 rounded-full bg-gray-100 dark:bg-slate-800 hover:bg-gray-200 dark:hover:bg-slate-700 transition-colors"
+            className="p-2 rounded-full bg-neutral-light-grey dark:bg-slate-800 hover:bg-gray-200 dark:hover:bg-slate-700 transition-colors"
             aria-label="Previous comparison"
           >
             <svg
-              className="w-5 h-5 text-gray-700 dark:text-gray-300"
+              className="w-5 h-5 text-neutral-charcoal/80 dark:text-white/80"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -276,11 +276,11 @@ export default function BeforeAfterSlider({
 
           <button
             onClick={goToNext}
-            className="p-2 rounded-full bg-gray-100 dark:bg-slate-800 hover:bg-gray-200 dark:hover:bg-slate-700 transition-colors"
+            className="p-2 rounded-full bg-neutral-light-grey dark:bg-slate-800 hover:bg-gray-200 dark:hover:bg-slate-700 transition-colors"
             aria-label="Next comparison"
           >
             <svg
-              className="w-5 h-5 text-gray-700 dark:text-gray-300"
+              className="w-5 h-5 text-neutral-charcoal/80 dark:text-white/80"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"

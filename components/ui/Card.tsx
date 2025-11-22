@@ -27,7 +27,7 @@ CardHeader.displayName = 'CardHeader'
 const CardTitle = forwardRef<HTMLHeadingElement, CardTitleProps>(({ className, ...props }, ref) => (
   <h3
     ref={ref}
-    className={`text-xl font-semibold leading-none tracking-tight ${className}`}
+    className={`text-body font-semibold leading-none tracking-tight ${className}`}
     {...props}
   />
 ))

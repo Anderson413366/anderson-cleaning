@@ -37,27 +37,27 @@ export default function TermsOfServicePage() {
         <div className="mb-12">
           <Link
             href="/"
-            className="inline-flex items-center text-sm text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 mb-4"
+            className="inline-flex items-center text-sm text-neutral-charcoal/70 dark:text-neutral-charcoal/50 hover:text-primary-600 dark:hover:text-primary-400 mb-4"
           >
             ← Back to Home
           </Link>
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-gray-100 mb-4">
+          <h1 className="text-h1 md:text-h1 font-bold text-neutral-charcoal dark:text-white mb-4">
             Terms of Service
           </h1>
-          <p className="text-lg text-gray-600 dark:text-gray-400">
+          <p className="text-body text-neutral-charcoal/70 dark:text-neutral-charcoal/50">
             Last Updated: <time dateTime="2025-01-15">{lastUpdated}</time>
           </p>
           <div className="mt-4 flex flex-wrap gap-4">
             <button
               onClick={() => window.print()}
-              className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 bg-gray-100 dark:bg-slate-800 rounded-lg hover:bg-gray-200 dark:hover:bg-slate-700 transition-colors"
+              className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-neutral-charcoal/80 dark:text-white/80 bg-neutral-light-grey dark:bg-slate-800 rounded-lg hover:bg-gray-200 dark:hover:bg-slate-700 transition-colors"
             >
               <Download className="h-4 w-4" />
               Print / Save as PDF
             </button>
             <Link
               href="/legal/privacy"
-              className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 bg-gray-100 dark:bg-slate-800 rounded-lg hover:bg-gray-200 dark:hover:bg-slate-700 transition-colors"
+              className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-neutral-charcoal/80 dark:text-white/80 bg-neutral-light-grey dark:bg-slate-800 rounded-lg hover:bg-gray-200 dark:hover:bg-slate-700 transition-colors"
             >
               View Privacy Policy
             </Link>
@@ -65,8 +65,8 @@ export default function TermsOfServicePage() {
         </div>
 
         {/* Table of Contents */}
-        <nav className="mb-12 p-6 bg-gray-50 dark:bg-slate-800 rounded-xl border border-gray-200 dark:border-slate-700">
-          <h2 className="text-lg font-bold text-gray-900 dark:text-gray-100 mb-4">
+        <nav className="mb-12 p-6 bg-neutral-off-white dark:bg-slate-800 rounded-xl border border-gray-200 dark:border-slate-700">
+          <h2 className="text-body font-bold text-neutral-charcoal dark:text-white mb-4">
             Table of Contents
           </h2>
           <ol className="space-y-2 text-sm">
@@ -154,7 +154,7 @@ export default function TermsOfServicePage() {
 
         {/* Content - see continuation in next message due to length */}
         <div className="prose prose-lg dark:prose-invert max-w-none">
-          <p className="text-gray-600 dark:text-gray-400 mb-8">
+          <p className="text-neutral-charcoal/70 dark:text-neutral-charcoal/50 mb-8">
             [Full terms content would continue here - file is being created in sections]
           </p>
         </div>

@@ -36,7 +36,7 @@ const TestimonialsExplorer = ({ testimonials }: TestimonialsExplorerProps) => {
           className={`h-5 w-5 ${
             star <= rating
               ? 'fill-yellow-400 text-yellow-400'
-              : 'fill-gray-200 text-gray-200 dark:fill-gray-700 dark:text-gray-700'
+              : 'fill-gray-200 text-gray-200 dark:fill-gray-700 dark:text-neutral-charcoal/80'
           }`}
         />
       ))}
@@ -49,24 +49,24 @@ const TestimonialsExplorer = ({ testimonials }: TestimonialsExplorerProps) => {
   return (
     <>
       {/* Filters */}
-      <section className="py-12 bg-gray-50 dark:bg-slate-800/50 border-b border-gray-200 dark:border-slate-700">
+      <section className="py-12 bg-neutral-off-white dark:bg-slate-800/50 border-b border-gray-200 dark:border-slate-700">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto">
             <div className="flex items-center gap-2 mb-4">
               <Filter className="h-5 w-5 text-primary-600 dark:text-primary-400" />
-              <h2 className="text-lg font-semibold text-gray-900 dark:text-gray-100">
+              <h2 className="text-body font-semibold text-neutral-charcoal dark:text-white">
                 Filter Testimonials
               </h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
-                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                <label className="block text-sm font-medium text-neutral-charcoal/80 dark:text-white/80 mb-2">
                   Industry
                 </label>
                 <select
                   value={selectedIndustry}
                   onChange={(e) => setSelectedIndustry(e.target.value)}
-                  className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-slate-800 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                  className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-slate-800 text-neutral-charcoal dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
                 >
                   {industries.map((industry) => (
                     <option key={industry} value={industry}>
@@ -76,13 +76,13 @@ const TestimonialsExplorer = ({ testimonials }: TestimonialsExplorerProps) => {
                 </select>
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                <label className="block text-sm font-medium text-neutral-charcoal/80 dark:text-white/80 mb-2">
                   Service
                 </label>
                 <select
                   value={selectedService}
                   onChange={(e) => setSelectedService(e.target.value)}
-                  className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-slate-800 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                  className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-slate-800 text-neutral-charcoal dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
                 >
                   {services.map((service) => (
                     <option key={service} value={service}>
@@ -94,7 +94,7 @@ const TestimonialsExplorer = ({ testimonials }: TestimonialsExplorerProps) => {
             </div>
             {showCount && (
               <div className="mt-4">
-                <p className="text-sm text-gray-600 dark:text-gray-400">
+                <p className="text-sm text-neutral-charcoal/70 dark:text-neutral-charcoal/50">
                   Showing {filteredTestimonials.length} of {totalCount} testimonials
                 </p>
               </div>
@@ -109,7 +109,7 @@ const TestimonialsExplorer = ({ testimonials }: TestimonialsExplorerProps) => {
           <div className="max-w-7xl mx-auto">
             {filteredTestimonials.length === 0 ? (
               <div className="text-center py-12">
-                <p className="text-xl text-gray-600 dark:text-gray-400">
+                <p className="text-body text-neutral-charcoal/70 dark:text-neutral-charcoal/50">
                   No testimonials match your filter criteria. Try adjusting your filters.
                 </p>
               </div>
@@ -122,18 +122,18 @@ const TestimonialsExplorer = ({ testimonials }: TestimonialsExplorerProps) => {
                   >
                     <div className="mb-4">{renderStars(testimonial.rating)}</div>
                     <blockquote className="flex-1 mb-6">
-                      <p className="text-gray-700 dark:text-gray-300 leading-relaxed italic">
+                      <p className="text-neutral-charcoal/80 dark:text-white/80 leading-relaxed italic">
                         "{testimonial.quote}"
                       </p>
                     </blockquote>
                     <div className="border-t border-gray-200 dark:border-gray-700 pt-4">
-                      <p className="font-bold text-gray-900 dark:text-gray-100">
+                      <p className="font-bold text-neutral-charcoal dark:text-white">
                         {testimonial.name}
                       </p>
-                      <p className="text-sm text-gray-600 dark:text-gray-400">
+                      <p className="text-sm text-neutral-charcoal/70 dark:text-neutral-charcoal/50">
                         {testimonial.title}
                       </p>
-                      <p className="text-sm text-gray-600 dark:text-gray-400">
+                      <p className="text-sm text-neutral-charcoal/70 dark:text-neutral-charcoal/50">
                         {testimonial.company}
                       </p>
                       <div className="flex gap-2 mt-3">

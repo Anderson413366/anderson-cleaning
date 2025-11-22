@@ -79,7 +79,7 @@ const FileUpload: React.FC<FileUploadProps> = ({
     <div className="mb-6">
       <label
         htmlFor={name}
-        className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+        className="block text-sm font-medium text-neutral-charcoal/80 dark:text-white/80 mb-1"
       >
         {label}
         {isRequired && (
@@ -90,14 +90,14 @@ const FileUpload: React.FC<FileUploadProps> = ({
         className={`mt-1 flex flex-col items-center px-6 pt-5 pb-6 border-2 ${displayError ? 'border-red-400' : 'border-gray-300 dark:border-slate-600'} border-dashed rounded-md`}
       >
         <div className="space-y-1 text-center">
-          <FileSignature className="mx-auto h-12 w-12 text-gray-400 dark:text-slate-500" />
+          <FileSignature className="mx-auto h-12 w-12 text-neutral-charcoal/50 dark:text-slate-500" />
           {currentFile ? (
-            <div className="mt-2 text-sm text-gray-600 dark:text-slate-300">
+            <div className="mt-2 text-sm text-neutral-charcoal/70 dark:text-slate-300">
               <p className="font-medium text-primary dark:text-blue-400">{currentFile.name}</p>
               <p className="text-xs">({(currentFile.size / 1024 / 1024).toFixed(2)} MB)</p>
             </div>
           ) : (
-            <div className="flex text-sm text-gray-600 dark:text-slate-400">
+            <div className="flex text-sm text-neutral-charcoal/70 dark:text-slate-400">
               <p className="pl-1">{helperText}</p>
             </div>
           )}

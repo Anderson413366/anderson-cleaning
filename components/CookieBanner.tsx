@@ -94,10 +94,10 @@ export default function CookieBanner() {
 
                 {/* Content */}
                 <div className="flex-1 min-w-0">
-                  <h3 className="text-lg font-bold text-gray-900 dark:text-gray-100 mb-2">
+                  <h3 className="text-body font-bold text-neutral-charcoal dark:text-white mb-2">
                     We Value Your Privacy
                   </h3>
-                  <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
+                  <p className="text-sm text-neutral-charcoal/70 dark:text-neutral-charcoal/50 mb-4">
                     We use cookies to enhance your browsing experience, serve personalized content,
                     and analyze our traffic. By clicking "Accept All," you consent to our use of
                     cookies.{' '}
@@ -131,7 +131,7 @@ export default function CookieBanner() {
                       variant="ghost"
                       size="sm"
                       onClick={handleDismiss}
-                      className="sm:w-auto text-gray-600 dark:text-gray-400"
+                      className="sm:w-auto text-neutral-charcoal/70 dark:text-neutral-charcoal/50"
                     >
                       Dismiss
                     </Button>
@@ -141,7 +141,7 @@ export default function CookieBanner() {
                 {/* Close Button */}
                 <button
                   onClick={handleDismiss}
-                  className="flex-shrink-0 p-2 text-gray-400 hover:text-gray-600 dark:text-gray-500 dark:hover:text-gray-300 transition-colors rounded-lg hover:bg-gray-100 dark:hover:bg-slate-700"
+                  className="flex-shrink-0 p-2 text-neutral-charcoal/50 hover:text-neutral-charcoal/70 dark:text-neutral-charcoal/60 dark:hover:text-neutral-charcoal/40 transition-colors rounded-lg hover:bg-neutral-light-grey dark:hover:bg-slate-700"
                   aria-label="Dismiss cookie banner"
                 >
                   <X className="h-5 w-5" />
@@ -150,25 +150,25 @@ export default function CookieBanner() {
 
               {/* Cookie Details (Optional Expansion) */}
               <details className="mt-4 pt-4 border-t border-gray-200 dark:border-slate-700">
-                <summary className="text-sm font-medium text-gray-700 dark:text-gray-300 cursor-pointer hover:text-primary-600 dark:hover:text-primary-400">
+                <summary className="text-sm font-medium text-neutral-charcoal/80 dark:text-white/80 cursor-pointer hover:text-primary-600 dark:hover:text-primary-400">
                   Cookie Details
                 </summary>
-                <div className="mt-3 space-y-3 text-sm text-gray-600 dark:text-gray-400">
+                <div className="mt-3 space-y-3 text-sm text-neutral-charcoal/70 dark:text-neutral-charcoal/50">
                   <div>
-                    <strong className="text-gray-900 dark:text-gray-100">Essential Cookies:</strong>
+                    <strong className="text-neutral-charcoal dark:text-white">Essential Cookies:</strong>
                     <p className="mt-1">
                       Required for the website to function properly. These cannot be disabled.
                     </p>
                   </div>
                   <div>
-                    <strong className="text-gray-900 dark:text-gray-100">Analytics Cookies:</strong>
+                    <strong className="text-neutral-charcoal dark:text-white">Analytics Cookies:</strong>
                     <p className="mt-1">
                       Help us understand how visitors interact with our website by collecting and
                       reporting information anonymously.
                     </p>
                   </div>
                   <div>
-                    <strong className="text-gray-900 dark:text-gray-100">Marketing Cookies:</strong>
+                    <strong className="text-neutral-charcoal dark:text-white">Marketing Cookies:</strong>
                     <p className="mt-1">
                       Used to track visitors across websites to display relevant ads.
                     </p>

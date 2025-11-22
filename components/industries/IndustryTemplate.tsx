@@ -62,7 +62,7 @@ export default function IndustryTemplate({
       {/* ================================================================
           HERO SECTION
           ================================================================ */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-blue-700 via-blue-800 to-indigo-900 text-white py-16 md:py-24">
+      <section className="relative overflow-hidden bg-brand-navy text-white py-16 md:py-24">
         {/* Background Pattern */}
         <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10"></div>
 
@@ -87,10 +87,10 @@ export default function IndustryTemplate({
 
             {/* Text Content */}
             <div className="flex-1">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4">
+              <h1 className="text-h1 leading-tight font-extrabold mb-4">
                 {industry.hero.title}
               </h1>
-              <p className="text-lg md:text-xl lg:text-2xl text-blue-100 mb-8">
+              <p className="text-body md:text-body lg:text-h3 text-white/80 mb-8">
                 {industry.hero.subtitle}
               </p>
 
@@ -111,7 +111,7 @@ export default function IndustryTemplate({
       <section className="py-16 md:py-20 bg-white dark:bg-slate-900">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
-            <div className="space-y-6 text-lg text-[var(--color-text-secondary)] leading-relaxed">
+            <div className="space-y-6 text-body text-[var(--color-text-secondary)] leading-relaxed">
               {industry.overview.map((paragraph, index) => (
                 <p key={index}>{paragraph}</p>
               ))}
@@ -123,15 +123,15 @@ export default function IndustryTemplate({
       {/* ================================================================
           CHALLENGES SECTION
           ================================================================ */}
-      <section className="py-16 md:py-20 bg-gray-50 dark:bg-slate-800">
+      <section className="py-16 md:py-20 bg-neutral-off-white dark:bg-slate-800">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto">
             {/* Section Header */}
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-[var(--color-text-primary)] mb-4">
+              <h2 className="text-h2 leading-tight font-bold text-[var(--color-text-primary)] mb-4">
                 Common {industry.name} Cleaning Challenges
               </h2>
-              <p className="text-lg text-[var(--color-text-secondary)] max-w-3xl mx-auto">
+              <p className="text-body text-[var(--color-text-secondary)] max-w-3xl mx-auto">
                 Every industry has unique cleaning requirements. Here are the specific
                 challenges we address in {industry.name.toLowerCase()}.
               </p>
@@ -158,7 +158,7 @@ export default function IndustryTemplate({
                   </div>
 
                   {/* Challenge Text */}
-                  <p className="text-base font-semibold text-[var(--color-text-primary)]">
+                  <p className="text-body-sm font-semibold text-[var(--color-text-primary)]">
                     {challenge}
                   </p>
                 </div>
@@ -176,10 +176,10 @@ export default function IndustryTemplate({
           <div className="max-w-6xl mx-auto">
             {/* Section Header */}
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-[var(--color-text-primary)] mb-4">
+              <h2 className="text-h2 leading-tight font-bold text-[var(--color-text-primary)] mb-4">
                 How We Serve {industry.name}
               </h2>
-              <p className="text-lg text-[var(--color-text-secondary)] max-w-3xl mx-auto">
+              <p className="text-body text-[var(--color-text-secondary)] max-w-3xl mx-auto">
                 Our specialized approach combines industry expertise with proven cleaning
                 protocols to deliver exceptional results.
               </p>
@@ -191,7 +191,7 @@ export default function IndustryTemplate({
                 <div
                   key={index}
                   className="
-                    bg-gradient-to-br from-blue-50 to-green-50
+                    bg-neutral-off-white
                     dark:from-slate-800 dark:to-slate-700
                     rounded-[var(--border-radius-lg)]
                     shadow-[var(--shadow-card)]
@@ -201,10 +201,10 @@ export default function IndustryTemplate({
                 >
                   {/* Number Badge */}
                   <div className="flex items-center gap-4 mb-4">
-                    <div className="w-10 h-10 rounded-full bg-[var(--color-primary-base)] text-white flex items-center justify-center font-bold text-lg flex-shrink-0">
+                    <div className="w-10 h-10 rounded-full bg-[var(--color-primary-base)] text-white flex items-center justify-center font-bold text-body flex-shrink-0">
                       {index + 1}
                     </div>
-                    <h3 className="text-xl font-bold text-[var(--color-text-primary)]">
+                    <h3 className="text-body font-bold text-[var(--color-text-primary)]">
                       {solution.title}
                     </h3>
                   </div>
@@ -223,15 +223,15 @@ export default function IndustryTemplate({
       {/* ================================================================
           STANDARDS & COMPLIANCE SECTION
           ================================================================ */}
-      <section className="py-16 md:py-20 bg-gray-50 dark:bg-slate-800">
+      <section className="py-16 md:py-20 bg-neutral-off-white dark:bg-slate-800">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto">
             {/* Section Header */}
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-[var(--color-text-primary)] mb-4">
+              <h2 className="text-h2 leading-tight font-bold text-[var(--color-text-primary)] mb-4">
                 Standards & Compliance
               </h2>
-              <p className="text-lg text-[var(--color-text-secondary)] max-w-3xl mx-auto">
+              <p className="text-body text-[var(--color-text-secondary)] max-w-3xl mx-auto">
                 We maintain the highest standards and certifications required for your industry.
               </p>
             </div>
@@ -281,7 +281,7 @@ export default function IndustryTemplate({
           <div className="max-w-6xl mx-auto">
             {/* Section Header */}
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-[var(--color-text-primary)] mb-4">
+              <h2 className="text-h2 leading-tight font-bold text-[var(--color-text-primary)] mb-4">
                 What Our {industry.name} Clients Say
               </h2>
             </div>
@@ -302,7 +302,7 @@ export default function IndustryTemplate({
                 >
                   {/* Quote */}
                   <div className="mb-6">
-                    <p className="text-lg text-[var(--color-text-primary)] leading-relaxed italic">
+                    <p className="text-body text-[var(--color-text-primary)] leading-relaxed italic">
                       "{testimonial.quote}"
                     </p>
                   </div>
@@ -337,10 +337,10 @@ export default function IndustryTemplate({
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 {/* Left: CTA Text */}
                 <div className="text-white">
-                  <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                  <h2 className="text-h2 leading-tight font-bold mb-4">
                     Ready to Discuss Your {industry.name}?
                   </h2>
-                  <p className="text-lg md:text-xl text-blue-100 mb-6">
+                  <p className="text-body md:text-body text-white/80 mb-6">
                     Get a customized cleaning program designed specifically for your facility's
                     unique requirements.
                   </p>
@@ -368,10 +368,10 @@ export default function IndustryTemplate({
             ) : (
               /* Option 2: CTA Button */
               <div className="text-center text-white">
-                <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                <h2 className="text-h2 leading-tight font-bold mb-4">
                   Ready to Discuss Your {industry.name}?
                 </h2>
-                <p className="text-lg md:text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
+                <p className="text-body md:text-body text-white/80 mb-8 max-w-3xl mx-auto">
                   Get a customized cleaning program designed specifically for your facility's
                   unique requirements and compliance standards.
                 </p>

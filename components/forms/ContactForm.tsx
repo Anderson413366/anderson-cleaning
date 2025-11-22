@@ -78,10 +78,10 @@ export default function ContactForm({ onSuccess }: ContactFormProps) {
     <div className="bg-white dark:bg-slate-800 rounded-xl shadow-lg p-8">
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
         <div>
-          <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-2">
+          <h2 className="text-h3 font-bold text-neutral-charcoal dark:text-white mb-2">
             Send Us a Message
           </h2>
-          <p className="text-gray-600 dark:text-gray-400">
+          <p className="text-neutral-charcoal/70 dark:text-neutral-charcoal/50">
             Fill out the form below and we'll get back to you within 1 business day.
           </p>
         </div>
@@ -121,7 +121,7 @@ export default function ContactForm({ onSuccess }: ContactFormProps) {
         <div>
           <label
             htmlFor="name"
-            className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+            className="block text-sm font-medium text-neutral-charcoal/80 dark:text-white/80 mb-2"
           >
             Name <span className="text-red-500">*</span>
           </label>
@@ -129,7 +129,7 @@ export default function ContactForm({ onSuccess }: ContactFormProps) {
             {...register('name')}
             type="text"
             id="name"
-            className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-slate-800 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+            className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-slate-800 text-neutral-charcoal dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
             placeholder="John Smith"
           />
           {errors.name && (
@@ -141,7 +141,7 @@ export default function ContactForm({ onSuccess }: ContactFormProps) {
         <div>
           <label
             htmlFor="email"
-            className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+            className="block text-sm font-medium text-neutral-charcoal/80 dark:text-white/80 mb-2"
           >
             Email Address <span className="text-red-500">*</span>
           </label>
@@ -149,7 +149,7 @@ export default function ContactForm({ onSuccess }: ContactFormProps) {
             {...register('email')}
             type="email"
             id="email"
-            className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-slate-800 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+            className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-slate-800 text-neutral-charcoal dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
             placeholder="john@example.com"
           />
           {errors.email && (
@@ -161,7 +161,7 @@ export default function ContactForm({ onSuccess }: ContactFormProps) {
         <div>
           <label
             htmlFor="phone"
-            className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+            className="block text-sm font-medium text-neutral-charcoal/80 dark:text-white/80 mb-2"
           >
             Phone Number <span className="text-red-500">*</span>
           </label>
@@ -170,7 +170,7 @@ export default function ContactForm({ onSuccess }: ContactFormProps) {
             type="tel"
             id="phone"
             autoComplete="tel"
-            className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-slate-800 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+            className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-slate-800 text-neutral-charcoal dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
             placeholder="(413) 306-5053"
           />
           {errors.phone && (
@@ -182,7 +182,7 @@ export default function ContactForm({ onSuccess }: ContactFormProps) {
         <div>
           <label
             htmlFor="message"
-            className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+            className="block text-sm font-medium text-neutral-charcoal/80 dark:text-white/80 mb-2"
           >
             Message <span className="text-red-500">*</span>
           </label>
@@ -191,7 +191,7 @@ export default function ContactForm({ onSuccess }: ContactFormProps) {
             id="message"
             rows={6}
             maxLength={1000}
-            className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-slate-800 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+            className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-slate-800 text-neutral-charcoal dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
             placeholder="Tell us about your cleaning needs, questions, or concerns..."
           />
           {errors.message && (
@@ -232,7 +232,7 @@ export default function ContactForm({ onSuccess }: ContactFormProps) {
           )}
         </Button>
 
-        <p className="text-xs text-gray-500 dark:text-gray-400 text-center">
+        <p className="text-xs text-neutral-charcoal/60 dark:text-neutral-charcoal/50 text-center">
           By submitting this form, you agree to be contacted by Anderson Cleaning regarding your
           inquiry.
         </p>

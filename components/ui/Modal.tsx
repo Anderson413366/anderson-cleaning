@@ -136,20 +136,20 @@ const Modal: React.FC<ModalProps> = ({
             aria-labelledby={titleId}
           >
             <div className="flex items-start justify-between mb-4">
-              <h2 id={titleId} className="text-xl font-semibold text-gray-900 dark:text-gray-100">
+              <h2 id={titleId} className="text-body font-semibold text-neutral-charcoal dark:text-white">
                 {title}
               </h2>
               <Button
                 variant="ghost"
                 size="icon"
                 onClick={onClose}
-                className="text-gray-400 hover:text-gray-600 dark:text-slate-400 dark:hover:text-slate-200"
+                className="text-neutral-charcoal/50 hover:text-neutral-charcoal/70 dark:text-slate-400 dark:hover:text-slate-200"
                 aria-label="Close modal"
               >
                 <X className="h-5 w-5" />
               </Button>
             </div>
-            <div className="text-sm text-gray-700 dark:text-gray-300 mb-6">{children}</div>
+            <div className="text-sm text-neutral-charcoal/80 dark:text-white/80 mb-6">{children}</div>
             {footerActions && (
               <div className="flex justify-end space-x-3 pt-4 border-t border-gray-200 dark:border-slate-700">
                 {footerActions}

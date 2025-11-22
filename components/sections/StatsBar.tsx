@@ -183,6 +183,7 @@ interface StatItemProps {
   enableAnimation: boolean
   animationDuration: number
   shouldAnimate: boolean
+  isDark: boolean
 }
 
 const StatItem: React.FC<StatItemProps> = ({
@@ -190,6 +191,7 @@ const StatItem: React.FC<StatItemProps> = ({
   enableAnimation,
   animationDuration,
   shouldAnimate,
+  isDark,
 }) => {
   const IconComponent = stat.icon
   const animatedValue = useCountUp(
@@ -209,25 +211,32 @@ const StatItem: React.FC<StatItemProps> = ({
       {/* Icon */}
       {IconComponent && (
         <div className="mb-4">
-          <div className="w-16 h-16 rounded-full bg-[var(--color-primary-light)] dark:bg-[var(--color-primary-900)] flex items-center justify-center">
-            <IconComponent
-              className="h-8 w-8 text-[var(--color-primary-base)]"
-              aria-hidden="true"
-            />
+          <div
+            className={`flex h-16 w-16 items-center justify-center rounded-full ${
+              isDark ? 'bg-white/10 text-white' : 'bg-brand-navy/10 text-brand-navy'
+            }`}
+          >
+            <IconComponent className="h-8 w-8" aria-hidden="true" />
           </div>
         </div>
       )}
 
       {/* Stat Value (Number) */}
       <div
-        className="text-5xl md:text-6xl font-extrabold text-[var(--color-primary-base)] mb-3"
+        className={`text-h1 font-extrabold leading-tight ${
+          isDark ? 'text-white' : 'text-brand-navy'
+        } mb-3`}
         aria-label={`${stat.value} ${stat.label}`}
       >
         {displayValue}
       </div>
 
       {/* Stat Label */}
-      <div className="text-base md:text-lg font-medium text-[var(--color-text-secondary)]">
+      <div
+        className={`text-body-sm font-medium ${
+          isDark ? 'text-white/80' : 'text-neutral-charcoal/80'
+        }`}
+      >
         {stat.label}
       </div>
     </div>
@@ -283,8 +292,9 @@ export default function StatsBar({
     background === 'white'
       ? 'bg-white dark:bg-slate-900'
       : background === 'blue'
-        ? 'bg-blue-50 dark:bg-slate-800'
-        : 'bg-gray-50 dark:bg-slate-800'
+        ? 'bg-brand-navy text-white'
+        : 'bg-neutral-off-white dark:bg-slate-900'
+  const isDark = background === 'blue'
 
   return (
     <section
@@ -308,6 +318,7 @@ export default function StatsBar({
                   enableAnimation={enableAnimation}
                   animationDuration={animationDuration}
                   shouldAnimate={shouldAnimate}
+                  isDark={isDark}
                 />
               </React.Fragment>
             ))}

@@ -38,10 +38,8 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? 'bg-white/95 backdrop-blur-md shadow-lg'
-          : 'bg-white shadow-sm'
+      className={`fixed top-0 left-0 right-0 z-50 bg-white transition-all duration-300 ${
+        scrolled ? 'shadow-md' : 'shadow-sm'
       }`}
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between p-4 lg:px-8" aria-label="Global">
@@ -49,7 +47,7 @@ export default function Header() {
         <div className="flex lg:flex-1">
           <Link href="/" className="-m-1.5 p-1.5">
             <span className="sr-only">Anderson Cleaning</span>
-            <div className="text-2xl font-bold text-blue-600 transition-colors">
+            <div className="text-h3 font-bold text-brand-navy transition-colors">
               Anderson Cleaning
             </div>
           </Link>
@@ -59,7 +57,7 @@ export default function Header() {
         <div className="flex lg:hidden">
           <button
             type="button"
-            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-neutral-charcoal"
             onClick={() => setMobileMenuOpen(true)}
           >
             <span className="sr-only">Open main menu</span>
@@ -75,8 +73,8 @@ export default function Header() {
               href={item.href}
               className={`text-sm font-semibold leading-6 transition-colors ${
                 pathname === item.href
-                  ? 'text-blue-600'
-                  : 'text-gray-900 hover:text-blue-600'
+                  ? 'text-brand-emerald'
+                  : 'text-neutral-charcoal hover:text-brand-emerald'
               }`}
             >
               {item.name}
@@ -88,7 +86,7 @@ export default function Header() {
         <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:items-center lg:gap-4">
           <button
             onClick={toggleTheme}
-            className="rounded-md p-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+            className="rounded-md p-2 text-neutral-charcoal dark:text-white/80 hover:bg-neutral-light-grey dark:hover:bg-gray-800 transition-colors"
             aria-label="Toggle dark mode"
           >
             {theme === 'dark' ? (
@@ -99,7 +97,7 @@ export default function Header() {
           </button>
           <Link
             href="/quote"
-            className="rounded-md bg-blue-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-blue-500 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
+            className="rounded-md bg-brand-emerald px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-brand-emerald/90 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-emerald"
           >
             Get a Quote
           </Link>
@@ -114,13 +112,13 @@ export default function Header() {
             <div className="flex items-center justify-between">
               <Link href="/" className="-m-1.5 p-1.5" onClick={() => setMobileMenuOpen(false)}>
                 <span className="sr-only">Anderson Cleaning</span>
-                <div className="text-2xl font-bold text-blue-600">
+                <div className="text-h3 font-bold text-brand-navy">
                   Anderson Cleaning
                 </div>
               </Link>
               <button
                 type="button"
-                className="-m-2.5 rounded-md p-2.5 text-gray-700"
+                className="-m-2.5 rounded-md p-2.5 text-neutral-charcoal"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 <span className="sr-only">Close menu</span>
@@ -134,10 +132,10 @@ export default function Header() {
                     <Link
                       key={item.name}
                       href={item.href}
-                      className={`-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 hover:bg-gray-50 ${
+                      className={`-mx-3 block rounded-lg px-3 py-2 text-body-sm font-semibold leading-7 hover:bg-neutral-light-grey ${
                         pathname === item.href
-                          ? 'text-blue-600 bg-gray-50'
-                          : 'text-gray-900'
+                          ? 'text-brand-emerald bg-neutral-light-grey'
+                          : 'text-neutral-charcoal'
                       }`}
                       onClick={() => setMobileMenuOpen(false)}
                     >
@@ -148,7 +146,7 @@ export default function Header() {
                 <div className="py-6">
                   <Link
                     href="/quote"
-                    className="block rounded-md bg-blue-600 px-4 py-2.5 text-center text-base font-semibold text-white shadow-sm hover:bg-blue-500"
+                    className="block rounded-md bg-brand-emerald px-4 py-2.5 text-center text-body-sm font-semibold text-white shadow-sm hover:bg-brand-emerald/90"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     Get a Quote
@@ -156,7 +154,7 @@ export default function Header() {
                   <div className="mt-4 space-y-2">
                     <button
                       onClick={toggleTheme}
-                      className="flex items-center gap-2 text-sm text-gray-600 hover:text-blue-600 w-full"
+                      className="flex w-full items-center gap-2 text-sm text-neutral-charcoal hover:text-brand-emerald"
                     >
                       {theme === 'dark' ? (
                         <>
@@ -172,14 +170,14 @@ export default function Header() {
                     </button>
                     <a
                       href="tel:4133065053"
-                      className="flex items-center gap-2 text-sm text-gray-600 hover:text-blue-600"
+                      className="flex items-center gap-2 text-sm text-neutral-charcoal hover:text-brand-emerald"
                     >
                       <Phone className="h-4 w-4" />
                       (413) 306-5053
                     </a>
                     <a
                       href="mailto:info@andersoncleaning.com"
-                      className="flex items-center gap-2 text-sm text-gray-600 hover:text-blue-600"
+                      className="flex items-center gap-2 text-sm text-neutral-charcoal hover:text-brand-emerald"
                     >
                       <Mail className="h-4 w-4" />
                       info@andersoncleaning.com

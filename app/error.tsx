@@ -17,7 +17,7 @@ export default function Error({
   }, [error])
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-red-50 to-gray-100 dark:from-gray-900 dark:to-red-900/20 px-4">
+    <div className="min-h-screen flex items-center justify-center bg-neutral-off-white dark:from-gray-900 dark:to-red-900/20 px-4">
       <div className="max-w-2xl w-full text-center">
         {/* Error Illustration */}
         <div className="mb-8">
@@ -76,7 +76,7 @@ export default function Error({
               x="350"
               y="130"
               textAnchor="middle"
-              className="fill-white text-2xl font-bold"
+              className="fill-white text-h3 font-bold"
             >
               !
             </text>
@@ -84,15 +84,15 @@ export default function Error({
         </div>
 
         {/* Error Message */}
-        <h1 className="text-6xl font-bold text-gray-900 dark:text-white mb-4">
+        <h1 className="text-h1 font-bold text-neutral-charcoal dark:text-white mb-4">
           Oops!
         </h1>
 
-        <h2 className="text-2xl font-semibold text-gray-800 dark:text-gray-200 mb-4">
+        <h2 className="text-h3 font-semibold text-neutral-charcoal dark:text-white/90 mb-4">
           Something went wrong
         </h2>
 
-        <p className="text-lg text-gray-600 dark:text-gray-400 mb-2 max-w-md mx-auto">
+        <p className="text-body text-neutral-charcoal/70 dark:text-neutral-charcoal/50 mb-2 max-w-md mx-auto">
           We encountered an unexpected error. Our team has been notified and
           we're working to fix it.
         </p>
@@ -107,7 +107,7 @@ export default function Error({
         )}
 
         {error.digest && (
-          <p className="mt-4 text-sm text-gray-500 dark:text-gray-500">
+          <p className="mt-4 text-sm text-neutral-charcoal/60 dark:text-neutral-charcoal/60">
             Error ID: {error.digest}
           </p>
         )}
@@ -127,7 +127,7 @@ export default function Error({
 
         {/* Support Information */}
         <div className="mt-12 pt-8 border-t border-gray-200 dark:border-gray-700">
-          <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
+          <p className="text-sm text-neutral-charcoal/70 dark:text-neutral-charcoal/50 mb-4">
             Need immediate assistance?
           </p>
 
@@ -139,7 +139,7 @@ export default function Error({
               Call (413) 306-5053
             </a>
 
-            <span className="hidden sm:inline text-gray-300 dark:text-gray-700">
+            <span className="hidden sm:inline text-neutral-charcoal/40 dark:text-neutral-charcoal/80">
               •
             </span>
 

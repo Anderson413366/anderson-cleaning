@@ -46,7 +46,7 @@ const WorkHistorySection: React.FC = () => {
           key={index}
           className="p-4 my-4 border border-gray-200 dark:border-slate-700 rounded-lg relative"
         >
-          <h4 className="text-md font-semibold mb-3 text-gray-700 dark:text-gray-300">
+          <h4 className="text-md font-semibold mb-3 text-neutral-charcoal/80 dark:text-white/80">
             {t('employer', { defaultValue: 'Employer' }) as string} #{index + 1}
           </h4>
           {index > 0 && (

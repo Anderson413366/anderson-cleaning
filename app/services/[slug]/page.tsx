@@ -26,13 +26,14 @@ export default async function ServiceDetailPage({
   }
 
   const jsonLd = createServiceJsonLd(service)
+  const ServiceIcon = service.icon
 
   return (
     <div className="min-h-screen bg-white dark:bg-slate-900 transition-colors duration-300">
       {jsonLd && <StructuredData schema={jsonLd} />}
 
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-blue-700 via-blue-800 to-indigo-900 text-white">
+      <section className="py-20 bg-brand-navy text-white">
         <div className="container mx-auto px-6">
           <Link
             href="/services"
@@ -43,11 +44,13 @@ export default async function ServiceDetailPage({
           </Link>
 
           <div className="flex items-start gap-6">
-            <div className="text-7xl">{service.icon}</div>
+            <div className="flex h-20 w-20 items-center justify-center rounded-2xl bg-white/10">
+              <ServiceIcon className="h-10 w-10 text-brand-emerald" aria-hidden="true" />
+            </div>
             <div className="flex-1">
-              <h1 className="text-4xl md:text-5xl font-extrabold mb-4">{service.title}</h1>
-              <p className="text-2xl text-accent-300 mb-4">{service.tagline}</p>
-              <p className="text-xl text-blue-100 max-w-3xl">{service.heroDescription}</p>
+              <h1 className="text-h1 md:text-h1 font-extrabold mb-4">{service.title}</h1>
+              <p className="text-h3 text-accent-300 mb-4">{service.tagline}</p>
+              <p className="text-body text-white/80 max-w-3xl">{service.heroDescription}</p>
             </div>
           </div>
 
@@ -67,9 +70,9 @@ export default async function ServiceDetailPage({
       </section>
 
       {/* Benefits Section */}
-      <section className="py-20 bg-gray-50 dark:bg-slate-800/50">
+      <section className="py-20 bg-neutral-off-white dark:bg-slate-800/50">
         <div className="container mx-auto px-6">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-gray-100 mb-12 text-center">
+          <h2 className="text-h2 leading-tight font-bold text-neutral-charcoal dark:text-white mb-12 text-center">
             Why Choose Our {service.title}?
           </h2>
 
@@ -77,10 +80,10 @@ export default async function ServiceDetailPage({
             {service.benefits.map((benefit, index) => (
               <div
                 key={index}
-                className="bg-white dark:bg-slate-800 rounded-lg p-6 shadow-md flex items-start gap-3"
+                className="bg-white dark:bg-slate-800 border border-neutral-light-grey dark:border-slate-700 rounded-lg p-6 shadow-sm flex items-start gap-3"
               >
-                <CheckCircle2 className="h-6 w-6 text-accent-500 flex-shrink-0 mt-0.5" />
-                <span className="text-gray-700 dark:text-gray-300">{benefit}</span>
+                <CheckCircle2 className="h-6 w-6 text-brand-emerald flex-shrink-0 mt-0.5" />
+                <span className="text-body text-neutral-charcoal/80 dark:text-white/80">{benefit}</span>
               </div>
             ))}
           </div>
@@ -90,10 +93,10 @@ export default async function ServiceDetailPage({
       {/* Process Section */}
       <section className="py-20">
         <div className="container mx-auto px-6">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-gray-100 mb-4 text-center">
+          <h2 className="text-h2 leading-tight font-bold text-neutral-charcoal dark:text-white mb-4 text-center">
             Our Process
           </h2>
-          <p className="text-gray-600 dark:text-gray-400 text-center mb-12 max-w-2xl mx-auto">
+          <p className="text-neutral-charcoal/70 dark:text-neutral-charcoal/50 text-center mb-12 max-w-2xl mx-auto">
             Here's how we deliver exceptional {service.title.toLowerCase()}
           </p>
 
@@ -101,16 +104,16 @@ export default async function ServiceDetailPage({
             {service.process.map((step, index) => (
               <div
                 key={index}
-                className="bg-gradient-to-r from-primary-50 to-accent-50 dark:from-slate-800 dark:to-slate-700 rounded-xl p-6 shadow-md flex items-start gap-6"
+                className="bg-white dark:bg-slate-800 border border-neutral-light-grey dark:border-slate-700 rounded-xl p-6 shadow-sm flex items-start gap-6"
               >
-                <div className="flex items-center justify-center w-12 h-12 bg-primary-600 text-white rounded-full text-xl font-bold flex-shrink-0">
+                <div className="flex items-center justify-center w-12 h-12 bg-brand-navy text-white rounded-full text-body font-bold flex-shrink-0">
                   {step.step}
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-2">
+                  <h3 className="text-h3 leading-normal font-semibold text-neutral-charcoal dark:text-white mb-2">
                     {step.title}
                   </h3>
-                  <p className="text-gray-700 dark:text-gray-300">{step.description}</p>
+                  <p className="text-body text-neutral-charcoal/80 dark:text-white/80">{step.description}</p>
                 </div>
               </div>
             ))}
@@ -119,10 +122,10 @@ export default async function ServiceDetailPage({
       </section>
 
       {/* What's Included Section */}
-      <section className="py-20 bg-gray-50 dark:bg-slate-800/50">
+      <section className="py-20 bg-neutral-off-white dark:bg-slate-800/50">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-gray-100 mb-12 text-center">
+            <h2 className="text-h2 leading-tight font-bold text-neutral-charcoal dark:text-white mb-12 text-center">
               What's Included
             </h2>
 
@@ -130,10 +133,10 @@ export default async function ServiceDetailPage({
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {service.included.map((item, index) => (
                   <div key={index} className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-full bg-primary-50 dark:bg-primary-500/20 flex items-center justify-center">
-                      <Users className="h-5 w-5 text-primary-600 dark:text-primary-300" />
+                    <div className="w-10 h-10 rounded-full bg-brand-navy/10 text-brand-navy dark:bg-white/10 dark:text-white flex items-center justify-center">
+                      <Users className="h-5 w-5" />
                     </div>
-                    <span className="text-gray-700 dark:text-gray-300">{item}</span>
+                    <span className="text-body text-neutral-charcoal/80 dark:text-white/80">{item}</span>
                   </div>
                 ))}
               </div>
@@ -166,15 +169,15 @@ export default async function ServiceDetailPage({
             ].map((item, index) => (
               <div
                 key={index}
-                className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-lg border border-gray-100 dark:border-slate-700"
+                className="bg-white dark:bg-slate-800 border border-neutral-light-grey dark:border-slate-700 rounded-xl p-6 shadow-sm"
               >
-                <div className="w-14 h-14 rounded-full bg-primary-50 dark:bg-primary-500/20 flex items-center justify-center mb-4">
-                  <item.icon className="h-7 w-7 text-primary-600 dark:text-primary-300" />
+                <div className="w-14 h-14 rounded-full bg-brand-navy/10 text-brand-navy dark:bg-white/10 dark:text-white flex items-center justify-center mb-4">
+                  <item.icon className="h-7 w-7" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-2">
+                <h3 className="text-h3 leading-normal font-semibold text-neutral-charcoal dark:text-white mb-2">
                   {item.title}
                 </h3>
-                <p className="text-gray-600 dark:text-gray-400">{item.description}</p>
+                <p className="text-body text-neutral-charcoal/80 dark:text-white/80">{item.description}</p>
               </div>
             ))}
           </div>
@@ -184,10 +187,10 @@ export default async function ServiceDetailPage({
       {/* Pricing Factors Section */}
       <section className="py-20">
         <div className="container mx-auto px-6">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-gray-100 mb-4 text-center">
+          <h2 className="text-h2 leading-tight font-bold text-neutral-charcoal dark:text-white mb-4 text-center">
             Pricing Factors
           </h2>
-          <p className="text-gray-600 dark:text-gray-400 text-center mb-12 max-w-2xl mx-auto">
+          <p className="text-neutral-charcoal/70 dark:text-neutral-charcoal/50 text-center mb-12 max-w-2xl mx-auto">
             Your custom quote considers these factors
           </p>
 
@@ -197,20 +200,20 @@ export default async function ServiceDetailPage({
                 key={index}
                 className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-md text-center"
               >
-                <h3 className="text-lg font-bold text-gray-900 dark:text-gray-100 mb-2">
+                <h3 className="text-body font-bold text-neutral-charcoal dark:text-white mb-2">
                   {factor.factor}
                 </h3>
-                <p className="text-sm text-gray-600 dark:text-gray-400">{factor.description}</p>
+                <p className="text-sm text-neutral-charcoal/70 dark:text-neutral-charcoal/50">{factor.description}</p>
               </div>
             ))}
           </div>
 
           <div className="mt-12 max-w-4xl mx-auto">
-            <div className="bg-gradient-to-br from-primary-50 to-accent-50 dark:from-slate-800 dark:to-slate-700 rounded-xl p-8 md:p-12 shadow-lg">
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4 text-center">
+            <div className="bg-neutral-off-white dark:bg-slate-800 rounded-xl p-8 md:p-12 shadow-lg">
+              <h3 className="text-h3 font-bold text-neutral-charcoal dark:text-white mb-4 text-center">
                 Example Pricing
               </h3>
-              <p className="text-gray-700 dark:text-gray-300 text-center mb-6">
+              <p className="text-neutral-charcoal/80 dark:text-white/80 text-center mb-6">
                 While every facility is unique, here are typical price ranges to help you budget:
               </p>
 
@@ -219,14 +222,14 @@ export default async function ServiceDetailPage({
                   <div className="bg-white dark:bg-slate-800 rounded-lg p-6">
                     <div className="flex justify-between items-start mb-2">
                       <div>
-                        <p className="font-bold text-gray-900 dark:text-gray-100">
+                        <p className="font-bold text-neutral-charcoal dark:text-white">
                           Small Office (2,000-5,000 sq ft)
                         </p>
-                        <p className="text-sm text-gray-600 dark:text-gray-400">
+                        <p className="text-sm text-neutral-charcoal/70 dark:text-neutral-charcoal/50">
                           3x per week, after hours
                         </p>
                       </div>
-                      <p className="text-xl font-bold text-primary-600 dark:text-primary-400">
+                      <p className="text-body font-bold text-primary-600 dark:text-primary-400">
                         $800-1,500/mo
                       </p>
                     </div>
@@ -234,14 +237,14 @@ export default async function ServiceDetailPage({
                   <div className="bg-white dark:bg-slate-800 rounded-lg p-6">
                     <div className="flex justify-between items-start mb-2">
                       <div>
-                        <p className="font-bold text-gray-900 dark:text-gray-100">
+                        <p className="font-bold text-neutral-charcoal dark:text-white">
                           Medium Office (5,000-15,000 sq ft)
                         </p>
-                        <p className="text-sm text-gray-600 dark:text-gray-400">
+                        <p className="text-sm text-neutral-charcoal/70 dark:text-neutral-charcoal/50">
                           5x per week, nightly service
                         </p>
                       </div>
-                      <p className="text-xl font-bold text-primary-600 dark:text-primary-400">
+                      <p className="text-body font-bold text-primary-600 dark:text-primary-400">
                         $2,000-4,500/mo
                       </p>
                     </div>
@@ -249,14 +252,14 @@ export default async function ServiceDetailPage({
                   <div className="bg-white dark:bg-slate-800 rounded-lg p-6">
                     <div className="flex justify-between items-start mb-2">
                       <div>
-                        <p className="font-bold text-gray-900 dark:text-gray-100">
+                        <p className="font-bold text-neutral-charcoal dark:text-white">
                           Large Office (15,000+ sq ft)
                         </p>
-                        <p className="text-sm text-gray-600 dark:text-gray-400">
+                        <p className="text-sm text-neutral-charcoal/70 dark:text-neutral-charcoal/50">
                           Daily service, dedicated team
                         </p>
                       </div>
-                      <p className="text-xl font-bold text-primary-600 dark:text-primary-400">
+                      <p className="text-body font-bold text-primary-600 dark:text-primary-400">
                         $5,000+/mo
                       </p>
                     </div>
@@ -266,12 +269,12 @@ export default async function ServiceDetailPage({
 
               {slug === 'janitorial' && (
                 <div className="space-y-4">
-                  <p className="text-gray-700 dark:text-gray-300 text-center mb-4">
+                  <p className="text-neutral-charcoal/80 dark:text-white/80 text-center mb-4">
                     Janitorial service pricing is similar to office cleaning but includes enhanced
                     quality control and dedicated account management.
                   </p>
                   <div className="bg-white dark:bg-slate-800 rounded-lg p-6">
-                    <p className="font-bold text-gray-900 dark:text-gray-100 text-center">
+                    <p className="font-bold text-neutral-charcoal dark:text-white text-center">
                       Typically 10-15% premium over standard office cleaning for added services and
                       oversight
                     </p>
@@ -283,11 +286,11 @@ export default async function ServiceDetailPage({
                 slug === 'window-cleaning' ||
                 slug === 'post-construction') && (
                 <div className="bg-white dark:bg-slate-800 rounded-lg p-6">
-                  <p className="text-gray-700 dark:text-gray-300 text-center">
+                  <p className="text-neutral-charcoal/80 dark:text-white/80 text-center">
                     <strong>Project-based pricing</strong> varies widely based on size and
                     condition. Contact us for a free on-site estimate.
                   </p>
-                  <p className="text-sm text-gray-600 dark:text-gray-400 text-center mt-3">
+                  <p className="text-sm text-neutral-charcoal/70 dark:text-neutral-charcoal/50 text-center mt-3">
                     Most {service.title.toLowerCase()} projects range from $500-$5,000 depending on
                     facility size and scope.
                   </p>
@@ -299,14 +302,14 @@ export default async function ServiceDetailPage({
                   <div className="bg-white dark:bg-slate-800 rounded-lg p-6">
                     <div className="flex justify-between items-start mb-2">
                       <div>
-                        <p className="font-bold text-gray-900 dark:text-gray-100">
+                        <p className="font-bold text-neutral-charcoal dark:text-white">
                           Small Facility (1-10 employees)
                         </p>
-                        <p className="text-sm text-gray-600 dark:text-gray-400">
+                        <p className="text-sm text-neutral-charcoal/70 dark:text-neutral-charcoal/50">
                           Basic consumables + management
                         </p>
                       </div>
-                      <p className="text-xl font-bold text-primary-600 dark:text-primary-400">
+                      <p className="text-body font-bold text-primary-600 dark:text-primary-400">
                         $150-300/mo
                       </p>
                     </div>
@@ -314,14 +317,14 @@ export default async function ServiceDetailPage({
                   <div className="bg-white dark:bg-slate-800 rounded-lg p-6">
                     <div className="flex justify-between items-start mb-2">
                       <div>
-                        <p className="font-bold text-gray-900 dark:text-gray-100">
+                        <p className="font-bold text-neutral-charcoal dark:text-white">
                           Medium Facility (10-50 employees)
                         </p>
-                        <p className="text-sm text-gray-600 dark:text-gray-400">
+                        <p className="text-sm text-neutral-charcoal/70 dark:text-neutral-charcoal/50">
                           Full consumables management
                         </p>
                       </div>
-                      <p className="text-xl font-bold text-primary-600 dark:text-primary-400">
+                      <p className="text-body font-bold text-primary-600 dark:text-primary-400">
                         $400-800/mo
                       </p>
                     </div>
@@ -330,7 +333,7 @@ export default async function ServiceDetailPage({
               )}
 
               <div className="mt-6 pt-6 border-t border-gray-200 dark:border-slate-600 text-center">
-                <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
+                <p className="text-sm text-neutral-charcoal/70 dark:text-neutral-charcoal/50 mb-4">
                   <strong>Free On-Site Consultation:</strong> Get an exact quote tailored to your
                   facility
                 </p>
@@ -346,20 +349,20 @@ export default async function ServiceDetailPage({
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20 bg-gray-50 dark:bg-slate-800/50">
+      <section className="py-20 bg-neutral-off-white dark:bg-slate-800/50">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-gray-100 mb-12 text-center">
+            <h2 className="text-h2 leading-tight font-bold text-neutral-charcoal dark:text-white mb-12 text-center">
               Frequently Asked Questions
             </h2>
 
             <div className="space-y-6">
               {service.faqs.map((faq, index) => (
                 <div key={index} className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-md">
-                  <h3 className="text-lg font-bold text-gray-900 dark:text-gray-100 mb-3">
+                  <h3 className="text-body font-bold text-neutral-charcoal dark:text-white mb-3">
                     {faq.question}
                   </h3>
-                  <p className="text-gray-700 dark:text-gray-300 leading-relaxed">{faq.answer}</p>
+                  <p className="text-neutral-charcoal/80 dark:text-white/80 leading-relaxed">{faq.answer}</p>
                 </div>
               ))}
             </div>
@@ -368,10 +371,10 @@ export default async function ServiceDetailPage({
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-primary-700 to-primary-900 text-white">
+      <section className="py-20 bg-brand-navy text-white">
         <div className="container mx-auto px-6 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Get Started?</h2>
-          <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+          <h2 className="text-h2 leading-tight font-bold mb-6">Ready to Get Started?</h2>
+          <p className="text-body text-white/80 mb-8 max-w-2xl mx-auto">
             Get your free quote today and experience the Anderson Cleaning difference.
           </p>
           <Link href="/quote">

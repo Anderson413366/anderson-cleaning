@@ -5,15 +5,15 @@ import { Phone, Mail, MapPin, Clock, CheckCircle2 } from 'lucide-react'
 
 export default function ContactPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-green-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 transition-colors duration-300">
+    <div className="min-h-screen bg-neutral-off-white dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 transition-colors duration-300">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-16 md:pt-32 md:pb-20">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
           <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-gray-100 mb-4">
+            <h1 className="text-h1 md:text-h1 font-extrabold text-neutral-charcoal dark:text-white mb-4">
               Get in Touch
             </h1>
-            <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+            <p className="text-body text-neutral-charcoal/70 dark:text-neutral-charcoal/50 max-w-2xl mx-auto">
               Have a question? Need a quote? Want to discuss your cleaning needs? We're here to
               help.
             </p>
@@ -30,12 +30,12 @@ export default function ContactPage() {
               {/* Fast Response */}
               <div className="bg-primary-700 text-white rounded-xl p-6 shadow-lg">
                 <Clock className="h-12 w-12 mb-4 text-yellow-400" />
-                <h3 className="text-xl font-bold mb-2">Here When You Need Us</h3>
-                <p className="text-blue-100 mb-4">
+                <h3 className="text-body font-bold mb-2">Here When You Need Us</h3>
+                <p className="text-white/80 mb-4">
                   Office hours: Monday – Friday, 9 AM – 5 PM EST. We respond to all inquiries within
                   24 hours.
                 </p>
-                <div className="text-sm text-blue-100">
+                <div className="text-sm text-white/80">
                   Current clients receive 24/7 emergency support with on-site arrival in 2 hours or
                   less (premium service).
                 </div>
@@ -43,7 +43,7 @@ export default function ContactPage() {
 
               {/* Contact Methods */}
               <div className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-lg space-y-6">
-                <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100">
+                <h3 className="text-body font-bold text-neutral-charcoal dark:text-white">
                   Contact Information
                 </h3>
 
@@ -51,14 +51,14 @@ export default function ContactPage() {
                   <div className="flex items-start space-x-3">
                     <Phone className="h-5 w-5 text-accent-500 mt-1 flex-shrink-0" />
                     <div>
-                      <p className="font-semibold text-gray-900 dark:text-gray-100">Phone</p>
+                      <p className="font-semibold text-neutral-charcoal dark:text-white">Phone</p>
                       <a
                         href="tel:+14133065053"
                         className="text-primary-600 dark:text-primary-400 hover:underline"
                       >
                         (413) 306-5053
                       </a>
-                      <p className="text-sm text-gray-600 dark:text-gray-400">
+                      <p className="text-sm text-neutral-charcoal/70 dark:text-neutral-charcoal/50">
                         24/7 emergency line for current clients
                       </p>
                     </div>
@@ -67,22 +67,22 @@ export default function ContactPage() {
                   <div className="flex items-start space-x-3">
                     <Mail className="h-5 w-5 text-accent-500 mt-1 flex-shrink-0" />
                     <div>
-                      <p className="font-semibold text-gray-900 dark:text-gray-100">Email</p>
+                      <p className="font-semibold text-neutral-charcoal dark:text-white">Email</p>
                       <a
                         href="mailto:info@andersoncleaning.com"
                         className="text-primary-600 dark:text-primary-400 hover:underline"
                       >
                         info@andersoncleaning.com
                       </a>
-                      <p className="text-sm text-gray-600 dark:text-gray-400">General Inquiries</p>
+                      <p className="text-sm text-neutral-charcoal/70 dark:text-neutral-charcoal/50">General Inquiries</p>
                     </div>
                   </div>
 
                   <div className="flex items-start space-x-3">
                     <MapPin className="h-5 w-5 text-accent-500 mt-1 flex-shrink-0" />
                     <div>
-                      <p className="font-semibold text-gray-900 dark:text-gray-100">Office</p>
-                      <address className="text-gray-700 dark:text-gray-300 not-italic">
+                      <p className="font-semibold text-neutral-charcoal dark:text-white">Office</p>
+                      <address className="text-neutral-charcoal/80 dark:text-white/80 not-italic">
                         103 Wayside Avenue
                         <br />
                         West Springfield, MA 01089
@@ -93,8 +93,8 @@ export default function ContactPage() {
                   <div className="flex items-start space-x-3">
                     <Clock className="h-5 w-5 text-accent-500 mt-1 flex-shrink-0" />
                     <div>
-                      <p className="font-semibold text-gray-900 dark:text-gray-100">Office Hours</p>
-                      <p className="text-gray-700 dark:text-gray-300">
+                      <p className="font-semibold text-neutral-charcoal dark:text-white">Office Hours</p>
+                      <p className="text-neutral-charcoal/80 dark:text-white/80">
                         Monday – Friday: 9 AM – 5 PM EST
                       </p>
                       <p className="text-sm text-accent-600 dark:text-accent-400 font-medium mt-1">
@@ -107,14 +107,14 @@ export default function ContactPage() {
               </div>
 
               {/* Service Area */}
-              <div className="bg-gradient-to-br from-accent-50 to-primary-50 dark:from-slate-800 dark:to-slate-700 rounded-xl p-6 shadow-lg">
-                <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-3">
+              <div className="bg-neutral-off-white dark:bg-slate-800 rounded-xl p-6 shadow-lg">
+                <h3 className="text-body font-bold text-neutral-charcoal dark:text-white mb-3">
                   Service Area
                 </h3>
-                <p className="text-gray-700 dark:text-gray-300 mb-3">
+                <p className="text-neutral-charcoal/80 dark:text-white/80 mb-3">
                   We serve commercial facilities throughout:
                 </p>
-                <ul className="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                <ul className="space-y-2 text-sm text-neutral-charcoal/80 dark:text-white/80">
                   <li className="flex items-center">
                     <CheckCircle2 className="h-4 w-4 text-accent-500 mr-2 flex-shrink-0" />
                     Western Massachusetts
@@ -135,7 +135,7 @@ export default function ContactPage() {
                 <p className="text-error-dark dark:text-error-light font-semibold mb-2">
                   Current Client Emergency?
                 </p>
-                <p className="text-sm text-gray-700 dark:text-gray-300">
+                <p className="text-sm text-neutral-charcoal/80 dark:text-white/80">
                   If you're an existing client with an urgent issue, please call our 24/7 support
                   line immediately:
                 </p>
@@ -145,7 +145,7 @@ export default function ContactPage() {
                 >
                   (413) 306-5053
                 </a>
-                <p className="text-xs text-gray-600 dark:text-gray-400 mt-2">
+                <p className="text-xs text-neutral-charcoal/70 dark:text-neutral-charcoal/50 mt-2">
                   Premium emergency service with on-site arrival in 2 hours or less.
                 </p>
               </div>

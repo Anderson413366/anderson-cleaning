@@ -62,7 +62,7 @@ export default function BlogExplorer({ posts, categories }: BlogExplorerProps) {
 
   return (
     <>
-      <section className="bg-gray-50 dark:bg-slate-800 border-b border-gray-200 dark:border-slate-700 py-6">
+      <section className="bg-neutral-off-white dark:bg-slate-800 border-b border-gray-200 dark:border-slate-700 py-6">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-wrap gap-3">
             {categories.map((category) => {
@@ -75,7 +75,7 @@ export default function BlogExplorer({ posts, categories }: BlogExplorerProps) {
                   className={`px-4 py-2 rounded-lg font-medium transition-all border ${
                     isActive
                       ? 'bg-primary-600 text-white border-primary-600 shadow-md'
-                      : 'bg-white dark:bg-slate-700 text-gray-700 dark:text-gray-300 border-gray-200 dark:border-slate-600 hover:bg-gray-100 dark:hover:bg-slate-600'
+                      : 'bg-white dark:bg-slate-700 text-neutral-charcoal/80 dark:text-white/80 border-gray-200 dark:border-slate-600 hover:bg-neutral-light-grey dark:hover:bg-slate-600'
                   }`}
                   aria-pressed={isActive}
                 >
@@ -116,7 +116,7 @@ export default function BlogExplorer({ posts, categories }: BlogExplorerProps) {
                 </div>
 
                 <div className="p-6">
-                  <div className="flex items-center space-x-4 text-sm text-gray-500 dark:text-gray-400 mb-3">
+                  <div className="flex items-center space-x-4 text-sm text-neutral-charcoal/60 dark:text-neutral-charcoal/50 mb-3">
                     <div className="flex items-center">
                       <Calendar className="h-4 w-4 mr-1" />
                       {new Date(post.publishedDate).toLocaleDateString('en-US', {
@@ -131,11 +131,11 @@ export default function BlogExplorer({ posts, categories }: BlogExplorerProps) {
                     </div>
                   </div>
 
-                  <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-3 line-clamp-2">
+                  <h2 className="text-body font-bold text-neutral-charcoal dark:text-white mb-3 line-clamp-2">
                     {post.title}
                   </h2>
 
-                  <p className="text-gray-600 dark:text-gray-300 mb-4 line-clamp-3">
+                  <p className="text-neutral-charcoal/70 dark:text-white/80 mb-4 line-clamp-3">
                     {post.excerpt}
                   </p>
 
@@ -152,13 +152,13 @@ export default function BlogExplorer({ posts, categories }: BlogExplorerProps) {
         </div>
       </section>
 
-      <section className="py-16 bg-gradient-to-br from-blue-50 to-green-50 dark:from-slate-800 dark:to-slate-900">
+      <section className="py-16 bg-neutral-off-white dark:from-slate-800 dark:to-slate-900">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+            <h2 className="text-h2 leading-tight font-bold text-neutral-charcoal dark:text-white mb-4">
               Get Cleaning Tips Delivered
             </h2>
-            <p className="text-lg text-gray-600 dark:text-gray-300 mb-8">
+            <p className="text-body text-neutral-charcoal/70 dark:text-white/80 mb-8">
               Subscribe to our newsletter for monthly cleaning tips, industry updates, and exclusive
               offers.
             </p>
@@ -182,7 +182,7 @@ export default function BlogExplorer({ posts, categories }: BlogExplorerProps) {
             {newsletterStatus === 'success' && (
               <p className="text-sm text-green-600 mt-2">Thanks! Check your inbox to confirm.</p>
             )}
-            <p className="text-xs text-gray-500 dark:text-gray-400 mt-4">
+            <p className="text-xs text-neutral-charcoal/60 dark:text-neutral-charcoal/50 mt-4">
               We respect your privacy. Unsubscribe anytime.
             </p>
           </div>

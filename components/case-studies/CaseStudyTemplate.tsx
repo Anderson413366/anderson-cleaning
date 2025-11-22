@@ -89,7 +89,7 @@ export default function CaseStudyTemplate({
       {/* =====================================================================
           HERO SECTION
           ===================================================================== */}
-      <section className="relative bg-gradient-to-br from-blue-700 to-indigo-900 text-white py-16 md:py-20">
+      <section className="relative bg-brand-navy text-white py-16 md:py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
             {/* Back Button */}
@@ -97,7 +97,7 @@ export default function CaseStudyTemplate({
               href="/case-studies"
               className="
                 inline-flex items-center gap-2
-                text-blue-100 hover:text-white
+                text-white/80 hover:text-white
                 transition-colors duration-200
                 mb-8
                 group
@@ -118,18 +118,18 @@ export default function CaseStudyTemplate({
             </div>
 
             {/* Title */}
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4">
+            <h1 className="text-h2 leading-tight lg:text-h1 font-extrabold mb-4">
               {caseStudy.title}
             </h1>
 
             {/* Key Result */}
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-green-500/20 backdrop-blur-sm rounded-lg border border-green-400/30 mb-6">
               <TrendingUp className="h-5 w-5 text-green-300" aria-hidden="true" />
-              <span className="text-lg font-semibold text-green-100">{caseStudy.keyResult}</span>
+              <span className="text-body font-semibold text-white/80">{caseStudy.keyResult}</span>
             </div>
 
             {/* Published Date */}
-            <p className="text-blue-100 text-sm mb-8">Published {formattedDate}</p>
+            <p className="text-white/80 text-sm mb-8">Published {formattedDate}</p>
 
             {/* Print Button */}
             {showPrintButton && (
@@ -155,10 +155,10 @@ export default function CaseStudyTemplate({
       {/* =====================================================================
           OVERVIEW SECTION
           ===================================================================== */}
-      <section className="py-12 bg-gray-50 dark:bg-slate-800">
+      <section className="py-12 bg-neutral-off-white dark:bg-slate-800">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-bold text-[var(--color-text-primary)] mb-6">
+            <h2 className="text-h3 leading-normal font-bold text-[var(--color-text-primary)] mb-6">
               Client Overview
             </h2>
 
@@ -175,7 +175,7 @@ export default function CaseStudyTemplate({
                     Client
                   </h3>
                 </div>
-                <p className="text-lg font-bold text-[var(--color-text-primary)]">
+                <p className="text-body font-bold text-[var(--color-text-primary)]">
                   {caseStudy.client.name}
                 </p>
               </div>
@@ -191,7 +191,7 @@ export default function CaseStudyTemplate({
                     Location
                   </h3>
                 </div>
-                <p className="text-lg font-bold text-[var(--color-text-primary)]">
+                <p className="text-body font-bold text-[var(--color-text-primary)]">
                   {caseStudy.client.location}
                 </p>
               </div>
@@ -207,7 +207,7 @@ export default function CaseStudyTemplate({
                     Facility Size
                   </h3>
                 </div>
-                <p className="text-lg font-bold text-[var(--color-text-primary)]">
+                <p className="text-body font-bold text-[var(--color-text-primary)]">
                   {caseStudy.client.facilitySize}
                 </p>
               </div>
@@ -223,7 +223,7 @@ export default function CaseStudyTemplate({
                     Employees
                   </h3>
                 </div>
-                <p className="text-lg font-bold text-[var(--color-text-primary)]">
+                <p className="text-body font-bold text-[var(--color-text-primary)]">
                   {caseStudy.client.employees}
                 </p>
               </div>
@@ -246,14 +246,14 @@ export default function CaseStudyTemplate({
                   aria-hidden="true"
                 />
               </div>
-              <h2 className="text-2xl md:text-3xl font-bold text-[var(--color-text-primary)]">
+              <h2 className="text-h3 leading-normal font-bold text-[var(--color-text-primary)]">
                 The Challenge
               </h2>
             </div>
 
             {/* Challenge Headline */}
             <div className="mb-6 p-6 bg-orange-50 dark:bg-orange-900/10 border-l-4 border-orange-500 rounded-r-lg">
-              <p className="text-xl font-semibold text-[var(--color-text-primary)]">
+              <p className="text-body font-semibold text-[var(--color-text-primary)]">
                 {caseStudy.challenge.headline}
               </p>
             </div>
@@ -271,8 +271,8 @@ export default function CaseStudyTemplate({
             </div>
 
             {/* Pain Points */}
-            <div className="bg-gray-50 dark:bg-slate-800 rounded-xl p-6 md:p-8">
-              <h3 className="text-xl font-bold text-[var(--color-text-primary)] mb-4">
+            <div className="bg-neutral-off-white dark:bg-slate-800 rounded-xl p-6 md:p-8">
+              <h3 className="text-body font-bold text-[var(--color-text-primary)] mb-4">
                 Key Pain Points
               </h3>
               <ul className="space-y-3">
@@ -305,7 +305,7 @@ export default function CaseStudyTemplate({
                   aria-hidden="true"
                 />
               </div>
-              <h2 className="text-2xl md:text-3xl font-bold text-[var(--color-text-primary)]">
+              <h2 className="text-h3 leading-normal font-bold text-[var(--color-text-primary)]">
                 Our Solution
               </h2>
             </div>
@@ -326,7 +326,7 @@ export default function CaseStudyTemplate({
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
               {/* Services Used */}
               <div className="lg:col-span-2 bg-white dark:bg-slate-900 rounded-xl p-6 md:p-8 shadow-[var(--shadow-card)]">
-                <h3 className="text-xl font-bold text-[var(--color-text-primary)] mb-4">
+                <h3 className="text-body font-bold text-[var(--color-text-primary)] mb-4">
                   Services Implemented
                 </h3>
                 <ul className="space-y-3">
@@ -344,7 +344,7 @@ export default function CaseStudyTemplate({
 
               {/* Timeline */}
               <div className="bg-white dark:bg-slate-900 rounded-xl p-6 md:p-8 shadow-[var(--shadow-card)]">
-                <h3 className="text-xl font-bold text-[var(--color-text-primary)] mb-4">
+                <h3 className="text-body font-bold text-[var(--color-text-primary)] mb-4">
                   Timeline
                 </h3>
                 <div className="flex items-center gap-3 mb-2">
@@ -352,7 +352,7 @@ export default function CaseStudyTemplate({
                     className="h-6 w-6 text-[var(--color-primary-base)]"
                     aria-hidden="true"
                   />
-                  <span className="text-2xl font-bold text-[var(--color-primary-base)]">
+                  <span className="text-h3 font-bold text-[var(--color-primary-base)]">
                     {caseStudy.solution.timeline.split(' ')[0]}
                   </span>
                 </div>
@@ -368,7 +368,7 @@ export default function CaseStudyTemplate({
       {/* =====================================================================
           RESULTS SECTION
           ===================================================================== */}
-      <section className="py-16 md:py-20 bg-gradient-to-br from-green-50 to-blue-50 dark:from-slate-900 dark:to-slate-800">
+      <section className="py-16 md:py-20 bg-neutral-off-white dark:bg-slate-900">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto">
             {/* Section Header */}
@@ -379,7 +379,7 @@ export default function CaseStudyTemplate({
                   aria-hidden="true"
                 />
               </div>
-              <h2 className="text-2xl md:text-3xl font-bold text-[var(--color-text-primary)]">
+              <h2 className="text-h3 leading-normal font-bold text-[var(--color-text-primary)]">
                 The Results
               </h2>
             </div>
@@ -391,10 +391,10 @@ export default function CaseStudyTemplate({
                   key={index}
                   className="bg-white dark:bg-slate-900 rounded-xl p-6 shadow-[var(--shadow-lg)] text-center"
                 >
-                  <div className="text-4xl md:text-5xl font-extrabold text-[var(--color-primary-base)] mb-2">
+                  <div className="text-h1 md:text-h1 font-extrabold text-[var(--color-primary-base)] mb-2">
                     {metric.value}
                   </div>
-                  <div className="text-lg font-bold text-[var(--color-text-primary)] mb-2">
+                  <div className="text-body font-bold text-[var(--color-text-primary)] mb-2">
                     {metric.label}
                   </div>
                   {metric.description && (
@@ -414,13 +414,13 @@ export default function CaseStudyTemplate({
                   aria-hidden="true"
                 />
                 <blockquote className="relative z-10">
-                  <p className="text-xl md:text-2xl text-[var(--color-text-primary)] leading-relaxed mb-6 italic">
+                  <p className="text-body md:text-h3 text-[var(--color-text-primary)] leading-relaxed mb-6 italic">
                     "{caseStudy.results.quote.text}"
                   </p>
                   <footer className="flex items-center gap-4">
                     <div className="w-1 h-16 bg-[var(--color-primary-base)] rounded-full"></div>
                     <div>
-                      <div className="font-bold text-lg text-[var(--color-text-primary)]">
+                      <div className="font-bold text-body text-[var(--color-text-primary)]">
                         {caseStudy.results.quote.author}
                       </div>
                       <div className="text-[var(--color-text-secondary)]">
@@ -439,7 +439,7 @@ export default function CaseStudyTemplate({
             {caseStudy.results.additionalOutcomes &&
               caseStudy.results.additionalOutcomes.length > 0 && (
                 <div className="max-w-4xl mx-auto mt-12">
-                  <h3 className="text-xl font-bold text-[var(--color-text-primary)] mb-6 text-center">
+                  <h3 className="text-body font-bold text-[var(--color-text-primary)] mb-6 text-center">
                     Additional Outcomes
                   </h3>
                   <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -466,10 +466,10 @@ export default function CaseStudyTemplate({
         <section className="py-16 md:py-20 bg-gradient-to-r from-blue-700 to-indigo-900 text-white">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto text-center">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              <h2 className="text-h2 leading-tight font-bold mb-4">
                 Ready for Similar Results?
               </h2>
-              <p className="text-xl text-blue-100 mb-8">
+              <p className="text-body text-white/80 mb-8">
                 Let's discuss how Anderson Cleaning can solve your facility's challenges and deliver
                 measurable results.
               </p>

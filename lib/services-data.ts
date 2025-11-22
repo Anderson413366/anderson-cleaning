@@ -1,6 +1,9 @@
+import type { LucideIcon } from 'lucide-react'
+import { Building2, HardHat, Package, Sparkles, Square, Zap } from 'lucide-react'
+
 export interface ServiceData {
   title: string
-  icon: string
+  icon: LucideIcon
   tagline: string
   heroDescription: string
   availability: 'all' | 'contracted'
@@ -14,7 +17,7 @@ export interface ServiceData {
 export const servicesData: Record<string, ServiceData> = {
   'office-cleaning': {
     title: 'Office & Commercial Cleaning',
-    icon: '🏢',
+    icon: Building2,
     tagline: 'Keep your workplace spotless and productive',
     heroDescription:
       'Professional daily and weekly cleaning programs designed for office buildings, corporate campuses, and business centers. We maintain a clean, healthy environment that keeps your team productive and impresses your clients.',
@@ -104,7 +107,7 @@ export const servicesData: Record<string, ServiceData> = {
   },
   janitorial: {
     title: 'Janitorial Services',
-    icon: '🧹',
+    icon: Sparkles,
     tagline: 'Reliable, consistent facility care',
     heroDescription:
       'Comprehensive janitorial programs for commercial facilities requiring dependable, accountable cleaning teams. Perfect for facilities that need more than basic cleaning-they need a partner.',
@@ -180,7 +183,7 @@ export const servicesData: Record<string, ServiceData> = {
   },
   'floor-carpet-care': {
     title: 'Floor & Carpet Care',
-    icon: '✨',
+    icon: Zap,
     tagline: 'Extend the life and look of your floors',
     heroDescription:
       'Professional floor maintenance programs including strip & wax, carpet cleaning, buffing, and stain removal. Protect your flooring investment and maintain a professional appearance.',
@@ -257,7 +260,7 @@ export const servicesData: Record<string, ServiceData> = {
   },
   'window-cleaning': {
     title: 'Window Cleaning',
-    icon: '🪟',
+    icon: Square,
     tagline: 'Streak-free shine for great first impressions',
     heroDescription:
       "Professional interior and exterior window cleaning for commercial buildings. Our certified teams deliver spotless, streak-free results that enhance your building's appearance.",
@@ -333,7 +336,7 @@ export const servicesData: Record<string, ServiceData> = {
   },
   'post-construction': {
     title: 'Post-Construction Cleaning',
-    icon: '🏗️',
+    icon: HardHat,
     tagline: 'Move-in ready results after renovation or build-outs',
     heroDescription:
       'Detailed post-construction cleaning services that remove dust, debris, and residue so your space looks pristine for opening day.',
@@ -413,7 +416,7 @@ export const servicesData: Record<string, ServiceData> = {
   },
   'supply-management': {
     title: 'Supply Management',
-    icon: '📦',
+    icon: Package,
     tagline: 'Never run out of essentials again',
     heroDescription:
       'Comprehensive supply management for paper products, soap, and consumables. We track inventory, auto-replenish, and consolidate everything into one invoice.',

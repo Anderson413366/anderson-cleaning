@@ -149,10 +149,10 @@ export default function QuoteForm({ onSuccess }: QuoteFormProps) {
           {/* Progress Indicator */}
           <div className="mb-8">
             <div className="flex items-center justify-between mb-4">
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100">
+              <h3 className="text-body font-semibold text-neutral-charcoal dark:text-white">
                 Step {currentStep} of {TOTAL_STEPS}
               </h3>
-              <span className="text-sm text-gray-600 dark:text-gray-400">
+              <span className="text-sm text-neutral-charcoal/70 dark:text-neutral-charcoal/50">
                 {Math.round((currentStep / TOTAL_STEPS) * 100)}% Complete
               </span>
             </div>
@@ -183,10 +183,10 @@ export default function QuoteForm({ onSuccess }: QuoteFormProps) {
           {currentStep === 1 && (
             <div className="space-y-6">
               <div>
-                <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-2">
+                <h2 className="text-h3 font-bold text-neutral-charcoal dark:text-white mb-2">
                   Contact Information
                 </h2>
-                <p className="text-gray-600 dark:text-gray-400">
+                <p className="text-neutral-charcoal/70 dark:text-neutral-charcoal/50">
                   Let us know who to contact about your quote.
                 </p>
               </div>
@@ -196,7 +196,7 @@ export default function QuoteForm({ onSuccess }: QuoteFormProps) {
                 <div>
                   <label
                     htmlFor="fullName"
-                    className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                    className="block text-sm font-medium text-neutral-charcoal/80 dark:text-white/80 mb-2"
                   >
                     Full Name <span className="text-red-500">*</span>
                   </label>
@@ -204,7 +204,7 @@ export default function QuoteForm({ onSuccess }: QuoteFormProps) {
                     {...register('fullName')}
                     type="text"
                     id="fullName"
-                    className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-slate-800 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                    className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-slate-800 text-neutral-charcoal dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
                     placeholder="John Smith"
                   />
                   {errors.fullName && (
@@ -218,7 +218,7 @@ export default function QuoteForm({ onSuccess }: QuoteFormProps) {
                 <div>
                   <label
                     htmlFor="company"
-                    className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                    className="block text-sm font-medium text-neutral-charcoal/80 dark:text-white/80 mb-2"
                   >
                     Company Name <span className="text-red-500">*</span>
                   </label>
@@ -226,7 +226,7 @@ export default function QuoteForm({ onSuccess }: QuoteFormProps) {
                     {...register('company')}
                     type="text"
                     id="company"
-                    className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-slate-800 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                    className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-slate-800 text-neutral-charcoal dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
                     placeholder="ABC Corporation"
                   />
                   {errors.company && (
@@ -240,7 +240,7 @@ export default function QuoteForm({ onSuccess }: QuoteFormProps) {
                 <div>
                   <label
                     htmlFor="email"
-                    className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                    className="block text-sm font-medium text-neutral-charcoal/80 dark:text-white/80 mb-2"
                   >
                     Email Address <span className="text-red-500">*</span>
                   </label>
@@ -248,7 +248,7 @@ export default function QuoteForm({ onSuccess }: QuoteFormProps) {
                     {...register('email')}
                     type="email"
                     id="email"
-                    className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-slate-800 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                    className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-slate-800 text-neutral-charcoal dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
                     placeholder="john@abccorp.com"
                   />
                   {errors.email && (
@@ -262,7 +262,7 @@ export default function QuoteForm({ onSuccess }: QuoteFormProps) {
                 <div>
                   <label
                     htmlFor="phone"
-                    className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                    className="block text-sm font-medium text-neutral-charcoal/80 dark:text-white/80 mb-2"
                   >
                     Phone Number <span className="text-red-500">*</span>
                   </label>
@@ -271,7 +271,7 @@ export default function QuoteForm({ onSuccess }: QuoteFormProps) {
                     type="tel"
                     id="phone"
                     autoComplete="tel"
-                    className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-slate-800 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                    className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-slate-800 text-neutral-charcoal dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
                     placeholder="(413) 306-5053"
                   />
                   {errors.phone && (
@@ -288,10 +288,10 @@ export default function QuoteForm({ onSuccess }: QuoteFormProps) {
           {currentStep === 2 && (
             <div className="space-y-6">
               <div>
-                <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-2">
+                <h2 className="text-h3 font-bold text-neutral-charcoal dark:text-white mb-2">
                   Facility Information
                 </h2>
-                <p className="text-gray-600 dark:text-gray-400">
+                <p className="text-neutral-charcoal/70 dark:text-neutral-charcoal/50">
                   Tell us about your facility to help us prepare an accurate quote.
                 </p>
               </div>
@@ -300,7 +300,7 @@ export default function QuoteForm({ onSuccess }: QuoteFormProps) {
               <div>
                 <label
                   htmlFor="address"
-                  className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                  className="block text-sm font-medium text-neutral-charcoal/80 dark:text-white/80 mb-2"
                 >
                   Street Address <span className="text-red-500">*</span>
                 </label>
@@ -308,7 +308,7 @@ export default function QuoteForm({ onSuccess }: QuoteFormProps) {
                   {...register('address')}
                   type="text"
                   id="address"
-                  className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-slate-800 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                  className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-slate-800 text-neutral-charcoal dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
                   placeholder="123 Main Street"
                 />
                 {errors.address && (
@@ -323,7 +323,7 @@ export default function QuoteForm({ onSuccess }: QuoteFormProps) {
                 <div>
                   <label
                     htmlFor="city"
-                    className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                    className="block text-sm font-medium text-neutral-charcoal/80 dark:text-white/80 mb-2"
                   >
                     City <span className="text-red-500">*</span>
                   </label>
@@ -331,7 +331,7 @@ export default function QuoteForm({ onSuccess }: QuoteFormProps) {
                     {...register('city')}
                     type="text"
                     id="city"
-                    className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-slate-800 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                    className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-slate-800 text-neutral-charcoal dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
                     placeholder="Springfield"
                   />
                   {errors.city && (
@@ -345,7 +345,7 @@ export default function QuoteForm({ onSuccess }: QuoteFormProps) {
                 <div>
                   <label
                     htmlFor="zipCode"
-                    className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                    className="block text-sm font-medium text-neutral-charcoal/80 dark:text-white/80 mb-2"
                   >
                     ZIP Code <span className="text-red-500">*</span>
                   </label>
@@ -353,7 +353,7 @@ export default function QuoteForm({ onSuccess }: QuoteFormProps) {
                     {...register('zipCode')}
                     type="text"
                     id="zipCode"
-                    className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-slate-800 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                    className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-slate-800 text-neutral-charcoal dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
                     placeholder="01089"
                   />
                   {errors.zipCode && (
@@ -367,7 +367,7 @@ export default function QuoteForm({ onSuccess }: QuoteFormProps) {
                 <div>
                   <label
                     htmlFor="squareFootage"
-                    className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                    className="block text-sm font-medium text-neutral-charcoal/80 dark:text-white/80 mb-2"
                   >
                     Approximate Square Footage
                   </label>
@@ -375,7 +375,7 @@ export default function QuoteForm({ onSuccess }: QuoteFormProps) {
                     {...register('squareFootage', { valueAsNumber: true })}
                     type="number"
                     id="squareFootage"
-                    className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-slate-800 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                    className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-slate-800 text-neutral-charcoal dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
                     placeholder="5000"
                   />
                   {errors.squareFootage && (
@@ -389,7 +389,7 @@ export default function QuoteForm({ onSuccess }: QuoteFormProps) {
                 <div>
                   <label
                     htmlFor="desiredStartDate"
-                    className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                    className="block text-sm font-medium text-neutral-charcoal/80 dark:text-white/80 mb-2"
                   >
                     Desired Start Date
                   </label>
@@ -398,7 +398,7 @@ export default function QuoteForm({ onSuccess }: QuoteFormProps) {
                     type="date"
                     id="desiredStartDate"
                     min={new Date().toISOString().split('T')[0]}
-                    className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-slate-800 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                    className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-slate-800 text-neutral-charcoal dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
                   />
                   {errors.desiredStartDate && (
                     <p className="mt-1 text-sm text-red-600 dark:text-red-400">
@@ -413,14 +413,14 @@ export default function QuoteForm({ onSuccess }: QuoteFormProps) {
                 <div>
                   <label
                     htmlFor="facilityType"
-                    className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                    className="block text-sm font-medium text-neutral-charcoal/80 dark:text-white/80 mb-2"
                   >
                     Facility Type <span className="text-red-500">*</span>
                   </label>
                   <select
                     {...register('facilityType')}
                     id="facilityType"
-                    className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-slate-800 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                    className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-slate-800 text-neutral-charcoal dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
                   >
                     <option value="">Select a facility type</option>
                     {Object.entries(facilityTypeLabels).map(([value, label]) => (
@@ -440,14 +440,14 @@ export default function QuoteForm({ onSuccess }: QuoteFormProps) {
                 <div>
                   <label
                     htmlFor="cleaningFrequency"
-                    className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                    className="block text-sm font-medium text-neutral-charcoal/80 dark:text-white/80 mb-2"
                   >
                     Cleaning Frequency <span className="text-red-500">*</span>
                   </label>
                   <select
                     {...register('cleaningFrequency')}
                     id="cleaningFrequency"
-                    className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-slate-800 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                    className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-slate-800 text-neutral-charcoal dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
                   >
                     <option value="">Select frequency</option>
                     {Object.entries(cleaningFrequencyLabels).map(([value, label]) => (
@@ -470,10 +470,10 @@ export default function QuoteForm({ onSuccess }: QuoteFormProps) {
           {currentStep === 3 && (
             <div className="space-y-6">
               <div>
-                <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-2">
+                <h2 className="text-h3 font-bold text-neutral-charcoal dark:text-white mb-2">
                   Services Needed
                 </h2>
-                <p className="text-gray-600 dark:text-gray-400">
+                <p className="text-neutral-charcoal/70 dark:text-neutral-charcoal/50">
                   Select all the services you're interested in. You can choose multiple.
                 </p>
               </div>
@@ -496,7 +496,7 @@ export default function QuoteForm({ onSuccess }: QuoteFormProps) {
                         return (
                           <label
                             key={value}
-                            className="flex items-start gap-3 p-4 border border-gray-300 dark:border-gray-600 rounded-lg cursor-pointer hover:bg-gray-50 dark:hover:bg-slate-800 transition-colors"
+                            className="flex items-start gap-3 p-4 border border-gray-300 dark:border-gray-600 rounded-lg cursor-pointer hover:bg-neutral-off-white dark:hover:bg-slate-800 transition-colors"
                           >
                             <input
                               type="checkbox"
@@ -512,7 +512,7 @@ export default function QuoteForm({ onSuccess }: QuoteFormProps) {
                             />
                             <div className="flex-1">
                               <div className="flex items-center gap-2">
-                                <span className="font-medium text-gray-900 dark:text-gray-100">
+                                <span className="font-medium text-neutral-charcoal dark:text-white">
                                   {label}
                                 </span>
                                 {isClientOnly && (
@@ -541,10 +541,10 @@ export default function QuoteForm({ onSuccess }: QuoteFormProps) {
           {currentStep === 4 && (
             <div className="space-y-6">
               <div>
-                <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-2">
+                <h2 className="text-h3 font-bold text-neutral-charcoal dark:text-white mb-2">
                   Additional Information
                 </h2>
-                <p className="text-gray-600 dark:text-gray-400">
+                <p className="text-neutral-charcoal/70 dark:text-neutral-charcoal/50">
                   Any special requests or additional details we should know?
                 </p>
               </div>
@@ -553,7 +553,7 @@ export default function QuoteForm({ onSuccess }: QuoteFormProps) {
               <div>
                 <label
                   htmlFor="specialRequests"
-                  className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                  className="block text-sm font-medium text-neutral-charcoal/80 dark:text-white/80 mb-2"
                 >
                   Special Requests or Notes
                 </label>
@@ -562,10 +562,10 @@ export default function QuoteForm({ onSuccess }: QuoteFormProps) {
                   id="specialRequests"
                   rows={5}
                   maxLength={500}
-                  className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-slate-800 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                  className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-slate-800 text-neutral-charcoal dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
                   placeholder="e.g., We need eco-friendly products due to allergies, prefer evening cleaning, have specific compliance requirements..."
                 />
-                <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">
+                <p className="mt-1 text-sm text-neutral-charcoal/60 dark:text-neutral-charcoal/50">
                   {watch('specialRequests')?.length || 0}/500 characters
                 </p>
                 {errors.specialRequests && (
@@ -576,7 +576,7 @@ export default function QuoteForm({ onSuccess }: QuoteFormProps) {
               </div>
 
               {/* Consent */}
-              <div className="flex items-start gap-3 p-4 border border-gray-300 dark:border-gray-600 rounded-lg bg-gray-50 dark:bg-slate-800">
+              <div className="flex items-start gap-3 p-4 border border-gray-300 dark:border-gray-600 rounded-lg bg-neutral-off-white dark:bg-slate-800">
                 <input
                   {...register('consent')}
                   type="checkbox"
@@ -585,7 +585,7 @@ export default function QuoteForm({ onSuccess }: QuoteFormProps) {
                 />
                 <label
                   htmlFor="consent"
-                  className="flex-1 text-sm text-gray-700 dark:text-gray-300"
+                  className="flex-1 text-sm text-neutral-charcoal/80 dark:text-white/80"
                 >
                   I agree to be contacted by Anderson Cleaning regarding this quote request. We
                   respond within 24 hours during office hours (Monday – Friday, 9 AM – 5 PM EST).{' '}
@@ -667,10 +667,10 @@ export default function QuoteForm({ onSuccess }: QuoteFormProps) {
             <div className="flex items-start gap-3 mb-4">
               <Clock className="h-6 w-6 text-primary-600 dark:text-primary-400 flex-shrink-0" />
               <div>
-                <h3 className="font-bold text-gray-900 dark:text-gray-100 mb-1">
+                <h3 className="font-bold text-neutral-charcoal dark:text-white mb-1">
                   24-Hour Response Promise
                 </h3>
-                <p className="text-sm text-gray-700 dark:text-gray-300">
+                <p className="text-sm text-neutral-charcoal/80 dark:text-white/80">
                   We respond to all quote requests within 24 hours (Monday – Friday, 9 AM – 5 PM
                   EST). Current clients also have access to 24/7 emergency support with on-site
                   arrival in 2 hours or less.
@@ -681,7 +681,7 @@ export default function QuoteForm({ onSuccess }: QuoteFormProps) {
 
           {/* Contact Information */}
           <div className="bg-white dark:bg-slate-800 border border-gray-200 dark:border-gray-700 rounded-xl p-6">
-            <h3 className="font-bold text-gray-900 dark:text-gray-100 mb-4">Prefer to Call?</h3>
+            <h3 className="font-bold text-neutral-charcoal dark:text-white mb-4">Prefer to Call?</h3>
             <div className="space-y-3">
               <a
                 href="tel:+14133065053"
@@ -692,14 +692,14 @@ export default function QuoteForm({ onSuccess }: QuoteFormProps) {
               </a>
               <a
                 href="mailto:info@andersoncleaning.com"
-                className="flex items-center gap-3 text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+                className="flex items-center gap-3 text-neutral-charcoal/70 dark:text-neutral-charcoal/50 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
               >
                 <Mail className="h-5 w-5 flex-shrink-0" />
                 <span className="text-sm">info@andersoncleaning.com</span>
               </a>
             </div>
             <div className="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
-              <p className="text-xs text-gray-600 dark:text-gray-400">
+              <p className="text-xs text-neutral-charcoal/70 dark:text-neutral-charcoal/50">
                 <strong>Business Hours:</strong>
                 <br />
                 Monday – Friday: 9 AM – 5 PM EST
@@ -710,14 +710,14 @@ export default function QuoteForm({ onSuccess }: QuoteFormProps) {
           </div>
 
           {/* What Happens Next */}
-          <div className="bg-gray-50 dark:bg-slate-800/50 border border-gray-200 dark:border-gray-700 rounded-xl p-6">
-            <h3 className="font-bold text-gray-900 dark:text-gray-100 mb-4">What Happens Next?</h3>
+          <div className="bg-neutral-off-white dark:bg-slate-800/50 border border-gray-200 dark:border-gray-700 rounded-xl p-6">
+            <h3 className="font-bold text-neutral-charcoal dark:text-white mb-4">What Happens Next?</h3>
             <ol className="space-y-3">
               <li className="flex items-start gap-3">
                 <span className="flex items-center justify-center w-6 h-6 bg-primary-600 text-white rounded-full text-sm font-bold flex-shrink-0">
                   1
                 </span>
-                <span className="text-sm text-gray-700 dark:text-gray-300">
+                <span className="text-sm text-neutral-charcoal/80 dark:text-white/80">
                   We'll contact you within 24 hours to discuss your needs
                 </span>
               </li>
@@ -725,7 +725,7 @@ export default function QuoteForm({ onSuccess }: QuoteFormProps) {
                 <span className="flex items-center justify-center w-6 h-6 bg-primary-600 text-white rounded-full text-sm font-bold flex-shrink-0">
                   2
                 </span>
-                <span className="text-sm text-gray-700 dark:text-gray-300">
+                <span className="text-sm text-neutral-charcoal/80 dark:text-white/80">
                   We'll schedule a free on-site walk-through at your convenience
                 </span>
               </li>
@@ -733,7 +733,7 @@ export default function QuoteForm({ onSuccess }: QuoteFormProps) {
                 <span className="flex items-center justify-center w-6 h-6 bg-primary-600 text-white rounded-full text-sm font-bold flex-shrink-0">
                   3
                 </span>
-                <span className="text-sm text-gray-700 dark:text-gray-300">
+                <span className="text-sm text-neutral-charcoal/80 dark:text-white/80">
                   You'll receive a detailed proposal within 24 hours
                 </span>
               </li>

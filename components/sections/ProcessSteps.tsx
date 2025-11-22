@@ -70,7 +70,7 @@ export default function ProcessSteps({
   const bgColor =
     background === 'white'
       ? 'bg-white dark:bg-slate-900'
-      : 'bg-gray-50 dark:bg-slate-800'
+      : 'bg-neutral-off-white dark:bg-slate-800'
 
   return (
     <section
@@ -83,12 +83,12 @@ export default function ProcessSteps({
           <div className="text-center mb-12">
             <h2
               id="process-steps-heading"
-              className="text-3xl md:text-4xl font-bold text-[var(--color-text-primary)] mb-4"
+              className="text-h2 leading-tight font-bold text-[var(--color-text-primary)] mb-4"
             >
               {heading}
             </h2>
             {subtitle && (
-              <p className="text-lg text-[var(--color-text-secondary)] max-w-3xl mx-auto">
+              <p className="text-body text-[var(--color-text-secondary)] max-w-3xl mx-auto">
                 {subtitle}
               </p>
             )}
@@ -137,7 +137,7 @@ export default function ProcessSteps({
                           bg-[var(--color-primary-base)]
                           text-white
                           flex items-center justify-center
-                          font-bold text-lg
+                          font-bold text-body
                           shadow-lg
                         "
                         aria-label={`Step ${step.number}`}
@@ -153,7 +153,7 @@ export default function ProcessSteps({
                     </div>
 
                     {/* Step Title */}
-                    <h3 className="text-xl font-bold text-[var(--color-text-primary)] mb-3">
+                    <h3 className="text-body font-bold text-[var(--color-text-primary)] mb-3">
                       {step.title}
                     </h3>
 
@@ -224,7 +224,7 @@ export default function ProcessSteps({
 
                   {/* Step Content */}
                   <div className={`flex-1 ${!isLast ? 'pb-8' : ''}`}>
-                    <h3 className="text-lg font-bold text-[var(--color-text-primary)] mb-2">
+                    <h3 className="text-body font-bold text-[var(--color-text-primary)] mb-2">
                       {step.title}
                     </h3>
                     <p className="text-sm text-[var(--color-text-secondary)] leading-relaxed">

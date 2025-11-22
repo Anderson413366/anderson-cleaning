@@ -19,7 +19,7 @@ const FormRadioGroup: React.FC<FormRadioGroupProps> = ({
 
   return (
     <div className="mb-4">
-      <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+      <label className="block text-sm font-medium text-neutral-charcoal/80 dark:text-white/80 mb-1">
         {label}
         {isRequired && (
           <span className="text-red-500 ml-1">{t('requiredFieldIndicator') as string}</span>
@@ -35,11 +35,11 @@ const FormRadioGroup: React.FC<FormRadioGroupProps> = ({
               value={option.value}
               checked={selectedValue === option.value}
               onChange={(e) => onChange(e.target.value)}
-              className="h-4 w-4 text-primary dark:text-blue-500 bg-gray-100 dark:bg-slate-700 border-gray-300 dark:border-slate-600 focus:ring-primary dark:focus:ring-blue-600"
+              className="h-4 w-4 text-primary dark:text-blue-500 bg-neutral-light-grey dark:bg-slate-700 border-gray-300 dark:border-slate-600 focus:ring-primary dark:focus:ring-blue-600"
             />
             <label
               htmlFor={`${name}-${option.value}`}
-              className="ml-2 block text-sm text-gray-900 dark:text-gray-200"
+              className="ml-2 block text-sm text-neutral-charcoal dark:text-white/90"
             >
               {option.label}
             </label>

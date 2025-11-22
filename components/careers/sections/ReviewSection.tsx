@@ -215,10 +215,10 @@ const ReviewSection: React.FC = () => {
 
     return (
       <div className="py-2 sm:grid sm:grid-cols-3 sm:gap-4">
-        <dt className="text-sm font-medium text-gray-600 dark:text-slate-400">
+        <dt className="text-sm font-medium text-neutral-charcoal/70 dark:text-slate-400">
           {t(labelKey, { defaultValue: labelKey.replace(/Label$/, '') }) as string}:
         </dt>
-        <dd className="mt-1 text-sm text-gray-900 dark:text-gray-200 sm:mt-0 sm:col-span-2 break-words whitespace-pre-wrap">
+        <dd className="mt-1 text-sm text-neutral-charcoal dark:text-white/90 sm:mt-0 sm:col-span-2 break-words whitespace-pre-wrap">
           {String(displayValue)}
         </dd>
       </div>
@@ -262,7 +262,7 @@ const ReviewSection: React.FC = () => {
                   key={`${sectionConfig.id}-entry-${index}`}
                   className="py-3 my-2 border-t border-gray-100 dark:border-slate-600 first:border-t-0"
                 >
-                  <h4 className="text-sm font-semibold text-gray-700 dark:text-slate-300 mb-1">
+                  <h4 className="text-sm font-semibold text-neutral-charcoal/80 dark:text-slate-300 mb-1">
                     {sectionConfig.id === 'workHistory'
                       ? (t('employer', { defaultValue: 'Employer' }) as string)
                       : (t('reference', { defaultValue: 'Reference' }) as string)}{' '}
@@ -330,7 +330,7 @@ const ReviewSection: React.FC = () => {
             className="mb-8 pb-4 border-b border-gray-200 dark:border-slate-700"
           >
             <div className="flex justify-between items-center mb-3">
-              <h3 className="text-lg font-semibold text-primary dark:text-blue-400">
+              <h3 className="text-body font-semibold text-primary dark:text-blue-400">
                 {t(sectionConfig.titleKey) as string}
               </h3>
               <Button

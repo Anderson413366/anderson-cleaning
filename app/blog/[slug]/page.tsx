@@ -525,11 +525,11 @@ export default async function BlogPost({
               </span>
             </div>
 
-            <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white mb-6 leading-tight">
+            <h1 className="text-h1 md:text-h1 font-extrabold text-neutral-charcoal dark:text-white mb-6 leading-tight">
               {post.title}
             </h1>
 
-            <div className="flex flex-wrap items-center gap-6 text-gray-600 dark:text-gray-400 mb-8">
+            <div className="flex flex-wrap items-center gap-6 text-neutral-charcoal/70 dark:text-neutral-charcoal/50 mb-8">
               <div className="flex items-center">
                 <Calendar className="h-5 w-5 mr-2" />
                 {new Date(post.publishedDate).toLocaleDateString('en-US', {
@@ -549,9 +549,9 @@ export default async function BlogPost({
 
             {/* Share Buttons */}
             <div className="flex items-center gap-4 pb-8 border-b border-gray-200 dark:border-slate-700">
-              <span className="text-sm font-medium text-gray-700 dark:text-gray-300">Share:</span>
-              <button className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-slate-800 transition-colors">
-                <Share2 className="h-5 w-5 text-gray-600 dark:text-gray-400" />
+              <span className="text-sm font-medium text-neutral-charcoal/80 dark:text-white/80">Share:</span>
+              <button className="p-2 rounded-lg hover:bg-neutral-light-grey dark:hover:bg-slate-800 transition-colors">
+                <Share2 className="h-5 w-5 text-neutral-charcoal/70 dark:text-neutral-charcoal/50" />
               </button>
             </div>
           </div>
@@ -576,7 +576,7 @@ export default async function BlogPost({
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
             <div
-              className="prose prose-lg dark:prose-invert max-w-none prose-headings:font-bold prose-headings:text-gray-900 dark:prose-headings:text-white prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-6 prose-h3:text-2xl prose-h3:mt-8 prose-h3:mb-4 prose-p:text-gray-700 dark:prose-p:text-gray-300 prose-p:leading-relaxed prose-p:mb-6 prose-ul:my-6 prose-ul:space-y-2 prose-li:text-gray-700 dark:prose-li:text-gray-300 prose-strong:text-gray-900 dark:prose-strong:text-white prose-a:text-primary-600 dark:prose-a:text-primary-400 prose-a:no-underline hover:prose-a:underline"
+              className="prose prose-lg dark:prose-invert max-w-none prose-headings:font-bold prose-headings:text-neutral-charcoal dark:prose-headings:text-white prose-h2:text-h2 prose-h2:mt-12 prose-h2:mb-6 prose-h3:text-h3 prose-h3:mt-8 prose-h3:mb-4 prose-p:text-neutral-charcoal/80 dark:prose-p:text-neutral-charcoal/40 prose-p:leading-relaxed prose-p:mb-6 prose-ul:my-6 prose-ul:space-y-2 prose-li:text-neutral-charcoal/80 dark:prose-li:text-neutral-charcoal/40 prose-strong:text-neutral-charcoal dark:prose-strong:text-white prose-a:text-primary-600 dark:prose-a:text-primary-400 prose-a:no-underline hover:prose-a:underline"
               dangerouslySetInnerHTML={{ __html: post.content }}
             />
 
@@ -618,11 +618,11 @@ export default async function BlogPost({
         {/* Related Articles CTA */}
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 mt-16">
           <div className="max-w-4xl mx-auto">
-            <div className="bg-gradient-to-br from-blue-50 to-green-50 dark:from-slate-800 dark:to-slate-900 rounded-2xl p-8 text-center">
-              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-4">
+            <div className="bg-neutral-off-white dark:from-slate-800 dark:to-slate-900 rounded-2xl p-8 text-center">
+              <h2 className="text-h3 leading-normal font-bold text-neutral-charcoal dark:text-white mb-4">
                 Need Professional Cleaning Services?
               </h2>
-              <p className="text-lg text-gray-600 dark:text-gray-300 mb-6">
+              <p className="text-body text-neutral-charcoal/70 dark:text-white/80 mb-6">
                 Anderson Cleaning provides expert commercial cleaning services throughout Western MA
                 and Northern CT.
               </p>

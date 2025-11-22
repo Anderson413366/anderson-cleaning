@@ -158,17 +158,17 @@ export default function FAQPage() {
   return (
     <div className="min-h-screen bg-white dark:bg-slate-900">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-blue-700 via-blue-800 to-indigo-900 text-white pt-28 pb-16 md:pt-32 md:pb-20">
+      <section className="relative overflow-hidden bg-brand-navy text-white pt-28 pb-16 md:pt-32 md:pb-20">
         <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10"></div>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <div className="mb-6">
               <HelpCircle className="h-16 w-16 text-accent-400 mx-auto" />
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight">
+            <h1 className="text-h1 leading-tight font-extrabold mb-6 leading-tight">
               Frequently Asked Questions
             </h1>
-            <p className="text-xl text-blue-100 leading-relaxed">
+            <p className="text-body text-white/80 leading-relaxed">
               Find answers to common questions about our commercial cleaning services, pricing,
               scheduling, and more.
             </p>
@@ -183,13 +183,13 @@ export default function FAQPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mx-auto">
             <div className="relative">
-              <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
+              <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 h-5 w-5 text-neutral-charcoal/50" />
               <input
                 type="text"
                 placeholder="Search FAQs..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-12 pr-4 py-4 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent dark:bg-slate-800 dark:text-white text-lg"
+                className="w-full pl-12 pr-4 py-4 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent dark:bg-slate-800 dark:text-white text-body"
               />
             </div>
           </div>
@@ -197,12 +197,12 @@ export default function FAQPage() {
       </section>
 
       {/* FAQ Content */}
-      <section className="py-16 bg-gray-50 dark:bg-slate-800">
+      <section className="py-16 bg-neutral-off-white dark:bg-slate-800">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
             {Object.entries(filteredFAQs).length === 0 ? (
               <div className="text-center py-12">
-                <p className="text-gray-600 dark:text-gray-400 text-lg">
+                <p className="text-neutral-charcoal/70 dark:text-neutral-charcoal/50 text-body">
                   No questions found matching "{searchQuery}". Try a different search term or browse
                   all categories.
                 </p>
@@ -217,7 +217,7 @@ export default function FAQPage() {
             ) : (
               Object.entries(filteredFAQs).map(([category, questions]) => (
                 <div key={category} className="mb-12">
-                  <h2 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-6 pb-3 border-b-2 border-primary-600">
+                  <h2 className="text-h3 leading-normal font-bold text-neutral-charcoal dark:text-white mb-6 pb-3 border-b-2 border-primary-600">
                     {category}
                   </h2>
                   <div className="space-y-4">
@@ -232,11 +232,11 @@ export default function FAQPage() {
                           <h3>
                             <button
                               onClick={() => toggleQuestion(questionId)}
-                              className="w-full px-6 py-5 text-left flex items-start justify-between hover:bg-gray-50 dark:hover:bg-slate-600 transition-colors min-h-[44px]"
+                              className="w-full px-6 py-5 text-left flex items-start justify-between hover:bg-neutral-off-white dark:hover:bg-slate-600 transition-colors min-h-[44px]"
                               aria-expanded={isOpen}
                               aria-controls={`faq-answer-${questionId}`}
                             >
-                              <span className="font-semibold text-gray-900 dark:text-white text-lg pr-4">
+                              <span className="font-semibold text-neutral-charcoal dark:text-white text-body pr-4">
                                 {faq.question}
                               </span>
                               {isOpen ? (
@@ -246,7 +246,7 @@ export default function FAQPage() {
                                 />
                               ) : (
                                 <ChevronDown
-                                  className="h-6 w-6 text-gray-400 flex-shrink-0 transition-transform"
+                                  className="h-6 w-6 text-neutral-charcoal/50 flex-shrink-0 transition-transform"
                                   aria-hidden="true"
                                 />
                               )}
@@ -257,9 +257,9 @@ export default function FAQPage() {
                               id={`faq-answer-${questionId}`}
                               role="region"
                               aria-labelledby={`faq-question-${questionId}`}
-                              className="px-6 py-5 bg-gray-50 dark:bg-slate-800 border-t border-gray-200 dark:border-slate-600"
+                              className="px-6 py-5 bg-neutral-off-white dark:bg-slate-800 border-t border-gray-200 dark:border-slate-600"
                             >
-                              <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                              <p className="text-neutral-charcoal/80 dark:text-white/80 leading-relaxed">
                                 {faq.answer}
                               </p>
                             </div>
@@ -276,13 +276,13 @@ export default function FAQPage() {
       </section>
 
       {/* Contact CTA */}
-      <section className="py-16 bg-gradient-to-br from-blue-700 via-blue-800 to-indigo-900 text-white">
+      <section className="py-16 bg-brand-navy text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            <h2 className="text-h2 leading-tight font-bold mb-6">
               Still Have Questions?
             </h2>
-            <p className="text-xl text-blue-100 mb-8">
+            <p className="text-body text-white/80 mb-8">
               Our team is here to help! We respond to all inquiries within 24 hours.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

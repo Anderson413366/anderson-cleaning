@@ -24,7 +24,7 @@ const SectionWrapper: React.FC<SectionWrapperProps> = ({
   return (
     <Card className={`mb-8 shadow-lg dark:bg-slate-800/70 ${className}`}>
       <CardHeader>
-        <CardTitle className="text-2xl text-gray-800 dark:text-gray-100">
+        <CardTitle className="text-h3 text-neutral-charcoal dark:text-white">
           {t(titleKey) as string}
         </CardTitle>
         {descriptionKey && (

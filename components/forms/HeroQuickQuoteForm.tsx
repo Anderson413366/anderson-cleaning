@@ -112,8 +112,8 @@ export default function HeroQuickQuoteForm() {
   return (
     <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-2xl p-8">
       <div className="text-center mb-6">
-        <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">Get Your Free Quote</h2>
-        <p className="text-gray-600 dark:text-gray-400">
+        <h2 className="text-h3 font-bold text-neutral-charcoal dark:text-white mb-2">Get Your Free Quote</h2>
+        <p className="text-neutral-charcoal/70 dark:text-neutral-charcoal/50">
           Response within 24 hours (Monday – Friday, 9 AM – 5 PM EST)
         </p>
       </div>
@@ -134,7 +134,7 @@ export default function HeroQuickQuoteForm() {
 
       <form className="space-y-4" onSubmit={handleSubmit} noValidate>
         <div className="sr-only" aria-hidden="true">
-          <label htmlFor="hero-website" className="block text-sm font-semibold text-gray-700">
+          <label htmlFor="hero-website" className="block text-sm font-semibold text-neutral-charcoal/80">
             Website
           </label>
           <input
@@ -151,7 +151,7 @@ export default function HeroQuickQuoteForm() {
         <div>
           <label
             htmlFor="hero-name"
-            className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+            className="block text-sm font-medium text-neutral-charcoal/80 dark:text-white/80 mb-1"
           >
             Your Name <span className="text-error">*</span>
           </label>
@@ -162,7 +162,7 @@ export default function HeroQuickQuoteForm() {
             required
             value={formData.name}
             onChange={handleChange}
-            className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-slate-700 text-gray-900 dark:text-gray-100"
+            className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-slate-700 text-neutral-charcoal dark:text-white"
             placeholder="John Smith"
             aria-invalid={!!errors.name}
             aria-describedby={errors.name ? 'hero-name-error' : undefined}
@@ -177,7 +177,7 @@ export default function HeroQuickQuoteForm() {
         <div>
           <label
             htmlFor="hero-company"
-            className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+            className="block text-sm font-medium text-neutral-charcoal/80 dark:text-white/80 mb-1"
           >
             Company Name <span className="text-error">*</span>
           </label>
@@ -188,7 +188,7 @@ export default function HeroQuickQuoteForm() {
             required
             value={formData.company}
             onChange={handleChange}
-            className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-slate-700 text-gray-900 dark:text-gray-100"
+            className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-slate-700 text-neutral-charcoal dark:text-white"
             placeholder="ABC Corp"
             aria-invalid={!!errors.company}
             aria-describedby={errors.company ? 'hero-company-error' : undefined}
@@ -203,7 +203,7 @@ export default function HeroQuickQuoteForm() {
         <div>
           <label
             htmlFor="hero-email"
-            className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+            className="block text-sm font-medium text-neutral-charcoal/80 dark:text-white/80 mb-1"
           >
             Business Email <span className="text-error">*</span>
           </label>
@@ -214,7 +214,7 @@ export default function HeroQuickQuoteForm() {
             required
             value={formData.email}
             onChange={handleChange}
-            className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-slate-700 text-gray-900 dark:text-gray-100"
+            className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-slate-700 text-neutral-charcoal dark:text-white"
             placeholder="john@company.com"
             aria-invalid={!!errors.email}
             aria-describedby={errors.email ? 'hero-email-error' : undefined}
@@ -229,7 +229,7 @@ export default function HeroQuickQuoteForm() {
         <div>
           <label
             htmlFor="hero-phone"
-            className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+            className="block text-sm font-medium text-neutral-charcoal/80 dark:text-white/80 mb-1"
           >
             Phone Number <span className="text-error">*</span>
           </label>
@@ -241,7 +241,7 @@ export default function HeroQuickQuoteForm() {
             autoComplete="tel"
             value={formData.phone}
             onChange={handleChange}
-            className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-slate-700 text-gray-900 dark:text-gray-100"
+            className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-slate-700 text-neutral-charcoal dark:text-white"
             placeholder="(413) 306-5053"
             aria-invalid={!!errors.phone}
             aria-describedby={errors.phone ? 'hero-phone-error' : undefined}
@@ -256,7 +256,7 @@ export default function HeroQuickQuoteForm() {
         <div>
           <label
             htmlFor="hero-facility"
-            className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+            className="block text-sm font-medium text-neutral-charcoal/80 dark:text-white/80 mb-1"
           >
             Facility Type <span className="text-error">*</span>
           </label>
@@ -266,7 +266,7 @@ export default function HeroQuickQuoteForm() {
             required
             value={formData.facilityType}
             onChange={handleChange}
-            className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-slate-700 text-gray-900 dark:text-gray-100"
+            className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-slate-700 text-neutral-charcoal dark:text-white"
             aria-invalid={!!errors.facilityType}
             aria-describedby={errors.facilityType ? 'hero-facility-error' : undefined}
           >
@@ -303,7 +303,7 @@ export default function HeroQuickQuoteForm() {
           )}
         </Button>
 
-        <p className="text-xs text-center text-gray-500 dark:text-gray-400">
+        <p className="text-xs text-center text-neutral-charcoal/60 dark:text-neutral-charcoal/50">
           We respond within 24 hours • Current clients have 24/7 emergency support
         </p>
       </form>

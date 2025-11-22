@@ -20,10 +20,10 @@ const EmployeeStoriesSection: React.FC = () => {
     : []
 
   return (
-    <section className="py-20 bg-gray-50 dark:bg-slate-800 transition-colors">
+    <section className="py-20 bg-neutral-off-white dark:bg-slate-800 transition-colors">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+          <h2 className="text-h2 leading-tight font-bold text-neutral-charcoal dark:text-white mb-4">
             {t('employeeStoriesTitle') as string}
           </h2>
           <div className="flex items-center justify-center space-x-1 mb-2" role="img" aria-label="5 out of 5 stars">
@@ -31,7 +31,7 @@ const EmployeeStoriesSection: React.FC = () => {
               <Star key={star} className="h-6 w-6 text-accent-500 fill-accent-500" aria-hidden="true" />
             ))}
           </div>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          <p className="text-body text-neutral-charcoal/70 dark:text-white/80 max-w-2xl mx-auto">
             {t('employeeStoriesSubtitle') as string}
           </p>
         </div>
@@ -44,12 +44,12 @@ const EmployeeStoriesSection: React.FC = () => {
                   <Star key={i} className="h-5 w-5 text-accent-500 fill-accent-500" aria-hidden="true" />
                 ))}
               </div>
-              <blockquote className="text-gray-700 dark:text-gray-300 mb-4">
+              <blockquote className="text-neutral-charcoal/80 dark:text-white/80 mb-4">
                 "{testimonial.quote}"
               </blockquote>
               <div className="border-t border-gray-200 dark:border-gray-600 pt-4">
-                <p className="font-semibold text-gray-900 dark:text-white">{testimonial.name}</p>
-                <p className="text-sm text-gray-600 dark:text-gray-400">{testimonial.position}</p>
+                <p className="font-semibold text-neutral-charcoal dark:text-white">{testimonial.name}</p>
+                <p className="text-sm text-neutral-charcoal/70 dark:text-neutral-charcoal/50">{testimonial.position}</p>
               </div>
             </div>
           ))}

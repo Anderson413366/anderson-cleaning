@@ -69,23 +69,23 @@ export default function PromotionalModal() {
         {/* Close Button */}
         <button
           onClick={handleClose}
-          className="absolute top-4 right-4 p-2 rounded-full hover:bg-gray-100 dark:hover:bg-slate-700 transition-colors"
+          className="absolute top-4 right-4 p-2 rounded-full hover:bg-neutral-light-grey dark:hover:bg-slate-700 transition-colors"
           aria-label="Close promotional offer"
         >
-          <X className="h-5 w-5 text-gray-500 dark:text-gray-400" />
+          <X className="h-5 w-5 text-neutral-charcoal/60 dark:text-neutral-charcoal/50" />
         </button>
 
         {/* Content */}
         <div className="p-8 text-center">
           {/* Icon */}
-          <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-accent-500 to-accent-600 rounded-full mb-4">
+          <div className="inline-flex items-center justify-center w-16 h-16 bg-brand-emerald rounded-full mb-4">
             <Gift className="h-8 w-8 text-white" />
           </div>
 
           {/* Title */}
           <h2
             id="promo-modal-title"
-            className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-4"
+            className="text-h3 leading-normal font-bold text-neutral-charcoal dark:text-white mb-4"
           >
             Special Offer for New Clients!
           </h2>
@@ -94,22 +94,22 @@ export default function PromotionalModal() {
           <div className="bg-gradient-to-br from-accent-50 to-primary-50 dark:from-accent-900/20 dark:to-primary-900/20 rounded-xl p-6 mb-6">
             <div className="flex items-center justify-center gap-2 mb-3">
               <Sparkles className="h-6 w-6 text-accent-600 dark:text-accent-400" />
-              <span className="text-3xl font-bold text-accent-600 dark:text-accent-400">10% OFF</span>
+              <span className="text-h2 font-bold text-accent-600 dark:text-accent-400">10% OFF</span>
             </div>
-            <p className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+            <p className="text-body font-semibold text-neutral-charcoal dark:text-white mb-2">
               Your First Month of Service
             </p>
-            <p className="text-gray-600 dark:text-gray-300 text-sm">
+            <p className="text-neutral-charcoal/70 dark:text-white/80 text-sm">
               Professional commercial cleaning with no long-term contracts required
             </p>
           </div>
 
           {/* Referral Bonus */}
-          <div className="bg-gray-50 dark:bg-slate-700/50 rounded-lg p-4 mb-6">
-            <p className="text-sm font-semibold text-gray-900 dark:text-white mb-1">
+          <div className="bg-neutral-off-white dark:bg-slate-700/50 rounded-lg p-4 mb-6">
+            <p className="text-sm font-semibold text-neutral-charcoal dark:text-white mb-1">
               Plus: $100 Referral Rewards
             </p>
-            <p className="text-xs text-gray-600 dark:text-gray-400">
+            <p className="text-xs text-neutral-charcoal/70 dark:text-neutral-charcoal/50">
               Refer another business and you both get $100 credit
             </p>
           </div>
@@ -130,7 +130,7 @@ export default function PromotionalModal() {
           </div>
 
           {/* Fine Print */}
-          <p className="text-xs text-gray-500 dark:text-gray-400 mt-4">
+          <p className="text-xs text-neutral-charcoal/60 dark:text-neutral-charcoal/50 mt-4">
             New commercial clients only. Some restrictions may apply.
           </p>
         </div>

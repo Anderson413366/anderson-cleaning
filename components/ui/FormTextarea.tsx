@@ -14,7 +14,7 @@ const FormTextarea = forwardRef<HTMLTextAreaElement, FormTextareaProps>(
       <div className="mb-4">
         <label
           htmlFor={name}
-          className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+          className="block text-sm font-medium text-neutral-charcoal/80 dark:text-white/80 mb-1"
         >
           {label}
           {isRequired && (
