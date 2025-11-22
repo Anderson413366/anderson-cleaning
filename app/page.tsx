@@ -696,35 +696,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-brand-navy text-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-h2 leading-tight font-bold mb-6">
-            Ready for a cleaner, healthier workplace?
-          </h2>
-          <p className="text-body text-white/80 mb-8 max-w-2xl mx-auto">
-            Get your free, no-obligation quote today. We respond to all inquiries within 24 hours.
-          </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link href="/quote">
-              <Button variant="accent" size="lg">
-                Get Your Free Quote
-              </Button>
-            </Link>
-            <a href="tel:+14133065053">
-              <Button
-                variant="outline"
-                size="lg"
-                className="border-white text-white hover:bg-white/10"
-              >
-                <Phone className="h-5 w-5 mr-2" />
-                Call Now
-              </Button>
-            </a>
-          </div>
-        </div>
-      </section>
-
       <QuoteAdvancedModal
         isOpen={showAdvancedModal}
         onClose={() => setShowAdvancedModal(false)}
