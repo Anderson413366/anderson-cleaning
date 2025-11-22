@@ -5,11 +5,15 @@ import Link from 'next/link'
 
 import type { LucideIcon } from 'lucide-react'
 import {
+  ArrowRight,
+  Building,
   Building2,
   CheckCircle2,
   ClipboardList,
+  Factory,
   FileCheck,
   HardHat,
+  MapPin,
   Package,
   Shield,
   Sparkles,
@@ -359,6 +363,165 @@ export default function ServicesPage() {
           </div>
         </div>
       </section>
+
+      {/* Case Studies */}
+      <section className="py-16 bg-neutral-off-white dark:bg-slate-900">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-h2 font-bold text-neutral-charcoal dark:text-white mb-4">
+              Proven Results
+            </h2>
+            <p className="text-body text-neutral-charcoal/70 dark:text-white/80 max-w-3xl mx-auto">
+              Real examples of how we've helped businesses in Western Massachusetts and Northern Connecticut achieve their facility goals.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {[
+              {
+                title: 'Healthcare Facility Cost Reduction',
+                location: 'Springfield, MA',
+                industry: 'Healthcare',
+                metric: '28% Cost Reduction',
+                description:
+                  'A major healthcare facility in Springfield reduced their cleaning costs by 28% while improving patient satisfaction scores through our optimized cleaning protocols and supply management.',
+                icon: Building2,
+              },
+              {
+                title: 'Zero Complaints Achievement',
+                location: 'Hartford, CT',
+                industry: 'Corporate Office',
+                metric: 'Weekly Complaints → Zero',
+                description:
+                  'A corporate office in Hartford went from receiving weekly cleaning complaints to zero complaints over 6 months with our quality assurance program and dedicated account management.',
+                icon: Building,
+              },
+              {
+                title: 'Post-Construction Excellence',
+                location: 'Western Massachusetts',
+                industry: 'Manufacturing',
+                metric: 'Under Budget & On Time',
+                description:
+                  "A manufacturing plant's post-construction cleanup was completed under budget and ahead of schedule, allowing them to resume operations 2 days early.",
+                icon: Factory,
+              },
+            ].map((study) => (
+              <div
+                key={study.title}
+                className="bg-white dark:bg-slate-800 rounded-xl border-2 border-neutral-light-grey dark:border-slate-700 p-6 hover:border-brand-emerald dark:hover:border-brand-emerald transition-all"
+              >
+                <div className="mb-4">
+                  <div className="w-12 h-12 bg-brand-emerald/10 dark:bg-brand-emerald/20 rounded-lg flex items-center justify-center">
+                    <study.icon className="h-6 w-6 text-brand-emerald" />
+                  </div>
+                </div>
+
+                <div className="mb-3">
+                  <span className="inline-block px-3 py-1 bg-brand-emerald/10 dark:bg-brand-emerald/20 text-brand-emerald text-sm font-semibold rounded-full">
+                    {study.metric}
+                  </span>
+                </div>
+
+                <h3 className="text-h3 font-semibold text-neutral-charcoal dark:text-white mb-2">
+                  {study.title}
+                </h3>
+
+                <div className="flex items-center gap-2 text-sm text-neutral-charcoal/60 dark:text-white/80 mb-3">
+                  <MapPin className="h-4 w-4" />
+                  <span>
+                    {study.location} • {study.industry}
+                  </span>
+                </div>
+
+                <p className="text-body-sm text-neutral-charcoal/70 dark:text-white/80">
+                  {study.description}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center mt-12">
+            <Link href="/case-studies">
+              <Button variant="outline" size="lg">
+                View All Case Studies
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Our Service Area */}
+      <section className="py-16 bg-white dark:bg-slate-900">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-h2 font-bold text-neutral-charcoal dark:text-white mb-4">
+              Our Service Area
+            </h2>
+            <p className="text-body text-neutral-charcoal/70 dark:text-white/80 max-w-3xl mx-auto">
+              We proudly serve commercial facilities throughout Western Massachusetts and Northern Connecticut, within a 50-mile radius of our West Springfield headquarters.
+            </p>
+          </div>
+
+          <div className="max-w-4xl mx-auto">
+            <div className="relative rounded-xl overflow-hidden border-2 border-neutral-light-grey dark:border-slate-700 mb-8">
+              {/* TODO: Add static map image at public/images/service-area-map.png */}
+              {/* Map should show 50-mile radius around zip code 01089 (West Springfield, MA) */}
+              <div className="aspect-[3/2] bg-neutral-light-grey dark:bg-slate-800 flex items-center justify-center text-neutral-charcoal/70 dark:text-white/80">
+                <span>Service area map image goes here (50-mile radius from zip 01089)</span>
+              </div>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="bg-neutral-off-white dark:bg-slate-800 rounded-lg p-6">
+                <h3 className="text-h3 font-semibold text-neutral-charcoal dark:text-white mb-3">
+                  Primary Service Area
+                </h3>
+                <ul className="space-y-2 text-body-sm text-neutral-charcoal/70 dark:text-white/80">
+                  {[
+                    'Western Massachusetts',
+                    'Northern Connecticut',
+                    '50-mile radius of West Springfield',
+                  ].map((area) => (
+                    <li key={area} className="flex items-start">
+                      <CheckCircle2 className="h-5 w-5 text-brand-emerald mr-2 mt-0.5 flex-shrink-0" />
+                      <span>{area}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="bg-neutral-off-white dark:bg-slate-800 rounded-lg p-6">
+                <h3 className="text-h3 font-semibold text-neutral-charcoal dark:text-white mb-3">
+                  Major Cities Served
+                </h3>
+                <ul className="space-y-2 text-body-sm text-neutral-charcoal/70 dark:text-white/80">
+                  {['Springfield, MA', 'Hartford, CT', 'Worcester, MA', 'New Haven, CT'].map((city) => (
+                    <li key={city} className="flex items-start">
+                      <MapPin className="h-5 w-5 text-brand-emerald mr-2 mt-0.5 flex-shrink-0" />
+                      <span>{city}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            <div className="text-center mt-8">
+              <p className="text-body-sm text-neutral-charcoal/70 dark:text-white/80 mb-4">
+                Not sure if we serve your area? Contact us to find out!
+              </p>
+              <Link href="/contact">
+                <Button variant="primary" size="lg">
+                  Contact Us Today
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
 
       {/* FAQ */}
       <section className="py-20 bg-neutral-off-white">
