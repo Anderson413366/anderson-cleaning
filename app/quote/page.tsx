@@ -143,10 +143,10 @@ export default function QuotePage() {
               <p className="text-neutral-charcoal/80 dark:text-white/80 mb-6">
                 Call us at{' '}
                 <a
-                  href="tel:+15551234567"
+                  href="tel:+14133065053"
                   className="font-bold text-primary-600 dark:text-primary-400 hover:underline"
                 >
-                  (555) 123-4567
+                  (413) 306-5053
                 </a>{' '}
                 to schedule your walk-through today.
               </p>
