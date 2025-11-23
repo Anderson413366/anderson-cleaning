@@ -73,12 +73,8 @@ export default function BlogExplorer({ posts, categories }: BlogExplorerProps) {
                   key={category}
                   type="button"
                   onClick={() => setSelectedCategory(category)}
-                  className={`px-4 py-2 rounded-lg font-medium transition-all border ${
-                    isActive
-                      ? 'bg-brand-bright-blue text-white border-brand-bright-blue shadow-sm'
-                      : 'bg-white dark:bg-slate-800 text-neutral-charcoal/80 dark:text-white/80 border-neutral-light-grey dark:border-slate-700 hover:bg-neutral-light-grey dark:hover:bg-slate-700'
-                  }`}
                   aria-pressed={isActive}
+                  className={`category-pill ${isActive ? 'active' : ''}`}
                 >
                   {category}
                 </button>
