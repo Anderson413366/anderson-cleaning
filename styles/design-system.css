@@ -448,3 +448,33 @@ html.dark .filter-pill[aria-pressed="true"] {
   color: var(--brand-white);
   border-color: var(--brand-bright-blue);
 }
+
+/* ====================================================================
+   HERO SECTION SPACING - Enhanced Breathing Room
+   Prompt 3: Fine-Tune Hero Spacing
+   ==================================================================== */
+
+/* Hero sections with enhanced top padding for breathing room */
+.hero-section {
+  padding-top: 6rem; /* 96px on desktop */
+  padding-bottom: 4rem; /* 64px */
+}
+
+/* Additional padding for secondary elements like badges */
+.hero-badge,
+.hero-secondary {
+  margin-top: 1.875rem; /* 30px additional spacing */
+}
+
+/* Mobile responsiveness - scale down padding */
+@media (max-width: 768px) {
+  .hero-section {
+    padding-top: 4rem; /* 64px on mobile */
+    padding-bottom: 3rem; /* 48px */
+  }
+
+  .hero-badge,
+  .hero-secondary {
+    margin-top: 0.9375rem; /* 15px on mobile */
+  }
+}
