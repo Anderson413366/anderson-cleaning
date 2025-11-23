@@ -170,34 +170,28 @@ export default function Footer() {
               <div className="space-y-2.5">
                 <a
                   href="tel:+14133065053"
-                  className="flex items-center gap-2.5 text-sm text-neutral-charcoal/70 dark:text-white/75 transition-colors duration-150 hover:text-brand-bright-blue dark:hover:text-white"
+                  className="flex items-center gap-2 text-sm text-neutral-charcoal/70 dark:text-white/75 transition-colors duration-150 hover:text-brand-bright-blue dark:hover:text-white"
                 >
-                  <div className="w-6 flex items-center justify-center flex-shrink-0">
-                    <Phone className="h-4 w-4" aria-hidden="true" />
-                  </div>
+                  <Phone className="h-4 w-4 flex-shrink-0" aria-hidden="true" />
                   <span>(413) 306-5053</span>
                 </a>
                 <a
                   href="mailto:info@andersoncleaning.com"
-                  className="flex items-center gap-2.5 text-sm text-neutral-charcoal/70 dark:text-white/75 transition-colors duration-150 hover:text-brand-bright-blue dark:hover:text-white"
+                  className="flex items-center gap-2 text-sm text-neutral-charcoal/70 dark:text-white/75 transition-colors duration-150 hover:text-brand-bright-blue dark:hover:text-white"
                 >
-                  <div className="w-6 flex items-center justify-center flex-shrink-0">
-                    <Mail className="h-4 w-4" aria-hidden="true" />
-                  </div>
+                  <Mail className="h-4 w-4 flex-shrink-0" aria-hidden="true" />
                   <span>info@andersoncleaning.com</span>
                 </a>
-                <div className="flex items-start gap-2.5 text-sm text-neutral-charcoal/70 dark:text-white/75">
-                  <div className="w-6 flex items-center justify-center flex-shrink-0 self-start">
-                    <MapPin className="h-4 w-4 mt-0.5" aria-hidden="true" />
+                <div className="flex items-start gap-2 text-sm text-neutral-charcoal/70 dark:text-white/75">
+                  <MapPin className="h-4 w-4 flex-shrink-0 mt-0.5" aria-hidden="true" />
+                  <div>
+                    <div>103 Wayside Avenue</div>
+                    <div>West Springfield, MA 01089</div>
                   </div>
-                  <span>
-                    103 Wayside Avenue<br />
-                    West Springfield, MA 01089
-                  </span>
                 </div>
 
                 {/* Social Icons - Colored in light mode, white in dark mode */}
-                <div className="flex gap-3 pt-4">
+                <div className="flex gap-3 pt-2">
                   {navigation.social.map((item) => (
                     <a
                       key={item.name}
