@@ -170,20 +170,26 @@ export default function Footer() {
               <div className="space-y-2.5">
                 <a
                   href="tel:+14133065053"
-                  className="flex items-start gap-3 text-sm text-neutral-charcoal/70 dark:text-white/75 transition-colors duration-150 hover:text-brand-bright-blue dark:hover:text-white"
+                  className="flex items-start gap-2 text-sm text-neutral-charcoal/70 dark:text-white/75 transition-colors duration-150 hover:text-brand-bright-blue dark:hover:text-white"
                 >
-                  <Phone className="h-4 w-4 flex-shrink-0 mt-0.5" aria-hidden="true" />
+                  <div className="w-5 flex items-center justify-center flex-shrink-0">
+                    <Phone className="h-4 w-4 mt-0.5" aria-hidden="true" />
+                  </div>
                   <span>(413) 306-5053</span>
                 </a>
                 <a
                   href="mailto:info@andersoncleaning.com"
-                  className="flex items-start gap-3 text-sm text-neutral-charcoal/70 dark:text-white/75 transition-colors duration-150 hover:text-brand-bright-blue dark:hover:text-white"
+                  className="flex items-start gap-2 text-sm text-neutral-charcoal/70 dark:text-white/75 transition-colors duration-150 hover:text-brand-bright-blue dark:hover:text-white"
                 >
-                  <Mail className="h-4 w-4 flex-shrink-0 mt-0.5" aria-hidden="true" />
+                  <div className="w-5 flex items-center justify-center flex-shrink-0">
+                    <Mail className="h-4 w-4 mt-0.5" aria-hidden="true" />
+                  </div>
                   <span>info@andersoncleaning.com</span>
                 </a>
-                <div className="flex items-start gap-3 text-sm text-neutral-charcoal/70 dark:text-white/75">
-                  <MapPin className="h-4 w-4 flex-shrink-0 mt-0.5" aria-hidden="true" />
+                <div className="flex items-start gap-2 text-sm text-neutral-charcoal/70 dark:text-white/75">
+                  <div className="w-5 flex items-center justify-center flex-shrink-0">
+                    <MapPin className="h-4 w-4 mt-0.5" aria-hidden="true" />
+                  </div>
                   <span>
                     103 Wayside Avenue<br />
                     West Springfield, MA 01089
