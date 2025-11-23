@@ -35,7 +35,7 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 bg-white/85 backdrop-blur-lg transition-all duration-300 dark:bg-brand-deep-blue/85 ${
+      className={`fixed top-0 left-0 right-0 z-[100] bg-white/95 backdrop-blur-lg transition-all duration-300 dark:bg-brand-deep-blue ${
         scrolled ? 'shadow-md border-b border-neutral-light-grey dark:border-white/10' : 'shadow-sm'
       }`}
     >
@@ -116,8 +116,8 @@ export default function Header() {
       {/* Mobile menu */}
       {mobileMenuOpen && (
         <div className="lg:hidden">
-          <div className="fixed inset-0 z-[9998] bg-black/20 backdrop-blur-sm" onClick={() => setMobileMenuOpen(false)} />
-          <div className="fixed inset-y-0 right-0 z-[9999] w-full overflow-y-auto bg-white dark:bg-brand-deep-blue px-6 py-6 sm:max-w-sm sm:shadow-2xl">
+          <div className="fixed inset-0 z-[200] bg-black/30 backdrop-blur-sm" onClick={() => setMobileMenuOpen(false)} />
+          <div className="fixed inset-y-0 right-0 z-[210] w-full overflow-y-auto bg-white dark:bg-brand-deep-blue px-6 py-6 sm:max-w-sm sm:shadow-2xl">
             <div className="flex items-center justify-between">
               <Link href="/" className="-m-1.5 p-1.5" onClick={() => setMobileMenuOpen(false)}>
                 <span className="sr-only">Anderson Cleaning</span>

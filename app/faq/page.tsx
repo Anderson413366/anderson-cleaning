@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { Button } from '@/components/ui/Button'
 import { ChevronDown, ChevronUp, Search, HelpCircle, Phone, MessageCircle } from 'lucide-react'
 import Link from 'next/link'
+import { inputClassName } from '@/lib/styles/formStyles'
 
 const faqCategories = {
   'Pricing & Contracts': [
@@ -178,18 +179,18 @@ export default function FAQPage() {
 
       {/* Search Bar */}
       <section
-        className="bg-white dark:bg-slate-900 py-8 border-b border-gray-200 dark:border-slate-700"
+        className="bg-white dark:bg-slate-900 py-8 border-b border-neutral-light-grey dark:border-slate-700"
       >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mx-auto">
             <div className="relative">
-              <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 h-5 w-5 text-neutral-charcoal/50" />
+              <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 h-5 w-5 text-neutral-charcoal/50 dark:text-white/50" />
               <input
                 type="text"
                 placeholder="Search FAQs..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-12 pr-4 py-4 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent dark:bg-slate-800 dark:text-white text-body"
+                className={`${inputClassName} pl-12`}
               />
             </div>
           </div>
