@@ -3,6 +3,7 @@
 import { useMemo, useState } from 'react'
 import { Filter, Star } from 'lucide-react'
 import { Testimonial } from '@/lib/testimonials/types'
+import { inputClassName, labelClassName } from '@/lib/styles/formStyles'
 
 interface TestimonialsExplorerProps {
   testimonials: Testimonial[]
@@ -35,8 +36,8 @@ const TestimonialsExplorer = ({ testimonials }: TestimonialsExplorerProps) => {
           key={star}
           className={`h-5 w-5 ${
             star <= rating
-              ? 'fill-yellow-400 text-yellow-400'
-              : 'fill-gray-200 text-gray-200 dark:fill-gray-700 dark:text-neutral-charcoal/80'
+              ? 'fill-brand-bright-blue text-brand-bright-blue'
+              : 'fill-neutral-light-grey text-neutral-light-grey dark:fill-slate-700 dark:text-slate-700'
           }`}
         />
       ))}
@@ -60,13 +61,11 @@ const TestimonialsExplorer = ({ testimonials }: TestimonialsExplorerProps) => {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
-                <label className="block text-sm font-medium text-neutral-charcoal/80 dark:text-white/80 mb-2">
-                  Industry
-                </label>
+                <label className={labelClassName}>Industry</label>
                 <select
                   value={selectedIndustry}
                   onChange={(e) => setSelectedIndustry(e.target.value)}
-                  className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-slate-800 text-neutral-charcoal dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                  className={inputClassName}
                 >
                   {industries.map((industry) => (
                     <option key={industry} value={industry}>
@@ -76,13 +75,11 @@ const TestimonialsExplorer = ({ testimonials }: TestimonialsExplorerProps) => {
                 </select>
               </div>
               <div>
-                <label className="block text-sm font-medium text-neutral-charcoal/80 dark:text-white/80 mb-2">
-                  Service
-                </label>
+                <label className={labelClassName}>Service</label>
                 <select
                   value={selectedService}
                   onChange={(e) => setSelectedService(e.target.value)}
-                  className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-slate-800 text-neutral-charcoal dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                  className={inputClassName}
                 >
                   {services.map((service) => (
                     <option key={service} value={service}>
@@ -118,29 +115,29 @@ const TestimonialsExplorer = ({ testimonials }: TestimonialsExplorerProps) => {
                 {filteredTestimonials.map((testimonial) => (
                   <div
                     key={testimonial.id}
-                    className="bg-white dark:bg-slate-800 rounded-xl p-8 shadow-lg hover:shadow-2xl transition-shadow duration-300 flex flex-col"
+                    className="h-full flex flex-col bg-white dark:bg-slate-800 border-2 border-neutral-light-grey dark:border-slate-700 rounded-xl p-8 shadow-sm hover:shadow-xl hover:border-brand-bright-blue transition-all duration-300"
                   >
                     <div className="mb-4">{renderStars(testimonial.rating)}</div>
                     <blockquote className="flex-1 mb-6">
-                      <p className="text-neutral-charcoal/80 dark:text-white/80 leading-relaxed italic">
+                      <p className="text-body text-neutral-charcoal/80 dark:text-white/80 leading-relaxed italic">
                         "{testimonial.quote}"
                       </p>
                     </blockquote>
-                    <div className="border-t border-gray-200 dark:border-gray-700 pt-4">
-                      <p className="font-bold text-neutral-charcoal dark:text-white">
+                    <div className="border-t border-neutral-light-grey dark:border-slate-700 pt-4">
+                      <p className="font-bold text-neutral-charcoal dark:text-white mb-1">
                         {testimonial.name}
                       </p>
-                      <p className="text-sm text-neutral-charcoal/70 dark:text-white/80">
+                      <p className="text-sm text-neutral-charcoal/70 dark:text-white/80 mb-1">
                         {testimonial.title}
                       </p>
-                      <p className="text-sm text-neutral-charcoal/70 dark:text-white/80">
+                      <p className="text-sm text-neutral-charcoal/70 dark:text-white/80 mb-3">
                         {testimonial.company}
                       </p>
-                      <div className="flex gap-2 mt-3">
-                        <span className="inline-block px-3 py-1 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 text-xs font-medium rounded-full">
+                      <div className="flex flex-wrap gap-2">
+                        <span className="inline-block px-3 py-1 bg-brand-bright-blue/10 dark:bg-brand-bright-blue/20 text-brand-bright-blue text-xs font-semibold rounded-full">
                           {testimonial.industry}
                         </span>
-                        <span className="inline-block px-3 py-1 bg-accent-100 dark:bg-accent-900/30 text-accent-700 dark:text-accent-300 text-xs font-medium rounded-full">
+                        <span className="inline-block px-3 py-1 bg-brand-deep-blue/10 dark:bg-brand-deep-blue/20 text-brand-deep-blue dark:text-brand-bright-blue text-xs font-semibold rounded-full">
                           {testimonial.service}
                         </span>
                       </div>

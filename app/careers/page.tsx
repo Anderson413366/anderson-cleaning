@@ -155,29 +155,29 @@ export default function CareersPage() {
               ].map((role) => (
                 <div
                   key={role.title}
-                  className="bg-white rounded-lg border-2 border-neutral-light-grey hover:border-brand-bright-blue transition-colors p-6"
+                  className="h-full flex flex-col bg-white dark:bg-slate-800 rounded-xl border-2 border-neutral-light-grey dark:border-slate-700 hover:border-brand-bright-blue transition-all duration-300 hover:-translate-y-1 p-6 shadow-sm"
                 >
-                  <h3 className="text-h3 mb-2">{role.title}</h3>
-                  <div className="flex items-center gap-2 text-neutral-charcoal dark:text-white mb-1">
+                  <h3 className="text-h3 font-bold text-neutral-charcoal dark:text-white mb-3">{role.title}</h3>
+                  <div className="flex items-center gap-2 text-neutral-charcoal/80 dark:text-white/80 mb-2">
                     {role.locationIcon}
                     <span className="text-body-sm">{role.locationLabel}</span>
                   </div>
-                  <div className="flex items-center gap-2 text-neutral-charcoal dark:text-white mb-4">
+                  <div className="flex items-center gap-2 text-brand-bright-blue mb-4">
                     {role.rateIcon}
-                    <span className="text-body-sm font-semibold">{role.rateLabel}</span>
+                    <span className="text-body-sm font-bold">{role.rateLabel}</span>
                   </div>
 
-                  <ul className="space-y-2 mb-6 text-body-sm">
+                  <ul className="space-y-2 mb-6 text-body-sm flex-1">
                     {role.bullets.map((badge) => (
-                      <li key={badge} className="flex items-start gap-2">
+                      <li key={badge} className="flex items-start gap-2 text-neutral-charcoal/80 dark:text-white/80">
                         <CheckCircle2 className="h-4 w-4 text-brand-bright-blue mt-0.5 flex-shrink-0" />
                         <span>{badge}</span>
                       </li>
                     ))}
                   </ul>
 
-                  <a href="#application-form" className="inline-block w-full">
-                    <Button variant="primary" size="sm" className="w-full">
+                  <a href="#application-form" className="inline-block w-full mt-auto">
+                    <Button variant="secondary" size="sm" className="w-full">
                       Apply Now
                     </Button>
                   </a>

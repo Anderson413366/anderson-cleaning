@@ -67,50 +67,27 @@ export default function IndustriesPage() {
                 <Link
                   key={industry.id}
                   href={`/industries/${industry.slug}`}
-                  className="group"
+                  className="group h-full"
                 >
-                  <div
-                    className="
-                      h-full
-                      bg-white dark:bg-slate-900
-                      rounded-[var(--border-radius-lg)]
-                      shadow-[var(--shadow-card)]
-                      border-2 border-gray-200 dark:border-slate-700
-                      p-8
-                      transition-all duration-300
-                      hover:shadow-xl
-                      hover:border-[var(--color-primary-base)]
-                      hover:-translate-y-1
-                    "
-                  >
+                  <div className="h-full flex flex-col bg-white dark:bg-slate-900 rounded-xl shadow-sm border-2 border-neutral-light-grey dark:border-slate-700 p-8 transition-all duration-300 hover:shadow-xl hover:border-brand-bright-blue hover:-translate-y-1">
                     <div className="mb-6">
-                      <div
-                        className="
-                          w-16 h-16
-                          rounded-lg
-                          bg-[var(--color-primary-light)]
-                          dark:bg-[var(--color-primary-900)]
-                          flex items-center justify-center
-                          transition-colors
-                          group-hover:bg-[var(--color-primary-base)]
-                        "
-                      >
+                      <div className="w-16 h-16 rounded-xl bg-brand-bright-blue/10 dark:bg-brand-bright-blue/20 flex items-center justify-center transition-colors group-hover:bg-brand-bright-blue">
                         <IconComponent
-                          className="h-8 w-8 text-[var(--color-primary-base)] group-hover:text-white transition-colors"
+                          className="h-8 w-8 text-brand-bright-blue group-hover:text-white transition-colors"
                           aria-hidden="true"
                         />
                       </div>
                     </div>
 
-                    <h3 className="text-h3 font-bold text-[var(--color-text-primary)] mb-4 group-hover:text-[var(--color-primary-base)] transition-colors">
+                    <h3 className="text-h3 font-bold text-neutral-charcoal dark:text-white mb-4 group-hover:text-brand-bright-blue dark:group-hover:text-brand-bright-blue transition-colors">
                       {industry.name}
                     </h3>
 
-                    <p className="text-[var(--color-text-secondary)] mb-6 leading-relaxed">
+                    <p className="text-body text-neutral-charcoal/80 dark:text-white/80 mb-6 leading-relaxed flex-1">
                       {industry.shortDescription}
                     </p>
 
-                    <div className="flex items-center gap-2 text-[var(--color-primary-base)] font-semibold group-hover:gap-3 transition-all">
+                    <div className="flex items-center gap-2 text-brand-bright-blue font-semibold group-hover:gap-3 transition-all mt-auto">
                       <span>Learn More</span>
                       <ArrowRight className="h-5 w-5" aria-hidden="true" />
                     </div>

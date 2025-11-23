@@ -5,6 +5,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { Button } from '@/components/ui/Button'
 import { ArrowRight, Calendar, Clock } from 'lucide-react'
+import { inputClassName } from '@/lib/styles/formStyles'
 
 interface BlogPost {
   slug: string
@@ -91,31 +92,30 @@ export default function BlogExplorer({ posts, categories }: BlogExplorerProps) {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredPosts.map((post) => (
-              <Link
+              <div
                 key={post.slug}
-                href={`/blog/${post.slug}`}
-                className="group bg-white dark:bg-slate-800 border border-neutral-light-grey dark:border-slate-700 rounded-xl overflow-hidden shadow-sm hover:-translate-y-1 transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-bright-blue"
+                className="h-full flex flex-col bg-white dark:bg-slate-800 border-2 border-neutral-light-grey dark:border-slate-700 rounded-xl overflow-hidden shadow-sm hover:-translate-y-1 hover:border-brand-bright-blue transition-all duration-300"
               >
-                <div className="relative h-48 bg-neutral-light-grey dark:bg-slate-700 overflow-hidden">
+                <div className="relative h-48 bg-neutral-light-grey dark:bg-slate-700 overflow-hidden flex-shrink-0">
                   <Image
                     src={post.image}
                     alt={post.title}
                     fill
                     loading="lazy"
                     sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    className="object-cover transition-transform duration-300 group-hover:scale-105"
+                    className="object-cover"
                     placeholder="blur"
                     blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWEREiMxUf/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
                     quality={85}
                   />
                   <div className="absolute top-4 left-4 z-10">
-                    <span className="inline-block px-3 py-1 bg-brand-bright-blue text-white text-xs font-semibold rounded-full">
+                    <span className="inline-block px-3 py-1 bg-brand-deep-blue/90 dark:bg-brand-deep-blue text-white text-xs font-semibold rounded-full">
                       {post.category}
                     </span>
                   </div>
                 </div>
 
-                <div className="p-6">
+                <div className="p-6 flex flex-col flex-1">
                   <div className="flex items-center space-x-4 text-sm text-neutral-charcoal/60 dark:text-white/70 mb-3">
                     <div className="flex items-center">
                       <Calendar className="h-4 w-4 mr-1" />
@@ -135,18 +135,20 @@ export default function BlogExplorer({ posts, categories }: BlogExplorerProps) {
                     {post.title}
                   </h2>
 
-                  <p className="text-neutral-charcoal/70 dark:text-white/80 mb-4 line-clamp-3">
+                  <p className="text-body text-neutral-charcoal/70 dark:text-white/80 mb-6 line-clamp-3 flex-1">
                     {post.excerpt}
                   </p>
 
-                  <div className="w-full">
-                    <span className="inline-flex items-center text-brand-bright-blue text-sm font-semibold">
-                      Read Article
-                      <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                    </span>
+                  <div className="mt-auto">
+                    <Link href={`/blog/${post.slug}`}>
+                      <Button variant="tertiary" size="sm" className="w-full">
+                        Read Article
+                        <ArrowRight className="ml-2 h-4 w-4" />
+                      </Button>
+                    </Link>
                   </div>
                 </div>
-              </Link>
+              </div>
             ))}
           </div>
         </div>
@@ -170,7 +172,7 @@ export default function BlogExplorer({ posts, categories }: BlogExplorerProps) {
                 onChange={(event) => setNewsletterEmail(event.target.value)}
                 placeholder="your.email@company.com"
                 required
-                className="flex-1 px-4 py-3 border border-neutral-light-grey dark:border-slate-700 rounded-lg focus:ring-2 focus:ring-brand-bright-blue focus:border-transparent dark:bg-slate-800 dark:text-white"
+                className={`${inputClassName} flex-1`}
               />
               <Button type="submit" variant="accent" size="lg" isLoading={newsletterStatus === 'loading'}>
                 {newsletterStatus === 'success' ? 'Subscribed!' : 'Subscribe'}

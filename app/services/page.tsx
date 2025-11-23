@@ -299,24 +299,24 @@ export default function ServicesPage() {
               return (
                 <div
                   key={i}
-                  className="bg-white dark:bg-slate-800 border border-neutral-light-grey dark:border-slate-700 rounded-xl shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-brand-bright-blue"
+                  className="h-full flex flex-col bg-white dark:bg-slate-800 border-2 border-neutral-light-grey dark:border-slate-700 rounded-xl shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-brand-bright-blue"
                 >
-                  <div className="p-8">
-                    <div className="mb-4 inline-flex h-16 w-16 items-center justify-center rounded-xl bg-neutral-off-white text-brand-bright-blue">
-                      <Icon className="h-8 w-8" aria-hidden="true" />
+                  <div className="p-8 flex flex-col h-full">
+                    <div className="mb-4 inline-flex h-16 w-16 items-center justify-center rounded-xl bg-brand-bright-blue/10 dark:bg-brand-bright-blue/20">
+                      <Icon className="h-8 w-8 text-brand-bright-blue" aria-hidden="true" />
                     </div>
                     <h3 className="text-h3 font-bold text-neutral-charcoal dark:text-white mb-3">
                       {service.title}
                     </h3>
                     {service.available === 'contracted' && (
-                      <span className="inline-block px-3 py-1 bg-neutral-off-white text-brand-navy dark:bg-slate-700 dark:text-white text-body-sm font-semibold rounded-full mb-3">
+                      <span className="inline-block px-3 py-1 bg-brand-red/10 text-brand-red dark:bg-brand-red/20 dark:text-brand-red text-xs font-bold uppercase tracking-wide rounded-full mb-3">
                         Premium Add-on
                       </span>
                     )}
                     <p className="text-body text-neutral-charcoal/80 dark:text-white/80 mb-4">
                       {service.description}
                     </p>
-                    <ul className="space-y-2 mb-6">
+                    <ul className="space-y-2 mb-6 flex-1">
                       {service.features.map((feature, j) => (
                         <li
                           key={j}
@@ -329,7 +329,7 @@ export default function ServicesPage() {
                     </ul>
                     <a
                       href={`/services/${service.slug}`}
-                      className="inline-flex items-center text-brand-navy dark:text-brand-bright-blue font-semibold hover:text-brand-bright-blue dark:hover:text-white group-hover:underline"
+                      className="inline-flex items-center text-brand-navy dark:text-brand-bright-blue font-semibold hover:text-brand-bright-blue dark:hover:text-white transition-colors mt-auto"
                     >
                       Learn More →
                     </a>

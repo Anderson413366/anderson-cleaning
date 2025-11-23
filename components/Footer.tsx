@@ -124,53 +124,64 @@ export default function Footer() {
         </div>
       </section>
 
-      {/* Main Footer - Apple Style Minimal with 32px Vertical Rhythm */}
-      <footer className="bg-brand-deep-blue text-white" aria-labelledby="footer-heading">
+      {/* Main Footer - Three Columns with Dark Mode Support */}
+      <footer className="bg-neutral-off-white dark:bg-brand-deep-blue text-neutral-charcoal dark:text-white transition-colors duration-300" aria-labelledby="footer-heading">
         <h2 id="footer-heading" className="sr-only">
           Footer
         </h2>
         <div className="mx-auto max-w-7xl px-6 pb-8 pt-16 lg:px-8">
-          {/* Logo Section - MINIMAL */}
-          <div className="mb-12 text-center">
-            <img
-              src="/brand/white/logo-full-2000-white.png"
-              alt="Anderson Cleaning"
-              className="mx-auto mb-4"
-              style={{ maxWidth: '120px', height: 'auto' }}
-            />
-            <p className="text-sm leading-relaxed text-white/70">
-              Commercial Cleaning Excellence Since 2007
-            </p>
-          </div>
-
-          {/* Three Columns - CLEAN GRID with Consistent Alignment */}
+          {/* Three Columns - Restructured Layout */}
           <div className="mb-12 grid grid-cols-1 gap-y-12 gap-x-8 md:grid-cols-3 md:gap-x-12">
-            {/* Column 1: Our Services */}
+            {/* Column 1: Logo + Description + Address */}
             <div>
-              <h3 className="mb-4 text-base font-semibold text-white">Our Services</h3>
-              <ul className="space-y-2.5">
+              <img
+                src="/brand/blue/logo-full-2000-blue.png"
+                alt="Anderson Cleaning"
+                className="mb-4 dark:hidden"
+                style={{ maxWidth: '140px', height: 'auto' }}
+              />
+              <img
+                src="/brand/white/logo-full-2000-white.png"
+                alt="Anderson Cleaning"
+                className="mb-4 hidden dark:block"
+                style={{ maxWidth: '140px', height: 'auto' }}
+              />
+              <p className="mb-6 text-sm leading-relaxed text-neutral-charcoal/70 dark:text-white/70">
+                Commercial Cleaning Excellence Since 2007
+              </p>
+              <div className="flex items-start gap-3">
+                <div className="w-7 flex-shrink-0">
+                  <MapPin className="mt-1 h-5 w-5 text-neutral-charcoal/70 dark:text-white/70" aria-hidden="true" />
+                </div>
+                <span className="text-sm leading-tight text-neutral-charcoal/70 dark:text-white/70">
+                  101 Liberty Street<br />
+                  West Springfield, MA 01089
+                </span>
+              </div>
+            </div>
+
+            {/* Column 2: Our Services + Quick Links */}
+            <div>
+              <h3 className="mb-4 text-base font-semibold text-neutral-charcoal dark:text-white">Our Services</h3>
+              <ul className="space-y-2.5 mb-6">
                 {navigation.services.map((item) => (
                   <li key={item.name}>
                     <Link
                       href={item.href}
-                      className="text-sm text-white/75 transition-all duration-150 hover:translate-x-0.5 hover:text-white"
+                      className="text-sm text-neutral-charcoal/70 dark:text-white/75 transition-colors duration-150 hover:text-brand-bright-blue dark:hover:text-white"
                     >
                       {item.name}
                     </Link>
                   </li>
                 ))}
               </ul>
-            </div>
-
-            {/* Column 2: Company */}
-            <div>
-              <h3 className="mb-4 text-base font-semibold text-white">Company</h3>
+              <h3 className="mb-4 text-base font-semibold text-neutral-charcoal dark:text-white">Quick Links</h3>
               <ul className="space-y-2.5">
                 {navigation.company.map((item) => (
                   <li key={item.name}>
                     <Link
                       href={item.href}
-                      className="text-sm text-white/75 transition-all duration-150 hover:translate-x-0.5 hover:text-white"
+                      className="text-sm text-neutral-charcoal/70 dark:text-white/75 transition-colors duration-150 hover:text-brand-bright-blue dark:hover:text-white"
                     >
                       {item.name}
                     </Link>
@@ -181,42 +192,30 @@ export default function Footer() {
 
             {/* Column 3: Get in Touch */}
             <div>
-              <h3 className="mb-4 text-base font-semibold text-white">Get in Touch</h3>
-              <p className="mb-6 text-sm leading-relaxed text-white/70">
-                Let us know how we can help with your commercial cleaning needs.
-              </p>
-              <div className="mt-10 space-y-5">
+              <h3 className="mb-4 text-base font-semibold text-neutral-charcoal dark:text-white">Get in Touch</h3>
+              <div className="space-y-5">
                 <a
                   href="tel:+14133065053"
-                  className="flex items-start gap-3 text-base text-white/75 transition-colors duration-150 hover:text-white/80 md:text-lg"
+                  className="flex items-start gap-3 text-base text-neutral-charcoal/80 dark:text-white/75 transition-colors duration-150 hover:text-brand-bright-blue dark:hover:text-white md:text-lg"
                 >
                   <Phone className="mt-1 h-5 w-5 flex-shrink-0" aria-hidden="true" />
                   <span className="leading-tight">(413) 306-5053</span>
                 </a>
                 <a
                   href="mailto:info@andersoncleaning.com"
-                  className="flex items-start gap-3 text-base text-white/75 transition-colors duration-150 hover:text-white/80 md:text-lg"
+                  className="flex items-start gap-3 text-base text-neutral-charcoal/80 dark:text-white/75 transition-colors duration-150 hover:text-brand-bright-blue dark:hover:text-white md:text-lg"
                 >
                   <Mail className="mt-1 h-5 w-5 flex-shrink-0" aria-hidden="true" />
                   <span className="leading-tight">info@andersoncleaning.com</span>
                 </a>
-                <div className="flex items-start gap-3">
-                  <div className="w-7 flex-shrink-0">
-                    <MapPin className="mt-1 h-5 w-5" aria-hidden="true" />
-                  </div>
-                  <span className="text-base leading-tight text-white/75 md:text-lg">
-                    101 Liberty Street<br />
-                    West Springfield, MA 01089
-                  </span>
-                </div>
 
-                {/* Social Icons - MINIMAL */}
+                {/* Social Icons - Colored in light mode, white in dark mode */}
                 <div className="flex gap-3 pt-4">
                   {navigation.social.map((item) => (
                     <a
                       key={item.name}
                       href={item.href}
-                      className="flex h-8 w-8 items-center justify-center rounded-full bg-white/10 text-white/80 transition-all duration-150 hover:-translate-y-0.5 hover:bg-white/20 hover:text-white"
+                      className="flex h-10 w-10 items-center justify-center rounded-full bg-brand-bright-blue/10 text-brand-bright-blue transition-all duration-150 hover:-translate-y-0.5 hover:bg-brand-bright-blue hover:text-white dark:bg-white/10 dark:text-white/80 dark:hover:bg-white/20 dark:hover:text-white"
                       aria-label={item.name}
                       target="_blank"
                       rel="noopener noreferrer"
@@ -229,29 +228,29 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Bottom Section - ULTRA COMPACT */}
-          <div className="border-t border-white/10 pt-6">
-            <p className="mb-4 text-center text-xs text-white/60">
+          {/* Bottom Section */}
+          <div className="border-t border-neutral-light-grey dark:border-white/10 pt-6">
+            <p className="mb-4 text-center text-xs text-neutral-charcoal/60 dark:text-white/60">
               {serviceAreas.join(' • ')}
             </p>
-            <div className="flex flex-col items-center justify-between gap-4 text-xs text-white/50 md:flex-row">
+            <div className="flex flex-col items-center justify-between gap-4 text-xs text-neutral-charcoal/50 dark:text-white/50 md:flex-row">
               <p>© {currentYear} Anderson Cleaning, Inc.</p>
               <div className="flex gap-4">
                 <Link
                   href="/legal/privacy"
-                  className="transition-colors duration-150 hover:text-white/80"
+                  className="transition-colors duration-150 hover:text-neutral-charcoal dark:hover:text-white/80"
                 >
                   Privacy
                 </Link>
                 <Link
                   href="/legal/terms"
-                  className="transition-colors duration-150 hover:text-white/80"
+                  className="transition-colors duration-150 hover:text-neutral-charcoal dark:hover:text-white/80"
                 >
                   Terms
                 </Link>
                 <Link
                   href="/sitemap.xml"
-                  className="transition-colors duration-150 hover:text-white/80"
+                  className="transition-colors duration-150 hover:text-neutral-charcoal dark:hover:text-white/80"
                 >
                   Sitemap
                 </Link>

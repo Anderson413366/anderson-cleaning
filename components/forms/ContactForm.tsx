@@ -6,6 +6,7 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { Button } from '@/components/ui/Button'
 import { contactFormSchema, type ContactFormData } from '@/lib/validation/quote'
 import { Send, Loader2, CheckCircle2, AlertCircle } from 'lucide-react'
+import { inputClassName, labelClassName, errorClassName } from '@/lib/styles/formStyles'
 
 interface ContactFormProps {
   onSuccess?: () => void
@@ -119,50 +120,37 @@ export default function ContactForm({ onSuccess }: ContactFormProps) {
 
         {/* Name */}
         <div>
-          <label
-            htmlFor="name"
-            className="block text-sm font-medium text-neutral-charcoal/80 dark:text-white/80 mb-2"
-          >
+          <label htmlFor="name" className={labelClassName}>
             Name <span className="text-red-500">*</span>
           </label>
           <input
             {...register('name')}
             type="text"
             id="name"
-            className="w-full px-4 py-2 border border-neutral-light-grey dark:border-slate-700 rounded-lg bg-white dark:bg-slate-900 text-neutral-charcoal dark:text-white focus:ring-2 focus:ring-brand-bright-blue focus:border-brand-bright-blue placeholder:text-gray-400 dark:placeholder:text-gray-500 dark:placeholder:text-gray-400"
+            className={inputClassName}
             placeholder="John Smith"
           />
-          {errors.name && (
-            <p className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.name.message}</p>
-          )}
+          {errors.name && <p className={errorClassName}>{errors.name.message}</p>}
         </div>
 
         {/* Email */}
         <div>
-          <label
-            htmlFor="email"
-            className="block text-sm font-medium text-neutral-charcoal/80 dark:text-white/80 mb-2"
-          >
+          <label htmlFor="email" className={labelClassName}>
             Email Address <span className="text-red-500">*</span>
           </label>
           <input
             {...register('email')}
             type="email"
             id="email"
-            className="w-full px-4 py-2 border border-neutral-light-grey dark:border-slate-700 rounded-lg bg-white dark:bg-slate-900 text-neutral-charcoal dark:text-white focus:ring-2 focus:ring-brand-bright-blue focus:border-brand-bright-blue placeholder:text-gray-400 dark:placeholder:text-gray-500 dark:placeholder:text-gray-400"
+            className={inputClassName}
             placeholder="john@example.com"
           />
-          {errors.email && (
-            <p className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.email.message}</p>
-          )}
+          {errors.email && <p className={errorClassName}>{errors.email.message}</p>}
         </div>
 
         {/* Phone */}
         <div>
-          <label
-            htmlFor="phone"
-            className="block text-sm font-medium text-neutral-charcoal/80 dark:text-white/80 mb-2"
-          >
+          <label htmlFor="phone" className={labelClassName}>
             Phone Number <span className="text-red-500">*</span>
           </label>
           <input
@@ -170,20 +158,15 @@ export default function ContactForm({ onSuccess }: ContactFormProps) {
             type="tel"
             id="phone"
             autoComplete="tel"
-            className="w-full px-4 py-2 border border-neutral-light-grey dark:border-slate-700 rounded-lg bg-white dark:bg-slate-900 text-neutral-charcoal dark:text-white focus:ring-2 focus:ring-brand-bright-blue focus:border-brand-bright-blue placeholder:text-gray-400 dark:placeholder:text-gray-500 dark:placeholder:text-gray-400"
+            className={inputClassName}
             placeholder="(413) 306-5053"
           />
-          {errors.phone && (
-            <p className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.phone.message}</p>
-          )}
+          {errors.phone && <p className={errorClassName}>{errors.phone.message}</p>}
         </div>
 
         {/* Message */}
         <div>
-          <label
-            htmlFor="message"
-            className="block text-sm font-medium text-neutral-charcoal/80 dark:text-white/80 mb-2"
-          >
+          <label htmlFor="message" className={labelClassName}>
             Message <span className="text-red-500">*</span>
           </label>
           <textarea
@@ -191,12 +174,10 @@ export default function ContactForm({ onSuccess }: ContactFormProps) {
             id="message"
             rows={6}
             maxLength={1000}
-            className="w-full px-4 py-2 border border-neutral-light-grey dark:border-slate-700 rounded-lg bg-white dark:bg-slate-900 text-neutral-charcoal dark:text-white focus:ring-2 focus:ring-brand-bright-blue focus:border-brand-bright-blue placeholder:text-gray-400 dark:placeholder:text-gray-500 dark:placeholder:text-gray-400"
+            className={inputClassName}
             placeholder="Tell us about your cleaning needs, questions, or concerns..."
           />
-          {errors.message && (
-            <p className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.message.message}</p>
-          )}
+          {errors.message && <p className={errorClassName}>{errors.message.message}</p>}
         </div>
 
         {/* Honeypot field - hidden from users */}
