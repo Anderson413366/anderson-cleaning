@@ -208,7 +208,8 @@ export default function Header() {
             onMouseEnter={() => handleDropdownEnter('services')}
             onMouseLeave={handleDropdownLeave}
           >
-            <button
+            <Link
+              href="/services"
               className={`flex items-center gap-1 text-sm font-medium leading-6 transition-all duration-150 ${
                 pathname.startsWith('/services')
                   ? 'text-brand-bright-blue dark:text-white'
@@ -223,7 +224,7 @@ export default function Header() {
                   activeDropdown === 'services' ? 'rotate-180' : ''
                 }`}
               />
-            </button>
+            </Link>
 
             {/* Services Dropdown Menu */}
             {activeDropdown === 'services' && (
@@ -269,7 +270,8 @@ export default function Header() {
             onMouseEnter={() => handleDropdownEnter('industries')}
             onMouseLeave={handleDropdownLeave}
           >
-            <button
+            <Link
+              href="/industries"
               className={`flex items-center gap-1 text-sm font-medium leading-6 transition-all duration-150 ${
                 pathname.startsWith('/industries')
                   ? 'text-brand-bright-blue dark:text-white'
@@ -284,7 +286,7 @@ export default function Header() {
                   activeDropdown === 'industries' ? 'rotate-180' : ''
                 }`}
               />
-            </button>
+            </Link>
 
             {/* Industries Dropdown Menu */}
             {activeDropdown === 'industries' && (
@@ -325,7 +327,8 @@ export default function Header() {
             onMouseEnter={() => handleDropdownEnter('locations')}
             onMouseLeave={handleDropdownLeave}
           >
-            <button
+            <Link
+              href="/locations"
               className={`flex items-center gap-1 text-sm font-medium leading-6 transition-all duration-150 ${
                 pathname.startsWith('/locations')
                   ? 'text-brand-bright-blue dark:text-white'
@@ -340,7 +343,7 @@ export default function Header() {
                   activeDropdown === 'locations' ? 'rotate-180' : ''
                 }`}
               />
-            </button>
+            </Link>
 
             {/* Locations Dropdown Menu */}
             {activeDropdown === 'locations' && (
