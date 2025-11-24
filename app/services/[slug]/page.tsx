@@ -15,7 +15,6 @@ import {
 
 import StructuredData from '@/components/StructuredData'
 import { BreadcrumbSchema, FAQSchema } from '@/components/Schema'
-import StickyQuoteButton from '@/components/services/StickyQuoteButton'
 import { Button } from '@/components/ui/Button'
 import { YEARS_IN_BUSINESS } from '@/lib/constants'
 import {
@@ -90,14 +89,8 @@ export default async function ServiceDetailPage({ params }: { params: RouteParam
       {schema && <StructuredData schema={schema} />}
       <BreadcrumbSchema items={breadcrumbs} />
       {faqs.length > 0 && <FAQSchema faqs={faqs} />}
-      <StickyQuoteButton />
 
       <HeroSection service={service} ServiceIcon={ServiceIcon} />
-
-      <CTASection
-        heading="Get a detailed cleaning proposal in 24 hours"
-        subheading="Tell us about your facility and we will build a custom scope with transparent pricing."
-      />
 
       <OverviewSection service={service} />
 
@@ -109,12 +102,6 @@ export default async function ServiceDetailPage({ params }: { params: RouteParam
           <IndustriesCard service={service} />
         </div>
       </section>
-
-      <CTASection
-        heading="Need coverage between nightly cleans?"
-        subheading="Book a walkthrough and receive a full proposal with timeline, staffing plan, and documented SOPs."
-        variant="secondary"
-      />
 
       <TestimonialsSection service={service} />
       <RelatedAndFAQSection service={service} />
@@ -397,7 +384,6 @@ function CTASection({
               <h3 className="mt-2 text-3xl font-bold">{heading}</h3>
               <p className="mt-3 text-base opacity-80">{subheading}</p>
               <p className="mt-2 text-sm opacity-80">Serving {SERVICE_AREA}.</p>
-              <TrustBadges className="mt-6" theme={variant === 'primary' ? 'light' : 'dark'} />
             </div>
             <div className="flex flex-col gap-4 lg:justify-self-end">
               <Link href="/quote">
