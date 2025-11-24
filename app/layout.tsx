@@ -18,7 +18,6 @@ import {
   generateWebsiteSchema,
 } from '@/lib/seo/jsonld'
 import StructuredData from '@/components/StructuredData'
-import FloatingContact from '@/components/FloatingContact'
 import { COMPANY_INFO } from '@/lib/constants'
 
 // Load Inter font with Next.js font optimization
@@ -251,7 +250,6 @@ export default async function RootLayout({ children }: { children: React.ReactNo
               {children}
             </main>
             <Footer />
-            <FloatingContact />
             <CookieBanner />
           </ThemeProvider>
         </AccessibilityProvider>

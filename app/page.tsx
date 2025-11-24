@@ -39,14 +39,6 @@ export default function Home() {
       <section className="relative bg-white dark:bg-slate-900 pt-32 pb-20 md:pt-40 md:pb-28 lg:pt-48 lg:pb-32">
         <div className="container mx-auto px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
-            {/* Commercial Only Badge */}
-            <div className="mb-8">
-              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full border-2 border-brand-bright-blue text-brand-bright-blue text-sm font-semibold dark:border-white dark:text-white">
-                <Building2 className="h-4 w-4" />
-                Commercial Facilities Only • No Residential
-              </span>
-            </div>
-
             {/* Headline */}
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 leading-[1.1] tracking-tight text-neutral-charcoal dark:text-white">
               Commercial Cleaning Services Springfield MA & Western Massachusetts
@@ -57,28 +49,11 @@ export default function Home() {
               B2B-only janitorial services with W-2 teams, 24/7 support, and OSHA/CDC compliance for your Western MA & Northern CT facility
             </p>
 
-            {/* Trust Badges - Expanded with key differentiators */}
-            <div className="mb-12 flex flex-wrap items-center justify-center gap-6 text-sm text-neutral-charcoal dark:text-white">
-              <div className="flex items-center gap-2">
-                <Users className="h-5 w-5 text-brand-bright-blue" />
-                <span><strong>W-2 Employees Only</strong></span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Shield className="h-5 w-5 text-brand-bright-blue" />
-                <span><strong>Licensed & Insured</strong></span>
-              </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="h-5 w-5 text-brand-bright-blue" />
-                <span><strong>OSHA/CDC Compliant</strong></span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Clock className="h-5 w-5 text-brand-bright-blue" />
-                <span><strong>24/7 Emergency Support</strong></span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Award className="h-5 w-5 text-brand-bright-blue" />
-                <span><strong>18+ Years in Business</strong></span>
-              </div>
+            {/* Trust Statement - Apple-simple */}
+            <div className="mb-12">
+              <p className="text-lg font-semibold text-brand-deep-blue dark:text-brand-bright-blue">
+                18+ Years Serving Western Massachusetts Businesses
+              </p>
             </div>
 
             {/* CTAs - Standardized */}
@@ -101,34 +76,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Featured Testimonial - Dr. Sarah Mitchell */}
-      <section className="py-12 bg-neutral-off-white dark:bg-slate-900 border-y border-neutral-light-grey/50">
-        <div className="container mx-auto px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto">
-            <div className="bg-white dark:bg-slate-800 rounded-2xl p-8 md:p-10 shadow-sm border border-neutral-light-grey dark:border-slate-700">
-              <div className="flex items-center gap-1 mb-6" role="img" aria-label="5 out of 5 stars">
-                {[1, 2, 3, 4, 5].map((star) => (
-                  <Star key={star} className="h-5 w-5 text-yellow-400 fill-yellow-400" aria-hidden="true" />
-                ))}
-              </div>
-              <blockquote className="text-xl md:text-2xl leading-relaxed text-neutral-charcoal dark:text-white mb-6 font-medium">
-                "Anderson Cleaning Company transformed our medical office. Their attention to detail and OSHA compliance gives us complete peace of mind."
-              </blockquote>
-              <div className="flex items-center gap-4 pt-6 border-t border-neutral-light-grey dark:border-slate-700">
-                <div className="flex-shrink-0 h-14 w-14 rounded-full bg-brand-bright-blue/10 dark:bg-brand-bright-blue/20 flex items-center justify-center">
-                  <span className="text-2xl font-bold text-brand-bright-blue dark:text-brand-bright-blue">SM</span>
-                </div>
-                <div>
-                  <p className="font-semibold text-neutral-charcoal dark:text-white text-lg">Dr. Sarah Mitchell</p>
-                  <p className="text-body text-neutral-charcoal/70 dark:text-white/70">Springfield Family Medicine</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Services Overview Section */}
+      {/* Services Overview Section - Apple-style hierarchy */}
       <section id="services" className="py-20 bg-white dark:bg-slate-900 transition-colors">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
@@ -140,71 +88,91 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+          {/* Featured Services - Top 2 with visual prominence */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
             {[
               {
                 title: 'Office & Commercial Cleaning',
-                description: 'Daily/weekly programs for spotless workplaces',
+                description: 'Daily and weekly cleaning programs designed to keep your workplace spotless, professional, and welcoming',
                 icon: Building2,
                 label: 'Office building icon',
-                available: true,
               },
               {
                 title: 'Janitorial Services',
-                description: 'Reliable, accountable facility care',
+                description: 'Comprehensive facility care with reliable W-2 teams, consistent schedules, and accountable service',
                 icon: Sparkles,
                 label: 'Janitorial icon',
-                available: true,
-              },
-              {
-                title: 'Floor & Carpet Care',
-                description: 'Strip, wax, buff, and deep cleaning',
-                icon: Zap,
-                label: 'Floor care icon',
-                available: false,
-              },
-              {
-                title: 'Window Cleaning',
-                description: 'Interior & exterior, streak-free results',
-                icon: Square,
-                label: 'Window cleaning icon',
-                available: false,
-              },
-              {
-                title: 'Post-Construction',
-                description: 'Move-in ready cleanup after renovations',
-                icon: HardHat,
-                label: 'Construction icon',
-                available: false,
-              },
-              {
-                title: 'Supply Management',
-                description: 'Auto-replenishment of consumables',
-                icon: Package,
-                label: 'Supply management icon',
-                available: false,
               },
             ].map((service, i) => {
               const Icon = service.icon
               return (
                 <div
                   key={i}
-                  className="bg-white dark:bg-slate-800 border-2 border-neutral-light-grey dark:border-slate-700 rounded-xl p-6 shadow-sm hover:-translate-y-1 hover:border-brand-bright-blue transition-all duration-300 min-h-[190px] flex"
+                  className="bg-gradient-to-br from-brand-deep-blue to-brand-bright-blue text-white rounded-2xl p-8 shadow-lg hover:-translate-y-1 transition-all duration-300"
                 >
-                  <div className="flex items-start space-x-4 w-full">
-                    <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-neutral-off-white text-brand-bright-blue">
-                      <Icon className="h-6 w-6" aria-hidden="true" />
+                  <div className="flex items-start space-x-5">
+                    <div className="flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-2xl bg-white/20 backdrop-blur-sm">
+                      <Icon className="h-8 w-8" aria-hidden="true" />
                       <span className="sr-only">{service.label}</span>
                     </div>
                     <div className="flex-1">
-                      <h3 className="text-h3 leading-normal font-semibold text-neutral-charcoal dark:text-white mb-2">
+                      <h3 className="text-2xl font-bold mb-3">
                         {service.title}
                       </h3>
-                      <p className="text-body text-neutral-charcoal/80 dark:text-white/80">
+                      <p className="text-lg leading-relaxed text-white/95">
                         {service.description}
                       </p>
                     </div>
                   </div>
+                </div>
+              )
+            })}
+          </div>
+
+          {/* Additional Services - Secondary grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+            {[
+              {
+                title: 'Floor & Carpet Care',
+                description: 'Strip, wax, buff, and deep cleaning',
+                icon: Zap,
+                label: 'Floor care icon',
+              },
+              {
+                title: 'Window Cleaning',
+                description: 'Interior & exterior, streak-free results',
+                icon: Square,
+                label: 'Window cleaning icon',
+              },
+              {
+                title: 'Post-Construction',
+                description: 'Move-in ready cleanup after renovations',
+                icon: HardHat,
+                label: 'Construction icon',
+              },
+              {
+                title: 'Supply Management',
+                description: 'Auto-replenishment of consumables',
+                icon: Package,
+                label: 'Supply management icon',
+              },
+            ].map((service, i) => {
+              const Icon = service.icon
+              return (
+                <div
+                  key={i}
+                  className="bg-white dark:bg-slate-800 border border-neutral-light-grey dark:border-slate-700 rounded-xl p-5 hover:-translate-y-1 hover:border-brand-bright-blue transition-all duration-300"
+                >
+                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-brand-bright-blue/10 text-brand-bright-blue mb-3">
+                    <Icon className="h-5 w-5" aria-hidden="true" />
+                    <span className="sr-only">{service.label}</span>
+                  </div>
+                  <h3 className="text-lg font-semibold text-neutral-charcoal dark:text-white mb-2">
+                    {service.title}
+                  </h3>
+                  <p className="text-sm text-neutral-charcoal/70 dark:text-white/70">
+                    {service.description}
+                  </p>
                 </div>
               )
             })}

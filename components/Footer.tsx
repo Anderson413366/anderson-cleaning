@@ -7,20 +7,14 @@ const navigation = {
   services: [
     { name: 'Office Cleaning', href: '/services/office-cleaning' },
     { name: 'Janitorial Services', href: '/services/janitorial-services' },
-    { name: 'Floor & Carpet Care', href: '/services/floor-care' },
-    { name: 'Window Cleaning', href: '/services/window-cleaning' },
-    { name: 'Post-Construction', href: '/services/post-construction' },
-    { name: 'Supply Management', href: '/supply-management' },
+    { name: 'All Services', href: '/services' },
   ],
   company: [
-    { name: 'About Us', href: '/about' },
+    { name: 'About', href: '/about' },
     { name: 'Industries', href: '/industries' },
     { name: 'Case Studies', href: '/case-studies' },
-    { name: 'Testimonials', href: '/testimonials' },
     { name: 'Blog', href: '/blog' },
-    { name: 'Careers', href: '/careers' },
     { name: 'FAQ', href: '/faq' },
-    { name: 'Special Offers', href: '/promotions' },
   ],
   social: [
     {

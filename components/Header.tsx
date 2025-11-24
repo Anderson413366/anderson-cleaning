@@ -3,8 +3,7 @@
 import { useState, useEffect, useMemo, useCallback, useRef } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { Menu, X, Phone, Mail, Moon, Sun, ChevronDown } from 'lucide-react'
-import { useTheme } from '@/lib/ThemeProvider'
+import { Menu, X, Phone, Mail, ChevronDown } from 'lucide-react'
 import { CONTACT_INFO } from '@/lib/constants'
 import { serviceSlugs, servicesData } from '@/lib/services-data'
 import { industries } from '@/lib/industries-data'
@@ -75,7 +74,6 @@ export default function Header() {
   const [hideHeader, setHideHeader] = useState(false)
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
   const pathname = usePathname()
-  const { theme, toggleTheme } = useTheme()
   const dropdownTimerRef = useRef<NodeJS.Timeout | null>(null)
   const lastScrollY = useRef(0)
 
@@ -483,17 +481,6 @@ export default function Header() {
           >
             <Phone className="h-5 w-5" />
           </a>
-          <button
-            onClick={toggleTheme}
-            className="inline-flex items-center justify-center h-10 w-10 rounded-full bg-neutral-light-grey/50 text-neutral-charcoal hover:bg-neutral-light-grey dark:bg-white/10 dark:text-white dark:hover:bg-white/20 transition-all duration-150"
-            aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
-          >
-            {theme === 'dark' ? (
-              <Sun className="h-5 w-5" />
-            ) : (
-              <Moon className="h-5 w-5" />
-            )}
-          </button>
           <Link
             href="/quote"
             className="rounded-full bg-brand-bright-blue px-6 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-[#006bc4] transition-all duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-bright-blue focus-visible:ring-offset-2"

@@ -11,6 +11,7 @@ import FormLegalNotice from './FormLegalNotice'
 
 const miniQuoteSchema = z.object({
   name: z.string().min(2, 'Name required'),
+  email: z.string().email('Valid email required'),
   company: z.string().optional(),
   phone: z.string().regex(/^\d{10}$/, 'Phone must be 10 digits'),
   message: z.string().min(10, 'Please provide more details'),
@@ -50,6 +51,7 @@ export default function QuoteMiniForm({
     // Supabase generated types need to be refreshed for this table, so bypass TS for now.
     const { error } = await (supabase as any).from('quote_requests_mini').insert({
       name: data.name,
+      email: data.email,
       company: data.company || null,
       phone: data.phone,
       message: data.message,
@@ -76,8 +78,8 @@ export default function QuoteMiniForm({
     return (
       <div className="bg-brand-bright-blue/10 border-2 border-brand-bright-blue rounded-lg p-6 text-center">
         <CheckCircle2 className="h-12 w-12 text-brand-bright-blue mx-auto mb-3" />
-        <h3 className="text-h3 mb-2">We'll call you soon!</h3>
-        <p className="text-body-sm">Expect a call within 24 hours during business hours.</p>
+        <h3 className="text-h3 mb-2">We'll be in touch soon!</h3>
+        <p className="text-body-sm">Expect a response within 24 hours during business hours.</p>
       </div>
     )
   }
@@ -107,6 +109,19 @@ export default function QuoteMiniForm({
 
       <div>
         <label className="block text-body-sm font-semibold mb-1 text-neutral-charcoal dark:text-white">
+          Email *
+        </label>
+        <input
+          {...register('email')}
+          type="email"
+          className="w-full border-2 border-neutral-light-grey rounded px-4 py-2 focus:border-brand-bright-blue outline-none bg-white dark:bg-slate-800 text-neutral-charcoal dark:text-white placeholder:text-neutral-charcoal dark:placeholder:text-neutral-charcoal/60 dark:placeholder:text-neutral-charcoal"
+          placeholder="your.name@company.com"
+        />
+        {errors.email && <p className="text-sm text-red-600 mt-1">{errors.email.message}</p>}
+      </div>
+
+      <div>
+        <label className="block text-body-sm font-semibold mb-1 text-neutral-charcoal dark:text-white">
           Company
         </label>
         <input
@@ -125,7 +140,7 @@ export default function QuoteMiniForm({
           type="tel"
           maxLength={10}
           className="w-full border-2 border-neutral-light-grey rounded px-4 py-2 focus:border-brand-bright-blue outline-none bg-white dark:bg-slate-800 text-neutral-charcoal dark:text-white placeholder:text-neutral-charcoal dark:placeholder:text-neutral-charcoal/60 dark:placeholder:text-neutral-charcoal"
-          placeholder="1234567890"
+          placeholder="4133065053"
         />
         {errors.phone && <p className="text-sm text-red-600 mt-1">{errors.phone.message}</p>}
       </div>
