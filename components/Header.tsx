@@ -9,11 +9,20 @@ import { CONTACT_INFO } from '@/lib/constants'
 import { serviceSlugs, servicesData } from '@/lib/services-data'
 import { industries } from '@/lib/industries-data'
 
-// Simplified navigation - FAQ, Blog, Testimonials, Careers moved to Footer Quick Links
+// Simplified navigation - 5 main categories + Contact
 const navigation = [
-  { name: 'Home', href: '/' },
   { name: 'About', href: '/about' },
   { name: 'Contact', href: '/contact' },
+]
+
+// Resources Menu Data - consolidating secondary pages
+const RESOURCES_MENU = [
+  { name: 'Blog & Articles', href: '/blog', description: 'Cleaning tips and industry insights' },
+  { name: 'FAQ', href: '/faq', description: 'Common questions answered' },
+  { name: 'Case Studies', href: '/case-studies', description: 'Client success stories' },
+  { name: 'Testimonials', href: '/testimonials', description: 'What our clients say' },
+  { name: 'Careers', href: '/careers', description: 'Join our team' },
+  { name: 'Special Offers', href: '/promotions', description: 'Current promotions and referrals' },
 ]
 
 // Removed phone variants for simplicity
@@ -378,6 +387,58 @@ export default function Header() {
             )}
           </div>
 
+          {/* Resources Dropdown */}
+          <div
+            className="relative"
+            onMouseEnter={() => handleDropdownEnter('resources')}
+            onMouseLeave={handleDropdownLeave}
+          >
+            <button
+              className={`flex items-center gap-1 text-sm font-medium leading-6 transition-all duration-150 ${
+                pathname.startsWith('/blog') || pathname.startsWith('/faq') || pathname.startsWith('/case-studies') || pathname.startsWith('/testimonials') || pathname.startsWith('/careers') || pathname.startsWith('/promotions')
+                  ? 'text-brand-bright-blue dark:text-white'
+                  : 'text-neutral-charcoal dark:text-white hover:text-brand-bright-blue dark:hover:text-white/80'
+              }`}
+              aria-expanded={activeDropdown === 'resources'}
+              aria-haspopup="true"
+            >
+              Resources
+              <ChevronDown
+                className={`h-3.5 w-3.5 transition-transform duration-200 ${
+                  activeDropdown === 'resources' ? 'rotate-180' : ''
+                }`}
+              />
+            </button>
+
+            {/* Resources Dropdown Menu */}
+            {activeDropdown === 'resources' && (
+              <div className="absolute left-0 top-full mt-2 w-80 rounded-lg border border-gray-200 bg-white shadow-xl dark:border-white/10 dark:bg-slate-800">
+                <div className="border-b border-gray-100 px-4 pb-2 pt-4 dark:border-white/10">
+                  <h3 className="text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400">
+                    Resources & Learning
+                  </h3>
+                </div>
+                <div className="py-2">
+                  {RESOURCES_MENU.map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      className="group block px-4 py-3 transition-colors hover:bg-blue-50 dark:hover:bg-slate-700"
+                      onClick={closeDropdown}
+                    >
+                      <div className="font-medium text-gray-900 group-hover:text-brand-bright-blue dark:text-white dark:group-hover:text-brand-bright-blue">
+                        {item.name}
+                      </div>
+                      <div className="mt-1 text-sm text-gray-600 dark:text-gray-400">
+                        {item.description}
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+
           {/* Regular Navigation Links */}
           {navigation.map((item) => (
             <Link
@@ -412,7 +473,7 @@ export default function Header() {
             href="/quote"
             className="rounded-full bg-brand-bright-blue px-6 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-[#006bc4] transition-all duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-bright-blue focus-visible:ring-offset-2"
           >
-            Get a Free Quote
+            Request a Quote
           </Link>
         </div>
       </nav>
@@ -592,6 +653,40 @@ export default function Header() {
                     )}
                   </div>
 
+                  {/* Resources */}
+                  <div>
+                    <button
+                      onClick={() =>
+                        setActiveDropdown(
+                          activeDropdown === 'mobile-resources' ? null : 'mobile-resources'
+                        )
+                      }
+                      className="flex w-full items-center justify-between py-2 text-left font-semibold text-neutral-charcoal dark:text-white"
+                      aria-expanded={activeDropdown === 'mobile-resources'}
+                    >
+                      Resources
+                      <ChevronDown
+                        className={`h-4 w-4 transition-transform ${
+                          activeDropdown === 'mobile-resources' ? 'rotate-180' : ''
+                        }`}
+                      />
+                    </button>
+                    {activeDropdown === 'mobile-resources' && (
+                      <div className="space-y-2 pl-4 pb-2">
+                        {RESOURCES_MENU.map((item) => (
+                          <Link
+                            key={item.href}
+                            href={item.href}
+                            className="block py-2 text-sm text-gray-600 hover:text-brand-bright-blue dark:text-gray-300 dark:hover:text-brand-bright-blue"
+                            onClick={() => setMobileMenuOpen(false)}
+                          >
+                            {item.name}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+
                   {/* Regular Links */}
                   {navigation.map((item) => (
                     <Link
@@ -614,7 +709,7 @@ export default function Header() {
                     className="block w-full rounded-full bg-brand-bright-blue px-7 py-4 text-center text-base font-semibold text-white shadow-sm hover:bg-[#006bc4] transition-all duration-150"
                     onClick={() => setMobileMenuOpen(false)}
                   >
-                    Get a Free Quote
+                    Request a Quote
                   </Link>
                   <div className="mt-4 space-y-3">
                     <a
@@ -652,7 +747,7 @@ export default function Header() {
             href="/quote"
             className="flex-1 flex items-center justify-center gap-2 py-3 rounded-full bg-brand-bright-blue text-sm font-semibold text-white shadow-sm transition-colors active:bg-[#006bc4]"
           >
-            Get Quote
+            Quote
           </Link>
         </div>
       </div>

@@ -5,11 +5,7 @@ import Link from 'next/link'
 import { Button } from '@/components/ui/Button'
 import QuoteMiniForm from '@/components/forms/QuoteMiniForm'
 import QuoteAdvancedModal from '@/components/forms/QuoteAdvancedModal'
-import BeforeAfterSlider from '@/components/sections/BeforeAfterSlider'
-import StatsBar from '@/components/sections/StatsBar'
 import PromotionalModal from '@/components/PromotionalModal'
-import { CertificationBar } from '@/components/Certifications'
-import { YEARS_IN_BUSINESS } from '@/lib/constants'
 import {
   ArrowRight,
   Award,
@@ -44,18 +40,10 @@ export default function Home() {
         <div className="container mx-auto px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             {/* Commercial Only Badge */}
-            <div className="mb-6">
+            <div className="mb-8">
               <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full border-2 border-brand-bright-blue text-brand-bright-blue text-sm font-semibold dark:border-white dark:text-white">
                 <Building2 className="h-4 w-4" />
                 Commercial Facilities Only • No Residential
-              </span>
-            </div>
-
-            {/* Eyebrow Badge */}
-            <div className="mb-8">
-              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-bright-blue/10 text-brand-bright-blue text-sm font-medium dark:bg-brand-bright-blue/20 dark:text-white">
-                <Award className="h-4 w-4" />
-                Trusted by 100+ businesses since 2007
               </span>
             </div>
 
@@ -112,11 +100,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      <StatsBar background="gray" className="border-y border-neutral-light-grey/70" />
-
-      {/* Certification Bar */}
-      <CertificationBar />
 
       {/* Services Overview Section */}
       <section id="services" className="py-20 bg-white dark:bg-slate-900 transition-colors">
@@ -186,20 +169,13 @@ export default function Home() {
                       <Icon className="h-6 w-6" aria-hidden="true" />
                       <span className="sr-only">{service.label}</span>
                     </div>
-                    <div className="flex-1 flex flex-col justify-between">
-                      <div>
-                        <h3 className="text-h3 leading-normal font-semibold text-neutral-charcoal dark:text-white mb-2">
-                          {service.title}
-                        </h3>
-                        <p className="text-body text-neutral-charcoal/80 dark:text-white/80 mb-3">
-                          {service.description}
-                        </p>
-                      </div>
-                      {!service.available && (
-                        <span className="inline-block px-3 py-1 text-body-sm rounded-full bg-neutral-off-white text-brand-deep-blue dark:bg-slate-800 dark:text-white">
-                          Premium add-on
-                        </span>
-                      )}
+                    <div className="flex-1">
+                      <h3 className="text-h3 leading-normal font-semibold text-neutral-charcoal dark:text-white mb-2">
+                        {service.title}
+                      </h3>
+                      <p className="text-body text-neutral-charcoal/80 dark:text-white/80">
+                        {service.description}
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -357,311 +333,19 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Visual Proof - Before & After */}
-      <section className="py-20 bg-white dark:bg-slate-900">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-h2 leading-tight font-bold text-neutral-charcoal dark:text-white mb-4">
-              Our Work Speaks for Itself
-            </h2>
-            <p className="text-body text-neutral-charcoal/70 dark:text-white/80 mb-8">
-              See the Anderson Cleaning Company difference with interactive before/after comparisons
-            </p>
-          </div>
-
-          <BeforeAfterSlider
-            items={[
-              {
-                beforeImage:
-                  'https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800&q=80',
-                afterImage:
-                  'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=800&q=80',
-                beforeLabel: 'Before',
-                afterLabel: 'After',
-                title: 'Spotless Floors',
-                description:
-                  'Professional strip, wax, and buff services that restore shine and extend floor life',
-              },
-              {
-                beforeImage:
-                  'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&q=80',
-                afterImage:
-                  'https://images.unsplash.com/photo-1600607687644-c7171b42498b?w=800&q=80',
-                beforeLabel: 'Before',
-                afterLabel: 'After',
-                title: 'Sanitized Spaces',
-                description: 'Healthcare-grade disinfection that meets OSHA and CDC standards',
-              },
-            ]}
-            height="h-[500px]"
-          />
-        </div>
-      </section>
-
-      {/* Certifications & Trust Badges */}
-      <section className="py-20 bg-white dark:bg-slate-900">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-h2 leading-tight font-bold text-neutral-charcoal dark:text-white mb-4">
-              Licensed, Certified & Trusted
-            </h2>
-            <p className="text-body text-neutral-charcoal/70 dark:text-white/80">
-              Documented to meet OSHA, CDC, and industry standards
-            </p>
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto mb-12">
-            {[
-              { icon: Shield, label: 'Licensed & Insured', desc: 'Full liability coverage' },
-              { icon: Users, label: 'Background Checked', desc: 'All staff verified' },
-              {
-                icon: Award,
-                label: `${YEARS_IN_BUSINESS} Years of Excellence`,
-                desc: 'Serving Western MA & Northern CT Since 2007',
-              },
-              { icon: Star, label: '100% Satisfaction', desc: 'Guaranteed results' },
-              { icon: CheckCircle2, label: 'OSHA Compliant', desc: 'Safety trained' },
-              { icon: Sparkles, label: 'Eco-Friendly', desc: 'Green cleaning' },
-              { icon: Clock, label: '24/7 Support', desc: 'Current clients on-site ≤2 hrs' },
-              { icon: Building2, label: 'B2B Focused', desc: 'Commercial only' },
-            ].map((badge, i) => {
-              const Icon = badge.icon
-              return (
-                <div
-                  key={i}
-                  className="bg-neutral-off-white dark:bg-slate-800 border border-neutral-light-grey dark:border-slate-700 rounded-xl p-6 text-center shadow-sm"
-                >
-                  <Icon className="h-12 w-12 text-brand-deep-blue dark:text-brand-bright-blue mx-auto mb-3" />
-                  <h3 className="font-bold text-neutral-charcoal dark:text-white mb-1 text-body-sm">
-                    {badge.label}
-                  </h3>
-                  <p className="text-body-sm text-neutral-charcoal/70 dark:text-white/80">{badge.desc}</p>
-                </div>
-              )
-            })}
-          </div>
-
-          <div className="bg-white dark:bg-slate-800 rounded-2xl p-8 max-w-3xl mx-auto border border-neutral-light-grey dark:border-slate-700 shadow-sm">
-            <div className="text-center mb-6">
-              <h3 className="text-h3 font-bold text-neutral-charcoal dark:text-white mb-2">
-                Our Commitment to You
-              </h3>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="flex items-start space-x-3">
-                <CheckCircle2 className="h-5 w-5 text-brand-bright-blue flex-shrink-0 mt-0.5" />
-                <span className="text-body text-neutral-charcoal/80 dark:text-white/80">
-                  Bonded & insured for your protection
-                </span>
-              </div>
-              <div className="flex items-start space-x-3">
-                <CheckCircle2 className="h-5 w-5 text-brand-bright-blue flex-shrink-0 mt-0.5" />
-                <span className="text-body text-neutral-charcoal/80 dark:text-white/80">
-                  Full-time W2 employees only
-                </span>
-              </div>
-              <div className="flex items-start space-x-3">
-                <CheckCircle2 className="h-5 w-5 text-brand-bright-blue flex-shrink-0 mt-0.5" />
-                <span className="text-body text-neutral-charcoal/80 dark:text-white/80">
-                  40+ hours of training per cleaner
-                </span>
-              </div>
-              <div className="flex items-start space-x-3">
-                <CheckCircle2 className="h-5 w-5 text-brand-bright-blue flex-shrink-0 mt-0.5" />
-                <span className="text-body text-neutral-charcoal/80 dark:text-white/80">
-                  Quality audits & checklists
-                </span>
-              </div>
-              <div className="flex items-start space-x-3">
-                <CheckCircle2 className="h-5 w-5 text-brand-bright-blue flex-shrink-0 mt-0.5" />
-                <span className="text-body text-neutral-charcoal/80 dark:text-white/80">
-                  EPA-registered disinfectants
-                </span>
-              </div>
-              <div className="flex items-start space-x-3">
-                <CheckCircle2 className="h-5 w-5 text-brand-bright-blue flex-shrink-0 mt-0.5" />
-                <span className="text-body text-neutral-charcoal/80 dark:text-white/80">
-                  Custom SOPs for your facility
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Resources & Learning Center */}
+      {/* Final CTA Section with Quote Form */}
       <section className="py-20 bg-neutral-off-white dark:bg-slate-900">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-h2 leading-tight font-bold text-neutral-charcoal dark:text-white mb-4">
-              Resources & Learning Center
-            </h2>
-            <p className="text-body text-neutral-charcoal/70 dark:text-white/80">
-              Expert tips, answers to your questions, and special offers
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Blog/Resources Card */}
-            <div className="bg-white dark:bg-slate-800 border border-neutral-light-grey dark:border-slate-700 rounded-xl shadow-sm overflow-hidden hover:-translate-y-1 transition-all duration-300">
-              <div className="bg-brand-deep-blue p-6 text-white">
-                <BookOpen className="h-8 w-8 mb-3" aria-hidden="true" />
-                <h3 className="text-h3 font-bold mb-2">Blog & Resources</h3>
-                <p className="text-body text-white/80">Expert cleaning tips and industry insights</p>
-              </div>
-              <div className="p-6">
-                <ul className="space-y-3 mb-6">
-                  <li className="flex items-start">
-                    <CheckCircle2 className="h-5 w-5 text-brand-bright-blue mr-2 flex-shrink-0 mt-0.5" />
-                    <span className="text-body text-neutral-charcoal dark:text-white">
-                      Office Cleaning Best Practices
-                    </span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle2 className="h-5 w-5 text-brand-bright-blue mr-2 flex-shrink-0 mt-0.5" />
-                    <span className="text-body text-neutral-charcoal dark:text-white">
-                      Green Cleaning Benefits
-                    </span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle2 className="h-5 w-5 text-brand-bright-blue mr-2 flex-shrink-0 mt-0.5" />
-                    <span className="text-body text-neutral-charcoal dark:text-white">
-                      Healthcare Facility Standards
-                    </span>
-                  </li>
-                </ul>
-                <Link href="/blog">
-                  <Button variant="primary" className="w-full group">
-                    Explore Articles
-                    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                  </Button>
-                </Link>
-              </div>
+          <div className="max-w-3xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-h2 leading-tight font-bold text-neutral-charcoal dark:text-white mb-4">
+                Request Your Free Quote
+              </h2>
+              <p className="text-body text-neutral-charcoal/70 dark:text-white/80">
+                Tell us about your facility and we'll provide a custom quote within 24 hours
+              </p>
             </div>
-
-            {/* FAQ Card */}
-            <div className="bg-white dark:bg-slate-800 border border-neutral-light-grey dark:border-slate-700 rounded-xl shadow-sm overflow-hidden hover:-translate-y-1 transition-all duration-300">
-              <div className="bg-brand-bright-blue p-6 text-white">
-                <HelpCircle className="h-8 w-8 mb-3" aria-hidden="true" />
-                <h3 className="text-h3 font-bold mb-2">Frequently Asked Questions</h3>
-                <p className="text-body text-white/80">Get answers to common questions</p>
-              </div>
-              <div className="p-6">
-                <ul className="space-y-3 mb-6">
-                  <li className="flex items-start">
-                    <CheckCircle2 className="h-5 w-5 text-brand-bright-blue mr-2 flex-shrink-0 mt-0.5" />
-                    <span className="text-body text-neutral-charcoal dark:text-white">Contract & Pricing Info</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle2 className="h-5 w-5 text-brand-bright-blue mr-2 flex-shrink-0 mt-0.5" />
-                    <span className="text-body text-neutral-charcoal dark:text-white">
-                      Staff Vetting & Training
-                    </span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle2 className="h-5 w-5 text-brand-bright-blue mr-2 flex-shrink-0 mt-0.5" />
-                    <span className="text-body text-neutral-charcoal dark:text-white">
-                      Service Area & Scheduling
-                    </span>
-                  </li>
-                </ul>
-                <Link href="/faq">
-                  <Button variant="primary" className="w-full group">
-                    View All FAQs
-                    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                  </Button>
-                </Link>
-              </div>
-            </div>
-
-            {/* Promotions Card */}
-            <div className="bg-white dark:bg-slate-800 border border-neutral-light-grey dark:border-slate-700 rounded-xl shadow-sm overflow-hidden hover:-translate-y-1 transition-all duration-300">
-              <div className="bg-brand-deep-blue p-6 text-white">
-                <Gift className="h-8 w-8 mb-3" aria-hidden="true" />
-                <h3 className="text-h3 font-bold mb-2">Special Offers</h3>
-                <p className="text-body text-white/80">Exclusive promotions and referral rewards</p>
-              </div>
-              <div className="p-6">
-                <ul className="space-y-3 mb-6">
-                  <li className="flex items-start">
-                    <CheckCircle2 className="h-5 w-5 text-brand-bright-blue mr-2 flex-shrink-0 mt-0.5" />
-                    <span className="text-body text-neutral-charcoal dark:text-white">
-                      10% Off First Month for New Clients
-                    </span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle2 className="h-5 w-5 text-brand-bright-blue mr-2 flex-shrink-0 mt-0.5" />
-                    <span className="text-body text-neutral-charcoal dark:text-white">
-                      $100 Referral Bonus Program
-                    </span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle2 className="h-5 w-5 text-brand-bright-blue mr-2 flex-shrink-0 mt-0.5" />
-                    <span className="text-body text-neutral-charcoal dark:text-white">
-                      Seasonal Promotions
-                    </span>
-                  </li>
-                </ul>
-                <Link href="/promotions">
-                  <Button variant="accent" className="w-full group">
-                    See All Offers
-                    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                  </Button>
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Value Props */}
-      <section className="py-20 bg-white dark:bg-slate-900 transition-colors">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-h2 leading-tight font-bold text-neutral-charcoal dark:text-white mb-4">
-              The Anderson Difference
-            </h2>
-            <p className="text-body text-neutral-charcoal/70 dark:text-white/80">
-              What sets us apart in commercial cleaning
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              {
-                icon: Users,
-                title: 'Personalized Attention',
-                description: 'Local team, dedicated account manager, and site-specific SOPs.',
-              },
-              {
-                icon: Shield,
-                title: 'Corporate-Grade Standards',
-                description: 'Checklists, quality audits, and documented processes.',
-              },
-              {
-                icon: Award,
-                title: 'Full-Time Salaried Staff',
-                description: 'Stable, trained, background-checked professionals.',
-              },
-              {
-                icon: Headphones,
-                title: '24/7 Support',
-                description: 'Current clients get emergency dispatch with on-site arrival in ≤2 hours.',
-              },
-            ].map((item, i) => {
-              const Icon = item.icon
-              return (
-                <div key={i} className="text-center">
-                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-full mb-4 bg-brand-deep-blue/10 text-brand-deep-blue dark:bg-white/10 dark:text-white">
-                    <Icon className="h-8 w-8" />
-                  </div>
-                  <h3 className="text-h3 leading-normal font-semibold text-neutral-charcoal dark:text-white mb-2">
-                    {item.title}
-                  </h3>
-                  <p className="text-body text-neutral-charcoal/80 dark:text-white/80">{item.description}</p>
-                </div>
-              )
-            })}
+            <QuoteMiniForm />
           </div>
         </div>
       </section>
