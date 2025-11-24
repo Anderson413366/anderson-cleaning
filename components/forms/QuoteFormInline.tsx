@@ -483,7 +483,7 @@ export default function QuoteFormInline({
               focus:ring-[var(--color-primary-base)]/20
               transition-[var(--transition-colors)]
             `}
-            placeholder="(555) 123-4567"
+            placeholder="(413) 555-0123"
             maxLength={14}
             required
           />

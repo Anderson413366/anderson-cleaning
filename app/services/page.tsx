@@ -398,7 +398,7 @@ export default function ServicesPage() {
               Our Service Area
             </h2>
             <p className="text-body text-neutral-charcoal/70 dark:text-white/80 max-w-3xl mx-auto">
-              We proudly serve commercial facilities throughout Western Massachusetts and Northern Connecticut, within a 50-mile radius of our West Springfield headquarters.
+              We proudly serve commercial facilities throughout Western Massachusetts and Northern Connecticut, within a 100-mile radius of our West Springfield headquarters.
             </p>
           </div>
 
@@ -414,7 +414,7 @@ export default function ServicesPage() {
                   {[
                     'Western Massachusetts',
                     'Northern Connecticut',
-                    '50-mile radius of West Springfield',
+                    '100-mile radius of West Springfield',
                   ].map((area) => (
                     <li key={area} className="flex items-start">
                       <CheckCircle2 className="h-5 w-5 text-brand-bright-blue mr-2 mt-0.5 flex-shrink-0" />

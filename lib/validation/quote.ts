@@ -34,7 +34,7 @@ export const quoteStep1Schema = z.object({
     .min(2, 'Company name must be at least 2 characters')
     .max(200, 'Company name must be less than 200 characters'),
   email: z.string().email('Please enter a valid email address').toLowerCase(),
-  phone: z.string().regex(phoneRegex, 'Please enter a valid phone number (e.g., 555-123-4567)'),
+  phone: z.string().regex(phoneRegex, 'Please enter a valid phone number (e.g., 413-555-0123)'),
 })
 
 /**
@@ -159,7 +159,7 @@ export const contactFormSchema = z.object({
     .max(100, 'Name must be less than 100 characters')
     .regex(/^[a-zA-Z\s'-]+$/, 'Name can only contain letters, spaces, hyphens, and apostrophes'),
   email: z.string().email('Please enter a valid email address').toLowerCase(),
-  phone: z.string().regex(phoneRegex, 'Please enter a valid phone number (e.g., 555-123-4567)'),
+  phone: z.string().regex(phoneRegex, 'Please enter a valid phone number (e.g., 413-555-0123)'),
   company: z.string().max(200, 'Company name must be less than 200 characters').optional(),
   message: z
     .string()
@@ -193,7 +193,7 @@ export const quickQuoteFormSchema = z.object({
     .regex(/^[a-zA-Z\s'-]+$/, 'Name can only contain letters, spaces, hyphens, and apostrophes'),
   company: z.string().max(200, 'Company name must be less than 200 characters').optional(),
   email: z.string().email('Please enter a valid email address').toLowerCase(),
-  phone: z.string().regex(phoneRegex, 'Please enter a valid phone number (e.g., 555-123-4567)'),
+  phone: z.string().regex(phoneRegex, 'Please enter a valid phone number (e.g., 413-555-0123)'),
   facilityType: z.enum(quickQuoteFacilityOptions, {
     required_error: 'Please select your facility type',
   }),
