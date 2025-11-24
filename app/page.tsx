@@ -287,10 +287,23 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="bg-brand-deep-blue text-white rounded-lg p-6">
-              <p className="text-body leading-relaxed text-white/90">
-                <strong>Note:</strong> We focus exclusively on B2B commercial cleaning. We do not
-                service restaurants or facilities requiring 7-day/week cleaning.
+            {/* Positive B2B Focus Callout */}
+            <div className="bg-gradient-to-br from-brand-deep-blue to-brand-bright-blue text-white rounded-xl p-8 md:p-10">
+              <h3 className="text-h3 font-bold text-white mb-4">
+                Proudly Serving B2B Facilities
+              </h3>
+              <p className="text-body leading-relaxed text-white/95 mb-6">
+                We specialize in professional commercial cleaning for offices, healthcare facilities,
+                educational institutions, retail spaces, and industrial facilities across Western MA & CT.
+              </p>
+              <Link
+                href="/quote"
+                className="inline-flex items-center justify-center rounded-[10px] bg-white px-6 py-3 text-button font-semibold text-brand-deep-blue transition-all duration-150 hover:bg-gray-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-brand-deep-blue"
+              >
+                Request a Quote
+              </Link>
+              <p className="mt-6 text-sm text-white/70">
+                Note: We focus exclusively on B2B commercial cleaning and do not service restaurants or facilities requiring 7-day/week cleaning.
               </p>
             </div>
           </div>
