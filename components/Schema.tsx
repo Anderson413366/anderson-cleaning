@@ -479,3 +479,62 @@ export function WebsiteSchema({ nonce }: { nonce?: string | null }) {
     />
   )
 }
+
+export function ArticleSchema({
+  headline,
+  description,
+  image,
+  datePublished,
+  dateModified,
+  author,
+  url,
+  nonce,
+}: {
+  headline: string
+  description: string
+  image: string
+  datePublished: string
+  dateModified?: string
+  author: string
+  url: string
+  nonce?: string | null
+}) {
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline,
+    description,
+    image: {
+      '@type': 'ImageObject',
+      url: image,
+    },
+    datePublished,
+    dateModified: dateModified || datePublished,
+    author: {
+      '@type': 'Organization',
+      name: author,
+      url: 'https://andersoncleaning.com',
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Anderson Cleaning Company',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://andersoncleaning.com/brand/color/logo-full-2000.png',
+      },
+    },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': url,
+    },
+    url,
+  }
+
+  return (
+    <script
+      type="application/ld+json"
+      nonce={nonce || undefined}
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  )
+}

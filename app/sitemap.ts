@@ -127,6 +127,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ]
 
+  // Blog posts
+  const blogPosts = [
+    'office-cleaning-checklist-flu-season',
+    'benefits-green-cleaning-workplace',
+    'commercial-cleaning-frequency-guide',
+    'medical-facility-cleaning-standards',
+    'choosing-commercial-cleaning-company',
+    'floor-care-maintenance-tips',
+  ].map((slug) => ({
+    url: `${baseUrl}/blog/${slug}`,
+    lastModified: currentDate,
+    changeFrequency: 'monthly' as const,
+    priority: 0.6,
+  }))
+
   // Case studies
   const caseStudyPages = [
     {
@@ -198,6 +213,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...servicePages,
     ...industryPages,
     ...secondaryPages,
+    ...blogPosts,
     ...caseStudyPages,
     ...legalPages,
     ...additionalPages,

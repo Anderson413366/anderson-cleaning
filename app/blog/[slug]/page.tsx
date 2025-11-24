@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { notFound } from 'next/navigation'
 import { Button } from '@/components/ui/Button'
 import { Calendar, Clock, ArrowLeft, Share2, CheckCircle2, AlertTriangle } from 'lucide-react'
+import { ArticleSchema, BreadcrumbSchema } from '@/components/Schema'
 
 const blogContent: { [key: string]: any } = {
   'office-cleaning-checklist-flu-season': {
@@ -502,8 +503,31 @@ export default async function BlogPost({
     notFound()
   }
 
+  // Extract excerpt from content (first 200 characters of text)
+  const excerpt = post.content
+    .replace(/<[^>]*>/g, '')
+    .substring(0, 200)
+    .trim() + '...'
+
+  // Breadcrumb schema
+  const breadcrumbs = [
+    { name: 'Home', url: 'https://andersoncleaning.com' },
+    { name: 'Blog', url: 'https://andersoncleaning.com/blog' },
+    { name: post.title, url: `https://andersoncleaning.com/blog/${slug}` },
+  ]
+
   return (
     <div className="min-h-screen bg-neutral-off-white dark:bg-slate-900">
+      <BreadcrumbSchema items={breadcrumbs} />
+      <ArticleSchema
+        headline={post.title}
+        description={excerpt}
+        image={post.image}
+        datePublished={post.publishedDate}
+        dateModified={post.publishedDate}
+        author={post.author}
+        url={`https://andersoncleaning.com/blog/${slug}`}
+      />
       {/* Article Header */}
       <article className="pt-28 pb-12">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">

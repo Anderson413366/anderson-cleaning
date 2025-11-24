@@ -131,6 +131,29 @@ const nextConfig = {
         destination: '/careers',
         permanent: true,
       },
+      // Blog migration redirects from hub.andersoncleaning.com
+      {
+        source: '/:slug(office-cleaning-checklist-flu-season|benefits-green-cleaning-workplace|commercial-cleaning-frequency-guide|medical-facility-cleaning-standards|choosing-commercial-cleaning-company|floor-care-maintenance-tips)',
+        destination: 'https://andersoncleaning.com/blog/:slug',
+        permanent: true,
+        has: [
+          {
+            type: 'host',
+            value: 'hub.andersoncleaning.com',
+          },
+        ],
+      },
+      {
+        source: '/',
+        destination: 'https://andersoncleaning.com/blog',
+        permanent: true,
+        has: [
+          {
+            type: 'host',
+            value: 'hub.andersoncleaning.com',
+          },
+        ],
+      },
     ]
   },
 
