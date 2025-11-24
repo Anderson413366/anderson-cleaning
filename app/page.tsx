@@ -43,6 +43,14 @@ export default function Home() {
       <section className="relative bg-white dark:bg-slate-900 pt-32 pb-20 md:pt-40 md:pb-28 lg:pt-48 lg:pb-32">
         <div className="container mx-auto px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
+            {/* Commercial Only Badge */}
+            <div className="mb-6">
+              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full border-2 border-brand-bright-blue text-brand-bright-blue text-sm font-semibold dark:border-white dark:text-white">
+                <Building2 className="h-4 w-4" />
+                Commercial Facilities Only • No Residential
+              </span>
+            </div>
+
             {/* Eyebrow Badge */}
             <div className="mb-8">
               <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-bright-blue/10 text-brand-bright-blue text-sm font-medium dark:bg-brand-bright-blue/20 dark:text-white">
@@ -53,37 +61,45 @@ export default function Home() {
 
             {/* Headline */}
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 leading-[1.1] tracking-tight text-neutral-charcoal dark:text-white">
-              Professional Commercial Cleaning You Can Count On
+              Enterprise-Grade Commercial Cleaning for Western MA Businesses
             </h1>
 
             {/* Supporting Line */}
             <p className="text-xl md:text-2xl text-neutral-charcoal/70 dark:text-white/70 mb-12 max-w-3xl mx-auto leading-relaxed">
-              Full-time salaried teams, 24/7 support, and corporate-grade standards for your Western MA & Northern CT facility
+              B2B-only janitorial services with W-2 teams, 24/7 support, and OSHA/CDC compliance for your Western MA & Northern CT facility
             </p>
 
-            {/* Trust Badges - Simplified */}
-            <div className="mb-12 flex flex-wrap items-center justify-center gap-6 text-sm text-neutral-charcoal/60 dark:text-white/60">
+            {/* Trust Badges - Expanded with key differentiators */}
+            <div className="mb-12 flex flex-wrap items-center justify-center gap-6 text-sm text-neutral-charcoal dark:text-white">
               <div className="flex items-center gap-2">
-                <CheckCircle2 className="h-5 w-5 text-brand-bright-blue" />
-                <span>Green Seal Certified</span>
+                <Users className="h-5 w-5 text-brand-bright-blue" />
+                <span><strong>W-2 Employees Only</strong></span>
               </div>
               <div className="flex items-center gap-2">
                 <Shield className="h-5 w-5 text-brand-bright-blue" />
-                <span>Licensed & Insured</span>
+                <span><strong>Licensed & Insured</strong></span>
+              </div>
+              <div className="flex items-center gap-2">
+                <CheckCircle2 className="h-5 w-5 text-brand-bright-blue" />
+                <span><strong>OSHA/CDC Compliant</strong></span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Clock className="h-5 w-5 text-brand-bright-blue" />
+                <span><strong>24/7 Emergency Support</strong></span>
               </div>
               <div className="flex items-center gap-2">
                 <Award className="h-5 w-5 text-brand-bright-blue" />
-                <span>18+ Years Experience</span>
+                <span><strong>18+ Years in Business</strong></span>
               </div>
             </div>
 
-            {/* CTAs - Single primary action */}
+            {/* CTAs - Standardized */}
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link
                 href="/quote"
                 className="inline-flex items-center justify-center rounded-full bg-brand-bright-blue px-8 py-4 text-lg font-semibold text-white shadow-sm hover:bg-[#006bc4] transition-all duration-150"
               >
-                Get a Free Quote
+                Request a Quote
               </Link>
               <a
                 href="tel:+14133065053"

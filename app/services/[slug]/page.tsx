@@ -156,7 +156,7 @@ function HeroSection({ service, ServiceIcon }: { service: ServiceData; ServiceIc
           <div className="mt-6 flex flex-wrap items-center gap-4">
             <Link href="/quote">
               <Button variant="accent" size="lg" className="min-w-[180px]">
-                Request Quote
+                Request a Quote
               </Button>
             </Link>
             <a
@@ -406,7 +406,7 @@ function CTASection({
                   className="w-full justify-center"
                   variant={variant === 'secondary' ? 'accent' : 'secondary'}
                 >
-                  Request Quote
+                  Request a Quote
                 </Button>
               </Link>
               <a
