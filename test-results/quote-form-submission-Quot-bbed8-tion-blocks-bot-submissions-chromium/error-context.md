@@ -1,0 +1,313 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e1]:
+  - generic [ref=e6] [cursor=pointer]:
+    - button "Open Next.js Dev Tools" [ref=e7]:
+      - img [ref=e8]
+    - generic [ref=e11]:
+      - button "Open issues overlay" [ref=e12]:
+        - generic [ref=e13]:
+          - generic [ref=e14]: "6"
+          - generic [ref=e15]: "7"
+        - generic [ref=e16]:
+          - text: Issue
+          - generic [ref=e17]: s
+      - button "Collapse issues badge" [ref=e18]:
+        - img [ref=e19]
+  - link "Skip to main content" [ref=e21] [cursor=pointer]:
+    - /url: "#main-content"
+  - banner [ref=e22]:
+    - navigation "Global" [ref=e23]:
+      - link "Anderson Cleaning Company" [ref=e25] [cursor=pointer]:
+        - /url: /
+        - img "Anderson Cleaning Company" [ref=e26]
+      - generic [ref=e27]:
+        - button "Services" [ref=e29] [cursor=pointer]:
+          - text: Services
+          - img [ref=e30]
+        - button "Industries" [ref=e33] [cursor=pointer]:
+          - text: Industries
+          - img [ref=e34]
+        - button "Locations" [ref=e37] [cursor=pointer]:
+          - text: Locations
+          - img [ref=e38]
+        - link "Home" [ref=e40] [cursor=pointer]:
+          - /url: /
+        - link "About" [ref=e41] [cursor=pointer]:
+          - /url: /about
+        - link "Contact" [ref=e42] [cursor=pointer]:
+          - /url: /contact
+      - generic [ref=e43]:
+        - link "Call Anderson Cleaning Company at (413) 306-5053" [ref=e44] [cursor=pointer]:
+          - /url: tel:+14133065053
+          - generic: Call Now
+          - img [ref=e46]
+          - generic [ref=e49]: (413) 306-5053
+        - button "Toggle dark mode" [ref=e50] [cursor=pointer]:
+          - img [ref=e51]
+        - link "Get a Quote" [ref=e53] [cursor=pointer]:
+          - /url: /quote
+  - main [ref=e54]:
+    - generic [ref=e55]:
+      - generic [ref=e57]:
+        - heading "Get Your Free Quote" [level=1] [ref=e58]
+        - paragraph [ref=e59]: Tell us about your facility and we'll provide a customized cleaning proposal within 24 hours.
+      - generic [ref=e62]:
+        - generic [ref=e63]:
+          - heading "Quick 60-Second Form" [level=2] [ref=e64]
+          - paragraph [ref=e65]: No spam, no pressure. Just honest pricing for quality commercial cleaning.
+        - generic [ref=e66]:
+          - generic [ref=e67]:
+            - img [ref=e68]
+            - generic [ref=e71]: No Contracts Required
+          - generic [ref=e72]:
+            - img [ref=e73]
+            - generic [ref=e76]: Licensed & Insured
+          - generic [ref=e77]:
+            - img [ref=e78]
+            - generic [ref=e81]: 24-Hour Response
+        - generic [ref=e82]:
+          - generic [ref=e84]:
+            - generic [ref=e85]:
+              - paragraph [ref=e86]: Prefer to talk now?
+              - paragraph [ref=e87]: Call us directly for immediate assistance
+            - link "(413) 306-5053" [ref=e88] [cursor=pointer]:
+              - /url: tel:+14133065053
+              - img [ref=e89]
+              - text: (413) 306-5053
+          - generic [ref=e91]:
+            - generic [ref=e92]:
+              - heading "Your Information" [level=3] [ref=e93]
+              - generic [ref=e94]:
+                - generic [ref=e95]:
+                  - generic [ref=e96]: Full Name *
+                  - textbox "Full Name *" [ref=e97]:
+                    - /placeholder: John Smith
+                    - text: Bot User
+                - generic [ref=e98]:
+                  - generic [ref=e99]: Company Name *
+                  - textbox "Company Name *" [ref=e100]:
+                    - /placeholder: ABC Corporation
+                    - text: Bot Company
+              - generic [ref=e101]:
+                - generic [ref=e102]:
+                  - generic [ref=e103]: Email Address *
+                  - textbox "Email Address *" [ref=e104]:
+                    - /placeholder: john@company.com
+                    - text: bot@spam.com
+                - generic [ref=e105]:
+                  - generic [ref=e106]: Phone Number *
+                  - textbox "Phone Number *" [ref=e107]:
+                    - /placeholder: (413) 306-5053
+                    - text: "4135551234"
+            - generic [ref=e108]:
+              - heading "Facility Details" [level=3] [ref=e109]
+              - generic [ref=e110]:
+                - generic [ref=e111]: Street Address *
+                - textbox "Street Address *" [ref=e112]:
+                  - /placeholder: 123 Main Street
+                  - text: 123 Bot Street
+              - generic [ref=e113]:
+                - generic [ref=e114]:
+                  - generic [ref=e115]: City *
+                  - textbox "City *" [ref=e116]:
+                    - /placeholder: Springfield
+                    - text: Springfield
+                - generic [ref=e117]:
+                  - generic [ref=e118]: ZIP Code *
+                  - textbox "ZIP Code *" [ref=e119]:
+                    - /placeholder: "01089"
+                    - text: "01089"
+              - generic [ref=e120]:
+                - generic [ref=e121]:
+                  - generic [ref=e122]: Facility Type *
+                  - combobox "Facility Type *" [ref=e123]:
+                    - option "Select type..."
+                    - option "Office Building" [selected]
+                    - option "Medical/Healthcare"
+                    - option "School/Education"
+                    - option "Retail Store"
+                    - option "Industrial/Warehouse"
+                    - option "Other"
+                - generic [ref=e124]:
+                  - generic [ref=e125]: Approximate Square Footage
+                  - spinbutton "Approximate Square Footage" [active] [ref=e126]
+                  - paragraph [ref=e127]: "Minimum: 1,000 sq ft"
+                  - paragraph [ref=e128]: Expected number, received nan
+              - generic [ref=e129]:
+                - generic [ref=e130]:
+                  - generic [ref=e131]: Desired Cleaning Frequency *
+                  - combobox "Desired Cleaning Frequency *" [ref=e132]:
+                    - option "Select frequency..."
+                    - option "Daily (5x per week)"
+                    - option "3x per week"
+                    - option "2x per week"
+                    - option "Weekly" [selected]
+                    - option "Bi-weekly"
+                - generic [ref=e133]:
+                  - generic [ref=e134]: When do you need service?
+                  - textbox "When do you need service?" [ref=e135]
+            - generic [ref=e136]:
+              - generic [ref=e137]: Additional Information (Optional)
+              - textbox "Additional Information (Optional)" [ref=e138]:
+                - /placeholder: Tell us about any special requirements, current challenges, or questions...
+              - paragraph [ref=e139]: 0/500 characters
+            - generic [ref=e140]:
+              - checkbox "I agree to be contacted by Anderson Cleaning Company regarding this quote request. We respond within 24 hours during office hours (Monday - Friday, 9 AM - 5 PM EST). *" [checked] [ref=e141]
+              - generic [ref=e142]: I agree to be contacted by Anderson Cleaning Company regarding this quote request. We respond within 24 hours during office hours (Monday - Friday, 9 AM - 5 PM EST). *
+            - textbox [ref=e143]: http://spam.com
+            - generic [ref=e144]:
+              - button "Get My Custom Quote" [ref=e145] [cursor=pointer]:
+                - img [ref=e146]
+                - text: Get My Custom Quote
+              - paragraph [ref=e150]: ✓ No contracts required · ✓ Response within 24 hours · ✓ No spam
+              - paragraph [ref=e151]:
+                - text: By submitting this form, you agree to our
+                - link "Privacy Policy" [ref=e152] [cursor=pointer]:
+                  - /url: /privacy-policy
+                - text: and
+                - link "Terms of Service" [ref=e153] [cursor=pointer]:
+                  - /url: /terms-of-service
+                - text: . Your information will never be sold to third parties.
+        - generic [ref=e154]:
+          - paragraph [ref=e155]:
+            - text: Questions? Call us directly at
+            - link "(413) 306-5053" [ref=e156] [cursor=pointer]:
+              - /url: tel:+14133065053
+          - paragraph [ref=e157]: Monday - Friday, 9 AM - 5 PM EST
+      - generic [ref=e160]:
+        - heading "Why Request a Quote from Anderson Cleaning Company?" [level=2] [ref=e161]
+        - generic [ref=e162]:
+          - generic [ref=e163]:
+            - img [ref=e165]
+            - heading "No Obligation" [level=3] [ref=e167]
+            - paragraph [ref=e168]: Free consultation and walk-through with zero commitment or pressure to sign
+          - generic [ref=e169]:
+            - img [ref=e171]
+            - heading "Transparent Pricing" [level=3] [ref=e174]
+            - paragraph [ref=e175]: Clear, itemized proposals with no hidden fees or surprise charges
+          - generic [ref=e176]:
+            - generic [ref=e178]: 24h
+            - heading "Fast Turnaround" [level=3] [ref=e179]
+            - paragraph [ref=e180]: Receive your detailed proposal within 24 hours of our site visit
+      - generic [ref=e183]:
+        - heading "Prefer to Schedule a Walk-Through Directly?" [level=2] [ref=e184]
+        - paragraph [ref=e185]: If you already know what you need, skip the form and schedule your free on-site consultation directly.
+        - generic [ref=e186]:
+          - paragraph [ref=e187]:
+            - text: Call us at
+            - link "(413) 306-5053" [ref=e188] [cursor=pointer]:
+              - /url: tel:+14133065053
+            - text: to schedule your walk-through today.
+          - paragraph [ref=e190]:
+            - strong [ref=e191]: "Note:"
+            - text: Online scheduling coming soon! For now, please call or submit the quote form above.
+  - generic [ref=e193]:
+    - heading "Ready to Experience Professional Cleaning?" [level=2] [ref=e194]
+    - paragraph [ref=e195]: Join 100+ businesses that trust Anderson Cleaning Company for their facility maintenance
+    - generic [ref=e196]:
+      - link "Get Your Free Quote" [ref=e197] [cursor=pointer]:
+        - /url: /quote
+      - link "Call (413) 306-5053" [ref=e198] [cursor=pointer]:
+        - /url: tel:+14133065053
+        - img [ref=e199]
+        - text: Call (413) 306-5053
+  - contentinfo "Footer" [ref=e201]:
+    - heading "Footer" [level=2] [ref=e202]
+    - generic [ref=e203]:
+      - generic [ref=e204]:
+        - generic [ref=e205]:
+          - heading "Our Services" [level=3] [ref=e206]
+          - list [ref=e207]:
+            - listitem [ref=e208]:
+              - link "Office Cleaning" [ref=e209] [cursor=pointer]:
+                - /url: /services/office-cleaning
+            - listitem [ref=e210]:
+              - link "Janitorial Services" [ref=e211] [cursor=pointer]:
+                - /url: /services/janitorial-services
+            - listitem [ref=e212]:
+              - link "Floor & Carpet Care" [ref=e213] [cursor=pointer]:
+                - /url: /services/floor-care
+            - listitem [ref=e214]:
+              - link "Window Cleaning" [ref=e215] [cursor=pointer]:
+                - /url: /services/window-cleaning
+            - listitem [ref=e216]:
+              - link "Post-Construction" [ref=e217] [cursor=pointer]:
+                - /url: /services/post-construction
+        - generic [ref=e218]:
+          - heading "Quick Links" [level=3] [ref=e219]
+          - list [ref=e220]:
+            - listitem [ref=e221]:
+              - link "About Us" [ref=e222] [cursor=pointer]:
+                - /url: /about
+            - listitem [ref=e223]:
+              - link "Industries" [ref=e224] [cursor=pointer]:
+                - /url: /industries
+            - listitem [ref=e225]:
+              - link "Testimonials" [ref=e226] [cursor=pointer]:
+                - /url: /testimonials
+            - listitem [ref=e227]:
+              - link "Blog" [ref=e228] [cursor=pointer]:
+                - /url: /blog
+            - listitem [ref=e229]:
+              - link "Careers" [ref=e230] [cursor=pointer]:
+                - /url: /careers
+            - listitem [ref=e231]:
+              - link "FAQ" [ref=e232] [cursor=pointer]:
+                - /url: /faq
+        - generic [ref=e233]:
+          - heading "Get in Touch" [level=3] [ref=e234]
+          - generic [ref=e235]:
+            - link "(413) 306-5053" [ref=e236] [cursor=pointer]:
+              - /url: tel:+14133065053
+            - link "info@andersoncleaning.com" [ref=e237] [cursor=pointer]:
+              - /url: mailto:info@andersoncleaning.com
+            - generic [ref=e238]:
+              - generic [ref=e239]: 103 Wayside Avenue
+              - generic [ref=e240]: West Springfield, MA 01089
+            - generic [ref=e241]:
+              - link "LinkedIn" [ref=e242] [cursor=pointer]:
+                - /url: https://www.linkedin.com/company/anderson-cleaning-inc-
+                - img [ref=e243]
+              - link "Facebook" [ref=e247] [cursor=pointer]:
+                - /url: https://www.facebook.com/Andersonclean/
+                - img [ref=e248]
+              - link "X" [ref=e250] [cursor=pointer]:
+                - /url: https://x.com/andersonclean
+                - img [ref=e251]
+              - link "Instagram" [ref=e253] [cursor=pointer]:
+                - /url: https://www.instagram.com/andersonclean/
+                - img [ref=e254]
+      - generic [ref=e260]:
+        - paragraph [ref=e261]: © 2025 Anderson Cleaning Company. All rights reserved.
+        - navigation [ref=e262]:
+          - link "Privacy Policy" [ref=e263] [cursor=pointer]:
+            - /url: /privacy-policy
+          - link "Terms of Service" [ref=e264] [cursor=pointer]:
+            - /url: /terms-of-service
+          - link "Accessibility" [ref=e265] [cursor=pointer]:
+            - /url: /accessibility
+          - link "Sitemap" [ref=e266] [cursor=pointer]:
+            - /url: /sitemap.xml
+  - button "Toggle contact options" [ref=e268] [cursor=pointer]:
+    - img [ref=e269]
+  - alert [ref=e271]
+  - generic [ref=e274]:
+    - generic [ref=e275]:
+      - img [ref=e278]
+      - generic [ref=e280]:
+        - heading "We Value Your Privacy" [level=3] [ref=e281]
+        - paragraph [ref=e282]:
+          - text: We use cookies to enhance your browsing experience, serve personalized content, and analyze our traffic. By clicking "Accept All," you consent to our use of cookies.
+          - link "Read our Privacy Policy" [ref=e283] [cursor=pointer]:
+            - /url: /legal/privacy
+        - generic [ref=e284]:
+          - button "Accept All" [ref=e285] [cursor=pointer]
+          - button "Decline" [ref=e286] [cursor=pointer]
+          - button "Dismiss" [ref=e287] [cursor=pointer]
+      - button "Dismiss cookie banner" [ref=e288] [cursor=pointer]:
+        - img [ref=e289]
+    - group [ref=e292]:
+      - generic "Cookie Details" [ref=e293] [cursor=pointer]
+```

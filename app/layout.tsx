@@ -33,11 +33,11 @@ const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://andersoncleaning.co
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
-    default: 'Anderson Cleaning Company - Commercial Cleaning Services in Western MA & CT',
+    default: 'Commercial Cleaning Springfield MA | Office & Janitorial Services Western MA',
     template: '%s | Anderson Cleaning Company',
   },
   description:
-    'Professional B2B commercial cleaning and janitorial services for offices, medical facilities, schools, and more in Western Massachusetts and Northern Connecticut. 100-mile service radius from Springfield, MA.',
+    'Professional commercial cleaning and janitorial services in Springfield MA, Western Massachusetts & Northern Connecticut. B2B-only with W-2 teams, OSHA/CDC compliance, 24/7 support. 100-mile service radius.',
   keywords: [
     'commercial cleaning',
     'janitorial services',

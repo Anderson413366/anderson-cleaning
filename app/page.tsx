@@ -49,7 +49,7 @@ export default function Home() {
 
             {/* Headline */}
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 leading-[1.1] tracking-tight text-neutral-charcoal dark:text-white">
-              Enterprise-Grade Commercial Cleaning for Western MA Businesses
+              Commercial Cleaning Services Springfield MA & Western Massachusetts
             </h1>
 
             {/* Supporting Line */}
@@ -96,6 +96,33 @@ export default function Home() {
                 <Phone className="h-5 w-5" />
                 (413) 306-5053
               </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Testimonial - Dr. Sarah Mitchell */}
+      <section className="py-12 bg-neutral-off-white dark:bg-slate-900 border-y border-neutral-light-grey/50">
+        <div className="container mx-auto px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto">
+            <div className="bg-white dark:bg-slate-800 rounded-2xl p-8 md:p-10 shadow-sm border border-neutral-light-grey dark:border-slate-700">
+              <div className="flex items-center gap-1 mb-6" role="img" aria-label="5 out of 5 stars">
+                {[1, 2, 3, 4, 5].map((star) => (
+                  <Star key={star} className="h-5 w-5 text-brand-bright-blue fill-brand-bright-blue" aria-hidden="true" />
+                ))}
+              </div>
+              <blockquote className="text-xl md:text-2xl leading-relaxed text-neutral-charcoal dark:text-white mb-6 font-medium">
+                "Anderson Cleaning Company transformed our medical office. Their attention to detail and OSHA compliance gives us complete peace of mind."
+              </blockquote>
+              <div className="flex items-center gap-4 pt-6 border-t border-neutral-light-grey dark:border-slate-700">
+                <div className="flex-shrink-0 h-14 w-14 rounded-full bg-brand-bright-blue/10 dark:bg-brand-bright-blue/20 flex items-center justify-center">
+                  <span className="text-2xl font-bold text-brand-bright-blue dark:text-brand-bright-blue">SM</span>
+                </div>
+                <div>
+                  <p className="font-semibold text-neutral-charcoal dark:text-white text-lg">Dr. Sarah Mitchell</p>
+                  <p className="text-body text-neutral-charcoal/70 dark:text-white/70">Springfield Family Medicine</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>

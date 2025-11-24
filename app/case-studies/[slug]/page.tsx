@@ -18,6 +18,7 @@ import {
   getAllCaseStudySlugs,
   caseStudies,
 } from '@/lib/case-studies-data'
+import { CaseStudySchema, BreadcrumbSchema } from '@/components/Schema'
 
 // ============================================================================
 // STATIC GENERATION
@@ -98,8 +99,29 @@ export default async function CaseStudyPage({
     notFound()
   }
 
+  // Breadcrumb schema
+  const breadcrumbs = [
+    { name: 'Home', url: 'https://andersoncleaning.com' },
+    { name: 'Case Studies', url: 'https://andersoncleaning.com/case-studies' },
+    {
+      name: caseStudy.title,
+      url: `https://andersoncleaning.com/case-studies/${slug}`,
+    },
+  ]
+
   return (
     <div>
+      <BreadcrumbSchema items={breadcrumbs} />
+      <CaseStudySchema
+        title={caseStudy.title}
+        description={caseStudy.challenge.headline}
+        url={`https://andersoncleaning.com/case-studies/${slug}`}
+        datePublished={caseStudy.publishedDate}
+        clientName={caseStudy.client.name}
+        clientIndustry={caseStudy.client.industry}
+        facilitySize={caseStudy.client.facilitySize}
+        keyResult={caseStudy.keyResult}
+      />
       <CaseStudyTemplate caseStudy={caseStudy} />
     </div>
   )

@@ -1,0 +1,242 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e6] [cursor=pointer]:
+    - button "Open Next.js Dev Tools" [ref=e7]:
+      - img [ref=e8]
+    - generic [ref=e11]:
+      - button "Open issues overlay" [ref=e12]:
+        - generic [ref=e13]:
+          - generic [ref=e14]: "2"
+          - generic [ref=e15]: "3"
+        - generic [ref=e16]:
+          - text: Issue
+          - generic [ref=e17]: s
+      - button "Collapse issues badge" [ref=e18]:
+        - img [ref=e19]
+  - link "Skip to main content" [ref=e21] [cursor=pointer]:
+    - /url: "#main-content"
+  - banner [ref=e22]:
+    - navigation "Global" [ref=e23]:
+      - link "Anderson Cleaning Company" [ref=e25] [cursor=pointer]:
+        - /url: /
+        - img "Anderson Cleaning Company" [ref=e26]
+      - generic [ref=e27]:
+        - button "Services" [ref=e29] [cursor=pointer]:
+          - text: Services
+          - img [ref=e30]
+        - button "Industries" [ref=e33] [cursor=pointer]:
+          - text: Industries
+          - img [ref=e34]
+        - button "Locations" [ref=e37] [cursor=pointer]:
+          - text: Locations
+          - img [ref=e38]
+        - link "Home" [ref=e40] [cursor=pointer]:
+          - /url: /
+        - link "About" [ref=e41] [cursor=pointer]:
+          - /url: /about
+        - link "Contact" [ref=e42] [cursor=pointer]:
+          - /url: /contact
+          - text: Contact
+      - generic [ref=e44]:
+        - link "Call Anderson Cleaning Company at (413) 306-5053" [ref=e45] [cursor=pointer]:
+          - /url: tel:+14133065053
+          - generic: Call Now
+          - img [ref=e47]
+          - generic [ref=e49]:
+            - generic [ref=e50]: "Free Quote: Call Now"
+            - generic [ref=e51]: (413) 306-5053
+        - button "Toggle dark mode" [ref=e52] [cursor=pointer]:
+          - img [ref=e53]
+        - link "Get a Quote" [ref=e55] [cursor=pointer]:
+          - /url: /quote
+  - main [ref=e56]:
+    - generic [ref=e59]:
+      - generic [ref=e60]:
+        - heading "Get in Touch" [level=1] [ref=e61]
+        - paragraph [ref=e62]: Have a question? Need a quote? Want to discuss your cleaning needs? We're here to help.
+      - generic [ref=e63]:
+        - generic [ref=e66]:
+          - generic [ref=e67]:
+            - heading "Send Us a Message" [level=2] [ref=e68]
+            - paragraph [ref=e69]: Fill out the form below and we'll get back to you within 1 business day.
+          - generic [ref=e70]:
+            - img [ref=e71]
+            - generic [ref=e74]:
+              - heading "Message Sent Successfully!" [level=4] [ref=e75]
+              - paragraph [ref=e76]: Thank you for contacting us. We'll respond to your message within 1 business day.
+          - generic [ref=e77]:
+            - generic [ref=e78]: Name *
+            - textbox "Name *" [ref=e79]:
+              - /placeholder: John Smith
+          - generic [ref=e80]:
+            - generic [ref=e81]: Email Address *
+            - textbox "Email Address *" [ref=e82]:
+              - /placeholder: john@example.com
+          - generic [ref=e83]:
+            - generic [ref=e84]: Phone Number *
+            - textbox "Phone Number *" [ref=e85]:
+              - /placeholder: (413) 306-5053
+          - generic [ref=e86]:
+            - generic [ref=e87]: Message *
+            - textbox "Message *" [ref=e88]:
+              - /placeholder: Tell us about your cleaning needs, questions, or concerns...
+          - textbox [ref=e89]
+          - button "Send Message" [ref=e90] [cursor=pointer]:
+            - img [ref=e91]
+            - text: Send Message
+          - paragraph [ref=e94]:
+            - text: By submitting this form, you agree to our
+            - link "Privacy Policy" [ref=e95] [cursor=pointer]:
+              - /url: /privacy-policy
+            - text: and
+            - link "Terms of Service" [ref=e96] [cursor=pointer]:
+              - /url: /terms-of-service
+            - text: . Your information will never be sold to third parties.
+        - generic [ref=e97]:
+          - generic [ref=e98]:
+            - img [ref=e99]
+            - heading "Here When You Need Us" [level=3] [ref=e102]
+            - paragraph [ref=e103]: "Office hours: Monday – Friday, 9 AM – 5 PM EST. We respond to all inquiries within 24 hours."
+            - generic [ref=e104]: Current clients receive 24/7 emergency support with on-site arrival in 2 hours or less (premium service).
+          - generic [ref=e105]:
+            - heading "Contact Information" [level=3] [ref=e106]
+            - generic [ref=e107]:
+              - generic [ref=e108]:
+                - img [ref=e109]
+                - generic [ref=e111]:
+                  - paragraph [ref=e112]: Phone
+                  - link "(413) 306-5053" [ref=e113] [cursor=pointer]:
+                    - /url: tel:+14133065053
+                  - paragraph [ref=e114]: 24/7 emergency line for current clients
+              - generic [ref=e115]:
+                - img [ref=e116]
+                - generic [ref=e119]:
+                  - paragraph [ref=e120]: Email
+                  - link "info@andersoncleaning.com" [ref=e121] [cursor=pointer]:
+                    - /url: mailto:info@andersoncleaning.com
+                  - paragraph [ref=e122]: General Inquiries
+              - generic [ref=e123]:
+                - img [ref=e124]
+                - generic [ref=e127]:
+                  - paragraph [ref=e128]: Office
+                  - generic [ref=e129]:
+                    - text: 103 Wayside Avenue
+                    - text: West Springfield, MA 01089
+              - generic [ref=e130]:
+                - img [ref=e131]
+                - generic [ref=e134]:
+                  - paragraph [ref=e135]: Office Hours
+                  - paragraph [ref=e136]: "Monday – Friday: 9 AM – 5 PM EST"
+                  - paragraph [ref=e137]: 24/7 emergency support for current clients. On-site in 2 hours or less; premium rates apply.
+          - generic [ref=e138]:
+            - heading "Service Area" [level=3] [ref=e139]
+            - paragraph [ref=e140]: "We serve commercial facilities throughout:"
+            - list [ref=e141]:
+              - listitem [ref=e142]:
+                - img [ref=e143]
+                - text: Western Massachusetts
+              - listitem [ref=e146]:
+                - img [ref=e147]
+                - text: Northern Connecticut
+              - listitem [ref=e150]:
+                - img [ref=e151]
+                - text: 100-mile radius of West Springfield
+          - generic [ref=e154]:
+            - paragraph [ref=e155]: Current Client Emergency?
+            - paragraph [ref=e156]: "If you're an existing client with an urgent issue, please call our 24/7 support line immediately:"
+            - link "(413) 306-5053" [ref=e157] [cursor=pointer]:
+              - /url: tel:+14133065053
+            - paragraph [ref=e158]: Premium emergency service with on-site arrival in 2 hours or less.
+  - generic [ref=e160]:
+    - heading "Ready to Experience Professional Cleaning?" [level=2] [ref=e161]
+    - paragraph [ref=e162]: Join 100+ businesses that trust Anderson Cleaning Company for their facility maintenance
+    - generic [ref=e163]:
+      - link "Get Your Free Quote" [ref=e164] [cursor=pointer]:
+        - /url: /quote
+      - link "Call (413) 306-5053" [ref=e165] [cursor=pointer]:
+        - /url: tel:+14133065053
+        - img [ref=e166]
+        - text: Call (413) 306-5053
+  - contentinfo "Footer" [ref=e168]:
+    - heading "Footer" [level=2] [ref=e169]
+    - generic [ref=e170]:
+      - generic [ref=e171]:
+        - generic [ref=e172]:
+          - heading "Our Services" [level=3] [ref=e173]
+          - list [ref=e174]:
+            - listitem [ref=e175]:
+              - link "Office Cleaning" [ref=e176] [cursor=pointer]:
+                - /url: /services/office-cleaning
+            - listitem [ref=e177]:
+              - link "Janitorial Services" [ref=e178] [cursor=pointer]:
+                - /url: /services/janitorial-services
+            - listitem [ref=e179]:
+              - link "Floor & Carpet Care" [ref=e180] [cursor=pointer]:
+                - /url: /services/floor-care
+            - listitem [ref=e181]:
+              - link "Window Cleaning" [ref=e182] [cursor=pointer]:
+                - /url: /services/window-cleaning
+            - listitem [ref=e183]:
+              - link "Post-Construction" [ref=e184] [cursor=pointer]:
+                - /url: /services/post-construction
+        - generic [ref=e185]:
+          - heading "Quick Links" [level=3] [ref=e186]
+          - list [ref=e187]:
+            - listitem [ref=e188]:
+              - link "About Us" [ref=e189] [cursor=pointer]:
+                - /url: /about
+            - listitem [ref=e190]:
+              - link "Industries" [ref=e191] [cursor=pointer]:
+                - /url: /industries
+            - listitem [ref=e192]:
+              - link "Testimonials" [ref=e193] [cursor=pointer]:
+                - /url: /testimonials
+            - listitem [ref=e194]:
+              - link "Blog" [ref=e195] [cursor=pointer]:
+                - /url: /blog
+            - listitem [ref=e196]:
+              - link "Careers" [ref=e197] [cursor=pointer]:
+                - /url: /careers
+            - listitem [ref=e198]:
+              - link "FAQ" [ref=e199] [cursor=pointer]:
+                - /url: /faq
+        - generic [ref=e200]:
+          - heading "Get in Touch" [level=3] [ref=e201]
+          - generic [ref=e202]:
+            - link "(413) 306-5053" [ref=e203] [cursor=pointer]:
+              - /url: tel:+14133065053
+            - link "info@andersoncleaning.com" [ref=e204] [cursor=pointer]:
+              - /url: mailto:info@andersoncleaning.com
+            - generic [ref=e205]:
+              - generic [ref=e206]: 103 Wayside Avenue
+              - generic [ref=e207]: West Springfield, MA 01089
+            - generic [ref=e208]:
+              - link "LinkedIn" [ref=e209] [cursor=pointer]:
+                - /url: https://www.linkedin.com/company/anderson-cleaning-inc-
+                - img [ref=e210]
+              - link "Facebook" [ref=e214] [cursor=pointer]:
+                - /url: https://www.facebook.com/Andersonclean/
+                - img [ref=e215]
+              - link "X" [ref=e217] [cursor=pointer]:
+                - /url: https://x.com/andersonclean
+                - img [ref=e218]
+              - link "Instagram" [ref=e220] [cursor=pointer]:
+                - /url: https://www.instagram.com/andersonclean/
+                - img [ref=e221]
+      - generic [ref=e227]:
+        - paragraph [ref=e228]: © 2025 Anderson Cleaning Company. All rights reserved.
+        - navigation [ref=e229]:
+          - link "Privacy Policy" [ref=e230] [cursor=pointer]:
+            - /url: /privacy-policy
+          - link "Terms of Service" [ref=e231] [cursor=pointer]:
+            - /url: /terms-of-service
+          - link "Accessibility" [ref=e232] [cursor=pointer]:
+            - /url: /accessibility
+          - link "Sitemap" [ref=e233] [cursor=pointer]:
+            - /url: /sitemap.xml
+  - button "Toggle contact options" [ref=e235] [cursor=pointer]:
+    - img [ref=e236]
+  - alert [ref=e238]
+```

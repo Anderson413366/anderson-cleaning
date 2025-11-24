@@ -2,6 +2,7 @@
 import Link from 'next/link'
 import { Button } from '@/components/ui/Button'
 import StatsBar from '@/components/sections/StatsBar'
+import { CertificationShowcase } from '@/components/Certifications'
 import { YEARS_IN_BUSINESS } from '@/lib/constants'
 import {
   Users,
@@ -98,6 +99,11 @@ export default function AboutPage() {
             </p>
           </div>
         </div>
+      </section>
+
+      {/* Certifications Showcase */}
+      <section className="bg-neutral-off-white dark:bg-slate-900">
+        <CertificationShowcase />
       </section>
 
       {/* What Makes Us Different */}

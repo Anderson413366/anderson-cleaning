@@ -1,0 +1,11 @@
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="50" cy="50" r="45" fill="#1e40af" stroke="#0077D9" stroke-width="2"/>
+  <path d="M50 20 L60 35 L50 40 L40 35 Z" fill="white"/>
+  <rect x="35" y="40" width="30" height="25" rx="2" fill="white"/>
+  <text x="50" y="75" text-anchor="middle" fill="white" font-size="10" font-weight="bold">
+    LICENSED
+  </text>
+  <text x="50" y="88" text-anchor="middle" fill="white" font-size="10" font-weight="bold">
+    INSURED
+  </text>
+</svg>

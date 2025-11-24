@@ -63,6 +63,44 @@ export function generateOrganizationSchema() {
       '@type': 'QuantitativeValue',
       value: 50,
     },
+    hasCredential: [
+      {
+        '@type': 'EducationalOccupationalCredential',
+        credentialCategory: 'certification',
+        name: 'Green Seal Certification',
+        description: 'Environmental responsibility certification for sustainable cleaning practices',
+        issuedBy: {
+          '@type': 'Organization',
+          name: 'Green Seal Inc.',
+        },
+      },
+      {
+        '@type': 'EducationalOccupationalCredential',
+        credentialCategory: 'license',
+        name: 'Licensed & Insured',
+        description: 'Fully licensed in MA & CT with $2M general liability coverage',
+      },
+      {
+        '@type': 'EducationalOccupationalCredential',
+        credentialCategory: 'certification',
+        name: 'OSHA Compliant',
+        description: 'All staff trained in OSHA safety standards and protocols',
+        issuedBy: {
+          '@type': 'Organization',
+          name: 'Occupational Safety and Health Administration',
+        },
+      },
+    ],
+    knowsAbout: [
+      'Commercial Cleaning',
+      'Janitorial Services',
+      'OSHA Compliance',
+      'Green Cleaning',
+      'Healthcare Facility Cleaning',
+      'Office Cleaning',
+      'Floor Care',
+      'Window Cleaning',
+    ],
   }
 }
 

@@ -367,6 +367,212 @@ export const caseStudies: CaseStudy[] = [
       ],
     },
   },
+
+  // ==========================================================================
+  // CASE STUDY 4: EMERGENCY RESPONSE - FLOOD RECOVERY
+  // ==========================================================================
+  {
+    id: 'emergency-flood-response',
+    slug: 'emergency-flood-response-manufacturing-plant',
+    title: '48-Hour Emergency Flood Recovery Saves $2M in Equipment',
+    client: {
+      name: 'Northeast Manufacturing Partners',
+      industry: 'Manufacturing / Industrial',
+      location: 'Chicopee, MA',
+      facilitySize: '85,000 sq ft',
+      employees: 95,
+    },
+    featuredImage: '/images/case-studies/emergency-flood-hero.jpg',
+    keyResult: 'Facility restored in 48 hours, preventing $250K daily losses',
+    icon: 'AlertTriangle',
+    publishedDate: '2024-10-05',
+
+    challenge: {
+      headline: 'Catastrophic flooding threatened equipment and halted all production',
+      description: [
+        'On a Friday evening, a catastrophic water main break flooded Northeast Manufacturing Partners\' production facility with over 6 inches of standing water. The flood affected 60% of the manufacturing floor, including critical CNC machining centers, assembly areas, and warehouse space containing finished inventory.',
+        'With standing water threatening $2 million in production equipment and $400,000 in finished goods inventory, every hour counted. The facility\'s production line was completely shut down, costing an estimated $50,000 per day in lost revenue, delayed customer orders, and potential contract penalties.',
+        'The plant manager faced an impossible deadline: insurance adjusters required the facility to be stabilized within 72 hours or risk mold growth that could force a months-long closure. Production equipment needed to be dried and inspected before restarting. OSHA compliance required the space to be verified safe before employees could return.',
+        'Their regular cleaning contractor had no emergency response capability and no specialized water extraction equipment. The facility needed an immediate response with industrial-grade equipment, 24/7 availability, and expertise in both water damage remediation and manufacturing facility cleaning.',
+      ],
+      painPoints: [
+        '6 inches of standing water covering 60% of facility',
+        '$2 million in production equipment at risk',
+        '$400,000 in finished inventory potentially damaged',
+        'Production halted at $50,000 per day in losses',
+        '72-hour deadline before mold growth risk',
+        'No in-house emergency response capability',
+        'OSHA compliance required before employee return',
+        'Friday evening occurrence with weekend approaching',
+      ],
+    },
+
+    solution: {
+      description: [
+        'Anderson Cleaning Company received the emergency call at 7:30 PM Friday and had our emergency response team on-site by 9:00 PM—just 90 minutes later. We mobilized 25 crew members with specialized water extraction equipment, including truck-mounted extractors, industrial wet vacuums, and commercial-grade dehumidifiers.',
+        'Our first priority was equipment protection. We immediately surrounded critical CNC machines and electrical panels with absorbent barriers, then began systematic water extraction working from the deepest areas outward. By midnight Friday, all standing water was removed and 40 commercial dehumidifiers were strategically positioned throughout the facility.',
+        'We worked in coordinated 8-hour shifts around the clock—Friday night through Sunday night. Our industrial cleaning division handled water extraction and drying. Our facility maintenance team coordinated with the plant\'s maintenance staff to inspect and dry electrical systems. We brought in ATP testing equipment to verify microbial safety before employee return.',
+        'Throughout the emergency response, our project manager maintained constant communication with the plant manager, insurance adjusters, and equipment manufacturers. We documented every step with photos and detailed reports for insurance claims, providing the facility with a complete timeline of restoration activities.',
+        'By Sunday evening—exactly 48 hours from first call—the facility was dried, cleaned, sanitized, and passed all OSHA safety inspections. Production equipment was verified operational by Monday morning, allowing the plant to resume operations with zero lost production days beyond the initial incident.',
+      ],
+      servicesUsed: [
+        '24/7 emergency response team deployment (25 crew members)',
+        'Industrial water extraction and removal',
+        'Commercial dehumidification (40 units deployed)',
+        'Equipment protection and drying protocols',
+        'Electrical system coordination with plant maintenance',
+        'Microbial testing and verification (ATP testing)',
+        'Complete facility sanitization and disinfection',
+        'OSHA compliance inspection and certification',
+        'Comprehensive photo documentation for insurance',
+        'Project manager coordination with all stakeholders',
+      ],
+      timeline: '48 hours from emergency call to full facility restoration',
+    },
+
+    results: {
+      metrics: [
+        {
+          value: '48hrs',
+          label: 'Complete restoration',
+          description: '90-minute initial response, facility fully operational in 48 hours',
+        },
+        {
+          value: '$2M',
+          label: 'Equipment saved',
+          description: 'Prevented damage to critical production machinery',
+        },
+        {
+          value: '0',
+          label: 'Lost production days',
+          description: 'Facility resumed operations Monday morning as scheduled',
+        },
+        {
+          value: '100%',
+          label: 'Insurance documentation',
+          description: 'Complete photo/video documentation expedited claims process',
+        },
+      ],
+      quote: {
+        text: 'When disaster struck Friday evening, Anderson was on-site in 90 minutes with a full emergency response team. They worked around the clock through the weekend and had us operational by Monday morning. Their response saved our equipment, our customer relationships, and potentially our business. This is the kind of partner every facility manager needs.',
+        author: 'Jennifer Rodriguez',
+        role: 'Plant Manager',
+        company: 'Northeast Manufacturing Partners',
+      },
+      additionalOutcomes: [
+        'Zero mold growth or secondary water damage',
+        'All production equipment verified operational',
+        'No OSHA compliance issues or safety violations',
+        'Insurance claim approved within 10 days with complete documentation',
+        'Customer contracts maintained with no penalties',
+        'Client retained Anderson for ongoing facility maintenance',
+        'Became case study for insurance carrier\'s emergency preparedness training',
+      ],
+    },
+  },
+
+  // ==========================================================================
+  // CASE STUDY 5: GREEN CLEANING - SUSTAINABILITY TRANSFORMATION
+  // ==========================================================================
+  {
+    id: 'green-cleaning-leed-certification',
+    slug: 'green-cleaning-leed-gold-certification',
+    title: 'Law Firm Achieves LEED Gold Certification with Green Cleaning Program',
+    client: {
+      name: 'Hamilton & Associates Law',
+      industry: 'Corporate Offices',
+      location: 'Hartford, CT',
+      facilitySize: '45,000 sq ft',
+      employees: 82,
+    },
+    featuredImage: '/images/case-studies/green-cleaning-hero.jpg',
+    keyResult: 'Achieved LEED Gold certification, improved air quality by 45%',
+    icon: 'Sprout',
+    publishedDate: '2024-11-01',
+
+    challenge: {
+      headline: 'Corporate sustainability goals required LEED certification and healthier workplace',
+      description: [
+        'Hamilton & Associates Law is a prestigious corporate law firm representing Fortune 500 clients across industries with strong environmental, social, and governance (ESG) commitments. To maintain relevance with these clients, the firm needed to demonstrate its own commitment to sustainability through LEED Gold certification of their Hartford headquarters.',
+        'The firm\'s existing cleaning program used traditional chemical-based products that left strong odors in the office overnight. Several partners and staff members had reported respiratory irritation, headaches, and sensitivity to cleaning product fragrances. The managing partner wanted a healthier workplace that aligned with the firm\'s values.',
+        'LEED certification requires documented green cleaning policies, use of environmentally preferable products, and measurable improvements in indoor environmental quality. The firm\'s previous cleaning contractor had no green cleaning program and no experience with LEED requirements. The certification audit was scheduled for 18 months out, creating a firm deadline.',
+        'Beyond certification, the firm\'s leadership recognized that younger attorneys and staff increasingly prioritize employer sustainability practices. A green workplace was becoming not just an environmental issue, but a talent recruitment and retention advantage in a competitive legal market.',
+      ],
+      painPoints: [
+        'LEED Gold certification required for corporate client alignment',
+        'Strong chemical odors from traditional cleaning products',
+        'Employee complaints about respiratory irritation and headaches',
+        'No documented green cleaning policies or procedures',
+        'Previous contractor had no green cleaning expertise',
+        '18-month deadline for LEED certification audit',
+        'Needed measurable indoor air quality improvements',
+        'High-end office finishes requiring specialized eco-friendly care',
+      ],
+    },
+
+    solution: {
+      description: [
+        'Anderson Cleaning Company designed a comprehensive green cleaning program specifically to support Hamilton & Associates\' LEED Gold certification goals. We began with a complete audit of all existing cleaning practices, products, and equipment to establish a sustainability baseline.',
+        'We transitioned the entire cleaning program to 100% Green Seal-certified cleaning products—the gold standard for environmentally preferable cleaning chemicals. These products contain no harsh chemicals, volatile organic compounds (VOCs), or synthetic fragrances, yet deliver professional-grade cleaning performance. All paper products were switched to 100% recycled content options.',
+        'Our team implemented microfiber cleaning technology throughout the facility. Microfiber cloths and mops capture 99% of dust, bacteria, and allergens using only water—eliminating the need for chemical sprays in most applications. We introduced HEPA-filtered backpack vacuums that remove particles as small as 0.3 microns, dramatically improving indoor air quality.',
+        'A key element of LEED certification is daytime cleaning visibility. We transitioned cleaning from night shift to daytime hours, allowing the firm to demonstrate their green cleaning practices to employees and visitors. This also reduced energy consumption by 30% since lights, HVAC, and elevators no longer run extended hours for night cleaning.',
+        'To support the LEED audit, we created comprehensive documentation including: product Safety Data Sheets (SDS) for all cleaning chemicals, staff training records on green cleaning procedures, waste diversion tracking showing recycling rates, and quarterly indoor air quality reports. Our account manager worked directly with the firm\'s LEED consultant to ensure all cleaning-related prerequisites were met.',
+      ],
+      servicesUsed: [
+        'Complete green cleaning program with Green Seal-certified products',
+        'Microfiber cleaning technology (cloths, mops, dusters)',
+        'HEPA-filtered backpack vacuum systems',
+        'Daytime cleaning program for sustainability visibility',
+        'Environmentally preferable paper products (100% recycled)',
+        'Indoor air quality monitoring and reporting',
+        'Comprehensive LEED documentation and audit support',
+        'Staff training on green cleaning best practices',
+        'Waste diversion and recycling program management',
+        'Quarterly sustainability reports with metrics',
+      ],
+      timeline: '90 days to complete green cleaning transition, 18 months to LEED Gold certification',
+    },
+
+    results: {
+      metrics: [
+        {
+          value: 'LEED Gold',
+          label: 'Certification achieved',
+          description: 'Earned 8 LEED points for green cleaning practices',
+        },
+        {
+          value: '45%',
+          label: 'Air quality improvement',
+          description: 'IAQ testing showed 45% reduction in airborne particulates',
+        },
+        {
+          value: '75%',
+          label: 'Chemical reduction',
+          description: 'Eliminated 75% of harsh cleaning chemicals from facility',
+        },
+        {
+          value: '30%',
+          label: 'Energy savings',
+          description: 'Daytime cleaning reduced after-hours energy consumption',
+        },
+      ],
+      quote: {
+        text: 'Anderson Cleaning\'s green cleaning program was instrumental in achieving our LEED Gold certification. The improvement in indoor air quality has been remarkable—employees no longer experience headaches or irritation from cleaning products. Most importantly, we can now showcase our commitment to sustainability when clients visit our offices.',
+        author: 'Sarah Hamilton',
+        role: 'Managing Partner',
+        company: 'Hamilton & Associates Law',
+      },
+      additionalOutcomes: [
+        'Eliminated all employee complaints about cleaning product odors',
+        'Achieved top quartile indoor air quality scores in LEED assessment',
+        'Featured in local business journal for sustainability leadership',
+        'Improved employee satisfaction scores by 28% on workplace environment',
+        'Attracted three lateral partner hires who cited sustainability as decision factor',
+        'Expanded green cleaning program to firm\'s two satellite offices',
+        'Became template for other professional services firms seeking LEED certification',
+      ],
+    },
+  },
 ]
 
 // ============================================================================

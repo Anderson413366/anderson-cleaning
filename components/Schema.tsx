@@ -538,3 +538,82 @@ export function ArticleSchema({
     />
   )
 }
+
+export function CaseStudySchema({
+  title,
+  description,
+  url,
+  datePublished,
+  clientName,
+  clientIndustry,
+  facilitySize,
+  keyResult,
+  nonce,
+}: {
+  title: string
+  description: string
+  url: string
+  datePublished: string
+  clientName: string
+  clientIndustry: string
+  facilitySize: string
+  keyResult: string
+  nonce?: string | null
+}) {
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    '@id': url,
+    headline: title,
+    description,
+    url,
+    datePublished,
+    dateModified: datePublished,
+    author: {
+      '@type': 'Organization',
+      name: 'Anderson Cleaning Company',
+      url: 'https://andersoncleaning.com',
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Anderson Cleaning Company',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://andersoncleaning.com/brand/color/logo-full-2000.png',
+      },
+    },
+    about: {
+      '@type': 'Thing',
+      name: `Commercial Cleaning Services for ${clientIndustry}`,
+      description: `${keyResult}`,
+    },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': url,
+    },
+    articleSection: 'Case Studies',
+    keywords: [
+      'commercial cleaning',
+      'case study',
+      clientIndustry,
+      'cleaning services',
+      'facility management',
+      clientName,
+    ].join(', '),
+    mentions: [
+      {
+        '@type': 'Organization',
+        name: clientName,
+        description: `${facilitySize} ${clientIndustry} facility`,
+      },
+    ],
+  }
+
+  return (
+    <script
+      type="application/ld+json"
+      nonce={nonce || undefined}
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  )
+}

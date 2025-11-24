@@ -1,0 +1,215 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e6] [cursor=pointer]:
+    - button "Open Next.js Dev Tools" [ref=e7]:
+      - img [ref=e8]
+    - generic [ref=e11]:
+      - button "Open issues overlay" [ref=e12]:
+        - generic [ref=e13]:
+          - generic [ref=e14]: "6"
+          - generic [ref=e15]: "7"
+        - generic [ref=e16]:
+          - text: Issue
+          - generic [ref=e17]: s
+      - button "Collapse issues badge" [ref=e18]:
+        - img [ref=e19]
+  - link "Skip to main content" [ref=e21] [cursor=pointer]:
+    - /url: "#main-content"
+  - banner [ref=e22]:
+    - navigation "Global" [ref=e23]:
+      - link "Anderson Cleaning Company" [ref=e25] [cursor=pointer]:
+        - /url: /
+        - img "Anderson Cleaning Company" [ref=e26]
+      - generic [ref=e27]:
+        - button "Services" [ref=e29] [cursor=pointer]:
+          - text: Services
+          - img [ref=e30]
+        - button "Industries" [ref=e33] [cursor=pointer]:
+          - text: Industries
+          - img [ref=e34]
+        - button "Locations" [ref=e37] [cursor=pointer]:
+          - text: Locations
+          - img [ref=e38]
+        - link "Home" [ref=e40] [cursor=pointer]:
+          - /url: /
+        - link "About" [ref=e41] [cursor=pointer]:
+          - /url: /about
+        - link "Contact" [ref=e42] [cursor=pointer]:
+          - /url: /contact
+      - generic [ref=e43]:
+        - link "Call Anderson Cleaning Company at (413) 306-5053" [ref=e44] [cursor=pointer]:
+          - /url: tel:+14133065053
+          - generic: Call Now
+          - img [ref=e46]
+          - generic [ref=e49]: (413) 306-5053
+        - button "Toggle dark mode" [ref=e50] [cursor=pointer]:
+          - img [ref=e51]
+        - link "Get a Quote" [ref=e53] [cursor=pointer]:
+          - /url: /quote
+  - main [ref=e54]:
+    - generic [ref=e55]:
+      - generic [ref=e57]:
+        - heading "Get Your Free Quote" [level=1] [ref=e58]
+        - paragraph [ref=e59]: Tell us about your facility and we'll provide a customized cleaning proposal within 24 hours.
+      - generic [ref=e64]:
+        - img [ref=e67]
+        - generic [ref=e70]:
+          - heading "Quote Request Submitted Successfully!" [level=2] [ref=e71]
+          - paragraph [ref=e72]: Thank you for requesting a quote from Anderson Cleaning Company. We've received your information and will contact you within 24 hours (Monday – Friday, 9 AM – 5 PM EST).
+          - generic [ref=e73]:
+            - heading "What happens next?" [level=3] [ref=e74]
+            - list [ref=e75]:
+              - listitem [ref=e76]:
+                - generic [ref=e77]: "1."
+                - generic [ref=e78]: We'll call or email you to discuss your specific needs
+              - listitem [ref=e79]:
+                - generic [ref=e80]: "2."
+                - generic [ref=e81]: We'll schedule a free on-site walk-through at your convenience
+              - listitem [ref=e82]:
+                - generic [ref=e83]: "3."
+                - generic [ref=e84]: You'll receive a detailed proposal within 24 hours
+      - generic [ref=e88]:
+        - img [ref=e90]
+        - heading "Thank You for Your Quote Request!" [level=2] [ref=e93]
+        - paragraph [ref=e94]: We've received your request and will contact you within 24 hours (Monday–Friday, 9 AM – 5 PM EST).
+        - generic [ref=e95]:
+          - paragraph [ref=e96]: What happens next?
+          - list [ref=e97]:
+            - listitem [ref=e98]:
+              - img [ref=e99]
+              - generic [ref=e102]: Check your email for a confirmation (check spam if you don't see it)
+            - listitem [ref=e103]:
+              - img [ref=e104]
+              - generic [ref=e107]: Our team will review your facility requirements
+            - listitem [ref=e108]:
+              - img [ref=e109]
+              - generic [ref=e112]: We'll reach out with a customized quote and next steps
+        - generic [ref=e113]:
+          - 'link "Call Us Now: (413) 306-5053" [ref=e114] [cursor=pointer]':
+            - /url: tel:+14133065053
+            - img [ref=e115]
+            - text: "Call Us Now: (413) 306-5053"
+          - link "Email Us" [ref=e117] [cursor=pointer]:
+            - /url: mailto:[object Object]
+            - img [ref=e118]
+            - text: Email Us
+      - generic [ref=e123]:
+        - heading "Why Request a Quote from Anderson Cleaning Company?" [level=2] [ref=e124]
+        - generic [ref=e125]:
+          - generic [ref=e126]:
+            - img [ref=e128]
+            - heading "No Obligation" [level=3] [ref=e130]
+            - paragraph [ref=e131]: Free consultation and walk-through with zero commitment or pressure to sign
+          - generic [ref=e132]:
+            - img [ref=e134]
+            - heading "Transparent Pricing" [level=3] [ref=e137]
+            - paragraph [ref=e138]: Clear, itemized proposals with no hidden fees or surprise charges
+          - generic [ref=e139]:
+            - generic [ref=e141]: 24h
+            - heading "Fast Turnaround" [level=3] [ref=e142]
+            - paragraph [ref=e143]: Receive your detailed proposal within 24 hours of our site visit
+      - generic [ref=e146]:
+        - heading "Prefer to Schedule a Walk-Through Directly?" [level=2] [ref=e147]
+        - paragraph [ref=e148]: If you already know what you need, skip the form and schedule your free on-site consultation directly.
+        - generic [ref=e149]:
+          - paragraph [ref=e150]:
+            - text: Call us at
+            - link "(413) 306-5053" [ref=e151] [cursor=pointer]:
+              - /url: tel:+14133065053
+            - text: to schedule your walk-through today.
+          - paragraph [ref=e153]:
+            - strong [ref=e154]: "Note:"
+            - text: Online scheduling coming soon! For now, please call or submit the quote form above.
+  - generic [ref=e156]:
+    - heading "Ready to Experience Professional Cleaning?" [level=2] [ref=e157]
+    - paragraph [ref=e158]: Join 100+ businesses that trust Anderson Cleaning Company for their facility maintenance
+    - generic [ref=e159]:
+      - link "Get Your Free Quote" [ref=e160] [cursor=pointer]:
+        - /url: /quote
+      - link "Call (413) 306-5053" [ref=e161] [cursor=pointer]:
+        - /url: tel:+14133065053
+        - img [ref=e162]
+        - text: Call (413) 306-5053
+  - contentinfo "Footer" [ref=e164]:
+    - heading "Footer" [level=2] [ref=e165]
+    - generic [ref=e166]:
+      - generic [ref=e167]:
+        - generic [ref=e168]:
+          - heading "Our Services" [level=3] [ref=e169]
+          - list [ref=e170]:
+            - listitem [ref=e171]:
+              - link "Office Cleaning" [ref=e172] [cursor=pointer]:
+                - /url: /services/office-cleaning
+            - listitem [ref=e173]:
+              - link "Janitorial Services" [ref=e174] [cursor=pointer]:
+                - /url: /services/janitorial-services
+            - listitem [ref=e175]:
+              - link "Floor & Carpet Care" [ref=e176] [cursor=pointer]:
+                - /url: /services/floor-care
+            - listitem [ref=e177]:
+              - link "Window Cleaning" [ref=e178] [cursor=pointer]:
+                - /url: /services/window-cleaning
+            - listitem [ref=e179]:
+              - link "Post-Construction" [ref=e180] [cursor=pointer]:
+                - /url: /services/post-construction
+        - generic [ref=e181]:
+          - heading "Quick Links" [level=3] [ref=e182]
+          - list [ref=e183]:
+            - listitem [ref=e184]:
+              - link "About Us" [ref=e185] [cursor=pointer]:
+                - /url: /about
+            - listitem [ref=e186]:
+              - link "Industries" [ref=e187] [cursor=pointer]:
+                - /url: /industries
+            - listitem [ref=e188]:
+              - link "Testimonials" [ref=e189] [cursor=pointer]:
+                - /url: /testimonials
+            - listitem [ref=e190]:
+              - link "Blog" [ref=e191] [cursor=pointer]:
+                - /url: /blog
+            - listitem [ref=e192]:
+              - link "Careers" [ref=e193] [cursor=pointer]:
+                - /url: /careers
+            - listitem [ref=e194]:
+              - link "FAQ" [ref=e195] [cursor=pointer]:
+                - /url: /faq
+        - generic [ref=e196]:
+          - heading "Get in Touch" [level=3] [ref=e197]
+          - generic [ref=e198]:
+            - link "(413) 306-5053" [ref=e199] [cursor=pointer]:
+              - /url: tel:+14133065053
+            - link "info@andersoncleaning.com" [ref=e200] [cursor=pointer]:
+              - /url: mailto:info@andersoncleaning.com
+            - generic [ref=e201]:
+              - generic [ref=e202]: 103 Wayside Avenue
+              - generic [ref=e203]: West Springfield, MA 01089
+            - generic [ref=e204]:
+              - link "LinkedIn" [ref=e205] [cursor=pointer]:
+                - /url: https://www.linkedin.com/company/anderson-cleaning-inc-
+                - img [ref=e206]
+              - link "Facebook" [ref=e210] [cursor=pointer]:
+                - /url: https://www.facebook.com/Andersonclean/
+                - img [ref=e211]
+              - link "X" [ref=e213] [cursor=pointer]:
+                - /url: https://x.com/andersonclean
+                - img [ref=e214]
+              - link "Instagram" [ref=e216] [cursor=pointer]:
+                - /url: https://www.instagram.com/andersonclean/
+                - img [ref=e217]
+      - generic [ref=e223]:
+        - paragraph [ref=e224]: © 2025 Anderson Cleaning Company. All rights reserved.
+        - navigation [ref=e225]:
+          - link "Privacy Policy" [ref=e226] [cursor=pointer]:
+            - /url: /privacy-policy
+          - link "Terms of Service" [ref=e227] [cursor=pointer]:
+            - /url: /terms-of-service
+          - link "Accessibility" [ref=e228] [cursor=pointer]:
+            - /url: /accessibility
+          - link "Sitemap" [ref=e229] [cursor=pointer]:
+            - /url: /sitemap.xml
+  - button "Toggle contact options" [ref=e231] [cursor=pointer]:
+    - img [ref=e232]
+  - alert [ref=e234]
+```

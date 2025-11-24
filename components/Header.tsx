@@ -72,17 +72,30 @@ const LOCATIONS_MENU = {
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const [hideHeader, setHideHeader] = useState(false)
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
   const pathname = usePathname()
   const { theme, toggleTheme } = useTheme()
   const dropdownTimerRef = useRef<NodeJS.Timeout | null>(null)
+  const lastScrollY = useRef(0)
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 20)
+      const currentScrollY = window.scrollY
+
+      setScrolled(currentScrollY > 20)
+
+      // Hide header on scroll down, show on scroll up (mobile only)
+      if (currentScrollY > lastScrollY.current && currentScrollY > 100) {
+        setHideHeader(true)
+      } else if (currentScrollY < lastScrollY.current) {
+        setHideHeader(false)
+      }
+
+      lastScrollY.current = currentScrollY
     }
 
-    window.addEventListener('scroll', handleScroll)
+    window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
@@ -152,7 +165,7 @@ export default function Header() {
     <header
       className={`fixed top-0 left-0 right-0 z-[100] bg-white/95 backdrop-blur-lg transition-all duration-300 dark:bg-brand-deep-blue ${
         scrolled ? 'shadow-md border-b border-neutral-light-grey dark:border-white/10' : 'shadow-sm'
-      }`}
+      } ${hideHeader ? 'lg:translate-y-0 -translate-y-full' : 'translate-y-0'}`}
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between p-5 lg:px-8" aria-label="Global">
         {/* Logo */}

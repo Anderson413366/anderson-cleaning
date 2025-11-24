@@ -18,6 +18,8 @@ import {
   Heart,
   Building2,
   Factory,
+  AlertTriangle,
+  Sprout,
   // Add more icons here as needed for future case studies
   Briefcase,
   GraduationCap,
@@ -39,6 +41,8 @@ const iconMap: Record<string, LucideIcon> = {
   Heart,
   Building2,
   Factory,
+  AlertTriangle,
+  Sprout,
   Briefcase,
   GraduationCap,
   ShoppingBag,
