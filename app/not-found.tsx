@@ -24,7 +24,7 @@ export default function NotFound() {
               y="150"
               textAnchor="middle"
               dominantBaseline="middle"
-              className="fill-brand-navy dark:fill-white/40"
+              className="fill-brand-deep-blue dark:fill-white/40"
               style={{ fontSize: '120px', fontWeight: 'bold', opacity: 0.1 }}
             >
               404
@@ -38,7 +38,7 @@ export default function NotFound() {
               />
               <path
                 d="M20 35 L60 35 L58 40 L22 40 Z"
-                className="fill-brand-navy dark:fill-white/30"
+                className="fill-brand-deep-blue dark:fill-white/30"
               />
               <line
                 x1="35"

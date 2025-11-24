@@ -146,7 +146,7 @@ export default function CareerApplicationForm() {
         {recoveryCode && (
           <div className="bg-neutral-off-white p-4 rounded">
             <p className="text-body-sm font-semibold">Your Recovery Code:</p>
-            <p className="text-h3 text-brand-navy font-mono">{recoveryCode}</p>
+            <p className="text-h3 text-brand-deep-blue font-mono">{recoveryCode}</p>
             <p className="text-body-sm text-neutral-charcoal dark:text-white mt-2">
               Save this code to check your application status.
             </p>

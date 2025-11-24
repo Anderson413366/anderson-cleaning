@@ -487,7 +487,7 @@ export default function QuoteForm({ onSuccess }: QuoteFormProps) {
                     <>
                       {Object.entries(serviceLabels).map(([value, label]) => {
                         const isClientOnly = [
-                          'floor-carpet-care',
+                          'floor-care',
                           'window-cleaning',
                           'post-construction',
                           'supply-management',

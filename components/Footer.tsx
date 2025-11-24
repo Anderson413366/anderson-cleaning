@@ -6,8 +6,8 @@ import { Phone, Mail, MapPin } from 'lucide-react'
 const navigation = {
   services: [
     { name: 'Office Cleaning', href: '/services/office-cleaning' },
-    { name: 'Janitorial Services', href: '/services/janitorial' },
-    { name: 'Floor & Carpet Care', href: '/services/floor-carpet-care' },
+    { name: 'Janitorial Services', href: '/services/janitorial-services' },
+    { name: 'Floor & Carpet Care', href: '/services/floor-care' },
     { name: 'Window Cleaning', href: '/services/window-cleaning' },
     { name: 'Post-Construction', href: '/services/post-construction' },
   ],

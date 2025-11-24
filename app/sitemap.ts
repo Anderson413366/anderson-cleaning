@@ -42,36 +42,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly' as const,
       priority: 0.9,
     },
-    {
-      url: `${baseUrl}/services/office-cleaning`,
+    ...[
+      'office-cleaning',
+      'healthcare-cleaning',
+      'janitorial-services',
+      'floor-care',
+      'window-cleaning',
+      'post-construction',
+      'emergency-cleaning',
+      'day-porter',
+    ].map((slug) => ({
+      url: `${baseUrl}/services/${slug}`,
       lastModified: currentDate,
       changeFrequency: 'monthly' as const,
       priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/services/janitorial`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly' as const,
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/services/floor-carpet-care`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly' as const,
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/services/window-cleaning`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly' as const,
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/services/post-construction`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly' as const,
-      priority: 0.8,
-    },
+    })),
   ]
 
   // Industry pages

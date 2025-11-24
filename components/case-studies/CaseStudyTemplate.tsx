@@ -89,7 +89,7 @@ export default function CaseStudyTemplate({
       {/* =====================================================================
           HERO SECTION
           ===================================================================== */}
-      <section className="relative bg-brand-navy text-white py-16 md:py-20">
+      <section className="relative bg-brand-deep-blue text-white py-16 md:py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
             {/* Back Button */}
@@ -463,7 +463,7 @@ export default function CaseStudyTemplate({
           CTA SECTION
           ===================================================================== */}
       {showCTA && (
-        <section className="py-16 md:py-20 bg-brand-navy text-white">
+        <section className="py-16 md:py-20 bg-brand-deep-blue text-white">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto text-center">
               <h2 className="text-h2 leading-tight font-bold mb-4">

@@ -1,0 +1,469 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - navigation "Global" [ref=e3]:
+      - link "Anderson CleaningAnderson Cleaning" [ref=e5]:
+        - /url: /
+        - img "Anderson Cleaning" [ref=e6]
+        - img "Anderson Cleaning" [ref=e7]
+      - button "Open main menu" [ref=e9]:
+        - text: Open main menu
+        - img [ref=e10]
+      - generic [ref=e11]:
+        - link "Home" [ref=e12]:
+          - /url: /
+          - text: Home
+        - link "Services" [ref=e13]:
+          - /url: /services
+        - link "Industries" [ref=e14]:
+          - /url: /industries
+        - link "About" [ref=e15]:
+          - /url: /about
+        - link "Contact" [ref=e16]:
+          - /url: /contact
+      - generic [ref=e17]:
+        - button "Toggle dark mode" [ref=e18]:
+          - img [ref=e19]
+        - link "Get a Quote" [ref=e21]:
+          - /url: /quote
+  - main [ref=e22]:
+    - generic [ref=e23]:
+      - generic [ref=e26]:
+        - generic [ref=e27]: Trusted by 100+ Businesses Since 2007
+        - heading "Professional Commercial Cleaning You Can Count On" [level=1] [ref=e28]
+        - paragraph [ref=e29]: Full-time salaried teams, 24/7 support, and corporate-grade standards for your Western MA & Northern CT facility
+        - generic [ref=e30]:
+          - link "Get a Free Quote" [ref=e31]:
+            - /url: /quote
+            - button "Get a Free Quote" [ref=e32]
+          - link "Call (413) 306-5053" [ref=e33]:
+            - /url: tel:+14133065053
+            - button "Call (413) 306-5053" [ref=e34]:
+              - img [ref=e35]
+              - text: Call (413) 306-5053
+      - region "Company Statistics" [ref=e37]:
+        - generic [ref=e39]:
+          - heading "Company Statistics" [level=2] [ref=e40]
+          - generic [ref=e41]:
+            - generic [ref=e42]:
+              - img [ref=e45]
+              - generic "18 Years of Excellence" [ref=e47]: "18"
+              - generic [ref=e48]: Years of Excellence
+            - generic [ref=e49]:
+              - img [ref=e52]
+              - generic "100+ Active Clients" [ref=e57]: 100+
+              - generic [ref=e58]: Active Clients
+            - generic [ref=e59]:
+              - img [ref=e62]
+              - generic "3M+ Sq Ft Cleaned Monthly" [ref=e66]: 3M+
+              - generic [ref=e67]: Sq Ft Cleaned Monthly
+            - generic [ref=e68]:
+              - img [ref=e71]
+              - generic "100% Client Satisfaction" [ref=e73]: 100%
+              - generic [ref=e74]: Client Satisfaction
+      - generic [ref=e76]:
+        - generic [ref=e77]:
+          - heading "Our Services" [level=2] [ref=e78]
+          - paragraph [ref=e79]: Comprehensive commercial cleaning solutions tailored to your facility
+        - generic [ref=e80]:
+          - generic [ref=e82]:
+            - generic [ref=e83]:
+              - img [ref=e84]
+              - text: Office building icon
+            - generic [ref=e89]:
+              - heading "Office & Commercial Cleaning" [level=3] [ref=e90]
+              - paragraph [ref=e91]: Daily/weekly programs for spotless workplaces
+          - generic [ref=e93]:
+            - generic [ref=e94]:
+              - img [ref=e95]
+              - text: Janitorial icon
+            - generic [ref=e98]:
+              - heading "Janitorial Services" [level=3] [ref=e99]
+              - paragraph [ref=e100]: Reliable, accountable facility care
+          - generic [ref=e102]:
+            - generic [ref=e103]:
+              - img [ref=e104]
+              - text: Floor care icon
+            - generic [ref=e106]:
+              - generic [ref=e107]:
+                - heading "Floor & Carpet Care" [level=3] [ref=e108]
+                - paragraph [ref=e109]: Strip, wax, buff, and deep cleaning
+              - text: Premium add-on
+          - generic [ref=e111]:
+            - generic [ref=e112]:
+              - img [ref=e113]
+              - text: Window cleaning icon
+            - generic [ref=e115]:
+              - generic [ref=e116]:
+                - heading "Window Cleaning" [level=3] [ref=e117]
+                - paragraph [ref=e118]: Interior & exterior, streak-free results
+              - text: Premium add-on
+          - generic [ref=e120]:
+            - generic [ref=e121]:
+              - img [ref=e122]
+              - text: Construction icon
+            - generic [ref=e127]:
+              - generic [ref=e128]:
+                - heading "Post-Construction" [level=3] [ref=e129]
+                - paragraph [ref=e130]: Move-in ready cleanup after renovations
+              - text: Premium add-on
+          - generic [ref=e132]:
+            - generic [ref=e133]:
+              - img [ref=e134]
+              - text: Supply management icon
+            - generic [ref=e138]:
+              - generic [ref=e139]:
+                - heading "Supply Management" [level=3] [ref=e140]
+                - paragraph [ref=e141]: Auto-replenishment of consumables
+              - text: Premium add-on
+        - link "View All Services" [ref=e143]:
+          - /url: /services
+          - button "View All Services" [ref=e144]:
+            - text: View All Services
+            - img [ref=e145]
+      - generic [ref=e149]:
+        - generic [ref=e150]:
+          - heading "Serving Massachusetts & Connecticut" [level=2] [ref=e151]
+          - paragraph [ref=e152]: Within 100 miles of West Springfield, MA
+        - generic [ref=e154]:
+          - generic [ref=e155]:
+            - heading "Primary Service Areas" [level=3] [ref=e156]:
+              - img [ref=e157]
+              - text: Primary Service Areas
+            - list [ref=e160]:
+              - listitem [ref=e161]:
+                - img [ref=e162]
+                - text: Springfield & West Springfield
+              - listitem [ref=e165]:
+                - img [ref=e166]
+                - text: Worcester County
+              - listitem [ref=e169]:
+                - img [ref=e170]
+                - text: Northampton & Amherst
+              - listitem [ref=e173]:
+                - img [ref=e174]
+                - text: Hartford, CT area
+          - generic [ref=e177]:
+            - heading "We Serve" [level=3] [ref=e178]:
+              - img [ref=e179]
+              - text: We Serve
+            - list [ref=e183]:
+              - listitem [ref=e184]:
+                - img [ref=e185]
+                - text: Office buildings & corporate campuses
+              - listitem [ref=e188]:
+                - img [ref=e189]
+                - text: Medical offices & clinics
+              - listitem [ref=e192]:
+                - img [ref=e193]
+                - text: Educational facilities & schools
+              - listitem [ref=e196]:
+                - img [ref=e197]
+                - text: Retail stores & warehouses
+        - paragraph [ref=e201]:
+          - strong [ref=e202]: "Note:"
+          - text: We focus exclusively on B2B commercial cleaning. We do not service restaurants or facilities requiring 7-day/week cleaning.
+      - generic [ref=e204]:
+        - generic [ref=e205]:
+          - heading "What Our Clients Say" [level=2] [ref=e206]
+          - img "5 out of 5 stars" [ref=e207]:
+            - img [ref=e208]
+            - img [ref=e210]
+            - img [ref=e212]
+            - img [ref=e214]
+            - img [ref=e216]
+          - paragraph [ref=e218]: 5.0 stars from satisfied clients
+        - generic [ref=e219]:
+          - generic [ref=e220]:
+            - img "5 out of 5 stars" [ref=e221]:
+              - img [ref=e222]
+              - img [ref=e224]
+              - img [ref=e226]
+              - img [ref=e228]
+              - img [ref=e230]
+            - blockquote [ref=e232]: "\"Anderson Cleaning transformed our medical office. Their attention to detail and OSHA compliance gives us complete peace of mind.\""
+            - generic [ref=e233]:
+              - paragraph [ref=e234]: Dr. Sarah Mitchell
+              - paragraph [ref=e235]: Springfield Family Medicine
+          - generic [ref=e236]:
+            - img "5 out of 5 stars" [ref=e237]:
+              - img [ref=e238]
+              - img [ref=e240]
+              - img [ref=e242]
+              - img [ref=e244]
+              - img [ref=e246]
+            - blockquote [ref=e248]: "\"We've tried three cleaning companies before Anderson. The difference is night and day. Their team is professional, consistent, and truly cares.\""
+            - generic [ref=e249]:
+              - paragraph [ref=e250]: Michael Chen
+              - paragraph [ref=e251]: TechStart Solutions
+          - generic [ref=e252]:
+            - img "5 out of 5 stars" [ref=e253]:
+              - img [ref=e254]
+              - img [ref=e256]
+              - img [ref=e258]
+              - img [ref=e260]
+              - img [ref=e262]
+            - blockquote [ref=e264]: "\"The 24/7 support isn't just marketing – they really do respond in minutes. When we had an emergency spill, they had someone there within the hour.\""
+            - generic [ref=e265]:
+              - paragraph [ref=e266]: Jennifer Rodriguez
+              - paragraph [ref=e267]: Northeast Manufacturing
+      - generic [ref=e269]:
+        - generic [ref=e270]:
+          - heading "Our Work Speaks for Itself" [level=2] [ref=e271]
+          - paragraph [ref=e272]: See the Anderson Cleaning difference with interactive before/after comparisons
+        - generic [ref=e273]:
+          - 'slider "Before and after comparison slider: Spotless Floors. Use left and right arrow keys to adjust." [ref=e274]':
+            - generic [ref=e275]:
+              - img [ref=e276]
+              - generic [ref=e277]: After
+            - generic [ref=e278]:
+              - img [ref=e279]
+              - generic [ref=e280]: Before
+            - img [ref=e283]
+            - generic [ref=e285]: Use ← → arrow keys to compare
+          - generic [ref=e286]:
+            - heading "Spotless Floors" [level=3] [ref=e287]
+            - paragraph [ref=e288]: Professional strip, wax, and buff services that restore shine and extend floor life
+          - generic [ref=e289]:
+            - button "Previous comparison" [ref=e290]:
+              - img
+            - generic [ref=e292]:
+              - button "Go to comparison 1" [ref=e293]
+              - button "Go to comparison 2" [ref=e294]
+            - button "Next comparison" [ref=e295]:
+              - img
+      - generic [ref=e298]:
+        - generic [ref=e299]:
+          - heading "Licensed, Certified & Trusted" [level=2] [ref=e300]
+          - paragraph [ref=e301]: We meet the highest industry standards
+        - generic [ref=e302]:
+          - generic [ref=e303]:
+            - img [ref=e304]
+            - heading "Licensed & Insured" [level=3] [ref=e306]
+            - paragraph [ref=e307]: Full liability coverage
+          - generic [ref=e308]:
+            - img [ref=e309]
+            - heading "Background Checked" [level=3] [ref=e314]
+            - paragraph [ref=e315]: All staff verified
+          - generic [ref=e316]:
+            - img [ref=e317]
+            - heading "18 Years of Excellence" [level=3] [ref=e320]
+            - paragraph [ref=e321]: Serving Western MA & Northern CT Since 2007
+          - generic [ref=e322]:
+            - img [ref=e323]
+            - heading "100% Satisfaction" [level=3] [ref=e325]
+            - paragraph [ref=e326]: Guaranteed results
+          - generic [ref=e327]:
+            - img [ref=e328]
+            - heading "OSHA Compliant" [level=3] [ref=e331]
+            - paragraph [ref=e332]: Safety trained
+          - generic [ref=e333]:
+            - img [ref=e334]
+            - heading "Eco-Friendly" [level=3] [ref=e336]
+            - paragraph [ref=e337]: Green cleaning
+          - generic [ref=e338]:
+            - img [ref=e339]
+            - heading "24/7 Support" [level=3] [ref=e342]
+            - paragraph [ref=e343]: Current clients on-site ≤2 hrs
+          - generic [ref=e344]:
+            - img [ref=e345]
+            - heading "B2B Focused" [level=3] [ref=e349]
+            - paragraph [ref=e350]: Commercial only
+        - generic [ref=e351]:
+          - heading "Our Commitment to You" [level=3] [ref=e353]
+          - generic [ref=e354]:
+            - generic [ref=e355]:
+              - img [ref=e356]
+              - text: Bonded & insured for your protection
+            - generic [ref=e359]:
+              - img [ref=e360]
+              - text: Full-time W2 employees only
+            - generic [ref=e363]:
+              - img [ref=e364]
+              - text: 40+ hours of training per cleaner
+            - generic [ref=e367]:
+              - img [ref=e368]
+              - text: Quality audits & checklists
+            - generic [ref=e371]:
+              - img [ref=e372]
+              - text: EPA-registered disinfectants
+            - generic [ref=e375]:
+              - img [ref=e376]
+              - text: Custom SOPs for your facility
+      - generic [ref=e380]:
+        - generic [ref=e381]:
+          - heading "Resources & Learning Center" [level=2] [ref=e382]
+          - paragraph [ref=e383]: Expert tips, answers to your questions, and special offers
+        - generic [ref=e384]:
+          - generic [ref=e385]:
+            - generic [ref=e386]:
+              - img [ref=e387]
+              - heading "Blog & Resources" [level=3] [ref=e390]
+              - paragraph [ref=e391]: Expert cleaning tips and industry insights
+            - generic [ref=e392]:
+              - list [ref=e393]:
+                - listitem [ref=e394]:
+                  - img [ref=e395]
+                  - text: Office Cleaning Best Practices
+                - listitem [ref=e398]:
+                  - img [ref=e399]
+                  - text: Green Cleaning Benefits
+                - listitem [ref=e402]:
+                  - img [ref=e403]
+                  - text: Healthcare Facility Standards
+              - link "Explore Articles" [ref=e406]:
+                - /url: /blog
+                - button "Explore Articles" [ref=e407]:
+                  - text: Explore Articles
+                  - img [ref=e408]
+          - generic [ref=e410]:
+            - generic [ref=e411]:
+              - img [ref=e412]
+              - heading "Frequently Asked Questions" [level=3] [ref=e415]
+              - paragraph [ref=e416]: Get answers to common questions
+            - generic [ref=e417]:
+              - list [ref=e418]:
+                - listitem [ref=e419]:
+                  - img [ref=e420]
+                  - text: Contract & Pricing Info
+                - listitem [ref=e423]:
+                  - img [ref=e424]
+                  - text: Staff Vetting & Training
+                - listitem [ref=e427]:
+                  - img [ref=e428]
+                  - text: Service Area & Scheduling
+              - link "View All FAQs" [ref=e431]:
+                - /url: /faq
+                - button "View All FAQs" [ref=e432]:
+                  - text: View All FAQs
+                  - img [ref=e433]
+          - generic [ref=e435]:
+            - generic [ref=e436]:
+              - img [ref=e437]
+              - heading "Special Offers" [level=3] [ref=e441]
+              - paragraph [ref=e442]: Exclusive promotions and referral rewards
+            - generic [ref=e443]:
+              - list [ref=e444]:
+                - listitem [ref=e445]:
+                  - img [ref=e446]
+                  - text: 10% Off First Month for New Clients
+                - listitem [ref=e449]:
+                  - img [ref=e450]
+                  - text: $100 Referral Bonus Program
+                - listitem [ref=e453]:
+                  - img [ref=e454]
+                  - text: Seasonal Promotions
+              - link "See All Offers" [ref=e457]:
+                - /url: /promotions
+                - button "See All Offers" [ref=e458]:
+                  - text: See All Offers
+                  - img [ref=e459]
+      - generic [ref=e462]:
+        - generic [ref=e463]:
+          - heading "The Anderson Difference" [level=2] [ref=e464]
+          - paragraph [ref=e465]: What sets us apart in commercial cleaning
+        - generic [ref=e466]:
+          - generic [ref=e467]:
+            - img [ref=e469]
+            - heading "Personalized Attention" [level=3] [ref=e474]
+            - paragraph [ref=e475]: Local team, dedicated account manager, and site-specific SOPs.
+          - generic [ref=e476]:
+            - img [ref=e478]
+            - heading "Corporate-Grade Standards" [level=3] [ref=e480]
+            - paragraph [ref=e481]: Checklists, quality audits, and documented processes.
+          - generic [ref=e482]:
+            - img [ref=e484]
+            - heading "Full-Time Salaried Staff" [level=3] [ref=e487]
+            - paragraph [ref=e488]: Stable, trained, background-checked professionals.
+          - generic [ref=e489]:
+            - img [ref=e491]
+            - heading "24/7 Support" [level=3] [ref=e493]
+            - paragraph [ref=e494]: Current clients get emergency dispatch with on-site arrival in ≤2 hours.
+  - generic [ref=e496]:
+    - heading "Ready to Experience Professional Cleaning?" [level=2] [ref=e497]
+    - paragraph [ref=e498]: Join 100+ businesses that trust Anderson Cleaning for their facility maintenance
+    - generic [ref=e499]:
+      - link "Get Your Free Quote" [ref=e500]:
+        - /url: /quote
+      - link "Call (413) 306-5053" [ref=e501]:
+        - /url: tel:+14133065053
+        - img [ref=e502]
+        - text: Call (413) 306-5053
+  - contentinfo "Footer" [ref=e504]:
+    - heading "Footer" [level=2] [ref=e505]
+    - generic [ref=e506]:
+      - generic [ref=e507]:
+        - generic [ref=e508]:
+          - heading "Our Services" [level=3] [ref=e509]
+          - list [ref=e510]:
+            - listitem [ref=e511]:
+              - link "Office Cleaning" [ref=e512]:
+                - /url: /services/office-cleaning
+            - listitem [ref=e513]:
+              - link "Janitorial Services" [ref=e514]:
+                - /url: /services/janitorial-services
+            - listitem [ref=e515]:
+              - link "Floor & Carpet Care" [ref=e516]:
+                - /url: /services/floor-care
+            - listitem [ref=e517]:
+              - link "Window Cleaning" [ref=e518]:
+                - /url: /services/window-cleaning
+            - listitem [ref=e519]:
+              - link "Post-Construction" [ref=e520]:
+                - /url: /services/post-construction
+        - generic [ref=e521]:
+          - heading "Quick Links" [level=3] [ref=e522]
+          - list [ref=e523]:
+            - listitem [ref=e524]:
+              - link "About Us" [ref=e525]:
+                - /url: /about
+            - listitem [ref=e526]:
+              - link "Industries" [ref=e527]:
+                - /url: /industries
+            - listitem [ref=e528]:
+              - link "Testimonials" [ref=e529]:
+                - /url: /testimonials
+            - listitem [ref=e530]:
+              - link "Blog" [ref=e531]:
+                - /url: /blog
+            - listitem [ref=e532]:
+              - link "Careers" [ref=e533]:
+                - /url: /careers
+            - listitem [ref=e534]:
+              - link "FAQ" [ref=e535]:
+                - /url: /faq
+        - generic [ref=e536]:
+          - heading "Get in Touch" [level=3] [ref=e537]
+          - generic [ref=e538]:
+            - link "(413) 306-5053" [ref=e539]:
+              - /url: tel:+14133065053
+            - link "info@andersoncleaning.com" [ref=e540]:
+              - /url: mailto:info@andersoncleaning.com
+            - generic [ref=e541]:
+              - generic [ref=e542]: 103 Wayside Avenue
+              - generic [ref=e543]: West Springfield, MA 01089
+            - generic [ref=e544]:
+              - link "LinkedIn" [ref=e545]:
+                - /url: https://www.linkedin.com/company/anderson-cleaning-inc-
+                - img [ref=e546]
+              - link "Facebook" [ref=e550]:
+                - /url: https://www.facebook.com/Andersonclean/
+                - img [ref=e551]
+              - link "X" [ref=e553]:
+                - /url: https://x.com/andersonclean
+                - img [ref=e554]
+              - link "Instagram" [ref=e556]:
+                - /url: https://www.instagram.com/andersonclean/
+                - img [ref=e557]
+      - generic [ref=e561]:
+        - paragraph [ref=e562]: © 2025 Anderson Cleaning, Inc.
+        - generic [ref=e563]:
+          - link "Privacy" [ref=e564]:
+            - /url: /legal/privacy
+          - link "Terms" [ref=e565]:
+            - /url: /legal/terms
+          - link "Sitemap" [ref=e566]:
+            - /url: /sitemap.xml
+```

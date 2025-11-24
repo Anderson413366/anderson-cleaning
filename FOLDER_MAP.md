@@ -29,7 +29,7 @@ app/
 ├── services/                   ← 🧹 ALL SERVICES PAGES
 │   ├── page.tsx                   (services overview)
 │   ├── office-cleaning/
-│   ├── floor-carpet-care/
+│   ├── floor-care/
 │   └── [slug]/                    (dynamic service pages)
 ├── industries/                 ← 🏭 INDUSTRY PAGES
 ├── contact/page.tsx            ← 📞 CONTACT PAGE

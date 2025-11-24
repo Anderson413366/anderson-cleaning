@@ -24,7 +24,7 @@ const CareersHero: React.FC<CareersHeroProps> = ({ onStartApplication }) => {
 
   return (
     <section
-      className="relative overflow-hidden bg-brand-navy text-white py-16 md:py-24"
+      className="relative overflow-hidden bg-brand-deep-blue text-white py-16 md:py-24"
     >
       {/* Background Pattern */}
       <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10" aria-hidden="true"></div>

@@ -31,7 +31,7 @@ export default function IndustriesPage() {
   return (
     <div className="min-h-screen bg-white dark:bg-slate-900 transition-colors duration-300">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-brand-deep-blue via-brand-navy to-brand-bright-blue text-white pt-28 pb-16 md:pt-32 md:pb-20">
+      <section className="relative overflow-hidden bg-gradient-to-br from-brand-deep-blue via-brand-deep-blue to-brand-bright-blue text-white pt-28 pb-16 md:pt-32 md:pb-20">
         <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10"></div>
 
         <div className="container mx-auto px-6 lg:px-8 relative z-10">
@@ -105,7 +105,7 @@ export default function IndustriesPage() {
           <div
             className="
               max-w-4xl mx-auto
-              bg-brand-navy
+              bg-brand-deep-blue
               rounded-[var(--border-radius-lg)]
               shadow-2xl
               p-8 md:p-12

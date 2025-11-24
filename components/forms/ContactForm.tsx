@@ -92,10 +92,10 @@ export default function ContactForm({ onSuccess }: ContactFormProps) {
           <div className="rounded-lg bg-brand-bright-blue/10 border border-brand-bright-blue/30 p-4 flex items-start gap-3">
             <CheckCircle2 className="h-5 w-5 text-brand-bright-blue flex-shrink-0 mt-0.5" />
             <div className="flex-1">
-              <h4 className="text-sm font-semibold text-brand-navy mb-1">
+              <h4 className="text-sm font-semibold text-brand-deep-blue mb-1">
                 Message Sent Successfully!
               </h4>
-              <p className="text-sm text-brand-navy/80">
+              <p className="text-sm text-brand-deep-blue/80">
                 Thank you for contacting us. We'll respond to your message within 1 business day.
               </p>
             </div>

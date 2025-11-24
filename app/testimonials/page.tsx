@@ -194,7 +194,7 @@ export default function TestimonialsPage() {
       <StructuredData schema={jsonLd} />
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-brand-deep-blue via-brand-navy to-brand-bright-blue text-white pt-28 pb-16 md:pt-32 md:pb-20">
+      <section className="relative overflow-hidden bg-gradient-to-br from-brand-deep-blue via-brand-deep-blue to-brand-bright-blue text-white pt-28 pb-16 md:pt-32 md:pb-20">
         <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10"></div>
         <div className="container mx-auto px-6 text-center relative z-10">
           <div className="max-w-4xl mx-auto">
@@ -215,7 +215,7 @@ export default function TestimonialsPage() {
       <TestimonialsExplorer testimonials={testimonials} />
 
       {/* CTA Section */}
-      <section className="py-20 bg-brand-navy text-white">
+      <section className="py-20 bg-brand-deep-blue text-white">
         <div className="container mx-auto px-6 text-center">
           <h2 className="text-h2 leading-tight font-bold mb-6">
             Ready to Experience the Anderson Difference?

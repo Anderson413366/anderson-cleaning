@@ -38,7 +38,7 @@ export default function Home() {
       <PromotionalModal />
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-brand-deep-blue via-brand-navy to-brand-bright-blue text-white pt-28 pb-16 md:pt-32 md:pb-20">
+      <section className="relative overflow-hidden bg-gradient-to-br from-brand-deep-blue via-brand-deep-blue to-brand-bright-blue text-white pt-28 pb-16 md:pt-32 md:pb-20">
         <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10"></div>
         <div className="container mx-auto px-6 lg:px-8 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
@@ -161,7 +161,7 @@ export default function Home() {
                         </p>
                       </div>
                       {!service.available && (
-                        <span className="inline-block px-3 py-1 text-body-sm rounded-full bg-neutral-off-white text-brand-navy dark:bg-slate-800 dark:text-white">
+                        <span className="inline-block px-3 py-1 text-body-sm rounded-full bg-neutral-off-white text-brand-deep-blue dark:bg-slate-800 dark:text-white">
                           Premium add-on
                         </span>
                       )}
@@ -200,7 +200,7 @@ export default function Home() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div>
                   <h3 className="text-h3 leading-normal font-semibold text-neutral-charcoal dark:text-white mb-4 flex items-center">
-                    <MapPin className="h-6 w-6 text-brand-navy dark:text-brand-bright-blue mr-2" />
+                    <MapPin className="h-6 w-6 text-brand-deep-blue dark:text-brand-bright-blue mr-2" />
                     Primary Service Areas
                   </h3>
                   <ul className="space-y-2 text-body text-neutral-charcoal/80 dark:text-white/80">
@@ -224,7 +224,7 @@ export default function Home() {
                 </div>
                 <div>
                   <h3 className="text-h3 leading-normal font-semibold text-neutral-charcoal dark:text-white mb-4 flex items-center">
-                    <Building2 className="h-6 w-6 text-brand-navy dark:text-brand-bright-blue mr-2" />
+                    <Building2 className="h-6 w-6 text-brand-deep-blue dark:text-brand-bright-blue mr-2" />
                     We Serve
                   </h3>
                   <ul className="space-y-2 text-body text-neutral-charcoal/80 dark:text-white/80">
@@ -249,7 +249,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="bg-brand-navy text-white rounded-lg p-6">
+            <div className="bg-brand-deep-blue text-white rounded-lg p-6">
               <p className="text-body leading-relaxed text-white/90">
                 <strong>Note:</strong> We focus exclusively on B2B commercial cleaning. We do not
                 service restaurants or facilities requiring 7-day/week cleaning.
@@ -396,7 +396,7 @@ export default function Home() {
                   key={i}
                   className="bg-neutral-off-white dark:bg-slate-800 border border-neutral-light-grey dark:border-slate-700 rounded-xl p-6 text-center shadow-sm"
                 >
-                  <Icon className="h-12 w-12 text-brand-navy dark:text-brand-bright-blue mx-auto mb-3" />
+                  <Icon className="h-12 w-12 text-brand-deep-blue dark:text-brand-bright-blue mx-auto mb-3" />
                   <h3 className="font-bold text-neutral-charcoal dark:text-white mb-1 text-body-sm">
                     {badge.label}
                   </h3>
@@ -469,7 +469,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Blog/Resources Card */}
             <div className="bg-white dark:bg-slate-800 border border-neutral-light-grey dark:border-slate-700 rounded-xl shadow-sm overflow-hidden hover:-translate-y-1 transition-all duration-300">
-              <div className="bg-brand-navy p-6 text-white">
+              <div className="bg-brand-deep-blue p-6 text-white">
                 <BookOpen className="h-8 w-8 mb-3" aria-hidden="true" />
                 <h3 className="text-h3 font-bold mb-2">Blog & Resources</h3>
                 <p className="text-body text-white/80">Expert cleaning tips and industry insights</p>
@@ -541,7 +541,7 @@ export default function Home() {
 
             {/* Promotions Card */}
             <div className="bg-white dark:bg-slate-800 border border-neutral-light-grey dark:border-slate-700 rounded-xl shadow-sm overflow-hidden hover:-translate-y-1 transition-all duration-300">
-              <div className="bg-brand-navy p-6 text-white">
+              <div className="bg-brand-deep-blue p-6 text-white">
                 <Gift className="h-8 w-8 mb-3" aria-hidden="true" />
                 <h3 className="text-h3 font-bold mb-2">Special Offers</h3>
                 <p className="text-body text-white/80">Exclusive promotions and referral rewards</p>
@@ -617,7 +617,7 @@ export default function Home() {
               const Icon = item.icon
               return (
                 <div key={i} className="text-center">
-                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-full mb-4 bg-brand-navy/10 text-brand-navy dark:bg-white/10 dark:text-white">
+                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-full mb-4 bg-brand-deep-blue/10 text-brand-deep-blue dark:bg-white/10 dark:text-white">
                     <Icon className="h-8 w-8" />
                   </div>
                   <h3 className="text-h3 leading-normal font-semibold text-neutral-charcoal dark:text-white mb-2">

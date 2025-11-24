@@ -24,7 +24,7 @@ export default function CaseStudiesPage() {
       {/* ===================================================================
           HERO SECTION
           =================================================================== */}
-      <section className="pt-28 pb-16 md:pt-32 md:pb-20 bg-brand-navy text-white">
+      <section className="pt-28 pb-16 md:pt-32 md:pb-20 bg-brand-deep-blue text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-h1 leading-tight font-extrabold mb-6">
@@ -243,7 +243,7 @@ export default function CaseStudiesPage() {
       {/* ===================================================================
           CTA SECTION
           =================================================================== */}
-      <section className="py-16 md:py-20 bg-brand-navy text-white">
+      <section className="py-16 md:py-20 bg-brand-deep-blue text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-h2 leading-tight font-bold mb-4">
@@ -260,7 +260,7 @@ export default function CaseStudiesPage() {
       {/* ===================================================================
           FOOTER
           =================================================================== */}
-      <footer className="bg-brand-navy text-neutral-charcoal/40 py-8">
+      <footer className="bg-brand-deep-blue text-neutral-charcoal/40 py-8">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-sm text-neutral-charcoal/60 dark:text-white/70">
             &copy; {new Date().getFullYear()} Anderson Cleaning, Inc. All rights reserved.

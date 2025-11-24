@@ -13,8 +13,8 @@
   --brand-white: #FFFFFF;            /* White - Text on dark backgrounds */
 
   /* Legacy color mappings (deprecated - use brand colors above) */
-  --color-brand-navy: #002A86;       /* → Use --brand-deep-blue */
-  --color-brand-emerald: #0077D9;    /* → Use --brand-bright-blue */
+  --color-brand-deep-blue: #002A86;       /* → Use --brand-deep-blue */
+  --color-brand-bright-blue: #0077D9;    /* → Use --brand-bright-blue */
 
   /* ====================================================================
      SEMANTIC COLOR TOKENS (Apple-style design system)

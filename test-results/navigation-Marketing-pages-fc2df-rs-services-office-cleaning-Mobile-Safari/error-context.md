@@ -1,0 +1,386 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - navigation "Global" [ref=e3]:
+      - link "Anderson CleaningAnderson Cleaning" [ref=e5]:
+        - /url: /
+        - img "Anderson Cleaning" [ref=e6]
+        - img "Anderson Cleaning" [ref=e7]
+      - button "Open main menu" [ref=e9]:
+        - text: Open main menu
+        - img [ref=e10]
+      - generic [ref=e11]:
+        - link "Home" [ref=e12]:
+          - /url: /
+        - link "Services" [ref=e13]:
+          - /url: /services
+        - link "Industries" [ref=e14]:
+          - /url: /industries
+        - link "About" [ref=e15]:
+          - /url: /about
+        - link "Contact" [ref=e16]:
+          - /url: /contact
+      - generic [ref=e17]:
+        - button "Toggle dark mode" [ref=e18]:
+          - img [ref=e19]
+        - link "Get a Quote" [ref=e21]:
+          - /url: /quote
+  - main [ref=e22]:
+    - generic [ref=e23]:
+      - generic [ref=e24]:
+        - paragraph [ref=e25]: Need help fast?
+        - paragraph [ref=e26]: Request a quote within 24 hours.
+        - generic [ref=e27]:
+          - link "Request Quote" [ref=e28]:
+            - /url: /quote
+            - button "Request Quote" [ref=e29]
+          - link "(413) 306-5053" [ref=e30]:
+            - /url: tel:+14133065053
+            - img [ref=e31]
+            - text: (413) 306-5053
+        - paragraph [ref=e33]: Serving Western MA & Northern CT
+      - generic [ref=e35]:
+        - generic [ref=e36]:
+          - link "Back to all services" [ref=e37]:
+            - /url: /services
+            - img [ref=e38]
+            - text: Back to all services
+          - paragraph [ref=e40]: Serving Western Massachusetts & Northern Connecticut
+          - generic [ref=e41]:
+            - img [ref=e43]
+            - generic [ref=e47]:
+              - heading "Professional Office Cleaning Services in Western Massachusetts" [level=1] [ref=e48]
+              - paragraph [ref=e49]: Daily janitorial, workstation sanitization, and spotless break rooms after hours.
+          - paragraph [ref=e50]: Daily and nightly office cleaning programs that keep corporate headquarters, professional suites, and collaborative workspaces spotless without interrupting your team.
+          - generic [ref=e51]:
+            - link "Request Quote" [ref=e52]:
+              - /url: /quote
+              - button "Request Quote" [ref=e53]
+            - link "(413) 306-5053" [ref=e54]:
+              - /url: tel:+14133065053
+              - img [ref=e55]
+              - text: (413) 306-5053
+          - paragraph [ref=e57]: Get your free quote within 24 hours.
+          - generic [ref=e58]:
+            - generic [ref=e59]:
+              - img [ref=e60]
+              - text: Licensed & Insured
+            - generic [ref=e63]:
+              - img [ref=e64]
+              - text: 18+ Years in Business
+            - generic [ref=e67]:
+              - img [ref=e68]
+              - text: Green Seal Options
+            - generic [ref=e71]:
+              - img [ref=e72]
+              - text: OSHA-Trained Staff
+        - img "Office cleaning specialists sanitizing workstations in Western Massachusetts" [ref=e75]
+      - generic [ref=e79]:
+        - generic [ref=e80]:
+          - paragraph [ref=e81]: Get your free quote within 24 hours
+          - heading "Get a detailed cleaning proposal in 24 hours" [level=3] [ref=e82]
+          - paragraph [ref=e83]: Tell us about your facility and we will build a custom scope with transparent pricing.
+          - paragraph [ref=e84]: Serving Western Massachusetts & Northern Connecticut.
+          - generic [ref=e85]:
+            - generic [ref=e86]:
+              - img [ref=e87]
+              - text: Licensed & Insured
+            - generic [ref=e90]:
+              - img [ref=e91]
+              - text: 18+ Years in Business
+            - generic [ref=e94]:
+              - img [ref=e95]
+              - text: Green Seal Options
+            - generic [ref=e98]:
+              - img [ref=e99]
+              - text: OSHA-Trained Staff
+        - generic [ref=e102]:
+          - link "Request Quote" [ref=e103]:
+            - /url: /quote
+            - button "Request Quote" [ref=e104]
+          - link "(413) 306-5053" [ref=e105]:
+            - /url: tel:+14133065053
+            - img [ref=e106]
+            - text: (413) 306-5053
+          - paragraph [ref=e108]: Need help sooner? Call now and we’ll schedule immediately.
+      - generic [ref=e110]:
+        - generic [ref=e111]:
+          - img [ref=e112]
+          - text: Service Overview
+        - paragraph [ref=e114]: Every office we serve across Greater Springfield starts with a detailed facility risk map so we understand how executives, hybrid teams, and visitors move through the space. From there we design a balanced program that keeps restrooms, break rooms, and shared desks sanitary while preserving confidential materials and sensitive IT equipment. Our supervisors coordinate directly with facilities leaders to document doors, alarm codes, elevator access, and vendor policies so onboarding is frictionless.
+        - paragraph [ref=e115]: Workstation programs receive special attention because high-touch peripherals and collaborative pods pass through multiple hands each day. Our nightly teams disinfect keyboards, mice, chair arms, and touch panels with EPA-registered products that protect finishes while eliminating bacteria and viruses. Break rooms and pantries are reset with sanitized countertops, degreased appliances, replenished paper goods, and odor control so the first shift arrives to a fresh environment.
+        - paragraph [ref=e116]: Conference rooms, executive suites, and reception zones receive concierge-level detailing that reinforces your brand image. Spotless glass, vacuum lines in carpet, and dust-free millwork tell clients you run a tight operation before the meeting even begins. Because every location has different security requirements, we document chains of custody, implement badge protocols, and run after-hours service windows so your teams return to a pristine office each morning with zero disruption.
+        - generic [ref=e117]:
+          - paragraph [ref=e118]: Key Differentiator
+          - paragraph [ref=e119]: After-hours service windows and documented alarm procedures keep your workday uninterrupted.
+      - generic [ref=e121]:
+        - heading "Our Process" [level=2] [ref=e122]
+        - paragraph [ref=e123]: Transparent steps so you always know what is happening and who is onsite.
+        - generic [ref=e124]:
+          - generic [ref=e125]:
+            - generic [ref=e126]: "1"
+            - generic [ref=e127]:
+              - heading "Initial Assessment" [level=3] [ref=e128]
+              - paragraph [ref=e129]: Facility walkthrough covering square footage, floor types, and risk zones.
+          - generic [ref=e130]:
+            - generic [ref=e131]: "2"
+            - generic [ref=e132]:
+              - heading "Custom Cleaning Plan" [level=3] [ref=e133]
+              - paragraph [ref=e134]: SOPs outlining nightly, weekly, and monthly tasks for each area.
+          - generic [ref=e135]:
+            - generic [ref=e136]: "3"
+            - generic [ref=e137]:
+              - heading "Dedicated Team Training" [level=3] [ref=e138]
+              - paragraph [ref=e139]: Hands-on coaching so cleaners know access rules, badge use, and sensitive areas.
+          - generic [ref=e140]:
+            - generic [ref=e141]: "4"
+            - generic [ref=e142]:
+              - heading "Implementation & Supervision" [level=3] [ref=e143]
+              - paragraph [ref=e144]: On-site supervisor shadows the first two weeks to confirm standards.
+          - generic [ref=e145]:
+            - generic [ref=e146]: "5"
+            - generic [ref=e147]:
+              - heading "Quality Checks & Reporting" [level=3] [ref=e148]
+              - paragraph [ref=e149]: Documented inspections with corrective action plans sent monthly.
+      - generic [ref=e151]:
+        - generic [ref=e152]:
+          - heading "Benefits" [level=2] [ref=e153]
+          - paragraph [ref=e154]: Every program includes proactive communication, safety, and accountability.
+          - list [ref=e155]:
+            - listitem [ref=e156]:
+              - img [ref=e157]
+              - text: After-hours cleaning so staff arrive to a fresh workspace
+            - listitem [ref=e160]:
+              - img [ref=e161]
+              - text: Color-coded microfiber prevents cross-contamination
+            - listitem [ref=e164]:
+              - img [ref=e165]
+              - text: Inventory management for restroom and pantry supplies
+            - listitem [ref=e168]:
+              - img [ref=e169]
+              - text: Documented quality inspections with photo proof
+            - listitem [ref=e172]:
+              - img [ref=e173]
+              - text: Background-checked W-2 employees with benefits
+            - listitem [ref=e176]:
+              - img [ref=e177]
+              - text: Emergency dispatch in two hours or less for current clients
+            - listitem [ref=e180]:
+              - img [ref=e181]
+              - text: Green Seal chemistry available on request
+        - generic [ref=e184]:
+          - heading "Who relies on this service?" [level=3] [ref=e185]
+          - paragraph [ref=e186]: Industry applications throughout Western Massachusetts & Northern Connecticut.
+          - list [ref=e187]:
+            - listitem [ref=e188]:
+              - img [ref=e189]
+              - text: Corporate offices
+            - listitem [ref=e192]:
+              - img [ref=e193]
+              - text: Professional services firms
+            - listitem [ref=e196]:
+              - img [ref=e197]
+              - text: Technology companies
+          - paragraph [ref=e200]: Serving Western MA & Northern CT
+      - generic [ref=e204]:
+        - generic [ref=e205]:
+          - paragraph [ref=e206]: Get your free quote within 24 hours
+          - heading "Need coverage between nightly cleans?" [level=3] [ref=e207]
+          - paragraph [ref=e208]: Book a walkthrough and receive a full proposal with timeline, staffing plan, and documented SOPs.
+          - paragraph [ref=e209]: Serving Western Massachusetts & Northern Connecticut.
+          - generic [ref=e210]:
+            - generic [ref=e211]:
+              - img [ref=e212]
+              - text: Licensed & Insured
+            - generic [ref=e215]:
+              - img [ref=e216]
+              - text: 18+ Years in Business
+            - generic [ref=e219]:
+              - img [ref=e220]
+              - text: Green Seal Options
+            - generic [ref=e223]:
+              - img [ref=e224]
+              - text: OSHA-Trained Staff
+        - generic [ref=e227]:
+          - link "Request Quote" [ref=e228]:
+            - /url: /quote
+            - button "Request Quote" [ref=e229]
+          - link "(413) 306-5053" [ref=e230]:
+            - /url: tel:+14133065053
+            - img [ref=e231]
+            - text: (413) 306-5053
+          - paragraph [ref=e233]: Need help sooner? Call now and we’ll schedule immediately.
+      - generic [ref=e235]:
+        - generic [ref=e236]:
+          - heading "Testimonials" [level=2] [ref=e237]
+          - paragraph [ref=e238]: Real feedback from Anderson clients.
+        - generic [ref=e239]:
+          - generic [ref=e240]:
+            - img [ref=e241]
+            - paragraph [ref=e243]: “Anderson Cleaning has supported our Springfield HQ for six years. Their after-hours crews reset 80+ workstations nightly without disrupting confidential projects.”
+            - paragraph [ref=e244]: Mia Reynolds
+            - paragraph [ref=e245]: Director of Workplace, Pioneer Mutual
+          - generic [ref=e246]:
+            - img [ref=e247]
+            - paragraph [ref=e249]: “They document every request in the portal, replenish supplies automatically, and flag maintenance issues before we notice them.”
+            - paragraph [ref=e250]: Sean Mattson
+            - paragraph [ref=e251]: Facilities Manager, Valley Creative Agency
+      - generic [ref=e253]:
+        - generic [ref=e254]:
+          - heading "Related Services" [level=2] [ref=e255]
+          - paragraph [ref=e256]: Combine services for full coverage across your facility.
+          - generic [ref=e257]:
+            - link "Janitorial Services" [ref=e258]:
+              - /url: /services/janitorial-services
+              - text: Janitorial Services
+              - img [ref=e259]
+            - link "Day Porter Services" [ref=e261]:
+              - /url: /services/day-porter
+              - text: Day Porter Services
+              - img [ref=e262]
+            - link "Floor Care & Maintenance" [ref=e264]:
+              - /url: /services/floor-care
+              - text: Floor Care & Maintenance
+              - img [ref=e265]
+        - generic [ref=e267]:
+          - heading "Frequently Asked Questions" [level=2] [ref=e268]
+          - generic [ref=e269]:
+            - generic [ref=e270]:
+              - paragraph [ref=e271]: Can you work entirely after hours?
+              - paragraph [ref=e272]: Yes. Most offices prefer evening cleaning. We schedule start times after your last employee leaves, manage alarm codes, and complete a digital checkout before locking up.
+            - generic [ref=e273]:
+              - paragraph [ref=e274]: Do you provide workstation disinfecting?
+              - paragraph [ref=e275]: Workstation disinfection is included. Keyboards, mice, armrests, sit/stand controls, and shared conference tech receive EPA-registered disinfectants each visit.
+            - generic [ref=e276]:
+              - paragraph [ref=e277]: Who supplies consumables?
+              - paragraph [ref=e278]: We track towel, tissue, soap, and trash liner usage and replenish through our supply program so you never run out midweek.
+            - generic [ref=e279]:
+              - paragraph [ref=e280]: How fast do you respond to special requests?
+              - paragraph [ref=e281]: Existing office clients receive a two-hour response window for spills or executive meeting prep. Non-emergency add-ons are completed the same or next service day.
+            - generic [ref=e282]:
+              - paragraph [ref=e283]: Are your crews background-checked?
+              - paragraph [ref=e284]: All technicians pass background checks, E-Verify, and ongoing training before they ever enter a facility.
+      - generic [ref=e287]:
+        - heading "Further Reading" [level=3] [ref=e288]
+        - paragraph [ref=e289]: Explore actionable insights on our blog.
+        - generic [ref=e290]:
+          - link "Office Cleaning Checklist for Flu Season" [ref=e291]:
+            - /url: /blog/office-cleaning-checklist-flu-season
+          - link "How Often Should You Clean a Commercial Office?" [ref=e292]:
+            - /url: /blog/how-often-clean-commercial-office
+      - generic [ref=e296]:
+        - generic [ref=e297]:
+          - paragraph [ref=e298]: Get your free quote within 24 hours
+          - heading "Ready to schedule your walkthrough?" [level=3] [ref=e299]
+          - paragraph [ref=e300]: Submit the quote form or call (413) 306-5053. You will hear from us within 24 hours.
+          - paragraph [ref=e301]: Serving Western Massachusetts & Northern Connecticut.
+          - generic [ref=e302]:
+            - generic [ref=e303]:
+              - img [ref=e304]
+              - text: Licensed & Insured
+            - generic [ref=e307]:
+              - img [ref=e308]
+              - text: 18+ Years in Business
+            - generic [ref=e311]:
+              - img [ref=e312]
+              - text: Green Seal Options
+            - generic [ref=e315]:
+              - img [ref=e316]
+              - text: OSHA-Trained Staff
+        - generic [ref=e319]:
+          - link "Request Quote" [ref=e320]:
+            - /url: /quote
+            - button "Request Quote" [ref=e321]
+          - link "(413) 306-5053" [ref=e322]:
+            - /url: tel:+14133065053
+            - img [ref=e323]
+            - text: (413) 306-5053
+          - paragraph [ref=e325]: Need help sooner? Call now and we’ll schedule immediately.
+  - generic [ref=e327]:
+    - heading "Ready to Experience Professional Cleaning?" [level=2] [ref=e328]
+    - paragraph [ref=e329]: Join 100+ businesses that trust Anderson Cleaning for their facility maintenance
+    - generic [ref=e330]:
+      - link "Get Your Free Quote" [ref=e331]:
+        - /url: /quote
+      - link "Call (413) 306-5053" [ref=e332]:
+        - /url: tel:+14133065053
+        - img [ref=e333]
+        - text: Call (413) 306-5053
+  - contentinfo "Footer" [ref=e335]:
+    - heading "Footer" [level=2] [ref=e336]
+    - generic [ref=e337]:
+      - generic [ref=e338]:
+        - generic [ref=e339]:
+          - heading "Our Services" [level=3] [ref=e340]
+          - list [ref=e341]:
+            - listitem [ref=e342]:
+              - link "Office Cleaning" [ref=e343]:
+                - /url: /services/office-cleaning
+            - listitem [ref=e344]:
+              - link "Janitorial Services" [ref=e345]:
+                - /url: /services/janitorial-services
+            - listitem [ref=e346]:
+              - link "Floor & Carpet Care" [ref=e347]:
+                - /url: /services/floor-care
+            - listitem [ref=e348]:
+              - link "Window Cleaning" [ref=e349]:
+                - /url: /services/window-cleaning
+            - listitem [ref=e350]:
+              - link "Post-Construction" [ref=e351]:
+                - /url: /services/post-construction
+        - generic [ref=e352]:
+          - heading "Quick Links" [level=3] [ref=e353]
+          - list [ref=e354]:
+            - listitem [ref=e355]:
+              - link "About Us" [ref=e356]:
+                - /url: /about
+            - listitem [ref=e357]:
+              - link "Industries" [ref=e358]:
+                - /url: /industries
+            - listitem [ref=e359]:
+              - link "Testimonials" [ref=e360]:
+                - /url: /testimonials
+            - listitem [ref=e361]:
+              - link "Blog" [ref=e362]:
+                - /url: /blog
+            - listitem [ref=e363]:
+              - link "Careers" [ref=e364]:
+                - /url: /careers
+            - listitem [ref=e365]:
+              - link "FAQ" [ref=e366]:
+                - /url: /faq
+        - generic [ref=e367]:
+          - heading "Get in Touch" [level=3] [ref=e368]
+          - generic [ref=e369]:
+            - link "(413) 306-5053" [ref=e370]:
+              - /url: tel:+14133065053
+            - link "info@andersoncleaning.com" [ref=e371]:
+              - /url: mailto:info@andersoncleaning.com
+            - generic [ref=e372]:
+              - generic [ref=e373]: 103 Wayside Avenue
+              - generic [ref=e374]: West Springfield, MA 01089
+            - generic [ref=e375]:
+              - link "LinkedIn" [ref=e376]:
+                - /url: https://www.linkedin.com/company/anderson-cleaning-inc-
+                - img [ref=e377]
+              - link "Facebook" [ref=e381]:
+                - /url: https://www.facebook.com/Andersonclean/
+                - img [ref=e382]
+              - link "X" [ref=e384]:
+                - /url: https://x.com/andersonclean
+                - img [ref=e385]
+              - link "Instagram" [ref=e387]:
+                - /url: https://www.instagram.com/andersonclean/
+                - img [ref=e388]
+      - generic [ref=e392]:
+        - paragraph [ref=e393]: © 2025 Anderson Cleaning, Inc.
+        - generic [ref=e394]:
+          - link "Privacy" [ref=e395]:
+            - /url: /legal/privacy
+          - link "Terms" [ref=e396]:
+            - /url: /legal/terms
+          - link "Sitemap" [ref=e397]:
+            - /url: /sitemap.xml
+```

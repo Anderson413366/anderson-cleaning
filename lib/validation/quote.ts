@@ -98,7 +98,7 @@ export const quoteStep3Schema = z.object({
       z.enum([
         'office-cleaning',
         'janitorial-services',
-        'floor-carpet-care',
+        'floor-care',
         'window-cleaning',
         'post-construction',
         'supply-management',
@@ -255,7 +255,7 @@ export const cleaningFrequencyLabels: Record<string, string> = {
 export const serviceLabels: Record<string, string> = {
   'office-cleaning': 'Office & Commercial Cleaning',
   'janitorial-services': 'Janitorial Services',
-  'floor-carpet-care': 'Floor/Carpet Care',
+  'floor-care': 'Floor/Carpet Care',
   'window-cleaning': 'Window Cleaning',
   'post-construction': 'Post-Construction Cleaning',
   'supply-management': 'Supply Management',

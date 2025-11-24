@@ -3,7 +3,7 @@ import { test, expect } from '@playwright/test'
 const marketingRoutes = [
   { path: '/', hero: /Professional Commercial Cleaning.*Personal Touch/i },
   { path: '/about', hero: /About Anderson Cleaning/i },
-  { path: '/services/office-cleaning', hero: /Office & Commercial Cleaning/i },
+  { path: '/services/office-cleaning', hero: /Professional Office Cleaning Services/i },
   { path: '/contact', hero: /Get in Touch/i },
   { path: '/quote', hero: /Get Your Free Quote/i },
 ]

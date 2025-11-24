@@ -62,7 +62,7 @@ export default function IndustryTemplate({
       {/* ================================================================
           HERO SECTION
           ================================================================ */}
-      <section className="relative overflow-hidden bg-brand-navy text-white py-16 md:py-24">
+      <section className="relative overflow-hidden bg-brand-deep-blue text-white py-16 md:py-24">
         {/* Background Pattern */}
         <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10"></div>
 
@@ -201,7 +201,7 @@ export default function IndustryTemplate({
                 >
                   {/* Number Badge */}
                   <div className="flex items-center gap-4 mb-4">
-                    <div className="w-10 h-10 rounded-full bg-brand-navy text-white flex items-center justify-center font-bold text-body flex-shrink-0">
+                    <div className="w-10 h-10 rounded-full bg-brand-deep-blue text-white flex items-center justify-center font-bold text-body flex-shrink-0">
                       {index + 1}
                     </div>
                     <h3 className="text-h3 leading-normal font-semibold text-[var(--color-text-primary)]">
@@ -256,7 +256,7 @@ export default function IndustryTemplate({
                     {index % 3 === 0 ? (
                       <Shield className="h-8 w-8 text-brand-bright-blue" aria-hidden="true" />
                     ) : index % 3 === 1 ? (
-                      <Award className="h-8 w-8 text-brand-navy" aria-hidden="true" />
+                      <Award className="h-8 w-8 text-brand-deep-blue" aria-hidden="true" />
                     ) : (
                       <Users className="h-8 w-8 text-brand-bright-blue" aria-hidden="true" />
                     )}
@@ -328,7 +328,7 @@ export default function IndustryTemplate({
       {/* ================================================================
           CTA SECTION
           ================================================================ */}
-      <section className="py-16 md:py-20 bg-brand-navy text-white">
+      <section className="py-16 md:py-20 bg-brand-deep-blue text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto">
             {showQuoteForm ? (

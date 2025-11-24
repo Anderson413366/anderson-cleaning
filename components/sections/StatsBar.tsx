@@ -212,7 +212,7 @@ const StatItem: React.FC<StatItemProps> = ({
         <div className="mb-4">
           <div
             className={`flex h-16 w-16 items-center justify-center rounded-full ${
-              isDark ? 'bg-white/10 text-white' : 'bg-brand-navy/10 text-brand-navy'
+              isDark ? 'bg-white/10 text-white' : 'bg-brand-deep-blue/10 text-brand-deep-blue'
             }`}
           >
             <IconComponent className="h-8 w-8" aria-hidden="true" />
@@ -223,7 +223,7 @@ const StatItem: React.FC<StatItemProps> = ({
       {/* Stat Value (Number) */}
       <div
         className={`text-h1 font-extrabold leading-tight ${
-          isDark ? 'text-white' : 'text-brand-navy'
+          isDark ? 'text-white' : 'text-brand-deep-blue'
         } mb-3`}
         aria-label={`${stat.value} ${stat.label}`}
       >
@@ -291,7 +291,7 @@ export default function StatsBar({
     background === 'white'
       ? 'bg-white dark:bg-slate-900'
       : background === 'blue'
-        ? 'bg-brand-navy text-white'
+        ? 'bg-brand-deep-blue text-white'
         : 'bg-neutral-off-white dark:bg-slate-900'
   const isDark = background === 'blue'
 

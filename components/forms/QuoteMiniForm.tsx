@@ -80,7 +80,7 @@ export default function QuoteMiniForm({
         <button
           type="button"
           onClick={() => onOpenAdvanced?.()}
-          className="text-brand-navy hover:text-brand-bright-blue underline text-body-sm font-semibold"
+          className="text-brand-deep-blue hover:text-brand-bright-blue underline text-body-sm font-semibold"
         >
           Need detailed quote? → Full form
         </button>
@@ -157,7 +157,7 @@ export default function QuoteMiniForm({
         <button
           type="button"
           onClick={() => onOpenAdvanced?.()}
-          className="text-brand-navy hover:text-brand-bright-blue underline"
+          className="text-brand-deep-blue hover:text-brand-bright-blue underline"
         >
           Need detailed quote? Click here
         </button>

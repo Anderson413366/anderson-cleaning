@@ -1,18 +1,16 @@
 {
   "config": {
-    "configFile": "/Users/andersongomes/anderson-cleaning/playwright.a11y.config.ts",
-    "rootDir": "/Users/andersongomes/anderson-cleaning/tests/a11y",
+    "configFile": "/Users/andersongomes/anderson-cleaning/playwright.config.ts",
+    "rootDir": "/Users/andersongomes/anderson-cleaning/tests/e2e",
     "forbidOnly": true,
-    "fullyParallel": false,
+    "fullyParallel": true,
     "globalSetup": null,
     "globalTeardown": null,
     "globalTimeout": 0,
     "grep": {},
     "grepInvert": null,
     "maxFailures": 0,
-    "metadata": {
-      "actualWorkers": 1
-    },
+    "metadata": {},
     "preserveOutput": "always",
     "reporter": [
       [
@@ -39,13 +37,67 @@
       {
         "outputDir": "/Users/andersongomes/anderson-cleaning/test-results",
         "repeatEach": 1,
-        "retries": 1,
-        "metadata": {
-          "actualWorkers": 1
-        },
-        "id": "chromium-accessibility",
-        "name": "chromium-accessibility",
-        "testDir": "/Users/andersongomes/anderson-cleaning/tests/a11y",
+        "retries": 2,
+        "metadata": {},
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/Users/andersongomes/anderson-cleaning/tests/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      },
+      {
+        "outputDir": "/Users/andersongomes/anderson-cleaning/test-results",
+        "repeatEach": 1,
+        "retries": 2,
+        "metadata": {},
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "/Users/andersongomes/anderson-cleaning/tests/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      },
+      {
+        "outputDir": "/Users/andersongomes/anderson-cleaning/test-results",
+        "repeatEach": 1,
+        "retries": 2,
+        "metadata": {},
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "/Users/andersongomes/anderson-cleaning/tests/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      },
+      {
+        "outputDir": "/Users/andersongomes/anderson-cleaning/test-results",
+        "repeatEach": 1,
+        "retries": 2,
+        "metadata": {},
+        "id": "Mobile Chrome",
+        "name": "Mobile Chrome",
+        "testDir": "/Users/andersongomes/anderson-cleaning/tests/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      },
+      {
+        "outputDir": "/Users/andersongomes/anderson-cleaning/test-results",
+        "repeatEach": 1,
+        "retries": 2,
+        "metadata": {},
+        "id": "Mobile Safari",
+        "name": "Mobile Safari",
+        "testDir": "/Users/andersongomes/anderson-cleaning/tests/e2e",
         "testIgnore": [],
         "testMatch": [
           "**/*.@(spec|test).?(c|m)[jt]s?(x)"
@@ -65,216 +117,17 @@
       "timeout": 180000
     }
   },
-  "suites": [
+  "suites": [],
+  "errors": [
     {
-      "title": "accessibility.spec.ts",
-      "file": "accessibility.spec.ts",
-      "column": 0,
-      "line": 0,
-      "specs": [],
-      "suites": [
-        {
-          "title": "Accessibility audits",
-          "file": "accessibility.spec.ts",
-          "line": 5,
-          "column": 6,
-          "specs": [
-            {
-              "title": "has no serious accessibility violations on /",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium-accessibility",
-                  "projectName": "chromium-accessibility",
-                  "results": [
-                    {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 1317,
-                      "errors": [],
-                      "stdout": [
-                        {
-                          "text": "\n⚠️  / has 2 SERIOUS accessibility issues to fix:\n  - color-contrast: Elements must meet minimum color contrast ratio thresholds\n  - duplicate-id-active: IDs of active elements must be unique\n"
-                        }
-                      ],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-11-20T03:48:31.944Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "ddd864604af8a6a0198f-3941a84c077f89d98d50",
-              "file": "accessibility.spec.ts",
-              "line": 7,
-              "column": 9
-            },
-            {
-              "title": "has no serious accessibility violations on /about",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium-accessibility",
-                  "projectName": "chromium-accessibility",
-                  "results": [
-                    {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 890,
-                      "errors": [],
-                      "stdout": [
-                        {
-                          "text": "\n⚠️  /about has 1 SERIOUS accessibility issues to fix:\n  - color-contrast: Elements must meet minimum color contrast ratio thresholds\n"
-                        }
-                      ],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-11-20T03:48:33.505Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "ddd864604af8a6a0198f-a68022db147ec78f4705",
-              "file": "accessibility.spec.ts",
-              "line": 7,
-              "column": 9
-            },
-            {
-              "title": "has no serious accessibility violations on /services/office-cleaning",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium-accessibility",
-                  "projectName": "chromium-accessibility",
-                  "results": [
-                    {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 808,
-                      "errors": [],
-                      "stdout": [
-                        {
-                          "text": "\n⚠️  /services/office-cleaning has 1 SERIOUS accessibility issues to fix:\n  - color-contrast: Elements must meet minimum color contrast ratio thresholds\n"
-                        }
-                      ],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-11-20T03:48:34.400Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "ddd864604af8a6a0198f-52e7da93fc6996cd4818",
-              "file": "accessibility.spec.ts",
-              "line": 7,
-              "column": 9
-            },
-            {
-              "title": "has no serious accessibility violations on /contact",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium-accessibility",
-                  "projectName": "chromium-accessibility",
-                  "results": [
-                    {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 708,
-                      "errors": [],
-                      "stdout": [
-                        {
-                          "text": "\n⚠️  /contact has 2 SERIOUS accessibility issues to fix:\n  - color-contrast: Elements must meet minimum color contrast ratio thresholds\n  - duplicate-id-active: IDs of active elements must be unique\n"
-                        }
-                      ],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-11-20T03:48:35.214Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "ddd864604af8a6a0198f-fe200870a8f1b8782114",
-              "file": "accessibility.spec.ts",
-              "line": 7,
-              "column": 9
-            },
-            {
-              "title": "has no serious accessibility violations on /quote",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium-accessibility",
-                  "projectName": "chromium-accessibility",
-                  "results": [
-                    {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 807,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-11-20T03:48:35.927Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "ddd864604af8a6a0198f-4461e392b125f2c42ac4",
-              "file": "accessibility.spec.ts",
-              "line": 7,
-              "column": 9
-            }
-          ]
-        }
-      ]
+      "message": "Error: Process from config.webServer was not able to start. Exit code: 1",
+      "stack": "Error: Process from config.webServer was not able to start. Exit code: 1"
     }
   ],
-  "errors": [],
   "stats": {
-    "startTime": "2025-11-20T03:48:29.262Z",
-    "duration": 7512.77,
-    "expected": 5,
+    "startTime": "2025-11-24T01:15:11.744Z",
+    "duration": 745.9889999999999,
+    "expected": 0,
     "skipped": 0,
     "unexpected": 0,
     "flaky": 0

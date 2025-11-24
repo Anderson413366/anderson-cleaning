@@ -26,7 +26,7 @@ export default function AboutPage() {
     <div className="min-h-screen bg-neutral-off-white dark:bg-slate-900 transition-colors duration-300">
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-brand-deep-blue via-brand-navy to-brand-bright-blue text-white pt-28 pb-16 md:pt-32 md:pb-20">
+      <section className="relative overflow-hidden bg-gradient-to-br from-brand-deep-blue via-brand-deep-blue to-brand-bright-blue text-white pt-28 pb-16 md:pt-32 md:pb-20">
         <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10"></div>
         <div className="container mx-auto px-6 text-center relative z-10">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight tracking-tight">About Anderson Cleaning</h1>
@@ -79,7 +79,7 @@ export default function AboutPage() {
                     key={index}
                     className="bg-neutral-off-white dark:bg-slate-800 border border-neutral-light-grey dark:border-slate-700 rounded-xl p-6 text-center"
                   >
-                    <Icon className="h-12 w-12 text-brand-navy dark:text-brand-bright-blue mx-auto mb-4" />
+                    <Icon className="h-12 w-12 text-brand-deep-blue dark:text-brand-bright-blue mx-auto mb-4" />
                     <h3 className="font-bold text-neutral-charcoal dark:text-white mb-2">
                       {principle.title}
                     </h3>
@@ -210,7 +210,7 @@ export default function AboutPage() {
                   key={index}
                   className="flex items-start gap-4 bg-white dark:bg-slate-800 border border-neutral-light-grey dark:border-slate-700 rounded-xl p-6 shadow-sm"
                 >
-                  <div className="flex items-center justify-center w-10 h-10 bg-brand-navy text-white rounded-full text-body font-bold flex-shrink-0">
+                  <div className="flex items-center justify-center w-10 h-10 bg-brand-deep-blue text-white rounded-full text-body font-bold flex-shrink-0">
                     {index + 1}
                   </div>
                   <div className="flex-1">
@@ -280,35 +280,35 @@ export default function AboutPage() {
 
               <div className="bg-neutral-off-white dark:bg-slate-800 border border-neutral-light-grey dark:border-slate-700 rounded-xl p-8">
                 <div className="flex items-center gap-3 mb-6">
-                  <Shield className="h-6 w-6 text-brand-navy dark:text-brand-bright-blue" />
+                  <Shield className="h-6 w-6 text-brand-deep-blue dark:text-brand-bright-blue" />
                   <h3 className="text-h3 font-bold text-neutral-charcoal dark:text-white">
                     Safety & Security Protocols
                   </h3>
                 </div>
                 <ul className="space-y-4">
                   <li className="flex items-start gap-3">
-                    <CheckCircle2 className="h-5 w-5 text-brand-navy dark:text-brand-bright-blue flex-shrink-0 mt-0.5" />
+                    <CheckCircle2 className="h-5 w-5 text-brand-deep-blue dark:text-brand-bright-blue flex-shrink-0 mt-0.5" />
                     <span className="text-neutral-charcoal/80 dark:text-white/80">
                       <strong>Background Checks:</strong> Every team member undergoes comprehensive
                       criminal background screening before employment
                     </span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle2 className="h-5 w-5 text-brand-navy dark:text-brand-bright-blue flex-shrink-0 mt-0.5" />
+                    <CheckCircle2 className="h-5 w-5 text-brand-deep-blue dark:text-brand-bright-blue flex-shrink-0 mt-0.5" />
                     <span className="text-neutral-charcoal/80 dark:text-white/80">
                       <strong>Drug Testing:</strong> Pre-employment and random drug screening
                       ensures a safe, reliable workforce
                     </span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle2 className="h-5 w-5 text-brand-navy dark:text-brand-bright-blue flex-shrink-0 mt-0.5" />
+                    <CheckCircle2 className="h-5 w-5 text-brand-deep-blue dark:text-brand-bright-blue flex-shrink-0 mt-0.5" />
                     <span className="text-neutral-charcoal/80 dark:text-white/80">
                       <strong>OSHA Compliance:</strong> All staff trained on safety data sheets,
                       bloodborne pathogens, and hazard communication
                     </span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <CheckCircle2 className="h-5 w-5 text-brand-navy dark:text-brand-bright-blue flex-shrink-0 mt-0.5" />
+                    <CheckCircle2 className="h-5 w-5 text-brand-deep-blue dark:text-brand-bright-blue flex-shrink-0 mt-0.5" />
                     <span className="text-neutral-charcoal/80 dark:text-white/80">
                       <strong>Industry Certifications:</strong> Specialized training for medical
                       facilities (HIPAA awareness), schools (child safety), and more
@@ -354,7 +354,7 @@ export default function AboutPage() {
                   const Icon = item.icon
                   return (
                     <div key={idx} className="text-center">
-                      <div className="mx-auto mb-3 inline-flex h-14 w-14 items-center justify-center rounded-full bg-brand-navy/10 text-brand-navy dark:bg-white/10 dark:text-white">
+                      <div className="mx-auto mb-3 inline-flex h-14 w-14 items-center justify-center rounded-full bg-brand-deep-blue/10 text-brand-deep-blue dark:bg-white/10 dark:text-white">
                         <Icon className="h-7 w-7" aria-hidden="true" />
                       </div>
                       <h3 className="font-bold text-neutral-charcoal dark:text-white mb-2">
@@ -376,7 +376,7 @@ export default function AboutPage() {
       <section className="py-20">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto">
-            <div className="bg-brand-navy rounded-2xl p-8 md:p-12 text-white text-center">
+            <div className="bg-brand-deep-blue rounded-2xl p-8 md:p-12 text-white text-center">
               <Sparkles className="h-16 w-16 text-brand-bright-blue mx-auto mb-6" />
               <h2 className="text-h2 leading-tight font-bold mb-6">Our Commitment to You</h2>
               <p className="text-body text-white/80">

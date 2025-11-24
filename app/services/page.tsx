@@ -4,7 +4,6 @@ import { useState } from 'react'
 import Link from 'next/link'
 import dynamic from 'next/dynamic'
 
-import type { LucideIcon } from 'lucide-react'
 import {
   ArrowRight,
   Building,
@@ -15,7 +14,6 @@ import {
   FileCheck,
   HardHat,
   MapPin,
-  Package,
   Shield,
   Sparkles,
   Square,
@@ -29,6 +27,7 @@ import { Button } from '@/components/ui/Button'
 import StructuredData from '@/components/StructuredData'
 import QuoteMiniForm from '@/components/forms/QuoteMiniForm'
 import QuoteAdvancedModal from '@/components/forms/QuoteAdvancedModal'
+import { serviceSlugs, servicesData } from '@/lib/services-data'
 
 // Dynamic import for ServiceAreaMap to avoid SSR issues
 const ServiceAreaMap = dynamic(() => import('@/components/maps/ServiceAreaMap'), {
@@ -118,85 +117,14 @@ export default function ServicesPage() {
     },
   }
 
-  const services: {
-    title: string
-    slug: string
-    icon: LucideIcon
-    description: string
-    features: string[]
-    available: 'all' | 'contracted'
-  }[] = [
-    {
-      title: 'Office & Commercial Cleaning',
-      slug: 'office-cleaning',
-      icon: Building2,
-      description: 'Nightly/weekly programs that keep your workplace spotless and safe.',
-      features: [
-        'Daily/weekly cleaning',
-        'Restroom sanitation',
-        'Common area maintenance',
-        'Trash removal',
-      ],
-      available: 'all',
-    },
-    {
-      title: 'Janitorial Services',
-      slug: 'janitorial',
-      icon: Sparkles,
-      description: 'Reliable, consistent, and accountable facility care.',
-      features: [
-        'Comprehensive facility care',
-        'Quality inspections',
-        'Dedicated teams',
-        'Custom SOPs',
-      ],
-      available: 'all',
-    },
-    {
-      title: 'Floor & Carpet Care',
-      slug: 'floor-carpet-care',
-      icon: Zap,
-      description: 'Extend the life and look of your floors.',
-      features: ['Strip & wax', 'Carpet cleaning', 'Floor buffing', 'Stain removal'],
-      available: 'contracted',
-    },
-    {
-      title: 'Window Cleaning',
-      slug: 'window-cleaning',
-      icon: Square,
-      description: 'Streak-free shine for a great first impression.',
-      features: [
-        'Interior/exterior',
-        'High-rise capable',
-        'Streak-free results',
-        'Safety certified',
-      ],
-      available: 'contracted',
-    },
-    {
-      title: 'Post-Construction Cleanup',
-      slug: 'post-construction',
-      icon: HardHat,
-      description: 'Turnover-ready spaces after construction or renovation.',
-      features: ['Debris removal', 'Deep cleaning', 'Final polish', 'Move-in ready'],
-      available: 'contracted',
-    },
-    {
-      title: 'Supply Management',
-      slug: 'supply-management',
-      icon: Package,
-      description: 'Never run out again. We manage consumables for active clients.',
-      features: ['Inventory tracking', 'Auto-replenishment', 'Cost savings', 'One invoice'],
-      available: 'contracted',
-    },
-  ]
+  const services = serviceSlugs.map((slug) => servicesData[slug])
 
   return (
     <div className="min-h-screen bg-neutral-off-white dark:bg-slate-900 transition-colors duration-300">
       <StructuredData schema={jsonLd} />
 
       {/* Hero */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-brand-deep-blue via-brand-navy to-brand-bright-blue text-white pt-28 pb-16 md:pt-32 md:pb-20">
+      <section className="relative overflow-hidden bg-gradient-to-br from-brand-deep-blue via-brand-deep-blue to-brand-bright-blue text-white pt-28 pb-16 md:pt-32 md:pb-20">
         <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10"></div>
         <div className="container mx-auto px-6 text-center relative z-10">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight tracking-tight">
@@ -269,7 +197,7 @@ export default function ServicesPage() {
                   key={i}
                   className="relative bg-white dark:bg-slate-800 border border-neutral-light-grey dark:border-slate-700 rounded-xl p-8 shadow-sm text-center"
                 >
-                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-10 h-10 bg-brand-navy text-white rounded-full flex items-center justify-center font-bold text-body shadow-lg">
+                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-10 h-10 bg-brand-deep-blue text-white rounded-full flex items-center justify-center font-bold text-body shadow-lg">
                     {item.step}
                   </div>
                   <Icon className="h-12 w-12 text-brand-bright-blue mx-auto mb-4 mt-4" />
@@ -308,16 +236,16 @@ export default function ServicesPage() {
                     <h3 className="text-h3 font-bold text-neutral-charcoal dark:text-white mb-3">
                       {service.title}
                     </h3>
-                    {service.available === 'contracted' && (
+                    {service.availability === 'contracted' && (
                       <span className="inline-block px-3 py-1 bg-brand-red/10 text-brand-red dark:bg-brand-red/20 dark:text-brand-red text-xs font-bold uppercase tracking-wide rounded-full mb-3">
                         Premium Add-on
                       </span>
                     )}
                     <p className="text-body text-neutral-charcoal/80 dark:text-white/80 mb-4">
-                      {service.description}
+                      {service.tagline}
                     </p>
                     <ul className="space-y-2 mb-6 flex-1">
-                      {service.features.map((feature, j) => (
+                      {service.highlights.map((feature, j) => (
                         <li
                           key={j}
                           className="flex items-center text-body-sm text-neutral-charcoal/80 dark:text-white/80"
@@ -329,7 +257,7 @@ export default function ServicesPage() {
                     </ul>
                     <a
                       href={`/services/${service.slug}`}
-                      className="inline-flex items-center text-brand-navy dark:text-brand-bright-blue font-semibold hover:text-brand-bright-blue dark:hover:text-white transition-colors mt-auto"
+                      className="inline-flex items-center text-brand-deep-blue dark:text-brand-bright-blue font-semibold hover:text-brand-bright-blue dark:hover:text-white transition-colors mt-auto"
                     >
                       Learn More →
                     </a>
@@ -363,7 +291,7 @@ export default function ServicesPage() {
               const Icon = item.icon
               return (
                 <div key={i} className="text-center">
-                  <div className="inline-flex items-center justify-center w-16 h-16 bg-brand-navy/10 rounded-full mb-4 text-brand-navy dark:bg-white/10 dark:text-white">
+                  <div className="inline-flex items-center justify-center w-16 h-16 bg-brand-deep-blue/10 rounded-full mb-4 text-brand-deep-blue dark:bg-white/10 dark:text-white">
                     <Icon className="h-8 w-8" />
                   </div>
                   <h3 className="font-bold text-neutral-charcoal dark:text-white mb-2">{item.title}</h3>
