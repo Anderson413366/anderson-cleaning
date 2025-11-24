@@ -10,14 +10,17 @@ const navigation = {
     { name: 'Floor & Carpet Care', href: '/services/floor-care' },
     { name: 'Window Cleaning', href: '/services/window-cleaning' },
     { name: 'Post-Construction', href: '/services/post-construction' },
+    { name: 'Supply Management', href: '/supply-management' },
   ],
   company: [
     { name: 'About Us', href: '/about' },
     { name: 'Industries', href: '/industries' },
+    { name: 'Case Studies', href: '/case-studies' },
     { name: 'Testimonials', href: '/testimonials' },
     { name: 'Blog', href: '/blog' },
     { name: 'Careers', href: '/careers' },
     { name: 'FAQ', href: '/faq' },
+    { name: 'Special Offers', href: '/promotions' },
   ],
   social: [
     {

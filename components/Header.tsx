@@ -19,14 +19,22 @@ const navigation = [
 // Removed phone variants for simplicity
 
 // Services Menu Data
-const SERVICES_MENU = serviceSlugs.map((slug) => {
-  const service = servicesData[slug]
-  return {
-    title: service.title,
-    href: `/services/${slug}`,
-    description: service.tagline,
-  }
-})
+const SERVICES_MENU = [
+  ...serviceSlugs.map((slug) => {
+    const service = servicesData[slug]
+    return {
+      title: service.title,
+      href: `/services/${slug}`,
+      description: service.tagline,
+    }
+  }),
+  // Supply Management - Premium add-on service
+  {
+    title: 'Supply Management',
+    href: '/supply-management',
+    description: 'Automatic restocking of facility consumables',
+  },
+]
 
 // Industries Menu Data
 const INDUSTRIES_MENU = industries.map((industry) => ({
