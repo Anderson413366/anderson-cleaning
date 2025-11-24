@@ -616,12 +616,12 @@ export default async function LocationPage({
                     </svg>
                   ))}
                 </div>
-                <p className="text-gray-700 dark:text-gray-300 mb-4 italic">
+                <p className="text-neutral-charcoal/80 dark:text-white/80 mb-4 italic">
                   &quot;{testimonial.text}&quot;
                 </p>
                 <div>
                   <div className="font-semibold">{testimonial.author}</div>
-                  <div className="text-sm text-gray-600 dark:text-gray-400">
+                  <div className="text-sm text-neutral-charcoal/70 dark:text-white/70">
                     {testimonial.company}
                   </div>
                 </div>
@@ -635,7 +635,7 @@ export default async function LocationPage({
       <section className="py-16 bg-gray-50 dark:bg-slate-900">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold mb-4">Our {cityData.city} Service Area</h2>
-          <p className="text-lg text-gray-600 dark:text-gray-400 mb-8">
+          <p className="text-lg text-neutral-charcoal/70 dark:text-white/70 mb-8">
             We serve all of {cityData.city} and surrounding communities within{' '}
             {cityData.serviceRadius}.
           </p>
@@ -645,19 +645,19 @@ export default async function LocationPage({
             <h3 className="text-xl font-semibold mb-4">Coverage Details</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
-                <h4 className="font-semibold mb-2 text-blue-600 dark:text-blue-400">
+                <h4 className="font-semibold mb-2 text-brand-bright-blue dark:text-brand-bright-blue">
                   Primary Service Area
                 </h4>
-                <p className="text-gray-600 dark:text-gray-400">
+                <p className="text-neutral-charcoal/70 dark:text-white/70">
                   All businesses within {cityData.city} city limits receive priority scheduling
                   with response times of {cityData.responseTime}.
                 </p>
               </div>
               <div>
-                <h4 className="font-semibold mb-2 text-blue-600 dark:text-blue-400">
+                <h4 className="font-semibold mb-2 text-brand-bright-blue dark:text-brand-bright-blue">
                   Extended Service Radius
                 </h4>
-                <p className="text-gray-600 dark:text-gray-400">
+                <p className="text-neutral-charcoal/70 dark:text-white/70">
                   We also serve businesses within {cityData.serviceRadius} of {cityData.city},
                   ensuring comprehensive coverage for the region.
                 </p>
@@ -675,9 +675,9 @@ export default async function LocationPage({
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {cityData.industries.map((industry) => (
               <div key={industry} className="text-center">
-                <div className="bg-blue-100 dark:bg-blue-900 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="bg-brand-bright-blue/10 dark:bg-brand-bright-blue/30 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
                   <svg
-                    className="w-10 h-10 text-blue-600 dark:text-blue-400"
+                    className="w-10 h-10 text-brand-bright-blue dark:text-brand-bright-blue"
                     fill="currentColor"
                     viewBox="0 0 20 20"
                   >

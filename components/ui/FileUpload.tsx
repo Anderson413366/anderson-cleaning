@@ -93,7 +93,7 @@ const FileUpload: React.FC<FileUploadProps> = ({
           <FileSignature className="mx-auto h-12 w-12 text-neutral-charcoal/50 dark:text-slate-500" />
           {currentFile ? (
             <div className="mt-2 text-sm text-neutral-charcoal/70 dark:text-white/80">
-              <p className="font-medium text-primary dark:text-blue-400">{currentFile.name}</p>
+              <p className="font-medium text-brand-deep-blue dark:text-brand-bright-blue">{currentFile.name}</p>
               <p className="text-xs">({(currentFile.size / 1024 / 1024).toFixed(2)} MB)</p>
             </div>
           ) : (

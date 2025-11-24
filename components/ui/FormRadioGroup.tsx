@@ -35,7 +35,7 @@ const FormRadioGroup: React.FC<FormRadioGroupProps> = ({
               value={option.value}
               checked={selectedValue === option.value}
               onChange={(e) => onChange(e.target.value)}
-              className="h-4 w-4 text-primary dark:text-blue-500 bg-neutral-light-grey dark:bg-slate-700 border-gray-300 dark:border-slate-600 focus:ring-primary dark:focus:ring-blue-600"
+              className="h-4 w-4 text-brand-deep-blue dark:text-brand-bright-blue bg-neutral-light-grey dark:bg-slate-700 border-gray-300 dark:border-slate-600 focus:ring-brand-deep-blue dark:focus:ring-brand-bright-blue"
             />
             <label
               htmlFor={`${name}-${option.value}`}

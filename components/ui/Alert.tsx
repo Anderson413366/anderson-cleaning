@@ -25,10 +25,10 @@ const Alert: React.FC<AlertProps> = ({ type, title, message, className }) => {
       icon: <AlertCircle className="h-5 w-5 text-red-500 dark:text-red-400" />,
     },
     info: {
-      bg: 'bg-blue-50 dark:bg-blue-900/30',
-      text: 'text-blue-700 dark:text-blue-300',
-      border: 'border-blue-400 dark:border-blue-600',
-      icon: <Lightbulb className="h-5 w-5 text-blue-500 dark:text-blue-400" />,
+      bg: 'bg-brand-bright-blue/5 dark:bg-brand-bright-blue/30',
+      text: 'text-brand-bright-blue dark:text-brand-bright-blue',
+      border: 'border-brand-bright-blue dark:border-brand-bright-blue',
+      icon: <Lightbulb className="h-5 w-5 text-brand-bright-blue dark:text-brand-bright-blue" />,
     },
     warning: {
       bg: 'bg-yellow-50 dark:bg-yellow-900/30',
