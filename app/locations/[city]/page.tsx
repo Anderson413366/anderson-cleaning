@@ -1,6 +1,7 @@
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
+import { BreadcrumbSchema, LocalBusinessSchema } from '@/components/Schema'
 
 // City data configuration
 interface CityData {
@@ -383,8 +384,20 @@ export default async function LocationPage({
     notFound()
   }
 
+  // Breadcrumb schema
+  const breadcrumbs = [
+    { name: 'Home', url: 'https://andersoncleaning.com' },
+    { name: 'Locations', url: 'https://andersoncleaning.com/locations' },
+    {
+      name: `${cityData.city}, ${cityData.state}`,
+      url: `https://andersoncleaning.com/locations/${city}`,
+    },
+  ]
+
   return (
     <div className="min-h-screen">
+      <BreadcrumbSchema items={breadcrumbs} />
+      <LocalBusinessSchema serviceArea={`${cityData.city}, ${cityData.stateFullz}`} />
       {/* Hero Section */}
       <section className="bg-gradient-to-b from-blue-600 to-blue-700 text-white py-20">
         <div className="container mx-auto px-4">

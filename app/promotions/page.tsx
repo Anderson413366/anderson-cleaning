@@ -3,10 +3,12 @@
 import Link from 'next/link'
 import { Button } from '@/components/ui/Button'
 import { Gift, Users, DollarSign, CheckCircle2, ArrowRight, Sparkles, Calendar, Award } from 'lucide-react'
+import { SpecialOfferSchema } from '@/components/Schema'
 
 export default function PromotionsPage() {
   return (
     <div className="min-h-screen bg-white dark:bg-slate-900">
+      <SpecialOfferSchema />
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-brand-deep-blue text-white pt-28 pb-16 md:pt-32 md:pb-20">
         <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10"></div>

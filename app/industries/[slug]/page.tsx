@@ -12,6 +12,7 @@ import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import IndustryTemplate from '@/components/industries/IndustryTemplate'
 import { getIndustryBySlug, getAllIndustrySlugs } from '@/lib/industries-data'
+import { BreadcrumbSchema, ServiceSchema } from '@/components/Schema'
 
 // ============================================================================
 // STATIC PATH GENERATION
@@ -66,8 +67,29 @@ export default async function IndustryPage({
     notFound()
   }
 
+  // Breadcrumb schema
+  const breadcrumbs = [
+    { name: 'Home', url: 'https://andersoncleaning.com' },
+    { name: 'Industries', url: 'https://andersoncleaning.com/industries' },
+    { name: industry.hero.title, url: `https://andersoncleaning.com/industries/${slug}` },
+  ]
+
   return (
     <div className="min-h-screen bg-white dark:bg-slate-900 transition-colors duration-300">
+      <BreadcrumbSchema items={breadcrumbs} />
+      <ServiceSchema
+        serviceName={`Commercial Cleaning for ${industry.hero.title}`}
+        description={industry.hero.subtitle}
+        url={`https://andersoncleaning.com/industries/${slug}`}
+        areaServed={[
+          'Springfield',
+          'West Springfield',
+          'Chicopee',
+          'Holyoke',
+          'Northampton',
+          'Hartford',
+        ]}
+      />
       <IndustryTemplate industry={industry} showQuoteForm={false} />
     </div>
   )

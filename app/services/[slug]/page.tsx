@@ -14,6 +14,7 @@ import {
 } from 'lucide-react'
 
 import StructuredData from '@/components/StructuredData'
+import { BreadcrumbSchema, FAQSchema } from '@/components/Schema'
 import StickyQuoteButton from '@/components/services/StickyQuoteButton'
 import { Button } from '@/components/ui/Button'
 import { YEARS_IN_BUSINESS } from '@/lib/constants'
@@ -71,9 +72,24 @@ export default async function ServiceDetailPage({ params }: { params: RouteParam
   const ServiceIcon = service.icon
   const schema = createServiceJsonLd(service)
 
+  // Breadcrumb schema
+  const breadcrumbs = [
+    { name: 'Home', url: 'https://andersoncleaning.com' },
+    { name: 'Services', url: 'https://andersoncleaning.com/services' },
+    { name: service.title, url: `https://andersoncleaning.com/services/${service.slug}` },
+  ]
+
+  // FAQ schema
+  const faqs = service.faqs.map((faq) => ({
+    question: faq.question,
+    answer: faq.answer,
+  }))
+
   return (
     <div className="min-h-screen bg-neutral-off-white text-neutral-charcoal dark:bg-slate-900 dark:text-white">
       {schema && <StructuredData schema={schema} />}
+      <BreadcrumbSchema items={breadcrumbs} />
+      {faqs.length > 0 && <FAQSchema faqs={faqs} />}
       <StickyQuoteButton />
 
       <HeroSection service={service} ServiceIcon={ServiceIcon} />
