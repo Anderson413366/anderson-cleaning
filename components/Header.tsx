@@ -1,17 +1,17 @@
 'use client'
 
-import { useState, useEffect, useMemo, useCallback } from 'react'
+import { useState, useEffect, useMemo, useCallback, useRef } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { Menu, X, Phone, Mail, Moon, Sun } from 'lucide-react'
+import { Menu, X, Phone, Mail, Moon, Sun, ChevronDown } from 'lucide-react'
 import { useTheme } from '@/lib/ThemeProvider'
 import { CONTACT_INFO } from '@/lib/constants'
+import { serviceSlugs, servicesData } from '@/lib/services-data'
+import { industries } from '@/lib/industries-data'
 
 // Simplified navigation - FAQ, Blog, Testimonials, Careers moved to Footer Quick Links
 const navigation = [
   { name: 'Home', href: '/' },
-  { name: 'Services', href: '/services' },
-  { name: 'Industries', href: '/industries' },
   { name: 'About', href: '/about' },
   { name: 'Contact', href: '/contact' },
 ]
@@ -22,14 +22,50 @@ const PHONE_VARIANTS = [
   { id: 'C', label: CONTACT_INFO.phone.formatted, support: 'Free Quote: Call Now' },
 ] as const
 
+// Services Menu Data
+const SERVICES_MENU = serviceSlugs.map((slug) => {
+  const service = servicesData[slug]
+  return {
+    title: service.title,
+    href: `/services/${slug}`,
+    description: service.tagline,
+  }
+})
+
+// Industries Menu Data
+const INDUSTRIES_MENU = industries.map((industry) => ({
+  title: industry.name,
+  href: `/industries/${industry.slug}`,
+  icon: industry.icon,
+}))
+
+// Locations Menu Data
+const LOCATIONS_MENU = {
+  massachusetts: [
+    { name: 'Springfield', slug: 'springfield-ma' },
+    { name: 'West Springfield', slug: 'west-springfield-ma' },
+    { name: 'Chicopee', slug: 'chicopee-ma' },
+    { name: 'Holyoke', slug: 'holyoke-ma' },
+    { name: 'Worcester County', slug: 'worcester-county-ma' },
+    { name: 'Northampton & Amherst', slug: 'northampton-amherst-ma' },
+  ],
+  connecticut: [
+    { name: 'Hartford', slug: 'hartford-ct' },
+    { name: 'Enfield', slug: 'enfield-ct' },
+    { name: 'Windsor', slug: 'windsor-ct' },
+  ],
+}
+
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
   const [phoneVariant] = useState(
     () => PHONE_VARIANTS[Math.floor(Math.random() * PHONE_VARIANTS.length)]
   )
   const pathname = usePathname()
   const { theme, toggleTheme } = useTheme()
+  const dropdownTimerRef = useRef<NodeJS.Timeout | null>(null)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -51,6 +87,18 @@ export default function Header() {
       document.body.style.overflow = 'unset'
     }
   }, [mobileMenuOpen])
+
+  // Close dropdown on escape key
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && activeDropdown) {
+        setActiveDropdown(null)
+      }
+    }
+
+    window.addEventListener('keydown', handleEscape)
+    return () => window.removeEventListener('keydown', handleEscape)
+  }, [activeDropdown])
 
   // Determine if we're on the home page
   const isHomePage = pathname === '/'
@@ -75,6 +123,24 @@ export default function Header() {
     }),
     []
   )
+
+  // Dropdown hover handlers with delay for better UX
+  const handleDropdownEnter = (dropdown: string) => {
+    if (dropdownTimerRef.current) {
+      clearTimeout(dropdownTimerRef.current)
+    }
+    setActiveDropdown(dropdown)
+  }
+
+  const handleDropdownLeave = () => {
+    dropdownTimerRef.current = setTimeout(() => {
+      setActiveDropdown(null)
+    }, 150)
+  }
+
+  const closeDropdown = () => {
+    setActiveDropdown(null)
+  }
 
   return (
     <header
@@ -107,6 +173,8 @@ export default function Header() {
             type="button"
             className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-neutral-charcoal dark:text-white"
             onClick={() => setMobileMenuOpen(true)}
+            aria-label="Open main menu"
+            aria-expanded={mobileMenuOpen}
           >
             <span className="sr-only">Open main menu</span>
             <Menu className="h-6 w-6" aria-hidden="true" />
@@ -114,7 +182,206 @@ export default function Header() {
         </div>
 
         {/* Desktop navigation */}
-        <div className="hidden lg:flex lg:gap-x-10">
+        <div className="hidden lg:flex lg:gap-x-8">
+          {/* Services Dropdown */}
+          <div
+            className="relative"
+            onMouseEnter={() => handleDropdownEnter('services')}
+            onMouseLeave={handleDropdownLeave}
+          >
+            <button
+              className={`flex items-center gap-1 text-sm font-medium leading-6 transition-all duration-150 ${
+                pathname.startsWith('/services')
+                  ? 'text-brand-bright-blue dark:text-white'
+                  : 'text-neutral-charcoal dark:text-white hover:text-brand-bright-blue dark:hover:text-white/80'
+              }`}
+              aria-expanded={activeDropdown === 'services'}
+              aria-haspopup="true"
+            >
+              Services
+              <ChevronDown
+                className={`h-3.5 w-3.5 transition-transform duration-200 ${
+                  activeDropdown === 'services' ? 'rotate-180' : ''
+                }`}
+              />
+            </button>
+
+            {/* Services Dropdown Menu */}
+            {activeDropdown === 'services' && (
+              <div className="absolute left-0 top-full mt-2 w-96 rounded-lg border border-gray-200 bg-white shadow-xl dark:border-white/10 dark:bg-slate-800">
+                <div className="border-b border-gray-100 px-4 pb-2 pt-4 dark:border-white/10">
+                  <h3 className="text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400">
+                    Our Services
+                  </h3>
+                </div>
+                <div className="max-h-96 overflow-y-auto">
+                  {SERVICES_MENU.map((service) => (
+                    <Link
+                      key={service.href}
+                      href={service.href}
+                      className="group block px-4 py-3 transition-colors hover:bg-blue-50 dark:hover:bg-slate-700"
+                      onClick={closeDropdown}
+                    >
+                      <div className="font-medium text-gray-900 group-hover:text-brand-bright-blue dark:text-white dark:group-hover:text-brand-bright-blue">
+                        {service.title}
+                      </div>
+                      <div className="mt-1 text-sm text-gray-600 dark:text-gray-400">
+                        {service.description}
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+                <div className="border-t border-gray-100 px-4 pt-3 pb-4 dark:border-white/10">
+                  <Link
+                    href="/services"
+                    className="text-sm font-medium text-brand-bright-blue hover:text-[#006bc4] dark:hover:text-white"
+                    onClick={closeDropdown}
+                  >
+                    View All Services →
+                  </Link>
+                </div>
+              </div>
+            )}
+          </div>
+
+          {/* Industries Dropdown */}
+          <div
+            className="relative"
+            onMouseEnter={() => handleDropdownEnter('industries')}
+            onMouseLeave={handleDropdownLeave}
+          >
+            <button
+              className={`flex items-center gap-1 text-sm font-medium leading-6 transition-all duration-150 ${
+                pathname.startsWith('/industries')
+                  ? 'text-brand-bright-blue dark:text-white'
+                  : 'text-neutral-charcoal dark:text-white hover:text-brand-bright-blue dark:hover:text-white/80'
+              }`}
+              aria-expanded={activeDropdown === 'industries'}
+              aria-haspopup="true"
+            >
+              Industries
+              <ChevronDown
+                className={`h-3.5 w-3.5 transition-transform duration-200 ${
+                  activeDropdown === 'industries' ? 'rotate-180' : ''
+                }`}
+              />
+            </button>
+
+            {/* Industries Dropdown Menu */}
+            {activeDropdown === 'industries' && (
+              <div className="absolute left-0 top-full mt-2 w-72 rounded-lg border border-gray-200 bg-white shadow-xl dark:border-white/10 dark:bg-slate-800">
+                <div className="border-b border-gray-100 px-4 pb-2 pt-4 dark:border-white/10">
+                  <h3 className="text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400">
+                    Industries We Serve
+                  </h3>
+                </div>
+                {INDUSTRIES_MENU.map((industry) => (
+                  <Link
+                    key={industry.href}
+                    href={industry.href}
+                    className="group flex items-center gap-3 px-4 py-3 transition-colors hover:bg-blue-50 dark:hover:bg-slate-700"
+                    onClick={closeDropdown}
+                  >
+                    <span className="text-2xl">{industry.icon === 'Heart' ? '🏥' : industry.icon === 'Building2' ? '🏢' : industry.icon === 'School' ? '🎓' : industry.icon === 'ShoppingBag' ? '🛍️' : '🏭'}</span>
+                    <span className="font-medium text-gray-900 group-hover:text-brand-bright-blue dark:text-white dark:group-hover:text-brand-bright-blue">
+                      {industry.title}
+                    </span>
+                  </Link>
+                ))}
+                <div className="border-t border-gray-100 px-4 pt-3 pb-4 dark:border-white/10">
+                  <Link
+                    href="/industries"
+                    className="text-sm font-medium text-brand-bright-blue hover:text-[#006bc4] dark:hover:text-white"
+                    onClick={closeDropdown}
+                  >
+                    View All Industries →
+                  </Link>
+                </div>
+              </div>
+            )}
+          </div>
+
+          {/* Locations Dropdown */}
+          <div
+            className="relative"
+            onMouseEnter={() => handleDropdownEnter('locations')}
+            onMouseLeave={handleDropdownLeave}
+          >
+            <button
+              className={`flex items-center gap-1 text-sm font-medium leading-6 transition-all duration-150 ${
+                pathname.startsWith('/locations')
+                  ? 'text-brand-bright-blue dark:text-white'
+                  : 'text-neutral-charcoal dark:text-white hover:text-brand-bright-blue dark:hover:text-white/80'
+              }`}
+              aria-expanded={activeDropdown === 'locations'}
+              aria-haspopup="true"
+            >
+              Locations
+              <ChevronDown
+                className={`h-3.5 w-3.5 transition-transform duration-200 ${
+                  activeDropdown === 'locations' ? 'rotate-180' : ''
+                }`}
+              />
+            </button>
+
+            {/* Locations Dropdown Menu */}
+            {activeDropdown === 'locations' && (
+              <div className="absolute left-0 top-full mt-2 w-80 rounded-lg border border-gray-200 bg-white shadow-xl dark:border-white/10 dark:bg-slate-800">
+                <div className="border-b border-gray-100 px-4 pb-2 pt-4 dark:border-white/10">
+                  <h3 className="text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400">
+                    Service Areas
+                  </h3>
+                </div>
+                <div className="grid grid-cols-2 gap-4 p-4">
+                  {/* Massachusetts */}
+                  <div>
+                    <h4 className="mb-2 font-semibold text-gray-700 dark:text-gray-300">Massachusetts</h4>
+                    <ul className="space-y-1">
+                      {LOCATIONS_MENU.massachusetts.map((location) => (
+                        <li key={location.slug}>
+                          <Link
+                            href={`/locations/${location.slug}`}
+                            className="text-sm text-gray-600 hover:text-brand-bright-blue dark:text-gray-400 dark:hover:text-brand-bright-blue"
+                            onClick={closeDropdown}
+                          >
+                            {location.name}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  {/* Connecticut */}
+                  <div>
+                    <h4 className="mb-2 font-semibold text-gray-700 dark:text-gray-300">Connecticut</h4>
+                    <ul className="space-y-1">
+                      {LOCATIONS_MENU.connecticut.map((location) => (
+                        <li key={location.slug}>
+                          <Link
+                            href={`/locations/${location.slug}`}
+                            className="text-sm text-gray-600 hover:text-brand-bright-blue dark:text-gray-400 dark:hover:text-brand-bright-blue"
+                            onClick={closeDropdown}
+                          >
+                            {location.name}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+                <div className="border-t border-gray-100 px-4 pt-3 pb-4 dark:border-white/10">
+                  <Link
+                    href="/locations"
+                    className="text-sm font-medium text-brand-bright-blue hover:text-[#006bc4] dark:hover:text-white"
+                    onClick={closeDropdown}
+                  >
+                    View All Locations →
+                  </Link>
+                </div>
+              </div>
+            )}
+          </div>
+
+          {/* Regular Navigation Links */}
           {navigation.map((item) => (
             <Link
               key={item.name}
@@ -149,9 +416,9 @@ export default function Header() {
             </div>
             <div className="flex flex-col leading-tight">
               {phoneVariant.support && (
-                <span className="text-xs text-neutral-charcoal/70">{phoneVariant.support}</span>
+                <span className="text-xs text-neutral-charcoal/70 dark:text-white/70">{phoneVariant.support}</span>
               )}
-              <span className="text-lg font-semibold text-brand-bright-blue group-hover:text-[#006bc4]">
+              <span className="text-lg font-semibold text-brand-bright-blue group-hover:text-[#006bc4] dark:text-white">
                 {phoneLink.formatted}
               </span>
             </div>
@@ -203,19 +470,160 @@ export default function Header() {
                 type="button"
                 className="-m-2.5 rounded-full p-2.5 text-neutral-charcoal dark:text-white hover:bg-neutral-light-grey dark:hover:bg-white/10 transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
+                aria-label="Close menu"
               >
                 <span className="sr-only">Close menu</span>
                 <X className="h-6 w-6" aria-hidden="true" />
               </button>
             </div>
             <div className="mt-6 flow-root">
-              <div className="-my-6 divide-y divide-gray-500/10">
+              <div className="-my-6 divide-y divide-gray-500/10 dark:divide-white/10">
                 <div className="space-y-2 py-6">
+                  {/* Services */}
+                  <div>
+                    <button
+                      onClick={() =>
+                        setActiveDropdown(
+                          activeDropdown === 'mobile-services' ? null : 'mobile-services'
+                        )
+                      }
+                      className="flex w-full items-center justify-between py-2 text-left font-semibold text-neutral-charcoal dark:text-white"
+                      aria-expanded={activeDropdown === 'mobile-services'}
+                    >
+                      Services
+                      <ChevronDown
+                        className={`h-4 w-4 transition-transform ${
+                          activeDropdown === 'mobile-services' ? 'rotate-180' : ''
+                        }`}
+                      />
+                    </button>
+                    {activeDropdown === 'mobile-services' && (
+                      <div className="space-y-2 pl-4 pb-2">
+                        {SERVICES_MENU.map((service) => (
+                          <Link
+                            key={service.href}
+                            href={service.href}
+                            className="block py-2 text-sm text-gray-600 hover:text-brand-bright-blue dark:text-gray-300 dark:hover:text-brand-bright-blue"
+                            onClick={() => setMobileMenuOpen(false)}
+                          >
+                            {service.title}
+                          </Link>
+                        ))}
+                        <Link
+                          href="/services"
+                          className="block py-2 text-sm font-medium text-brand-bright-blue hover:text-[#006bc4]"
+                          onClick={() => setMobileMenuOpen(false)}
+                        >
+                          View All →
+                        </Link>
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Industries */}
+                  <div>
+                    <button
+                      onClick={() =>
+                        setActiveDropdown(
+                          activeDropdown === 'mobile-industries' ? null : 'mobile-industries'
+                        )
+                      }
+                      className="flex w-full items-center justify-between py-2 text-left font-semibold text-neutral-charcoal dark:text-white"
+                      aria-expanded={activeDropdown === 'mobile-industries'}
+                    >
+                      Industries
+                      <ChevronDown
+                        className={`h-4 w-4 transition-transform ${
+                          activeDropdown === 'mobile-industries' ? 'rotate-180' : ''
+                        }`}
+                      />
+                    </button>
+                    {activeDropdown === 'mobile-industries' && (
+                      <div className="space-y-2 pl-4 pb-2">
+                        {INDUSTRIES_MENU.map((industry) => (
+                          <Link
+                            key={industry.href}
+                            href={industry.href}
+                            className="block py-2 text-sm text-gray-600 hover:text-brand-bright-blue dark:text-gray-300 dark:hover:text-brand-bright-blue"
+                            onClick={() => setMobileMenuOpen(false)}
+                          >
+                            {industry.title}
+                          </Link>
+                        ))}
+                        <Link
+                          href="/industries"
+                          className="block py-2 text-sm font-medium text-brand-bright-blue hover:text-[#006bc4]"
+                          onClick={() => setMobileMenuOpen(false)}
+                        >
+                          View All →
+                        </Link>
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Locations */}
+                  <div>
+                    <button
+                      onClick={() =>
+                        setActiveDropdown(
+                          activeDropdown === 'mobile-locations' ? null : 'mobile-locations'
+                        )
+                      }
+                      className="flex w-full items-center justify-between py-2 text-left font-semibold text-neutral-charcoal dark:text-white"
+                      aria-expanded={activeDropdown === 'mobile-locations'}
+                    >
+                      Locations
+                      <ChevronDown
+                        className={`h-4 w-4 transition-transform ${
+                          activeDropdown === 'mobile-locations' ? 'rotate-180' : ''
+                        }`}
+                      />
+                    </button>
+                    {activeDropdown === 'mobile-locations' && (
+                      <div className="space-y-2 pl-4 pb-2">
+                        <div className="text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400 py-1">
+                          Massachusetts
+                        </div>
+                        {LOCATIONS_MENU.massachusetts.map((location) => (
+                          <Link
+                            key={location.slug}
+                            href={`/locations/${location.slug}`}
+                            className="block py-1 text-sm text-gray-600 hover:text-brand-bright-blue dark:text-gray-300 dark:hover:text-brand-bright-blue"
+                            onClick={() => setMobileMenuOpen(false)}
+                          >
+                            {location.name}
+                          </Link>
+                        ))}
+                        <div className="text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400 py-1 pt-3">
+                          Connecticut
+                        </div>
+                        {LOCATIONS_MENU.connecticut.map((location) => (
+                          <Link
+                            key={location.slug}
+                            href={`/locations/${location.slug}`}
+                            className="block py-1 text-sm text-gray-600 hover:text-brand-bright-blue dark:text-gray-300 dark:hover:text-brand-bright-blue"
+                            onClick={() => setMobileMenuOpen(false)}
+                          >
+                            {location.name}
+                          </Link>
+                        ))}
+                        <Link
+                          href="/locations"
+                          className="block py-2 text-sm font-medium text-brand-bright-blue hover:text-[#006bc4] pt-3"
+                          onClick={() => setMobileMenuOpen(false)}
+                        >
+                          View All →
+                        </Link>
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Regular Links */}
                   {navigation.map((item) => (
                     <Link
                       key={item.name}
                       href={item.href}
-                      className={`-mx-3 block rounded-lg px-3 py-2 text-body-sm font-semibold leading-7 hover:bg-neutral-light-grey dark:hover:bg-slate-800 ${
+                      className={`-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 hover:bg-neutral-light-grey dark:hover:bg-slate-800 ${
                         pathname === item.href
                           ? 'text-brand-bright-blue bg-neutral-light-grey dark:bg-slate-800'
                           : 'text-neutral-charcoal dark:text-white'
