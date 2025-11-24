@@ -207,39 +207,43 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="mt-12 rounded-2xl bg-gray-900 text-white py-12">
-            <div className="container mx-auto px-4">
-              <div className="border-t border-gray-700 pt-8">
-                <div className="flex flex-col gap-4 text-sm text-neutral-charcoal md:flex-row md:items-center md:justify-between">
-                  <p>© {currentYear} Anderson Cleaning Company. All rights reserved.</p>
-                  <nav className="flex flex-wrap gap-6">
-                    <Link
-                      href="/privacy-policy"
-                      className="text-neutral-charcoal transition-colors hover:text-white"
-                    >
-                      Privacy Policy
-                    </Link>
-                    <Link
-                      href="/terms-of-service"
-                      className="text-neutral-charcoal transition-colors hover:text-white"
-                    >
-                      Terms of Service
-                    </Link>
-                    <Link
-                      href="/accessibility"
-                      className="text-neutral-charcoal transition-colors hover:text-white"
-                    >
-                      Accessibility
-                    </Link>
-                    <Link
-                      href="/sitemap.xml"
-                      className="text-neutral-charcoal transition-colors hover:text-white"
-                    >
-                      Sitemap
-                    </Link>
-                  </nav>
-                </div>
-              </div>
+          {/* Bottom Bar - Copyright & Legal Links */}
+          <div className="mt-12 border-t border-neutral-charcoal/10 dark:border-white/10 pt-8">
+            <div className="flex flex-col gap-4 text-sm md:flex-row md:items-center md:justify-between">
+              <p className="text-neutral-charcoal/70 dark:text-white/70">
+                © {currentYear} Anderson Cleaning Company. All rights reserved.
+              </p>
+              <nav className="flex flex-wrap gap-6">
+                <Link
+                  href="/privacy-policy"
+                  className="text-neutral-charcoal/70 dark:text-white/70 transition-colors hover:text-brand-bright-blue dark:hover:text-white"
+                >
+                  Privacy Policy
+                </Link>
+                <Link
+                  href="/terms-of-service"
+                  className="text-neutral-charcoal/70 dark:text-white/70 transition-colors hover:text-brand-bright-blue dark:hover:text-white"
+                >
+                  Terms of Service
+                </Link>
+                <Link
+                  href="/accessibility"
+                  className="text-neutral-charcoal/70 dark:text-white/70 transition-colors hover:text-brand-bright-blue dark:hover:text-white"
+                >
+                  Accessibility
+                </Link>
+                <Link
+                  href="/sitemap.xml"
+                  className="text-neutral-charcoal/70 dark:text-white/70 transition-colors hover:text-brand-bright-blue dark:hover:text-white"
+                >
+                  Sitemap
+                </Link>
+              </nav>
+            </div>
+            <div className="mt-6 pt-4 border-t border-neutral-charcoal/10 dark:border-white/10">
+              <p className="text-xs text-neutral-charcoal/60 dark:text-white/60 text-center">
+                We focus exclusively on B2B commercial cleaning and do not service restaurants or facilities requiring 7-day/week cleaning.
+              </p>
             </div>
           </div>
         </div>
