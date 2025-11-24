@@ -16,11 +16,7 @@ const navigation = [
   { name: 'Contact', href: '/contact' },
 ]
 
-const PHONE_VARIANTS = [
-  { id: 'A', label: CONTACT_INFO.phone.formatted, support: null },
-  { id: 'B', label: CONTACT_INFO.phone.formatted, support: '24/7 Emergency Service' },
-  { id: 'C', label: CONTACT_INFO.phone.formatted, support: 'Free Quote: Call Now' },
-] as const
+// Removed phone variants for simplicity
 
 // Services Menu Data
 const SERVICES_MENU = serviceSlugs.map((slug) => {
@@ -60,9 +56,6 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
-  const [phoneVariant] = useState(
-    () => PHONE_VARIANTS[Math.floor(Math.random() * PHONE_VARIANTS.length)]
-  )
   const pathname = usePathname()
   const { theme, toggleTheme } = useTheme()
   const dropdownTimerRef = useRef<NodeJS.Timeout | null>(null)
@@ -103,18 +96,14 @@ export default function Header() {
   // Determine if we're on the home page
   const isHomePage = pathname === '/'
 
-  const trackPhoneClick = useCallback(
-    (location: string) => {
-      if (typeof window === 'undefined') return
-      const dataLayer = (window as any).dataLayer || ((window as any).dataLayer = [])
-      dataLayer.push({
-        event: 'phone_click',
-        location,
-        variant: phoneVariant.id,
-      })
-    },
-    [phoneVariant.id]
-  )
+  const trackPhoneClick = useCallback((location: string) => {
+    if (typeof window === 'undefined') return
+    const dataLayer = (window as any).dataLayer || ((window as any).dataLayer = [])
+    dataLayer.push({
+      event: 'phone_click',
+      location,
+    })
+  }, [])
 
   const phoneLink = useMemo(
     () => ({
@@ -400,45 +389,22 @@ export default function Header() {
           ))}
         </div>
 
-        {/* Desktop Contact Actions */}
-        <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:gap-6">
+        {/* Desktop Contact Actions - Apple-style simplified */}
+        <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:gap-x-6">
           <a
             href={phoneLink.href}
-            className="group relative inline-flex items-center gap-3 rounded-full border border-transparent px-3 py-1.5 text-left transition hover:border-brand-bright-blue"
+            className="inline-flex items-center gap-2 text-sm font-medium text-neutral-charcoal dark:text-white hover:text-brand-bright-blue dark:hover:text-brand-bright-blue transition-colors"
             onClick={() => trackPhoneClick('header-desktop')}
             aria-label={`Call Anderson Cleaning Company at ${phoneLink.formatted}`}
           >
-            <span className="pointer-events-none absolute -top-9 right-0 rounded-md bg-neutral-charcoal px-2 py-1 text-xs text-white opacity-0 shadow-md transition group-hover:opacity-100">
-              Call Now
-            </span>
-            <div className="rounded-full bg-brand-bright-blue p-2 text-white transition group-hover:bg-[#006bc4]">
-              <Phone className="h-4 w-4" />
-            </div>
-            <div className="flex flex-col leading-tight">
-              {phoneVariant.support && (
-                <span className="text-xs text-neutral-charcoal/70 dark:text-white/70">{phoneVariant.support}</span>
-              )}
-              <span className="text-lg font-semibold text-brand-bright-blue group-hover:text-[#006bc4] dark:text-white">
-                {phoneLink.formatted}
-              </span>
-            </div>
+            <Phone className="h-4 w-4" />
+            {phoneLink.formatted}
           </a>
-          <button
-            onClick={toggleTheme}
-            className="rounded-full p-2.5 text-neutral-charcoal dark:text-white hover:bg-neutral-light-grey dark:hover:bg-white/10 transition-all duration-150"
-            aria-label="Toggle dark mode"
-          >
-            {theme === 'dark' ? (
-              <Sun className="h-5 w-5" />
-            ) : (
-              <Moon className="h-5 w-5" />
-            )}
-          </button>
           <Link
             href="/quote"
-            className="rounded-[10px] bg-brand-bright-blue px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-[#006bc4] active:bg-[#005aa3] transition-all duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-bright-blue focus-visible:ring-offset-2"
+            className="rounded-full bg-brand-bright-blue px-6 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-[#006bc4] transition-all duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-bright-blue focus-visible:ring-offset-2"
           >
-            Get a Quote
+            Get a Free Quote
           </Link>
         </div>
       </nav>
@@ -637,42 +603,19 @@ export default function Header() {
                 <div className="py-6">
                   <Link
                     href="/quote"
-                    className="block w-full rounded-[10px] bg-brand-bright-blue px-7 py-4 text-center text-base font-semibold text-white shadow-sm hover:bg-[#006bc4] active:bg-[#005aa3] transition-all duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-bright-blue focus-visible:ring-offset-2"
+                    className="block w-full rounded-full bg-brand-bright-blue px-7 py-4 text-center text-base font-semibold text-white shadow-sm hover:bg-[#006bc4] transition-all duration-150"
                     onClick={() => setMobileMenuOpen(false)}
                   >
-                    Get a Quote
+                    Get a Free Quote
                   </Link>
-                  <div className="mt-4 space-y-2">
-                    <button
-                      onClick={toggleTheme}
-                      className="flex w-full items-center gap-2 text-sm text-neutral-charcoal dark:text-white hover:text-brand-bright-blue dark:hover:text-brand-bright-blue/90"
-                    >
-                      {theme === 'dark' ? (
-                        <>
-                          <Sun className="h-4 w-4" />
-                          Light Mode
-                        </>
-                      ) : (
-                        <>
-                          <Moon className="h-4 w-4" />
-                          Dark Mode
-                        </>
-                      )}
-                    </button>
+                  <div className="mt-4 space-y-3">
                     <a
                       href={phoneLink.href}
                       onClick={() => trackPhoneClick('header-mobile-menu')}
-                      className="flex items-center gap-2 text-sm text-neutral-charcoal dark:text-white hover:text-brand-bright-blue dark:hover:text-brand-bright-blue/90"
+                      className="flex items-center justify-center gap-2 text-sm font-medium text-neutral-charcoal dark:text-white hover:text-brand-bright-blue dark:hover:text-brand-bright-blue transition-colors"
                     >
                       <Phone className="h-4 w-4" />
                       {phoneLink.formatted}
-                    </a>
-                    <a
-                      href="mailto:info@andersoncleaning.com"
-                      className="flex items-center gap-2 text-sm text-neutral-charcoal dark:text-white hover:text-brand-bright-blue dark:hover:text-brand-bright-blue/90"
-                    >
-                      <Mail className="h-4 w-4" />
-                      info@andersoncleaning.com
                     </a>
                   </div>
                 </div>
@@ -682,24 +625,24 @@ export default function Header() {
         </div>
       )}
 
-      {/* Mobile Sticky Contact Bar */}
+      {/* Mobile Sticky Contact Bar - Apple-style simplified */}
       <div
-        className={`fixed bottom-0 left-0 right-0 z-[120] border-t border-neutral-light-grey bg-white shadow-lg transition-transform duration-200 dark:border-white/10 dark:bg-brand-deep-blue lg:hidden ${
+        className={`fixed bottom-0 left-0 right-0 z-[120] bg-white/95 backdrop-blur-sm border-t border-gray-200 shadow-lg transition-transform duration-200 dark:border-white/10 dark:bg-brand-deep-blue/95 lg:hidden ${
           mobileMenuOpen ? 'translate-y-full' : 'translate-y-0'
         }`}
       >
-        <div className="grid grid-cols-2 divide-x divide-neutral-light-grey/70 dark:divide-white/10">
+        <div className="px-4 py-3 flex items-center justify-center gap-3">
           <a
             href={phoneLink.href}
             onClick={() => trackPhoneClick('mobile-bottom-bar')}
-            className="flex items-center justify-center gap-2 py-4 text-sm font-semibold text-brand-bright-blue transition active:bg-neutral-light-grey/40 dark:text-white dark:active:bg-white/10"
+            className="flex-1 flex items-center justify-center gap-2 py-3 rounded-full border-2 border-brand-bright-blue text-sm font-semibold text-brand-bright-blue transition-colors active:bg-brand-bright-blue/5 dark:text-white dark:border-white"
           >
-            <Phone className="h-5 w-5" />
-            Call Now
+            <Phone className="h-4 w-4" />
+            Call
           </a>
           <Link
             href="/quote"
-            className="flex items-center justify-center gap-2 py-4 text-sm font-semibold text-brand-bright-blue transition active:bg-neutral-light-grey/40 dark:text-white dark:active:bg-white/10"
+            className="flex-1 flex items-center justify-center gap-2 py-3 rounded-full bg-brand-bright-blue text-sm font-semibold text-white shadow-sm transition-colors active:bg-[#006bc4]"
           >
             Get Quote
           </Link>

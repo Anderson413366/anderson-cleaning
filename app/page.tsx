@@ -8,6 +8,7 @@ import QuoteAdvancedModal from '@/components/forms/QuoteAdvancedModal'
 import BeforeAfterSlider from '@/components/sections/BeforeAfterSlider'
 import StatsBar from '@/components/sections/StatsBar'
 import PromotionalModal from '@/components/PromotionalModal'
+import { CertificationBar } from '@/components/Certifications'
 import { YEARS_IN_BUSINESS } from '@/lib/constants'
 import {
   ArrowRight,
@@ -38,44 +39,58 @@ export default function Home() {
       {/* Promotional Modal */}
       <PromotionalModal />
 
-      {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-brand-deep-blue via-brand-deep-blue to-brand-bright-blue text-white pt-28 pb-16 md:pt-32 md:pb-20">
-        <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10"></div>
-        <div className="container mx-auto px-6 lg:px-8 relative z-10">
+      {/* Hero Section - Apple-style simplified */}
+      <section className="relative bg-white dark:bg-slate-900 pt-32 pb-20 md:pt-40 md:pb-28 lg:pt-48 lg:pb-32">
+        <div className="container mx-auto px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
-            {/* Eyebrow */}
-            <div className="mt-8 mb-6 md:mt-10">
-              <span className="inline-block px-4 py-2 rounded-full border border-brand-bright-blue/40 bg-brand-bright-blue/10 text-brand-bright-blue text-sm font-medium">
-                Trusted by 100+ Businesses Since 2007
+            {/* Eyebrow Badge */}
+            <div className="mb-8">
+              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-bright-blue/10 text-brand-bright-blue text-sm font-medium dark:bg-brand-bright-blue/20 dark:text-white">
+                <Award className="h-4 w-4" />
+                Trusted by 100+ businesses since 2007
               </span>
             </div>
 
             {/* Headline */}
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight tracking-tight">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 leading-[1.1] tracking-tight text-neutral-charcoal dark:text-white">
               Professional Commercial Cleaning You Can Count On
             </h1>
 
             {/* Supporting Line */}
-            <p className="text-xl md:text-2xl text-white/90 mb-12 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl md:text-2xl text-neutral-charcoal/70 dark:text-white/70 mb-12 max-w-3xl mx-auto leading-relaxed">
               Full-time salaried teams, 24/7 support, and corporate-grade standards for your Western MA & Northern CT facility
             </p>
 
-            {/* CTAs */}
+            {/* Trust Badges - Simplified */}
+            <div className="mb-12 flex flex-wrap items-center justify-center gap-6 text-sm text-neutral-charcoal/60 dark:text-white/60">
+              <div className="flex items-center gap-2">
+                <CheckCircle2 className="h-5 w-5 text-brand-bright-blue" />
+                <span>Green Seal Certified</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Shield className="h-5 w-5 text-brand-bright-blue" />
+                <span>Licensed & Insured</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Award className="h-5 w-5 text-brand-bright-blue" />
+                <span>18+ Years Experience</span>
+              </div>
+            </div>
+
+            {/* CTAs - Single primary action */}
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link href="/quote">
-                <Button variant="accent" size="lg" className="min-w-[220px]">
-                  Get a Free Quote
-                </Button>
+              <Link
+                href="/quote"
+                className="inline-flex items-center justify-center rounded-full bg-brand-bright-blue px-8 py-4 text-lg font-semibold text-white shadow-sm hover:bg-[#006bc4] transition-all duration-150"
+              >
+                Get a Free Quote
               </Link>
-              <a href="tel:+14133065053">
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="min-w-[220px] border-2 border-white text-white hover:bg-white/10"
-                >
-                  <Phone className="h-5 w-5 mr-2" />
-                  Call (413) 306-5053
-                </Button>
+              <a
+                href="tel:+14133065053"
+                className="inline-flex items-center justify-center gap-2 text-lg font-medium text-brand-bright-blue hover:text-[#006bc4] transition-colors dark:text-white dark:hover:text-white/80"
+              >
+                <Phone className="h-5 w-5" />
+                (413) 306-5053
               </a>
             </div>
           </div>
@@ -83,6 +98,9 @@ export default function Home() {
       </section>
 
       <StatsBar background="gray" className="border-y border-neutral-light-grey/70" />
+
+      {/* Certification Bar */}
+      <CertificationBar />
 
       {/* Services Overview Section */}
       <section id="services" className="py-20 bg-white dark:bg-slate-900 transition-colors">
