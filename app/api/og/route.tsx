@@ -20,7 +20,7 @@ export async function GET(request: NextRequest) {
     const { searchParams } = new URL(request.url)
 
     // Get parameters
-    const title = searchParams.get('title') || 'Anderson Cleaning'
+    const title = searchParams.get('title') || 'Anderson Cleaning Company'
     const description =
       searchParams.get('description') ||
       'Professional Commercial Cleaning Services in Western MA & CT'
@@ -79,7 +79,7 @@ export async function GET(request: NextRequest) {
                   letterSpacing: '-0.02em',
                 }}
               >
-                Anderson Cleaning
+                Anderson Cleaning Company
               </div>
               <div
                 style={{

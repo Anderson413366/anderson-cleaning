@@ -1,10 +1,10 @@
 # Accessibility (A11y) Implementation
 
-Comprehensive WCAG 2.2 Level AA compliance implementation for the Anderson Cleaning website.
+Comprehensive WCAG 2.2 Level AA compliance implementation for the Anderson Cleaning Company website.
 
 ## 🎯 Accessibility Statement
 
-Anderson Cleaning is committed to ensuring digital accessibility for people with disabilities. We are continually improving the user experience for everyone and applying the relevant accessibility standards.
+Anderson Cleaning Company is committed to ensuring digital accessibility for people with disabilities. We are continually improving the user experience for everyone and applying the relevant accessibility standards.
 
 ### Conformance Status
 
@@ -683,4 +683,4 @@ Last updated: January 13, 2025
 
 ---
 
-**Commitment**: Anderson Cleaning is committed to making our website accessible to all users, including those with disabilities. We regularly review and update our accessibility practices to ensure compliance with WCAG 2.2 Level AA standards.
+**Commitment**: Anderson Cleaning Company is committed to making our website accessible to all users, including those with disabilities. We regularly review and update our accessibility practices to ensure compliance with WCAG 2.2 Level AA standards.

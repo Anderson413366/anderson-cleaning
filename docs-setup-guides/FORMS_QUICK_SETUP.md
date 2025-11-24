@@ -1,4 +1,4 @@
-# ⚡ Forms Quick Setup - Anderson Cleaning
+# ⚡ Forms Quick Setup - Anderson Cleaning Company
 
 **Created:** 2025-11-17
 **Status:** Ready for API Key
@@ -98,7 +98,7 @@ TTL: 3600
 
 1. In Resend dashboard, go to **"API Keys"**
 2. Click **"Create API Key"**
-3. Name: `Anderson Cleaning Production`
+3. Name: `Anderson Cleaning Company Production`
 4. **Copy the API key** (starts with `re_`)
 5. ⚠️ Save it somewhere safe - you'll only see it once!
 

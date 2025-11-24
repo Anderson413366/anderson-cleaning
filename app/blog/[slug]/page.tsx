@@ -10,7 +10,7 @@ const blogContent: { [key: string]: any } = {
     category: 'Health & Safety',
     readTime: '5 min read',
     publishedDate: '2024-10-15',
-    author: 'Anderson Cleaning Team',
+    author: 'Anderson Cleaning Company Team',
     image: 'https://images.unsplash.com/photo-1584744982491-665216d95f8b?w=1200&q=80',
     content: `
       <h2>Protecting Your Workplace During Flu Season</h2>
@@ -117,7 +117,7 @@ const blogContent: { [key: string]: any } = {
 
       <div class="callout">
         <h3>Need Professional Flu Season Cleaning?</h3>
-        <p>Anderson Cleaning specializes in health-focused cleaning protocols that protect your employees during flu season and year-round. Our team is trained in proper disinfection techniques, uses EPA-registered products, and provides documentation for your peace of mind.</p>
+        <p>Anderson Cleaning Company specializes in health-focused cleaning protocols that protect your employees during flu season and year-round. Our team is trained in proper disinfection techniques, uses EPA-registered products, and provides documentation for your peace of mind.</p>
         <p><strong>Contact us today for a free consultation and customized cleaning plan.</strong></p>
       </div>
     `,
@@ -127,7 +127,7 @@ const blogContent: { [key: string]: any } = {
     category: 'Best Practices',
     readTime: '7 min read',
     publishedDate: '2024-09-22',
-    author: 'Anderson Cleaning Team',
+    author: 'Anderson Cleaning Company Team',
     image: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=1200&q=80',
     content: `
       <h2>Start with Foot Traffic and Risk</h2>
@@ -140,7 +140,7 @@ const blogContent: { [key: string]: any } = {
       </ul>
 
       <h2>Daily vs. Weekly Programs</h2>
-      <p>At Anderson Cleaning we design custom SOPs for each account, but these guidelines help you set expectations:</p>
+      <p>At Anderson Cleaning Company we design custom SOPs for each account, but these guidelines help you set expectations:</p>
       <ol>
         <li><strong>Daily cleaning</strong> for reception, client areas, restrooms, break rooms, and any space where spills or trash accumulate quickly.</li>
         <li><strong>Three to five times per week</strong> for open work areas, private offices, and high-touch surfaces to maintain health and visual appeal.</li>
@@ -166,7 +166,7 @@ const blogContent: { [key: string]: any } = {
         <li>More than one unscheduled service request per week</li>
       </ul>
 
-      <h2>How Anderson Cleaning Builds the Schedule</h2>
+      <h2>How Anderson Cleaning Company Builds the Schedule</h2>
       <p>During our walkthrough we document square footage, floor types, occupant density, and regulatory requirements. Then we build a cleaning matrix that outlines:</p>
       <ul>
         <li>Daily tasks (restroom sanitation, trash removal, high-touch disinfection)</li>
@@ -178,7 +178,7 @@ const blogContent: { [key: string]: any } = {
       <div class="callout">
         <h3>Need Help Setting the Right Cadence?</h3>
         <p>Our office cleaning and janitorial programs combine daily attention with scheduled deep services, so your facility stays inspection-ready. We’ll build a frequency plan based on traffic, risk, and budget.</p>
-        <p><strong>Contact Anderson Cleaning for a walkthrough and custom cleaning matrix.</strong></p>
+        <p><strong>Contact Anderson Cleaning Company for a walkthrough and custom cleaning matrix.</strong></p>
       </div>
     `,
   },
@@ -187,7 +187,7 @@ const blogContent: { [key: string]: any } = {
     category: 'Healthcare',
     readTime: '8 min read',
     publishedDate: '2024-09-10',
-    author: 'Anderson Cleaning Team',
+    author: 'Anderson Cleaning Company Team',
     image: 'https://images.unsplash.com/photo-1631815588090-d4bfec5b1ccb?w=1200&q=80',
     content: `
       <h2>Why Healthcare Cleaning Is Different</h2>
@@ -219,7 +219,7 @@ const blogContent: { [key: string]: any } = {
       </ul>
 
       <h2>Verification and Reporting</h2>
-      <p>Healthcare administrators need proof of performance. Anderson Cleaning provides:</p>
+      <p>Healthcare administrators need proof of performance. Anderson Cleaning Company provides:</p>
       <ul>
         <li>Digital inspection reports with timestamped photos</li>
         <li>ATP testing (available for sensitive areas)</li>
@@ -230,7 +230,7 @@ const blogContent: { [key: string]: any } = {
       <div class="callout">
         <h3>Partner with a Healthcare Cleaning Specialist</h3>
         <p>We serve medical offices, outpatient clinics, imaging centers, and surgical suites within 100 miles of West Springfield. Our OSHA-trained teams deliver compliant cleaning backed by documented QA.</p>
-        <p><strong>Schedule a healthcare-specific walkthrough with Anderson Cleaning.</strong></p>
+        <p><strong>Schedule a healthcare-specific walkthrough with Anderson Cleaning Company.</strong></p>
       </div>
     `,
   },
@@ -239,7 +239,7 @@ const blogContent: { [key: string]: any } = {
     category: "Buyer's Guide",
     readTime: '10 min read',
     publishedDate: '2024-08-28',
-    author: 'Anderson Cleaning Team',
+    author: 'Anderson Cleaning Company Team',
     image: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1200&q=80',
     content: `
       <h2>Set Expectations Before You Bid</h2>
@@ -276,7 +276,7 @@ const blogContent: { [key: string]: any } = {
       <p>Look for service-level guarantees, corrective action timelines, and an easy exit clause if things go sideways.</p>
 
       <div class="callout">
-        <h3>Interview Anderson Cleaning</h3>
+        <h3>Interview Anderson Cleaning Company</h3>
         <p>We welcome tough questions because transparency is part of our DNA. From W-2 staffing to digital QA, we show you exactly how we protect your facility.</p>
         <p><strong>Book a discovery call and put our answers to the test.</strong></p>
       </div>
@@ -287,7 +287,7 @@ const blogContent: { [key: string]: any } = {
     category: 'Maintenance',
     readTime: '6 min read',
     publishedDate: '2024-08-15',
-    author: 'Anderson Cleaning Team',
+    author: 'Anderson Cleaning Company Team',
     image: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=1200&q=80',
     content: `
       <h2>Start with Daily Protection</h2>
@@ -329,7 +329,7 @@ const blogContent: { [key: string]: any } = {
 
       <div class="callout">
         <h3>Need a Floor Care Program?</h3>
-        <p>From nightly maintenance to full strip-and-refinish services, Anderson Cleaning protects the flooring investments in offices, schools, and healthcare facilities.</p>
+        <p>From nightly maintenance to full strip-and-refinish services, Anderson Cleaning Company protects the flooring investments in offices, schools, and healthcare facilities.</p>
         <p><strong>Request a floor assessment and maintenance schedule today.</strong></p>
       </div>
     `,
@@ -339,7 +339,7 @@ const blogContent: { [key: string]: any } = {
     category: 'Sustainability',
     readTime: '6 min read',
     publishedDate: '2024-10-08',
-    author: 'Anderson Cleaning Team',
+    author: 'Anderson Cleaning Company Team',
     image: 'https://images.unsplash.com/photo-1628177142898-93e36e4e3a50?w=1200&q=80',
     content: `
       <h2>Why Green Cleaning Matters for Your Business</h2>
@@ -483,7 +483,7 @@ const blogContent: { [key: string]: any } = {
 
       <div class="callout">
         <h3>Ready to Go Green?</h3>
-        <p>Anderson Cleaning offers comprehensive green cleaning programs using certified eco-friendly products and sustainable practices. We can help your facility achieve environmental goals while maintaining the highest cleanliness standards.</p>
+        <p>Anderson Cleaning Company offers comprehensive green cleaning programs using certified eco-friendly products and sustainable practices. We can help your facility achieve environmental goals while maintaining the highest cleanliness standards.</p>
         <p><strong>Contact us for a free green cleaning consultation.</strong></p>
       </div>
     `,
@@ -625,7 +625,7 @@ export default async function BlogPost({
                 Need Professional Cleaning Services?
               </h2>
               <p className="text-body text-neutral-charcoal/70 dark:text-white/80 mb-6">
-                Anderson Cleaning provides expert commercial cleaning services throughout Western MA
+                Anderson Cleaning Company provides expert commercial cleaning services throughout Western MA
                 and Northern CT.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">

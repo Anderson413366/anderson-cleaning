@@ -1,4 +1,4 @@
-# 🧹 Anderson Cleaning - Commercial Cleaning Website
+# 🧹 Anderson Cleaning Company - Commercial Cleaning Website
 
 > **Simple, Clear, Organized** - Professional website for B2B commercial janitorial services
 
@@ -6,7 +6,7 @@
 
 ## 🎯 WHAT IS THIS PROJECT?
 
-This is the **Anderson Cleaning company website**.
+This is the **Anderson Cleaning Company website**.
 It helps commercial businesses request cleaning quotes and learn about services.
 
 **Live Website:** https://andersoncleaning.com
@@ -259,7 +259,7 @@ git commit -m "Resolve conflicts"
 
 ## 📄 LICENSE
 
-© 2025 Anderson Cleaning, Inc. All rights reserved.
+© 2025 Anderson Cleaning Company All rights reserved.
 
 ---
 

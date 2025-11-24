@@ -1,5 +1,5 @@
 -- =====================================================
--- Anderson Cleaning - Database Schema
+-- Anderson Cleaning Company - Database Schema
 -- =====================================================
 -- Created: 2025-11-17
 -- Purpose: Store form submissions from website

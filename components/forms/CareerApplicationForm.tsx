@@ -263,7 +263,7 @@ export default function CareerApplicationForm() {
             </div>
             <div>
               <label className="block text-body-sm font-semibold mb-2 text-neutral-charcoal dark:text-white">
-                Why Anderson Cleaning? *
+                Why Anderson Cleaning Company? *
               </label>
               <textarea
                 {...register('why_anderson')}

@@ -419,4 +419,4 @@ This means:
 
 **Last Updated**: 2025-11-14
 **Version**: 1.0.0
-**Maintainer**: Anderson Cleaning Development Team
+**Maintainer**: Anderson Cleaning Company Development Team

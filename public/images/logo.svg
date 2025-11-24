@@ -3,7 +3,7 @@
   <rect x="2" y="2" width="36" height="36" rx="6" fill="#1e40af"/>
   <text x="20" y="28" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="white" text-anchor="middle">A</text>
 
-  <!-- Anderson Cleaning Text -->
-  <text x="48" y="20" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1f2937">Anderson Cleaning</text>
+  <!-- Anderson Cleaning Company Text -->
+  <text x="48" y="20" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1f2937">Anderson Cleaning Company</text>
   <text x="48" y="33" font-family="Arial, sans-serif" font-size="10" fill="#6b7280">Commercial Services</text>
 </svg>

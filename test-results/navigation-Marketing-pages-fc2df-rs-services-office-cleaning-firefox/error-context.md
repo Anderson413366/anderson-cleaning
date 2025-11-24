@@ -6,9 +6,9 @@
     - /url: "#main-content"
   - banner [ref=e3]:
     - navigation "Global" [ref=e4]:
-      - link "Anderson Cleaning" [ref=e6] [cursor=pointer]:
+      - link "Anderson Cleaning Company" [ref=e6] [cursor=pointer]:
         - /url: /
-        - img "Anderson Cleaning" [ref=e7]
+        - img "Anderson Cleaning Company" [ref=e7]
       - generic [ref=e8]:
         - link "Home" [ref=e9] [cursor=pointer]:
           - /url: /
@@ -217,7 +217,7 @@
         - generic [ref=e246]:
           - generic [ref=e247]:
             - img [ref=e248]
-            - paragraph [ref=e250]: “Anderson Cleaning has supported our Springfield HQ for six years. Their after-hours crews reset 80+ workstations nightly without disrupting confidential projects.”
+            - paragraph [ref=e250]: “Anderson Cleaning Company has supported our Springfield HQ for six years. Their after-hours crews reset 80+ workstations nightly without disrupting confidential projects.”
             - paragraph [ref=e251]: Mia Reynolds
             - paragraph [ref=e252]: Director of Workplace, Pioneer Mutual
           - generic [ref=e253]:
@@ -298,7 +298,7 @@
           - paragraph [ref=e338]: Need help sooner? Call now and we’ll schedule immediately.
   - generic [ref=e340]:
     - heading "Ready to Experience Professional Cleaning?" [level=2] [ref=e341]
-    - paragraph [ref=e342]: Join 100+ businesses that trust Anderson Cleaning for their facility maintenance
+    - paragraph [ref=e342]: Join 100+ businesses that trust Anderson Cleaning Company for their facility maintenance
     - generic [ref=e343]:
       - link "Get Your Free Quote" [ref=e344] [cursor=pointer]:
         - /url: /quote
@@ -373,7 +373,7 @@
                 - /url: https://www.instagram.com/andersonclean/
                 - img [ref=e401]
       - generic [ref=e406]:
-        - paragraph [ref=e407]: © 2025 Anderson Cleaning, Inc.
+        - paragraph [ref=e407]: © 2025 Anderson Cleaning Company
         - generic [ref=e408]:
           - link "Privacy" [ref=e409] [cursor=pointer]:
             - /url: /legal/privacy

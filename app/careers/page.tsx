@@ -17,9 +17,9 @@ import { generateJobPostingSchema, generateBreadcrumbSchema } from '@/lib/seo/js
 const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://anderson-cleaning-site.vercel.app'
 
 export const metadata: Metadata = {
-  title: 'Careers - Cleaning Specialist, Field Supervisor, Operations Assistant | Anderson Cleaning',
+  title: 'Careers - Cleaning Specialist, Field Supervisor, Operations Assistant | Anderson Cleaning Company',
   description:
-    'Join Anderson Cleaning! Now hiring Cleaning Specialists ($15-20/hr), Field Supervisors ($20-25/hr), and Operations Assistants (Premium Pay). Apply today!',
+    'Join Anderson Cleaning Company! Now hiring Cleaning Specialists ($15-20/hr), Field Supervisors ($20-25/hr), and Operations Assistants (Premium Pay). Apply today!',
   keywords: [
     'cleaning jobs',
     'commercial cleaning careers',
@@ -30,23 +30,23 @@ export const metadata: Metadata = {
     'jobs with benefits',
     'entry level jobs',
     'career opportunities',
-    'Anderson Cleaning careers',
+    'Anderson Cleaning Company careers',
   ],
   openGraph: {
     type: 'website',
     locale: 'en_US',
     url: `${baseUrl}/careers`,
-    siteName: 'Anderson Cleaning',
+    siteName: 'Anderson Cleaning Company',
     title:
-      'Careers - Cleaning Specialist, Field Supervisor, Operations Assistant | Anderson Cleaning',
+      'Careers - Cleaning Specialist, Field Supervisor, Operations Assistant | Anderson Cleaning Company',
     description:
-      'Join Anderson Cleaning! Cleaning Specialists ($15-20/hr), Field Supervisors ($20-25/hr), and Operations Assistants (Premium Pay). Apply today!',
+      'Join Anderson Cleaning Company! Cleaning Specialists ($15-20/hr), Field Supervisors ($20-25/hr), and Operations Assistants (Premium Pay). Apply today!',
     images: [
       {
         url: '/images/og-careers.jpg',
         width: 1200,
         height: 630,
-        alt: 'Anderson Cleaning Careers - Join Our Team',
+        alt: 'Anderson Cleaning Company Careers - Join Our Team',
       },
     ],
   },

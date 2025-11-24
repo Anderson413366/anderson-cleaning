@@ -470,7 +470,7 @@ export default function CaseStudyTemplate({
                 Ready for Similar Results?
               </h2>
               <p className="text-body text-white/80 mb-8">
-                Let's discuss how Anderson Cleaning can solve your facility's challenges and deliver
+                Let's discuss how Anderson Cleaning Company can solve your facility's challenges and deliver
                 measurable results.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

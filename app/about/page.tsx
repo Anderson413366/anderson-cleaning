@@ -2,6 +2,7 @@
 import Link from 'next/link'
 import { Button } from '@/components/ui/Button'
 import StatsBar from '@/components/sections/StatsBar'
+import { YEARS_IN_BUSINESS } from '@/lib/constants'
 import {
   Users,
   Heart,
@@ -29,9 +30,9 @@ export default function AboutPage() {
       <section className="relative overflow-hidden bg-gradient-to-br from-brand-deep-blue via-brand-deep-blue to-brand-bright-blue text-white pt-28 pb-16 md:pt-32 md:pb-20">
         <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10"></div>
         <div className="container mx-auto px-6 text-center relative z-10">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight tracking-tight">About Anderson Cleaning</h1>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight tracking-tight">About Anderson Cleaning Company</h1>
           <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed">
-            18 years of excellence delivering professional commercial cleaning with the personal touch
+            {YEARS_IN_BUSINESS} years of excellence delivering professional commercial cleaning with the personal touch
           </p>
         </div>
       </section>
@@ -45,14 +46,14 @@ export default function AboutPage() {
             </h2>
             <div className="space-y-6 text-body leading-relaxed text-neutral-charcoal/80 dark:text-white/80 text-center md:text-left">
               <p>
-                Anderson Cleaning was founded with a simple but powerful vision: to provide
+                Anderson Cleaning Company was founded with a simple but powerful vision: to provide
                 corporate-grade commercial cleaning services with the accountability and personal
                 attention of a family business.
               </p>
               <p>
                 After years of watching businesses struggle with unreliable cleaning contractors,
                 high turnover, and inconsistent quality, we knew there had to be a better way. We
-                built Anderson Cleaning on three core principles:
+                built Anderson Cleaning Company on three core principles:
               </p>
             </div>
             <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -106,7 +107,7 @@ export default function AboutPage() {
             What Makes Us Different
           </h2>
           <p className="text-neutral-charcoal/70 dark:text-white/80 text-center mb-12 max-w-2xl mx-auto">
-            We're not the biggest cleaning company, but we might be the most committed to your
+            We're not the biggest cleaning company, but we're relentlessly focused on your
             success
           </p>
 
@@ -329,7 +330,7 @@ export default function AboutPage() {
               Proud to Serve Our Community
             </h2>
             <p className="text-body text-neutral-charcoal/80 dark:text-white/80 mb-8">
-              Anderson Cleaning is more than just a business—we're active members of the Western
+              Anderson Cleaning Company is more than just a business—we're active members of the Western
               Massachusetts and Northern Connecticut communities we serve.
             </p>
             <div className="bg-white dark:bg-slate-800 border border-neutral-light-grey dark:border-slate-700 rounded-xl p-8 shadow-sm">

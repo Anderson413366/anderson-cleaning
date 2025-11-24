@@ -8,6 +8,7 @@ import QuoteAdvancedModal from '@/components/forms/QuoteAdvancedModal'
 import BeforeAfterSlider from '@/components/sections/BeforeAfterSlider'
 import StatsBar from '@/components/sections/StatsBar'
 import PromotionalModal from '@/components/PromotionalModal'
+import { YEARS_IN_BUSINESS } from '@/lib/constants'
 import {
   ArrowRight,
   Award,
@@ -278,7 +279,7 @@ export default function Home() {
             {[
               {
                 quote:
-                  'Anderson Cleaning transformed our medical office. Their attention to detail and OSHA compliance gives us complete peace of mind.',
+                  'Anderson Cleaning Company transformed our medical office. Their attention to detail and OSHA compliance gives us complete peace of mind.',
                 author: 'Dr. Sarah Mitchell',
                 company: 'Springfield Family Medicine',
                 rating: 5,
@@ -330,7 +331,7 @@ export default function Home() {
               Our Work Speaks for Itself
             </h2>
             <p className="text-body text-neutral-charcoal/70 dark:text-white/80 mb-8">
-              See the Anderson Cleaning difference with interactive before/after comparisons
+              See the Anderson Cleaning Company difference with interactive before/after comparisons
             </p>
           </div>
 
@@ -371,7 +372,7 @@ export default function Home() {
               Licensed, Certified & Trusted
             </h2>
             <p className="text-body text-neutral-charcoal/70 dark:text-white/80">
-              We meet the highest industry standards
+              Documented to meet OSHA, CDC, and industry standards
             </p>
           </div>
 
@@ -381,7 +382,7 @@ export default function Home() {
               { icon: Users, label: 'Background Checked', desc: 'All staff verified' },
               {
                 icon: Award,
-                label: '18 Years of Excellence',
+                label: `${YEARS_IN_BUSINESS} Years of Excellence`,
                 desc: 'Serving Western MA & Northern CT Since 2007',
               },
               { icon: Star, label: '100% Satisfaction', desc: 'Guaranteed results' },

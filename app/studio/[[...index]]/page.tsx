@@ -3,7 +3,7 @@
 /**
  * Sanity Studio
  *
- * Content management interface for Anderson Cleaning
+ * Content management interface for Anderson Cleaning Company
  * Access at: /studio
  *
  * NOTE: This route should be protected with authentication in production

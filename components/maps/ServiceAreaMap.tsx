@@ -19,8 +19,8 @@ if (typeof window !== 'undefined') {
 // West Springfield, MA (zip 01089) - center point
 const centerPoint: [number, number] = [42.1015, -72.5898]
 
-// 50 miles in meters (1 mile = 1609.34 meters)
-const radiusInMeters = 50 * 1609.34 // 80,467 meters
+// 100 miles in meters (1 mile = 1609.34 meters)
+const radiusInMeters = 100 * 1609.34
 
 // Major cities to mark on the map
 const cities = [
@@ -47,7 +47,7 @@ export default function ServiceAreaMap() {
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
 
-        {/* 50-mile radius circle */}
+        {/* 100-mile radius circle */}
         <Circle
           center={centerPoint}
           radius={radiusInMeters}

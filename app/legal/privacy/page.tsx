@@ -4,9 +4,9 @@ import Link from 'next/link'
 import { Shield, Download, Mail } from 'lucide-react'
 
 const pageInfo = {
-  title: 'Privacy Policy | Anderson Cleaning',
+  title: 'Privacy Policy | Anderson Cleaning Company',
   description:
-    'Learn how Anderson Cleaning collects, uses, and protects your personal information.',
+    'Learn how Anderson Cleaning Company collects, uses, and protects your personal information.',
   robots: {
     index: false,
     follow: true,
@@ -140,7 +140,7 @@ export default function PrivacyPolicyPage() {
               1. Introduction
             </h2>
             <p className="text-neutral-charcoal/80 dark:text-white/80 leading-relaxed mb-4">
-              Anderson Cleaning, Inc. (&quot;we,&quot; &quot;us,&quot; or &quot;our&quot;) is
+              Anderson Cleaning Company (&quot;we,&quot; &quot;us,&quot; or &quot;our&quot;) is
               committed to protecting your privacy. This Privacy Policy explains how we collect,
               use, disclose, and safeguard your information when you visit our website{' '}
               <a
@@ -629,7 +629,7 @@ export default function PrivacyPolicyPage() {
                     Mailing Address
                   </p>
                   <p className="text-neutral-charcoal/80 dark:text-white/80 text-sm">
-                    Anderson Cleaning, Inc.
+                    Anderson Cleaning Company
                     <br />
                     103 Wayside Ave
                     <br />

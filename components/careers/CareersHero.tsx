@@ -5,6 +5,7 @@ import { useAppContext } from '@/lib/careers/AppContext'
 import { Button } from '@/components/ui/Button'
 import { Globe, CheckCircle2, Users, Award, TrendingUp, ArrowRight } from 'lucide-react'
 import { LanguageCode } from '@/lib/careers/types'
+import { YEARS_IN_BUSINESS } from '@/lib/constants'
 
 interface CareersHeroProps {
   onStartApplication: () => void
@@ -117,7 +118,7 @@ const CareersHero: React.FC<CareersHeroProps> = ({ onStartApplication }) => {
             </div>
             <div className="flex items-center space-x-2">
               <Award className="h-5 w-5 text-accent-400" aria-hidden="true" />
-              <span>18 Years of Excellence</span>
+              <span>{YEARS_IN_BUSINESS} Years of Excellence</span>
             </div>
             <div className="flex items-center space-x-2">
               <TrendingUp className="h-5 w-5 text-accent-400" aria-hidden="true" />

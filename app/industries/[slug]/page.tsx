@@ -39,12 +39,12 @@ export async function generateMetadata({
 
   if (!industry) {
     return {
-      title: 'Industry Not Found | Anderson Cleaning',
+      title: 'Industry Not Found | Anderson Cleaning Company',
     }
   }
 
   return {
-    title: `${industry.hero.title} | Anderson Cleaning Services`,
+    title: `${industry.hero.title} | Anderson Cleaning Company Services`,
     description: industry.hero.subtitle,
   }
 }

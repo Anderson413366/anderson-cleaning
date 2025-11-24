@@ -1,5 +1,5 @@
 /**
- * Anderson Cleaning Design Tokens
+ * Anderson Cleaning Company Design Tokens
  * Apple-style spacing scale and typography system
  */
 

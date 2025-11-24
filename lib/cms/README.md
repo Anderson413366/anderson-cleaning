@@ -1,6 +1,6 @@
 # Sanity CMS Setup
 
-This directory contains the Sanity CMS configuration for the Anderson Cleaning website.
+This directory contains the Sanity CMS configuration for the Anderson Cleaning Company website.
 
 ## Directory Structure
 

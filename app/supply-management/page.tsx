@@ -29,7 +29,7 @@ export default function SupplyManagementPage() {
       'Comprehensive inventory management for commercial facility consumables including paper products, soap, and cleaning supplies',
     provider: {
       '@type': 'LocalBusiness',
-      name: 'Anderson Cleaning',
+      name: 'Anderson Cleaning Company',
     },
     serviceType: 'Supply Management',
     areaServed: {

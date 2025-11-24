@@ -14,7 +14,7 @@ import {
 import { escapeHtml } from './sanitize'
 
 /**
- * Base email template with Anderson Cleaning branding
+ * Base email template with Anderson Cleaning Company branding
  */
 function getBaseTemplate(content: string): string {
   return `
@@ -23,7 +23,7 @@ function getBaseTemplate(content: string): string {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Anderson Cleaning</title>
+  <title>Anderson Cleaning Company</title>
   <style>
     body {
       margin: 0;
@@ -96,13 +96,13 @@ function getBaseTemplate(content: string): string {
 <body>
   <div class="container">
     <div class="header">
-      <h1 class="logo">Anderson Cleaning</h1>
+      <h1 class="logo">Anderson Cleaning Company</h1>
       <p style="margin: 8px 0 0 0; opacity: 0.9;">Professional Commercial Cleaning Services</p>
     </div>
     ${content}
     <div class="footer">
       <p style="margin: 0 0 8px 0;">
-        <strong>Anderson Cleaning, Inc.</strong><br>
+        <strong>Anderson Cleaning Company</strong><br>
         103 Wayside Avenue, West Springfield, MA 01089<br>
         Phone: <a href="tel:+14133065053">(413) 306-5053</a><br>
         Email: <a href="mailto:info@anderson-cleaning-site.vercel.app">info@anderson-cleaning-site.vercel.app</a>
@@ -204,7 +204,7 @@ export function generateQuoteEmail(data: QuoteFormData): { html: string; text: s
   `
 
   const text = `
-NEW QUOTE REQUEST - Anderson Cleaning
+NEW QUOTE REQUEST - Anderson Cleaning Company
 
 Contact Information:
 - Name: ${data.fullName}
@@ -294,7 +294,7 @@ export function generateQuickQuoteEmail(data: QuickQuoteFormData): { html: strin
   `
 
   const text = `
-NEW QUICK QUOTE REQUEST - Anderson Cleaning (${sourceLabel})
+NEW QUICK QUOTE REQUEST - Anderson Cleaning Company (${sourceLabel})
 
 Contact:
 - Name: ${data.name}
@@ -353,7 +353,7 @@ ${escapeHtml(data.message)}
   `
 
   const text = `
-NEW CONTACT FORM SUBMISSION - Anderson Cleaning
+NEW CONTACT FORM SUBMISSION - Anderson Cleaning Company
 
 Contact Details:
 - Name: ${data.name}
@@ -423,7 +423,7 @@ ${escapeHtml(data.message)}
   `
 
   const text = `
-NEW JOB APPLICATION - Anderson Cleaning
+NEW JOB APPLICATION - Anderson Cleaning Company
 
 Applicant Information:
 - Name: ${data.firstName} ${data.lastName}
@@ -473,7 +473,7 @@ export function generateNewsletterEmail(email: string): { html: string; text: st
   `
 
   const text = `
-NEW NEWSLETTER SUBSCRIPTION - Anderson Cleaning
+NEW NEWSLETTER SUBSCRIPTION - Anderson Cleaning Company
 
 Email: ${email}
 Subscribed At: ${new Date().toLocaleString()}

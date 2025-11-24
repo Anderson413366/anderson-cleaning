@@ -116,14 +116,14 @@ export const industries: Industry[] = [
     testimonials: [
       {
         quote:
-          'Anderson Cleaning has been instrumental in maintaining the highest sanitation standards in our medical practice. Their attention to detail and knowledge of healthcare regulations gives us complete confidence in patient safety.',
+          'Anderson Cleaning Company has been instrumental in maintaining the highest sanitation standards in our medical practice. Their attention to detail and knowledge of healthcare regulations gives us complete confidence in patient safety.',
         author: 'Dr. Sarah Mitchell',
         company: 'Springfield Family Medicine',
         role: 'Medical Director',
       },
       {
         quote:
-          'We have worked with several cleaning companies over the years, but Anderson Cleaning is the only one that truly understands the unique needs of a healthcare facility. Their staff is professional, thorough, and reliable.',
+          'We have worked with several cleaning companies over the years, but Anderson Cleaning Company is the only one that truly understands the unique needs of a healthcare facility. Their staff is professional, thorough, and reliable.',
         author: 'Jennifer Roberts',
         company: 'HealthFirst Urgent Care',
         role: 'Operations Manager',
@@ -191,14 +191,14 @@ export const industries: Industry[] = [
     testimonials: [
       {
         quote:
-          'Our office has never looked better. Anderson Cleaning pays attention to details that other companies miss, and our employees have commented on how much nicer the workspace feels.',
+          'Our office has never looked better. Anderson Cleaning Company pays attention to details that other companies miss, and our employees have commented on how much nicer the workspace feels.',
         author: 'Michael Chen',
         company: 'TechVenture Solutions',
         role: 'Facilities Manager',
       },
       {
         quote:
-          'The professionalism and reliability of Anderson Cleaning is exceptional. They work seamlessly around our schedule and always deliver consistent, high-quality results.',
+          'The professionalism and reliability of Anderson Cleaning Company is exceptional. They work seamlessly around our schedule and always deliver consistent, high-quality results.',
         author: 'Patricia Williams',
         company: 'Commonwealth Financial Group',
         role: 'Office Administrator',
@@ -267,14 +267,14 @@ export const industries: Industry[] = [
     testimonials: [
       {
         quote:
-          'Since partnering with Anderson Cleaning, we have seen a noticeable reduction in student absences during flu season. Their thorough disinfection protocols make a real difference.',
+          'Since partnering with Anderson Cleaning Company, we have seen a noticeable reduction in student absences during flu season. Their thorough disinfection protocols make a real difference.',
         author: 'Principal James Anderson',
         company: 'Lincoln Elementary School',
         role: 'Principal',
       },
       {
         quote:
-          'Anderson Cleaning understands the complexity of maintaining a large educational campus. They are reliable, thorough, and always responsive to our specific needs.',
+          'Anderson Cleaning Company understands the complexity of maintaining a large educational campus. They are reliable, thorough, and always responsive to our specific needs.',
         author: 'Karen Thompson',
         company: 'Springfield Community College',
         role: 'Facilities Director',
@@ -342,14 +342,14 @@ export const industries: Industry[] = [
     testimonials: [
       {
         quote:
-          'Our customers have noticed the difference. Anderson Cleaning helps us maintain the high standards our brand requires, and they work seamlessly around our operating hours.',
+          'Our customers have noticed the difference. Anderson Cleaning Company helps us maintain the high standards our brand requires, and they work seamlessly around our operating hours.',
         author: 'Rebecca Martinez',
         company: 'Elegant Interiors',
         role: 'Store Manager',
       },
       {
         quote:
-          'During the holiday season, Anderson Cleaning increased their service frequency to match our increased foot traffic. This flexibility and responsiveness is exactly what we need in a retail cleaning partner.',
+          'During the holiday season, Anderson Cleaning Company increased their service frequency to match our increased foot traffic. This flexibility and responsiveness is exactly what we need in a retail cleaning partner.',
         author: 'David Park',
         company: 'Springfield Sporting Goods',
         role: 'Owner',
@@ -418,14 +418,14 @@ export const industries: Industry[] = [
     testimonials: [
       {
         quote:
-          'Anderson Cleaning understands the demands of a manufacturing environment. They work efficiently during our off-shifts and maintain the high standards our safety audits require.',
+          'Anderson Cleaning Company understands the demands of a manufacturing environment. They work efficiently during our off-shifts and maintain the high standards our safety audits require.',
         author: 'Robert Johnson',
         company: 'Precision Manufacturing Co.',
         role: 'Plant Manager',
       },
       {
         quote:
-          'The team at Anderson Cleaning is professional, reliable, and safety-conscious. They have become an essential partner in maintaining our facility and supporting our operations.',
+          'The team at Anderson Cleaning Company is professional, reliable, and safety-conscious. They have become an essential partner in maintaining our facility and supporting our operations.',
         author: 'Linda Garcia',
         company: 'New England Distribution Center',
         role: 'Facilities Director',

@@ -31,8 +31,8 @@ const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://andersoncleaning.co
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
-    default: 'Anderson Cleaning - Commercial Cleaning Services in Western MA & CT',
-    template: '%s | Anderson Cleaning',
+    default: 'Anderson Cleaning Company - Commercial Cleaning Services in Western MA & CT',
+    template: '%s | Anderson Cleaning Company',
   },
   description:
     'Professional B2B commercial cleaning and janitorial services for offices, medical facilities, schools, and more in Western Massachusetts and Northern Connecticut. 100-mile service radius from Springfield, MA.',
@@ -47,9 +47,9 @@ export const metadata: Metadata = {
     'Western Massachusetts',
     'Northern Connecticut',
   ],
-  authors: [{ name: 'Anderson Cleaning, Inc.' }],
-  creator: 'Anderson Cleaning, Inc.',
-  publisher: 'Anderson Cleaning, Inc.',
+  authors: [{ name: 'Anderson Cleaning Company' }],
+  creator: 'Anderson Cleaning Company',
+  publisher: 'Anderson Cleaning Company',
   formatDetection: {
     email: false,
     address: false,
@@ -59,8 +59,8 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     url: baseUrl,
-    siteName: 'Anderson Cleaning',
-    title: 'Anderson Cleaning - Commercial Cleaning Services',
+    siteName: 'Anderson Cleaning Company',
+    title: 'Anderson Cleaning Company - Commercial Cleaning Services',
     description:
       'Professional B2B commercial cleaning and janitorial services for offices, medical facilities, schools, and more in Western Massachusetts and Northern Connecticut.',
     images: [
@@ -68,7 +68,7 @@ export const metadata: Metadata = {
         url: '/images/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Anderson Cleaning - Professional Commercial Cleaning Services',
+        alt: 'Anderson Cleaning Company - Professional Commercial Cleaning Services',
       },
     ],
   },
@@ -76,7 +76,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@andersoncleaning',
     creator: '@andersoncleaning',
-    title: 'Anderson Cleaning - Commercial Cleaning Services',
+    title: 'Anderson Cleaning Company - Commercial Cleaning Services',
     description: 'Professional B2B commercial cleaning and janitorial services in Western MA & CT',
     images: ['/images/og-image.jpg'],
   },
@@ -216,7 +216,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         {/* PWA Manifest */}
         <link rel="manifest" href="/manifest.json" />
 
-        {/* Theme Color - Official Anderson Cleaning Deep Blue */}
+        {/* Theme Color - Official Anderson Cleaning Company Deep Blue */}
         <meta name="theme-color" content="#002A86" media="(prefers-color-scheme: light)" />
         <meta name="theme-color" content="#002A86" media="(prefers-color-scheme: dark)" />
         <meta name="msapplication-TileColor" content="#002A86" />

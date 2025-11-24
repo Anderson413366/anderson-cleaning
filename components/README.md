@@ -1,4 +1,4 @@
-# Anderson Cleaning Component Architecture
+# Anderson Cleaning Company Component Architecture
 
 ## 📋 Table of Contents
 - [Philosophy](#philosophy)
@@ -650,7 +650,7 @@ Every component must meet these requirements:
 // ✅ Good: Meaningful image
 <img
   src="/logo.svg"
-  alt="Anderson Cleaning logo"
+  alt="Anderson Cleaning Company logo"
 />
 
 // ✅ Good: Decorative image

@@ -1,7 +1,7 @@
 /**
  * Industries Hub Page
  *
- * Purpose: Overview page showing all industries served by Anderson Cleaning
+ * Purpose: Overview page showing all industries served by Anderson Cleaning Company
  * Location: /industries
  */
 
@@ -16,7 +16,7 @@ import { industries } from '@/lib/industries-data'
 import { getIconComponent } from '@/lib/icon-map'
 
 export const metadata: Metadata = {
-  title: 'Industries We Serve | Anderson Cleaning Services',
+  title: 'Industries We Serve | Anderson Cleaning Company Services',
   description:
     'Specialized commercial cleaning services for healthcare, corporate offices, schools, retail stores, and manufacturing facilities. Expert solutions for your industry.',
 }

@@ -1,6 +1,6 @@
 # Security Implementation
 
-Comprehensive security measures for the Anderson Cleaning website.
+Comprehensive security measures for the Anderson Cleaning Company website.
 
 ## 📋 Table of Contents
 

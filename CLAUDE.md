@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-**Anderson Cleaning** is a commercial cleaning company website built with Next.js 15 App Router, serving Western Massachusetts and Northern Connecticut. The site targets B2B clients (offices, medical facilities, schools, retail) with a 100-mile service radius from West Springfield, MA.
+**Anderson Cleaning Company** is a commercial cleaning company website built with Next.js 15 App Router, serving Western Massachusetts and Northern Connecticut. The site targets B2B clients (offices, medical facilities, schools, retail) with a 100-mile service radius from West Springfield, MA.
 
 **Tech Stack**: Next.js 15, React 18, TypeScript, Tailwind CSS, Supabase, Resend, Sanity CMS
 
@@ -223,7 +223,7 @@ const schema = generateOrganizationSchema()
 **Metadata Pattern**:
 ```typescript
 export const metadata: Metadata = {
-  title: 'Page Title | Anderson Cleaning',
+  title: 'Page Title | Anderson Cleaning Company',
   description: '...',
   openGraph: { ... },
   twitter: { ... },

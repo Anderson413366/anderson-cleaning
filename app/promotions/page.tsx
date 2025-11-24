@@ -139,7 +139,7 @@ export default function PromotionsPage() {
               </h2>
               <p className="text-body text-neutral-charcoal/70 dark:text-white/80 max-w-2xl mx-auto">
                 Love our service? Share the cleanliness! Earn rewards for every business you refer to
-                Anderson Cleaning.
+                Anderson Cleaning Company.
               </p>
             </div>
 
@@ -157,7 +157,7 @@ export default function PromotionsPage() {
                     Refer a Business
                   </h4>
                   <p className="text-neutral-charcoal/80 dark:text-white/80">
-                    Tell another business owner about Anderson Cleaning. Use our simple referral form
+                    Tell another business owner about Anderson Cleaning Company. Use our simple referral form
                     or have them mention your name.
                   </p>
                 </div>
@@ -295,12 +295,12 @@ export default function PromotionsPage() {
                 Program Terms & Conditions
               </h4>
               <ul className="space-y-2 text-sm text-neutral-charcoal/80 dark:text-white/80">
-                <li>• Referral must be a new client who has not previously worked with Anderson Cleaning</li>
+                <li>• Referral must be a new client who has not previously worked with Anderson Cleaning Company</li>
                 <li>• Minimum 3-month contract required to qualify for referral rewards</li>
                 <li>• Referral credits applied after referred client completes their first month of service</li>
                 <li>• Credits are non-transferable and have no cash value</li>
-                <li>• Referrer must be a current Anderson Cleaning client in good standing</li>
-                <li>• Anderson Cleaning reserves the right to modify or discontinue the referral program at any time</li>
+                <li>• Referrer must be a current Anderson Cleaning Company client in good standing</li>
+                <li>• Anderson Cleaning Company reserves the right to modify or discontinue the referral program at any time</li>
                 <li>• Cannot be combined with other promotional offers unless explicitly stated</li>
               </ul>
             </div>

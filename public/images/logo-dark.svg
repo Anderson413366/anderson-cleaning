@@ -3,7 +3,7 @@
   <rect x="2" y="2" width="36" height="36" rx="6" fill="#3b82f6"/>
   <text x="20" y="28" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="white" text-anchor="middle">A</text>
 
-  <!-- Anderson Cleaning Text (light colors for dark mode) -->
-  <text x="48" y="20" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#f9fafb">Anderson Cleaning</text>
+  <!-- Anderson Cleaning Company Text (light colors for dark mode) -->
+  <text x="48" y="20" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#f9fafb">Anderson Cleaning Company</text>
   <text x="48" y="33" font-family="Arial, sans-serif" font-size="10" fill="#9ca3af">Commercial Services</text>
 </svg>

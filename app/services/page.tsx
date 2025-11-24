@@ -48,7 +48,7 @@ export default function ServicesPage() {
     serviceType: 'Commercial Cleaning Services',
     provider: {
       '@type': 'LocalBusiness',
-      name: 'Anderson Cleaning',
+      name: 'Anderson Cleaning Company',
       image: 'https://andersoncleaning.com/logo.png',
       '@id': 'https://andersoncleaning.com',
       url: 'https://andersoncleaning.com',
@@ -128,10 +128,10 @@ export default function ServicesPage() {
         <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10"></div>
         <div className="container mx-auto px-6 text-center relative z-10">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight tracking-tight">
-            Comprehensive Commercial Cleaning Solutions
+            The Region&apos;s Premier Commercial Cleaning Service
           </h1>
           <p className="text-xl md:text-2xl text-white/90 mb-12 max-w-3xl mx-auto leading-relaxed">
-            Tailored programs for your facility's unique needs and compliance standards
+            Western Massachusetts and Northern Connecticut programs built around your facility&apos;s compliance standards
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link href="/quote">

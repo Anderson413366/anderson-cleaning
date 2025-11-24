@@ -4,7 +4,7 @@ A reusable component that displays the standardized 4-step onboarding process ac
 
 ## 📋 Overview
 
-The ProcessSteps component shows Anderson Cleaning's consistent 4-step client onboarding flow:
+The ProcessSteps component shows Anderson Cleaning Company's consistent 4-step client onboarding flow:
 
 1. **Facility Walk-Through** - Free consultation to understand your space
 2. **Custom SOPs** - Detailed Standard Operating Procedures for your facility
@@ -385,5 +385,5 @@ No special build configuration is required.
 
 **Version**: 1.0.0
 **Last Updated**: 2025-11-14
-**Maintainer**: Anderson Cleaning Development Team
+**Maintainer**: Anderson Cleaning Company Development Team
 **Questions?** Review the code comments in `ProcessSteps.tsx` for detailed implementation notes.

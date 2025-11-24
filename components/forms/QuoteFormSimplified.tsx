@@ -458,7 +458,7 @@ export default function QuoteFormSimplified({ onSuccess }: QuoteFormSimplifiedPr
               className="mt-1 h-4 w-4 rounded border-gray-300 text-brand-bright-blue focus:ring-brand-bright-blue"
             />
             <label htmlFor="consent" className="flex-1 text-sm text-neutral-charcoal/80 dark:text-white/80">
-              I agree to be contacted by Anderson Cleaning regarding this quote request. We respond
+              I agree to be contacted by Anderson Cleaning Company regarding this quote request. We respond
               within 24 hours during office hours ({CONTACT_INFO.hours.office}).{' '}
               <span className="text-red-500">*</span>
             </label>

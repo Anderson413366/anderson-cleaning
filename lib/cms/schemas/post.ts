@@ -33,7 +33,7 @@ export default defineType({
       name: 'author',
       title: 'Author',
       type: 'string',
-      initialValue: 'Anderson Cleaning Team',
+      initialValue: 'Anderson Cleaning Company Team',
     }),
     defineField({
       name: 'publishedAt',

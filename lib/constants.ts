@@ -31,13 +31,15 @@ export const CONTACT_INFO = {
 } as const
 
 export const COMPANY_INFO = {
-  name: 'Anderson Cleaning',
-  legalName: 'Anderson Cleaning, Inc.',
+  name: 'Anderson Cleaning Company',
+  legalName: 'Anderson Cleaning Company',
   tagline: 'Commercial Cleaning Excellence Since 2007',
   founded: 2007,
   serviceRadius: {
-    miles: 50,
+    miles: 100,
     center: 'West Springfield, MA',
     zipCode: '01089',
   },
 } as const
+
+export const YEARS_IN_BUSINESS = new Date().getFullYear() - COMPANY_INFO.founded

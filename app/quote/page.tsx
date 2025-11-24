@@ -43,7 +43,7 @@ export default function QuotePage() {
                       Quote Request Submitted Successfully!
                     </h2>
                     <p className="text-neutral-charcoal/80 dark:text-white/80 mb-4">
-                      Thank you for requesting a quote from Anderson Cleaning. We've received your
+                      Thank you for requesting a quote from Anderson Cleaning Company. We've received your
                       information and will contact you within 24 hours (Monday – Friday, 9 AM – 5 PM
                       EST).
                     </p>
@@ -88,7 +88,7 @@ export default function QuotePage() {
         <div className="container mx-auto px-6">
           <div className="max-w-5xl mx-auto">
             <h2 className="text-h2 font-bold text-center text-neutral-charcoal dark:text-white mb-12">
-              Why Request a Quote from Anderson Cleaning?
+              Why Request a Quote from Anderson Cleaning Company?
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-md text-center">

@@ -49,14 +49,14 @@ export async function generateMetadata({
 
   if (!caseStudy) {
     return {
-      title: 'Case Study Not Found | Anderson Cleaning Services',
+      title: 'Case Study Not Found | Anderson Cleaning Company Services',
       description: 'The requested case study could not be found.',
     }
   }
 
   return {
-    title: `${caseStudy.title} | Anderson Cleaning Case Study`,
-    description: `${caseStudy.challenge.headline}. ${caseStudy.keyResult}. Read how Anderson Cleaning delivered measurable results for ${caseStudy.client.name}.`,
+    title: `${caseStudy.title} | Anderson Cleaning Company Case Study`,
+    description: `${caseStudy.challenge.headline}. ${caseStudy.keyResult}. Read how Anderson Cleaning Company delivered measurable results for ${caseStudy.client.name}.`,
     openGraph: {
       title: caseStudy.title,
       description: caseStudy.keyResult,

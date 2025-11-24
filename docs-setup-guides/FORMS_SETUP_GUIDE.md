@@ -1,5 +1,5 @@
 # 📋 Forms Configuration & Setup Guide
-## Anderson Cleaning Website
+## Anderson Cleaning Company Website
 
 Last Updated: 2025-11-17
 
@@ -79,7 +79,7 @@ Priority: 10
 ### Step 3: Get API Key
 
 1. In Resend dashboard: API Keys → Create API Key
-2. Name it: `Production - Anderson Cleaning`
+2. Name it: `Production - Anderson Cleaning Company`
 3. Copy the key (starts with `re_`)
 4. **Save it securely** - you'll only see it once!
 

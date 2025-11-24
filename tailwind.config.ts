@@ -11,7 +11,7 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        /* Official Anderson Cleaning Brand Colors */
+        /* Official Anderson Cleaning Company Brand Colors */
         'brand-deep-blue': '#002A86',      /* Pantone 2747C */
         'brand-bright-blue': '#0077D9',    /* Pantone 3005C */
         'brand-red': '#C8102E',            /* Pantone 193C */

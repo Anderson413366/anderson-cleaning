@@ -102,7 +102,7 @@ export default function Footer() {
             Ready to Experience Professional Cleaning?
           </h2>
           <p className="mx-auto mb-8 max-w-2xl text-lg leading-relaxed text-white/90">
-            Join 100+ businesses that trust Anderson Cleaning for their facility maintenance
+            Join 100+ businesses that trust Anderson Cleaning Company for their facility maintenance
           </p>
           <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Link
@@ -207,7 +207,7 @@ export default function Footer() {
           {/* Bottom Section */}
           <div className="border-t border-neutral-light-grey dark:border-white/10 pt-6">
             <div className="flex flex-col items-center justify-between gap-4 text-body-sm text-neutral-charcoal/70 dark:text-white/70 md:flex-row">
-              <p>© {currentYear} Anderson Cleaning, Inc.</p>
+              <p>© {currentYear} Anderson Cleaning Company</p>
               <div className="flex gap-4">
                 <Link
                   href="/legal/privacy"

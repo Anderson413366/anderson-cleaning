@@ -6,9 +6,9 @@
     - /url: "#main-content"
   - banner [ref=e3]:
     - navigation "Global" [ref=e4]:
-      - link "Anderson Cleaning" [ref=e6] [cursor=pointer]:
+      - link "Anderson Cleaning Company" [ref=e6] [cursor=pointer]:
         - /url: /
-        - img "Anderson Cleaning" [ref=e7]
+        - img "Anderson Cleaning Company" [ref=e7]
       - button "Open main menu" [ref=e9] [cursor=pointer]:
         - generic [ref=e10]: Open main menu
         - img [ref=e11]
@@ -204,7 +204,7 @@
         - generic [ref=e230]:
           - generic [ref=e231]:
             - img [ref=e232]
-            - paragraph [ref=e234]: “Anderson Cleaning has supported our Springfield HQ for six years. Their after-hours crews reset 80+ workstations nightly without disrupting confidential projects.”
+            - paragraph [ref=e234]: “Anderson Cleaning Company has supported our Springfield HQ for six years. Their after-hours crews reset 80+ workstations nightly without disrupting confidential projects.”
             - paragraph [ref=e235]: Mia Reynolds
             - paragraph [ref=e236]: Director of Workplace, Pioneer Mutual
           - generic [ref=e237]:
@@ -285,7 +285,7 @@
           - paragraph [ref=e319]: Need help sooner? Call now and we’ll schedule immediately.
   - generic [ref=e321]:
     - heading "Ready to Experience Professional Cleaning?" [level=2] [ref=e322]
-    - paragraph [ref=e323]: Join 100+ businesses that trust Anderson Cleaning for their facility maintenance
+    - paragraph [ref=e323]: Join 100+ businesses that trust Anderson Cleaning Company for their facility maintenance
     - generic [ref=e324]:
       - link "Get Your Free Quote" [ref=e325] [cursor=pointer]:
         - /url: /quote
@@ -360,7 +360,7 @@
                 - /url: https://www.instagram.com/andersonclean/
                 - img [ref=e382]
       - generic [ref=e386]:
-        - paragraph [ref=e387]: © 2025 Anderson Cleaning, Inc.
+        - paragraph [ref=e387]: © 2025 Anderson Cleaning Company
         - generic [ref=e388]:
           - link "Privacy" [ref=e389] [cursor=pointer]:
             - /url: /legal/privacy

@@ -214,7 +214,7 @@ export default function ContactForm({ onSuccess }: ContactFormProps) {
         </Button>
 
         <p className="text-xs text-neutral-charcoal/60 dark:text-white/70 text-center">
-          By submitting this form, you agree to be contacted by Anderson Cleaning regarding your
+          By submitting this form, you agree to be contacted by Anderson Cleaning Company regarding your
           inquiry.
         </p>
       </form>

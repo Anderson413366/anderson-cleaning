@@ -38,7 +38,7 @@ export default function Page() {
 }
 ```
 
-This displays the default Anderson Cleaning stats:
+This displays the default Anderson Cleaning Company stats:
 - **18** Years of Excellence
 - **50+** Active Clients
 - **2M+** Sq Ft Cleaned Monthly
@@ -289,7 +289,7 @@ const stats = [
 ### Screen Reader Support
 
 - Component includes hidden `<h2>` with "Company Statistics"
-- Each stat has `aria-label` with full context: "18 Years of Excellence"
+- Each stat has `aria-label` with full context: "Years of Excellence"
 - Icons marked `aria-hidden="true"` (decorative only)
 - Semantic HTML structure
 
@@ -450,7 +450,7 @@ For very large numbers, animate to a smaller value and use a suffix:
 ### Writing Effective Stats
 
 **✅ Good stats**:
-- Specific and quantifiable: "18 Years of Excellence", "100% Satisfaction"
+- Specific and quantifiable: "Years of Excellence", "100% Satisfaction"
 - Impressive and credible: Don't inflate numbers
 - Relevant to audience: B2B buyers care about experience, clients, scale
 - Easy to understand: Avoid jargon or complex metrics

@@ -1,6 +1,6 @@
 # SEO Implementation Guide
 
-This directory contains comprehensive SEO configuration for the Anderson Cleaning website.
+This directory contains comprehensive SEO configuration for the Anderson Cleaning Company website.
 
 ## Overview
 

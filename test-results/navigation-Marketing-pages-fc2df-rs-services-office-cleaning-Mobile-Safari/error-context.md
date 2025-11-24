@@ -4,10 +4,10 @@
 - generic [active] [ref=e1]:
   - banner [ref=e2]:
     - navigation "Global" [ref=e3]:
-      - link "Anderson CleaningAnderson Cleaning" [ref=e5]:
+      - link "Anderson Cleaning CompanyAnderson Cleaning Company" [ref=e5]:
         - /url: /
-        - img "Anderson Cleaning" [ref=e6]
-        - img "Anderson Cleaning" [ref=e7]
+        - img "Anderson Cleaning Company" [ref=e6]
+        - img "Anderson Cleaning Company" [ref=e7]
       - button "Open main menu" [ref=e9]:
         - text: Open main menu
         - img [ref=e10]
@@ -219,7 +219,7 @@
         - generic [ref=e239]:
           - generic [ref=e240]:
             - img [ref=e241]
-            - paragraph [ref=e243]: “Anderson Cleaning has supported our Springfield HQ for six years. Their after-hours crews reset 80+ workstations nightly without disrupting confidential projects.”
+            - paragraph [ref=e243]: “Anderson Cleaning Company has supported our Springfield HQ for six years. Their after-hours crews reset 80+ workstations nightly without disrupting confidential projects.”
             - paragraph [ref=e244]: Mia Reynolds
             - paragraph [ref=e245]: Director of Workplace, Pioneer Mutual
           - generic [ref=e246]:
@@ -300,7 +300,7 @@
           - paragraph [ref=e325]: Need help sooner? Call now and we’ll schedule immediately.
   - generic [ref=e327]:
     - heading "Ready to Experience Professional Cleaning?" [level=2] [ref=e328]
-    - paragraph [ref=e329]: Join 100+ businesses that trust Anderson Cleaning for their facility maintenance
+    - paragraph [ref=e329]: Join 100+ businesses that trust Anderson Cleaning Company for their facility maintenance
     - generic [ref=e330]:
       - link "Get Your Free Quote" [ref=e331]:
         - /url: /quote
@@ -375,7 +375,7 @@
                 - /url: https://www.instagram.com/andersonclean/
                 - img [ref=e388]
       - generic [ref=e392]:
-        - paragraph [ref=e393]: © 2025 Anderson Cleaning, Inc.
+        - paragraph [ref=e393]: © 2025 Anderson Cleaning Company
         - generic [ref=e394]:
           - link "Privacy" [ref=e395]:
             - /url: /legal/privacy

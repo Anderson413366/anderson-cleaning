@@ -12,7 +12,7 @@ const testimonials: Testimonial[] = [
   {
     id: '1',
     quote:
-      'Anderson Cleaning transformed our medical office. Their attention to detail and understanding of healthcare sanitation protocols is exceptional. Every surface is spotless, and they use the right products for sensitive environments.',
+      'Anderson Cleaning Company transformed our medical office. Their attention to detail and understanding of healthcare sanitation protocols is exceptional. Every surface is spotless, and they use the right products for sensitive environments.',
     name: 'Dr. Sarah Mitchell',
     title: 'Practice Manager',
     company: 'Springfield Family Medicine',
@@ -24,7 +24,7 @@ const testimonials: Testimonial[] = [
   {
     id: '2',
     quote:
-      'After struggling with unreliable contractors for years, Anderson Cleaning has been a game-changer. They show up on time, communicate proactively, and actually care about our facility. The 24/7 support is real—I called at 8 PM once and got a real person who solved my issue in 10 minutes.',
+      'After struggling with unreliable contractors for years, Anderson Cleaning Company has been a game-changer. They show up on time, communicate proactively, and actually care about our facility. The 24/7 support is real—I called at 8 PM once and got a real person who solved my issue in 10 minutes.',
     name: 'Marcus Johnson',
     title: 'Facilities Director',
     company: 'TechHub Coworking',
@@ -36,7 +36,7 @@ const testimonials: Testimonial[] = [
   {
     id: '3',
     quote:
-      'We manage over 30 properties and Anderson Cleaning is the only vendor we trust for consistent quality across all locations. Their teams are professional, their pricing is transparent, and their response time is unmatched.',
+      'We manage over 30 properties and Anderson Cleaning Company is the only vendor we trust for consistent quality across all locations. Their teams are professional, their pricing is transparent, and their response time is unmatched.',
     name: 'Jennifer Chang',
     title: 'Portfolio Manager',
     company: 'Northeast Property Group',
@@ -132,7 +132,7 @@ const testimonials: Testimonial[] = [
   {
     id: '11',
     quote:
-      'Fair pricing, reliable service, and genuine care. Anderson Cleaning treats our small non-profit office with the same attention they give to their larger clients. That speaks volumes about their character.',
+      'Fair pricing, reliable service, and genuine care. Anderson Cleaning Company treats our small non-profit office with the same attention they give to their larger clients. That speaks volumes about their character.',
     name: 'Rachel Greene',
     title: 'Executive Director',
     company: 'Community Action Network',
@@ -164,7 +164,7 @@ export default function TestimonialsPage() {
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
-    name: 'Anderson Cleaning',
+    name: 'Anderson Cleaning Company',
     aggregateRating: {
       '@type': 'AggregateRating',
       ratingValue: averageRating,
@@ -206,7 +206,7 @@ export default function TestimonialsPage() {
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight tracking-tight">Client Testimonials</h1>
             <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed">
-              Hear from businesses across Western MA & Northern CT who trust Anderson Cleaning
+              Hear from businesses across Western MA & Northern CT who trust Anderson Cleaning Company
             </p>
           </div>
         </div>

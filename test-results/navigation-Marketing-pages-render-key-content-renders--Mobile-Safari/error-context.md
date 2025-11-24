@@ -4,10 +4,10 @@
 - generic [active] [ref=e1]:
   - banner [ref=e2]:
     - navigation "Global" [ref=e3]:
-      - link "Anderson CleaningAnderson Cleaning" [ref=e5]:
+      - link "Anderson Cleaning CompanyAnderson Cleaning Company" [ref=e5]:
         - /url: /
-        - img "Anderson Cleaning" [ref=e6]
-        - img "Anderson Cleaning" [ref=e7]
+        - img "Anderson Cleaning Company" [ref=e6]
+        - img "Anderson Cleaning Company" [ref=e7]
       - button "Open main menu" [ref=e9]:
         - text: Open main menu
         - img [ref=e10]
@@ -183,7 +183,7 @@
               - img [ref=e226]
               - img [ref=e228]
               - img [ref=e230]
-            - blockquote [ref=e232]: "\"Anderson Cleaning transformed our medical office. Their attention to detail and OSHA compliance gives us complete peace of mind.\""
+            - blockquote [ref=e232]: "\"Anderson Cleaning Company transformed our medical office. Their attention to detail and OSHA compliance gives us complete peace of mind.\""
             - generic [ref=e233]:
               - paragraph [ref=e234]: Dr. Sarah Mitchell
               - paragraph [ref=e235]: Springfield Family Medicine
@@ -212,7 +212,7 @@
       - generic [ref=e269]:
         - generic [ref=e270]:
           - heading "Our Work Speaks for Itself" [level=2] [ref=e271]
-          - paragraph [ref=e272]: See the Anderson Cleaning difference with interactive before/after comparisons
+          - paragraph [ref=e272]: See the Anderson Cleaning Company difference with interactive before/after comparisons
         - generic [ref=e273]:
           - 'slider "Before and after comparison slider: Spotless Floors. Use left and right arrow keys to adjust." [ref=e274]':
             - generic [ref=e275]:
@@ -383,7 +383,7 @@
             - paragraph [ref=e494]: Current clients get emergency dispatch with on-site arrival in ≤2 hours.
   - generic [ref=e496]:
     - heading "Ready to Experience Professional Cleaning?" [level=2] [ref=e497]
-    - paragraph [ref=e498]: Join 100+ businesses that trust Anderson Cleaning for their facility maintenance
+    - paragraph [ref=e498]: Join 100+ businesses that trust Anderson Cleaning Company for their facility maintenance
     - generic [ref=e499]:
       - link "Get Your Free Quote" [ref=e500]:
         - /url: /quote
@@ -458,7 +458,7 @@
                 - /url: https://www.instagram.com/andersonclean/
                 - img [ref=e557]
       - generic [ref=e561]:
-        - paragraph [ref=e562]: © 2025 Anderson Cleaning, Inc.
+        - paragraph [ref=e562]: © 2025 Anderson Cleaning Company
         - generic [ref=e563]:
           - link "Privacy" [ref=e564]:
             - /url: /legal/privacy

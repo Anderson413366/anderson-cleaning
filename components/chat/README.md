@@ -1,6 +1,6 @@
 # Live Chat Widget Integration
 
-Complete guide for integrating and managing live chat on the Anderson Cleaning website.
+Complete guide for integrating and managing live chat on the Anderson Cleaning Company website.
 
 ## 📋 Overview
 
@@ -41,7 +41,7 @@ Pick one of the 4 supported providers:
 | **Tidio** | Small business | $29+/mo | Good features, affordable |
 | **Tawk.to** | Budget conscious | FREE | Basic chat, no credit card |
 
-**Recommendation for Anderson Cleaning**: Start with **Tidio** (affordable, good features) or **Tawk.to** (free to test).
+**Recommendation for Anderson Cleaning Company**: Start with **Tidio** (affordable, good features) or **Tawk.to** (free to test).
 
 ### Step 2: Sign Up & Get Credentials
 
@@ -176,7 +176,7 @@ Customize appearance (if supported by provider):
 
 ```typescript
 theme: {
-  primaryColor: '#2563eb', // Anderson Cleaning blue
+  primaryColor: '#2563eb', // Anderson Cleaning Company blue
   position: 'right',       // 'right' or 'left'
 },
 ```
@@ -523,6 +523,6 @@ Track these metrics:
 
 **Version**: 1.0.0
 **Last Updated**: 2025-11-14
-**Maintained by**: Anderson Cleaning Development Team
+**Maintained by**: Anderson Cleaning Company Development Team
 
 **Questions or issues?** Review the code comments in `chat-config.ts` and `load-chat-widget.ts` for detailed technical documentation.

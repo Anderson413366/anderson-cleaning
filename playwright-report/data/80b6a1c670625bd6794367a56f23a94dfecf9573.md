@@ -4,10 +4,10 @@
 - generic [active] [ref=e1]:
   - banner [ref=e2]:
     - navigation "Global" [ref=e3]:
-      - link "Anderson CleaningAnderson Cleaning" [ref=e5]:
+      - link "Anderson Cleaning CompanyAnderson Cleaning Company" [ref=e5]:
         - /url: /
-        - img "Anderson Cleaning" [ref=e6]
-        - img "Anderson Cleaning" [ref=e7]
+        - img "Anderson Cleaning Company" [ref=e6]
+        - img "Anderson Cleaning Company" [ref=e7]
       - button "Open main menu" [ref=e9]:
         - text: Open main menu
         - img [ref=e10]
@@ -117,8 +117,8 @@
               - textbox "Tell us about any special requirements, current challenges, or questions..." [ref=e99]
               - paragraph [ref=e100]: 0/500 characters
             - generic [ref=e101]:
-              - checkbox "I agree to be contacted by Anderson Cleaning regarding this quote request. We respond within 24 hours during office hours (Monday - Friday, 9 AM - 5 PM EST). *" [ref=e102]
-              - generic [ref=e103]: I agree to be contacted by Anderson Cleaning regarding this quote request. We respond within 24 hours during office hours (Monday - Friday, 9 AM - 5 PM EST). *
+              - checkbox "I agree to be contacted by Anderson Cleaning Company regarding this quote request. We respond within 24 hours during office hours (Monday - Friday, 9 AM - 5 PM EST). *" [ref=e102]
+              - generic [ref=e103]: I agree to be contacted by Anderson Cleaning Company regarding this quote request. We respond within 24 hours during office hours (Monday - Friday, 9 AM - 5 PM EST). *
             - textbox [ref=e104]
             - generic [ref=e105]:
               - button "Get My Custom Quote" [ref=e106]:
@@ -132,7 +132,7 @@
               - /url: tel:+14133065053
           - paragraph [ref=e115]: Monday - Friday, 9 AM - 5 PM EST
       - generic [ref=e118]:
-        - heading "Why Request a Quote from Anderson Cleaning?" [level=2] [ref=e119]
+        - heading "Why Request a Quote from Anderson Cleaning Company?" [level=2] [ref=e119]
         - generic [ref=e120]:
           - generic [ref=e121]:
             - img [ref=e123]
@@ -160,7 +160,7 @@
             - text: Online scheduling coming soon! For now, please call or submit the quote form above.
   - generic [ref=e150]:
     - heading "Ready to Experience Professional Cleaning?" [level=2] [ref=e151]
-    - paragraph [ref=e152]: Join 100+ businesses that trust Anderson Cleaning for their facility maintenance
+    - paragraph [ref=e152]: Join 100+ businesses that trust Anderson Cleaning Company for their facility maintenance
     - generic [ref=e153]:
       - link "Get Your Free Quote" [ref=e154]:
         - /url: /quote
@@ -235,7 +235,7 @@
                 - /url: https://www.instagram.com/andersonclean/
                 - img [ref=e211]
       - generic [ref=e215]:
-        - paragraph [ref=e216]: © 2025 Anderson Cleaning, Inc.
+        - paragraph [ref=e216]: © 2025 Anderson Cleaning Company
         - generic [ref=e217]:
           - link "Privacy" [ref=e218]:
             - /url: /legal/privacy

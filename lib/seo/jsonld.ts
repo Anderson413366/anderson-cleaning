@@ -5,6 +5,8 @@
  * Helps search engines understand your content better
  */
 
+import { COMPANY_INFO } from '@/lib/constants'
+
 const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://anderson-cleaning-site.vercel.app'
 
 // ===== ORGANIZATION SCHEMA =====
@@ -13,8 +15,8 @@ export function generateOrganizationSchema() {
   return {
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    name: 'Anderson Cleaning, Inc.',
-    legalName: 'Anderson Cleaning, Inc.',
+    name: 'Anderson Cleaning Company',
+    legalName: 'Anderson Cleaning Company',
     url: baseUrl,
     logo: `${baseUrl}/brand/color/logo-full-2000.png`,
     description:
@@ -71,7 +73,7 @@ export function generateLocalBusinessSchema() {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
     '@id': `${baseUrl}/#localbusiness`,
-    name: 'Anderson Cleaning, Inc.',
+    name: 'Anderson Cleaning Company',
     image: `${baseUrl}/brand/color/logo-full-2000.png`,
     url: baseUrl,
     telephone: '+1-413-306-5053',
@@ -105,7 +107,7 @@ export function generateLocalBusinessSchema() {
         latitude: 42.107,
         longitude: -72.6209,
       },
-      geoRadius: '50 miles',
+      geoRadius: `${COMPANY_INFO.serviceRadius.miles} miles`,
     },
     paymentAccepted: 'Cash, Credit Card, Invoice, ACH',
     currenciesAccepted: 'USD',
@@ -142,7 +144,7 @@ export function generateServiceSchema({ name, description, serviceType, url }: S
     serviceType,
     provider: {
       '@type': 'Organization',
-      name: 'Anderson Cleaning, Inc.',
+      name: 'Anderson Cleaning Company',
       url: baseUrl,
       telephone: '+1-413-306-5053',
       address: {
@@ -161,7 +163,7 @@ export function generateServiceSchema({ name, description, serviceType, url }: S
         latitude: 42.107,
         longitude: -72.6209,
       },
-      geoRadius: '50 miles',
+      geoRadius: `${COMPANY_INFO.serviceRadius.miles} miles`,
     },
     hasOfferCatalog: {
       '@type': 'OfferCatalog',
@@ -245,7 +247,7 @@ export function generateReviewSchema({
     '@type': 'Review',
     itemReviewed: {
       '@type': 'LocalBusiness',
-      name: 'Anderson Cleaning, Inc.',
+      name: 'Anderson Cleaning Company',
       image: `${baseUrl}/images/og-image.jpg`,
       telephone: '+1-413-306-5053',
       address: {
@@ -283,7 +285,7 @@ export function generateAggregateRatingSchema({ ratingValue, reviewCount }: Aggr
   return {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
-    name: 'Anderson Cleaning, Inc.',
+    name: 'Anderson Cleaning Company',
     aggregateRating: {
       '@type': 'AggregateRating',
       ratingValue: ratingValue.toString(),
@@ -307,7 +309,7 @@ export function generateOfferSchema() {
     },
     seller: {
       '@type': 'Organization',
-      name: 'Anderson Cleaning, Inc.',
+      name: 'Anderson Cleaning Company',
     },
     availability: 'https://schema.org/InStock',
     priceSpecification: {
@@ -322,7 +324,7 @@ export function generateOfferSchema() {
         latitude: 42.107,
         longitude: -72.6209,
       },
-      geoRadius: '50 miles',
+      geoRadius: `${COMPANY_INFO.serviceRadius.miles} miles`,
     },
   }
 }
@@ -333,7 +335,7 @@ export function generateWebsiteSchema() {
   return {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
-    name: 'Anderson Cleaning',
+    name: 'Anderson Cleaning Company',
     url: baseUrl,
     potentialAction: {
       '@type': 'SearchAction',
@@ -382,7 +384,7 @@ export function generateJobPostingSchema(props?: JobPostingSchemaProps) {
     validThrough = new Date(Date.now() + 90 * 24 * 60 * 60 * 1000).toISOString().split('T')[0], // 90 days from now
     employmentType = ['FULL_TIME'],
     hiringOrganization = {
-      name: 'Anderson Cleaning, Inc.',
+      name: 'Anderson Cleaning Company',
       sameAs: baseUrl,
       logo: `${baseUrl}/images/logo.png`,
     },

@@ -1,14 +1,14 @@
 # Case Studies System
 
-Complete documentation for Anderson Cleaning's case studies feature, including hub page, individual case study pages, and content management.
+Complete documentation for Anderson Cleaning Company's case studies feature, including hub page, individual case study pages, and content management.
 
 ## 📋 Overview
 
-The case studies system showcases Anderson Cleaning's real-world results using a **Problem → Solution → Results** format. Each case study provides:
+The case studies system showcases Anderson Cleaning Company's real-world results using a **Problem → Solution → Results** format. Each case study provides:
 
 - **Detailed client background** (with anonymization options)
 - **Specific challenges** the client faced
-- **Solutions implemented** by Anderson Cleaning
+- **Solutions implemented** by Anderson Cleaning Company
 - **Measurable results** with hard metrics
 - **Client testimonials** (when available)
 
@@ -543,5 +543,5 @@ Generate downloadable PDF versions:
 
 **Version**: 1.0.0
 **Last Updated**: 2025-11-14
-**Maintainer**: Anderson Cleaning Development Team
+**Maintainer**: Anderson Cleaning Company Development Team
 **Questions?**: Review the code comments in each file for detailed implementation notes.

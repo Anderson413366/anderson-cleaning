@@ -238,10 +238,10 @@ export const mockTranslations: Record<LanguageCode, Translations> = {
       'Could not identify strengths at this time. Please ensure relevant sections are filled.',
     strengthsPromptDetailsMissing:
       "Please fill in 'Position Applying For', select experiences, and answer some 'Getting to Know You' questions to identify strengths.",
-    heroTitle: 'Join Our Team at Anderson Cleaning',
+    heroTitle: 'Join Our Team at Anderson Cleaning Company',
     heroSubtitle:
       'Discover exciting career opportunities and grow with a company that values dedication and excellence.',
-    whyWorkTitle: 'Why Choose Anderson Cleaning?',
+    whyWorkTitle: 'Why Choose Anderson Cleaning Company?',
     whyWorkItems: [
       {
         title: 'Growth Opportunities',
@@ -316,13 +316,13 @@ export const mockTranslations: Record<LanguageCode, Translations> = {
 
     // Employee Stories Section
     employeeStoriesTitle: 'Hear From Our Team',
-    employeeStoriesSubtitle: 'Real stories from Anderson Cleaning team members',
+    employeeStoriesSubtitle: 'Real stories from Anderson Cleaning Company team members',
     employeeTestimonials: [
       {
         name: 'Maria Rodriguez',
         position: 'Team Lead',
         quote:
-          'Anderson Cleaning invested in my growth from day one. I started as a cleaner and now I lead my own team. The training and support here are unmatched.',
+          'Anderson Cleaning Company invested in my growth from day one. I started as a cleaner and now I lead my own team. The training and support here are unmatched.',
       },
       {
         name: 'James Thompson',
@@ -363,7 +363,7 @@ export const mockTranslations: Record<LanguageCode, Translations> = {
     processStep3Description: '40+ hours of paid training to set you up for success.',
     processStep4Title: 'Start Working',
     processStep4Description:
-      'Begin your career with Anderson Cleaning and join a supportive team.',
+      'Begin your career with Anderson Cleaning Company and join a supportive team.',
     processTimeframe: 'Most candidates complete the process in 2-3 weeks',
     startApplicationButton: 'Start Your Application',
 
@@ -598,7 +598,7 @@ export const mockTranslations: Record<LanguageCode, Translations> = {
     gettingToKnowYouIntro:
       'Your responses to these questions help us understand you better. Please answer thoughtfully. Incomplete answers may affect consideration.',
     knowAnyoneLabel:
-      'Do you know anyone currently or previously employed by Anderson Cleaning? If so, who?',
+      'Do you know anyone currently or previously employed by Anderson Cleaning Company? If so, who?',
     hardestJobLabel:
       "Describe the hardest job (paid or unpaid) you've ever had and what made it challenging.",
     magicSpellLabel:
@@ -616,7 +616,7 @@ export const mockTranslations: Record<LanguageCode, Translations> = {
     lastBossDescriptionLabel:
       'If we asked your most recent direct supervisor to describe you in three words, what do you think they would say?',
     fitInWellLabel:
-      'Based on what you know about Anderson Cleaning (or the cleaning industry), why do you think you would fit in well with our team?',
+      'Based on what you know about Anderson Cleaning Company (or the cleaning industry), why do you think you would fit in well with our team?',
     getOutOfBedLabel:
       'What motivates you to get out of bed and go to work each day, especially when facing a challenging day?',
     busyOrDowntimeLabel:
@@ -628,9 +628,9 @@ export const mockTranslations: Record<LanguageCode, Translations> = {
     wishWeAskedLabel:
       "Is there anything else you'd like us to know about you, or a question you wish we had asked in this application?",
     drugTestingStatement:
-      "DRUG & ALCOHOL TESTING POLICY: Anderson Cleaning, Inc. is committed to maintaining a safe, healthy, and productive work environment. We reserve the right to conduct tests for alcohol, drugs, or controlled substances under lawful circumstances, including: pre-employment screening, random testing (for safety-sensitive positions, if applicable), post-incident/accident investigation, and when there is reasonable suspicion of impairment. All testing will be administered in compliance with applicable federal, state, and local laws, and Anderson Cleaning, Inc.'s written procedures (available upon request). Anderson Cleaning, Inc. will cover the costs of these tests. Refusal to submit to testing or a positive test result may result in withdrawal of a job offer or disciplinary action, up to and including termination.",
+      "DRUG & ALCOHOL TESTING POLICY: Anderson Cleaning Company is committed to maintaining a safe, healthy, and productive work environment. We reserve the right to conduct tests for alcohol, drugs, or controlled substances under lawful circumstances, including: pre-employment screening, random testing (for safety-sensitive positions, if applicable), post-incident/accident investigation, and when there is reasonable suspicion of impairment. All testing will be administered in compliance with applicable federal, state, and local laws, and Anderson Cleaning Company's written procedures (available upon request). Anderson Cleaning Company will cover the costs of these tests. Refusal to submit to testing or a positive test result may result in withdrawal of a job offer or disciplinary action, up to and including termination.",
     applicantStatement:
-      'APPLICANT\'S CERTIFICATION & AGREEMENT: I certify that all answers and statements I have provided in this application and in any accompanying documents are true, complete, and correct to the best of my knowledge and belief. I understand that any misrepresentation, falsification, or material omission of information may be grounds for refusal to hire, or for immediate dismissal if I am employed, regardless of the time elapsed before discovery. I hereby authorize Anderson Cleaning, Inc. to investigate all statements contained in this application and to contact my previous employers, references, and educational institutions to verify the information provided. I release all parties from any liability for any damage that may result from furnishing such information. I understand that this application is not, and is not intended to be, a contract of employment. If hired, I understand that my employment will be "At Will," meaning that either I or Anderson Cleaning, Inc. may terminate the employment relationship at any time, for any reason or no reason, with or without cause, and with or without notice, unless otherwise prohibited by law or a legally binding written agreement. This "At Will" relationship cannot be altered except by a written agreement signed by an authorized representative of Anderson Cleaning, Inc.',
+      'APPLICANT\'S CERTIFICATION & AGREEMENT: I certify that all answers and statements I have provided in this application and in any accompanying documents are true, complete, and correct to the best of my knowledge and belief. I understand that any misrepresentation, falsification, or material omission of information may be grounds for refusal to hire, or for immediate dismissal if I am employed, regardless of the time elapsed before discovery. I hereby authorize Anderson Cleaning Company to investigate all statements contained in this application and to contact my previous employers, references, and educational institutions to verify the information provided. I release all parties from any liability for any damage that may result from furnishing such information. I understand that this application is not, and is not intended to be, a contract of employment. If hired, I understand that my employment will be "At Will," meaning that either I or Anderson Cleaning Company may terminate the employment relationship at any time, for any reason or no reason, with or without cause, and with or without notice, unless otherwise prohibited by law or a legally binding written agreement. This "At Will" relationship cannot be altered except by a written agreement signed by an authorized representative of Anderson Cleaning Company',
     partTimeStatement:
       'PART-TIME EMPLOYMENT COMMITMENT (if applicable): I understand that if I am applying for or accept a part-time position, it demands a reliable and committed employee who will consistently adhere to the agreed-upon work schedule. I am committed to being punctual and dependable. I recognize that excessive absences, tardiness, or failure to meet these scheduling obligations could result in disciplinary action, up to and including the termination of my employment.',
     acknowledgeLabel: 'I have read, understand, and agree to this statement.',
@@ -641,7 +641,7 @@ export const mockTranslations: Record<LanguageCode, Translations> = {
     resumeHelper: 'Accepted formats: PDF, DOC, DOCX. Max file size: 5MB.',
     coverLetterLabel: 'Cover Letter (Optional)',
     coverLetterPlaceholder:
-      "Tell us more about why you're a great fit for Anderson Cleaning and this role...",
+      "Tell us more about why you're a great fit for Anderson Cleaning Company and this role...",
     submitButton: 'Submit Application',
     submittingButton: 'Submitting, please wait...',
     submissionSuccessTitle: 'Application Submitted!',
@@ -730,10 +730,10 @@ export const mockTranslations: Record<LanguageCode, Translations> = {
       'No se pudieron identificar las fortalezas en este momento. Asegúrese de que las secciones relevantes estén completas.',
     strengthsPromptDetailsMissing:
       "Por favor, complete 'Puesto al que Aplica', seleccione experiencias y responda algunas preguntas de 'Conociéndole Mejor' para identificar fortalezas.",
-    heroTitle: 'Únase a Nuestro Equipo en Anderson Cleaning',
+    heroTitle: 'Únase a Nuestro Equipo en Anderson Cleaning Company',
     heroSubtitle:
       'Descubra emocionantes oportunidades de carrera y crezca con una empresa que valora la dedicación y la excelencia.',
-    whyWorkTitle: '¿Por Qué Elegir Anderson Cleaning?',
+    whyWorkTitle: '¿Por Qué Elegir Anderson Cleaning Company?',
     whyWorkItems: [
       {
         title: 'Oportunidades de Crecimiento',
@@ -808,13 +808,13 @@ export const mockTranslations: Record<LanguageCode, Translations> = {
 
     // Employee Stories Section
     employeeStoriesTitle: 'Escuche a Nuestro Equipo',
-    employeeStoriesSubtitle: 'Historias reales de los miembros del equipo de Anderson Cleaning',
+    employeeStoriesSubtitle: 'Historias reales de los miembros del equipo de Anderson Cleaning Company',
     employeeTestimonials: [
       {
         name: 'Maria Rodriguez',
         position: 'Líder de Equipo',
         quote:
-          'Anderson Cleaning invirtió en mi crecimiento desde el primer día. Comencé como limpiadora y ahora dirijo mi propio equipo. La capacitación y el apoyo aquí son incomparables.',
+          'Anderson Cleaning Company invirtió en mi crecimiento desde el primer día. Comencé como limpiadora y ahora dirijo mi propio equipo. La capacitación y el apoyo aquí son incomparables.',
       },
       {
         name: 'James Thompson',
@@ -856,7 +856,7 @@ export const mockTranslations: Record<LanguageCode, Translations> = {
     processStep3Description: 'Más de 40 horas de capacitación pagada para prepararlo para el éxito.',
     processStep4Title: 'Comenzar a Trabajar',
     processStep4Description:
-      'Comience su carrera con Anderson Cleaning y únase a un equipo de apoyo.',
+      'Comience su carrera con Anderson Cleaning Company y únase a un equipo de apoyo.',
     processTimeframe: 'La mayoría de los candidatos completan el proceso en 2-3 semanas',
     startApplicationButton: 'Iniciar Su Solicitud',
 
@@ -1094,7 +1094,7 @@ export const mockTranslations: Record<LanguageCode, Translations> = {
     gettingToKnowYouIntro:
       'Sus respuestas a estas preguntas nos ayudan a entenderle mejor. Por favor, responda reflexivamente. Las respuestas incompletas pueden afectar la consideración.',
     knowAnyoneLabel:
-      '¿Conoce a alguien empleado actual o anteriormente por Anderson Cleaning? Si es así, ¿quién?',
+      '¿Conoce a alguien empleado actual o anteriormente por Anderson Cleaning Company? Si es así, ¿quién?',
     hardestJobLabel:
       'Describa el trabajo más duro (remunerado o no) que haya tenido y qué lo hizo desafiante.',
     magicSpellLabel:
@@ -1112,7 +1112,7 @@ export const mockTranslations: Record<LanguageCode, Translations> = {
     lastBossDescriptionLabel:
       'Si le pidiéramos a su supervisor directo más reciente que le describiera en tres palabras, ¿qué cree que diría?',
     fitInWellLabel:
-      'Basado en lo que sabe sobre Anderson Cleaning (o la industria de la limpieza), ¿por qué cree que encajaría bien en nuestro equipo?',
+      'Basado en lo que sabe sobre Anderson Cleaning Company (o la industria de la limpieza), ¿por qué cree que encajaría bien en nuestro equipo?',
     getOutOfBedLabel:
       '¿Qué le motiva a levantarse de la cama e ir a trabajar cada día, especialmente cuando enfrenta un día desafiante?',
     busyOrDowntimeLabel:
@@ -1124,9 +1124,9 @@ export const mockTranslations: Record<LanguageCode, Translations> = {
     wishWeAskedLabel:
       '¿Hay algo más que le gustaría que supiéramos sobre usted, o alguna pregunta que desearía que le hubiéramos hecho en esta solicitud?',
     drugTestingStatement:
-      'POLÍTICA DE PRUEBAS DE DROGAS Y ALCOHOL: Anderson Cleaning, Inc. se compromete a mantener un ambiente de trabajo seguro, saludable y productivo. Nos reservamos el derecho de realizar pruebas de alcohol, drogas o sustancias controladas en circunstancias legales, incluyendo: evaluación previa al empleo, pruebas aleatorias (para puestos sensibles a la seguridad, si aplica), investigación posterior a incidentes/accidentes, y cuando exista sospecha razonable de deterioro. Todas las pruebas se administrarán de conformidad con las leyes federales, estatales y locales aplicables, y los procedimientos escritos de Anderson Cleaning, Inc. (disponibles bajo solicitud). Anderson Cleaning, Inc. cubrirá los costos de estas pruebas. La negativa a someterse a las pruebas o un resultado positivo pueden resultar en el retiro de una oferta de trabajo o en medidas disciplinarias, incluyendo la terminación.',
+      'POLÍTICA DE PRUEBAS DE DROGAS Y ALCOHOL: Anderson Cleaning Company se compromete a mantener un ambiente de trabajo seguro, saludable y productivo. Nos reservamos el derecho de realizar pruebas de alcohol, drogas o sustancias controladas en circunstancias legales, incluyendo: evaluación previa al empleo, pruebas aleatorias (para puestos sensibles a la seguridad, si aplica), investigación posterior a incidentes/accidentes, y cuando exista sospecha razonable de deterioro. Todas las pruebas se administrarán de conformidad con las leyes federales, estatales y locales aplicables, y los procedimientos escritos de Anderson Cleaning Company (disponibles bajo solicitud). Anderson Cleaning Company cubrirá los costos de estas pruebas. La negativa a someterse a las pruebas o un resultado positivo pueden resultar en el retiro de una oferta de trabajo o en medidas disciplinarias, incluyendo la terminación.',
     applicantStatement:
-      'CERTIFICACIÓN Y ACUERDO DEL SOLICITANTE: Certifico que todas las respuestas y declaraciones que he proporcionado en esta solicitud y en cualquier documento adjunto son verdaderas, completas y correctas a mi leal saber y entender. Entiendo que cualquier tergiversación, falsificación u omisión material de información puede ser motivo para rechazar la contratación, o para el despido inmediato si soy empleado, independientemente del tiempo transcurrido antes de su descubrimiento. Por la presente, autorizo a Anderson Cleaning, Inc. a investigar todas las declaraciones contenidas en esta solicitud y a contactar a mis empleadores anteriores, referencias e instituciones educativas para verificar la información proporcionada. Libero a todas las partes de cualquier responsabilidad por cualquier daño que pueda resultar del suministro de dicha información. Entiendo que esta solicitud no es, ni pretende ser, un contrato de empleo. Si soy contratado, entiendo que mi empleo será "A Voluntad", lo que significa que tanto yo como Anderson Cleaning, Inc. podemos terminar la relación laboral en cualquier momento, por cualquier motivo o sin motivo, con o sin causa, y con o sin previo aviso, a menos que la ley o un acuerdo escrito legalmente vinculante lo prohíban. Esta relación "A Voluntad" no puede ser alterada excepto por un acuerdo escrito firmado por un representante autorizado de Anderson Cleaning, Inc.',
+      'CERTIFICACIÓN Y ACUERDO DEL SOLICITANTE: Certifico que todas las respuestas y declaraciones que he proporcionado en esta solicitud y en cualquier documento adjunto son verdaderas, completas y correctas a mi leal saber y entender. Entiendo que cualquier tergiversación, falsificación u omisión material de información puede ser motivo para rechazar la contratación, o para el despido inmediato si soy empleado, independientemente del tiempo transcurrido antes de su descubrimiento. Por la presente, autorizo a Anderson Cleaning Company a investigar todas las declaraciones contenidas en esta solicitud y a contactar a mis empleadores anteriores, referencias e instituciones educativas para verificar la información proporcionada. Libero a todas las partes de cualquier responsabilidad por cualquier daño que pueda resultar del suministro de dicha información. Entiendo que esta solicitud no es, ni pretende ser, un contrato de empleo. Si soy contratado, entiendo que mi empleo será "A Voluntad", lo que significa que tanto yo como Anderson Cleaning Company podemos terminar la relación laboral en cualquier momento, por cualquier motivo o sin motivo, con o sin causa, y con o sin previo aviso, a menos que la ley o un acuerdo escrito legalmente vinculante lo prohíban. Esta relación "A Voluntad" no puede ser alterada excepto por un acuerdo escrito firmado por un representante autorizado de Anderson Cleaning Company',
     partTimeStatement:
       'COMPROMISO DE EMPLEO A TIEMPO PARCIAL (si aplica): Entiendo que si estoy solicitando o acepto un puesto a tiempo parcial, este exige un empleado confiable y comprometido que cumplirá consistentemente con el horario de trabajo acordado. Me comprometo a ser puntual y responsable. Reconozco que las ausencias excesivas, tardanzas o el incumplimiento de estas obligaciones horarias podrían resultar en medidas disciplinarias, incluyendo la terminación de mi empleo.',
     acknowledgeLabel: 'He leído, entiendo y acepto esta declaración.',
@@ -1137,7 +1137,7 @@ export const mockTranslations: Record<LanguageCode, Translations> = {
     resumeHelper: 'Formatos aceptados: PDF, DOC, DOCX. Tamaño máximo: 5MB.',
     coverLetterLabel: 'Carta de Presentación (Opcional)',
     coverLetterPlaceholder:
-      'Cuéntenos más sobre por qué es un gran candidato para Anderson Cleaning y este puesto...',
+      'Cuéntenos más sobre por qué es un gran candidato para Anderson Cleaning Company y este puesto...',
     submitButton: 'Enviar Solicitud',
     submittingButton: 'Enviando, por favor espere...',
     submissionSuccessTitle: '¡Solicitud Enviada!',
@@ -1227,10 +1227,10 @@ export const mockTranslations: Record<LanguageCode, Translations> = {
       'Não foi possível identificar as forças neste momento. Certifique-se de que as seções relevantes estão preenchidas.',
     strengthsPromptDetailsMissing:
       "Por favor, preencha 'Cargo ao Qual se Candidata', selecione experiências e responda algumas perguntas de 'Conhecendo Você Melhor' para identificar forças.",
-    heroTitle: 'Junte-se à Nossa Equipe na Anderson Cleaning',
+    heroTitle: 'Junte-se à Nossa Equipe na Anderson Cleaning Company',
     heroSubtitle:
       'Descubra emocionantes oportunidades de carreira e cresça com uma empresa que valoriza dedicação e excelência.',
-    whyWorkTitle: 'Por Que Escolher a Anderson Cleaning?',
+    whyWorkTitle: 'Por Que Escolher a Anderson Cleaning Company?',
     whyWorkItems: [
       {
         title: 'Oportunidades de Crescimento',
@@ -1307,13 +1307,13 @@ export const mockTranslations: Record<LanguageCode, Translations> = {
 
     // Employee Stories Section
     employeeStoriesTitle: 'Ouça Nossa Equipe',
-    employeeStoriesSubtitle: 'Histórias reais dos membros da equipe da Anderson Cleaning',
+    employeeStoriesSubtitle: 'Histórias reais dos membros da equipe da Anderson Cleaning Company',
     employeeTestimonials: [
       {
         name: 'Maria Rodriguez',
         position: 'Líder de Equipe',
         quote:
-          'A Anderson Cleaning investiu no meu crescimento desde o primeiro dia. Comecei como faxineira e agora lidero a minha própria equipe. A formação e o apoio aqui são incomparáveis.',
+          'A Anderson Cleaning Company investiu no meu crescimento desde o primeiro dia. Comecei como faxineira e agora lidero a minha própria equipe. A formação e o apoio aqui são incomparáveis.',
       },
       {
         name: 'James Thompson',
@@ -1355,7 +1355,7 @@ export const mockTranslations: Record<LanguageCode, Translations> = {
     processStep3Description: 'Mais de 40 horas de formação remunerada para prepará-lo para o sucesso.',
     processStep4Title: 'Começar a Trabalhar',
     processStep4Description:
-      'Comece a sua carreira com a Anderson Cleaning e junte-se a uma equipe de apoio.',
+      'Comece a sua carreira com a Anderson Cleaning Company e junte-se a uma equipe de apoio.',
     processTimeframe: 'A maioria dos candidatos completa o processo em 2-3 semanas',
     startApplicationButton: 'Iniciar Sua Candidatura',
 
@@ -1594,7 +1594,7 @@ export const mockTranslations: Record<LanguageCode, Translations> = {
     gettingToKnowYouIntro:
       'As suas respostas a estas perguntas ajudam-nos a conhecê-lo/a melhor. Por favor, responda ponderadamente. Respostas incompletas podem afetar a consideração.',
     knowAnyoneLabel:
-      'Conhece alguém atualmente ou anteriormente empregado pela Anderson Cleaning? Se sim, quem?',
+      'Conhece alguém atualmente ou anteriormente empregado pela Anderson Cleaning Company? Se sim, quem?',
     hardestJobLabel:
       'Descreva o trabalho mais difícil (remunerado ou não) que já teve e o que o tornou desafiador.',
     magicSpellLabel:
@@ -1612,7 +1612,7 @@ export const mockTranslations: Record<LanguageCode, Translations> = {
     lastBossDescriptionLabel:
       'Se pedíssemos ao seu supervisor direto mais recente para o/a descrever em três palavras, o que acha que ele/ela diria?',
     fitInWellLabel:
-      'Com base no que sabe sobre a Anderson Cleaning (ou a indústria da limpeza), por que acha que se enquadraria bem na nossa equipe?',
+      'Com base no que sabe sobre a Anderson Cleaning Company (ou a indústria da limpeza), por que acha que se enquadraria bem na nossa equipe?',
     getOutOfBedLabel:
       'O que o/a motiva a levantar-se da cama e ir trabalhar todos os dias, especialmente quando enfrenta um dia desafiador?',
     busyOrDowntimeLabel:
@@ -1624,9 +1624,9 @@ export const mockTranslations: Record<LanguageCode, Translations> = {
     wishWeAskedLabel:
       'Há mais alguma coisa que gostaria que soubéssemos sobre si, ou alguma pergunta que gostaria que tivéssemos feito nesta candidatura?',
     drugTestingStatement:
-      'POLÍTICA DE TESTES DE DROGAS E ÁLCOOL: A Anderson Cleaning, Inc. está empenhada em manter um ambiente de trabalho seguro, saudável e produtivo. Reservamo-nos o direito de realizar testes de álcool, drogas ou substâncias controladas em circunstâncias legais, incluindo: rastreio pré-emprego, testes aleatórios (para posições sensíveis à segurança, se aplicável), investigação pós-incidente/acidente, e quando houver suspeita razoável de incapacidade. Todos os testes serão administrados em conformidade com as leis federais, estatais e locais aplicáveis, e os procedimentos escritos da Anderson Cleaning, Inc. (disponíveis mediante solicitação). A Anderson Cleaning, Inc. cobrirá os custos destes testes. A recusa em submeter-se a testes ou um resultado positivo pode resultar na retirada de uma oferta de emprego ou em ação disciplinar, incluindo a cessação do contrato.',
+      'POLÍTICA DE TESTES DE DROGAS E ÁLCOOL: A Anderson Cleaning Company está empenhada em manter um ambiente de trabalho seguro, saudável e produtivo. Reservamo-nos o direito de realizar testes de álcool, drogas ou substâncias controladas em circunstâncias legais, incluindo: rastreio pré-emprego, testes aleatórios (para posições sensíveis à segurança, se aplicável), investigação pós-incidente/acidente, e quando houver suspeita razoável de incapacidade. Todos os testes serão administrados em conformidade com as leis federais, estatais e locais aplicáveis, e os procedimentos escritos da Anderson Cleaning Company (disponíveis mediante solicitação). A Anderson Cleaning Company cobrirá os custos destes testes. A recusa em submeter-se a testes ou um resultado positivo pode resultar na retirada de uma oferta de emprego ou em ação disciplinar, incluindo a cessação do contrato.',
     applicantStatement:
-      'CERTIFICAÇÃO E ACORDO DO CANDIDATO: Certifico que todas as respostas e declarações que forneci nesta candidatura e em quaisquer documentos anexos são verdadeiras, completas e corretas, tanto quanto é do meu conhecimento e convicção. Entendo que qualquer deturpação, falsificação ou omissão material de informação pode constituir motivo para recusa de contratação, ou para despedimento imediato se eu for empregado, independentemente do tempo decorrido antes da descoberta. Pelo presente, autorizo a Anderson Cleaning, Inc. a investigar todas as declarações contidas nesta candidatura e a contactar os meus empregadores anteriores, referências e instituições de ensino para verificar as informações fornecidas. Isento todas as partes de qualquer responsabilidade por qualquer dano que possa resultar do fornecimento de tais informações. Entendo que esta candidatura não é, nem se destina a ser, um contrato de trabalho. Se contratado, entendo que o meu emprego será "At Will" (por mútuo acordo), o que significa que tanto eu como a Anderson Cleaning, Inc. podemos terminar a relação de trabalho a qualquer momento, por qualquer motivo ou sem motivo, com ou sem justa causa, e com ou sem aviso prévio, salvo disposição legal em contrário ou acordo escrito legalmente vinculativo. Esta relação "At Will" não pode ser alterada exceto por um acordo escrito assinado por um representante autorizado da Anderson Cleaning, Inc.',
+      'CERTIFICAÇÃO E ACORDO DO CANDIDATO: Certifico que todas as respostas e declarações que forneci nesta candidatura e em quaisquer documentos anexos são verdadeiras, completas e corretas, tanto quanto é do meu conhecimento e convicção. Entendo que qualquer deturpação, falsificação ou omissão material de informação pode constituir motivo para recusa de contratação, ou para despedimento imediato se eu for empregado, independentemente do tempo decorrido antes da descoberta. Pelo presente, autorizo a Anderson Cleaning Company a investigar todas as declarações contidas nesta candidatura e a contactar os meus empregadores anteriores, referências e instituições de ensino para verificar as informações fornecidas. Isento todas as partes de qualquer responsabilidade por qualquer dano que possa resultar do fornecimento de tais informações. Entendo que esta candidatura não é, nem se destina a ser, um contrato de trabalho. Se contratado, entendo que o meu emprego será "At Will" (por mútuo acordo), o que significa que tanto eu como a Anderson Cleaning Company podemos terminar a relação de trabalho a qualquer momento, por qualquer motivo ou sem motivo, com ou sem justa causa, e com ou sem aviso prévio, salvo disposição legal em contrário ou acordo escrito legalmente vinculativo. Esta relação "At Will" não pode ser alterada exceto por um acordo escrito assinado por um representante autorizado da Anderson Cleaning Company',
     partTimeStatement:
       'COMPROMISSO DE EMPREGO A TEMPO PARCIAL (se aplicável): Entendo que se me candidatar ou aceitar um cargo a tempo parcial, tal exige um funcionário fiável e empenhado que cumprirá consistentemente o horário de trabalho acordado. Comprometo-me a ser pontual e assíduo. Reconheço que ausências excessivas, atrasos ou incumprimento destas obrigações horárias podem resultar em ação disciplinar, incluindo a cessação do meu contrato de trabalho.',
     acknowledgeLabel: 'Li, compreendo e concordo com esta declaração.',
@@ -1637,7 +1637,7 @@ export const mockTranslations: Record<LanguageCode, Translations> = {
     resumeHelper: 'Formatos aceites: PDF, DOC, DOCX. Tamanho máximo do ficheiro: 5MB.',
     coverLetterLabel: 'Carta de Apresentação (Opcional)',
     coverLetterPlaceholder:
-      'Diga-nos mais sobre porque é um ótimo candidato para a Anderson Cleaning e para este cargo...',
+      'Diga-nos mais sobre porque é um ótimo candidato para a Anderson Cleaning Company e para este cargo...',
     submitButton: 'Enviar Candidatura',
     submittingButton: 'A enviar, por favor aguarde...',
     submissionSuccessTitle: 'Candidatura Enviada!',
@@ -1727,10 +1727,10 @@ export const mockTranslations: Record<LanguageCode, Translations> = {
       'Nu s-au putut identifica punctele tari în acest moment. Asigurați-vă că secțiunile relevante sunt completate.',
     strengthsPromptDetailsMissing:
       "Vă rugăm să completați 'Poziția pentru care aplicați', să selectați experiențe și să răspundeți la câteva întrebări din 'Să te cunoaștem mai bine' pentru a identifica punctele tari.",
-    heroTitle: 'Alătură-te echipei Anderson Cleaning',
+    heroTitle: 'Alătură-te echipei Anderson Cleaning Company',
     heroSubtitle:
       'Descoperă oportunități de carieră interesante și crește împreună cu o companie care prețuiește dedicarea și excelența.',
-    whyWorkTitle: 'De ce să alegi Anderson Cleaning?',
+    whyWorkTitle: 'De ce să alegi Anderson Cleaning Company?',
     whyWorkItems: [
       {
         title: 'Oportunități de creștere',
@@ -1805,13 +1805,13 @@ export const mockTranslations: Record<LanguageCode, Translations> = {
 
     // Employee Stories Section
     employeeStoriesTitle: 'Ascultă de la echipa noastră',
-    employeeStoriesSubtitle: 'Povești reale de la membrii echipei Anderson Cleaning',
+    employeeStoriesSubtitle: 'Povești reale de la membrii echipei Anderson Cleaning Company',
     employeeTestimonials: [
       {
         name: 'Maria Rodriguez',
         position: 'Lider de echipă',
         quote:
-          'Anderson Cleaning a investit în creșterea mea din prima zi. Am început ca o persoană de curățenie și acum conduc propria mea echipă. Formarea și sprijinul de aici sunt de neegalat.',
+          'Anderson Cleaning Company a investit în creșterea mea din prima zi. Am început ca o persoană de curățenie și acum conduc propria mea echipă. Formarea și sprijinul de aici sunt de neegalat.',
       },
       {
         name: 'James Thompson',
@@ -1853,7 +1853,7 @@ export const mockTranslations: Record<LanguageCode, Translations> = {
     processStep3Description: 'Peste 40 de ore de formare plătită pentru a te pregăti pentru succes.',
     processStep4Title: 'Începe să lucrezi',
     processStep4Description:
-      'Începe-ți cariera cu Anderson Cleaning și alătură-te unei echipe de sprijin.',
+      'Începe-ți cariera cu Anderson Cleaning Company și alătură-te unei echipe de sprijin.',
     processTimeframe: 'Majoritatea candidaților completează procesul în 2-3 săptămâni',
     startApplicationButton: 'Începe aplicația ta',
 
@@ -2090,7 +2090,7 @@ export const mockTranslations: Record<LanguageCode, Translations> = {
     gettingToKnowYouIntro:
       'Răspunsurile dvs. la aceste întrebări ne ajută să vă înțelegem mai bine. Vă rugăm să răspundeți cu atenție. Răspunsurile incomplete pot afecta evaluarea.',
     knowAnyoneLabel:
-      'Cunoașteți pe cineva care lucrează sau a lucrat la Anderson Cleaning? Dacă da, cine?',
+      'Cunoașteți pe cineva care lucrează sau a lucrat la Anderson Cleaning Company? Dacă da, cine?',
     hardestJobLabel:
       'Descrieți cea mai grea muncă (plătită sau neplătită) pe care ați avut-o vreodată și ce a făcut-o dificilă.',
     magicSpellLabel:
@@ -2108,7 +2108,7 @@ export const mockTranslations: Record<LanguageCode, Translations> = {
     lastBossDescriptionLabel:
       'Dacă l-am întreba pe supraveghetorul dvs. direct cel mai recent să vă descrie în trei cuvinte, ce credeți că ar spune?',
     fitInWellLabel:
-      'Pe baza a ceea ce știți despre Anderson Cleaning (sau industria de curățenie), de ce credeți că v-ați integra bine în echipa noastră?',
+      'Pe baza a ceea ce știți despre Anderson Cleaning Company (sau industria de curățenie), de ce credeți că v-ați integra bine în echipa noastră?',
     getOutOfBedLabel:
       'Ce vă motivează să vă ridicați din pat și să mergeți la muncă în fiecare zi, mai ales când vă confruntați cu o zi dificilă?',
     busyOrDowntimeLabel:
@@ -2120,9 +2120,9 @@ export const mockTranslations: Record<LanguageCode, Translations> = {
     wishWeAskedLabel:
       'Mai este ceva pe care ați dori să-l știm despre dvs., sau o întrebare pe care doriți să o fi pus în această aplicație?',
     drugTestingStatement:
-      'POLITICA DE TESTARE PENTRU DROGURI ȘI ALCOOL: Anderson Cleaning, Inc. este angajată să mențină un mediu de lucru sigur, sănătos și productiv. Ne rezervăm dreptul de a efectua teste pentru alcool, droguri sau substanțe controlate în circumstanțe legale, inclusiv: screening pre-angajare, testare aleatoare (pentru poziții sensibile la siguranță, dacă este cazul), investigare post-incident/accident și când există suspiciune rezonabilă de afectare. Toate testările vor fi administrate în conformitate cu legile federale, de stat și locale aplicabile și procedurile scrise ale Anderson Cleaning, Inc. (disponibile la cerere). Anderson Cleaning, Inc. va acoperi costurile acestor teste. Refuzul de a se supune testării sau un rezultat pozitiv al testului poate duce la retragerea ofertei de job sau acțiune disciplinară, până la și inclusiv concedierea.',
+      'POLITICA DE TESTARE PENTRU DROGURI ȘI ALCOOL: Anderson Cleaning Company este angajată să mențină un mediu de lucru sigur, sănătos și productiv. Ne rezervăm dreptul de a efectua teste pentru alcool, droguri sau substanțe controlate în circumstanțe legale, inclusiv: screening pre-angajare, testare aleatoare (pentru poziții sensibile la siguranță, dacă este cazul), investigare post-incident/accident și când există suspiciune rezonabilă de afectare. Toate testările vor fi administrate în conformitate cu legile federale, de stat și locale aplicabile și procedurile scrise ale Anderson Cleaning Company (disponibile la cerere). Anderson Cleaning Company va acoperi costurile acestor teste. Refuzul de a se supune testării sau un rezultat pozitiv al testului poate duce la retragerea ofertei de job sau acțiune disciplinară, până la și inclusiv concedierea.',
     applicantStatement:
-      "CERTIFICARE ȘI ACORD AL SOLICITANTULUI: Certific că toate răspunsurile și declarațiile pe care le-am furnizat în această aplicație și în orice documente însoțitoare sunt adevărate, complete și corecte în cunoștința și convingerea mea. Înțeleg că orice denaturare, falsificare sau omisiune materială a informațiilor poate fi motive pentru refuzul de angajare sau pentru concediere imediată dacă sunt angajat, indiferent de timpul scurs înainte de descoperire. Autorizez prin aceasta Anderson Cleaning, Inc. să investigheze toate declarațiile conținute în această aplicație și să contacteze angajatorii mei anteriori, referințele și instituțiile de învățământ pentru a verifica informațiile furnizate. Eliberez toate părțile de orice răspundere pentru orice daune care pot rezulta din furnizarea unor astfel de informații. Înțeleg că această aplicație nu este și nu are intenția de a fi un contract de muncă. Dacă sunt angajat, înțeleg că angajarea mea va fi 'La Voință', ceea ce înseamnă că fie eu, fie Anderson Cleaning, Inc. putem înceta relația de muncă în orice moment, din orice motiv sau fără motiv, cu sau fără cauză și cu sau fără preaviz, cu excepția cazului în care este interzis prin lege sau printr-un acord scris cu forță juridică obligatorie. Această relație 'La Voință' nu poate fi modificată decât printr-un acord scris semnat de un reprezentant autorizat al Anderson Cleaning, Inc.",
+      "CERTIFICARE ȘI ACORD AL SOLICITANTULUI: Certific că toate răspunsurile și declarațiile pe care le-am furnizat în această aplicație și în orice documente însoțitoare sunt adevărate, complete și corecte în cunoștința și convingerea mea. Înțeleg că orice denaturare, falsificare sau omisiune materială a informațiilor poate fi motive pentru refuzul de angajare sau pentru concediere imediată dacă sunt angajat, indiferent de timpul scurs înainte de descoperire. Autorizez prin aceasta Anderson Cleaning Company să investigheze toate declarațiile conținute în această aplicație și să contacteze angajatorii mei anteriori, referințele și instituțiile de învățământ pentru a verifica informațiile furnizate. Eliberez toate părțile de orice răspundere pentru orice daune care pot rezulta din furnizarea unor astfel de informații. Înțeleg că această aplicație nu este și nu are intenția de a fi un contract de muncă. Dacă sunt angajat, înțeleg că angajarea mea va fi 'La Voință', ceea ce înseamnă că fie eu, fie Anderson Cleaning Company putem înceta relația de muncă în orice moment, din orice motiv sau fără motiv, cu sau fără cauză și cu sau fără preaviz, cu excepția cazului în care este interzis prin lege sau printr-un acord scris cu forță juridică obligatorie. Această relație 'La Voință' nu poate fi modificată decât printr-un acord scris semnat de un reprezentant autorizat al Anderson Cleaning Company",
     partTimeStatement:
       'ANGAJAMENT PENTRU ANGAJARE CU FRACȚIUNE DE NORMĂ (dacă este cazul): Înțeleg că dacă aplic pentru sau accept o poziție cu fracțiune de normă, aceasta necesită un angajat de încredere și angajat care va respecta în mod consecvent programul de lucru convenit. Mă angajez să fiu punctual și de încredere. Recunosc că absențele excesive, întârzierile sau nerespectarea acestor obligații de programare ar putea duce la acțiune disciplinară, până la și inclusiv încetarea angajării mele.',
     acknowledgeLabel: 'Am citit, înțeleg și sunt de acord cu această declarație.',
@@ -2133,7 +2133,7 @@ export const mockTranslations: Record<LanguageCode, Translations> = {
     resumeHelper: 'Formate acceptate: PDF, DOC, DOCX. Dimensiune maximă: 5MB.',
     coverLetterLabel: 'Scrisoare de intenție (opțional)',
     coverLetterPlaceholder:
-      'Spuneți-ne mai multe despre de ce sunteți potrivit pentru Anderson Cleaning și acest rol...',
+      'Spuneți-ne mai multe despre de ce sunteți potrivit pentru Anderson Cleaning Company și acest rol...',
     submitButton: 'Trimite aplicația',
     submittingButton: 'Se trimite, vă rugăm așteptați...',
     submissionSuccessTitle: 'Aplicație trimisă!',

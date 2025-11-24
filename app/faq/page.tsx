@@ -60,7 +60,7 @@ const faqCategories = {
     {
       question: 'How do you vet your cleaning staff?',
       answer:
-        'All Anderson Cleaning employees undergo comprehensive background checks before hire, including criminal history, employment verification, and reference checks. We only hire W-2 employees (no subcontractors) who complete 40+ hours of training on cleaning techniques, safety protocols, and customer service. All staff are bonded and insured for your protection.',
+        'All Anderson Cleaning Company employees undergo comprehensive background checks before hire, including criminal history, employment verification, and reference checks. We only hire W-2 employees (no subcontractors) who complete 40+ hours of training on cleaning techniques, safety protocols, and customer service. All staff are bonded and insured for your protection.',
     },
     {
       question: 'Will I have the same cleaning team each time?',

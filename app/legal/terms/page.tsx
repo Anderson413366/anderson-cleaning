@@ -4,8 +4,8 @@ import Link from 'next/link'
 import { Scale, Download, Mail } from 'lucide-react'
 
 const pageInfo = {
-  title: 'Terms of Service | Anderson Cleaning',
-  description: 'Terms and conditions for using Anderson Cleaning services and website.',
+  title: 'Terms of Service | Anderson Cleaning Company',
+  description: 'Terms and conditions for using Anderson Cleaning Company services and website.',
   robots: {
     index: false,
     follow: true,

@@ -13,7 +13,7 @@
 
 ## Overview
 
-Sanity CMS is your headless content management system for the Anderson Cleaning website. It allows you to easily update content without touching code.
+Sanity CMS is your headless content management system for the Anderson Cleaning Company website. It allows you to easily update content without touching code.
 
 **Key Benefits:**
 - ✅ Edit content from anywhere (browser-based)

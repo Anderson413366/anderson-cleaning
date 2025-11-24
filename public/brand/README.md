@@ -1,12 +1,12 @@
-# Anderson Cleaning – Brand Asset Package
+# Anderson Cleaning Company – Brand Asset Package
 
-This package contains the complete, organized, and production‑ready brand assets for Anderson Cleaning.  
+This package contains the complete, organized, and production‑ready brand assets for Anderson Cleaning Company.  
 It includes all logos, icons, and favicons in both color and white (for dark mode), fully optimized and structured for use in any modern website or application.
 
 ## What This Package Contains
 
 ### 1. Color Logo Assets (Light Mode)
-These are the primary Anderson Cleaning logos and icons:
+These are the primary Anderson Cleaning Company logos and icons:
 - Full logo (2000px)
 - Icon‑only logos (256px, 512px, 1024px, 2000px)
 - Fully optimized favicon set (16px – 512px)
@@ -39,5 +39,5 @@ This makes all assets accessible to your site without needing import statements.
 
 ## Version Information
 Brand Package v1.0  
-Created for Anderson Cleaning  
+Created for Anderson Cleaning Company  
 Prepared for website upgrade and brand modernization.

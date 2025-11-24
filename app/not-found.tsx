@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { Button } from '@/components/ui/Button'
 
 export const metadata = {
-  title: '404 - Page Not Found | Anderson Cleaning',
+  title: '404 - Page Not Found | Anderson Cleaning Company',
   description: 'The page you are looking for could not be found.',
 }
 

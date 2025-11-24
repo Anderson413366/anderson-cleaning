@@ -16,6 +16,7 @@ import {
 import StructuredData from '@/components/StructuredData'
 import StickyQuoteButton from '@/components/services/StickyQuoteButton'
 import { Button } from '@/components/ui/Button'
+import { YEARS_IN_BUSINESS } from '@/lib/constants'
 import {
   serviceSlugs,
   servicesData,
@@ -408,7 +409,7 @@ function CTASection({
 }
 
 function TrustBadges({ className = '', theme = 'dark' }: { className?: string; theme?: 'light' | 'dark' }) {
-  const badges = ['Licensed & Insured', '18+ Years in Business', 'Green Seal Options', 'OSHA-Trained Staff']
+  const badges = ['Licensed & Insured', `${YEARS_IN_BUSINESS} Years in Business`, 'Green Seal Options', 'OSHA-Trained Staff']
   const textClass = theme === 'light' ? 'text-white/80' : 'text-neutral-charcoal/80 dark:text-white/70'
   return (
     <div className={`flex flex-wrap gap-3 text-sm font-semibold ${textClass} ${className}`}>

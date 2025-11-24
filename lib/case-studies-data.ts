@@ -1,7 +1,7 @@
 /**
  * Case Studies Data
  *
- * Complete data for all Anderson Cleaning case studies.
+ * Complete data for all Anderson Cleaning Company case studies.
  * Each case study follows the Problem → Solution → Results format.
  *
  * To add a new case study:
@@ -115,7 +115,7 @@ export const caseStudies: CaseStudy[] = [
 
     solution: {
       description: [
-        'Anderson Cleaning implemented a comprehensive medical facility cleaning program designed specifically for healthcare environments. We began with a detailed facility assessment, identifying all high-risk areas and high-touch surfaces that required special attention.',
+        'Anderson Cleaning Company implemented a comprehensive medical facility cleaning program designed specifically for healthcare environments. We began with a detailed facility assessment, identifying all high-risk areas and high-touch surfaces that required special attention.',
         'Our team developed custom Standard Operating Procedures (SOPs) that exceeded CDC and OSHA requirements. These included EPA-registered hospital-grade disinfectants, color-coded microfiber systems to prevent cross-contamination, and documented cleaning schedules for every area of the practice.',
         'We assigned a dedicated 3-person team who received specialized training in healthcare cleaning protocols, including proper PPE usage, bloodborne pathogen awareness, and medical waste handling. The same team works the facility every night, building familiarity with the space and accountability for results.',
         'To ensure compliance and quality, we implemented a digital verification system. Each cleaning task is logged in real-time via mobile devices, creating an auditable record. Our supervisor conducts weekly quality audits using ATP testing to verify surface cleanliness at a microbial level.',
@@ -156,7 +156,7 @@ export const caseStudies: CaseStudy[] = [
         },
       ],
       quote: {
-        text: 'Anderson Cleaning transformed our practice. The attention to detail and consistent quality have made a measurable difference in both employee health and patient satisfaction. Having documented cleaning protocols has been invaluable for regulatory compliance.',
+        text: 'Anderson Cleaning Company transformed our practice. The attention to detail and consistent quality have made a measurable difference in both employee health and patient satisfaction. Having documented cleaning protocols has been invaluable for regulatory compliance.',
         author: 'Dr. Sarah Mitchell',
         role: 'Medical Director',
         company: 'Springfield Family Medicine',
@@ -210,7 +210,7 @@ export const caseStudies: CaseStudy[] = [
 
     solution: {
       description: [
-        'Anderson Cleaning designed a comprehensive commercial office cleaning program tailored to the law firm\'s needs and schedule. We established a nightly cleaning routine from 6:00 PM to 10:00 PM, after attorneys and staff depart, ensuring zero disruption to billable hours.',
+        'Anderson Cleaning Company designed a comprehensive commercial office cleaning program tailored to the law firm\'s needs and schedule. We established a nightly cleaning routine from 6:00 PM to 10:00 PM, after attorneys and staff depart, ensuring zero disruption to billable hours.',
         'Our team implemented a "white glove" standard for all client-facing areas. Conference rooms are detail-cleaned after each use, not just at night. Reception areas receive multiple daily check-ins to ensure they remain pristine throughout business hours. We installed a restroom monitoring system with scheduled checks every 2 hours to maintain supplies and cleanliness.',
         'For the carpet issues, we brought in our specialized floor care division to perform a deep extraction cleaning, removing years of built-up soil. We then established a maintenance program combining daily vacuuming with monthly hot water extraction in high-traffic areas and quarterly deep cleaning for the entire office.',
         'To ensure accountability, we assigned a dedicated account manager who conducts weekly walk-throughs with the firm administrator. Any concerns are addressed within 24 hours. Our team uses a digital checklist system that provides real-time updates when each area is completed, giving the firm complete visibility into our service.',
@@ -252,7 +252,7 @@ export const caseStudies: CaseStudy[] = [
         },
       ],
       quote: {
-        text: 'The transformation has been remarkable. Our office now reflects the level of professionalism our clients expect. More importantly, our team takes pride in their workplace again. Anderson Cleaning doesn\'t just clean—they understand that our office is part of our brand.',
+        text: 'The transformation has been remarkable. Our office now reflects the level of professionalism our clients expect. More importantly, our team takes pride in their workplace again. Anderson Cleaning Company doesn\'t just clean—they understand that our office is part of our brand.',
         author: 'James Harrington',
         role: 'Managing Partner',
         company: 'Harrington & Associates Law',
@@ -308,7 +308,7 @@ export const caseStudies: CaseStudy[] = [
 
     solution: {
       description: [
-        'Anderson Cleaning deployed our industrial cleaning division with specialized training and equipment for manufacturing environments. We conducted a comprehensive facility assessment, identifying all high-risk areas, traffic patterns, and production schedule constraints.',
+        'Anderson Cleaning Company deployed our industrial cleaning division with specialized training and equipment for manufacturing environments. We conducted a comprehensive facility assessment, identifying all high-risk areas, traffic patterns, and production schedule constraints.',
         'We implemented a daily floor care program using industrial auto-scrubbers with degreasing solutions designed specifically for manufacturing environments. Our team performs systematic cleaning between first and second shift (2:30 PM - 5:00 PM), removing metal shavings, coolant residue, and oil accumulation before the next production cycle begins.',
         'For heavy soil areas around CNC machines and cutting stations, we use industrial wet/dry vacuums to capture metal particulate and fluids immediately. We installed slip-resistant matting in high-risk zones and established a rapid-response protocol for any spills during production hours.',
         'Our team received extensive safety training specific to this facility, including lockout/tagout procedures, compressed air safety, and proper PPE for industrial environments. All cleaning staff are equipped with steel-toe boots, safety glasses, and high-visibility vests. We coordinate daily with the facility manager to ensure cleaning never interferes with production schedules.',
@@ -352,7 +352,7 @@ export const caseStudies: CaseStudy[] = [
         },
       ],
       quote: {
-        text: 'Anderson Cleaning has been a game-changer for our safety program. Their industrial cleaning expertise and commitment to working within our production schedule has eliminated our slip-and-fall problem entirely. The $45,000 in annual savings more than pays for their service.',
+        text: 'Anderson Cleaning Company has been a game-changer for our safety program. Their industrial cleaning expertise and commitment to working within our production schedule has eliminated our slip-and-fall problem entirely. The $45,000 in annual savings more than pays for their service.',
         author: 'Michael Torres',
         role: 'Facility Manager',
         company: 'Precision Components Manufacturing',

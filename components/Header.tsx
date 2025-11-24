@@ -58,13 +58,13 @@ export default function Header() {
             {/* Desktop Logo - Swaps to white in dark mode, hidden on mobile */}
             <img
               src="/brand/color/logo-full-2000.png"
-              alt="Anderson Cleaning"
+              alt="Anderson Cleaning Company"
               className="logo-desktop"
             />
             {/* Mobile Logo Icon - Swaps to white in dark mode, shows only on mobile */}
             <img
               src="/brand/color/logo-icon-512.png"
-              alt="Anderson Cleaning"
+              alt="Anderson Cleaning Company"
               className="logo-mobile"
             />
           </Link>
@@ -131,17 +131,17 @@ export default function Header() {
           <div className="fixed inset-y-0 right-0 z-[9999] w-full overflow-y-auto bg-white dark:bg-brand-deep-blue px-6 py-6 sm:max-w-sm sm:shadow-2xl">
             <div className="flex items-center justify-between">
               <Link href="/" className="-m-1.5 p-1.5" onClick={() => setMobileMenuOpen(false)}>
-                <span className="sr-only">Anderson Cleaning</span>
+                <span className="sr-only">Anderson Cleaning Company</span>
                 <img
                   src="/brand/color/logo-icon-512.png"
-                  alt="Anderson Cleaning"
+                  alt="Anderson Cleaning Company"
                   className="h-10 w-auto dark:hidden"
                   width="40"
                   height="40"
                 />
                 <img
                   src="/brand/white/logo-icon-512-white.png"
-                  alt="Anderson Cleaning"
+                  alt="Anderson Cleaning Company"
                   className="hidden h-10 w-auto dark:block"
                   width="40"
                   height="40"

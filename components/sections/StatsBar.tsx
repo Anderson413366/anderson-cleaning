@@ -24,6 +24,7 @@
 
 import React, { useState, useEffect, useRef } from 'react'
 import { Calendar, Users, Building2, Star, LucideIcon } from 'lucide-react'
+import { YEARS_IN_BUSINESS } from '@/lib/constants'
 
 // ============================================================================
 // TYPES & INTERFACES
@@ -75,10 +76,10 @@ interface StatsBarProps {
 const DEFAULT_STATS: Stat[] = [
   {
     id: 1,
-    value: '18',
+    value: YEARS_IN_BUSINESS.toString(),
     label: 'Years of Excellence',
     icon: Calendar,
-    numericValue: 18,
+    numericValue: YEARS_IN_BUSINESS,
   },
   {
     id: 2,

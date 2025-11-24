@@ -1,4 +1,4 @@
-# DNS Migration Checklist - Anderson Cleaning
+# DNS Migration Checklist - Anderson Cleaning Company
 
 ## CRITICAL: Add These DNS Records in Vercel Dashboard
 

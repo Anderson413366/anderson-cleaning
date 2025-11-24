@@ -587,7 +587,7 @@ export default function QuoteForm({ onSuccess }: QuoteFormProps) {
                   htmlFor="consent"
                   className="flex-1 text-sm text-neutral-charcoal/80 dark:text-white/80"
                 >
-                  I agree to be contacted by Anderson Cleaning regarding this quote request. We
+                  I agree to be contacted by Anderson Cleaning Company regarding this quote request. We
                   respond within 24 hours during office hours (Monday – Friday, 9 AM – 5 PM EST).{' '}
                   <span className="text-red-500">*</span>
                 </label>

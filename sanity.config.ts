@@ -8,7 +8,7 @@ const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET || 'production'
 
 export default defineConfig({
   name: 'anderson-cleaning',
-  title: 'Anderson Cleaning CMS',
+  title: 'Anderson Cleaning Company CMS',
 
   projectId,
   dataset,

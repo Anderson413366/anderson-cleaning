@@ -1,6 +1,6 @@
 # Component Templates
 
-This folder contains template files to help you create new components that follow the Anderson Cleaning design system and architecture guidelines.
+This folder contains template files to help you create new components that follow the Anderson Cleaning Company design system and architecture guidelines.
 
 ## 📋 Available Templates
 

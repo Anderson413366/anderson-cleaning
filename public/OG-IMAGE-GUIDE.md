@@ -1,4 +1,4 @@
-# Anderson Cleaning - Open Graph Image Generation Guide
+# Anderson Cleaning Company - Open Graph Image Generation Guide
 
 ## Official Brand Colors
 - **Deep Blue**: #002A86 (Pantone 2747C)
@@ -75,7 +75,7 @@
 ### 4. About Page
 **Filename**: `og-about-1200x630.png`, `og-about-1200x600.png`, `og-about-1920x1080.png`
 
-**Headline**: "18 Years of Commercial Cleaning Excellence"
+**Headline**: "Commercial Cleaning Excellence Since 2007"
 
 **Subheadline**: "Licensed, Insured & OSHA Compliant Since 2007"
 
@@ -145,7 +145,7 @@ export const metadata: Metadata = {
         url: '/og-images/og-home-1200x630.png',
         width: 1200,
         height: 630,
-        alt: 'Anderson Cleaning - Commercial Cleaning Excellence',
+        alt: 'Anderson Cleaning Company - Commercial Cleaning Excellence',
       },
     ],
   },
