@@ -18,6 +18,8 @@ import {
   generateWebsiteSchema,
 } from '@/lib/seo/jsonld'
 import StructuredData from '@/components/StructuredData'
+import FloatingContact from '@/components/FloatingContact'
+import { COMPANY_INFO } from '@/lib/constants'
 
 // Load Inter font with Next.js font optimization
 const inter = Inter({
@@ -233,10 +235,11 @@ export default async function RootLayout({ children }: { children: React.ReactNo
             <DarkModeLogger />
             <SkipLink />
             <Header />
-            <main className="min-h-screen" id="main-content" tabIndex={-1}>
+            <main className="min-h-screen pb-24 lg:pb-0" id="main-content" tabIndex={-1}>
               {children}
             </main>
             <Footer />
+            <FloatingContact />
             <CookieBanner />
           </ThemeProvider>
         </AccessibilityProvider>

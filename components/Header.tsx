@@ -1,10 +1,11 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useMemo, useCallback } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { Menu, X, Phone, Mail, Moon, Sun } from 'lucide-react'
 import { useTheme } from '@/lib/ThemeProvider'
+import { CONTACT_INFO } from '@/lib/constants'
 
 // Simplified navigation - FAQ, Blog, Testimonials, Careers moved to Footer Quick Links
 const navigation = [
@@ -15,9 +16,18 @@ const navigation = [
   { name: 'Contact', href: '/contact' },
 ]
 
+const PHONE_VARIANTS = [
+  { id: 'A', label: CONTACT_INFO.phone.formatted, support: null },
+  { id: 'B', label: CONTACT_INFO.phone.formatted, support: '24/7 Emergency Service' },
+  { id: 'C', label: CONTACT_INFO.phone.formatted, support: 'Free Quote: Call Now' },
+] as const
+
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const [phoneVariant] = useState(
+    () => PHONE_VARIANTS[Math.floor(Math.random() * PHONE_VARIANTS.length)]
+  )
   const pathname = usePathname()
   const { theme, toggleTheme } = useTheme()
 
@@ -44,6 +54,27 @@ export default function Header() {
 
   // Determine if we're on the home page
   const isHomePage = pathname === '/'
+
+  const trackPhoneClick = useCallback(
+    (location: string) => {
+      if (typeof window === 'undefined') return
+      const dataLayer = (window as any).dataLayer || ((window as any).dataLayer = [])
+      dataLayer.push({
+        event: 'phone_click',
+        location,
+        variant: phoneVariant.id,
+      })
+    },
+    [phoneVariant.id]
+  )
+
+  const phoneLink = useMemo(
+    () => ({
+      href: CONTACT_INFO.phone.href,
+      formatted: CONTACT_INFO.phone.formatted,
+    }),
+    []
+  )
 
   return (
     <header
@@ -102,8 +133,29 @@ export default function Header() {
           ))}
         </div>
 
-        {/* Dark Mode Toggle & CTA Button */}
-        <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:items-center lg:gap-5">
+        {/* Desktop Contact Actions */}
+        <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:gap-6">
+          <a
+            href={phoneLink.href}
+            className="group relative inline-flex items-center gap-3 rounded-full border border-transparent px-3 py-1.5 text-left transition hover:border-brand-bright-blue"
+            onClick={() => trackPhoneClick('header-desktop')}
+            aria-label={`Call Anderson Cleaning Company at ${phoneLink.formatted}`}
+          >
+            <span className="pointer-events-none absolute -top-9 right-0 rounded-md bg-neutral-charcoal px-2 py-1 text-xs text-white opacity-0 shadow-md transition group-hover:opacity-100">
+              Call Now
+            </span>
+            <div className="rounded-full bg-brand-bright-blue p-2 text-white transition group-hover:bg-[#006bc4]">
+              <Phone className="h-4 w-4" />
+            </div>
+            <div className="flex flex-col leading-tight">
+              {phoneVariant.support && (
+                <span className="text-xs text-neutral-charcoal/70">{phoneVariant.support}</span>
+              )}
+              <span className="text-lg font-semibold text-brand-bright-blue group-hover:text-[#006bc4]">
+                {phoneLink.formatted}
+              </span>
+            </div>
+          </a>
           <button
             onClick={toggleTheme}
             className="rounded-full p-2.5 text-neutral-charcoal dark:text-white hover:bg-neutral-light-grey dark:hover:bg-white/10 transition-all duration-150"
@@ -200,11 +252,12 @@ export default function Header() {
                       )}
                     </button>
                     <a
-                      href="tel:4133065053"
+                      href={phoneLink.href}
+                      onClick={() => trackPhoneClick('header-mobile-menu')}
                       className="flex items-center gap-2 text-sm text-neutral-charcoal dark:text-white hover:text-brand-bright-blue dark:hover:text-brand-bright-blue/90"
                     >
                       <Phone className="h-4 w-4" />
-                      (413) 306-5053
+                      {phoneLink.formatted}
                     </a>
                     <a
                       href="mailto:info@andersoncleaning.com"
@@ -220,6 +273,30 @@ export default function Header() {
           </div>
         </div>
       )}
+
+      {/* Mobile Sticky Contact Bar */}
+      <div
+        className={`fixed bottom-0 left-0 right-0 z-[120] border-t border-neutral-light-grey bg-white shadow-lg transition-transform duration-200 dark:border-white/10 dark:bg-brand-deep-blue lg:hidden ${
+          mobileMenuOpen ? 'translate-y-full' : 'translate-y-0'
+        }`}
+      >
+        <div className="grid grid-cols-2 divide-x divide-neutral-light-grey/70 dark:divide-white/10">
+          <a
+            href={phoneLink.href}
+            onClick={() => trackPhoneClick('mobile-bottom-bar')}
+            className="flex items-center justify-center gap-2 py-4 text-sm font-semibold text-brand-bright-blue transition active:bg-neutral-light-grey/40 dark:text-white dark:active:bg-white/10"
+          >
+            <Phone className="h-5 w-5" />
+            Call Now
+          </a>
+          <Link
+            href="/quote"
+            className="flex items-center justify-center gap-2 py-4 text-sm font-semibold text-brand-bright-blue transition active:bg-neutral-light-grey/40 dark:text-white dark:active:bg-white/10"
+          >
+            Get Quote
+          </Link>
+        </div>
+      </div>
     </header>
   )
 }
