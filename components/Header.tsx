@@ -298,13 +298,12 @@ export default function Header() {
                   <Link
                     key={industry.href}
                     href={industry.href}
-                    className="group flex items-center gap-3 px-4 py-3 transition-colors hover:bg-blue-50 dark:hover:bg-slate-700"
+                    className="group block px-4 py-3 transition-colors hover:bg-blue-50 dark:hover:bg-slate-700"
                     onClick={closeDropdown}
                   >
-                    <span className="text-2xl">{industry.icon === 'Heart' ? '🏥' : industry.icon === 'Building2' ? '🏢' : industry.icon === 'School' ? '🎓' : industry.icon === 'ShoppingBag' ? '🛍️' : '🏭'}</span>
-                    <span className="font-medium text-gray-900 group-hover:text-brand-bright-blue dark:text-white dark:group-hover:text-brand-bright-blue">
+                    <div className="font-medium text-gray-900 group-hover:text-brand-bright-blue dark:text-white dark:group-hover:text-brand-bright-blue">
                       {industry.title}
-                    </span>
+                    </div>
                   </Link>
                 ))}
                 <div className="border-t border-gray-100 px-4 pt-3 pb-4 dark:border-white/10">
@@ -475,18 +474,28 @@ export default function Header() {
         <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:gap-x-6">
           <a
             href={phoneLink.href}
-            className="inline-flex items-center gap-2 text-sm font-medium text-neutral-charcoal dark:text-white hover:text-brand-bright-blue dark:hover:text-brand-bright-blue transition-colors"
+            className="inline-flex items-center justify-center h-10 w-10 rounded-full bg-brand-bright-blue/10 text-brand-bright-blue hover:bg-brand-bright-blue hover:text-white dark:bg-white/10 dark:text-white dark:hover:bg-brand-bright-blue transition-all duration-150"
             onClick={() => trackPhoneClick('header-desktop')}
             aria-label={`Call Anderson Cleaning Company at ${phoneLink.formatted}`}
           >
-            <Phone className="h-4 w-4" />
-            {phoneLink.formatted}
+            <Phone className="h-5 w-5" />
           </a>
+          <button
+            onClick={toggleTheme}
+            className="inline-flex items-center justify-center h-10 w-10 rounded-full bg-neutral-light-grey/50 text-neutral-charcoal hover:bg-neutral-light-grey dark:bg-white/10 dark:text-white dark:hover:bg-white/20 transition-all duration-150"
+            aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
+          >
+            {theme === 'dark' ? (
+              <Sun className="h-5 w-5" />
+            ) : (
+              <Moon className="h-5 w-5" />
+            )}
+          </button>
           <Link
             href="/quote"
             className="rounded-full bg-brand-bright-blue px-6 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-[#006bc4] transition-all duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-bright-blue focus-visible:ring-offset-2"
           >
-            Request a Quote
+            Quote
           </Link>
         </div>
       </nav>
@@ -587,7 +596,7 @@ export default function Header() {
                       />
                     </button>
                     {activeDropdown === 'mobile-industries' && (
-                      <div className="space-y-2 pl-4 pb-2">
+                      <div className="space-y-1 pl-4 pb-2">
                         {INDUSTRIES_MENU.map((industry) => (
                           <Link
                             key={industry.href}
