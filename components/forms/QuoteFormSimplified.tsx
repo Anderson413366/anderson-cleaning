@@ -421,7 +421,7 @@ export default function QuoteFormSimplified({ onSuccess }: QuoteFormSimplifiedPr
                   placeholder="5000"
                   min="1000"
                 />
-                <p className="mt-1 text-xs text-gray-500 dark:text-gray-400">Minimum: 1,000 sq ft</p>
+                <p className="mt-1 text-xs text-neutral-charcoal/60 dark:text-gray-400">Minimum: 1,000 sq ft</p>
                 {errors.squareFootage && (
                   <p className="mt-1 text-sm text-red-600 dark:text-red-400">
                     {errors.squareFootage.message}
@@ -481,10 +481,10 @@ export default function QuoteFormSimplified({ onSuccess }: QuoteFormSimplifiedPr
               <p className="mb-2 text-3xl font-bold text-green-700 dark:text-green-400">
                 ${estimate.low.toLocaleString()} - ${estimate.high.toLocaleString()}
               </p>
-              <p className="mb-4 text-sm text-gray-600 dark:text-gray-400">
+              <p className="mb-4 text-sm text-neutral-charcoal/70 dark:text-white/70">
                 *Final pricing based on on-site assessment
               </p>
-              <ul className="space-y-1 text-sm text-gray-700 dark:text-gray-300">
+              <ul className="space-y-1 text-sm text-neutral-charcoal/80 dark:text-white/80">
                 <li className="flex items-center gap-2">
                   <CheckCircle2 className="h-4 w-4 text-green-600 dark:text-green-400" />
                   All cleaning supplies included
@@ -514,7 +514,7 @@ export default function QuoteFormSimplified({ onSuccess }: QuoteFormSimplifiedPr
               className="w-full rounded-lg border-2 border-gray-300 px-4 py-2 focus:border-brand-bright-blue focus:ring-2 focus:ring-brand-bright-blue/20 dark:border-gray-600 dark:bg-slate-900 dark:text-white"
               placeholder="Tell us about any special requirements, current challenges, or questions..."
             />
-            <p className="mt-1 text-xs text-gray-500 dark:text-gray-400">
+            <p className="mt-1 text-xs text-neutral-charcoal/60 dark:text-gray-400">
               {watch('specialRequests')?.length || 0}/500 characters
             </p>
           </div>
@@ -568,7 +568,7 @@ export default function QuoteFormSimplified({ onSuccess }: QuoteFormSimplifiedPr
               )}
             </Button>
 
-            <div className="text-center text-sm text-gray-600 dark:text-gray-400">
+            <div className="text-center text-sm text-neutral-charcoal/70 dark:text-white/70">
               <p>✓ No contracts required · ✓ Response within 24 hours · ✓ No spam</p>
             </div>
             <FormLegalNotice className="text-center" />
@@ -587,7 +587,7 @@ export default function QuoteFormSimplified({ onSuccess }: QuoteFormSimplifiedPr
             {CONTACT_INFO.phone.formatted}
           </a>
         </p>
-        <p className="text-sm text-gray-500 dark:text-gray-400">{CONTACT_INFO.hours.office}</p>
+        <p className="text-sm text-neutral-charcoal/60 dark:text-gray-400">{CONTACT_INFO.hours.office}</p>
       </div>
     </div>
   )

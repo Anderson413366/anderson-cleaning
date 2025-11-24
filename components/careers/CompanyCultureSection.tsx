@@ -68,7 +68,7 @@ const CompanyCultureSection: React.FC = () => {
           <div className="flex flex-wrap justify-center gap-4">
             <Link
               href="/about"
-              className="inline-flex items-center text-primary-700 dark:text-blue-400 hover:text-primary-800 dark:hover:text-blue-300 font-medium transition-colors group"
+              className="inline-flex items-center text-primary-700 dark:text-brand-bright-blue hover:text-primary-800 dark:hover:text-blue-300 font-medium transition-colors group"
             >
               About Us
               <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -76,7 +76,7 @@ const CompanyCultureSection: React.FC = () => {
             <span className="text-neutral-charcoal/40 dark:text-neutral-charcoal/80">|</span>
             <Link
               href="/services"
-              className="inline-flex items-center text-primary-700 dark:text-blue-400 hover:text-primary-800 dark:hover:text-blue-300 font-medium transition-colors group"
+              className="inline-flex items-center text-primary-700 dark:text-brand-bright-blue hover:text-primary-800 dark:hover:text-blue-300 font-medium transition-colors group"
             >
               Our Services
               <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -84,7 +84,7 @@ const CompanyCultureSection: React.FC = () => {
             <span className="text-neutral-charcoal/40 dark:text-neutral-charcoal/80">|</span>
             <Link
               href="/contact"
-              className="inline-flex items-center text-primary-700 dark:text-blue-400 hover:text-primary-800 dark:hover:text-blue-300 font-medium transition-colors group"
+              className="inline-flex items-center text-primary-700 dark:text-brand-bright-blue hover:text-primary-800 dark:hover:text-blue-300 font-medium transition-colors group"
             >
               Contact Us
               <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />

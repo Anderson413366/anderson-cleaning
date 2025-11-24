@@ -47,7 +47,7 @@ export default function QuotePage() {
                       information and will contact you within 24 hours (Monday – Friday, 9 AM – 5 PM
                       EST).
                     </p>
-                    <div className="bg-blue-50 dark:bg-blue-900/30 border border-blue-200 dark:border-blue-800 rounded-lg p-4">
+                    <div className="bg-brand-bright-blue/5 dark:bg-brand-bright-blue/30 border border-blue-200 dark:border-blue-800 rounded-lg p-4">
                     <h3 className="font-semibold text-brand-deep-blue dark:text-white mb-2">
                       What happens next?
                     </h3>
@@ -114,8 +114,8 @@ export default function QuotePage() {
                 </p>
               </div>
               <div className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-md text-center">
-                <div className="inline-flex items-center justify-center w-14 h-14 bg-blue-100 dark:bg-blue-900/30 rounded-full mb-4">
-                  <span className="text-h3 font-bold text-blue-600 dark:text-blue-400">24h</span>
+                <div className="inline-flex items-center justify-center w-14 h-14 bg-brand-bright-blue/10 dark:bg-brand-bright-blue/30/30 rounded-full mb-4">
+                  <span className="text-h3 font-bold text-brand-bright-blue dark:text-brand-bright-blue">24h</span>
                 </div>
                 <h3 className="text-body font-bold text-neutral-charcoal dark:text-white mb-2">
                   Fast Turnaround

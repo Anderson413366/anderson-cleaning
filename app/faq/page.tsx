@@ -304,7 +304,7 @@ export default function FAQPage() {
                 </Button>
               </a>
             </div>
-            <p className="text-sm text-blue-200 mt-6">
+            <p className="text-sm text-brand-bright-blue/70 mt-6">
               Monday – Friday: 9 AM – 5 PM EST | 24/7 emergency support for current clients
             </p>
           </div>

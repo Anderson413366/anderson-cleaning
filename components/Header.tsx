@@ -229,7 +229,7 @@ export default function Header() {
             {activeDropdown === 'services' && (
               <div className="absolute left-0 top-full mt-2 w-96 rounded-lg border border-gray-200 bg-white shadow-xl dark:border-white/10 dark:bg-slate-800">
                 <div className="border-b border-gray-100 px-4 pb-2 pt-4 dark:border-white/10">
-                  <h3 className="text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400">
+                  <h3 className="text-xs font-semibold uppercase tracking-wider text-neutral-charcoal/60 dark:text-gray-400">
                     Our Services
                   </h3>
                 </div>
@@ -244,7 +244,7 @@ export default function Header() {
                       <div className="font-medium text-gray-900 group-hover:text-brand-bright-blue dark:text-white dark:group-hover:text-brand-bright-blue">
                         {service.title}
                       </div>
-                      <div className="mt-1 text-sm text-gray-600 dark:text-gray-400">
+                      <div className="mt-1 text-sm text-neutral-charcoal/70 dark:text-white/70">
                         {service.description}
                       </div>
                     </Link>
@@ -290,7 +290,7 @@ export default function Header() {
             {activeDropdown === 'industries' && (
               <div className="absolute left-0 top-full mt-2 w-72 rounded-lg border border-gray-200 bg-white shadow-xl dark:border-white/10 dark:bg-slate-800">
                 <div className="border-b border-gray-100 px-4 pb-2 pt-4 dark:border-white/10">
-                  <h3 className="text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400">
+                  <h3 className="text-xs font-semibold uppercase tracking-wider text-neutral-charcoal/60 dark:text-gray-400">
                     Industries We Serve
                   </h3>
                 </div>
@@ -346,20 +346,20 @@ export default function Header() {
             {activeDropdown === 'locations' && (
               <div className="absolute left-0 top-full mt-2 w-80 rounded-lg border border-gray-200 bg-white shadow-xl dark:border-white/10 dark:bg-slate-800">
                 <div className="border-b border-gray-100 px-4 pb-2 pt-4 dark:border-white/10">
-                  <h3 className="text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400">
+                  <h3 className="text-xs font-semibold uppercase tracking-wider text-neutral-charcoal/60 dark:text-gray-400">
                     Service Areas
                   </h3>
                 </div>
                 <div className="grid grid-cols-2 gap-4 p-4">
                   {/* Massachusetts */}
                   <div>
-                    <h4 className="mb-2 font-semibold text-gray-700 dark:text-gray-300">Massachusetts</h4>
+                    <h4 className="mb-2 font-semibold text-neutral-charcoal/80 dark:text-white/80">Massachusetts</h4>
                     <ul className="space-y-1">
                       {LOCATIONS_MENU.massachusetts.map((location) => (
                         <li key={location.slug}>
                           <Link
                             href={`/locations/${location.slug}`}
-                            className="text-sm text-gray-600 hover:text-brand-bright-blue dark:text-gray-400 dark:hover:text-brand-bright-blue"
+                            className="text-sm text-neutral-charcoal/70 hover:text-brand-bright-blue dark:text-gray-400 dark:hover:text-brand-bright-blue"
                             onClick={closeDropdown}
                           >
                             {location.name}
@@ -370,13 +370,13 @@ export default function Header() {
                   </div>
                   {/* Connecticut */}
                   <div>
-                    <h4 className="mb-2 font-semibold text-gray-700 dark:text-gray-300">Connecticut</h4>
+                    <h4 className="mb-2 font-semibold text-neutral-charcoal/80 dark:text-white/80">Connecticut</h4>
                     <ul className="space-y-1">
                       {LOCATIONS_MENU.connecticut.map((location) => (
                         <li key={location.slug}>
                           <Link
                             href={`/locations/${location.slug}`}
-                            className="text-sm text-gray-600 hover:text-brand-bright-blue dark:text-gray-400 dark:hover:text-brand-bright-blue"
+                            className="text-sm text-neutral-charcoal/70 hover:text-brand-bright-blue dark:text-gray-400 dark:hover:text-brand-bright-blue"
                             onClick={closeDropdown}
                           >
                             {location.name}
@@ -426,7 +426,7 @@ export default function Header() {
             {activeDropdown === 'resources' && (
               <div className="absolute left-0 top-full mt-2 w-80 rounded-lg border border-gray-200 bg-white shadow-xl dark:border-white/10 dark:bg-slate-800">
                 <div className="border-b border-gray-100 px-4 pb-2 pt-4 dark:border-white/10">
-                  <h3 className="text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400">
+                  <h3 className="text-xs font-semibold uppercase tracking-wider text-neutral-charcoal/60 dark:text-gray-400">
                     Resources & Learning
                   </h3>
                 </div>
@@ -441,7 +441,7 @@ export default function Header() {
                       <div className="font-medium text-gray-900 group-hover:text-brand-bright-blue dark:text-white dark:group-hover:text-brand-bright-blue">
                         {item.name}
                       </div>
-                      <div className="mt-1 text-sm text-gray-600 dark:text-gray-400">
+                      <div className="mt-1 text-sm text-neutral-charcoal/70 dark:text-white/70">
                         {item.description}
                       </div>
                     </Link>
@@ -560,7 +560,7 @@ export default function Header() {
                           <Link
                             key={service.href}
                             href={service.href}
-                            className="block py-2 text-sm text-gray-600 hover:text-brand-bright-blue dark:text-gray-300 dark:hover:text-brand-bright-blue"
+                            className="block py-2 text-sm text-neutral-charcoal/70 hover:text-brand-bright-blue dark:text-gray-300 dark:hover:text-brand-bright-blue"
                             onClick={() => setMobileMenuOpen(false)}
                           >
                             {service.title}
@@ -601,7 +601,7 @@ export default function Header() {
                           <Link
                             key={industry.href}
                             href={industry.href}
-                            className="block py-2 text-sm text-gray-600 hover:text-brand-bright-blue dark:text-gray-300 dark:hover:text-brand-bright-blue"
+                            className="block py-2 text-sm text-neutral-charcoal/70 hover:text-brand-bright-blue dark:text-gray-300 dark:hover:text-brand-bright-blue"
                             onClick={() => setMobileMenuOpen(false)}
                           >
                             {industry.title}
@@ -638,27 +638,27 @@ export default function Header() {
                     </button>
                     {activeDropdown === 'mobile-locations' && (
                       <div className="space-y-2 pl-4 pb-2">
-                        <div className="text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400 py-1">
+                        <div className="text-xs font-semibold uppercase tracking-wider text-neutral-charcoal/60 dark:text-gray-400 py-1">
                           Massachusetts
                         </div>
                         {LOCATIONS_MENU.massachusetts.map((location) => (
                           <Link
                             key={location.slug}
                             href={`/locations/${location.slug}`}
-                            className="block py-1 text-sm text-gray-600 hover:text-brand-bright-blue dark:text-gray-300 dark:hover:text-brand-bright-blue"
+                            className="block py-1 text-sm text-neutral-charcoal/70 hover:text-brand-bright-blue dark:text-gray-300 dark:hover:text-brand-bright-blue"
                             onClick={() => setMobileMenuOpen(false)}
                           >
                             {location.name}
                           </Link>
                         ))}
-                        <div className="text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400 py-1 pt-3">
+                        <div className="text-xs font-semibold uppercase tracking-wider text-neutral-charcoal/60 dark:text-gray-400 py-1 pt-3">
                           Connecticut
                         </div>
                         {LOCATIONS_MENU.connecticut.map((location) => (
                           <Link
                             key={location.slug}
                             href={`/locations/${location.slug}`}
-                            className="block py-1 text-sm text-gray-600 hover:text-brand-bright-blue dark:text-gray-300 dark:hover:text-brand-bright-blue"
+                            className="block py-1 text-sm text-neutral-charcoal/70 hover:text-brand-bright-blue dark:text-gray-300 dark:hover:text-brand-bright-blue"
                             onClick={() => setMobileMenuOpen(false)}
                           >
                             {location.name}
@@ -699,7 +699,7 @@ export default function Header() {
                           <Link
                             key={item.href}
                             href={item.href}
-                            className="block py-2 text-sm text-gray-600 hover:text-brand-bright-blue dark:text-gray-300 dark:hover:text-brand-bright-blue"
+                            className="block py-2 text-sm text-neutral-charcoal/70 hover:text-brand-bright-blue dark:text-gray-300 dark:hover:text-brand-bright-blue"
                             onClick={() => setMobileMenuOpen(false)}
                           >
                             {item.name}

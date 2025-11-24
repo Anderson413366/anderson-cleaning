@@ -257,13 +257,13 @@ export default function LocationsHub() {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             <div className="bg-white dark:bg-slate-800 rounded-lg shadow-lg p-8">
-              <h3 className="text-2xl font-semibold mb-4 text-blue-600 dark:text-blue-400">
+              <h3 className="text-2xl font-semibold mb-4 text-brand-bright-blue dark:text-brand-bright-blue">
                 Primary Coverage Area
               </h3>
-              <p className="text-gray-600 dark:text-gray-400 mb-4">
+              <p className="text-neutral-charcoal/70 dark:text-white/70 mb-4">
                 We provide comprehensive commercial cleaning services throughout:
               </p>
-              <ul className="space-y-2 text-gray-700 dark:text-gray-300">
+              <ul className="space-y-2 text-neutral-charcoal/80 dark:text-white/80">
                 <li className="flex items-start gap-2">
                   <svg
                     className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0"
@@ -352,42 +352,42 @@ export default function LocationsHub() {
             </div>
 
             <div className="bg-white dark:bg-slate-800 rounded-lg shadow-lg p-8">
-              <h3 className="text-2xl font-semibold mb-4 text-blue-600 dark:text-blue-400">
+              <h3 className="text-2xl font-semibold mb-4 text-brand-bright-blue dark:text-brand-bright-blue">
                 Extended Service Area
               </h3>
-              <p className="text-gray-600 dark:text-gray-400 mb-4">
+              <p className="text-neutral-charcoal/70 dark:text-white/70 mb-4">
                 We serve all businesses within 100 miles of our West Springfield headquarters,
                 including:
               </p>
-              <ul className="space-y-2 text-gray-700 dark:text-gray-300">
+              <ul className="space-y-2 text-neutral-charcoal/80 dark:text-white/80">
                 <li className="flex items-start gap-2">
-                  <span className="text-blue-600 dark:text-blue-400 font-bold">•</span>
+                  <span className="text-brand-bright-blue dark:text-brand-bright-blue font-bold">•</span>
                   <span>Greater Springfield Area</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-blue-600 dark:text-blue-400 font-bold">•</span>
+                  <span className="text-brand-bright-blue dark:text-brand-bright-blue font-bold">•</span>
                   <span>Pioneer Valley Region</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-blue-600 dark:text-blue-400 font-bold">•</span>
+                  <span className="text-brand-bright-blue dark:text-brand-bright-blue font-bold">•</span>
                   <span>Greater Hartford Area</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-blue-600 dark:text-blue-400 font-bold">•</span>
+                  <span className="text-brand-bright-blue dark:text-brand-bright-blue font-bold">•</span>
                   <span>Central Massachusetts</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-blue-600 dark:text-blue-400 font-bold">•</span>
+                  <span className="text-brand-bright-blue dark:text-brand-bright-blue font-bold">•</span>
                   <span>North Central Connecticut</span>
                 </li>
               </ul>
-              <div className="mt-6 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
-                <p className="text-sm text-gray-700 dark:text-gray-300">
-                  <strong className="text-blue-600 dark:text-blue-400">
+              <div className="mt-6 p-4 bg-brand-bright-blue/5 dark:bg-brand-bright-blue/30 rounded-lg">
+                <p className="text-sm text-neutral-charcoal/80 dark:text-white/80">
+                  <strong className="text-brand-bright-blue dark:text-brand-bright-blue">
                     Don&apos;t see your city?
                   </strong>{' '}
                   Contact us at{' '}
-                  <a href="tel:4133065053" className="text-blue-600 dark:text-blue-400 underline">
+                  <a href="tel:4133065053" className="text-brand-bright-blue dark:text-brand-bright-blue underline">
                     (413) 306-5053
                   </a>{' '}
                   to discuss service availability in your area.
@@ -404,7 +404,7 @@ export default function LocationsHub() {
           <h2 className="text-3xl font-bold mb-4 text-center">
             Why Businesses Throughout the Region Choose Anderson Cleaning
           </h2>
-          <p className="text-lg text-gray-600 dark:text-gray-400 mb-12 text-center max-w-3xl mx-auto">
+          <p className="text-lg text-neutral-charcoal/70 dark:text-white/70 mb-12 text-center max-w-3xl mx-auto">
             Whether you&apos;re in Springfield, MA or Hartford, CT, you&apos;ll receive the same
             professional, reliable service that has made us the region&apos;s trusted commercial
             cleaning partner.
@@ -412,9 +412,9 @@ export default function LocationsHub() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="bg-white dark:bg-slate-800 rounded-lg p-6 text-center">
-              <div className="bg-blue-100 dark:bg-blue-900 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="bg-brand-bright-blue/10 dark:bg-brand-bright-blue/30 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                 <svg
-                  className="w-8 h-8 text-blue-600 dark:text-blue-400"
+                  className="w-8 h-8 text-brand-bright-blue dark:text-brand-bright-blue"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -428,15 +428,15 @@ export default function LocationsHub() {
                 </svg>
               </div>
               <h3 className="font-semibold mb-2">Fast Response Times</h3>
-              <p className="text-sm text-gray-600 dark:text-gray-400">
+              <p className="text-sm text-neutral-charcoal/70 dark:text-white/70">
                 Same-day service in West Springfield, 1-6 hour response throughout service area
               </p>
             </div>
 
             <div className="bg-white dark:bg-slate-800 rounded-lg p-6 text-center">
-              <div className="bg-blue-100 dark:bg-blue-900 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="bg-brand-bright-blue/10 dark:bg-brand-bright-blue/30 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                 <svg
-                  className="w-8 h-8 text-blue-600 dark:text-blue-400"
+                  className="w-8 h-8 text-brand-bright-blue dark:text-brand-bright-blue"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -450,16 +450,16 @@ export default function LocationsHub() {
                 </svg>
               </div>
               <h3 className="font-semibold mb-2">Fully Licensed & Insured</h3>
-              <p className="text-sm text-gray-600 dark:text-gray-400">
+              <p className="text-sm text-neutral-charcoal/70 dark:text-white/70">
                 MA & CT licensed with comprehensive liability and workers&apos; compensation
                 insurance
               </p>
             </div>
 
             <div className="bg-white dark:bg-slate-800 rounded-lg p-6 text-center">
-              <div className="bg-blue-100 dark:bg-blue-900 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="bg-brand-bright-blue/10 dark:bg-brand-bright-blue/30 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                 <svg
-                  className="w-8 h-8 text-blue-600 dark:text-blue-400"
+                  className="w-8 h-8 text-brand-bright-blue dark:text-brand-bright-blue"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -473,15 +473,15 @@ export default function LocationsHub() {
                 </svg>
               </div>
               <h3 className="font-semibold mb-2">Experienced Team</h3>
-              <p className="text-sm text-gray-600 dark:text-gray-400">
+              <p className="text-sm text-neutral-charcoal/70 dark:text-white/70">
                 18+ years serving businesses throughout Western MA and Northern CT
               </p>
             </div>
 
             <div className="bg-white dark:bg-slate-800 rounded-lg p-6 text-center">
-              <div className="bg-blue-100 dark:bg-blue-900 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="bg-brand-bright-blue/10 dark:bg-brand-bright-blue/30 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                 <svg
-                  className="w-8 h-8 text-blue-600 dark:text-blue-400"
+                  className="w-8 h-8 text-brand-bright-blue dark:text-brand-bright-blue"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -495,7 +495,7 @@ export default function LocationsHub() {
                 </svg>
               </div>
               <h3 className="font-semibold mb-2">Quality Guarantee</h3>
-              <p className="text-sm text-gray-600 dark:text-gray-400">
+              <p className="text-sm text-neutral-charcoal/70 dark:text-white/70">
                 100% satisfaction guarantee with consistent quality across all locations
               </p>
             </div>
@@ -516,13 +516,13 @@ export default function LocationsHub() {
           <div className="flex flex-wrap gap-4 justify-center">
             <Link
               href="/quote"
-              className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
+              className="bg-white text-brand-bright-blue px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
             >
               Get Your Free Quote
             </Link>
             <a
               href="tel:4133065053"
-              className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors"
+              className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-brand-bright-blue transition-colors"
             >
               Call (413) 306-5053 Now
             </a>

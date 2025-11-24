@@ -56,7 +56,7 @@ export default function SupplyManagementPage() {
               Comprehensive supply management that eliminates stockouts, reduces costs, and frees up
               your time.
             </p>
-            <p className="text-body text-blue-200 mb-8">
+            <p className="text-body text-brand-bright-blue/70 mb-8">
               We track, forecast, and automatically replenish toilet paper, paper towels, soap,
               trash liners, and all facility consumables.
             </p>

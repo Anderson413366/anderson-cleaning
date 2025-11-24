@@ -330,7 +330,7 @@ const ReviewSection: React.FC = () => {
             className="mb-8 pb-4 border-b border-gray-200 dark:border-slate-700"
           >
             <div className="flex justify-between items-center mb-3">
-              <h3 className="text-body font-semibold text-primary dark:text-blue-400">
+              <h3 className="text-body font-semibold text-primary dark:text-brand-bright-blue">
                 {t(sectionConfig.titleKey) as string}
               </h3>
               <Button

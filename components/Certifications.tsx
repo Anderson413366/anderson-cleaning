@@ -103,7 +103,7 @@ export function CertificationBar() {
                       className="max-h-full max-w-full object-contain grayscale transition-all duration-300 group-hover:grayscale-0"
                     />
                   </div>
-                  <span className="text-center text-xs text-gray-600 transition-colors group-hover:text-brand-bright-blue dark:text-gray-400 dark:group-hover:text-brand-bright-blue">
+                  <span className="text-center text-xs text-neutral-charcoal/70 transition-colors group-hover:text-brand-bright-blue dark:text-gray-400 dark:group-hover:text-brand-bright-blue">
                     {cert.name}
                   </span>
                 </a>
@@ -116,7 +116,7 @@ export function CertificationBar() {
                       className="max-h-full max-w-full object-contain grayscale transition-all duration-300 group-hover:grayscale-0"
                     />
                   </div>
-                  <span className="text-center text-xs text-gray-600 dark:text-gray-400">
+                  <span className="text-center text-xs text-neutral-charcoal/70 dark:text-white/70">
                     {cert.name}
                   </span>
                 </div>
@@ -139,7 +139,7 @@ export function CertificationShowcase() {
           <h2 className="mb-4 text-3xl font-bold text-neutral-charcoal dark:text-white">
             Industry Certifications & Credentials
           </h2>
-          <p className="text-lg text-gray-600 dark:text-gray-400">
+          <p className="text-lg text-neutral-charcoal/70 dark:text-white/70">
             Anderson Cleaning meets and exceeds industry standards for commercial cleaning
             excellence
           </p>
@@ -187,7 +187,7 @@ export function CertificationShowcase() {
                 </h3>
                 <button
                   onClick={() => setSelectedCert(null)}
-                  className="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200"
+                  className="text-neutral-charcoal/60 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200"
                   aria-label="Close modal"
                 >
                   <X className="h-6 w-6" />
@@ -202,10 +202,10 @@ export function CertificationShowcase() {
                 />
               </div>
 
-              <p className="mb-6 text-gray-600 dark:text-gray-400">{selectedCert.description}</p>
+              <p className="mb-6 text-neutral-charcoal/70 dark:text-white/70">{selectedCert.description}</p>
 
               {selectedCert.validUntil && (
-                <p className="mb-4 text-sm text-gray-500 dark:text-gray-400">
+                <p className="mb-4 text-sm text-neutral-charcoal/60 dark:text-gray-400">
                   Valid until: {new Date(selectedCert.validUntil).toLocaleDateString()}
                 </p>
               )}

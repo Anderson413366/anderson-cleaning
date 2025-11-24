@@ -299,9 +299,9 @@ export default function CaseStudyTemplate({
           <div className="max-w-4xl mx-auto">
             {/* Section Header */}
             <div className="flex items-center gap-4 mb-6">
-              <div className="w-12 h-12 rounded-xl bg-blue-100 dark:bg-blue-900/20 flex items-center justify-center">
+              <div className="w-12 h-12 rounded-xl bg-brand-bright-blue/10 dark:bg-brand-bright-blue/30/20 flex items-center justify-center">
                 <Lightbulb
-                  className="h-6 w-6 text-blue-600 dark:text-blue-400"
+                  className="h-6 w-6 text-brand-bright-blue dark:text-brand-bright-blue"
                   aria-hidden="true"
                 />
               </div>
