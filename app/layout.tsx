@@ -67,10 +67,22 @@ export const metadata: Metadata = {
       'Professional B2B commercial cleaning and janitorial services for offices, medical facilities, schools, and more in Western Massachusetts and Northern Connecticut.',
     images: [
       {
-        url: '/images/og-image.jpg',
+        url: '/og-images/home-1200x630.png',
         width: 1200,
         height: 630,
-        alt: 'Anderson Cleaning Company - Professional Commercial Cleaning Services',
+        alt: 'Anderson Cleaning Company - Commercial Cleaning Services',
+      },
+      {
+        url: '/og-images/home-1200x1200.png',
+        width: 1200,
+        height: 1200,
+        alt: 'Anderson Cleaning Company - Commercial Cleaning Services',
+      },
+      {
+        url: '/og-images/home-1600x900.png',
+        width: 1600,
+        height: 900,
+        alt: 'Anderson Cleaning Company - Commercial Cleaning Services',
       },
     ],
   },
@@ -80,7 +92,7 @@ export const metadata: Metadata = {
     creator: '@andersoncleaning',
     title: 'Anderson Cleaning Company - Commercial Cleaning Services',
     description: 'Professional B2B commercial cleaning and janitorial services in Western MA & CT',
-    images: ['/images/og-image.jpg'],
+    images: ['/og-images/home-1200x630.png'],
   },
   robots: {
     index: true,
