@@ -188,7 +188,7 @@ export default function CareerApplicationForm() {
               <input
                 {...register('full_name')}
                 onFocus={generateRecoveryCode}
-                className="w-full border-2 border-neutral-light-grey rounded px-4 py-2 focus:border-brand-bright-blue outline-none bg-white dark:bg-slate-800 text-neutral-charcoal dark:text-white placeholder:text-gray-400 dark:placeholder:text-neutral-charcoal/60 dark:placeholder:text-gray-400"
+                className="w-full border-2 border-neutral-light-grey rounded px-4 py-2 focus:border-brand-bright-blue outline-none bg-white dark:bg-slate-800 text-neutral-charcoal dark:text-white placeholder:text-neutral-charcoal dark:placeholder:text-neutral-charcoal/60 dark:placeholder:text-neutral-charcoal"
               />
               {errors.full_name && <p className="text-sm text-red-600 mt-1">{errors.full_name.message}</p>}
             </div>
@@ -199,7 +199,7 @@ export default function CareerApplicationForm() {
               <input
                 {...register('email')}
                 type="email"
-                className="w-full border-2 border-neutral-light-grey rounded px-4 py-2 focus:border-brand-bright-blue outline-none bg-white dark:bg-slate-800 text-neutral-charcoal dark:text-white placeholder:text-gray-400 dark:placeholder:text-neutral-charcoal/60 dark:placeholder:text-gray-400"
+                className="w-full border-2 border-neutral-light-grey rounded px-4 py-2 focus:border-brand-bright-blue outline-none bg-white dark:bg-slate-800 text-neutral-charcoal dark:text-white placeholder:text-neutral-charcoal dark:placeholder:text-neutral-charcoal/60 dark:placeholder:text-neutral-charcoal"
               />
               {errors.email && <p className="text-sm text-red-600 mt-1">{errors.email.message}</p>}
             </div>
@@ -212,7 +212,7 @@ export default function CareerApplicationForm() {
                 type="tel"
                 placeholder="1234567890"
                 maxLength={10}
-                className="w-full border-2 border-neutral-light-grey rounded px-4 py-2 focus:border-brand-bright-blue outline-none bg-white dark:bg-slate-800 text-neutral-charcoal dark:text-white placeholder:text-gray-400 dark:placeholder:text-neutral-charcoal/60 dark:placeholder:text-gray-400"
+                className="w-full border-2 border-neutral-light-grey rounded px-4 py-2 focus:border-brand-bright-blue outline-none bg-white dark:bg-slate-800 text-neutral-charcoal dark:text-white placeholder:text-neutral-charcoal dark:placeholder:text-neutral-charcoal/60 dark:placeholder:text-neutral-charcoal"
               />
               {errors.phone && <p className="text-sm text-red-600 mt-1">{errors.phone.message}</p>}
             </div>
@@ -270,7 +270,7 @@ export default function CareerApplicationForm() {
                 {...register('why_anderson')}
                 rows={4}
                 placeholder="Tell us why you want to join our team..."
-                className="w-full border-2 border-neutral-light-grey rounded px-4 py-2 focus:border-brand-bright-blue outline-none bg-white dark:bg-slate-800 text-neutral-charcoal dark:text-white placeholder:text-gray-400 dark:placeholder:text-neutral-charcoal/60 dark:placeholder:text-gray-400"
+                className="w-full border-2 border-neutral-light-grey rounded px-4 py-2 focus:border-brand-bright-blue outline-none bg-white dark:bg-slate-800 text-neutral-charcoal dark:text-white placeholder:text-neutral-charcoal dark:placeholder:text-neutral-charcoal/60 dark:placeholder:text-neutral-charcoal"
               />
               {errors.why_anderson && (
                 <p className="text-sm text-red-600 mt-1">{errors.why_anderson.message}</p>
@@ -324,7 +324,7 @@ export default function CareerApplicationForm() {
                 {...register('cover_letter')}
                 rows={4}
                 placeholder="Additional information..."
-                className="w-full border-2 border-neutral-light-grey rounded px-4 py-2 focus:border-brand-bright-blue outline-none bg-white dark:bg-slate-800 text-neutral-charcoal dark:text-white placeholder:text-gray-400 dark:placeholder:text-neutral-charcoal/60 dark:placeholder:text-gray-400"
+                className="w-full border-2 border-neutral-light-grey rounded px-4 py-2 focus:border-brand-bright-blue outline-none bg-white dark:bg-slate-800 text-neutral-charcoal dark:text-white placeholder:text-neutral-charcoal dark:placeholder:text-neutral-charcoal/60 dark:placeholder:text-neutral-charcoal"
               />
             </div>
             <div className="flex gap-4">

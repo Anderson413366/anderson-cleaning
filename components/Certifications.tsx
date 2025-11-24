@@ -103,7 +103,7 @@ export function CertificationBar() {
                       className="max-h-full max-w-full object-contain grayscale transition-all duration-300 group-hover:grayscale-0"
                     />
                   </div>
-                  <span className="text-center text-xs text-neutral-charcoal/70 transition-colors group-hover:text-brand-bright-blue dark:text-gray-400 dark:group-hover:text-brand-bright-blue">
+                  <span className="text-center text-xs text-neutral-charcoal/70 transition-colors group-hover:text-brand-bright-blue dark:text-neutral-charcoal dark:group-hover:text-brand-bright-blue">
                     {cert.name}
                   </span>
                 </a>
@@ -161,7 +161,7 @@ export function CertificationShowcase() {
                   className="max-h-full max-w-full object-contain"
                 />
               </div>
-              <h3 className="font-semibold text-gray-900 dark:text-white">{cert.name}</h3>
+              <h3 className="font-semibold text-neutral-charcoal dark:text-white">{cert.name}</h3>
               {cert.status === 'pending' && (
                 <span className="mt-2 inline-block rounded bg-yellow-100 px-2 py-1 text-xs text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200">
                   Coming Soon
@@ -187,7 +187,7 @@ export function CertificationShowcase() {
                 </h3>
                 <button
                   onClick={() => setSelectedCert(null)}
-                  className="text-neutral-charcoal/60 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200"
+                  className="text-neutral-charcoal/60 hover:text-neutral-charcoal dark:text-neutral-charcoal dark:hover:text-neutral-charcoal"
                   aria-label="Close modal"
                 >
                   <X className="h-6 w-6" />
@@ -205,7 +205,7 @@ export function CertificationShowcase() {
               <p className="mb-6 text-neutral-charcoal/70 dark:text-white/70">{selectedCert.description}</p>
 
               {selectedCert.validUntil && (
-                <p className="mb-4 text-sm text-neutral-charcoal/60 dark:text-gray-400">
+                <p className="mb-4 text-sm text-neutral-charcoal/60 dark:text-neutral-charcoal">
                   Valid until: {new Date(selectedCert.validUntil).toLocaleDateString()}
                 </p>
               )}

@@ -99,7 +99,7 @@ export default function QuoteMiniForm({
         </label>
         <input
           {...register('name')}
-          className="w-full border-2 border-neutral-light-grey rounded px-4 py-2 focus:border-brand-bright-blue outline-none bg-white dark:bg-slate-800 text-neutral-charcoal dark:text-white placeholder:text-gray-400 dark:placeholder:text-neutral-charcoal/60 dark:placeholder:text-gray-400"
+          className="w-full border-2 border-neutral-light-grey rounded px-4 py-2 focus:border-brand-bright-blue outline-none bg-white dark:bg-slate-800 text-neutral-charcoal dark:text-white placeholder:text-neutral-charcoal dark:placeholder:text-neutral-charcoal/60 dark:placeholder:text-neutral-charcoal"
           placeholder="Your name"
         />
         {errors.name && <p className="text-sm text-red-600 mt-1">{errors.name.message}</p>}
@@ -111,7 +111,7 @@ export default function QuoteMiniForm({
         </label>
         <input
           {...register('company')}
-          className="w-full border-2 border-neutral-light-grey rounded px-4 py-2 focus:border-brand-bright-blue outline-none bg-white dark:bg-slate-800 text-neutral-charcoal dark:text-white placeholder:text-gray-400 dark:placeholder:text-neutral-charcoal/60 dark:placeholder:text-gray-400"
+          className="w-full border-2 border-neutral-light-grey rounded px-4 py-2 focus:border-brand-bright-blue outline-none bg-white dark:bg-slate-800 text-neutral-charcoal dark:text-white placeholder:text-neutral-charcoal dark:placeholder:text-neutral-charcoal/60 dark:placeholder:text-neutral-charcoal"
           placeholder="Optional"
         />
       </div>
@@ -124,7 +124,7 @@ export default function QuoteMiniForm({
           {...register('phone')}
           type="tel"
           maxLength={10}
-          className="w-full border-2 border-neutral-light-grey rounded px-4 py-2 focus:border-brand-bright-blue outline-none bg-white dark:bg-slate-800 text-neutral-charcoal dark:text-white placeholder:text-gray-400 dark:placeholder:text-neutral-charcoal/60 dark:placeholder:text-gray-400"
+          className="w-full border-2 border-neutral-light-grey rounded px-4 py-2 focus:border-brand-bright-blue outline-none bg-white dark:bg-slate-800 text-neutral-charcoal dark:text-white placeholder:text-neutral-charcoal dark:placeholder:text-neutral-charcoal/60 dark:placeholder:text-neutral-charcoal"
           placeholder="1234567890"
         />
         {errors.phone && <p className="text-sm text-red-600 mt-1">{errors.phone.message}</p>}
@@ -137,7 +137,7 @@ export default function QuoteMiniForm({
         <textarea
           {...register('message')}
           rows={3}
-          className="w-full border-2 border-neutral-light-grey rounded px-4 py-2 focus:border-brand-bright-blue outline-none bg-white dark:bg-slate-800 text-neutral-charcoal dark:text-white placeholder:text-gray-400 dark:placeholder:text-neutral-charcoal/60 dark:placeholder:text-gray-400"
+          className="w-full border-2 border-neutral-light-grey rounded px-4 py-2 focus:border-brand-bright-blue outline-none bg-white dark:bg-slate-800 text-neutral-charcoal dark:text-white placeholder:text-neutral-charcoal dark:placeholder:text-neutral-charcoal/60 dark:placeholder:text-neutral-charcoal"
           placeholder="Tell us about your cleaning needs..."
         />
         {errors.message && <p className="text-sm text-red-600 mt-1">{errors.message.message}</p>}

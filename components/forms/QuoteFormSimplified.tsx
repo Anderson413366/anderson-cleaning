@@ -421,7 +421,7 @@ export default function QuoteFormSimplified({ onSuccess }: QuoteFormSimplifiedPr
                   placeholder="5000"
                   min="1000"
                 />
-                <p className="mt-1 text-xs text-neutral-charcoal/60 dark:text-gray-400">Minimum: 1,000 sq ft</p>
+                <p className="mt-1 text-xs text-neutral-charcoal/60 dark:text-neutral-charcoal">Minimum: 1,000 sq ft</p>
                 {errors.squareFootage && (
                   <p className="mt-1 text-sm text-red-600 dark:text-red-400">
                     {errors.squareFootage.message}
@@ -514,7 +514,7 @@ export default function QuoteFormSimplified({ onSuccess }: QuoteFormSimplifiedPr
               className="w-full rounded-lg border-2 border-gray-300 px-4 py-2 focus:border-brand-bright-blue focus:ring-2 focus:ring-brand-bright-blue/20 dark:border-gray-600 dark:bg-slate-900 dark:text-white"
               placeholder="Tell us about any special requirements, current challenges, or questions..."
             />
-            <p className="mt-1 text-xs text-neutral-charcoal/60 dark:text-gray-400">
+            <p className="mt-1 text-xs text-neutral-charcoal/60 dark:text-neutral-charcoal">
               {watch('specialRequests')?.length || 0}/500 characters
             </p>
           </div>
@@ -587,7 +587,7 @@ export default function QuoteFormSimplified({ onSuccess }: QuoteFormSimplifiedPr
             {CONTACT_INFO.phone.formatted}
           </a>
         </p>
-        <p className="text-sm text-neutral-charcoal/60 dark:text-gray-400">{CONTACT_INFO.hours.office}</p>
+        <p className="text-sm text-neutral-charcoal/60 dark:text-neutral-charcoal">{CONTACT_INFO.hours.office}</p>
       </div>
     </div>
   )

@@ -210,30 +210,30 @@ export default function Footer() {
           <div className="mt-12 rounded-2xl bg-gray-900 text-white py-12">
             <div className="container mx-auto px-4">
               <div className="border-t border-gray-700 pt-8">
-                <div className="flex flex-col gap-4 text-sm text-gray-400 md:flex-row md:items-center md:justify-between">
+                <div className="flex flex-col gap-4 text-sm text-neutral-charcoal md:flex-row md:items-center md:justify-between">
                   <p>© {currentYear} Anderson Cleaning Company. All rights reserved.</p>
                   <nav className="flex flex-wrap gap-6">
                     <Link
                       href="/privacy-policy"
-                      className="text-gray-400 transition-colors hover:text-white"
+                      className="text-neutral-charcoal transition-colors hover:text-white"
                     >
                       Privacy Policy
                     </Link>
                     <Link
                       href="/terms-of-service"
-                      className="text-gray-400 transition-colors hover:text-white"
+                      className="text-neutral-charcoal transition-colors hover:text-white"
                     >
                       Terms of Service
                     </Link>
                     <Link
                       href="/accessibility"
-                      className="text-gray-400 transition-colors hover:text-white"
+                      className="text-neutral-charcoal transition-colors hover:text-white"
                     >
                       Accessibility
                     </Link>
                     <Link
                       href="/sitemap.xml"
-                      className="text-gray-400 transition-colors hover:text-white"
+                      className="text-neutral-charcoal transition-colors hover:text-white"
                     >
                       Sitemap
                     </Link>
