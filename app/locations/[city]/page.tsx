@@ -412,7 +412,7 @@ export default async function LocationPage({
           <div className="mb-8">
             <Link
               href="/quote"
-              className="inline-block bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors shadow-lg"
+              className="inline-block bg-brand-bright-blue text-white px-8 py-4 rounded-lg font-semibold hover:bg-[#006bc4] transition-colors shadow-lg"
             >
               Request a Quote
             </Link>
@@ -468,7 +468,7 @@ export default async function LocationPage({
           <h2 className="text-3xl font-bold mb-4">
             Commercial Cleaning Services We Provide in {cityData.city}
           </h2>
-          <p className="text-lg text-gray-600 dark:text-gray-400 mb-12">
+          <p className="text-lg text-neutral-charcoal/70 dark:text-white/70 mb-12">
             Anderson Cleaning offers comprehensive commercial cleaning solutions for {cityData.city}{' '}
             businesses, including major landmarks like {cityData.landmarks.join(', ')}.
           </p>
@@ -477,10 +477,10 @@ export default async function LocationPage({
             {/* Service Cards */}
             <div className="bg-white dark:bg-slate-800 rounded-lg shadow-lg p-6">
               <h3 className="text-xl font-semibold mb-3">Office Cleaning</h3>
-              <p className="text-gray-600 dark:text-gray-400 mb-4">
+              <p className="text-neutral-charcoal/70 dark:text-white/70 mb-4">
                 Daily janitorial services for {cityData.city} offices and corporate buildings.
               </p>
-              <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-400">
+              <ul className="space-y-2 text-sm text-neutral-charcoal/70 dark:text-white/70">
                 <li>✓ Nightly cleaning crews</li>
                 <li>✓ Day porter services</li>
                 <li>✓ Workstation sanitization</li>
@@ -490,10 +490,10 @@ export default async function LocationPage({
 
             <div className="bg-white dark:bg-slate-800 rounded-lg shadow-lg p-6">
               <h3 className="text-xl font-semibold mb-3">Healthcare Facilities</h3>
-              <p className="text-gray-600 dark:text-gray-400 mb-4">
+              <p className="text-neutral-charcoal/70 dark:text-white/70 mb-4">
                 OSHA-compliant cleaning for {cityData.city} medical and dental offices.
               </p>
-              <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-400">
+              <ul className="space-y-2 text-sm text-neutral-charcoal/70 dark:text-white/70">
                 <li>✓ EPA-registered disinfectants</li>
                 <li>✓ Bloodborne pathogen certified</li>
                 <li>✓ HIPAA-trained staff</li>
@@ -503,10 +503,10 @@ export default async function LocationPage({
 
             <div className="bg-white dark:bg-slate-800 rounded-lg shadow-lg p-6">
               <h3 className="text-xl font-semibold mb-3">Retail & Commercial</h3>
-              <p className="text-gray-600 dark:text-gray-400 mb-4">
+              <p className="text-neutral-charcoal/70 dark:text-white/70 mb-4">
                 Maintain pristine {cityData.city} storefronts and retail spaces.
               </p>
-              <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-400">
+              <ul className="space-y-2 text-sm text-neutral-charcoal/70 dark:text-white/70">
                 <li>✓ Floor care & maintenance</li>
                 <li>✓ Window cleaning</li>
                 <li>✓ Customer area focus</li>
@@ -516,10 +516,10 @@ export default async function LocationPage({
 
             <div className="bg-white dark:bg-slate-800 rounded-lg shadow-lg p-6">
               <h3 className="text-xl font-semibold mb-3">Medical Office Cleaning</h3>
-              <p className="text-gray-600 dark:text-gray-400 mb-4">
+              <p className="text-neutral-charcoal/70 dark:text-white/70 mb-4">
                 Specialized cleaning for {cityData.city} medical and dental practices.
               </p>
-              <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-400">
+              <ul className="space-y-2 text-sm text-neutral-charcoal/70 dark:text-white/70">
                 <li>✓ Exam room disinfection</li>
                 <li>✓ Waiting area sanitization</li>
                 <li>✓ Biohazard waste protocols</li>
@@ -529,10 +529,10 @@ export default async function LocationPage({
 
             <div className="bg-white dark:bg-slate-800 rounded-lg shadow-lg p-6">
               <h3 className="text-xl font-semibold mb-3">Industrial Cleaning</h3>
-              <p className="text-gray-600 dark:text-gray-400 mb-4">
+              <p className="text-neutral-charcoal/70 dark:text-white/70 mb-4">
                 Heavy-duty cleaning for {cityData.city} manufacturing and warehouse facilities.
               </p>
-              <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-400">
+              <ul className="space-y-2 text-sm text-neutral-charcoal/70 dark:text-white/70">
                 <li>✓ Equipment cleaning</li>
                 <li>✓ Floor maintenance</li>
                 <li>✓ High-dusting</li>
@@ -542,10 +542,10 @@ export default async function LocationPage({
 
             <div className="bg-white dark:bg-slate-800 rounded-lg shadow-lg p-6">
               <h3 className="text-xl font-semibold mb-3">Specialty Services</h3>
-              <p className="text-gray-600 dark:text-gray-400 mb-4">
+              <p className="text-neutral-charcoal/70 dark:text-white/70 mb-4">
                 Additional cleaning services for {cityData.city} businesses.
               </p>
-              <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-400">
+              <ul className="space-y-2 text-sm text-neutral-charcoal/70 dark:text-white/70">
                 <li>✓ Carpet cleaning</li>
                 <li>✓ Post-construction cleanup</li>
                 <li>✓ Emergency response</li>
@@ -566,15 +566,15 @@ export default async function LocationPage({
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {cityData.whyChooseUs.map((reason, index) => (
               <div key={index} className="flex items-start gap-4">
-                <div className="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0">
+                <div className="bg-brand-deep-blue text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0">
                   {index + 1}
                 </div>
-                <p className="text-gray-700 dark:text-gray-300">{reason}</p>
+                <p className="text-neutral-charcoal/80 dark:text-white/80">{reason}</p>
               </div>
             ))}
           </div>
 
-          <div className="mt-12 p-8 bg-blue-600 text-white rounded-lg">
+          <div className="mt-12 p-8 bg-brand-deep-blue text-white rounded-lg">
             <h3 className="text-2xl font-bold mb-4">
               Serving All {cityData.city} ZIP Codes
             </h3>
@@ -785,7 +785,7 @@ export default async function LocationPage({
           {/* Single Primary CTA */}
           <Link
             href="/quote"
-            className="inline-block bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors shadow-lg"
+            className="inline-block bg-brand-bright-blue text-white px-8 py-4 rounded-lg font-semibold hover:bg-[#006bc4] transition-colors shadow-lg"
           >
             Request a Quote
           </Link>

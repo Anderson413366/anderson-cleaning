@@ -70,7 +70,7 @@ export default function IndustryTemplate({
           {/* Back Button */}
           <Link
             href="/industries"
-            className="inline-flex items-center gap-2 text-blue-200 hover:text-white mb-8 transition-colors group"
+            className="inline-flex items-center gap-2 text-brand-bright-blue hover:text-white mb-8 transition-colors group"
           >
             <ArrowLeft className="h-4 w-4 transition-transform group-hover:-translate-x-1" />
             <span>Back to All Industries</span>

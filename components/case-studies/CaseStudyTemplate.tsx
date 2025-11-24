@@ -294,7 +294,7 @@ export default function CaseStudyTemplate({
       {/* =====================================================================
           SOLUTION SECTION
           ===================================================================== */}
-      <section className="py-16 md:py-20 bg-blue-50 dark:bg-slate-800">
+      <section className="py-16 md:py-20 bg-brand-bright-blue/10 dark:bg-slate-800">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
             {/* Section Header */}

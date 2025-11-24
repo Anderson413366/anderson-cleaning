@@ -517,7 +517,7 @@ export default function QuoteForm({ onSuccess }: QuoteFormProps) {
                                   {label}
                                 </span>
                                 {isClientOnly && (
-                                  <span className="text-xs bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 px-2 py-0.5 rounded-full">
+                                  <span className="text-xs bg-brand-bright-blue/10 dark:bg-brand-bright-blue/30 text-brand-bright-blue dark:text-brand-bright-blue px-2 py-0.5 rounded-full">
                                     Clients Only
                                   </span>
                                 )}

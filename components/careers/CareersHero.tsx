@@ -83,7 +83,7 @@ const CareersHero: React.FC<CareersHeroProps> = ({ onStartApplication }) => {
 
           {/* Language Selector */}
           <div className="flex flex-col items-center">
-            <div className="flex items-center space-x-2 text-sm text-blue-200 mb-3">
+            <div className="flex items-center space-x-2 text-sm text-brand-bright-blue mb-3">
               <Globe className="h-4 w-4" aria-hidden="true" />
               <span>{t('selectLanguage') as string}</span>
             </div>

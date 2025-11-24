@@ -108,7 +108,7 @@ export default function Home() {
             <div className="bg-white dark:bg-slate-800 rounded-2xl p-8 md:p-10 shadow-sm border border-neutral-light-grey dark:border-slate-700">
               <div className="flex items-center gap-1 mb-6" role="img" aria-label="5 out of 5 stars">
                 {[1, 2, 3, 4, 5].map((star) => (
-                  <Star key={star} className="h-5 w-5 text-brand-bright-blue fill-brand-bright-blue" aria-hidden="true" />
+                  <Star key={star} className="h-5 w-5 text-yellow-400 fill-yellow-400" aria-hidden="true" />
                 ))}
               </div>
               <blockquote className="text-xl md:text-2xl leading-relaxed text-neutral-charcoal dark:text-white mb-6 font-medium">
@@ -306,7 +306,7 @@ export default function Home() {
             </h2>
             <div className="flex items-center justify-center space-x-1 mb-2" role="img" aria-label="5 out of 5 stars">
               {[1, 2, 3, 4, 5].map((star) => (
-                <Star key={star} className="h-6 w-6 text-brand-bright-blue fill-brand-bright-blue" aria-hidden="true" />
+                <Star key={star} className="h-5 w-5 text-yellow-400 fill-yellow-400" aria-hidden="true" />
               ))}
             </div>
             <p className="text-body text-neutral-charcoal/80 dark:text-white/70">5.0 stars from satisfied clients</p>
@@ -342,7 +342,7 @@ export default function Home() {
               >
                 <div className="flex items-center space-x-1 mb-4" role="img" aria-label={`${testimonial.rating} out of 5 stars`}>
                   {[...Array(testimonial.rating)].map((_, j) => (
-                    <Star key={j} className="h-5 w-5 text-brand-bright-blue fill-brand-bright-blue" aria-hidden="true" />
+                    <Star key={j} className="h-5 w-5 text-yellow-400 fill-yellow-400" aria-hidden="true" />
                   ))}
                 </div>
                 <blockquote className="text-body leading-relaxed text-neutral-charcoal dark:text-white mb-4">
