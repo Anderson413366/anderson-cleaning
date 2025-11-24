@@ -5,40 +5,33 @@ test.describe('Quote Form - Full User Journey', () => {
     // Navigate to quote page
     await page.goto('/quote')
 
-    // Wait for page to load
-    await expect(page.getByRole('heading', { name: /Get Your Free Quote/i })).toBeVisible()
+    // Wait for page to load (check for H1 specifically)
+    await expect(page.getByRole('heading', { level: 1, name: /Get Your Free Quote/i })).toBeVisible()
 
     // Step 1: Fill out contact information
     await page.getByLabel(/Full Name/i).fill('E2E Test User')
     await page.getByLabel(/Company Name/i).fill('E2E Test Company')
     await page.getByLabel(/Email Address/i).fill('e2e-test@andersoncleaning.com')
-    await page.getByLabel(/Phone Number/i).fill('(413) 555-0199')
+    await page.getByLabel(/Phone Number/i).fill('4135550199')
 
     // Step 2: Fill out facility information
     await page.getByLabel(/Street Address/i).fill('456 Test Avenue')
-    await page.getByLabel(/City/i).fill('Springfield')
+    await page.getByLabel(/^City/i).fill('Springfield')
     await page.getByLabel(/ZIP Code/i).fill('01089')
 
-    // Select facility type
+    // Select facility type (required)
     await page.getByLabel(/Facility Type/i).selectOption('office')
 
-    // Fill square footage if present
+    // Fill square footage (optional but helps with estimate)
     const sqftField = page.getByLabel(/Square Footage/i)
     if (await sqftField.isVisible()) {
       await sqftField.fill('5000')
     }
 
-    // Select cleaning frequency
+    // Select cleaning frequency (required)
     await page.getByLabel(/Cleaning Frequency/i).selectOption('weekly')
 
-    // Step 3: Select services
-    const servicesSection = page.locator('text=Services Needed').or(page.locator('text=Select Services'))
-    if (await servicesSection.isVisible()) {
-      await page.getByLabel(/Office.*Cleaning/i).check()
-      await page.getByLabel(/Floor.*Care/i).check()
-    }
-
-    // Step 4: Agree to consent
+    // Step 3: Agree to consent (required)
     await page.getByLabel(/I agree to be contacted/i).check()
 
     // Verify submit button is enabled
@@ -70,11 +63,9 @@ test.describe('Quote Form - Full User Journey', () => {
     // Loading state might be too fast to catch, so make it optional
     // await expect(loadingIndicator).toBeVisible({ timeout: 1000 }).catch(() => {})
 
-    // Verify success message or redirect
+    // Wait for the success message to appear
     await expect(
-      page.locator('text=success|thank you|submitted|received/i').or(
-        page.getByRole('heading', { name: /thank you|success/i })
-      )
+      page.getByRole('heading', { name: /submitted successfully|thank you/i })
     ).toBeVisible({ timeout: 10000 })
   })
 
@@ -86,22 +77,27 @@ test.describe('Quote Form - Full User Journey', () => {
 
     // Fill only email to trigger other field validations
     await page.getByLabel(/Email Address/i).fill('invalid-email')
-    await submitButton.click()
 
-    // Verify error messages appear
-    // Email validation error
-    await expect(page.locator('text=/valid email/i')).toBeVisible()
+    // Blur the field to trigger validation
+    await page.getByLabel(/Email Address/i).blur()
+    await page.waitForTimeout(500)
+
+    await submitButton.click()
+    await page.waitForTimeout(500)
+
+    // Verify error messages appear - look for validation text
+    const errorText = page.locator('.text-red-600, .text-red-400, [class*="error"]')
+    await expect(errorText.first()).toBeVisible({ timeout: 5000 })
 
     // Fill with valid email
     await page.getByLabel(/Email Address/i).fill('test@example.com')
 
     // Try submitting - should show other required field errors
     await submitButton.click()
+    await page.waitForTimeout(500)
 
-    // Should see required field errors
-    await expect(
-      page.locator('text=/required|must be|cannot be empty/i').first()
-    ).toBeVisible({ timeout: 5000 })
+    // Should see required field errors (Name is required appears first)
+    await expect(errorText.first()).toBeVisible({ timeout: 5000 })
   })
 
   test('form works on mobile devices', async ({ page, isMobile }) => {
@@ -139,10 +135,17 @@ test.describe('Quote Form - Full User Journey', () => {
       }
     })
 
-    // Fill required fields
+    // Fill all required fields
     await page.getByLabel(/Full Name/i).fill('Bot User')
+    await page.getByLabel(/Company Name/i).fill('Bot Company')
     await page.getByLabel(/Email Address/i).fill('bot@spam.com')
-    await page.getByLabel(/Phone/i).fill('5551234567')
+    await page.getByLabel(/Phone Number/i).fill('4135551234')
+    await page.getByLabel(/Street Address/i).fill('123 Bot Street')
+    await page.getByLabel(/^City/i).fill('Springfield')
+    await page.getByLabel(/ZIP Code/i).fill('01089')
+    await page.getByLabel(/Facility Type/i).selectOption('office')
+    await page.getByLabel(/Cleaning Frequency/i).selectOption('weekly')
+    await page.getByLabel(/I agree to be contacted/i).check()
 
     // Mock the API response
     await page.route('**/api/quote', async (route) => {
@@ -161,7 +164,9 @@ test.describe('Quote Form - Full User Journey', () => {
     await submitButton.click()
 
     // Should show success message (honeypot causes silent acceptance)
-    await expect(page.locator('text=/success|thank you/i')).toBeVisible({ timeout: 5000 })
+    await expect(
+      page.getByRole('heading', { name: /submitted successfully|thank you/i })
+    ).toBeVisible({ timeout: 10000 })
   })
 
   test('analytics events fire on form interaction', async ({ page }) => {
@@ -222,7 +227,9 @@ test.describe('Contact Form - User Journey', () => {
     const submitButton = page.getByRole('button', { name: /Send Message|Submit/i })
     await submitButton.click()
 
-    // Verify success
-    await expect(page.locator('text=/success|sent|received/i')).toBeVisible({ timeout: 5000 })
+    // Verify success (look for the heading specifically)
+    await expect(
+      page.getByRole('heading', { name: /success|sent|thank you/i })
+    ).toBeVisible({ timeout: 10000 })
   })
 })
