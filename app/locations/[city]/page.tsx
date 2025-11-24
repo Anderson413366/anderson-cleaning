@@ -399,7 +399,7 @@ export default async function LocationPage({
       <BreadcrumbSchema items={breadcrumbs} />
       <LocalBusinessSchema serviceArea={`${cityData.city}, ${cityData.stateFullz}`} />
       {/* Hero Section */}
-      <section className="bg-gradient-to-b from-blue-600 to-blue-700 text-white py-20">
+      <section className="hero-section bg-gradient-to-b from-blue-600 to-blue-700 text-white">
         <div className="container mx-auto px-4">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">
             Commercial Cleaning Services in {cityData.city}, {cityData.state}
@@ -408,20 +408,25 @@ export default async function LocationPage({
             Professional B2B cleaning services for offices, medical facilities, and commercial
             properties throughout {cityData.city} and surrounding areas.
           </p>
-          <div className="flex flex-wrap gap-4">
+          {/* Single Primary CTA */}
+          <div className="mb-8">
             <Link
               href="/quote"
-              className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
+              className="inline-block bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors shadow-lg"
             >
-              Get Free {cityData.city} Quote
+              Request a Quote
             </Link>
+          </div>
+          {/* Secondary phone link */}
+          <p className="text-white/90">
+            Or call us directly:{' '}
             <a
               href="tel:4133065053"
-              className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors"
+              className="underline hover:text-white transition-colors font-semibold"
             >
-              Call (413) 306-5053
+              (413) 306-5053
             </a>
-          </div>
+          </p>
           <div className="mt-8 flex flex-wrap gap-6 text-sm">
             <div className="flex items-center gap-2">
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
@@ -452,34 +457,6 @@ export default async function LocationPage({
                 />
               </svg>
               <span>Licensed in {cityData.stateFullz}</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Local Trust Signals */}
-      <section className="py-12 bg-gray-50 dark:bg-slate-900">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div>
-              <div className="text-3xl font-bold text-blue-600 dark:text-blue-400">18+</div>
-              <div className="text-gray-600 dark:text-gray-400">
-                Years Serving {cityData.city}
-              </div>
-            </div>
-            <div>
-              <div className="text-3xl font-bold text-blue-600 dark:text-blue-400">
-                {cityData.responseTime}
-              </div>
-              <div className="text-gray-600 dark:text-gray-400">Response Time</div>
-            </div>
-            <div>
-              <div className="text-3xl font-bold text-blue-600 dark:text-blue-400">100%</div>
-              <div className="text-gray-600 dark:text-gray-400">Insured & Bonded</div>
-            </div>
-            <div>
-              <div className="text-3xl font-bold text-blue-600 dark:text-blue-400">24/7</div>
-              <div className="text-gray-600 dark:text-gray-400">Emergency Service</div>
             </div>
           </div>
         </div>
@@ -805,20 +782,23 @@ export default async function LocationPage({
             Join hundreds of {cityData.city} businesses that trust Anderson Cleaning for their
             facilities.
           </p>
-          <div className="flex flex-wrap gap-4 justify-center">
-            <Link
-              href="/quote"
-              className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
-            >
-              Get Your Free {cityData.city} Quote
-            </Link>
+          {/* Single Primary CTA */}
+          <Link
+            href="/quote"
+            className="inline-block bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors shadow-lg"
+          >
+            Request a Quote
+          </Link>
+          {/* Secondary phone link */}
+          <p className="mt-6 text-white/90">
+            Or call us directly:{' '}
             <a
               href="tel:4133065053"
-              className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors"
+              className="underline hover:text-white transition-colors font-semibold"
             >
-              Call (413) 306-5053 Now
+              (413) 306-5053
             </a>
-          </div>
+          </p>
         </div>
       </section>
     </div>

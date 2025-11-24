@@ -77,14 +77,7 @@ export default function QuoteMiniForm({
       <div className="bg-brand-bright-blue/10 border-2 border-brand-bright-blue rounded-lg p-6 text-center">
         <CheckCircle2 className="h-12 w-12 text-brand-bright-blue mx-auto mb-3" />
         <h3 className="text-h3 mb-2">We'll call you soon!</h3>
-        <p className="text-body-sm mb-4">Expect a call within 24 hours during business hours.</p>
-        <button
-          type="button"
-          onClick={() => onOpenAdvanced?.()}
-          className="text-brand-deep-blue hover:text-brand-bright-blue underline text-body-sm font-semibold"
-        >
-          Need detailed quote? → Full form
-        </button>
+        <p className="text-body-sm">Expect a call within 24 hours during business hours.</p>
       </div>
     )
   }
@@ -154,16 +147,6 @@ export default function QuoteMiniForm({
         {isSubmitting ? 'Sending...' : 'Get Free Quote'}
       </Button>
       <FormLegalNotice className="text-center" />
-
-      <p className="text-sm text-center text-neutral-charcoal dark:text-white">
-        <button
-          type="button"
-          onClick={() => onOpenAdvanced?.()}
-          className="text-brand-deep-blue hover:text-brand-bright-blue underline"
-        >
-          Need detailed quote? Click here
-        </button>
-      </p>
     </form>
   )
 }

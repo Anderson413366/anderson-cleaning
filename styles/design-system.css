@@ -127,6 +127,27 @@ html.dark {
 }
 
 /* ====================================================================
+   HERO SECTION SPACING - Accounts for fixed navigation bar
+   ==================================================================== */
+
+/*
+  Fixed header is approximately 80px tall (varies slightly with scroll state)
+  Hero sections need extra top padding to prevent content from being hidden
+*/
+.hero-section {
+  padding-top: 120px; /* 80px header + 40px breathing room */
+  padding-bottom: 80px;
+}
+
+/* Adjust for mobile - header is slightly shorter */
+@media (max-width: 768px) {
+  .hero-section {
+    padding-top: 100px; /* 70px header + 30px breathing room */
+    padding-bottom: 64px;
+  }
+}
+
+/* ====================================================================
    RESPONSIVE LOGO SYSTEM - Clean swap at mobile breakpoint
    ==================================================================== */
 

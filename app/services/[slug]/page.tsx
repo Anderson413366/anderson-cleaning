@@ -130,8 +130,8 @@ export default async function ServiceDetailPage({ params }: { params: RouteParam
 
 function HeroSection({ service, ServiceIcon }: { service: ServiceData; ServiceIcon: ElementType }) {
   return (
-    <section className="bg-gradient-to-br from-brand-deep-blue via-brand-deep-blue to-brand-bright-blue text-white">
-      <div className="container mx-auto grid max-w-6xl gap-12 px-6 py-20 lg:grid-cols-2 lg:items-center">
+    <section className="hero-section bg-gradient-to-br from-brand-deep-blue via-brand-deep-blue to-brand-bright-blue text-white">
+      <div className="container mx-auto grid max-w-6xl gap-12 px-6 lg:grid-cols-2 lg:items-center">
         <div>
           <Link
             href="/services"
