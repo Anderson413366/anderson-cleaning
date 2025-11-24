@@ -335,11 +335,12 @@ export default function QuoteFormSimplified({ onSuccess }: QuoteFormSimplifiedPr
             </h3>
 
             <div>
-              <label className="mb-2 block text-sm font-medium text-neutral-charcoal dark:text-white">
+              <label htmlFor="address" className="mb-2 block text-sm font-medium text-neutral-charcoal dark:text-white">
                 Street Address <span className="text-red-500">*</span>
               </label>
               <input
                 {...register('address')}
+                id="address"
                 type="text"
                 className="w-full rounded-lg border-2 border-gray-300 px-4 py-2 focus:border-brand-bright-blue focus:ring-2 focus:ring-brand-bright-blue/20 dark:border-gray-600 dark:bg-slate-900 dark:text-white"
                 placeholder="123 Main Street"
@@ -351,11 +352,12 @@ export default function QuoteFormSimplified({ onSuccess }: QuoteFormSimplifiedPr
 
             <div className="grid gap-4 md:grid-cols-2">
               <div>
-                <label className="mb-2 block text-sm font-medium text-neutral-charcoal dark:text-white">
+                <label htmlFor="city" className="mb-2 block text-sm font-medium text-neutral-charcoal dark:text-white">
                   City <span className="text-red-500">*</span>
                 </label>
                 <input
                   {...register('city')}
+                  id="city"
                   type="text"
                   className="w-full rounded-lg border-2 border-gray-300 px-4 py-2 focus:border-brand-bright-blue focus:ring-2 focus:ring-brand-bright-blue/20 dark:border-gray-600 dark:bg-slate-900 dark:text-white"
                   placeholder="Springfield"
@@ -366,11 +368,12 @@ export default function QuoteFormSimplified({ onSuccess }: QuoteFormSimplifiedPr
               </div>
 
               <div>
-                <label className="mb-2 block text-sm font-medium text-neutral-charcoal dark:text-white">
+                <label htmlFor="zipCode" className="mb-2 block text-sm font-medium text-neutral-charcoal dark:text-white">
                   ZIP Code <span className="text-red-500">*</span>
                 </label>
                 <input
                   {...register('zipCode')}
+                  id="zipCode"
                   type="text"
                   className="w-full rounded-lg border-2 border-gray-300 px-4 py-2 focus:border-brand-bright-blue focus:ring-2 focus:ring-brand-bright-blue/20 dark:border-gray-600 dark:bg-slate-900 dark:text-white"
                   placeholder="01089"
@@ -384,11 +387,12 @@ export default function QuoteFormSimplified({ onSuccess }: QuoteFormSimplifiedPr
 
             <div className="grid gap-4 md:grid-cols-2">
               <div>
-                <label className="mb-2 block text-sm font-medium text-neutral-charcoal dark:text-white">
+                <label htmlFor="facilityType" className="mb-2 block text-sm font-medium text-neutral-charcoal dark:text-white">
                   Facility Type <span className="text-red-500">*</span>
                 </label>
                 <select
                   {...register('facilityType')}
+                  id="facilityType"
                   className="w-full rounded-lg border-2 border-gray-300 px-4 py-2 focus:border-brand-bright-blue focus:ring-2 focus:ring-brand-bright-blue/20 dark:border-gray-600 dark:bg-slate-900 dark:text-white"
                 >
                   <option value="">Select type...</option>
@@ -406,11 +410,12 @@ export default function QuoteFormSimplified({ onSuccess }: QuoteFormSimplifiedPr
               </div>
 
               <div>
-                <label className="mb-2 block text-sm font-medium text-neutral-charcoal dark:text-white">
+                <label htmlFor="squareFootage" className="mb-2 block text-sm font-medium text-neutral-charcoal dark:text-white">
                   Approximate Square Footage
                 </label>
                 <input
                   {...register('squareFootage', { valueAsNumber: true })}
+                  id="squareFootage"
                   type="number"
                   className="w-full rounded-lg border-2 border-gray-300 px-4 py-2 focus:border-brand-bright-blue focus:ring-2 focus:ring-brand-bright-blue/20 dark:border-gray-600 dark:bg-slate-900 dark:text-white"
                   placeholder="5000"
@@ -427,11 +432,12 @@ export default function QuoteFormSimplified({ onSuccess }: QuoteFormSimplifiedPr
 
             <div className="grid gap-4 md:grid-cols-2">
               <div>
-                <label className="mb-2 block text-sm font-medium text-neutral-charcoal dark:text-white">
+                <label htmlFor="cleaningFrequency" className="mb-2 block text-sm font-medium text-neutral-charcoal dark:text-white">
                   Desired Cleaning Frequency <span className="text-red-500">*</span>
                 </label>
                 <select
                   {...register('cleaningFrequency')}
+                  id="cleaningFrequency"
                   className="w-full rounded-lg border-2 border-gray-300 px-4 py-2 focus:border-brand-bright-blue focus:ring-2 focus:ring-brand-bright-blue/20 dark:border-gray-600 dark:bg-slate-900 dark:text-white"
                 >
                   <option value="">Select frequency...</option>
@@ -449,11 +455,12 @@ export default function QuoteFormSimplified({ onSuccess }: QuoteFormSimplifiedPr
               </div>
 
               <div>
-                <label className="mb-2 block text-sm font-medium text-neutral-charcoal dark:text-white">
+                <label htmlFor="desiredStartDate" className="mb-2 block text-sm font-medium text-neutral-charcoal dark:text-white">
                   When do you need service?
                 </label>
                 <input
                   {...register('desiredStartDate')}
+                  id="desiredStartDate"
                   type="date"
                   min={new Date().toISOString().split('T')[0]}
                   className="w-full rounded-lg border-2 border-gray-300 px-4 py-2 focus:border-brand-bright-blue focus:ring-2 focus:ring-brand-bright-blue/20 dark:border-gray-600 dark:bg-slate-900 dark:text-white"
@@ -496,11 +503,12 @@ export default function QuoteFormSimplified({ onSuccess }: QuoteFormSimplifiedPr
 
           {/* Additional Information */}
           <div>
-            <label className="mb-2 block text-sm font-medium text-neutral-charcoal dark:text-white">
+            <label htmlFor="specialRequests" className="mb-2 block text-sm font-medium text-neutral-charcoal dark:text-white">
               Additional Information (Optional)
             </label>
             <textarea
               {...register('specialRequests')}
+              id="specialRequests"
               rows={4}
               maxLength={500}
               className="w-full rounded-lg border-2 border-gray-300 px-4 py-2 focus:border-brand-bright-blue focus:ring-2 focus:ring-brand-bright-blue/20 dark:border-gray-600 dark:bg-slate-900 dark:text-white"
