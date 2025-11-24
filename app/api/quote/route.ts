@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import { quoteFormSchema } from '@/lib/validation/quote'
 import { sanitizeObject, validateHoneypot } from '@/lib/api/sanitize'
 import { sendEmail, getNotificationEmail, logEmailSend } from '@/lib/api/email'
-import { generateQuoteEmail } from '@/lib/api/emailTemplates'
+import { generateQuoteEmail, generateCustomerQuoteConfirmation } from '@/lib/api/emailTemplates'
 import { submitQuote } from '@/lib/forms/submissions'
 import { handleSubmission } from '@/lib/api/handlers'
 
@@ -40,6 +40,7 @@ export function POST(request: NextRequest) {
         user_agent: request.headers.get('user-agent') || null,
       }),
     notify: async (data) => {
+      // Send notification to sales team
       const { html, text } = generateQuoteEmail(data)
       const emailResult = await sendEmail({
         to: getNotificationEmail(),
@@ -55,6 +56,24 @@ export function POST(request: NextRequest) {
           html,
         },
         emailResult
+      )
+
+      // Send confirmation to customer
+      const customerEmail = generateCustomerQuoteConfirmation(data)
+      const customerEmailResult = await sendEmail({
+        to: data.email,
+        subject: 'Thank You for Your Quote Request - Anderson Cleaning',
+        html: customerEmail.html,
+        text: customerEmail.text,
+        replyTo: getNotificationEmail(),
+      })
+      logEmailSend(
+        {
+          to: data.email,
+          subject: 'Thank You for Your Quote Request',
+          html: customerEmail.html,
+        },
+        customerEmailResult
       )
     },
     successMessage: 'Quote request submitted successfully. We will contact you within 24 hours (Mon–Fri, 9 AM – 5 PM EST)!',

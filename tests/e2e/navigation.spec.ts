@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test'
 
 const marketingRoutes = [
-  { path: '/', hero: /Professional Commercial Cleaning.*Personal Touch/i },
+  { path: '/', hero: /Professional Commercial Cleaning You Can Count On/i },
   { path: '/about', hero: /About Anderson Cleaning Company/i },
   { path: '/services/office-cleaning', hero: /Professional Office Cleaning Services/i },
   { path: '/contact', hero: /Get in Touch/i },
@@ -20,13 +20,19 @@ test.describe('Marketing pages render key content', () => {
   }
 })
 
-test('header navigation is functional', async ({ page }) => {
+test('header navigation is functional', async ({ page, isMobile }) => {
   await page.goto('/')
   // Check header exists
   await expect(page.locator('header')).toBeVisible()
-  // Check key nav links exist (using first match to avoid strict mode issues)
-  await expect(page.getByRole('link', { name: /about/i }).first()).toBeVisible()
-  await expect(page.getByRole('link', { name: /contact/i }).first()).toBeVisible()
+
+  if (isMobile) {
+    // On mobile, check for mobile menu button instead
+    await expect(page.getByRole('button', { name: /open main menu/i })).toBeVisible()
+  } else {
+    // On desktop, check key nav links exist
+    await expect(page.getByRole('link', { name: /about/i }).first()).toBeVisible()
+    await expect(page.getByRole('link', { name: /contact/i }).first()).toBeVisible()
+  }
 })
 
 test('quote form renders and accepts input', async ({ page }) => {
@@ -44,6 +50,6 @@ test('quote form renders and accepts input', async ({ page }) => {
   await page.getByLabel(/Email Address/i).fill('test@example.com')
   await page.getByLabel(/Phone Number/i).fill('(413) 555-0100')
 
-  // Verify Next Step button is present (don't test form submission to avoid state issues)
-  await expect(page.getByRole('button', { name: 'Next Step' })).toBeVisible()
+  // Verify submit button is present (QuoteFormSimplified uses "Get My Custom Quote")
+  await expect(page.getByRole('button', { name: /Get My Custom Quote/i })).toBeVisible()
 })

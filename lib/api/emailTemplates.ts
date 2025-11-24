@@ -443,6 +443,178 @@ Resume: ${data.hasResume ? 'Attached' : 'Not provided'}
 }
 
 /**
+ * Customer Confirmation Email for Quote Request
+ */
+export function generateCustomerQuoteConfirmation(data: QuoteFormData): { html: string; text: string } {
+  const facilityLabel = facilityTypeLabels[data.facilityType] || data.facilityType
+  const frequencyLabel = cleaningFrequencyLabels[data.cleaningFrequency] || data.cleaningFrequency
+
+  const content = `
+    <div class="content">
+      <p style="font-size: 18px; margin: 0 0 24px 0; font-weight: 600;">
+        Hi ${escapeHtml(data.fullName.split(' ')[0])},
+      </p>
+
+      <p style="font-size: 16px; margin: 0 0 16px 0;">
+        Thank you for requesting a quote from <strong>Anderson Cleaning Company</strong>! We've received your information and our team is reviewing your requirements.
+      </p>
+
+      <div style="margin: 24px 0; padding: 16px; background-color: #eff6ff; border-left: 4px solid #3b82f6; border-radius: 4px;">
+        <p style="margin: 0; color: #1e40af; font-weight: 600;">
+          We'll contact you within 24 hours (Monday–Friday, 9 AM – 5 PM EST)
+        </p>
+      </div>
+
+      <div class="section">
+        <h2 class="section-title">Your Quote Request Summary</h2>
+        <div class="field">
+          <span class="field-label">Company:</span>
+          <span class="field-value">${escapeHtml(data.company)}</span>
+        </div>
+        <div class="field">
+          <span class="field-label">Facility Type:</span>
+          <span class="field-value">${facilityLabel}</span>
+        </div>
+        <div class="field">
+          <span class="field-label">Location:</span>
+          <span class="field-value">${escapeHtml(data.city)}, ${escapeHtml(data.zipCode)}</span>
+        </div>
+        <div class="field">
+          <span class="field-label">Cleaning Frequency:</span>
+          <span class="field-value">${frequencyLabel}</span>
+        </div>
+        ${
+          data.squareFootage
+            ? `<div class="field">
+          <span class="field-label">Square Footage:</span>
+          <span class="field-value">${data.squareFootage.toLocaleString()} sq ft</span>
+        </div>`
+            : ''
+        }
+      </div>
+
+      <div style="margin: 32px 0;">
+        <p style="margin: 0 0 16px 0;">
+          <strong>Questions in the meantime?</strong>
+        </p>
+        <p style="margin: 0 0 8px 0;">
+          📞 Call us: <a href="tel:+14133065053" style="color: #1e40af; text-decoration: none;">(413) 306-5053</a>
+        </p>
+        <p style="margin: 0;">
+          ✉️ Email: <a href="mailto:info@andersoncleaning.com" style="color: #1e40af; text-decoration: none;">info@andersoncleaning.com</a>
+        </p>
+      </div>
+
+      <p style="margin: 24px 0 0 0; font-size: 14px; color: #6b7280;">
+        We're excited to learn more about your facility and show you how Anderson Cleaning can help maintain a spotless, professional environment.
+      </p>
+    </div>
+  `
+
+  const text = `
+Hi ${data.fullName.split(' ')[0]},
+
+Thank you for requesting a quote from Anderson Cleaning Company!
+
+We've received your information and our team is reviewing your requirements.
+
+WE'LL CONTACT YOU WITHIN 24 HOURS (Monday–Friday, 9 AM – 5 PM EST)
+
+YOUR QUOTE REQUEST SUMMARY:
+- Company: ${data.company}
+- Facility Type: ${facilityLabel}
+- Location: ${data.city}, ${data.zipCode}
+- Cleaning Frequency: ${frequencyLabel}
+${data.squareFootage ? `- Square Footage: ${data.squareFootage.toLocaleString()} sq ft` : ''}
+
+QUESTIONS IN THE MEANTIME?
+📞 Call us: (413) 306-5053
+✉️ Email: info@andersoncleaning.com
+
+We're excited to learn more about your facility and show you how Anderson Cleaning can help maintain a spotless, professional environment.
+
+---
+Anderson Cleaning Company
+103 Wayside Avenue, West Springfield, MA 01089
+  `.trim()
+
+  return {
+    html: getBaseTemplate(content),
+    text,
+  }
+}
+
+/**
+ * Customer Confirmation Email for Contact Form
+ */
+export function generateCustomerContactConfirmation(data: ContactFormData): { html: string; text: string } {
+  const firstName = data.name.split(' ')[0]
+
+  const content = `
+    <div class="content">
+      <p style="font-size: 18px; margin: 0 0 24px 0; font-weight: 600;">
+        Hi ${escapeHtml(firstName)},
+      </p>
+
+      <p style="font-size: 16px; margin: 0 0 16px 0;">
+        Thank you for contacting <strong>Anderson Cleaning Company</strong>! We've received your message and will get back to you shortly.
+      </p>
+
+      <div style="margin: 24px 0; padding: 16px; background-color: #eff6ff; border-left: 4px solid #3b82f6; border-radius: 4px;">
+        <p style="margin: 0; color: #1e40af; font-weight: 600;">
+          We typically respond within 1 business day
+        </p>
+      </div>
+
+      <div class="section">
+        <h2 class="section-title">Your Message</h2>
+        <p style="margin: 0; white-space: pre-wrap; background-color: #f9fafb; padding: 16px; border-radius: 8px; border: 1px solid #e5e7eb;">
+${escapeHtml(data.message)}
+        </p>
+      </div>
+
+      <div style="margin: 32px 0;">
+        <p style="margin: 0 0 16px 0;">
+          <strong>Need immediate assistance?</strong>
+        </p>
+        <p style="margin: 0 0 8px 0;">
+          📞 Call us: <a href="tel:+14133065053" style="color: #1e40af; text-decoration: none;">(413) 306-5053</a>
+        </p>
+        <p style="margin: 0;">
+          ✉️ Email: <a href="mailto:info@andersoncleaning.com" style="color: #1e40af; text-decoration: none;">info@andersoncleaning.com</a>
+        </p>
+      </div>
+    </div>
+  `
+
+  const text = `
+Hi ${firstName},
+
+Thank you for contacting Anderson Cleaning Company!
+
+We've received your message and will get back to you shortly.
+
+WE TYPICALLY RESPOND WITHIN 1 BUSINESS DAY
+
+YOUR MESSAGE:
+${data.message}
+
+NEED IMMEDIATE ASSISTANCE?
+📞 Call us: (413) 306-5053
+✉️ Email: info@andersoncleaning.com
+
+---
+Anderson Cleaning Company
+103 Wayside Avenue, West Springfield, MA 01089
+  `.trim()
+
+  return {
+    html: getBaseTemplate(content),
+    text,
+  }
+}
+
+/**
  * Newsletter Subscription Email Template
  */
 export function generateNewsletterEmail(email: string): { html: string; text: string } {

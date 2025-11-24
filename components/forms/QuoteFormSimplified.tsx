@@ -60,6 +60,7 @@ interface QuoteFormSimplifiedProps {
 export default function QuoteFormSimplified({ onSuccess }: QuoteFormSimplifiedProps) {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitError, setSubmitError] = useState<string | null>(null)
+  const [submitSuccess, setSubmitSuccess] = useState(false)
   const [estimate, setEstimate] = useState<{ low: number; high: number } | null>(null)
 
   const {
@@ -126,6 +127,8 @@ export default function QuoteFormSimplified({ onSuccess }: QuoteFormSimplifiedPr
         })
       }
 
+      // Show success message
+      setSubmitSuccess(true)
       onSuccess?.()
     } catch (error) {
       console.error('Quote submission error:', error)
@@ -139,12 +142,66 @@ export default function QuoteFormSimplified({ onSuccess }: QuoteFormSimplifiedPr
     }
   }
 
+  // Show success message if form submitted successfully
+  if (submitSuccess) {
+    return (
+      <div className="mx-auto max-w-2xl">
+        <div className="rounded-xl border-2 border-green-200 bg-green-50 p-8 text-center dark:border-green-800 dark:bg-green-900/20">
+          <div className="mb-4 flex justify-center">
+            <CheckCircle2 className="h-16 w-16 text-green-500" />
+          </div>
+          <h2 className="mb-3 text-2xl font-bold text-green-800 dark:text-green-200">
+            Thank You for Your Quote Request!
+          </h2>
+          <p className="mb-4 text-green-700 dark:text-green-300">
+            We've received your request and will contact you within 24 hours (Monday–Friday, 9 AM – 5 PM EST).
+          </p>
+          <div className="rounded-lg bg-white p-4 dark:bg-slate-800">
+            <p className="mb-2 text-sm font-semibold text-neutral-charcoal dark:text-white">
+              What happens next?
+            </p>
+            <ul className="space-y-2 text-left text-sm text-neutral-charcoal/70 dark:text-white/80">
+              <li className="flex items-start gap-2">
+                <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-green-500" />
+                <span>Check your email for a confirmation (check spam if you don't see it)</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-green-500" />
+                <span>Our team will review your facility requirements</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-green-500" />
+                <span>We'll reach out with a customized quote and next steps</span>
+              </li>
+            </ul>
+          </div>
+          <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:justify-center">
+            <a
+              href={CONTACT_INFO.phone.href}
+              className="flex items-center justify-center gap-2 rounded-lg bg-brand-bright-blue px-6 py-3 font-semibold text-white transition-colors hover:bg-teal-700"
+            >
+              <Phone className="h-5 w-5" />
+              Call Us Now: {CONTACT_INFO.phone.formatted}
+            </a>
+            <a
+              href={`mailto:${CONTACT_INFO.email}`}
+              className="flex items-center justify-center gap-2 rounded-lg border-2 border-brand-bright-blue px-6 py-3 font-semibold text-brand-bright-blue transition-colors hover:bg-brand-bright-blue hover:text-white dark:text-white dark:hover:bg-brand-bright-blue"
+            >
+              <Mail className="h-5 w-5" />
+              Email Us
+            </a>
+          </div>
+        </div>
+      </div>
+    )
+  }
+
   return (
     <div className="mx-auto max-w-4xl">
       {/* Header */}
       <div className="mb-8 text-center">
         <h2 className="mb-3 text-3xl font-bold text-neutral-charcoal dark:text-white">
-          Get Your Free Quote in 60 Seconds
+          Quick 60-Second Form
         </h2>
         <p className="text-neutral-charcoal/70 dark:text-white/80">
           No spam, no pressure. Just honest pricing for quality commercial cleaning.
@@ -204,11 +261,12 @@ export default function QuoteFormSimplified({ onSuccess }: QuoteFormSimplifiedPr
 
             <div className="grid gap-4 md:grid-cols-2">
               <div>
-                <label className="mb-2 block text-sm font-medium text-neutral-charcoal dark:text-white">
+                <label htmlFor="fullName" className="mb-2 block text-sm font-medium text-neutral-charcoal dark:text-white">
                   Full Name <span className="text-red-500">*</span>
                 </label>
                 <input
                   {...register('fullName')}
+                  id="fullName"
                   type="text"
                   className="w-full rounded-lg border-2 border-gray-300 px-4 py-2 focus:border-brand-bright-blue focus:ring-2 focus:ring-brand-bright-blue/20 dark:border-gray-600 dark:bg-slate-900 dark:text-white"
                   placeholder="John Smith"
@@ -219,11 +277,12 @@ export default function QuoteFormSimplified({ onSuccess }: QuoteFormSimplifiedPr
               </div>
 
               <div>
-                <label className="mb-2 block text-sm font-medium text-neutral-charcoal dark:text-white">
+                <label htmlFor="company" className="mb-2 block text-sm font-medium text-neutral-charcoal dark:text-white">
                   Company Name <span className="text-red-500">*</span>
                 </label>
                 <input
                   {...register('company')}
+                  id="company"
                   type="text"
                   className="w-full rounded-lg border-2 border-gray-300 px-4 py-2 focus:border-brand-bright-blue focus:ring-2 focus:ring-brand-bright-blue/20 dark:border-gray-600 dark:bg-slate-900 dark:text-white"
                   placeholder="ABC Corporation"
@@ -236,11 +295,12 @@ export default function QuoteFormSimplified({ onSuccess }: QuoteFormSimplifiedPr
 
             <div className="grid gap-4 md:grid-cols-2">
               <div>
-                <label className="mb-2 block text-sm font-medium text-neutral-charcoal dark:text-white">
+                <label htmlFor="email" className="mb-2 block text-sm font-medium text-neutral-charcoal dark:text-white">
                   Email Address <span className="text-red-500">*</span>
                 </label>
                 <input
                   {...register('email')}
+                  id="email"
                   type="email"
                   className="w-full rounded-lg border-2 border-gray-300 px-4 py-2 focus:border-brand-bright-blue focus:ring-2 focus:ring-brand-bright-blue/20 dark:border-gray-600 dark:bg-slate-900 dark:text-white"
                   placeholder="john@company.com"
@@ -251,11 +311,12 @@ export default function QuoteFormSimplified({ onSuccess }: QuoteFormSimplifiedPr
               </div>
 
               <div>
-                <label className="mb-2 block text-sm font-medium text-neutral-charcoal dark:text-white">
+                <label htmlFor="phone" className="mb-2 block text-sm font-medium text-neutral-charcoal dark:text-white">
                   Phone Number <span className="text-red-500">*</span>
                 </label>
                 <input
                   {...register('phone')}
+                  id="phone"
                   type="tel"
                   className="w-full rounded-lg border-2 border-gray-300 px-4 py-2 focus:border-brand-bright-blue focus:ring-2 focus:ring-brand-bright-blue/20 dark:border-gray-600 dark:bg-slate-900 dark:text-white"
                   placeholder={CONTACT_INFO.phone.formatted}
