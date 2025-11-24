@@ -9,6 +9,7 @@ import { X } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
 import { supabase } from '@/lib/supabase/client'
 import type { Database } from '@/lib/supabase/types'
+import FormLegalNotice from './FormLegalNotice'
 
 const advancedQuoteSchema = z.object({
   name: z.string().min(2),
@@ -221,6 +222,7 @@ export default function QuoteAdvancedModal({
               {isSubmitting ? 'Submitting...' : 'Submit Quote Request'}
             </Button>
           </div>
+          <FormLegalNotice />
         </form>
       </div>
     </div>

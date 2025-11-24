@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/Button'
 import { contactFormSchema, type ContactFormData } from '@/lib/validation/quote'
 import { Send, Loader2, CheckCircle2, AlertCircle } from 'lucide-react'
 import { inputClassName, labelClassName, errorClassName } from '@/lib/styles/formStyles'
+import FormLegalNotice from './FormLegalNotice'
 
 interface ContactFormProps {
   onSuccess?: () => void
@@ -213,10 +214,7 @@ export default function ContactForm({ onSuccess }: ContactFormProps) {
           )}
         </Button>
 
-        <p className="text-xs text-neutral-charcoal/60 dark:text-white/70 text-center">
-          By submitting this form, you agree to be contacted by Anderson Cleaning Company regarding your
-          inquiry.
-        </p>
+        <FormLegalNotice className="text-center" />
       </form>
     </div>
   )

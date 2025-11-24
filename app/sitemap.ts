@@ -158,13 +158,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Legal pages
   const legalPages = [
     {
-      url: `${baseUrl}/legal/privacy`,
+      url: `${baseUrl}/privacy-policy`,
       lastModified: currentDate,
       changeFrequency: 'yearly' as const,
-      priority: 0.3,
+      priority: 0.4,
     },
     {
-      url: `${baseUrl}/legal/terms`,
+      url: `${baseUrl}/terms-of-service`,
+      lastModified: currentDate,
+      changeFrequency: 'yearly' as const,
+      priority: 0.4,
+    },
+    {
+      url: `${baseUrl}/accessibility`,
       lastModified: currentDate,
       changeFrequency: 'yearly' as const,
       priority: 0.3,

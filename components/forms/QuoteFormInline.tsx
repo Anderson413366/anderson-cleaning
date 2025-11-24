@@ -36,6 +36,7 @@ import {
   isValidPhone,
   isValidName,
 } from '@/components/forms/quickQuoteHelpers'
+import FormLegalNotice from './FormLegalNotice'
 
 // ============================================================================
 // TYPES & INTERFACES
@@ -563,6 +564,7 @@ export default function QuoteFormInline({
         >
           {isSubmitting ? 'Submitting...' : isSuccess ? 'Submitted!' : 'Get Free Quote'}
         </Button>
+        <FormLegalNotice className="text-center" />
 
         {/* Response Time Text */}
         <p className="mt-4 text-center text-sm text-[var(--color-success-base)] font-medium">

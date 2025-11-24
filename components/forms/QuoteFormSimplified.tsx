@@ -7,6 +7,7 @@ import * as z from 'zod'
 import { Button } from '@/components/ui/Button'
 import { Phone, Mail, CheckCircle2, Loader2, DollarSign } from 'lucide-react'
 import { CONTACT_INFO } from '@/lib/constants'
+import FormLegalNotice from './FormLegalNotice'
 
 // Simplified validation schema - all in one
 const quoteSchema = z.object({
@@ -501,6 +502,7 @@ export default function QuoteFormSimplified({ onSuccess }: QuoteFormSimplifiedPr
             <div className="text-center text-sm text-gray-600 dark:text-gray-400">
               <p>✓ No contracts required · ✓ Response within 24 hours · ✓ No spam</p>
             </div>
+            <FormLegalNotice className="text-center" />
           </div>
         </form>
       </div>

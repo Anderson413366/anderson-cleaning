@@ -7,6 +7,7 @@ import * as z from 'zod'
 import { Button } from '@/components/ui/Button'
 import { CheckCircle2 } from 'lucide-react'
 import { supabase } from '@/lib/supabase/client'
+import FormLegalNotice from './FormLegalNotice'
 
 const miniQuoteSchema = z.object({
   name: z.string().min(2, 'Name required'),
@@ -152,6 +153,7 @@ export default function QuoteMiniForm({
       <Button type="submit" variant="accent" size="lg" className="w-full" disabled={isSubmitting}>
         {isSubmitting ? 'Sending...' : 'Get Free Quote'}
       </Button>
+      <FormLegalNotice className="text-center" />
 
       <p className="text-sm text-center text-neutral-charcoal dark:text-white">
         <button

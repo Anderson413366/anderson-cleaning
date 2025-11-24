@@ -12,6 +12,7 @@ import {
   isValidPhone,
   isValidName,
 } from '@/components/forms/quickQuoteHelpers'
+import FormLegalNotice from './FormLegalNotice'
 
 interface HeroQuickQuoteFormState {
   name: string
@@ -302,6 +303,8 @@ export default function HeroQuickQuoteForm() {
             </>
           )}
         </Button>
+
+        <FormLegalNotice className="text-center" />
 
         <p className="text-xs text-center text-neutral-charcoal/60 dark:text-white/70">
           We respond within 24 hours • Current clients have 24/7 emergency support

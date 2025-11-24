@@ -82,6 +82,8 @@ const REDIRECT_MAP: Record<string, RedirectConfig> = {
   '/floor-care': { destination: '/services/floor-care', permanent: true },
   '/floor-care-services': { destination: '/services/floor-care', permanent: true },
   '/free-quote': { destination: '/quote', permanent: true },
+  '/legal/privacy': { destination: '/privacy-policy', permanent: true },
+  '/legal/terms': { destination: '/terms-of-service', permanent: true },
   '/green-cleaning-services': { destination: '/services', permanent: true },
   '/healthcare-cleaning-service': { destination: '/industries/healthcare', permanent: true },
   '/healthcare-cleaning-services': { destination: '/industries/healthcare', permanent: true },

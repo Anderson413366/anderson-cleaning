@@ -25,6 +25,7 @@ import {
   AlertCircle,
   Loader2,
 } from 'lucide-react'
+import FormLegalNotice from './FormLegalNotice'
 
 const TOTAL_STEPS = 4
 
@@ -655,6 +656,7 @@ export default function QuoteForm({ onSuccess }: QuoteFormProps) {
                 </Button>
               )}
             </div>
+            <FormLegalNotice />
           </div>
         </form>
       </div>

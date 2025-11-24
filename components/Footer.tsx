@@ -204,29 +204,38 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Bottom Section */}
-          <div className="border-t border-neutral-light-grey dark:border-white/10 pt-6">
-            <div className="flex flex-col items-center justify-between gap-4 text-body-sm text-neutral-charcoal/70 dark:text-white/70 md:flex-row">
-              <p>© {currentYear} Anderson Cleaning Company</p>
-              <div className="flex gap-4">
-                <Link
-                  href="/legal/privacy"
-                  className="transition-colors duration-150 hover:text-neutral-charcoal dark:hover:text-white"
-                >
-                  Privacy
-                </Link>
-                <Link
-                  href="/legal/terms"
-                  className="transition-colors duration-150 hover:text-neutral-charcoal dark:hover:text-white"
-                >
-                  Terms
-                </Link>
-                <Link
-                  href="/sitemap.xml"
-                  className="transition-colors duration-150 hover:text-neutral-charcoal dark:hover:text-white"
-                >
-                  Sitemap
-                </Link>
+          <div className="mt-12 rounded-2xl bg-gray-900 text-white py-12">
+            <div className="container mx-auto px-4">
+              <div className="border-t border-gray-700 pt-8">
+                <div className="flex flex-col gap-4 text-sm text-gray-400 md:flex-row md:items-center md:justify-between">
+                  <p>© {currentYear} Anderson Cleaning Company. All rights reserved.</p>
+                  <nav className="flex flex-wrap gap-6">
+                    <Link
+                      href="/privacy-policy"
+                      className="text-gray-400 transition-colors hover:text-white"
+                    >
+                      Privacy Policy
+                    </Link>
+                    <Link
+                      href="/terms-of-service"
+                      className="text-gray-400 transition-colors hover:text-white"
+                    >
+                      Terms of Service
+                    </Link>
+                    <Link
+                      href="/accessibility"
+                      className="text-gray-400 transition-colors hover:text-white"
+                    >
+                      Accessibility
+                    </Link>
+                    <Link
+                      href="/sitemap.xml"
+                      className="text-gray-400 transition-colors hover:text-white"
+                    >
+                      Sitemap
+                    </Link>
+                  </nav>
+                </div>
               </div>
             </div>
           </div>

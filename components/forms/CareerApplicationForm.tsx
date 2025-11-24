@@ -8,6 +8,7 @@ import { Button } from '@/components/ui/Button'
 import { Upload, CheckCircle2 } from 'lucide-react'
 import { supabase } from '@/lib/supabase/client'
 import type { Database } from '@/lib/supabase/types'
+import FormLegalNotice from './FormLegalNotice'
 
 const formSchema = z.object({
   full_name: z.string().min(2, 'Name required'),
@@ -334,6 +335,7 @@ export default function CareerApplicationForm() {
                 {isSubmitting ? 'Submitting...' : 'Submit Application'}
               </Button>
             </div>
+            <FormLegalNotice />
           </div>
         )}
       </form>
