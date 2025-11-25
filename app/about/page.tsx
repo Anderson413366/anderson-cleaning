@@ -125,59 +125,82 @@ export default function AboutPage() {
             success
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {[
-              {
-                icon: Users,
-                title: 'Full-Time Salaried Staff',
-                description:
-                  'No independent contractors. Our cleaners are W-2 employees with benefits, training, and accountability.',
-              },
-              {
-                icon: Clock,
-                title: '24/7 Support',
-                description:
-                  'Real people answer the phone, day or night. Current clients receive emergency support with on-site arrival in 2 hours or less.',
-              },
-              {
-                icon: Shield,
-                title: 'Fully Insured & Bonded',
-                description:
-                  "Comprehensive general liability and workers' comp insurance. All staff undergo background checks.",
-              },
-              {
-                icon: CheckCircle2,
-                title: 'Quality Assurance',
-                description:
-                  'Regular inspections, detailed checklists, and corrective action plans ensure consistent quality.',
-              },
-              {
-                icon: Award,
-                title: 'Industry-Specific Training',
-                description:
-                  'Teams trained on OSHA standards, industry protocols, and facility-specific procedures.',
-              },
-              {
-                icon: Heart,
-                title: 'We Actually Care',
-                description:
-                  'Your account manager knows your name, your facility, and your concerns. No call centers.',
-              },
-            ].map((item, index) => {
-              const Icon = item.icon
-              return (
-                <div
-                  key={index}
-                  className="bg-white dark:bg-slate-800 border border-neutral-light-grey dark:border-slate-700 rounded-xl p-6 shadow-sm"
-                >
-                  <Icon className="h-12 w-12 text-brand-bright-blue mb-4" />
-                  <h3 className="text-h3 leading-normal font-semibold text-neutral-charcoal dark:text-white mb-3">
-                    {item.title}
-                  </h3>
-                  <p className="text-body text-neutral-charcoal/80 dark:text-white/80">{item.description}</p>
-                </div>
-              )
-            })}
+          <div className="max-w-6xl mx-auto space-y-8">
+            {/* Featured Top 3 Differentiators */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {[
+                {
+                  icon: Users,
+                  title: 'Full-Time W-2 Employees',
+                  description:
+                    'No independent contractors. Our cleaners are W-2 employees with benefits, training, and accountability.',
+                },
+                {
+                  icon: Clock,
+                  title: '24/7 Support',
+                  description:
+                    'Real people answer the phone, day or night. Current clients receive emergency support with on-site arrival in 2 hours or less.',
+                },
+                {
+                  icon: Shield,
+                  title: 'Fully Insured & Bonded',
+                  description:
+                    "Comprehensive general liability and workers' comp insurance. All staff undergo background checks.",
+                },
+              ].map((item, index) => {
+                const Icon = item.icon
+                return (
+                  <div
+                    key={index}
+                    className="bg-gradient-to-br from-brand-deep-blue to-brand-bright-blue text-white rounded-xl p-8 shadow-lg"
+                  >
+                    <Icon className="h-14 w-14 mb-4" />
+                    <h3 className="text-2xl font-bold mb-4">
+                      {item.title}
+                    </h3>
+                    <p className="text-lg leading-relaxed text-white/95">{item.description}</p>
+                  </div>
+                )
+              })}
+            </div>
+
+            {/* Secondary Benefits */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {[
+                {
+                  icon: CheckCircle2,
+                  title: 'Quality Assurance',
+                  description:
+                    'Regular inspections, detailed checklists, and corrective action plans ensure consistent quality.',
+                },
+                {
+                  icon: Award,
+                  title: 'Industry-Specific Training',
+                  description:
+                    'Teams trained on OSHA standards, industry protocols, and facility-specific procedures.',
+                },
+                {
+                  icon: Heart,
+                  title: 'We Actually Care',
+                  description:
+                    'Your account manager knows your name, your facility, and your concerns. No call centers.',
+                },
+              ].map((item, index) => {
+                const Icon = item.icon
+                return (
+                  <div
+                    key={index}
+                    className="bg-white dark:bg-slate-800 border border-neutral-light-grey dark:border-slate-700 rounded-xl p-6 shadow-sm"
+                  >
+                    <Icon className="h-10 w-10 text-brand-bright-blue mb-3" />
+                    <h3 className="text-lg font-semibold text-neutral-charcoal dark:text-white mb-2">
+                      {item.title}
+                    </h3>
+                    <p className="text-body-sm text-neutral-charcoal/80 dark:text-white/80">{item.description}</p>
+                  </div>
+                )
+              })}
+            </div>
           </div>
         </div>
       </section>

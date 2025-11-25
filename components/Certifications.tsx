@@ -149,22 +149,20 @@ export function CertificationShowcase() {
           {CERTIFICATIONS.map((cert) => (
             <div
               key={cert.id}
-              className={`cursor-pointer rounded-lg bg-white p-6 text-center shadow-md transition-all duration-300 hover:shadow-xl dark:bg-slate-800 ${
-                cert.status === 'pending' ? 'opacity-50' : ''
-              }`}
+              className="cursor-pointer rounded-lg bg-white border-2 border-brand-deep-blue p-6 text-center shadow-md transition-all duration-300 hover:shadow-xl dark:bg-white dark:border-brand-deep-blue"
               onClick={() => setSelectedCert(cert)}
             >
-              <div className="mx-auto mb-4 flex h-24 w-24 items-center justify-center">
+              <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center">
                 <img
                   src={cert.logo}
                   alt={cert.name}
                   className="max-h-full max-w-full object-contain"
                 />
               </div>
-              <h3 className="font-semibold text-neutral-charcoal dark:text-white">{cert.name}</h3>
+              <h3 className="font-semibold text-neutral-charcoal text-sm">{cert.name}</h3>
               {cert.status === 'pending' && (
-                <span className="mt-2 inline-block rounded bg-yellow-100 px-2 py-1 text-xs text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200">
-                  Coming Soon
+                <span className="mt-2 inline-block rounded bg-[#E6F2FA] px-2 py-1 text-xs font-semibold text-brand-bright-blue">
+                  In Progress
                 </span>
               )}
             </div>
