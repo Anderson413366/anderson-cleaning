@@ -548,7 +548,9 @@ export default function ServicesPage() {
                 title: 'Healthcare Facility Cost Reduction',
                 location: 'Springfield, MA',
                 industry: 'Healthcare',
-                metric: '28% Cost Reduction',
+                metricNumber: '28%',
+                metricLabel: 'Cost Reduction',
+                progress: 72, // Visual representation
                 description:
                   'A major healthcare facility in Springfield reduced their cleaning costs by 28% while improving patient satisfaction scores through our optimized cleaning protocols and supply management.',
                 icon: Building2,
@@ -557,7 +559,9 @@ export default function ServicesPage() {
                 title: 'Zero Complaints Achievement',
                 location: 'Hartford, CT',
                 industry: 'Corporate Office',
-                metric: 'Weekly Complaints → Zero',
+                metricNumber: 'Zero',
+                metricLabel: 'Complaints in 6 Months',
+                progress: 100,
                 description:
                   'A corporate office in Hartford went from receiving weekly cleaning complaints to zero complaints over 6 months with our quality assurance program and dedicated account management.',
                 icon: Building,
@@ -566,7 +570,9 @@ export default function ServicesPage() {
                 title: 'Post-Construction Excellence',
                 location: 'Western Massachusetts',
                 industry: 'Manufacturing',
-                metric: 'Under Budget & On Time',
+                metricNumber: '100%',
+                metricLabel: 'On Time & Budget',
+                progress: 100,
                 description:
                   "A manufacturing plant's post-construction cleanup was completed under budget and ahead of schedule, allowing them to resume operations 2 days early.",
                 icon: Factory,
@@ -574,31 +580,49 @@ export default function ServicesPage() {
             ].map((study) => (
               <div
                 key={study.title}
-                className="bg-white dark:bg-slate-800 rounded-xl border-2 border-neutral-light-grey dark:border-slate-700 p-6 hover:border-brand-bright-blue dark:hover:border-brand-bright-blue transition-all"
+                className="relative bg-white dark:bg-slate-800 rounded-xl border-2 border-neutral-light-grey dark:border-slate-700 p-8 hover:border-brand-bright-blue dark:hover:border-brand-bright-blue hover:shadow-xl transition-all duration-300"
               >
-                <div className="mb-4">
-                  <div className="w-12 h-12 bg-brand-bright-blue/10 dark:bg-brand-bright-blue/20 rounded-lg flex items-center justify-center">
-                    <study.icon className="h-6 w-6 text-brand-bright-blue" />
+                {/* Industry icon badge - top-right */}
+                <div className="absolute top-6 right-6">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br from-brand-bright-blue to-brand-deep-blue shadow-lg">
+                    <study.icon className="h-6 w-6 text-white" strokeWidth={2} />
                   </div>
                 </div>
 
-                <div className="mb-3">
-                  <span className="inline-block px-3 py-1 bg-brand-bright-blue text-white text-sm font-semibold rounded">
-                    {study.metric}
-                  </span>
+                {/* Large red metric number */}
+                <div className="mb-4">
+                  <div className="text-5xl font-bold text-brand-red mb-1" style={{ lineHeight: '1' }}>
+                    {study.metricNumber}
+                  </div>
+                  <div className="text-sm font-semibold text-neutral-charcoal/70 dark:text-white/70 uppercase tracking-wide">
+                    {study.metricLabel}
+                  </div>
                 </div>
 
-                <h3 className="text-h3 font-semibold text-neutral-charcoal dark:text-white mb-2">
+                {/* Progress bar */}
+                <div className="mb-6">
+                  <div className="h-2 bg-neutral-light-grey dark:bg-slate-700 rounded-full overflow-hidden">
+                    <div
+                      className="h-full bg-gradient-to-r from-brand-red to-brand-bright-blue rounded-full transition-all duration-1000"
+                      style={{ width: `${study.progress}%` }}
+                    />
+                  </div>
+                </div>
+
+                {/* Title */}
+                <h3 className="text-h3 font-semibold text-neutral-charcoal dark:text-white mb-3">
                   {study.title}
                 </h3>
 
-                <div className="flex items-center gap-2 text-sm text-neutral-charcoal/60 dark:text-white/80 mb-3">
+                {/* Location and industry */}
+                <div className="flex items-center gap-2 text-sm text-neutral-charcoal/60 dark:text-white/80 mb-4">
                   <MapPin className="h-4 w-4" />
                   <span>
                     {study.location} • {study.industry}
                   </span>
                 </div>
 
+                {/* Description */}
                 <p className="text-body-sm text-neutral-charcoal/70 dark:text-white/80">
                   {study.description}
                 </p>
