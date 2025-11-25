@@ -132,6 +132,7 @@ const faqCategories = {
 export default function FAQPage() {
   const [openQuestion, setOpenQuestion] = useState<string | null>(null)
   const [searchQuery, setSearchQuery] = useState('')
+  const [isSearchFocused, setIsSearchFocused] = useState(false)
 
   const toggleQuestion = (question: string) => {
     setOpenQuestion(openQuestion === question ? null : question)
@@ -187,14 +188,24 @@ export default function FAQPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mx-auto">
             <div className="relative">
-              <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 h-5 w-5 text-brand-bright-blue dark:text-brand-bright-blue" />
+              <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 h-5 w-5 text-brand-bright-blue dark:text-brand-bright-blue pointer-events-none" />
               <input
                 type="text"
                 placeholder="Search FAQs..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-12 pr-4 py-3 rounded-lg border-2 border-brand-bright-blue bg-white dark:bg-slate-800 text-neutral-charcoal dark:text-white placeholder:text-neutral-charcoal/50 dark:placeholder:text-white/50 focus:outline-none focus:shadow-[0_0_0_4px_rgba(0,119,217,0.25)] transition-shadow duration-200"
+                onFocus={() => setIsSearchFocused(true)}
+                onBlur={() => setIsSearchFocused(false)}
+                className="w-full pl-12 pr-4 py-3 rounded-lg border-2 border-brand-deep-blue dark:border-brand-bright-blue bg-white dark:bg-slate-800 text-neutral-charcoal dark:text-white placeholder:text-neutral-charcoal/50 dark:placeholder:text-white/50 focus:outline-none focus:border-brand-bright-blue focus:shadow-[0_0_0_4px_rgba(0,119,217,0.25)] transition-all duration-200"
               />
+              {isSearchFocused && (
+                <p className="mt-2 text-xs text-neutral-charcoal/60 dark:text-white/60 flex items-center gap-1.5">
+                  <span className="inline-flex items-center justify-center px-2 py-0.5 rounded bg-neutral-light-grey dark:bg-slate-700 text-neutral-charcoal dark:text-white font-mono text-xs border border-neutral-charcoal/20 dark:border-white/20">
+                    Enter
+                  </span>
+                  <span>to search</span>
+                </p>
+              )}
             </div>
           </div>
         </div>
