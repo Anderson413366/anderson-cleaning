@@ -98,30 +98,30 @@ const connecticutLocations = [
 export default function LocationsHub() {
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="bg-gradient-to-b from-blue-600 to-blue-700 text-white py-20">
-        <div className="container mx-auto px-4">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">
-            Commercial Cleaning Service Areas
-          </h1>
-          <p className="text-xl mb-8 opacity-95 max-w-3xl">
-            Anderson Cleaning provides professional commercial cleaning services throughout Western
-            Massachusetts and Northern Connecticut. Select your city below for local service
-            information.
-          </p>
-          <div className="flex flex-wrap gap-4">
-            <Link
-              href="/quote"
-              className="bg-white text-brand-bright-blue px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
-            >
-              Get Free Quote
-            </Link>
-            <a
-              href="tel:4133065053"
-              className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-brand-bright-blue transition-colors"
-            >
-              Call (413) 306-5053
-            </a>
+      {/* Hero Section - Brand Consistent */}
+      <section className="hero-section bg-brand-deep-blue text-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto text-center">
+            <h1 className="text-h1 font-extrabold mb-6 leading-tight">
+              Commercial Cleaning Service Areas
+            </h1>
+            <p className="text-body md:text-h3 text-white/90 mb-8 max-w-3xl mx-auto">
+              Professional commercial cleaning throughout Western Massachusetts and Northern Connecticut. Find your local service area.
+            </p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Link
+                href="/quote"
+                className="rounded-full bg-white text-brand-deep-blue px-8 py-4 font-semibold hover:bg-gray-100 transition-all duration-150 shadow-sm"
+              >
+                Get Free Quote
+              </Link>
+              <a
+                href="tel:+14133065053"
+                className="rounded-full border-2 border-white text-white px-8 py-4 font-semibold hover:bg-white/10 transition-all duration-150"
+              >
+                Call (413) 306-5053
+              </a>
+            </div>
           </div>
         </div>
       </section>
