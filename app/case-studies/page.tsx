@@ -1,3 +1,5 @@
+'use client'
+
 /**
  * Case Studies Hub Page
  *
@@ -7,7 +9,6 @@
  * Path: /case-studies
  */
 
-import type { Metadata } from 'next'
 import React from 'react'
 import Link from 'next/link'
 
@@ -16,14 +17,6 @@ import { ArrowRight, TrendingUp } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
 import { caseStudies } from '@/lib/case-studies-data'
 import { getIconComponent } from '@/lib/icon-map'
-
-export const metadata: Metadata = {
-  title: 'Case Studies - Commercial Cleaning Success Stories',
-  description: 'See how Anderson Cleaning Company helped businesses solve their cleaning challenges. Real clients, real results, documented outcomes across healthcare, manufacturing, offices, and more.',
-  alternates: {
-    canonical: '/case-studies',
-  },
-}
 
 export default function CaseStudiesPage() {
   return (
