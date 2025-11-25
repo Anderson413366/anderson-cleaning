@@ -658,6 +658,39 @@ export default async function BlogPost({
             <style
               dangerouslySetInnerHTML={{
                 __html: `
+                  /* H2 Subheadings with Deep Blue Left Border */
+                  .prose h2 {
+                    border-left: 4px solid #002A86;
+                    padding-left: 1.25rem;
+                    margin-top: 3rem !important;
+                  }
+                  .dark .prose h2 {
+                    border-left-color: #0077D9;
+                  }
+
+                  /* Custom Checkmark Bullets for Lists */
+                  .prose ul {
+                    list-style: none;
+                    padding-left: 0;
+                  }
+                  .prose ul li {
+                    position: relative;
+                    padding-left: 2rem;
+                  }
+                  .prose ul li::before {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    top: 0.4em;
+                    width: 1.25rem;
+                    height: 1.25rem;
+                    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230077D9' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    flex-shrink: 0;
+                  }
+
+                  /* Callout Boxes */
                   .callout {
                     background: #ffffff;
                     border: 1px solid #dfe2e6;
