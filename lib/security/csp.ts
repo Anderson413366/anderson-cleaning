@@ -34,7 +34,6 @@ export const cspDirectives: CSPDirectives = {
     'https://www.googletagmanager.com',
     'https://www.google-analytics.com',
     'https://www.clarity.ms',
-    'https://client.crisp.chat',
     'https://assets.calendly.com',
     'https://cdn.sanity.io',
     'https://vercel.live',
@@ -44,7 +43,6 @@ export const cspDirectives: CSPDirectives = {
     "'self'",
     "'unsafe-inline'", // Required for Tailwind CSS and styled-jsx
     'https://fonts.googleapis.com',
-    'https://client.crisp.chat',
     'https://assets.calendly.com',
   ],
 
@@ -58,14 +56,11 @@ export const cspDirectives: CSPDirectives = {
     'https://www.google-analytics.com',
     'https://maps.googleapis.com',
     'https://maps.gstatic.com',
-    'https://client.crisp.chat',
-    'https://image.crisp.chat',
-    'https://storage.crisp.chat',
     'https://*.tile.openstreetmap.org', // OpenStreetMap tiles for service area map
     'https://cdnjs.cloudflare.com', // Leaflet marker icons
   ],
 
-  'font-src': ["'self'", 'data:', 'https://fonts.gstatic.com', 'https://client.crisp.chat'],
+  'font-src': ["'self'", 'data:', 'https://fonts.gstatic.com'],
 
   'connect-src': [
     "'self'",
@@ -74,8 +69,6 @@ export const cspDirectives: CSPDirectives = {
     'https://www.google-analytics.com',
     'https://analytics.google.com',
     'https://www.clarity.ms',
-    'https://client.crisp.chat',
-    'https://wss.crisp.chat',
     'https://api.resend.com',
     'https://cdn.sanity.io',
     'https://*.sanity.io',
@@ -95,8 +88,6 @@ export const cspDirectives: CSPDirectives = {
   'media-src': [
     "'self'",
     'https://cdn.sanity.io',
-    'https://client.crisp.chat',
-    'https://storage.crisp.chat',
   ],
 
   'object-src': ["'none'"],

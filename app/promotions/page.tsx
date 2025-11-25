@@ -1,9 +1,18 @@
-'use client'
-
+import type { Metadata } from 'next'
 import Link from 'next/link'
 import { Button } from '@/components/ui/Button'
 import { Gift, Users, DollarSign, CheckCircle2, ArrowRight, Sparkles, Calendar, Award } from 'lucide-react'
 import { SpecialOfferSchema } from '@/components/Schema'
+
+export const metadata: Metadata = {
+  title: 'Special Offers & Promotions - Commercial Cleaning Deals',
+  description: 'Save on commercial cleaning services with Anderson Cleaning Company\'s special offers. New client discounts, referral rewards, and seasonal promotions available in Western MA & CT.',
+  alternates: {
+    canonical: '/promotions',
+  },
+}
+
+'use client'
 
 export default function PromotionsPage() {
   return (
@@ -78,7 +87,7 @@ export default function PromotionsPage() {
                   </Button>
                 </Link>
                 <p className="text-xs text-white/80 mt-4 text-center">
-                  Offer expires: December 31, 2024
+                  Offer expires: December 31, 2025
                 </p>
               </div>
             </div>

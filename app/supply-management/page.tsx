@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import Link from 'next/link'
 import { Button } from '@/components/ui/Button'
 import StructuredData from '@/components/StructuredData'
@@ -15,6 +16,14 @@ import {
   ShoppingCart,
   Truck,
 } from 'lucide-react'
+
+export const metadata: Metadata = {
+  title: 'Supply Management Services - Automated Office Supplies Western MA',
+  description: 'Never run out of essential supplies with Anderson Cleaning Company\'s supply management program. Automated inventory tracking, bulk pricing, and scheduled delivery for Western MA & CT businesses.',
+  alternates: {
+    canonical: '/supply-management',
+  },
+}
 
 export const revalidate = 86400
 

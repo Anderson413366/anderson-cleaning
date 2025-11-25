@@ -207,7 +207,6 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 
         {/* DNS Prefetch for additional third-party services */}
         <link rel="dns-prefetch" href="https://www.clarity.ms" />
-        <link rel="dns-prefetch" href="https://client.crisp.chat" />
         <link rel="dns-prefetch" href="https://calendly.com" />
         <link rel="dns-prefetch" href="https://api.hubspot.com" />
         <link rel="dns-prefetch" href="https://api.resend.com" />

@@ -1,4 +1,4 @@
-
+import type { Metadata } from 'next'
 import Link from 'next/link'
 import { Button } from '@/components/ui/Button'
 import StatsBar from '@/components/sections/StatsBar'
@@ -19,6 +19,14 @@ import {
   Handshake,
   Star,
 } from 'lucide-react'
+
+export const metadata: Metadata = {
+  title: 'About Us - Commercial Cleaning Company Western Massachusetts',
+  description: '18+ years serving Western MA & CT businesses with professional commercial cleaning. Family-owned, W-2 employees, OSHA/CDC compliant. Learn about our commitment to quality and service excellence.',
+  alternates: {
+    canonical: '/about',
+  },
+}
 
 export const revalidate = 86400
 

@@ -1,10 +1,18 @@
-
+import type { Metadata } from 'next'
 import Link from 'next/link'
 import { Button } from '@/components/ui/Button'
 import { Star, ExternalLink } from 'lucide-react'
 import StructuredData from '@/components/StructuredData'
 import TestimonialsExplorer from '@/components/testimonials/TestimonialsExplorer'
 import { Testimonial } from '@/lib/testimonials/types'
+
+export const metadata: Metadata = {
+  title: 'Client Testimonials - Commercial Cleaning Reviews Western MA',
+  description: 'Read testimonials from businesses across Western Massachusetts & Northern Connecticut who trust Anderson Cleaning Company. 5-star rated commercial cleaning services with proven results.',
+  alternates: {
+    canonical: '/testimonials',
+  },
+}
 
 export const revalidate = 86400
 

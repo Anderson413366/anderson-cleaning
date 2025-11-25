@@ -1,7 +1,16 @@
-export const revalidate = 86400
-
+import type { Metadata } from 'next'
 import { BookOpen } from 'lucide-react'
 import BlogExplorer from '@/components/blog/BlogExplorer'
+
+export const metadata: Metadata = {
+  title: 'Blog - Commercial Cleaning Tips & Industry Insights',
+  description: 'Expert advice on commercial cleaning, office maintenance, health & safety, sustainability, and facility management. Tips from professional cleaners serving Western MA & CT.',
+  alternates: {
+    canonical: '/blog',
+  },
+}
+
+export const revalidate = 86400
 
 const blogPosts = [
   {

@@ -1,7 +1,16 @@
-'use client'
-
+import type { Metadata } from 'next'
 import ContactForm from '@/components/forms/ContactForm'
 import { Phone, Mail, MapPin, Clock, CheckCircle2 } from 'lucide-react'
+
+export const metadata: Metadata = {
+  title: 'Contact Us - Commercial Cleaning Services Springfield MA',
+  description: 'Contact Anderson Cleaning Company for professional commercial cleaning services in Western Massachusetts & Northern Connecticut. Call (413) 306-5053 or request a quote. 24/7 support for current clients.',
+  alternates: {
+    canonical: '/contact',
+  },
+}
+
+'use client'
 
 export default function ContactPage() {
   return (
