@@ -193,13 +193,13 @@ export default function FAQPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mx-auto">
             <div className="relative">
-              <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 h-5 w-5 text-neutral-charcoal/50 dark:text-white/50" />
+              <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 h-5 w-5 text-brand-bright-blue dark:text-brand-bright-blue" />
               <input
                 type="text"
                 placeholder="Search FAQs..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className={`${inputClassName} pl-12`}
+                className="w-full pl-12 pr-4 py-3 rounded-lg border-2 border-brand-bright-blue bg-white dark:bg-slate-800 text-neutral-charcoal dark:text-white placeholder:text-neutral-charcoal/50 dark:placeholder:text-white/50 focus:outline-none focus:shadow-[0_0_0_4px_rgba(0,119,217,0.25)] transition-shadow duration-200"
               />
             </div>
           </div>
@@ -225,9 +225,9 @@ export default function FAQPage() {
                 </Button>
               </div>
             ) : (
-              Object.entries(filteredFAQs).map(([category, questions]) => (
+              Object.entries(filteredFAQs).map(([category, questions], categoryIndex) => (
                 <div key={category} className="mb-12">
-                  <h2 className="text-h3 leading-normal font-bold text-neutral-charcoal dark:text-white mb-6 pb-3 border-b-2 border-primary-600">
+                  <h2 className={`text-h3 leading-normal font-bold text-brand-deep-blue dark:text-brand-bright-blue mb-4 ${categoryIndex === 0 ? 'mt-0' : 'mt-12'}`}>
                     {category}
                   </h2>
                   <div className="space-y-4">
@@ -242,7 +242,7 @@ export default function FAQPage() {
                           <h3>
                             <button
                               onClick={() => toggleQuestion(questionId)}
-                              className="w-full px-6 py-5 text-left flex items-start justify-between hover:bg-neutral-off-white dark:hover:bg-slate-600 transition-colors min-h-[44px]"
+                              className="group w-full px-6 py-5 text-left flex items-start justify-between hover:bg-neutral-off-white dark:hover:bg-slate-600 transition-colors min-h-[44px]"
                               aria-expanded={isOpen}
                               aria-controls={`faq-answer-${questionId}`}
                             >
@@ -251,12 +251,12 @@ export default function FAQPage() {
                               </span>
                               {isOpen ? (
                                 <ChevronUp
-                                  className="h-6 w-6 text-primary-600 dark:text-primary-400 flex-shrink-0 transition-transform"
+                                  className="h-6 w-6 text-brand-deep-blue dark:text-brand-bright-blue flex-shrink-0 transition-transform"
                                   aria-hidden="true"
                                 />
                               ) : (
                                 <ChevronDown
-                                  className="h-6 w-6 text-neutral-charcoal/50 flex-shrink-0 transition-transform"
+                                  className="h-6 w-6 text-neutral-charcoal/50 group-hover:text-brand-deep-blue dark:group-hover:text-brand-bright-blue group-hover:rotate-180 flex-shrink-0 transition-all duration-300"
                                   aria-hidden="true"
                                 />
                               )}
