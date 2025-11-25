@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import ContactForm from '@/components/forms/ContactForm'
-import { Phone, Mail, MapPin, Clock, CheckCircle2 } from 'lucide-react'
+import { Phone, Mail, MapPin, Clock, CheckCircle2, Zap, AlertCircle } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Contact Us - Commercial Cleaning Services Springfield MA',
@@ -34,17 +34,45 @@ export default function ContactPage() {
 
             {/* Contact Information Sidebar */}
             <div className="lg:col-span-1 space-y-6">
-              {/* Fast Response */}
+              {/* 24/7 Emergency Support */}
               <div className="bg-gradient-to-br from-brand-deep-blue to-brand-bright-blue text-white rounded-lg p-6 shadow-sm">
-                <Clock className="h-12 w-12 mb-4 text-brand-bright-blue" />
-                <h3 className="text-h3 leading-normal font-semibold mb-2">Here When You Need Us</h3>
-                <p className="text-white/80 mb-4">
-                  Office hours: Monday – Friday, 9 AM – 5 PM EST. We respond to all inquiries within
-                  24 hours.
-                </p>
-                <div className="text-sm text-white/80">
-                  Current clients receive 24/7 emergency support with on-site arrival in 2 hours or
-                  less (premium service).
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="bg-white/20 rounded-full p-3">
+                    <Zap className="h-7 w-7 text-white" />
+                  </div>
+                  <div>
+                    <div className="inline-flex items-center gap-1.5 bg-red-500 text-white px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide">
+                      <AlertCircle className="h-3.5 w-3.5" />
+                      Emergency
+                    </div>
+                  </div>
+                </div>
+                <h3 className="text-h3 leading-normal font-bold mb-4">24/7 Emergency Support</h3>
+
+                {/* Emergency Response */}
+                <div className="bg-white/10 rounded-lg p-4 mb-4">
+                  <div className="flex items-start gap-2 mb-2">
+                    <Clock className="h-5 w-5 text-white flex-shrink-0 mt-0.5" />
+                    <div>
+                      <p className="font-semibold text-white mb-1">Current Clients</p>
+                      <p className="text-white/90 text-sm">
+                        24/7 emergency support with on-site arrival in <span className="font-bold text-white">2 hours or less</span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Office Hours */}
+                <div className="border-t border-white/20 pt-4">
+                  <p className="text-xs font-semibold text-white/70 uppercase tracking-wide mb-2">
+                    Office Hours
+                  </p>
+                  <p className="text-white/90">
+                    Monday – Friday: 9 AM – 5 PM EST
+                  </p>
+                  <p className="text-white/80 text-sm mt-1">
+                    We respond to all inquiries within 24 hours
+                  </p>
                 </div>
               </div>
 
