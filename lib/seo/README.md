@@ -175,8 +175,8 @@ const faqs: FAQItem[] = [
     answer: 'We serve businesses within 100 miles of West Springfield, MA...',
   },
   {
-    question: 'Do you clean restaurants?',
-    answer: 'No, we do not service restaurants or food service establishments...',
+    question: 'What types of facilities do you clean?',
+    answer: 'We specialize in offices, medical facilities, educational institutions, retail stores, and light manufacturing...',
   },
 ]
 

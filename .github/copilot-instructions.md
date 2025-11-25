@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-**B2B Commercial Cleaning Website** built with Next.js 14 App Router, serving a 100-mile radius from West Springfield, MA. Focus: office buildings, medical facilities, educational institutions, retail stores, warehouses. **NO residential cleaning, restaurants, or 7-day services.**
+**B2B Commercial Cleaning Website** built with Next.js 14 App Router, serving a 100-mile radius from West Springfield, MA. Focus: office buildings, medical facilities, educational institutions, retail stores, and warehouses.
 
 ## Architecture Patterns
 
