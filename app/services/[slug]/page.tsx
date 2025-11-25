@@ -7,6 +7,7 @@ import {
   ArrowLeft,
   ArrowRight,
   CheckCircle2,
+  ChevronRight,
   ShieldCheck,
   Sparkles,
   Star,
@@ -113,12 +114,28 @@ function HeroSection({ service, ServiceIcon }: { service: ServiceData; ServiceIc
     <section className="hero-section bg-gradient-to-br from-brand-deep-blue to-brand-bright-blue text-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
-          <Link
-            href="/services"
-            className="inline-flex items-center text-sm font-medium text-white/70 transition hover:text-white mb-6"
-          >
-            <ArrowLeft className="mr-2 h-4 w-4" /> Services
-          </Link>
+          {/* Breadcrumb Navigation */}
+          <nav className="mb-6" aria-label="Breadcrumb">
+            <ol className="flex items-center justify-center gap-2 text-sm text-white/80">
+              <li>
+                <Link href="/" className="hover:text-white transition-colors duration-150">
+                  Home
+                </Link>
+              </li>
+              <ChevronRight className="h-4 w-4" aria-hidden="true" />
+              <li>
+                <Link href="/services" className="hover:text-white transition-colors duration-150">
+                  Services
+                </Link>
+              </li>
+              <ChevronRight className="h-4 w-4" aria-hidden="true" />
+              <li>
+                <span className="text-white font-semibold" aria-current="page">
+                  {service.title}
+                </span>
+              </li>
+            </ol>
+          </nav>
           <h1 className="font-extrabold mb-6 leading-tight">
             {service.h1}
           </h1>
