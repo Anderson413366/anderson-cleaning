@@ -16,6 +16,7 @@ import {
   HardHat,
   Headphones,
   HelpCircle,
+  Mail,
   MapPin,
   Package,
   Phone,
@@ -424,19 +425,28 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Final CTA Section with Quote Form */}
-      <section className="py-20 bg-neutral-off-white dark:bg-slate-900">
+      {/* Final CTA Section with Quote Form - Enhanced Container */}
+      <section className="py-20 bg-white dark:bg-slate-900">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-[600px] mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-h2 leading-tight font-bold text-neutral-charcoal dark:text-white mb-4">
-                Request Your Free Quote
-              </h2>
-              <p className="text-body text-neutral-charcoal/70 dark:text-white/80">
-                Tell us about your facility and we'll provide a custom quote within 24 hours
-              </p>
+          <div className="max-w-[700px] mx-auto">
+            {/* Light gray background container with visual separation */}
+            <div className="bg-neutral-light-grey dark:bg-slate-800 rounded-2xl py-20 px-8 md:px-12">
+              <div className="text-center mb-12">
+                {/* Glass-effect icon */}
+                <div className="flex justify-center mb-6">
+                  <div className="relative flex h-16 w-16 items-center justify-center rounded-lg bg-gradient-to-br from-brand-bright-blue/20 to-brand-deep-blue/20 backdrop-blur-md shadow-inner">
+                    <Mail className="h-8 w-8 text-brand-deep-blue dark:text-brand-bright-blue" aria-hidden="true" />
+                  </div>
+                </div>
+                <h2 className="text-h2 leading-tight font-bold text-neutral-charcoal dark:text-white mb-4">
+                  Request Your Free Quote
+                </h2>
+                <p className="text-body text-neutral-charcoal/70 dark:text-white/80">
+                  Tell us about your facility and we'll provide a custom quote within 24 hours
+                </p>
+              </div>
+              <QuoteMiniForm />
             </div>
-            <QuoteMiniForm />
           </div>
         </div>
       </section>
