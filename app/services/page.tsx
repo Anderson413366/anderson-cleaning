@@ -348,9 +348,9 @@ export default function ServicesPage() {
                   )}
 
                   <div className="p-8 flex flex-col h-full">
-                    {/* Icon */}
-                    <div className="mb-4 inline-flex h-16 w-16 items-center justify-center rounded-xl bg-brand-bright-blue/10 dark:bg-brand-bright-blue/20">
-                      <Icon className="h-8 w-8 text-brand-bright-blue" aria-hidden="true" />
+                    {/* Glass-effect icon with gradient background */}
+                    <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-brand-bright-blue to-brand-deep-blue backdrop-blur-md shadow-lg">
+                      <Icon className="h-6 w-6 text-white" strokeWidth={2} aria-hidden="true" />
                     </div>
 
                     {/* Title */}
