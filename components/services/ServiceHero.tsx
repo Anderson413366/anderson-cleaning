@@ -90,7 +90,7 @@ export default function ServiceHero({ service }: ServiceHeroProps) {
             </div>
           </div>
 
-          <h1 className="font-extrabold mb-6 leading-tight">
+          <h1 className="text-[40px] md:text-5xl font-extrabold mb-6 leading-tight">
             {service.h1}
           </h1>
           <p className="text-xl md:text-2xl text-white/90 mb-12 max-w-3xl mx-auto leading-relaxed">

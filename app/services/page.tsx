@@ -189,7 +189,7 @@ export default function ServicesPage() {
           </nav>
 
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="font-extrabold mb-6 leading-tight">
+            <h1 className="text-[40px] md:text-5xl font-extrabold mb-6 leading-tight">
               The Region&apos;s Premier Commercial Cleaning Service
             </h1>
             <p className="text-xl md:text-2xl text-white/90 mb-12 max-w-3xl mx-auto leading-relaxed">
