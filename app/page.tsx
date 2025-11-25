@@ -181,54 +181,53 @@ export default function Home() {
             </div>
 
             <div className="bg-neutral-off-white dark:bg-slate-800 rounded-2xl p-8 mb-8">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div>
-                  <h3 className="text-h3 leading-normal font-semibold text-neutral-charcoal dark:text-white mb-4 flex items-center">
-                    <MapPin className="h-6 w-6 text-brand-deep-blue dark:text-brand-bright-blue mr-2" />
-                    Primary Service Areas
-                  </h3>
-                  <ul className="space-y-2 text-body text-neutral-charcoal/80 dark:text-white/80">
-                    <li className="flex items-center">
-                      <CheckCircle2 className="h-4 w-4 text-brand-bright-blue mr-2 flex-shrink-0" />
-                      Springfield & West Springfield
-                    </li>
-                    <li className="flex items-center">
-                      <CheckCircle2 className="h-4 w-4 text-brand-bright-blue mr-2 flex-shrink-0" />
-                      Worcester County
-                    </li>
-                    <li className="flex items-center">
-                      <CheckCircle2 className="h-4 w-4 text-brand-bright-blue mr-2 flex-shrink-0" />
-                      Northampton & Amherst
-                    </li>
-                    <li className="flex items-center">
-                      <CheckCircle2 className="h-4 w-4 text-brand-bright-blue mr-2 flex-shrink-0" />
-                      Hartford, CT area
-                    </li>
-                  </ul>
+              {/* Primary Service Areas with pill-shaped location tags */}
+              <div className="mb-8">
+                <h3 className="text-h3 leading-normal font-semibold text-neutral-charcoal dark:text-white mb-6 flex items-center justify-center">
+                  <MapPin className="h-6 w-6 text-brand-deep-blue dark:text-brand-bright-blue mr-2" />
+                  Primary Service Areas
+                </h3>
+                <div className="flex flex-wrap justify-center gap-3">
+                  {[
+                    'Springfield & West Springfield',
+                    'Worcester County',
+                    'Northampton & Amherst',
+                    'Hartford, CT area',
+                  ].map((location) => (
+                    <span
+                      key={location}
+                      className="inline-block px-5 py-2.5 rounded-full border-2 border-brand-deep-blue dark:border-brand-bright-blue bg-white dark:bg-slate-900 text-brand-deep-blue dark:text-brand-bright-blue font-semibold text-sm transition-all duration-200 hover:bg-brand-bright-blue hover:text-white hover:border-brand-bright-blue cursor-default"
+                    >
+                      {location}
+                    </span>
+                  ))}
                 </div>
-                <div>
-                  <h3 className="text-h3 leading-normal font-semibold text-neutral-charcoal dark:text-white mb-4 flex items-center">
-                    <Building2 className="h-6 w-6 text-brand-deep-blue dark:text-brand-bright-blue mr-2" />
-                    We Serve
-                  </h3>
-                  <ul className="space-y-2 text-body text-neutral-charcoal/80 dark:text-white/80">
-                    <li className="flex items-center">
-                      <CheckCircle2 className="h-4 w-4 text-brand-bright-blue mr-2 flex-shrink-0" />
-                      Office buildings & corporate campuses
-                    </li>
-                    <li className="flex items-center">
-                      <CheckCircle2 className="h-4 w-4 text-brand-bright-blue mr-2 flex-shrink-0" />
-                      Medical offices & clinics
-                    </li>
-                    <li className="flex items-center">
-                      <CheckCircle2 className="h-4 w-4 text-brand-bright-blue mr-2 flex-shrink-0" />
-                      Educational facilities & schools
-                    </li>
-                    <li className="flex items-center">
-                      <CheckCircle2 className="h-4 w-4 text-brand-bright-blue mr-2 flex-shrink-0" />
-                      Retail stores & warehouses
-                    </li>
-                  </ul>
+              </div>
+
+              {/* Facility Types with pill-shaped tags */}
+              <div className="pt-8 border-t border-neutral-charcoal/10 dark:border-white/10">
+                <h3 className="text-h3 leading-normal font-semibold text-neutral-charcoal dark:text-white mb-6 flex items-center justify-center">
+                  <Building2 className="h-6 w-6 text-brand-deep-blue dark:text-brand-bright-blue mr-2" />
+                  Facility Types We Serve
+                </h3>
+                <div className="flex flex-wrap justify-center gap-3">
+                  {[
+                    'Office Buildings',
+                    'Corporate Campuses',
+                    'Medical Offices',
+                    'Clinics',
+                    'Educational Facilities',
+                    'Schools',
+                    'Retail Stores',
+                    'Warehouses',
+                  ].map((facility) => (
+                    <span
+                      key={facility}
+                      className="inline-block px-5 py-2.5 rounded-full border-2 border-brand-deep-blue dark:border-brand-bright-blue bg-white dark:bg-slate-900 text-brand-deep-blue dark:text-brand-bright-blue font-semibold text-sm transition-all duration-200 hover:bg-brand-bright-blue hover:text-white hover:border-brand-bright-blue cursor-default"
+                    >
+                      {facility}
+                    </span>
+                  ))}
                 </div>
               </div>
             </div>
