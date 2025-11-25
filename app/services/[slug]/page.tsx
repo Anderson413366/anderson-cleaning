@@ -84,13 +84,16 @@ export default async function ServiceDetailPage({ params }: { params: RouteParam
     answer: faq.answer,
   }))
 
+  // Remove icon from service data for client component (icons can't be serialized)
+  const { icon, ...serviceWithoutIcon } = service
+
   return (
     <div className="min-h-screen bg-neutral-off-white text-neutral-charcoal dark:bg-slate-900 dark:text-white">
       {schema && <StructuredData schema={schema} />}
       <BreadcrumbSchema items={breadcrumbs} />
       {faqs.length > 0 && <FAQSchema faqs={faqs} />}
 
-      <ServiceHero service={service} ServiceIcon={ServiceIcon} />
+      <ServiceHero service={serviceWithoutIcon} />
 
       <OverviewSection service={service} />
 

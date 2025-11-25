@@ -15,11 +15,10 @@ const TRUST_BADGES = [
 ]
 
 interface ServiceHeroProps {
-  service: ServiceData
-  ServiceIcon: ElementType
+  service: Omit<ServiceData, 'icon'>
 }
 
-export default function ServiceHero({ service, ServiceIcon }: ServiceHeroProps) {
+export default function ServiceHero({ service }: ServiceHeroProps) {
   const [parallaxOffset, setParallaxOffset] = useState(0)
 
   useEffect(() => {
@@ -62,14 +61,7 @@ export default function ServiceHero({ service, ServiceIcon }: ServiceHeroProps) 
               </ol>
             </nav>
 
-            {/* Service Icon - Centered Above Heading */}
-            <div className="mb-6 flex justify-center lg:justify-start">
-              <div className="inline-flex h-20 w-20 items-center justify-center rounded-2xl bg-white/10 backdrop-blur-md shadow-lg">
-                <ServiceIcon className="h-10 w-10 text-white" strokeWidth={2} aria-hidden="true" />
-              </div>
-            </div>
-
-            <h1 className="font-extrabold mb-6 leading-tight">
+            <h1 className="font-extrabold mb-6 leading-tight mt-6">
               {service.h1}
             </h1>
             <p className="text-xl md:text-2xl text-white/80 mb-8 max-w-2xl mx-auto lg:mx-0">
