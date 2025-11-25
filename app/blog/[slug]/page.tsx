@@ -2,7 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { notFound } from 'next/navigation'
 import { Button } from '@/components/ui/Button'
-import { Calendar, Clock, ArrowLeft, Mail } from 'lucide-react'
+import { Calendar, Clock, ArrowLeft, Mail, ArrowRight } from 'lucide-react'
 import { ArticleSchema, BreadcrumbSchema } from '@/components/Schema'
 
 const blogContent: { [key: string]: any } = {
@@ -722,6 +722,88 @@ export default async function BlogPost({
                 `,
               }}
             />
+          </div>
+        </div>
+
+        {/* Related Articles */}
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 mt-16 mb-16">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-h2 font-bold text-neutral-charcoal dark:text-white mb-8 text-center">
+              Related Articles
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {Object.entries(blogContent)
+                .filter(([postSlug]) => postSlug !== slug)
+                .slice(0, 3)
+                .map(([postSlug, relatedPost]) => {
+                  const excerpt = relatedPost.content
+                    .replace(/<[^>]*>/g, '')
+                    .substring(0, 150)
+                    .trim() + '...'
+
+                  return (
+                    <Link
+                      key={postSlug}
+                      href={`/blog/${postSlug}`}
+                      className="h-full flex flex-col bg-white dark:bg-slate-800 border-2 border-neutral-light-grey dark:border-slate-700 rounded-xl overflow-hidden shadow-sm hover:-translate-y-1 hover:border-brand-bright-blue transition-all duration-300 cursor-pointer group"
+                    >
+                      <div className="relative h-48 bg-neutral-light-grey dark:bg-slate-700 overflow-hidden flex-shrink-0">
+                        <Image
+                          src={relatedPost.image}
+                          alt={relatedPost.title}
+                          fill
+                          loading="lazy"
+                          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                          className="object-cover"
+                          quality={85}
+                        />
+                        <div className="absolute inset-0 bg-brand-deep-blue/60" aria-hidden="true" />
+                      </div>
+
+                      <div className="p-6 flex flex-col flex-1">
+                        {/* Category Badge */}
+                        <div className="mb-3">
+                          <span className="inline-block px-3 py-1 bg-brand-deep-blue/90 dark:bg-brand-deep-blue text-white text-xs font-semibold rounded-full">
+                            {relatedPost.category}
+                          </span>
+                        </div>
+
+                        {/* Date and Read Time */}
+                        <div className="flex items-center gap-3 text-xs text-neutral-charcoal/50 dark:text-white/50 mb-3">
+                          <div className="flex items-center gap-1">
+                            <Calendar className="h-3.5 w-3.5" aria-hidden="true" />
+                            <span>
+                              {new Date(relatedPost.publishedDate).toLocaleDateString('en-US', {
+                                month: 'short',
+                                day: 'numeric',
+                                year: 'numeric',
+                              })}
+                            </span>
+                          </div>
+                          <span aria-hidden="true">•</span>
+                          <div className="flex items-center gap-1">
+                            <Clock className="h-3.5 w-3.5" aria-hidden="true" />
+                            <span>{relatedPost.readTime}</span>
+                          </div>
+                        </div>
+
+                        <h3 className="text-h3 leading-normal font-semibold text-neutral-charcoal dark:text-white mb-3 line-clamp-2 group-hover:text-brand-bright-blue transition-colors">
+                          {relatedPost.title}
+                        </h3>
+
+                        <p className="text-body text-neutral-charcoal/70 dark:text-white/80 mb-6 line-clamp-3 flex-1">
+                          {excerpt}
+                        </p>
+
+                        <div className="mt-auto flex items-center gap-2 text-brand-bright-blue font-semibold text-sm group-hover:gap-3 transition-all">
+                          <span>Read Article</span>
+                          <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                        </div>
+                      </div>
+                    </Link>
+                  )
+                })}
+            </div>
           </div>
         </div>
 
