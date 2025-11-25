@@ -82,7 +82,7 @@ const faqCategories = {
     {
       question: 'What types of facilities do you service?',
       answer:
-        'We specialize in B2B commercial cleaning including: office buildings, medical facilities (clinics, dental offices, physical therapy), educational facilities (schools, daycare centers, training centers), retail stores, light manufacturing and warehouses.',
+        'We specialize in B2B commercial cleaning including: office buildings, medical facilities (clinics, dental offices, physical therapy), educational facilities (schools, daycare centers, training centers), retail stores, light manufacturing and warehouses. We serve B2B clients only and do not offer residential services. Contracted customers also receive access to our full suite of premium add-on services, including specialty cleaning and supply management.',
     },
     {
       question: 'Do you provide specialized cleaning for medical offices?',
