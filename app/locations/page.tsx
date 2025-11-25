@@ -1,18 +1,8 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
-import dynamic from 'next/dynamic'
 import { MapPin } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
-
-// Dynamically import the map to avoid SSR issues with Leaflet
-const ServiceAreaMap = dynamic(() => import('@/components/maps/ServiceAreaMap'), {
-  ssr: false,
-  loading: () => (
-    <div className="h-[500px] w-full rounded-xl bg-neutral-light-grey dark:bg-slate-800 flex items-center justify-center">
-      <p className="text-neutral-charcoal/70 dark:text-white/70">Loading map...</p>
-    </div>
-  ),
-})
+import ServiceAreaMapClient from '@/components/maps/ServiceAreaMapClient'
 
 export const metadata: Metadata = {
   title: 'Service Areas | Commercial Cleaning Locations | Anderson Cleaning',
@@ -119,7 +109,7 @@ export default function LocationsHub() {
 
             {/* Interactive Map */}
             <div className="mb-16">
-              <ServiceAreaMap />
+              <ServiceAreaMapClient />
             </div>
 
             {/* Massachusetts Cities */}
