@@ -9,6 +9,7 @@ import {
   Building,
   Building2,
   CheckCircle2,
+  ChevronRight,
   ClipboardList,
   Factory,
   FileCheck,
@@ -123,9 +124,31 @@ export default function ServicesPage() {
     <div className="min-h-screen bg-neutral-off-white dark:bg-slate-900 transition-colors duration-300">
       <StructuredData schema={jsonLd} />
 
-      {/* Hero */}
-      <section className="hero-section bg-gradient-to-br from-brand-deep-blue to-brand-bright-blue text-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Hero - Reduced height (20% less than homepage) with breadcrumb navigation */}
+      <section className="relative bg-gradient-to-br from-brand-deep-blue to-brand-bright-blue text-white pt-20 pb-12 md:pt-24 md:pb-16 overflow-hidden">
+        {/* Subtle diagonal pattern overlay for visual differentiation */}
+        <div className="absolute inset-0 opacity-10 pointer-events-none" style={{
+          backgroundImage: 'repeating-linear-gradient(45deg, transparent, transparent 20px, rgba(255, 255, 255, 0.05) 20px, rgba(255, 255, 255, 0.05) 40px)',
+        }} aria-hidden="true" />
+
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          {/* Breadcrumb Navigation */}
+          <nav className="mb-8" aria-label="Breadcrumb">
+            <ol className="flex items-center justify-center gap-2 text-sm text-white/80">
+              <li>
+                <Link href="/" className="hover:text-white transition-colors duration-150">
+                  Home
+                </Link>
+              </li>
+              <ChevronRight className="h-4 w-4" aria-hidden="true" />
+              <li>
+                <span className="text-white font-semibold" aria-current="page">
+                  Services
+                </span>
+              </li>
+            </ol>
+          </nav>
+
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="font-extrabold mb-6 leading-tight">
               The Region&apos;s Premier Commercial Cleaning Service
