@@ -7,7 +7,6 @@ import {
   ArrowLeft,
   ArrowRight,
   CheckCircle2,
-  Phone,
   ShieldCheck,
   Sparkles,
   Star,
@@ -16,7 +15,6 @@ import {
 import StructuredData from '@/components/StructuredData'
 import { BreadcrumbSchema, FAQSchema } from '@/components/Schema'
 import { Button } from '@/components/ui/Button'
-import { YEARS_IN_BUSINESS } from '@/lib/constants'
 import {
   serviceSlugs,
   servicesData,
@@ -106,69 +104,32 @@ export default async function ServiceDetailPage({ params }: { params: RouteParam
       <TestimonialsSection service={service} />
       <RelatedAndFAQSection service={service} />
       <BlogLinks service={service} />
-
-      <CTASection
-        heading="Ready to schedule your walkthrough?"
-        subheading="Submit the quote form or call (413) 306-5053. You will hear from us within 24 hours."
-      />
     </div>
   )
 }
 
 function HeroSection({ service, ServiceIcon }: { service: ServiceData; ServiceIcon: ElementType }) {
   return (
-    <section className="hero-section bg-gradient-to-br from-brand-deep-blue via-brand-deep-blue to-brand-bright-blue text-white">
-      <div className="container mx-auto grid max-w-6xl gap-12 px-6 lg:grid-cols-2 lg:items-center">
-        <div>
+    <section className="hero-section bg-brand-deep-blue text-white">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto text-center">
           <Link
             href="/services"
-            className="inline-flex items-center text-sm font-semibold text-white/80 transition hover:text-white"
+            className="inline-flex items-center text-sm font-medium text-white/70 transition hover:text-white mb-6"
           >
-            <ArrowLeft className="mr-2 h-4 w-4" /> Back to all services
+            <ArrowLeft className="mr-2 h-4 w-4" /> Services
           </Link>
-          <p className="mt-4 text-xs uppercase tracking-[0.3em] text-white/80">Serving {SERVICE_AREA}</p>
-          <div className="mt-6 flex items-center gap-3">
-            <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-white/10">
-              <ServiceIcon className="h-7 w-7 text-brand-bright-blue" aria-hidden="true" />
-            </div>
-            <div>
-              <h1 className="text-4xl font-extrabold leading-tight md:text-5xl">{service.h1}</h1>
-              <p className="mt-2 text-lg text-white/90">{service.tagline}</p>
-            </div>
-          </div>
-          <p className="mt-4 text-lg text-white/80">{service.heroDescription}</p>
-          {service.responseTimeNote && (
-            <p className="mt-2 text-sm font-semibold text-emerald-200">{service.responseTimeNote}</p>
-          )}
-          <div className="mt-6 flex flex-wrap items-center gap-4">
-            <Link href="/quote">
-              <Button variant="accent" size="lg" className="min-w-[180px]">
-                Request a Quote
-              </Button>
-            </Link>
-            <a
-              href="tel:+14133065053"
-              className="inline-flex items-center gap-2 rounded-full border border-white/40 px-5 py-3 text-base font-semibold text-white transition hover:bg-white/10"
-            >
-              <Phone className="h-5 w-5" /> (413) 306-5053
-            </a>
-          </div>
-          <p className="mt-3 text-sm text-white/80">Get your free quote within 24 hours.</p>
-          <TrustBadges className="mt-6" theme="light" />
-        </div>
-        <div className="relative h-80 w-full overflow-hidden rounded-3xl shadow-2xl">
-          <picture>
-            <source srcSet={service.heroImage.avif} type="image/avif" />
-            <source srcSet={service.heroImage.webp} type="image/webp" />
-            <Image
-              src={service.heroImage.fallback}
-              alt={service.heroImage.alt}
-              fill
-              sizes="(max-width: 1024px) 100vw, 560px"
-              className="object-cover"
-              priority
-            />
-          </picture>
+          <h1 className="font-extrabold mb-6 leading-tight">
+            {service.h1}
+          </h1>
+          <p className="text-xl md:text-2xl text-white/80 mb-8 max-w-2xl mx-auto">
+            {service.tagline}
+          </p>
+          <Link href="/quote">
+            <Button variant="accent" size="lg">
+              Request a Quote
+            </Button>
+          </Link>
         </div>
       </div>
     </section>
@@ -355,73 +316,6 @@ function BlogLinks({ service }: { service: ServiceData }) {
         </div>
       </div>
     </section>
-  )
-}
-
-function CTASection({
-  heading,
-  subheading,
-  variant = 'primary',
-}: {
-  heading: string
-  subheading: string
-  variant?: 'primary' | 'secondary'
-}) {
-  const bgClasses =
-    variant === 'secondary'
-      ? 'bg-white dark:bg-slate-900 border border-neutral-light-grey dark:border-slate-700'
-      : 'bg-brand-deep-blue text-white'
-
-  return (
-    <section className="py-14">
-      <div className="container mx-auto px-6">
-        <div className={`rounded-3xl p-8 shadow-xl ${bgClasses}`}>
-          <div className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
-            <div>
-              <p className="text-sm uppercase tracking-[0.3em] text-brand-bright-blue">
-                Get your free quote within 24 hours
-              </p>
-              <h3 className="mt-2 text-3xl font-bold">{heading}</h3>
-              <p className="mt-3 text-base opacity-80">{subheading}</p>
-              <p className="mt-2 text-sm opacity-80">Serving {SERVICE_AREA}.</p>
-            </div>
-            <div className="flex flex-col gap-4 lg:justify-self-end">
-              <Link href="/quote">
-                <Button
-                  size="lg"
-                  className="w-full justify-center"
-                  variant={variant === 'secondary' ? 'accent' : 'secondary'}
-                >
-                  Request a Quote
-                </Button>
-              </Link>
-              <a
-                href="tel:+14133065053"
-                className="inline-flex items-center justify-center gap-2 rounded-2xl border border-current px-5 py-3 text-base font-semibold"
-              >
-                <Phone className="h-5 w-5" /> (413) 306-5053
-              </a>
-              <p className="text-center text-sm opacity-80">Need help sooner? Call now and we’ll schedule immediately.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  )
-}
-
-function TrustBadges({ className = '', theme = 'dark' }: { className?: string; theme?: 'light' | 'dark' }) {
-  const badges = ['Licensed & Insured', `${YEARS_IN_BUSINESS} Years in Business`, 'Green Seal Options', 'OSHA-Trained Staff']
-  const textClass = theme === 'light' ? 'text-white/80' : 'text-neutral-charcoal/80 dark:text-white/70'
-  return (
-    <div className={`flex flex-wrap gap-3 text-sm font-semibold ${textClass} ${className}`}>
-      {badges.map((badge) => (
-        <span key={badge} className="inline-flex items-center gap-1 rounded-full border border-current/30 px-3 py-1">
-          <ShieldCheck className="h-4 w-4" />
-          {badge}
-        </span>
-      ))}
-    </div>
   )
 }
 
