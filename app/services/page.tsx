@@ -148,11 +148,6 @@ export default function ServicesPage() {
                 Request a Quote
               </Button>
             </Link>
-            <Link href="/contact">
-              <Button variant="outline" size="lg" className="min-w-[220px] border-2 border-white text-white hover:bg-white/10">
-                Schedule Walk-Through
-              </Button>
-            </Link>
           </div>
         </div>
       </section>
@@ -204,12 +199,9 @@ export default function ServicesPage() {
               return (
                 <div
                   key={i}
-                  className="relative bg-white dark:bg-slate-800 border border-neutral-light-grey dark:border-slate-700 rounded-xl p-8 shadow-sm text-center"
+                  className="relative bg-white dark:bg-slate-800 border border-neutral-light-grey dark:border-slate-700 rounded-xl p-8 shadow-sm text-center after:content-[''] after:absolute after:top-1/2 after:-right-4 after:w-8 after:h-0.5 after:bg-brand-deep-blue last:after:hidden lg:after:block after:hidden"
                 >
-                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-10 h-10 bg-brand-deep-blue text-white rounded-full flex items-center justify-center font-bold text-body shadow-lg">
-                    {item.step}
-                  </div>
-                  <Icon className="h-12 w-12 text-brand-bright-blue mx-auto mb-4 mt-4" />
+                  <Icon className="h-12 w-12 text-brand-bright-blue mx-auto mb-4" />
                   <h3 className="text-h3 leading-normal font-semibold text-neutral-charcoal dark:text-white mb-3">
                     {item.title}
                   </h3>
@@ -236,7 +228,7 @@ export default function ServicesPage() {
               return (
                 <div
                   key={i}
-                  className="h-full flex flex-col bg-white dark:bg-slate-800 border-2 border-neutral-light-grey dark:border-slate-700 rounded-xl shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-brand-bright-blue"
+                  className="h-full min-h-[420px] flex flex-col bg-white dark:bg-slate-800 border-2 border-neutral-light-grey dark:border-slate-700 rounded-xl shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-brand-bright-blue"
                 >
                   <div className="p-8 flex flex-col h-full">
                     <div className="mb-4 inline-flex h-16 w-16 items-center justify-center rounded-xl bg-brand-bright-blue/10 dark:bg-brand-bright-blue/20">
@@ -246,7 +238,7 @@ export default function ServicesPage() {
                       {service.title}
                     </h3>
                     {service.availability === 'contracted' && (
-                      <span className="inline-block px-3 py-1 bg-brand-red/10 text-brand-red dark:bg-brand-red/20 dark:text-brand-red text-xs font-bold uppercase tracking-wide rounded-full mb-3">
+                      <span className="inline-block px-4 py-1 bg-brand-deep-blue text-white text-[10px] font-semibold uppercase tracking-wide rounded mb-3">
                         Premium Add-on
                       </span>
                     )}
@@ -365,7 +357,7 @@ export default function ServicesPage() {
                 </div>
 
                 <div className="mb-3">
-                  <span className="inline-block px-3 py-1 bg-brand-bright-blue/10 dark:bg-brand-bright-blue/20 text-brand-bright-blue text-sm font-semibold rounded-full">
+                  <span className="inline-block px-3 py-1 bg-brand-bright-blue text-white text-sm font-semibold rounded">
                     {study.metric}
                   </span>
                 </div>
