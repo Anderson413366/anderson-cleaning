@@ -30,14 +30,14 @@ export default function ContactPage() {
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {/* Contact Form */}
-            <div className="lg:col-span-2">
+            <div className="lg:col-span-2 lg:pt-12">
               <ContactForm />
             </div>
 
             {/* Contact Information Sidebar */}
-            <div className="lg:col-span-1 space-y-6">
+            <div className="lg:col-span-1 space-y-6 lg:pt-12">
               {/* Fast Response */}
-              <div className="bg-brand-deep-blue text-white rounded-xl p-6 shadow-sm">
+              <div className="bg-brand-deep-blue text-white rounded-lg p-6 shadow-sm">
                 <Clock className="h-12 w-12 mb-4 text-brand-bright-blue" />
                 <h3 className="text-h3 leading-normal font-semibold mb-2">Here When You Need Us</h3>
                 <p className="text-white/80 mb-4">
@@ -51,7 +51,7 @@ export default function ContactPage() {
               </div>
 
               {/* Contact Methods */}
-              <div className="bg-white dark:bg-slate-800 border border-neutral-light-grey dark:border-slate-700 rounded-xl p-6 shadow-sm space-y-6">
+              <div className="bg-white dark:bg-slate-800 border border-neutral-light-grey dark:border-slate-700 rounded-lg p-6 shadow-sm space-y-6">
                 <h3 className="text-h3 leading-normal font-semibold text-neutral-charcoal dark:text-white">
                   Contact Information
                 </h3>
@@ -98,25 +98,11 @@ export default function ContactPage() {
                       </address>
                     </div>
                   </div>
-
-                  <div className="flex items-start space-x-3">
-                    <Clock className="h-5 w-5 text-brand-bright-blue mt-1 flex-shrink-0" />
-                    <div>
-                      <p className="font-semibold text-neutral-charcoal dark:text-white">Office Hours</p>
-                      <p className="text-neutral-charcoal/80 dark:text-white/80">
-                        Monday – Friday: 9 AM – 5 PM EST
-                      </p>
-                      <p className="text-sm text-brand-bright-blue font-medium mt-1">
-                        24/7 emergency support for current clients. On-site in 2 hours or less;
-                        premium rates apply.
-                      </p>
-                    </div>
-                  </div>
                 </div>
               </div>
 
               {/* Service Area */}
-              <div className="bg-white dark:bg-slate-800 border border-neutral-light-grey dark:border-slate-700 rounded-xl p-6 shadow-sm">
+              <div className="bg-white dark:bg-slate-800 border border-neutral-light-grey dark:border-slate-700 rounded-lg p-6 shadow-sm">
                 <h3 className="text-h3 leading-normal font-semibold text-neutral-charcoal dark:text-white mb-3">
                   Service Area
                 </h3>

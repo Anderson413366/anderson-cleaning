@@ -77,7 +77,7 @@ export default function ContactForm({ onSuccess }: ContactFormProps) {
   }
 
   return (
-    <div className="bg-white dark:bg-slate-800 border border-neutral-light-grey dark:border-slate-700 rounded-xl shadow-sm p-8">
+    <div className="bg-white dark:bg-slate-800 border border-neutral-light-grey dark:border-slate-700 rounded-lg shadow-sm p-8">
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
         <div>
           <h2 className="text-h3 font-bold text-neutral-charcoal dark:text-white mb-2">
@@ -122,7 +122,7 @@ export default function ContactForm({ onSuccess }: ContactFormProps) {
         {/* Name */}
         <div>
           <label htmlFor="name" className={labelClassName}>
-            Name <span className="text-red-500">*</span>
+            Name <span className="text-brand-bright-blue text-[10px] relative -top-0.5">*</span>
           </label>
           <input
             {...register('name')}
@@ -137,7 +137,7 @@ export default function ContactForm({ onSuccess }: ContactFormProps) {
         {/* Email */}
         <div>
           <label htmlFor="email" className={labelClassName}>
-            Email Address <span className="text-red-500">*</span>
+            Email Address <span className="text-brand-bright-blue text-[10px] relative -top-0.5">*</span>
           </label>
           <input
             {...register('email')}
@@ -152,7 +152,7 @@ export default function ContactForm({ onSuccess }: ContactFormProps) {
         {/* Phone */}
         <div>
           <label htmlFor="phone" className={labelClassName}>
-            Phone Number <span className="text-red-500">*</span>
+            Phone Number <span className="text-brand-bright-blue text-[10px] relative -top-0.5">*</span>
           </label>
           <input
             {...register('phone')}
@@ -168,7 +168,7 @@ export default function ContactForm({ onSuccess }: ContactFormProps) {
         {/* Message */}
         <div>
           <label htmlFor="message" className={labelClassName}>
-            Message <span className="text-red-500">*</span>
+            Message <span className="text-brand-bright-blue text-[10px] relative -top-0.5">*</span>
           </label>
           <textarea
             {...register('message')}
