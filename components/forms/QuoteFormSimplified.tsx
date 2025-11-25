@@ -255,7 +255,7 @@ export default function QuoteFormSimplified({ onSuccess }: QuoteFormSimplifiedPr
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-8">
           {/* Contact Information Section */}
           <div className="space-y-4">
-            <h3 className="border-b pb-2 text-lg font-semibold text-neutral-charcoal dark:text-white">
+            <h3 className="text-xl font-semibold text-brand-deep-blue dark:text-brand-bright-blue mb-6">
               Your Information
             </h3>
 
@@ -330,7 +330,7 @@ export default function QuoteFormSimplified({ onSuccess }: QuoteFormSimplifiedPr
 
           {/* Facility Information Section */}
           <div className="space-y-4">
-            <h3 className="border-b pb-2 text-lg font-semibold text-neutral-charcoal dark:text-white">
+            <h3 className="text-xl font-semibold text-brand-deep-blue dark:text-brand-bright-blue mb-6">
               Facility Details
             </h3>
 
@@ -393,7 +393,7 @@ export default function QuoteFormSimplified({ onSuccess }: QuoteFormSimplifiedPr
                 <select
                   {...register('facilityType')}
                   id="facilityType"
-                  className="w-full rounded-lg border-2 border-gray-300 px-4 py-2 focus:border-brand-bright-blue focus:ring-2 focus:ring-brand-bright-blue/20 dark:border-gray-600 dark:bg-slate-900 dark:text-white"
+                  className="w-full h-12 rounded-lg border-2 border-gray-300 px-4 focus:border-brand-bright-blue focus:ring-2 focus:ring-brand-bright-blue/20 dark:border-gray-600 dark:bg-slate-900 dark:text-white"
                 >
                   <option value="">Select type...</option>
                   {facilityTypes.map((type) => (
@@ -438,7 +438,7 @@ export default function QuoteFormSimplified({ onSuccess }: QuoteFormSimplifiedPr
                 <select
                   {...register('cleaningFrequency')}
                   id="cleaningFrequency"
-                  className="w-full rounded-lg border-2 border-gray-300 px-4 py-2 focus:border-brand-bright-blue focus:ring-2 focus:ring-brand-bright-blue/20 dark:border-gray-600 dark:bg-slate-900 dark:text-white"
+                  className="w-full h-12 rounded-lg border-2 border-gray-300 px-4 focus:border-brand-bright-blue focus:ring-2 focus:ring-brand-bright-blue/20 dark:border-gray-600 dark:bg-slate-900 dark:text-white"
                 >
                   <option value="">Select frequency...</option>
                   {frequencies.map((freq) => (
@@ -525,9 +525,9 @@ export default function QuoteFormSimplified({ onSuccess }: QuoteFormSimplifiedPr
               {...register('consent')}
               type="checkbox"
               id="consent"
-              className="mt-1 h-4 w-4 rounded border-gray-300 text-brand-bright-blue focus:ring-brand-bright-blue"
+              className="mt-1 h-6 w-6 rounded border-2 border-brand-deep-blue text-brand-bright-blue focus:ring-brand-bright-blue focus:ring-2 cursor-pointer"
             />
-            <label htmlFor="consent" className="flex-1 text-sm text-neutral-charcoal/80 dark:text-white/80">
+            <label htmlFor="consent" className="flex-1 text-sm text-neutral-charcoal/80 dark:text-white/80 cursor-pointer">
               I agree to be contacted by Anderson Cleaning Company regarding this quote request. We respond
               within 24 hours during office hours ({CONTACT_INFO.hours.office}).{' '}
               <span className="text-red-500">*</span>
@@ -553,7 +553,7 @@ export default function QuoteFormSimplified({ onSuccess }: QuoteFormSimplifiedPr
               type="submit"
               variant="accent"
               disabled={isSubmitting}
-              className="w-full py-4 text-lg font-semibold"
+              className="w-full h-14 text-lg font-semibold"
             >
               {isSubmitting ? (
                 <>
@@ -561,10 +561,7 @@ export default function QuoteFormSimplified({ onSuccess }: QuoteFormSimplifiedPr
                   Submitting...
                 </>
               ) : (
-                <>
-                  <CheckCircle2 className="mr-2 h-5 w-5" />
-                  Get My Custom Quote
-                </>
+                'Request Quote'
               )}
             </Button>
 
