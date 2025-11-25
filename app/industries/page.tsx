@@ -71,23 +71,21 @@ export default function IndustriesPage() {
                 >
                   <div className="h-full flex flex-col bg-white dark:bg-slate-900 rounded-xl shadow-sm border-2 border-neutral-light-grey dark:border-slate-700 p-8 transition-all duration-300 hover:shadow-xl hover:border-brand-bright-blue hover:-translate-y-1">
                     <div className="mb-6">
-                      <div className="w-16 h-16 rounded-xl bg-brand-bright-blue/10 dark:bg-brand-bright-blue/20 flex items-center justify-center transition-colors group-hover:bg-brand-bright-blue">
-                        <IconComponent
-                          className="h-8 w-8 text-brand-bright-blue group-hover:text-white transition-colors"
-                          aria-hidden="true"
-                        />
-                      </div>
+                      <IconComponent
+                        className="h-8 w-8 text-brand-deep-blue transition-colors"
+                        aria-hidden="true"
+                      />
                     </div>
 
                     <h3 className="text-h3 font-bold text-neutral-charcoal dark:text-white mb-4 group-hover:text-brand-bright-blue dark:group-hover:text-brand-bright-blue transition-colors">
                       {industry.name}
                     </h3>
 
-                    <p className="text-body text-neutral-charcoal/80 dark:text-white/80 mb-6 leading-relaxed flex-1">
+                    <p className="text-body text-neutral-charcoal/80 dark:text-white/80 leading-relaxed flex-1">
                       {industry.shortDescription}
                     </p>
 
-                    <div className="flex items-center gap-2 text-brand-bright-blue font-semibold group-hover:gap-3 transition-all mt-auto">
+                    <div className="flex items-center gap-2 text-brand-bright-blue font-semibold group-hover:gap-3 transition-all mt-6">
                       <span>Learn More</span>
                       <ArrowRight className="h-5 w-5" aria-hidden="true" />
                     </div>
