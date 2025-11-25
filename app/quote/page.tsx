@@ -16,13 +16,15 @@ export default function QuotePage() {
   return (
     <div className="min-h-screen bg-neutral-off-white dark:bg-slate-900 transition-colors duration-300">
       {/* Hero Section */}
-      <section className="pt-28 pb-16 md:pt-32 md:pb-20 bg-brand-deep-blue text-white">
-        <div className="container mx-auto px-6 text-center">
-          <h1 className="text-h1 md:text-h1 font-extrabold mb-4">Get Your Free Quote</h1>
-          <p className="text-body text-white/80 max-w-3xl mx-auto">
-            Tell us about your facility and we'll provide a customized cleaning proposal within 24
-            hours.
-          </p>
+      <section className="hero-section bg-brand-deep-blue text-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto text-center">
+            <h1 className="font-extrabold mb-6 leading-tight">Get Your Free Quote</h1>
+            <p className="text-body text-white/80 max-w-3xl mx-auto">
+              Tell us about your facility and we'll provide a customized cleaning proposal within 24
+              hours.
+            </p>
+          </div>
         </div>
       </section>
 

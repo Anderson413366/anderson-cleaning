@@ -124,21 +124,22 @@ export default function ServicesPage() {
       <StructuredData schema={jsonLd} />
 
       {/* Hero */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-brand-deep-blue via-brand-deep-blue to-brand-bright-blue text-white pt-28 pb-16 md:pt-32 md:pb-20">
-        <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10"></div>
-        <div className="container mx-auto px-6 text-center relative z-10">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight tracking-tight">
-            The Region&apos;s Premier Commercial Cleaning Service
-          </h1>
-          <p className="text-xl md:text-2xl text-white/90 mb-12 max-w-3xl mx-auto leading-relaxed">
-            Western Massachusetts and Northern Connecticut programs built around your facility&apos;s compliance standards
-          </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link href="/quote">
-              <Button variant="accent" size="lg" className="min-w-[220px]">
-                Request a Quote
-              </Button>
-            </Link>
+      <section className="hero-section bg-brand-deep-blue text-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto text-center">
+            <h1 className="font-extrabold mb-6 leading-tight">
+              The Region&apos;s Premier Commercial Cleaning Service
+            </h1>
+            <p className="text-xl md:text-2xl text-white/90 mb-12 max-w-3xl mx-auto leading-relaxed">
+              Western Massachusetts and Northern Connecticut programs built around your facility&apos;s compliance standards
+            </p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Link href="/quote">
+                <Button variant="accent" size="lg" className="min-w-[220px]">
+                  Request a Quote
+                </Button>
+              </Link>
+            </div>
           </div>
         </div>
       </section>

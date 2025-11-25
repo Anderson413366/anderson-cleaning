@@ -202,17 +202,16 @@ export default function TestimonialsPage() {
       <StructuredData schema={jsonLd} />
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-brand-deep-blue via-brand-deep-blue to-brand-bright-blue text-white pt-28 pb-16 md:pt-32 md:pb-20">
-        <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10"></div>
-        <div className="container mx-auto px-6 text-center relative z-10">
-          <div className="max-w-4xl mx-auto">
+      <section className="hero-section bg-brand-deep-blue text-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto text-center">
             <div className="inline-flex items-center gap-2 bg-yellow-500/20 border border-yellow-400/30 rounded-full px-6 py-2 mb-6">
               <Star className="h-5 w-5 fill-yellow-400 text-yellow-400" />
               <span className="text-yellow-100 font-semibold">
                 {averageRating}/5 stars from {testimonials.length} clients
               </span>
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight tracking-tight">Client Testimonials</h1>
+            <h1 className="font-extrabold mb-6 leading-tight">Client Testimonials</h1>
             <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed">
               Hear from businesses across Western MA & Northern CT who trust Anderson Cleaning Company
             </p>

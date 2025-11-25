@@ -159,14 +159,13 @@ export default function FAQPage() {
   return (
     <div className="min-h-screen bg-white dark:bg-slate-900">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-brand-deep-blue text-white pt-28 pb-16 md:pt-32 md:pb-20">
-        <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10"></div>
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="max-w-3xl mx-auto text-center">
+      <section className="hero-section bg-brand-deep-blue text-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto text-center">
             <div className="mb-6">
               <HelpCircle className="h-16 w-16 text-accent-400 mx-auto" />
             </div>
-            <h1 className="text-h1 leading-tight font-extrabold mb-6 leading-tight">
+            <h1 className="font-extrabold mb-6 leading-tight">
               Frequently Asked Questions
             </h1>
             <p className="text-body text-white/80 leading-relaxed">

@@ -172,7 +172,7 @@ export default function Footer() {
                 {/* B2B Disclaimer - Elevated for visibility */}
                 <div className="mt-6 pt-6 border-t border-neutral-charcoal/10 dark:border-white/10">
                   <p className="text-sm italic text-brand-deep-blue dark:text-white/80">
-                    We focus exclusively on B2B commercial cleaning and do not service restaurants or facilities requiring 7-day/week cleaning.
+                    We serve B2B clients only and do not offer residential services. Contracted customers also receive access to our full suite of premium add-on services, including specialty cleaning and supply management.
                   </p>
                 </div>
               </div>

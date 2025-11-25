@@ -491,10 +491,10 @@ html.dark .filter-pill[aria-pressed="true"] {
    Prompt 3: Fine-Tune Hero Spacing
    ==================================================================== */
 
-/* Hero sections - minimal top padding (main layout provides header offset) */
+/* Hero sections - standardized spacing for ALL pages */
 .hero-section {
-  padding-top: 2rem; /* 32px breathing room (main has pt-20/80px offset) */
-  padding-bottom: 2.625rem; /* 42px (35% reduction from 64px) */
+  padding-top: 4rem; /* 64px - generous spacing below fixed nav */
+  padding-bottom: 4rem; /* 64px - consistent bottom spacing */
 }
 
 /* Additional padding for secondary elements like badges */
@@ -506,8 +506,8 @@ html.dark .filter-pill[aria-pressed="true"] {
 /* Mobile responsiveness - scale down padding */
 @media (max-width: 768px) {
   .hero-section {
-    padding-top: 1.5rem; /* 24px breathing room on mobile */
-    padding-bottom: 2rem; /* 32px (35% reduction from 48px) */
+    padding-top: 3rem; /* 48px on mobile */
+    padding-bottom: 3rem; /* 48px on mobile */
   }
 
   .hero-badge,

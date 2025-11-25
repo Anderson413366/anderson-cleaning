@@ -31,10 +31,10 @@ export default function CaseStudiesPage() {
       {/* ===================================================================
           HERO SECTION
           =================================================================== */}
-      <section className="pt-28 pb-16 md:pt-32 md:pb-20 bg-brand-deep-blue text-white">
+      <section className="hero-section bg-brand-deep-blue text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-h1 leading-tight font-extrabold mb-6">
+            <h1 className="font-extrabold mb-6 leading-tight">
               Success Stories
             </h1>
             <p className="text-body md:text-h3 text-white/80 mb-8">
