@@ -270,9 +270,6 @@ export default function Home() {
               >
                 Request a Quote
               </Link>
-              <p className="mt-6 text-sm text-white/70">
-                Note: We focus exclusively on B2B commercial cleaning and do not service restaurants or facilities requiring 7-day/week cleaning.
-              </p>
             </div>
           </div>
         </div>
