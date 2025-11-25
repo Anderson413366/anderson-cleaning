@@ -138,25 +138,40 @@ function ProcessSection({ service }: { service: ServiceData }) {
   return (
     <section className="bg-white py-16 dark:bg-slate-900">
       <div className="container mx-auto px-6">
-        <h2 className="text-center text-3xl font-extrabold text-neutral-charcoal dark:text-white">Our Process</h2>
-        <p className="mx-auto mt-3 max-w-2xl text-center text-base text-neutral-charcoal/70 dark:text-white/80">
-          Transparent steps so you always know what is happening and who is onsite.
-        </p>
-        <div className="mt-10 grid gap-6 md:grid-cols-2">
-          {service.process.map((step) => (
-            <div
-              key={step.step}
-              className="flex gap-4 rounded-2xl border border-neutral-light-grey bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg dark:border-slate-700 dark:bg-slate-900"
-            >
-              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-brand-deep-blue text-lg font-bold text-white">
-                {step.step}
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold text-neutral-charcoal dark:text-white">{step.title}</h3>
-                <p className="mt-2 text-base text-neutral-charcoal/70 dark:text-white/70">{step.description}</p>
-              </div>
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-center text-3xl font-extrabold text-neutral-charcoal dark:text-white">Our Process</h2>
+          <p className="mx-auto mt-3 max-w-2xl text-center text-base text-neutral-charcoal/70 dark:text-white/80">
+            Transparent steps so you always know what is happening and who is onsite.
+          </p>
+
+          {/* Single column with connecting line */}
+          <div className="mt-10 relative">
+            {/* Vertical connecting line */}
+            <div className="absolute left-[30px] top-[60px] bottom-[60px] w-0.5 bg-gradient-to-b from-brand-deep-blue/30 via-brand-bright-blue/30 to-brand-deep-blue/30 dark:from-brand-bright-blue/30 dark:via-brand-bright-blue/50 dark:to-brand-bright-blue/30" aria-hidden="true" />
+
+            {/* Steps */}
+            <div className="space-y-8">
+              {service.process.map((step, index) => (
+                <div key={step.step} className="relative flex gap-6 items-start">
+                  {/* Glass-effect number badge */}
+                  <div className="relative z-10 flex h-[60px] w-[60px] flex-shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-brand-deep-blue to-brand-bright-blue shadow-lg">
+                    <div className="absolute inset-0 rounded-full bg-white/10 backdrop-blur-sm" />
+                    <span className="relative text-2xl font-bold text-white">{step.step}</span>
+                  </div>
+
+                  {/* Content */}
+                  <div className="flex-1 pt-2">
+                    <h3 className="text-xl font-semibold text-neutral-charcoal dark:text-white mb-2">
+                      {step.title}
+                    </h3>
+                    <p className="text-base text-neutral-charcoal/70 dark:text-white/70 leading-relaxed">
+                      {step.description}
+                    </p>
+                  </div>
+                </div>
+              ))}
             </div>
-          ))}
+          </div>
         </div>
       </div>
     </section>
