@@ -10,6 +10,7 @@ import {
   Building,
   Building2,
   CheckCircle2,
+  ChevronDown,
   ChevronRight,
   ClipboardList,
   Clock,
@@ -46,6 +47,7 @@ export default function ServicesPage() {
   const [showAdvancedModal, setShowAdvancedModal] = useState(false)
   const [trainingHours, setTrainingHours] = useState(0)
   const statsRef = useRef<HTMLDivElement>(null)
+  const [expandedFaqs, setExpandedFaqs] = useState<number[]>([0]) // First FAQ expanded by default
   // JSON-LD Structured Data for SEO
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -695,13 +697,13 @@ export default function ServicesPage() {
 
 
 
-      {/* FAQ */}
-      <section className="py-20 bg-neutral-off-white">
+      {/* FAQ - Interactive Accordion */}
+      <section className="py-20 bg-neutral-off-white dark:bg-slate-900">
         <div className="container mx-auto px-6 max-w-4xl">
           <h2 className="text-h2 font-bold text-neutral-charcoal dark:text-white mb-12 text-center">
             Frequently Asked Questions
           </h2>
-          <div className="space-y-6">
+          <div className="space-y-4">
             {[
               {
                 q: 'Are you insured and bonded?',
@@ -744,24 +746,66 @@ export default function ServicesPage() {
                   'Why: Ensures proper scheduling & resource allocation',
                 ],
               },
-              ].map((faq, i) => (
+            ].map((faq, i) => {
+              const isExpanded = expandedFaqs.includes(i)
+
+              const toggleFaq = () => {
+                if (isExpanded) {
+                  setExpandedFaqs(expandedFaqs.filter((index) => index !== i))
+                } else {
+                  setExpandedFaqs([...expandedFaqs, i])
+                }
+              }
+
+              return (
                 <div
                   key={i}
-                  className="bg-white dark:bg-slate-800 border border-neutral-light-grey dark:border-slate-700 rounded-lg p-6 shadow-sm"
+                  className={`bg-white dark:bg-slate-800 border-2 rounded-lg shadow-sm transition-all duration-300 overflow-hidden ${
+                    isExpanded
+                      ? 'border-brand-bright-blue shadow-md'
+                      : 'border-neutral-light-grey dark:border-slate-700 hover:border-brand-bright-blue/50'
+                  }`}
                 >
-                  <h3 className="text-h3 leading-normal font-semibold text-neutral-charcoal dark:text-white mb-3">
-                    {faq.q}
-                  </h3>
-                  <ul className="space-y-2">
-                    {faq.items.map((item, j) => (
-                      <li key={j} className="flex items-start text-body text-neutral-charcoal/80 dark:text-white/80">
-                        <CheckCircle2 className="h-4 w-4 text-brand-bright-blue mr-2 mt-1 flex-shrink-0" />
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
+                  {/* Question - Clickable header */}
+                  <button
+                    onClick={toggleFaq}
+                    className={`w-full flex items-center justify-between p-6 text-left transition-colors duration-300 ${
+                      isExpanded ? 'bg-brand-bright-blue/5 dark:bg-brand-bright-blue/10' : ''
+                    }`}
+                    aria-expanded={isExpanded}
+                  >
+                    <h3 className="text-h3 leading-normal font-semibold text-neutral-charcoal dark:text-white pr-4">
+                      {faq.q}
+                    </h3>
+                    <ChevronDown
+                      className={`h-6 w-6 text-brand-bright-blue flex-shrink-0 transition-transform duration-300 ${
+                        isExpanded ? 'rotate-180' : ''
+                      }`}
+                      strokeWidth={2}
+                    />
+                  </button>
+
+                  {/* Answer - Collapsible content */}
+                  <div
+                    className={`transition-all duration-300 ease-in-out ${
+                      isExpanded ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'
+                    }`}
+                    style={{ overflow: 'hidden' }}
+                  >
+                    <div className={`p-6 pt-0 border-l-4 ${isExpanded ? 'border-brand-bright-blue' : 'border-transparent'}`}>
+                      <ul className="space-y-3">
+                        {faq.items.map((item, j) => (
+                          <li key={j} className="flex items-start text-body text-neutral-charcoal/80 dark:text-white/80">
+                            <CheckCircle2 className="h-5 w-5 text-brand-bright-blue mr-3 mt-0.5 flex-shrink-0" />
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
                 </div>
-              ))}
+              )
+            })}
           </div>
         </div>
       </section>
