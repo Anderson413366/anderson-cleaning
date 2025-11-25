@@ -36,7 +36,7 @@ export default function AboutPage() {
     <div className="min-h-screen bg-neutral-off-white dark:bg-slate-900 transition-colors duration-300">
 
       {/* Hero Section */}
-      <section className="hero-section bg-brand-deep-blue text-white">
+      <section className="hero-section bg-gradient-to-br from-brand-deep-blue to-brand-bright-blue text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="font-extrabold mb-6 leading-tight">About Anderson Cleaning Company</h1>
@@ -422,7 +422,7 @@ export default function AboutPage() {
       <section className="py-20">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto">
-            <div className="bg-brand-deep-blue rounded-2xl p-8 md:p-12 text-white text-center">
+            <div className="bg-gradient-to-br from-brand-deep-blue to-brand-bright-blue rounded-2xl p-8 md:p-12 text-white text-center">
               <Sparkles className="h-16 w-16 text-brand-bright-blue mx-auto mb-6" />
               <h2 className="text-h2 leading-tight font-bold mb-6">Our Commitment to You</h2>
               <p className="text-body text-white/80">

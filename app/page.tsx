@@ -108,7 +108,7 @@ export default function Home() {
               return (
                 <div
                   key={i}
-                  className="bg-brand-deep-blue text-white rounded-lg p-8 shadow-lg hover:bg-brand-bright-blue hover:-translate-y-1 transition-all duration-300"
+                  className="bg-gradient-to-br from-brand-deep-blue to-brand-bright-blue text-white rounded-lg p-8 shadow-lg hover:bg-brand-bright-blue hover:-translate-y-1 transition-all duration-300"
                 >
                   <div className="flex items-start space-x-5">
                     <div className="flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-2xl bg-white/20 backdrop-blur-sm">

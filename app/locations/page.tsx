@@ -62,7 +62,7 @@ export default function LocationsHub() {
   return (
     <div className="min-h-screen">
       {/* Hero Section - Brand Consistent */}
-      <section className="hero-section bg-brand-deep-blue text-white">
+      <section className="hero-section bg-gradient-to-br from-brand-deep-blue to-brand-bright-blue text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="font-extrabold mb-6 leading-tight">

@@ -400,7 +400,7 @@ export default async function LocationPage({
       <BreadcrumbSchema items={breadcrumbs} />
       <LocalBusinessSchema serviceArea={`${cityData.city}, ${cityData.stateFullz}`} />
       {/* Hero Section */}
-      <section className="hero-section bg-brand-deep-blue text-white">
+      <section className="hero-section bg-gradient-to-br from-brand-deep-blue to-brand-bright-blue text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="font-extrabold mb-6 leading-tight">
@@ -533,7 +533,7 @@ export default async function LocationPage({
             ))}
           </div>
 
-          <div className="mt-12 p-8 bg-brand-deep-blue text-white rounded-lg">
+          <div className="mt-12 p-8 bg-gradient-to-br from-brand-deep-blue to-brand-bright-blue text-white rounded-lg">
             <h3 className="text-2xl font-bold mb-4">
               Serving All {cityData.city} ZIP Codes
             </h3>

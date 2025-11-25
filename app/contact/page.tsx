@@ -35,7 +35,7 @@ export default function ContactPage() {
             {/* Contact Information Sidebar */}
             <div className="lg:col-span-1 space-y-6 lg:pt-12">
               {/* Fast Response */}
-              <div className="bg-brand-deep-blue text-white rounded-lg p-6 shadow-sm">
+              <div className="bg-gradient-to-br from-brand-deep-blue to-brand-bright-blue text-white rounded-lg p-6 shadow-sm">
                 <Clock className="h-12 w-12 mb-4 text-brand-bright-blue" />
                 <h3 className="text-h3 leading-normal font-semibold mb-2">Here When You Need Us</h3>
                 <p className="text-white/80 mb-4">

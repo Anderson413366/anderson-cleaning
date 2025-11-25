@@ -31,7 +31,7 @@ export default function IndustriesPage() {
   return (
     <div className="min-h-screen bg-white dark:bg-slate-900 transition-colors duration-300">
       {/* Hero Section */}
-      <section className="hero-section bg-brand-deep-blue text-white">
+      <section className="hero-section bg-gradient-to-br from-brand-deep-blue to-brand-bright-blue text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="font-extrabold mb-6 leading-tight">
@@ -108,7 +108,7 @@ export default function IndustriesPage() {
           <div
             className="
               max-w-4xl mx-auto
-              bg-brand-deep-blue
+              bg-gradient-to-br from-brand-deep-blue to-brand-bright-blue
               rounded-[var(--border-radius-lg)]
               shadow-2xl
               p-8 md:p-12

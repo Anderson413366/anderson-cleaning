@@ -17,7 +17,7 @@ export default function PromotionsPage() {
     <div className="min-h-screen bg-white dark:bg-slate-900">
       <SpecialOfferSchema />
       {/* Hero Section */}
-      <section className="hero-section bg-brand-deep-blue text-white">
+      <section className="hero-section bg-gradient-to-br from-brand-deep-blue to-brand-bright-blue text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="font-extrabold mb-6 leading-tight">
@@ -94,7 +94,7 @@ export default function PromotionsPage() {
             </div>
 
             {/* Seasonal Deep Clean */}
-            <div className="bg-brand-deep-blue rounded-2xl p-8 text-white shadow-xl relative overflow-hidden">
+            <div className="bg-gradient-to-br from-brand-deep-blue to-brand-bright-blue rounded-2xl p-8 text-white shadow-xl relative overflow-hidden">
               <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -mr-16 -mt-16"></div>
               <div className="relative z-10">
                 <div className="inline-flex items-center justify-center w-12 h-12 bg-white/20 rounded-lg mb-4">
@@ -278,7 +278,7 @@ export default function PromotionsPage() {
             </div>
 
             {/* Referral Form CTA */}
-            <div className="bg-brand-deep-blue rounded-2xl p-8 md:p-12 text-white text-center">
+            <div className="bg-gradient-to-br from-brand-deep-blue to-brand-bright-blue rounded-2xl p-8 md:p-12 text-white text-center">
               <h3 className="text-h2 font-bold mb-4">Ready to Refer?</h3>
               <p className="text-body text-white/80 mb-8 max-w-2xl mx-auto">
                 Submit a referral today and start earning rewards. Your friend gets a great cleaning
