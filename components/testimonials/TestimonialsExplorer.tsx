@@ -36,7 +36,7 @@ const TestimonialsExplorer = ({ testimonials }: TestimonialsExplorerProps) => {
           key={star}
           className={`h-5 w-5 ${
             star <= rating
-              ? 'fill-brand-bright-blue text-brand-bright-blue'
+              ? 'fill-yellow-400 text-yellow-400'
               : 'fill-neutral-light-grey text-neutral-light-grey dark:fill-slate-700 dark:text-slate-700'
           }`}
         />

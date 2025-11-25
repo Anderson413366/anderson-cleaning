@@ -239,8 +239,12 @@ function TestimonialsSection({ service }: { service: ServiceData }) {
               key={testimonial.quote}
               className="rounded-2xl border border-neutral-light-grey bg-white p-6 shadow-sm dark:border-slate-700 dark:bg-slate-900"
             >
-              <Star className="h-6 w-6 text-amber-400" />
-              <p className="mt-4 text-lg text-neutral-charcoal/80 dark:text-white/80">&ldquo;{testimonial.quote}&rdquo;</p>
+              <div className="flex items-center gap-1 mb-4">
+                {[1, 2, 3, 4, 5].map((star) => (
+                  <Star key={star} className="h-5 w-5 text-yellow-400 fill-yellow-400" />
+                ))}
+              </div>
+              <p className="text-lg text-neutral-charcoal/80 dark:text-white/80">&ldquo;{testimonial.quote}&rdquo;</p>
               <p className="mt-4 text-sm font-semibold text-neutral-charcoal dark:text-white">{testimonial.author}</p>
               <p className="text-sm text-neutral-charcoal/60 dark:text-white/60">{testimonial.role}</p>
             </div>
