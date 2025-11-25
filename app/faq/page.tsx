@@ -159,6 +159,19 @@ export default function FAQPage() {
 
   return (
     <div className="min-h-screen bg-white dark:bg-slate-900">
+      <style jsx>{`
+        @keyframes fadeIn {
+          from {
+            opacity: 0;
+            transform: translateY(-10px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+      `}</style>
+
       {/* Hero Section */}
       <section className="hero-section bg-gradient-to-br from-brand-deep-blue to-brand-bright-blue text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -211,6 +224,33 @@ export default function FAQPage() {
         </div>
       </section>
 
+      {/* Category Navigation */}
+      {!searchQuery && (
+        <section className="py-8 bg-white dark:bg-slate-900 border-b border-neutral-light-grey dark:border-slate-700">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-4xl mx-auto">
+              <p className="text-sm font-semibold text-neutral-charcoal/70 dark:text-white/70 mb-3">
+                Jump to category:
+              </p>
+              <div className="flex flex-wrap gap-3">
+                {Object.keys(faqCategories).map((category) => {
+                  const categoryId = category.toLowerCase().replace(/\s+&\s+/g, '-').replace(/\s+/g, '-')
+                  return (
+                    <a
+                      key={category}
+                      href={`#${categoryId}`}
+                      className="inline-flex items-center px-4 py-2 rounded-lg bg-white dark:bg-slate-800 border-2 border-brand-deep-blue dark:border-brand-bright-blue text-brand-deep-blue dark:text-brand-bright-blue font-semibold text-sm hover:bg-brand-deep-blue hover:text-white dark:hover:bg-brand-bright-blue dark:hover:text-white transition-all duration-200"
+                    >
+                      {category}
+                    </a>
+                  )
+                })}
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* FAQ Content */}
       <section className="py-16 bg-neutral-off-white dark:bg-slate-800">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -230,61 +270,75 @@ export default function FAQPage() {
                 </Button>
               </div>
             ) : (
-              Object.entries(filteredFAQs).map(([category, questions], categoryIndex) => (
-                <div key={category} className="mb-12">
-                  <h2 className={`text-h3 leading-normal font-bold text-brand-deep-blue dark:text-brand-bright-blue mb-4 ${categoryIndex === 0 ? 'mt-0' : 'mt-12'}`}>
-                    {category}
-                  </h2>
-                  <div className="space-y-4">
-                    {questions.map((faq, index) => {
-                      const questionId = `${category}-${index}`
-                      const isOpen = openQuestion === questionId
-                      return (
-                        <div
-                          key={index}
-                          className="bg-white dark:bg-slate-700 rounded-lg shadow-md overflow-hidden transition-all duration-300"
-                        >
-                          <h3>
-                            <button
-                              onClick={() => toggleQuestion(questionId)}
-                              className="group w-full px-6 py-5 text-left flex items-start justify-between hover:bg-neutral-off-white dark:hover:bg-slate-600 transition-colors min-h-[44px]"
-                              aria-expanded={isOpen}
-                              aria-controls={`faq-answer-${questionId}`}
-                            >
-                              <span className="font-semibold text-neutral-charcoal dark:text-white text-body pr-4">
-                                {faq.question}
-                              </span>
-                              {isOpen ? (
-                                <ChevronUp
-                                  className="h-6 w-6 text-brand-deep-blue dark:text-brand-bright-blue flex-shrink-0 transition-transform"
-                                  aria-hidden="true"
-                                />
-                              ) : (
-                                <ChevronDown
-                                  className="h-6 w-6 text-neutral-charcoal/50 group-hover:text-brand-deep-blue dark:group-hover:text-brand-bright-blue group-hover:rotate-180 flex-shrink-0 transition-all duration-300"
-                                  aria-hidden="true"
-                                />
-                              )}
-                            </button>
-                          </h3>
-                          {isOpen && (
-                            <div
-                              id={`faq-answer-${questionId}`}
-                              role="region"
-                              aria-labelledby={`faq-question-${questionId}`}
-                              className="px-6 py-5 bg-neutral-off-white dark:bg-slate-800 border-t border-gray-200 dark:border-slate-600"
-                            >
-                              <p className="text-neutral-charcoal/80 dark:text-white/80 leading-relaxed">
-                                {faq.answer}
-                              </p>
-                            </div>
-                          )}
-                        </div>
-                      )
-                    })}
+              Object.entries(filteredFAQs).map(([category, questions], categoryIndex) => {
+                const categoryId = category.toLowerCase().replace(/\s+&\s+/g, '-').replace(/\s+/g, '-')
+                return (
+                  <div key={category} className="mb-12">
+                    <h2
+                      id={categoryId}
+                      className={`text-2xl leading-normal font-bold text-brand-deep-blue dark:text-brand-bright-blue mb-6 scroll-mt-24 ${categoryIndex === 0 ? 'mt-0' : 'mt-12'}`}
+                    >
+                      {category}
+                    </h2>
+                    <div className="space-y-0">
+                      {questions.map((faq, index) => {
+                        const questionId = `${category}-${index}`
+                        const isOpen = openQuestion === questionId
+                        const isLastInCategory = index === questions.length - 1
+                        return (
+                          <div
+                            key={index}
+                            className={`bg-white dark:bg-slate-700 overflow-hidden transition-all duration-300 ${
+                              isOpen ? 'border-l-4 border-l-brand-bright-blue' : 'border-l-4 border-l-transparent'
+                            } ${!isLastInCategory ? 'border-b border-neutral-light-grey dark:border-slate-600' : ''} ${
+                              index === 0 ? 'rounded-t-lg' : ''
+                            } ${isLastInCategory ? 'rounded-b-lg' : ''}`}
+                          >
+                            <h3>
+                              <button
+                                onClick={() => toggleQuestion(questionId)}
+                                className="group w-full px-6 py-5 text-left flex items-start justify-between hover:bg-neutral-off-white dark:hover:bg-slate-600 transition-colors min-h-[44px]"
+                                aria-expanded={isOpen}
+                                aria-controls={`faq-answer-${questionId}`}
+                              >
+                                <span className="font-semibold text-neutral-charcoal dark:text-white text-body pr-4">
+                                  {faq.question}
+                                </span>
+                                {isOpen ? (
+                                  <ChevronUp
+                                    className="h-6 w-6 text-brand-bright-blue flex-shrink-0 transition-transform duration-300"
+                                    aria-hidden="true"
+                                  />
+                                ) : (
+                                  <ChevronDown
+                                    className="h-6 w-6 text-neutral-charcoal/50 group-hover:text-brand-deep-blue dark:group-hover:text-brand-bright-blue group-hover:rotate-180 flex-shrink-0 transition-all duration-300"
+                                    aria-hidden="true"
+                                  />
+                                )}
+                              </button>
+                            </h3>
+                            {isOpen && (
+                              <div
+                                id={`faq-answer-${questionId}`}
+                                role="region"
+                                aria-labelledby={`faq-question-${questionId}`}
+                                className="px-6 py-5 bg-neutral-off-white dark:bg-slate-800 border-t border-neutral-light-grey dark:border-slate-600 animate-fadeIn"
+                                style={{
+                                  animation: 'fadeIn 300ms ease-in-out'
+                                }}
+                              >
+                                <p className="text-neutral-charcoal/80 dark:text-white/80 leading-relaxed">
+                                  {faq.answer}
+                                </p>
+                              </div>
+                            )}
+                          </div>
+                        )
+                      })}
+                    </div>
                   </div>
-                </div>
-              ))
+                )
+              })
             )}
           </div>
         </div>
