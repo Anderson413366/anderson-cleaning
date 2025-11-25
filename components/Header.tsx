@@ -465,7 +465,7 @@ export default function Header() {
             >
               {item.name}
               {pathname === item.href && (
-                <span className="absolute -bottom-5 left-0 right-0 h-0.5 bg-brand-bright-blue dark:bg-white rounded-full" />
+                <span className="absolute -bottom-[4px] left-0 right-0 h-[3px] bg-brand-deep-blue dark:bg-white rounded-full" />
               )}
             </Link>
           ))}
@@ -475,7 +475,7 @@ export default function Header() {
         <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:gap-x-6">
           <a
             href={phoneLink.href}
-            className="inline-flex items-center justify-center h-10 w-10 rounded-full bg-brand-bright-blue/10 text-brand-bright-blue hover:bg-brand-bright-blue hover:text-white dark:bg-white/10 dark:text-white dark:hover:bg-brand-bright-blue transition-all duration-150"
+            className="inline-flex items-center justify-center h-11 w-11 rounded-full bg-brand-deep-blue text-white hover:bg-[#001f5c] shadow-sm transition-all duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-deep-blue focus-visible:ring-offset-2"
             onClick={() => trackPhoneClick('header-desktop')}
             aria-label={`Call Anderson Cleaning Company at ${phoneLink.formatted}`}
           >
