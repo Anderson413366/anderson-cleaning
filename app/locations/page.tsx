@@ -131,19 +131,19 @@ export default function LocationsHub() {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div>
-              <div className="text-3xl font-bold text-brand-bright-blue dark:text-brand-bright-blue">100+</div>
+              <div className="text-5xl font-bold text-brand-deep-blue dark:text-brand-bright-blue">100+</div>
               <div className="text-neutral-charcoal/70 dark:text-white/70">Mile Service Radius</div>
             </div>
             <div>
-              <div className="text-3xl font-bold text-brand-bright-blue dark:text-brand-bright-blue">35,000+</div>
+              <div className="text-5xl font-bold text-brand-deep-blue dark:text-brand-bright-blue">35,000+</div>
               <div className="text-neutral-charcoal/70 dark:text-white/70">Businesses Served</div>
             </div>
             <div>
-              <div className="text-3xl font-bold text-brand-bright-blue dark:text-brand-bright-blue">9</div>
+              <div className="text-5xl font-bold text-brand-deep-blue dark:text-brand-bright-blue">9</div>
               <div className="text-neutral-charcoal/70 dark:text-white/70">Primary Service Areas</div>
             </div>
             <div>
-              <div className="text-3xl font-bold text-brand-bright-blue dark:text-brand-bright-blue">18+</div>
+              <div className="text-5xl font-bold text-brand-deep-blue dark:text-brand-bright-blue">18+</div>
               <div className="text-neutral-charcoal/70 dark:text-white/70">Years of Experience</div>
             </div>
           </div>
@@ -153,11 +153,14 @@ export default function LocationsHub() {
       {/* Massachusetts Locations */}
       <section className="py-16">
         <div className="container mx-auto px-4">
-          <div className="flex items-center gap-3 mb-8">
-            <h2 className="text-3xl font-bold text-brand-bright-blue dark:text-brand-bright-blue">Massachusetts</h2>
-            <span className="text-lg text-neutral-charcoal/70 dark:text-white/70">
-              ({massachusettsLocations.length} locations)
-            </span>
+          <div className="mb-8">
+            <div className="flex items-center gap-3 mb-6">
+              <h2 className="text-3xl font-bold text-brand-deep-blue dark:text-brand-bright-blue">Massachusetts</h2>
+              <span className="text-lg text-neutral-charcoal/70 dark:text-white/70">
+                ({massachusettsLocations.length} locations)
+              </span>
+            </div>
+            <div className="w-[40%] h-0.5 bg-brand-deep-blue dark:bg-brand-bright-blue mx-auto"></div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -165,14 +168,14 @@ export default function LocationsHub() {
               <Link
                 key={location.slug}
                 href={`/locations/${location.slug}`}
-                className="bg-white dark:bg-slate-800 rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow group"
+                className="bg-white dark:bg-slate-800 rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow group min-h-[280px] flex flex-col"
               >
                 <div className="flex items-start justify-between mb-3">
-                  <h3 className="text-xl font-semibold group-hover:text-brand-bright-blue dark:group-hover:text-brand-bright-blue transition-colors">
+                  <h3 className="text-xl font-bold group-hover:text-brand-bright-blue dark:group-hover:text-brand-bright-blue transition-colors">
                     {location.name}
                   </h3>
                   <svg
-                    className="w-6 h-6 text-brand-bright-blue dark:text-brand-bright-blue group-hover:translate-x-1 transition-transform"
+                    className="w-6 h-6 text-brand-bright-blue dark:text-brand-bright-blue group-hover:translate-x-1 transition-transform flex-shrink-0"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -185,8 +188,8 @@ export default function LocationsHub() {
                     />
                   </svg>
                 </div>
-                <p className="text-neutral-charcoal/70 dark:text-white/70 mb-4">{location.description}</p>
-                <div className="flex gap-4 text-sm text-neutral-charcoal/60 dark:text-white/60">
+                <p className="text-neutral-charcoal/70 dark:text-white/70 mb-4 line-clamp-2 flex-1">{location.description}</p>
+                <div className="flex gap-4 text-sm text-neutral-charcoal/60 dark:text-white/60 mt-auto">
                   <div>
                     <span className="font-semibold">Pop:</span> {location.population}
                   </div>
@@ -203,11 +206,14 @@ export default function LocationsHub() {
       {/* Connecticut Locations */}
       <section className="py-16 bg-gray-50 dark:bg-slate-900">
         <div className="container mx-auto px-4">
-          <div className="flex items-center gap-3 mb-8">
-            <h2 className="text-3xl font-bold text-brand-bright-blue dark:text-brand-bright-blue">Connecticut</h2>
-            <span className="text-lg text-neutral-charcoal/70 dark:text-white/70">
-              ({connecticutLocations.length} locations)
-            </span>
+          <div className="mb-8 mt-16">
+            <div className="flex items-center gap-3 mb-6">
+              <h2 className="text-3xl font-bold text-brand-deep-blue dark:text-brand-bright-blue">Connecticut</h2>
+              <span className="text-lg text-neutral-charcoal/70 dark:text-white/70">
+                ({connecticutLocations.length} locations)
+              </span>
+            </div>
+            <div className="w-[40%] h-0.5 bg-brand-deep-blue dark:bg-brand-bright-blue mx-auto"></div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -215,14 +221,14 @@ export default function LocationsHub() {
               <Link
                 key={location.slug}
                 href={`/locations/${location.slug}`}
-                className="bg-white dark:bg-slate-800 rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow group"
+                className="bg-white dark:bg-slate-800 rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow group min-h-[280px] flex flex-col"
               >
                 <div className="flex items-start justify-between mb-3">
-                  <h3 className="text-xl font-semibold group-hover:text-brand-bright-blue dark:group-hover:text-brand-bright-blue transition-colors">
+                  <h3 className="text-xl font-bold group-hover:text-brand-bright-blue dark:group-hover:text-brand-bright-blue transition-colors">
                     {location.name}
                   </h3>
                   <svg
-                    className="w-6 h-6 text-brand-bright-blue dark:text-brand-bright-blue group-hover:translate-x-1 transition-transform"
+                    className="w-6 h-6 text-brand-bright-blue dark:text-brand-bright-blue group-hover:translate-x-1 transition-transform flex-shrink-0"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -235,8 +241,8 @@ export default function LocationsHub() {
                     />
                   </svg>
                 </div>
-                <p className="text-neutral-charcoal/70 dark:text-white/70 mb-4">{location.description}</p>
-                <div className="flex gap-4 text-sm text-neutral-charcoal/60 dark:text-white/60">
+                <p className="text-neutral-charcoal/70 dark:text-white/70 mb-4 line-clamp-2 flex-1">{location.description}</p>
+                <div className="flex gap-4 text-sm text-neutral-charcoal/60 dark:text-white/60 mt-auto">
                   <div>
                     <span className="font-semibold">Pop:</span> {location.population}
                   </div>
