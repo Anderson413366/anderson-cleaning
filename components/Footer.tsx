@@ -102,8 +102,8 @@ export default function Footer() {
 
   return (
     <>
-      {/* CTA Section - Above Footer - Apple-style rhythm */}
-      <section className="bg-gradient-to-r from-brand-bright-blue via-brand-deep-blue to-brand-deep-blue py-16 md:py-20">
+      {/* CTA Section - Above Footer - Distinctive gradient with urgent red CTA */}
+      <section className="bg-gradient-to-r from-brand-deep-blue to-brand-bright-blue py-16 md:py-20">
         <div className="mx-auto max-w-7xl px-6 text-center lg:px-8">
           <h2 className="mb-6 text-3xl font-bold leading-tight text-white md:text-4xl">
             Ready to Experience Professional Cleaning?
@@ -114,7 +114,7 @@ export default function Footer() {
           <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Link
               href="/quote"
-              className="inline-flex items-center justify-center rounded-[10px] bg-white px-7 py-[14px] text-base font-semibold text-brand-deep-blue transition-all duration-150 hover:bg-gray-100 active:bg-gray-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2"
+              className="inline-flex items-center justify-center rounded-[10px] bg-brand-red px-7 py-[14px] text-base font-semibold text-white transition-all duration-150 hover:bg-[#a00d25] active:bg-[#8a0b20] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2"
             >
               Get Your Free Quote
             </Link>
