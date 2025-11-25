@@ -27,11 +27,16 @@ export default function BlogExplorer({ posts, categories }: BlogExplorerProps) {
   const [newsletterEmail, setNewsletterEmail] = useState('')
   const [newsletterStatus, setNewsletterStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
   const [newsletterError, setNewsletterError] = useState<string | null>(null)
+  const [imageErrors, setImageErrors] = useState<Set<string>>(new Set())
 
   const filteredPosts =
     selectedCategory === 'All'
       ? posts
       : posts.filter((post) => post.category === selectedCategory)
+
+  const handleImageError = (slug: string) => {
+    setImageErrors((prev) => new Set(prev).add(slug))
+  }
 
   const handleSubscribe = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
@@ -93,17 +98,27 @@ export default function BlogExplorer({ posts, categories }: BlogExplorerProps) {
                 className="h-full flex flex-col bg-white dark:bg-slate-800 border-2 border-neutral-light-grey dark:border-slate-700 rounded-xl overflow-hidden shadow-sm hover:-translate-y-1 hover:border-brand-bright-blue transition-all duration-300"
               >
                 <div className="relative h-48 bg-neutral-light-grey dark:bg-slate-700 overflow-hidden flex-shrink-0">
-                  <Image
-                    src={post.image}
-                    alt={post.title}
-                    fill
-                    loading="lazy"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    className="object-cover"
-                    placeholder="blur"
-                    blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWEREiMxUf/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
-                    quality={85}
-                  />
+                  {imageErrors.has(post.slug) ? (
+                    <div className="absolute inset-0 bg-brand-deep-blue flex items-center justify-center">
+                      <div className="text-center px-6">
+                        <div className="text-white/20 text-6xl font-bold mb-2">AC</div>
+                        <div className="text-white/40 text-sm font-medium">Anderson Cleaning</div>
+                      </div>
+                    </div>
+                  ) : (
+                    <Image
+                      src={post.image}
+                      alt={post.title}
+                      fill
+                      loading="lazy"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      className="object-cover"
+                      placeholder="blur"
+                      blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWEREiMxUf/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
+                      quality={85}
+                      onError={() => handleImageError(post.slug)}
+                    />
+                  )}
                   <div className="absolute top-4 left-4 z-10">
                     <span className="inline-block px-3 py-1 bg-brand-deep-blue/90 dark:bg-brand-deep-blue text-white text-xs font-semibold rounded-full">
                       {post.category}
@@ -112,8 +127,8 @@ export default function BlogExplorer({ posts, categories }: BlogExplorerProps) {
                 </div>
 
                 <div className="p-6 flex flex-col flex-1">
-                  <div className="flex items-center space-x-4 text-sm text-neutral-charcoal/60 dark:text-white/70 mb-3">
-                    <div className="flex items-center">
+                  <div className="flex items-center space-x-4 text-sm mb-3">
+                    <div className="flex items-center text-neutral-charcoal/60 dark:text-white/70">
                       <Calendar className="h-4 w-4 mr-1" />
                       {new Date(post.publishedDate).toLocaleDateString('en-US', {
                         month: 'short',
@@ -121,7 +136,7 @@ export default function BlogExplorer({ posts, categories }: BlogExplorerProps) {
                         year: 'numeric',
                       })}
                     </div>
-                    <div className="flex items-center">
+                    <div className="flex items-center text-brand-deep-blue dark:text-brand-bright-blue">
                       <Clock className="h-4 w-4 mr-1" />
                       {post.readTime}
                     </div>

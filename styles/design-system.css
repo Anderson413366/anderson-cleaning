@@ -403,7 +403,7 @@ html.dark .form-select {
   cursor: pointer;
 
   /* Inactive State */
-  background-color: rgba(0, 119, 217, 0.08);
+  background-color: #FFFFFF;
   color: var(--brand-deep-blue);
   border: 1px solid rgba(0, 42, 134, 0.2);
 }
@@ -415,8 +415,8 @@ html.dark .form-select {
 .category-pill:focus,
 .filter-pill:hover,
 .filter-pill:focus {
-  background-color: rgba(0, 119, 217, 0.15);
-  border-color: var(--brand-bright-blue);
+  background-color: #E6F2FA;
+  border-color: var(--brand-deep-blue);
   outline: none;
 }
 
@@ -445,7 +445,7 @@ html.dark .form-select {
 html.dark .tag-pill,
 html.dark .category-pill,
 html.dark .filter-pill {
-  background-color: rgba(0, 119, 217, 0.15);
+  background-color: rgba(255, 255, 255, 0.1);
   color: var(--brand-white);
   border-color: rgba(255, 255, 255, 0.2);
 }
@@ -456,8 +456,9 @@ html.dark .category-pill:hover,
 html.dark .category-pill:focus,
 html.dark .filter-pill:hover,
 html.dark .filter-pill:focus {
-  background-color: rgba(0, 119, 217, 0.25);
-  border-color: var(--brand-bright-blue);
+  background-color: #E6F2FA;
+  color: var(--brand-deep-blue);
+  border-color: var(--brand-deep-blue);
 }
 
 html.dark .tag-pill.active,
