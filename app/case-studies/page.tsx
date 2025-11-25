@@ -123,17 +123,17 @@ export default function CaseStudiesPage() {
                       </p>
 
                       {/* Key Result */}
-                      <div className="mb-4 p-3 bg-green-50 dark:bg-green-900/20 border-l-4 border-green-500 rounded-r-lg">
+                      <div className="mb-4 p-3 bg-brand-bright-blue dark:bg-brand-bright-blue rounded-lg">
                         <div className="flex items-start gap-2">
                           <TrendingUp
-                            className="h-5 w-5 text-green-600 dark:text-green-400 mt-0.5 flex-shrink-0"
+                            className="h-5 w-5 text-white mt-0.5 flex-shrink-0"
                             aria-hidden="true"
                           />
                           <div>
-                            <div className="text-xs font-semibold text-green-700 dark:text-green-300 uppercase tracking-wide mb-1">
+                            <div className="text-xs font-semibold text-white uppercase tracking-wide mb-1">
                               Key Result
                             </div>
-                            <div className="text-sm font-bold text-green-900 dark:text-white/80">
+                            <div className="text-sm font-bold text-brand-deep-blue dark:text-white">
                               {study.keyResult}
                             </div>
                           </div>
@@ -256,12 +256,19 @@ export default function CaseStudiesPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-h2 leading-tight font-bold mb-4">
-              Want Results Like These for Your Facility?
+              See results like these for your facility
             </h2>
-            <p className="text-body text-white/80">
+            <p className="text-body text-white/80 mb-8">
               Every case study started with a free consultation. Let's discuss your challenges and
               create a custom solution.
             </p>
+            <Button
+              variant="accent"
+              size="lg"
+              onClick={() => (window.location.href = '/quote')}
+            >
+              Request a Quote
+            </Button>
           </div>
         </div>
       </section>
