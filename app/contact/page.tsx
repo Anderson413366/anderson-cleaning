@@ -10,8 +10,6 @@ export const metadata: Metadata = {
   },
 }
 
-'use client'
-
 export default function ContactPage() {
   return (
     <div className="min-h-screen bg-neutral-off-white dark:bg-slate-900 transition-colors duration-300">

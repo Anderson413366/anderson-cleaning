@@ -12,8 +12,6 @@ export const metadata: Metadata = {
   },
 }
 
-'use client'
-
 export default function PromotionsPage() {
   return (
     <div className="min-h-screen bg-white dark:bg-slate-900">

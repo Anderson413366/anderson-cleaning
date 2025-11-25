@@ -1,18 +1,9 @@
-import type { Metadata } from 'next'
+'use client'
+
 import { useState } from 'react'
 import QuoteFormSimplified from '@/components/forms/QuoteFormSimplified'
 import { CheckCircle2, Sparkles } from 'lucide-react'
 import { CONTACT_INFO } from '@/lib/constants'
-
-export const metadata: Metadata = {
-  title: 'Free Quote - Commercial Cleaning Services Springfield MA',
-  description: 'Request a free quote for commercial cleaning services in Western Massachusetts & Northern Connecticut. Get a customized proposal within 24 hours. No obligation, transparent pricing.',
-  alternates: {
-    canonical: '/quote',
-  },
-}
-
-'use client'
 
 export default function QuotePage() {
   const [showSuccess, setShowSuccess] = useState(false)

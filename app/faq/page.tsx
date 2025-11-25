@@ -1,19 +1,10 @@
-import type { Metadata } from 'next'
+'use client'
+
 import { useState } from 'react'
 import { Button } from '@/components/ui/Button'
 import { ChevronDown, ChevronUp, Search, HelpCircle, Phone, MessageCircle } from 'lucide-react'
 import Link from 'next/link'
 import { inputClassName } from '@/lib/styles/formStyles'
-
-export const metadata: Metadata = {
-  title: 'FAQ - Commercial Cleaning Services Questions & Answers',
-  description: 'Find answers to frequently asked questions about Anderson Cleaning Company\'s commercial cleaning services, pricing, contracts, staff, safety, and service areas in Western MA & CT.',
-  alternates: {
-    canonical: '/faq',
-  },
-}
-
-'use client'
 
 const faqCategories = {
   'Pricing & Contracts': [

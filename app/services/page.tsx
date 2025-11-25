@@ -1,4 +1,5 @@
-import type { Metadata } from 'next'
+'use client'
+
 import { useState } from 'react'
 import Link from 'next/link'
 import dynamic from 'next/dynamic'
@@ -27,16 +28,6 @@ import StructuredData from '@/components/StructuredData'
 import QuoteMiniForm from '@/components/forms/QuoteMiniForm'
 import QuoteAdvancedModal from '@/components/forms/QuoteAdvancedModal'
 import { serviceSlugs, servicesData } from '@/lib/services-data'
-
-export const metadata: Metadata = {
-  title: 'Commercial Cleaning Services - Office, Medical, School Cleaning MA',
-  description: 'Professional commercial cleaning services in Western Massachusetts & Northern Connecticut. Office cleaning, janitorial services, floor care, medical facility cleaning, and more. B2B-only with W-2 teams.',
-  alternates: {
-    canonical: '/services',
-  },
-}
-
-'use client'
 
 // Dynamic import for ServiceAreaMap to avoid SSR issues
 const ServiceAreaMap = dynamic(() => import('@/components/maps/ServiceAreaMap'), {
