@@ -1,7 +1,6 @@
 'use client'
 
 import type { ElementType } from 'react'
-import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import {
   ChevronRight,
@@ -44,31 +43,26 @@ interface ServiceHeroProps {
 }
 
 export default function ServiceHero({ service }: ServiceHeroProps) {
-  const [parallaxOffset, setParallaxOffset] = useState(0)
-
   // Get the icon component for this service
   const ServiceIcon = SERVICE_ICONS[service.slug as ServiceSlug] || Building2
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollY = window.scrollY
-      // Subtle parallax: move image down at 30% of scroll speed
-      setParallaxOffset(scrollY * 0.3)
-    }
-
-    window.addEventListener('scroll', handleScroll, { passive: true })
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
-
   return (
-    <section className="hero-section bg-gradient-to-br from-brand-deep-blue to-brand-bright-blue text-white overflow-hidden">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left Column: Content */}
-          <div className="text-center lg:text-left py-8 lg:py-0">
-            {/* Breadcrumb Navigation */}
-            <nav className="mb-6" aria-label="Breadcrumb">
-              <ol className="flex items-center justify-center lg:justify-start gap-2 text-sm text-white/80">
+    <section className="relative bg-gradient-to-br from-brand-deep-blue to-brand-bright-blue text-white pt-20 pb-12 md:pt-24 md:pb-16 overflow-hidden">
+      {/* Subtle diagonal pattern overlay for visual differentiation */}
+      <div
+        className="absolute inset-0 opacity-10 pointer-events-none"
+        style={{
+          backgroundImage:
+            'repeating-linear-gradient(45deg, transparent, transparent 20px, rgba(255, 255, 255, 0.05) 20px, rgba(255, 255, 255, 0.05) 40px)',
+        }}
+        aria-hidden="true"
+      />
+
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="max-w-4xl mx-auto text-center">
+          {/* Breadcrumb Navigation */}
+          <nav className="mb-8" aria-label="Breadcrumb">
+            <ol className="flex items-center justify-center gap-2 text-sm text-white/80">
                 <li>
                   <Link href="/" className="hover:text-white transition-colors duration-150">
                     Home
@@ -89,29 +83,29 @@ export default function ServiceHero({ service }: ServiceHeroProps) {
               </ol>
             </nav>
 
-            {/* Service Icon - Centered Above Heading */}
-            <div className="mb-6 flex justify-center lg:justify-start">
-              <div className="inline-flex h-20 w-20 items-center justify-center rounded-2xl bg-white/10 backdrop-blur-md shadow-lg">
-                <ServiceIcon className="h-10 w-10 text-white" strokeWidth={2} aria-hidden="true" />
-              </div>
+          {/* Service Icon - Centered Above Heading */}
+          <div className="mb-6 flex justify-center">
+            <div className="inline-flex h-20 w-20 items-center justify-center rounded-2xl bg-white/10 backdrop-blur-md shadow-lg">
+              <ServiceIcon className="h-10 w-10 text-white" strokeWidth={2} aria-hidden="true" />
             </div>
+          </div>
 
-            <h1 className="font-extrabold mb-6 leading-tight">
-              {service.h1}
-            </h1>
-            <p className="text-xl md:text-2xl text-white/80 mb-8 max-w-2xl mx-auto lg:mx-0">
-              {service.tagline}
-            </p>
-            <div className="flex justify-center lg:justify-start mb-8">
-              <Link href="/quote">
-                <Button variant="accent" size="lg">
-                  Request a Quote
-                </Button>
-              </Link>
-            </div>
+          <h1 className="font-extrabold mb-6 leading-tight">
+            {service.h1}
+          </h1>
+          <p className="text-xl md:text-2xl text-white/90 mb-12 max-w-3xl mx-auto leading-relaxed">
+            {service.tagline}
+          </p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
+            <Link href="/quote">
+              <Button variant="accent" size="lg" className="min-w-[220px]">
+                Request a Quote
+              </Button>
+            </Link>
+          </div>
 
-            {/* Trust Badges - 25% larger, with dividers */}
-            <div className="mt-8 pt-8 border-t border-white/20">
+          {/* Trust Badges - 25% larger, with dividers */}
+          <div className="mt-8 pt-8 border-t border-white/20">
               {/* Mobile: 2x2 Grid */}
               <div className="grid grid-cols-2 gap-6 sm:hidden">
                 {TRUST_BADGES.map((badge, index) => {
@@ -129,7 +123,7 @@ export default function ServiceHero({ service }: ServiceHeroProps) {
               </div>
 
               {/* Desktop: Horizontal with Dividers */}
-              <div className="hidden sm:flex items-center justify-center lg:justify-start gap-6">
+              <div className="hidden sm:flex items-center justify-center gap-6">
                 {TRUST_BADGES.map((badge, index) => {
                   const Icon = badge.icon
                   return (
@@ -150,29 +144,6 @@ export default function ServiceHero({ service }: ServiceHeroProps) {
                 })}
               </div>
             </div>
-          </div>
-
-          {/* Right Column: Hero Image with Parallax */}
-          <div className="relative hidden lg:block">
-            <div
-              className="relative rounded-2xl overflow-hidden shadow-2xl"
-              style={{
-                transform: `translateY(${parallaxOffset}px)`,
-                transition: 'transform 0.1s ease-out',
-              }}
-            >
-              <picture>
-                <source srcSet={service.heroImage.avif} type="image/avif" />
-                <source srcSet={service.heroImage.webp} type="image/webp" />
-                <img
-                  src={service.heroImage.fallback}
-                  alt={service.heroImage.alt}
-                  className="w-full h-auto object-cover rounded-2xl"
-                  loading="eager"
-                />
-              </picture>
-            </div>
-          </div>
         </div>
       </div>
     </section>
