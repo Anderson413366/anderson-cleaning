@@ -100,9 +100,13 @@ export default async function ServiceDetailPage({ params }: { params: RouteParam
       <ProcessSection service={service} />
 
       <section className="bg-white py-16 dark:bg-slate-900">
-        <div className="container mx-auto grid gap-10 px-6 lg:grid-cols-2">
-          <BenefitsList service={service} />
-          <IndustriesCard service={service} />
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto">
+            <BenefitsList service={service} />
+            <div className="mt-12">
+              <IndustriesCard service={service} />
+            </div>
+          </div>
         </div>
       </section>
 
@@ -181,15 +185,21 @@ function ProcessSection({ service }: { service: ServiceData }) {
 function BenefitsList({ service }: { service: ServiceData }) {
   return (
     <div>
-      <h2 className="text-3xl font-extrabold text-neutral-charcoal dark:text-white">Benefits</h2>
-      <p className="mt-3 text-base text-neutral-charcoal/70 dark:text-white/70">
+      <h2 className="text-3xl font-extrabold text-neutral-charcoal dark:text-white text-center">Benefits</h2>
+      <p className="mt-3 text-base text-neutral-charcoal/70 dark:text-white/70 text-center max-w-2xl mx-auto">
         Every program includes proactive communication, safety, and accountability.
       </p>
-      <ul className="mt-6 space-y-3">
+      <ul className="mt-8 grid gap-4 md:grid-cols-2">
         {service.benefits.map((benefit) => (
-          <li key={benefit} className="flex items-start gap-3">
-            <CheckCircle2 className="h-5 w-5 flex-shrink-0 text-brand-bright-blue" />
-            <span className="text-base text-neutral-charcoal/80 dark:text-white/80">{benefit}</span>
+          <li key={benefit} className="flex items-start gap-4">
+            {/* Glass-effect circle icon in Bright Blue */}
+            <div className="relative flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-brand-bright-blue shadow-md">
+              <div className="absolute inset-0 rounded-full bg-white/20 backdrop-blur-sm" />
+              <CheckCircle2 className="relative h-4 w-4 text-white" strokeWidth={2.5} />
+            </div>
+            <span className="text-base text-neutral-charcoal/80 dark:text-white/80 leading-relaxed pt-0.5">
+              {benefit}
+            </span>
           </li>
         ))}
       </ul>
