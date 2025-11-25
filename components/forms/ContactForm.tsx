@@ -77,7 +77,7 @@ export default function ContactForm({ onSuccess }: ContactFormProps) {
   }
 
   return (
-    <div className="bg-white dark:bg-slate-800 border border-neutral-light-grey dark:border-slate-700 rounded-lg shadow-sm p-8">
+    <div className="bg-white dark:bg-slate-800 border border-neutral-light-grey dark:border-slate-700 rounded-lg shadow-sm p-8 pb-12 lg:pb-16">
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
         <div>
           <h2 className="text-h3 font-bold text-neutral-charcoal dark:text-white mb-2">

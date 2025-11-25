@@ -26,14 +26,14 @@ export default function ContactPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
             {/* Contact Form */}
-            <div className="lg:col-span-2 lg:pt-12">
+            <div className="lg:col-span-2">
               <ContactForm />
             </div>
 
             {/* Contact Information Sidebar */}
-            <div className="lg:col-span-1 space-y-6 lg:pt-12">
+            <div className="lg:col-span-1 space-y-6">
               {/* Fast Response */}
               <div className="bg-gradient-to-br from-brand-deep-blue to-brand-bright-blue text-white rounded-lg p-6 shadow-sm">
                 <Clock className="h-12 w-12 mb-4 text-brand-bright-blue" />
