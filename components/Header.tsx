@@ -525,6 +525,27 @@ export default function Header() {
             </div>
             <div className="mt-6 flow-root">
               <div className="-my-6 divide-y divide-gray-500/10 dark:divide-white/10">
+                {/* Prominent Call to Action - First Item */}
+                <div className="py-6">
+                  <a
+                    href={phoneLink.href}
+                    onClick={() => trackPhoneClick('header-mobile-menu-top')}
+                    className="flex items-center justify-between p-4 rounded-xl bg-brand-bright-blue/10 dark:bg-white/10 hover:bg-brand-bright-blue/20 dark:hover:bg-white/20 transition-colors"
+                  >
+                    <div>
+                      <div className="text-xs font-semibold uppercase tracking-wider text-neutral-charcoal/60 dark:text-white/60 mb-1">
+                        Call Us Now
+                      </div>
+                      <div className="text-lg font-bold text-brand-deep-blue dark:text-white">
+                        {phoneLink.formatted}
+                      </div>
+                    </div>
+                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-brand-bright-blue text-white">
+                      <Phone className="h-6 w-6" />
+                    </div>
+                  </a>
+                </div>
+
                 <div className="space-y-2 py-6">
                   {/* Services */}
                   <div>
@@ -723,16 +744,6 @@ export default function Header() {
                   >
                     Request a Quote
                   </Link>
-                  <div className="mt-4 space-y-3">
-                    <a
-                      href={phoneLink.href}
-                      onClick={() => trackPhoneClick('header-mobile-menu')}
-                      className="flex items-center justify-center gap-2 text-sm font-medium text-neutral-charcoal dark:text-white hover:text-brand-bright-blue dark:hover:text-brand-bright-blue transition-colors"
-                    >
-                      <Phone className="h-4 w-4" />
-                      {phoneLink.formatted}
-                    </a>
-                  </div>
                 </div>
               </div>
             </div>
@@ -740,26 +751,18 @@ export default function Header() {
         </div>
       )}
 
-      {/* Mobile Sticky Contact Bar - Apple-style simplified */}
+      {/* Mobile Sticky Contact Bar - Single Quote CTA */}
       <div
         className={`fixed bottom-0 left-0 right-0 z-[120] bg-white/95 backdrop-blur-sm border-t border-gray-200 shadow-lg transition-transform duration-200 dark:border-white/10 dark:bg-brand-deep-blue/95 lg:hidden ${
           mobileMenuOpen ? 'translate-y-full' : 'translate-y-0'
         }`}
       >
-        <div className="px-4 py-3 flex items-center justify-center gap-3">
-          <a
-            href={phoneLink.href}
-            onClick={() => trackPhoneClick('mobile-bottom-bar')}
-            className="flex-1 flex items-center justify-center gap-2 py-3 rounded-full border-2 border-brand-bright-blue text-sm font-semibold text-brand-bright-blue transition-colors active:bg-brand-bright-blue/5 dark:text-white dark:border-white"
-          >
-            <Phone className="h-4 w-4" />
-            Call
-          </a>
+        <div className="px-4 py-3">
           <Link
             href="/quote"
-            className="flex-1 flex items-center justify-center gap-2 py-3 rounded-full bg-brand-deep-blue text-sm font-semibold text-white shadow-sm transition-colors active:bg-[#001f5c]"
+            className="block w-full text-center py-3.5 rounded-full bg-brand-deep-blue text-sm font-semibold text-white shadow-sm transition-colors active:bg-[#001f5c]"
           >
-            Quote
+            Request a Quote
           </Link>
         </div>
       </div>

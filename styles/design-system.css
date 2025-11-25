@@ -231,6 +231,20 @@ html.light .logo-mobile {
    Prompt 1: Improve Input & Select Contrast
    ==================================================================== */
 
+/* ====================================================================
+   FORM GRID LAYOUTS - Mobile-First Stacking (Issue #50)
+   Ensure all form grids stack vertically on mobile viewports
+   ==================================================================== */
+
+/* Force single column on mobile for all form grids */
+@media (max-width: 767px) {
+  form .grid,
+  form [class*="grid"] {
+    grid-template-columns: 1fr !important;
+    gap: 1rem; /* 16px vertical gaps */
+  }
+}
+
 .form-field,
 input[type="text"],
 input[type="email"],
@@ -499,6 +513,43 @@ html.dark .filter-pill[aria-pressed="true"] {
   .hero-badge,
   .hero-secondary {
     margin-top: 0.9375rem; /* 15px on mobile */
+  }
+}
+
+/* ====================================================================
+   RESPONSIVE HERO TYPOGRAPHY - 35% Mobile Reduction
+   Issue #49: Prevent excessive text wrapping on mobile
+   ==================================================================== */
+
+/* H1 in hero sections - responsive sizing for optimal readability */
+.hero-section h1,
+h1.hero-title {
+  font-size: 26px; /* 35% smaller than desktop (40px × 0.65 = 26px) */
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: var(--tracking-tight);
+}
+
+/* H2 in hero sections - responsive sizing */
+.hero-section h2,
+h2.hero-subtitle {
+  font-size: 21px; /* 35% smaller than desktop (32px × 0.65 ≈ 21px) */
+  line-height: 1.25;
+  font-weight: 700;
+}
+
+/* Desktop hero typography - full sizes */
+@media (min-width: 768px) {
+  .hero-section h1,
+  h1.hero-title {
+    font-size: 40px;
+    line-height: 1.3;
+  }
+
+  .hero-section h2,
+  h2.hero-subtitle {
+    font-size: 32px;
+    line-height: 1.3;
   }
 }
 
