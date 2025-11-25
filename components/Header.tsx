@@ -718,7 +718,7 @@ export default function Header() {
                 <div className="py-6">
                   <Link
                     href="/quote"
-                    className="block w-full rounded-full bg-brand-bright-blue px-7 py-4 text-center text-base font-semibold text-white shadow-sm hover:bg-[#006bc4] transition-all duration-150"
+                    className="block w-full rounded-full bg-brand-deep-blue px-7 py-4 text-center text-base font-semibold text-white shadow-sm hover:bg-[#001f5c] transition-all duration-150"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     Request a Quote
@@ -757,7 +757,7 @@ export default function Header() {
           </a>
           <Link
             href="/quote"
-            className="flex-1 flex items-center justify-center gap-2 py-3 rounded-full bg-brand-bright-blue text-sm font-semibold text-white shadow-sm transition-colors active:bg-[#006bc4]"
+            className="flex-1 flex items-center justify-center gap-2 py-3 rounded-full bg-brand-deep-blue text-sm font-semibold text-white shadow-sm transition-colors active:bg-[#001f5c]"
           >
             Quote
           </Link>
