@@ -208,7 +208,7 @@ export default function Header() {
           >
             <Link
               href="/services"
-              className={`flex items-center gap-1 text-sm font-medium leading-6 transition-all duration-150 ${
+              className={`flex items-center gap-1 text-sm font-medium tracking-wide leading-6 transition-all duration-150 ${
                 pathname.startsWith('/services')
                   ? 'text-brand-bright-blue dark:text-white'
                   : 'text-neutral-charcoal dark:text-white hover:text-brand-bright-blue dark:hover:text-white/80'
@@ -270,7 +270,7 @@ export default function Header() {
           >
             <Link
               href="/industries"
-              className={`flex items-center gap-1 text-sm font-medium leading-6 transition-all duration-150 ${
+              className={`flex items-center gap-1 text-sm font-medium tracking-wide leading-6 transition-all duration-150 ${
                 pathname.startsWith('/industries')
                   ? 'text-brand-bright-blue dark:text-white'
                   : 'text-neutral-charcoal dark:text-white hover:text-brand-bright-blue dark:hover:text-white/80'
@@ -327,7 +327,7 @@ export default function Header() {
           >
             <Link
               href="/locations"
-              className={`flex items-center gap-1 text-sm font-medium leading-6 transition-all duration-150 ${
+              className={`flex items-center gap-1 text-sm font-medium tracking-wide leading-6 transition-all duration-150 ${
                 pathname.startsWith('/locations')
                   ? 'text-brand-bright-blue dark:text-white'
                   : 'text-neutral-charcoal dark:text-white hover:text-brand-bright-blue dark:hover:text-white/80'
@@ -407,7 +407,7 @@ export default function Header() {
             onMouseLeave={handleDropdownLeave}
           >
             <button
-              className={`flex items-center gap-1 text-sm font-medium leading-6 transition-all duration-150 ${
+              className={`flex items-center gap-1 text-sm font-medium tracking-wide leading-6 transition-all duration-150 ${
                 pathname.startsWith('/blog') || pathname.startsWith('/faq') || pathname.startsWith('/case-studies') || pathname.startsWith('/testimonials') || pathname.startsWith('/careers') || pathname.startsWith('/promotions')
                   ? 'text-brand-bright-blue dark:text-white'
                   : 'text-neutral-charcoal dark:text-white hover:text-brand-bright-blue dark:hover:text-white/80'
@@ -457,7 +457,7 @@ export default function Header() {
             <Link
               key={item.name}
               href={item.href}
-              className={`relative text-sm font-medium leading-6 transition-all duration-150 ${
+              className={`relative text-sm font-medium tracking-wide leading-6 transition-all duration-150 ${
                 pathname === item.href
                   ? 'text-brand-bright-blue dark:text-white'
                   : 'text-neutral-charcoal dark:text-white hover:text-brand-bright-blue dark:hover:text-white/80'
@@ -483,7 +483,7 @@ export default function Header() {
           </a>
           <Link
             href="/quote"
-            className="rounded-full bg-brand-bright-blue px-6 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-[#006bc4] transition-all duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-bright-blue focus-visible:ring-offset-2"
+            className="rounded-full bg-brand-deep-blue px-6 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-[#001f5c] transition-all duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-deep-blue focus-visible:ring-offset-2"
           >
             Quote
           </Link>

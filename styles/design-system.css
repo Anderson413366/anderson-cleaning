@@ -155,10 +155,10 @@ html.dark {
 /* Light mode uses the HTML src attribute (color variant) */
 .logo-desktop {
   display: block;
-  height: 3rem; /* 48px - fixed height prevents shrinking */
+  height: 3.5rem; /* 56px - 15% larger for stronger brand presence */
   width: auto; /* Maintains aspect ratio */
-  max-width: 180px; /* Maximum width */
-  min-width: 140px; /* Minimum width - prevents shrinking below this */
+  max-width: 210px; /* Maximum width - increased proportionally */
+  min-width: 160px; /* Minimum width - prevents shrinking below this */
   object-fit: contain; /* Prevents distortion */
   flex-shrink: 0; /* Prevents flex containers from shrinking logo */
   /* NO content property here - let HTML src work naturally */
@@ -168,8 +168,8 @@ html.dark {
 /* Light mode uses the HTML src attribute (color variant) */
 .logo-mobile {
   display: none;
-  height: 2.5rem; /* 40px */
-  width: 2.5rem; /* 40px - fixed size */
+  height: 2.875rem; /* 46px - 15% larger for consistency */
+  width: 2.875rem; /* 46px - fixed size */
   object-fit: contain; /* Prevents distortion */
   flex-shrink: 0; /* Prevents shrinking */
   /* NO content property here - let HTML src work naturally */
