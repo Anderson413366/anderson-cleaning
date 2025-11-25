@@ -139,8 +139,8 @@ export default function QuoteMiniForm({
           {...register('phone')}
           type="tel"
           maxLength={10}
-          className="w-full border-2 border-neutral-light-grey rounded px-4 py-2 focus:border-brand-bright-blue outline-none bg-white dark:bg-slate-800 text-neutral-charcoal dark:text-white placeholder:text-neutral-charcoal dark:placeholder:text-neutral-charcoal/60 dark:placeholder:text-neutral-charcoal"
-          placeholder="4133065053"
+          className="w-full border-2 border-neutral-light-grey rounded px-4 py-2 focus:border-brand-bright-blue outline-none bg-white dark:bg-slate-800 text-neutral-charcoal dark:text-white placeholder:text-[#9CA3AF]"
+          placeholder="(413) 555-1234"
         />
         {errors.phone && <p className="text-sm text-red-600 mt-1">{errors.phone.message}</p>}
       </div>

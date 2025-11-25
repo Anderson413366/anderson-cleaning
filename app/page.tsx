@@ -36,12 +36,12 @@ export default function Home() {
       <PromotionalModal />
 
       {/* Hero Section - Apple-style simplified */}
-      <section className="relative bg-white dark:bg-slate-900 pt-32 pb-20 md:pt-40 md:pb-28 lg:pt-48 lg:pb-32">
+      <section className="relative bg-white dark:bg-slate-900 pt-32 pb-14 md:pt-40 md:pb-20 lg:pt-48 lg:pb-22">
         <div className="container mx-auto px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             {/* Headline */}
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 leading-[1.1] tracking-tight text-neutral-charcoal dark:text-white">
-              Commercial Cleaning Services Springfield MA & Western Massachusetts
+            <h1 className="text-5xl md:text-6xl lg:text-6xl font-bold mb-8 leading-[1.1] tracking-tight text-neutral-charcoal dark:text-white">
+              Commercial Cleaning Services | Western MA & Northern CT
             </h1>
 
             {/* Supporting Line */}
@@ -108,7 +108,7 @@ export default function Home() {
               return (
                 <div
                   key={i}
-                  className="bg-gradient-to-br from-brand-deep-blue to-brand-bright-blue text-white rounded-2xl p-8 shadow-lg hover:-translate-y-1 transition-all duration-300"
+                  className="bg-brand-deep-blue text-white rounded-lg p-8 shadow-lg hover:bg-brand-bright-blue hover:-translate-y-1 transition-all duration-300"
                 >
                   <div className="flex items-start space-x-5">
                     <div className="flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-2xl bg-white/20 backdrop-blur-sm">
@@ -161,7 +161,7 @@ export default function Home() {
               return (
                 <div
                   key={i}
-                  className="bg-white dark:bg-slate-800 border border-neutral-light-grey dark:border-slate-700 rounded-xl p-5 hover:-translate-y-1 hover:border-brand-bright-blue transition-all duration-300"
+                  className="bg-white dark:bg-slate-800 border border-neutral-light-grey dark:border-slate-700 rounded-xl p-5 hover:-translate-y-0.5 hover:border-l-4 hover:border-l-brand-bright-blue hover:shadow-[0_4px_12px_rgba(0,42,134,0.12)] transition-all duration-300"
                 >
                   <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-brand-bright-blue/10 text-brand-bright-blue mb-3">
                     <Icon className="h-5 w-5" aria-hidden="true" />
@@ -178,11 +178,11 @@ export default function Home() {
             })}
           </div>
 
-          <div className="text-center">
+          <div className="text-center mt-8">
             <Link href="/services">
-              <Button variant="primary" size="lg">
+              <Button variant="primary" size="lg" className="group">
                 View All Services
-                <ArrowRight className="ml-2 h-5 w-5" />
+                <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
               </Button>
             </Link>
           </div>
@@ -287,7 +287,7 @@ export default function Home() {
             </h2>
             <div className="flex items-center justify-center space-x-1 mb-2" role="img" aria-label="5 out of 5 stars">
               {[1, 2, 3, 4, 5].map((star) => (
-                <Star key={star} className="h-5 w-5 text-yellow-400 fill-yellow-400" aria-hidden="true" />
+                <Star key={star} className="h-[18px] w-[18px] text-brand-deep-blue fill-brand-deep-blue" aria-hidden="true" />
               ))}
             </div>
             <p className="text-body text-neutral-charcoal/80 dark:text-white/70">5.0 stars from satisfied clients</p>
@@ -319,11 +319,11 @@ export default function Home() {
             ].map((testimonial, i) => (
               <div
                 key={i}
-                className="bg-white dark:bg-slate-800 border border-neutral-light-grey dark:border-slate-700 rounded-xl p-6 shadow-sm"
+                className="bg-white dark:bg-slate-800 rounded-xl p-8 shadow-[0_2px_8px_rgba(0,42,134,0.08)]"
               >
                 <div className="flex items-center space-x-1 mb-4" role="img" aria-label={`${testimonial.rating} out of 5 stars`}>
                   {[...Array(testimonial.rating)].map((_, j) => (
-                    <Star key={j} className="h-5 w-5 text-yellow-400 fill-yellow-400" aria-hidden="true" />
+                    <Star key={j} className="h-[18px] w-[18px] text-brand-deep-blue fill-brand-deep-blue" aria-hidden="true" />
                   ))}
                 </div>
                 <blockquote className="text-body leading-relaxed text-neutral-charcoal dark:text-white mb-4">
@@ -344,7 +344,7 @@ export default function Home() {
       {/* Final CTA Section with Quote Form */}
       <section className="py-20 bg-neutral-off-white dark:bg-slate-900">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto">
+          <div className="max-w-[600px] mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-h2 leading-tight font-bold text-neutral-charcoal dark:text-white mb-4">
                 Request Your Free Quote
