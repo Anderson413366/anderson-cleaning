@@ -3,9 +3,22 @@
 import type { ElementType } from 'react'
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
-import { ChevronRight, Shield, Award, Leaf, HardHat } from 'lucide-react'
+import {
+  ChevronRight,
+  Shield,
+  Award,
+  Leaf,
+  HardHat,
+  Building2,
+  Activity,
+  Sparkles,
+  Square,
+  UserCheck,
+  Zap,
+  AlertTriangle,
+} from 'lucide-react'
 import { Button } from '@/components/ui/Button'
-import type { ServiceData } from '@/lib/services-data'
+import type { ServiceData, ServiceSlug } from '@/lib/services-data'
 
 const TRUST_BADGES = [
   { icon: Shield, label: 'Licensed & Insured', description: '$2M Coverage' },
@@ -14,12 +27,27 @@ const TRUST_BADGES = [
   { icon: HardHat, label: 'OSHA-Trained', description: 'Safety First' },
 ]
 
+// Map service slugs to their icons (must match icons in services-data.ts)
+const SERVICE_ICONS: Record<ServiceSlug, ElementType> = {
+  'office-cleaning': Building2,
+  'healthcare-cleaning': Activity,
+  'janitorial-services': Sparkles,
+  'floor-care': Square,
+  'window-cleaning': Sparkles,
+  'post-construction': HardHat,
+  'emergency-cleaning': AlertTriangle,
+  'day-porter': UserCheck,
+}
+
 interface ServiceHeroProps {
   service: Omit<ServiceData, 'icon'>
 }
 
 export default function ServiceHero({ service }: ServiceHeroProps) {
   const [parallaxOffset, setParallaxOffset] = useState(0)
+
+  // Get the icon component for this service
+  const ServiceIcon = SERVICE_ICONS[service.slug as ServiceSlug] || Building2
 
   useEffect(() => {
     const handleScroll = () => {
@@ -61,7 +89,14 @@ export default function ServiceHero({ service }: ServiceHeroProps) {
               </ol>
             </nav>
 
-            <h1 className="font-extrabold mb-6 leading-tight mt-6">
+            {/* Service Icon - Centered Above Heading */}
+            <div className="mb-6 flex justify-center lg:justify-start">
+              <div className="inline-flex h-20 w-20 items-center justify-center rounded-2xl bg-white/10 backdrop-blur-md shadow-lg">
+                <ServiceIcon className="h-10 w-10 text-white" strokeWidth={2} aria-hidden="true" />
+              </div>
+            </div>
+
+            <h1 className="font-extrabold mb-6 leading-tight">
               {service.h1}
             </h1>
             <p className="text-xl md:text-2xl text-white/80 mb-8 max-w-2xl mx-auto lg:mx-0">
