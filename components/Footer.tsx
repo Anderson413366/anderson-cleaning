@@ -55,6 +55,45 @@ const navigation = {
         </svg>
       ),
     },
+    {
+      name: 'X',
+      href: 'https://x.com/andersoncleaning',
+      icon: (
+        <svg
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <path d="M4 4l11.733 16h4.267l-11.733 -16z" />
+          <path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772" />
+        </svg>
+      ),
+    },
+    {
+      name: 'Instagram',
+      href: 'https://www.instagram.com/andersoncleaningma/',
+      icon: (
+        <svg
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+          <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+        </svg>
+      ),
+    },
   ],
 }
 
@@ -167,13 +206,6 @@ export default function Footer() {
                       {item.icon}
                     </a>
                   ))}
-                </div>
-
-                {/* B2B Disclaimer - Elevated for visibility */}
-                <div className="mt-6 pt-6 border-t border-neutral-charcoal/10 dark:border-white/10">
-                  <p className="text-sm italic text-brand-deep-blue dark:text-white/80">
-                    We serve B2B clients only and do not offer residential services. Contracted customers also receive access to our full suite of premium add-on services, including specialty cleaning and supply management.
-                  </p>
                 </div>
               </div>
             </div>
