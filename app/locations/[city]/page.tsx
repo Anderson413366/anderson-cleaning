@@ -1,6 +1,7 @@
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
+import { Button } from '@/components/ui/Button'
 import { BreadcrumbSchema, LocalBusinessSchema } from '@/components/Schema'
 
 // City data configuration
@@ -399,64 +400,22 @@ export default async function LocationPage({
       <BreadcrumbSchema items={breadcrumbs} />
       <LocalBusinessSchema serviceArea={`${cityData.city}, ${cityData.stateFullz}`} />
       {/* Hero Section */}
-      <section className="hero-section bg-gradient-to-b from-blue-600 to-blue-700 text-white">
-        <div className="container mx-auto px-4">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">
-            Commercial Cleaning Services in {cityData.city}, {cityData.state}
-          </h1>
-          <p className="text-xl mb-8 opacity-95 max-w-3xl">
-            Professional B2B cleaning services for offices, medical facilities, and commercial
-            properties throughout {cityData.city} and surrounding areas.
-          </p>
-          {/* Single Primary CTA */}
-          <div className="mb-8">
-            <Link
-              href="/quote"
-              className="inline-block bg-brand-bright-blue text-white px-8 py-4 rounded-lg font-semibold hover:bg-[#006bc4] transition-colors shadow-lg"
-            >
-              Request a Quote
-            </Link>
-          </div>
-          {/* Secondary phone link */}
-          <p className="text-white/90">
-            Or call us directly:{' '}
-            <a
-              href="tel:4133065053"
-              className="underline hover:text-white transition-colors font-semibold"
-            >
-              (413) 306-5053
-            </a>
-          </p>
-          <div className="mt-8 flex flex-wrap gap-6 text-sm">
-            <div className="flex items-center gap-2">
-              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                <path
-                  fillRule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                  clipRule="evenodd"
-                />
-              </svg>
-              <span>Response in {cityData.responseTime}</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                <path
-                  fillRule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                  clipRule="evenodd"
-                />
-              </svg>
-              <span>Serving {cityData.businessCount} businesses</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                <path
-                  fillRule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                  clipRule="evenodd"
-                />
-              </svg>
-              <span>Licensed in {cityData.stateFullz}</span>
+      <section className="hero-section bg-brand-deep-blue text-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto text-center">
+            <h1 className="font-extrabold mb-6 leading-tight">
+              Commercial Cleaning Services in {cityData.city}, {cityData.state}
+            </h1>
+            <p className="text-xl md:text-2xl text-white/90 mb-12 max-w-3xl mx-auto leading-relaxed">
+              Professional B2B cleaning services for offices, medical facilities, and commercial
+              properties throughout {cityData.city} and surrounding areas.
+            </p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Link href="/quote">
+                <Button variant="accent" size="lg" className="min-w-[220px]">
+                  Request a Quote
+                </Button>
+              </Link>
             </div>
           </div>
         </div>

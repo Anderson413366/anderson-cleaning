@@ -37,9 +37,16 @@ export default function IndustriesPage() {
             <h1 className="font-extrabold mb-6 leading-tight">
               Industries We Serve
             </h1>
-            <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl md:text-2xl text-white/90 mb-12 max-w-3xl mx-auto leading-relaxed">
               Specialized cleaning solutions tailored to your industry's unique standards and compliance requirements
             </p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Link href="/quote">
+                <Button variant="accent" size="lg" className="min-w-[220px]">
+                  Request a Quote
+                </Button>
+              </Link>
+            </div>
           </div>
         </div>
       </section>

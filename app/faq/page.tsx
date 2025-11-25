@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { Button } from '@/components/ui/Button'
-import { ChevronDown, ChevronUp, Search, HelpCircle, Phone, MessageCircle } from 'lucide-react'
+import { ChevronDown, ChevronUp, Search, Phone, MessageCircle } from 'lucide-react'
 import Link from 'next/link'
 import { inputClassName } from '@/lib/styles/formStyles'
 
@@ -162,16 +162,20 @@ export default function FAQPage() {
       <section className="hero-section bg-brand-deep-blue text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="mb-6">
-              <HelpCircle className="h-16 w-16 text-accent-400 mx-auto" />
-            </div>
             <h1 className="font-extrabold mb-6 leading-tight">
               Frequently Asked Questions
             </h1>
-            <p className="text-body text-white/80 leading-relaxed">
+            <p className="text-xl md:text-2xl text-white/90 mb-12 max-w-3xl mx-auto leading-relaxed">
               Find answers to common questions about our commercial cleaning services, pricing,
               scheduling, and more.
             </p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Link href="/quote">
+                <Button variant="accent" size="lg" className="min-w-[220px]">
+                  Request a Quote
+                </Button>
+              </Link>
+            </div>
           </div>
         </div>
       </section>

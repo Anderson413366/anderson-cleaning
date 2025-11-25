@@ -1,5 +1,6 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
+import { Button } from '@/components/ui/Button'
 
 export const metadata: Metadata = {
   title: 'Service Areas | Commercial Cleaning Locations | Anderson Cleaning',
@@ -64,25 +65,18 @@ export default function LocationsHub() {
       <section className="hero-section bg-brand-deep-blue text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-h1 font-extrabold mb-6 leading-tight">
+            <h1 className="font-extrabold mb-6 leading-tight">
               Commercial Cleaning Service Areas
             </h1>
-            <p className="text-body md:text-h3 text-white/90 mb-8 max-w-3xl mx-auto">
+            <p className="text-xl md:text-2xl text-white/90 mb-12 max-w-3xl mx-auto leading-relaxed">
               Professional commercial cleaning throughout Western Massachusetts and Northern Connecticut. Find your local service area.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link
-                href="/quote"
-                className="rounded-full bg-white text-brand-deep-blue px-8 py-4 font-semibold hover:bg-gray-100 transition-all duration-150 shadow-sm"
-              >
-                Get Free Quote
+              <Link href="/quote">
+                <Button variant="accent" size="lg" className="min-w-[220px]">
+                  Request a Quote
+                </Button>
               </Link>
-              <a
-                href="tel:+14133065053"
-                className="rounded-full border-2 border-white text-white px-8 py-4 font-semibold hover:bg-white/10 transition-all duration-150"
-              >
-                Call (413) 306-5053
-              </a>
             </div>
           </div>
         </div>

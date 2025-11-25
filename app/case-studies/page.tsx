@@ -30,15 +30,16 @@ export default function CaseStudiesPage() {
             <h1 className="font-extrabold mb-6 leading-tight">
               Success Stories
             </h1>
-            <p className="text-body md:text-h3 text-white/80 mb-8">
+            <p className="text-xl md:text-2xl text-white/90 mb-12 max-w-3xl mx-auto leading-relaxed">
               See how we've helped businesses like yours solve their cleaning challenges and
               achieve measurable results
             </p>
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-lg">
-              <TrendingUp className="h-5 w-5 text-green-300" aria-hidden="true" />
-              <span className="text-sm font-semibold">
-                Real clients. Real results. Documented outcomes.
-              </span>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Link href="/quote">
+                <Button variant="accent" size="lg" className="min-w-[220px]">
+                  Request a Quote
+                </Button>
+              </Link>
             </div>
           </div>
         </div>

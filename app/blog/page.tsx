@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
-import { BookOpen } from 'lucide-react'
+import Link from 'next/link'
+import { Button } from '@/components/ui/Button'
 import BlogExplorer from '@/components/blog/BlogExplorer'
 
 export const metadata: Metadata = {
@@ -84,18 +85,19 @@ export default function BlogPage() {
       <section className="hero-section bg-brand-deep-blue text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="mb-6">
-              <span className="inline-flex items-center px-4 py-2 rounded-full border border-brand-bright-blue/40 bg-brand-bright-blue/10 text-brand-bright-blue text-sm font-medium">
-                <BookOpen className="h-4 w-4 mr-2" />
-                Resources & Insights
-              </span>
-            </div>
             <h1 className="font-extrabold mb-6 leading-tight">
               Commercial Cleaning Resources
             </h1>
-            <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl md:text-2xl text-white/90 mb-12 max-w-3xl mx-auto leading-relaxed">
               Expert advice for facility managers on maintaining clean, healthy, and productive workspaces
             </p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Link href="/quote">
+                <Button variant="accent" size="lg" className="min-w-[220px]">
+                  Request a Quote
+                </Button>
+              </Link>
+            </div>
           </div>
         </div>
       </section>

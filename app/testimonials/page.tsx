@@ -205,16 +205,17 @@ export default function TestimonialsPage() {
       <section className="hero-section bg-brand-deep-blue text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="inline-flex items-center gap-2 bg-yellow-500/20 border border-yellow-400/30 rounded-full px-6 py-2 mb-6">
-              <Star className="h-5 w-5 fill-yellow-400 text-yellow-400" />
-              <span className="text-yellow-100 font-semibold">
-                {averageRating}/5 stars from {testimonials.length} clients
-              </span>
-            </div>
             <h1 className="font-extrabold mb-6 leading-tight">Client Testimonials</h1>
-            <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl md:text-2xl text-white/90 mb-12 max-w-3xl mx-auto leading-relaxed">
               Hear from businesses across Western MA & Northern CT who trust Anderson Cleaning Company
             </p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Link href="/quote">
+                <Button variant="accent" size="lg" className="min-w-[220px]">
+                  Request a Quote
+                </Button>
+              </Link>
+            </div>
           </div>
         </div>
       </section>

@@ -20,16 +20,20 @@ export default function PromotionsPage() {
       <section className="hero-section bg-brand-deep-blue text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="mb-6">
-              <Gift className="h-16 w-16 text-accent-400 mx-auto" />
-            </div>
             <h1 className="font-extrabold mb-6 leading-tight">
               Special Offers & Referral Program
             </h1>
-            <p className="text-body text-white/80 leading-relaxed">
+            <p className="text-xl md:text-2xl text-white/90 mb-12 max-w-3xl mx-auto leading-relaxed">
               Save on professional commercial cleaning services and earn rewards for referring other
               businesses!
             </p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Link href="/quote">
+                <Button variant="accent" size="lg" className="min-w-[220px]">
+                  Request a Quote
+                </Button>
+              </Link>
+            </div>
           </div>
         </div>
       </section>
