@@ -26,73 +26,35 @@ export const metadata: Metadata = {
   },
 }
 
-const massachusettsLocations = [
-  {
-    name: 'Springfield, MA',
-    slug: 'springfield-ma',
-    description: 'Serving 4,200+ businesses in Springfield with 2-4 hour response times',
-    population: '155,000',
-    businesses: '4,200+',
-  },
-  {
-    name: 'West Springfield, MA',
-    slug: 'west-springfield-ma',
-    description: 'Headquartered in West Springfield - same-day service available',
-    population: '28,000',
-    businesses: '1,200+',
-  },
-  {
-    name: 'Worcester County, MA',
-    slug: 'worcester-county-ma',
-    description: 'Comprehensive coverage throughout Worcester County',
-    population: '830,000',
-    businesses: '18,000+',
-  },
-  {
-    name: 'Northampton & Amherst, MA',
-    slug: 'northampton-amherst-ma',
-    description: 'Eco-friendly cleaning for Pioneer Valley businesses',
-    population: '90,000',
-    businesses: '2,800+',
-  },
-  {
-    name: 'Chicopee, MA',
-    slug: 'chicopee-ma',
-    description: 'Quick 1-3 hour response for Chicopee area businesses',
-    population: '55,000',
-    businesses: '1,500+',
-  },
-  {
-    name: 'Holyoke, MA',
-    slug: 'holyoke-ma',
-    description: 'Specialized service for historic mill buildings and modern facilities',
-    population: '38,000',
-    businesses: '1,100+',
-  },
+// Western Massachusetts cities we serve
+const massachusettsCities = [
+  { name: 'Springfield', slug: 'springfield-ma' },
+  { name: 'West Springfield', slug: 'west-springfield-ma' },
+  { name: 'Chicopee', slug: 'chicopee-ma' },
+  { name: 'Holyoke', slug: 'holyoke-ma' },
+  { name: 'Northampton', slug: 'northampton-ma' },
+  { name: 'Amherst', slug: 'amherst-ma' },
+  { name: 'Westfield', slug: 'westfield-ma' },
+  { name: 'Agawam', slug: 'agawam-ma' },
+  { name: 'Easthampton', slug: 'easthampton-ma' },
+  { name: 'Palmer', slug: 'palmer-ma' },
+  { name: 'Ware', slug: 'ware-ma' },
+  { name: 'Ludlow', slug: 'ludlow-ma' },
+  { name: 'South Hadley', slug: 'south-hadley-ma' },
+  { name: 'Belchertown', slug: 'belchertown-ma' },
+  { name: 'Granby', slug: 'granby-ma' },
 ]
 
-const connecticutLocations = [
-  {
-    name: 'Hartford, CT',
-    slug: 'hartford-ct',
-    description: 'Serving Hartford\'s insurance and financial districts since 2007',
-    population: '121,000',
-    businesses: '5,500+',
-  },
-  {
-    name: 'Enfield, CT',
-    slug: 'enfield-ct',
-    description: 'Connecticut licensed with fast response from nearby West Springfield',
-    population: '42,000',
-    businesses: '1,300+',
-  },
-  {
-    name: 'Windsor, CT',
-    slug: 'windsor-ct',
-    description: 'Professional service for Windsor\'s corporate and healthcare facilities',
-    population: '29,000',
-    businesses: '900+',
-  },
+// Northern Connecticut cities we serve
+const connecticutCities = [
+  { name: 'Hartford', slug: 'hartford-ct' },
+  { name: 'Enfield', slug: 'enfield-ct' },
+  { name: 'Windsor', slug: 'windsor-ct' },
+  { name: 'East Hartford', slug: 'east-hartford-ct' },
+  { name: 'West Hartford', slug: 'west-hartford-ct' },
+  { name: 'Bloomfield', slug: 'bloomfield-ct' },
+  { name: 'Suffield', slug: 'suffield-ct' },
+  { name: 'Somers', slug: 'somers-ct' },
 ]
 
 export default function LocationsHub() {
@@ -126,108 +88,56 @@ export default function LocationsHub() {
         </div>
       </section>
 
-      {/* Massachusetts Locations */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
-          <div className="mb-8">
-            <div className="flex items-center gap-3 mb-6">
-              <h2 className="text-3xl font-bold text-brand-deep-blue dark:text-brand-bright-blue">Massachusetts</h2>
-              <span className="text-lg text-neutral-charcoal/70 dark:text-white/70">
-                ({massachusettsLocations.length} locations)
-              </span>
+      {/* Service Area Overview */}
+      <section className="py-16 bg-white dark:bg-slate-900">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto text-center mb-12">
+            <h2 className="text-h2 font-bold text-neutral-charcoal dark:text-white mb-4">
+              100-Mile Service Radius
+            </h2>
+            <p className="text-body text-neutral-charcoal/70 dark:text-white/80">
+              Headquartered in West Springfield, MA. We provide professional commercial cleaning services throughout Western Massachusetts and Northern Connecticut.
+            </p>
+          </div>
+
+          {/* Massachusetts Cities */}
+          <div className="mb-16">
+            <h3 className="text-h3 font-bold text-brand-deep-blue dark:text-brand-bright-blue mb-8 text-center">
+              Western Massachusetts
+            </h3>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+              {massachusettsCities.map((city) => (
+                <Link
+                  key={city.slug}
+                  href={`/locations/${city.slug}`}
+                  className="group bg-white dark:bg-slate-800 rounded-lg p-4 text-center hover:bg-brand-deep-blue dark:hover:bg-brand-bright-blue transition-all duration-150 border border-neutral-charcoal/10 dark:border-white/10 hover:border-brand-deep-blue dark:hover:border-brand-bright-blue hover:shadow-lg"
+                >
+                  <div className="text-base font-semibold text-neutral-charcoal dark:text-white group-hover:text-white transition-colors">
+                    {city.name}
+                  </div>
+                </Link>
+              ))}
             </div>
-            <div className="w-[40%] h-0.5 bg-brand-deep-blue dark:bg-brand-bright-blue mx-auto"></div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {massachusettsLocations.map((location) => (
-              <Link
-                key={location.slug}
-                href={`/locations/${location.slug}`}
-                className="bg-white dark:bg-slate-800 rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow group min-h-[280px] flex flex-col"
-              >
-                <div className="flex items-start justify-between mb-3">
-                  <h3 className="text-xl font-bold group-hover:text-brand-bright-blue dark:group-hover:text-brand-bright-blue transition-colors">
-                    {location.name}
-                  </h3>
-                  <svg
-                    className="w-6 h-6 text-brand-bright-blue dark:text-brand-bright-blue group-hover:translate-x-1 transition-transform flex-shrink-0"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M9 5l7 7-7 7"
-                    />
-                  </svg>
-                </div>
-                <p className="text-neutral-charcoal/70 dark:text-white/70 mb-4 line-clamp-2 flex-1">{location.description}</p>
-                <div className="flex gap-4 text-sm text-neutral-charcoal/60 dark:text-white/60 mt-auto">
-                  <div>
-                    <span className="font-semibold">Pop:</span> {location.population}
+          {/* Connecticut Cities */}
+          <div className="mb-12">
+            <h3 className="text-h3 font-bold text-brand-deep-blue dark:text-brand-bright-blue mb-8 text-center">
+              Northern Connecticut
+            </h3>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+              {connecticutCities.map((city) => (
+                <Link
+                  key={city.slug}
+                  href={`/locations/${city.slug}`}
+                  className="group bg-white dark:bg-slate-800 rounded-lg p-4 text-center hover:bg-brand-deep-blue dark:hover:bg-brand-bright-blue transition-all duration-150 border border-neutral-charcoal/10 dark:border-white/10 hover:border-brand-deep-blue dark:hover:border-brand-bright-blue hover:shadow-lg"
+                >
+                  <div className="text-base font-semibold text-neutral-charcoal dark:text-white group-hover:text-white transition-colors">
+                    {city.name}
                   </div>
-                  <div>
-                    <span className="font-semibold">Businesses:</span> {location.businesses}
-                  </div>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Connecticut Locations */}
-      <section className="py-16 bg-gray-50 dark:bg-slate-900">
-        <div className="container mx-auto px-4">
-          <div className="mb-8 mt-16">
-            <div className="flex items-center gap-3 mb-6">
-              <h2 className="text-3xl font-bold text-brand-deep-blue dark:text-brand-bright-blue">Connecticut</h2>
-              <span className="text-lg text-neutral-charcoal/70 dark:text-white/70">
-                ({connecticutLocations.length} locations)
-              </span>
+                </Link>
+              ))}
             </div>
-            <div className="w-[40%] h-0.5 bg-brand-deep-blue dark:bg-brand-bright-blue mx-auto"></div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {connecticutLocations.map((location) => (
-              <Link
-                key={location.slug}
-                href={`/locations/${location.slug}`}
-                className="bg-white dark:bg-slate-800 rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow group min-h-[280px] flex flex-col"
-              >
-                <div className="flex items-start justify-between mb-3">
-                  <h3 className="text-xl font-bold group-hover:text-brand-bright-blue dark:group-hover:text-brand-bright-blue transition-colors">
-                    {location.name}
-                  </h3>
-                  <svg
-                    className="w-6 h-6 text-brand-bright-blue dark:text-brand-bright-blue group-hover:translate-x-1 transition-transform flex-shrink-0"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M9 5l7 7-7 7"
-                    />
-                  </svg>
-                </div>
-                <p className="text-neutral-charcoal/70 dark:text-white/70 mb-4 line-clamp-2 flex-1">{location.description}</p>
-                <div className="flex gap-4 text-sm text-neutral-charcoal/60 dark:text-white/60 mt-auto">
-                  <div>
-                    <span className="font-semibold">Pop:</span> {location.population}
-                  </div>
-                  <div>
-                    <span className="font-semibold">Businesses:</span> {location.businesses}
-                  </div>
-                </div>
-              </Link>
-            ))}
           </div>
         </div>
       </section>
