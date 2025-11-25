@@ -126,30 +126,6 @@ export default function LocationsHub() {
         </div>
       </section>
 
-      {/* Service Coverage Overview */}
-      <section className="py-12 bg-gray-50 dark:bg-slate-900">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div>
-              <div className="text-5xl font-bold text-brand-deep-blue dark:text-brand-bright-blue">100+</div>
-              <div className="text-neutral-charcoal/70 dark:text-white/70">Mile Service Radius</div>
-            </div>
-            <div>
-              <div className="text-5xl font-bold text-brand-deep-blue dark:text-brand-bright-blue">35,000+</div>
-              <div className="text-neutral-charcoal/70 dark:text-white/70">Businesses Served</div>
-            </div>
-            <div>
-              <div className="text-5xl font-bold text-brand-deep-blue dark:text-brand-bright-blue">9</div>
-              <div className="text-neutral-charcoal/70 dark:text-white/70">Primary Service Areas</div>
-            </div>
-            <div>
-              <div className="text-5xl font-bold text-brand-deep-blue dark:text-brand-bright-blue">18+</div>
-              <div className="text-neutral-charcoal/70 dark:text-white/70">Years of Experience</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Massachusetts Locations */}
       <section className="py-16">
         <div className="container mx-auto px-4">
@@ -505,33 +481,6 @@ export default function LocationsHub() {
                 100% satisfaction guarantee with consistent quality across all locations
               </p>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-blue-600 to-blue-700 text-white">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-6">
-            Ready to Experience Professional Commercial Cleaning?
-          </h2>
-          <p className="text-xl mb-8 opacity-95 max-w-2xl mx-auto">
-            Select your location above to learn more, or contact us today for a free quote tailored
-            to your facility&apos;s needs.
-          </p>
-          <div className="flex flex-wrap gap-4 justify-center">
-            <Link
-              href="/quote"
-              className="bg-white text-brand-bright-blue px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
-            >
-              Get Your Free Quote
-            </Link>
-            <a
-              href="tel:4133065053"
-              className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-brand-bright-blue transition-colors"
-            >
-              Call (413) 306-5053 Now
-            </a>
           </div>
         </div>
       </section>

@@ -245,7 +245,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
             <DarkModeLogger />
             <SkipLink />
             <Header />
-            <main className="min-h-screen pt-20 pb-24 lg:pb-0" id="main-content" tabIndex={-1}>
+            <main className="min-h-screen pt-28 pb-24 lg:pb-0" id="main-content" tabIndex={-1}>
               {children}
             </main>
             <Footer />
