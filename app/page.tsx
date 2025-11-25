@@ -93,8 +93,8 @@ export default function Home() {
             </p>
           </div>
 
-          {/* Featured Services - Top 2 with visual prominence */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+          {/* Unified Services Grid - 3x2 layout with consistent styling */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
             {[
               {
                 title: 'Office & Commercial Cleaning',
@@ -108,44 +108,15 @@ export default function Home() {
                 icon: Sparkles,
                 label: 'Janitorial icon',
               },
-            ].map((service, i) => {
-              const Icon = service.icon
-              return (
-                <div
-                  key={i}
-                  className="bg-gradient-to-br from-brand-deep-blue to-brand-bright-blue text-white rounded-lg p-8 shadow-lg hover:bg-brand-bright-blue hover:-translate-y-1 transition-all duration-300"
-                >
-                  <div className="flex items-start space-x-5">
-                    <div className="flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-2xl bg-white/20 backdrop-blur-sm">
-                      <Icon className="h-8 w-8" aria-hidden="true" />
-                      <span className="sr-only">{service.label}</span>
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="text-2xl font-bold mb-3">
-                        {service.title}
-                      </h3>
-                      <p className="text-lg leading-relaxed text-white/95">
-                        {service.description}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              )
-            })}
-          </div>
-
-          {/* Additional Services - Secondary grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-            {[
               {
                 title: 'Floor & Carpet Care',
-                description: 'Strip, wax, buff, and deep cleaning',
+                description: 'Strip, wax, buff, and deep cleaning for pristine floors',
                 icon: Zap,
                 label: 'Floor care icon',
               },
               {
                 title: 'Window Cleaning',
-                description: 'Interior & exterior, streak-free results',
+                description: 'Interior & exterior, streak-free results every time',
                 icon: Square,
                 label: 'Window cleaning icon',
               },
@@ -157,7 +128,7 @@ export default function Home() {
               },
               {
                 title: 'Supply Management',
-                description: 'Auto-replenishment of consumables',
+                description: 'Auto-replenishment of consumables and supplies',
                 icon: Package,
                 label: 'Supply management icon',
               },
@@ -166,16 +137,17 @@ export default function Home() {
               return (
                 <div
                   key={i}
-                  className="bg-white dark:bg-slate-800 border border-neutral-light-grey dark:border-slate-700 rounded-xl p-5 hover:-translate-y-0.5 hover:border-l-4 hover:border-l-brand-bright-blue hover:shadow-[0_4px_12px_rgba(0,42,134,0.12)] transition-all duration-300"
+                  className="bg-brand-deep-blue dark:bg-brand-deep-blue text-white rounded-xl p-6 shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
                 >
-                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-brand-bright-blue/10 text-brand-bright-blue mb-3">
-                    <Icon className="h-5 w-5" aria-hidden="true" />
+                  {/* Glass-morphism icon circle with gradient */}
+                  <div className="relative flex h-16 w-16 items-center justify-center rounded-lg mb-4 bg-gradient-to-br from-brand-bright-blue/20 to-brand-deep-blue/20 backdrop-blur-md shadow-inner">
+                    <Icon className="h-12 w-12 text-white" aria-hidden="true" />
                     <span className="sr-only">{service.label}</span>
                   </div>
-                  <h3 className="text-lg font-semibold text-neutral-charcoal dark:text-white mb-2">
+                  <h3 className="text-xl font-bold mb-3 text-white">
                     {service.title}
                   </h3>
-                  <p className="text-sm text-neutral-charcoal/70 dark:text-white/70">
+                  <p className="text-base leading-relaxed text-white/90">
                     {service.description}
                   </p>
                 </div>
@@ -184,11 +156,12 @@ export default function Home() {
           </div>
 
           <div className="text-center mt-8">
-            <Link href="/services">
-              <Button variant="primary" size="lg" className="group">
-                View All Services
-                <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-              </Button>
+            <Link
+              href="/services"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-brand-bright-blue text-white font-semibold rounded hover:bg-[#006bc4] transition-all duration-150 group"
+            >
+              View All Services
+              <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
             </Link>
           </div>
         </div>
