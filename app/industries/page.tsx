@@ -24,8 +24,13 @@ export const metadata: Metadata = {
 export const revalidate = 86400
 
 export default function IndustriesPage() {
-  const filteredIndustries = industries.filter(ind =>
-    ['healthcare', 'corporate-offices', 'educational-facilities', 'retail-stores', 'manufacturing-warehouses'].includes(ind.slug)
+  // Separate featured and secondary industries
+  const featuredIndustries = industries.filter(ind =>
+    ['healthcare', 'corporate-offices'].includes(ind.slug)
+  )
+
+  const secondaryIndustries = industries.filter(ind =>
+    ['educational-facilities', 'retail-stores', 'manufacturing-warehouses'].includes(ind.slug)
   )
 
   return (
@@ -64,65 +69,126 @@ export default function IndustriesPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-            {filteredIndustries.map((industry) => {
-              const IconComponent = getIconComponent(industry.icon)
+          <div className="max-w-7xl mx-auto space-y-12">
+            {/* Featured Industries - Healthcare & Corporate Offices */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {featuredIndustries.map((industry) => {
+                const IconComponent = getIconComponent(industry.icon)
 
-              return (
-                <Link
-                  key={industry.id}
-                  href={`/industries/${industry.slug}`}
-                  className="group h-full"
-                >
-                  <div className="h-full flex flex-col bg-white dark:bg-slate-900 rounded-xl shadow-sm border-2 border-neutral-light-grey dark:border-slate-700 p-8 transition-all duration-300 hover:shadow-xl hover:border-brand-bright-blue hover:-translate-y-1">
-                    <div className="mb-6">
-                      <IconComponent
-                        className="h-8 w-8 text-brand-deep-blue transition-colors"
-                        aria-hidden="true"
-                      />
+                return (
+                  <Link
+                    key={industry.id}
+                    href={`/industries/${industry.slug}`}
+                    className="group h-full"
+                  >
+                    <div className="h-full flex flex-col bg-white dark:bg-slate-900 rounded-2xl shadow-md border-2 border-brand-deep-blue/20 dark:border-brand-bright-blue/30 p-10 transition-all duration-300 hover:shadow-2xl hover:border-brand-bright-blue hover:-translate-y-2">
+                      {/* Featured badge */}
+                      <div className="inline-flex items-center gap-2 self-start mb-4 px-3 py-1 rounded-full bg-brand-bright-blue/10 dark:bg-brand-bright-blue/20">
+                        <span className="text-xs font-bold uppercase tracking-wider text-brand-deep-blue dark:text-brand-bright-blue">
+                          Primary Focus
+                        </span>
+                      </div>
+
+                      <div className="mb-6">
+                        <div className="relative inline-flex items-center justify-center h-16 w-16 rounded-xl bg-gradient-to-br from-brand-deep-blue to-brand-bright-blue shadow-lg">
+                          <div className="absolute inset-0 rounded-xl bg-white/10 backdrop-blur-sm" />
+                          <IconComponent
+                            className="relative h-12 w-12 text-white"
+                            aria-hidden="true"
+                            strokeWidth={2}
+                          />
+                        </div>
+                      </div>
+
+                      <h3 className="text-3xl font-bold text-neutral-charcoal dark:text-white mb-4 group-hover:text-brand-bright-blue dark:group-hover:text-brand-bright-blue transition-colors">
+                        {industry.name}
+                      </h3>
+
+                      <p className="text-lg text-neutral-charcoal/80 dark:text-white/80 leading-relaxed flex-1 mb-6">
+                        {industry.shortDescription}
+                      </p>
+
+                      <div className="flex items-center gap-2 text-brand-bright-blue font-semibold text-lg group-hover:gap-4 transition-all">
+                        <span>Learn More</span>
+                        <ArrowRight className="h-6 w-6" aria-hidden="true" />
+                      </div>
                     </div>
+                  </Link>
+                )
+              })}
+            </div>
 
-                    <h3 className="text-h3 font-bold text-neutral-charcoal dark:text-white mb-4 group-hover:text-brand-bright-blue dark:group-hover:text-brand-bright-blue transition-colors">
-                      {industry.name}
-                    </h3>
+            {/* Secondary Industries */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {secondaryIndustries.map((industry) => {
+                const IconComponent = getIconComponent(industry.icon)
 
-                    <p className="text-body text-neutral-charcoal/80 dark:text-white/80 leading-relaxed flex-1">
-                      {industry.shortDescription}
-                    </p>
+                return (
+                  <Link
+                    key={industry.id}
+                    href={`/industries/${industry.slug}`}
+                    className="group h-full"
+                  >
+                    <div className="h-full flex flex-col bg-white dark:bg-slate-900 rounded-xl shadow-sm border-2 border-neutral-light-grey dark:border-slate-700 p-8 transition-all duration-300 hover:shadow-xl hover:border-brand-bright-blue hover:-translate-y-1">
+                      <div className="mb-6">
+                        <div className="relative inline-flex items-center justify-center h-16 w-16 rounded-xl bg-gradient-to-br from-brand-deep-blue to-brand-bright-blue shadow-lg">
+                          <div className="absolute inset-0 rounded-xl bg-white/10 backdrop-blur-sm" />
+                          <IconComponent
+                            className="relative h-12 w-12 text-white"
+                            aria-hidden="true"
+                            strokeWidth={2}
+                          />
+                        </div>
+                      </div>
 
-                    <div className="flex items-center gap-2 text-brand-bright-blue font-semibold group-hover:gap-3 transition-all mt-6">
-                      <span>Learn More</span>
-                      <ArrowRight className="h-5 w-5" aria-hidden="true" />
+                      <h3 className="text-h3 font-bold text-neutral-charcoal dark:text-white mb-4 group-hover:text-brand-bright-blue dark:group-hover:text-brand-bright-blue transition-colors">
+                        {industry.name}
+                      </h3>
+
+                      <p className="text-body text-neutral-charcoal/80 dark:text-white/80 leading-relaxed flex-1">
+                        {industry.shortDescription}
+                      </p>
+
+                      <div className="flex items-center gap-2 text-brand-bright-blue font-semibold group-hover:gap-3 transition-all mt-6">
+                        <span>Learn More</span>
+                        <ArrowRight className="h-5 w-5" aria-hidden="true" />
+                      </div>
                     </div>
-                  </div>
-                </Link>
-              )
-            })}
+                  </Link>
+                )
+              })}
+            </div>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* CTA Banner - "Not Sure Which Category?" */}
       <section className="py-16 md:py-20 bg-white dark:bg-slate-900">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div
-            className="
-              max-w-4xl mx-auto
-              bg-gradient-to-br from-brand-deep-blue to-brand-bright-blue
-              rounded-[var(--border-radius-lg)]
-              shadow-2xl
-              p-8 md:p-12
-              text-center
-            "
-          >
-            <h2 className="text-h2 leading-tight font-bold text-white mb-4">
-              Not Sure Which Category Fits Your Business?
-            </h2>
+          <div className="max-w-5xl mx-auto bg-brand-bright-blue/10 dark:bg-brand-bright-blue/15 rounded-2xl border-2 border-brand-bright-blue/30 dark:border-brand-bright-blue/40 p-8 md:p-12">
+            <div className="text-center">
+              <h2 className="text-3xl md:text-4xl font-bold text-neutral-charcoal dark:text-white mb-4">
+                Not Sure Which Category Fits Your Business?
+              </h2>
 
-            <p className="text-body md:text-body text-white/80 max-w-2xl mx-auto">
-              We serve a wide range of commercial facilities beyond these categories.
-              Contact us to discuss your specific cleaning needs and how we can help.
-            </p>
+              <p className="text-lg text-neutral-charcoal/80 dark:text-white/80 max-w-2xl mx-auto mb-8">
+                We serve a wide range of commercial facilities beyond these categories.
+                Contact us to discuss your specific cleaning needs and how we can help.
+              </p>
+
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <Link href="/quote">
+                  <Button variant="primary" size="lg" className="min-w-[200px]">
+                    Request a Quote
+                  </Button>
+                </Link>
+                <Link href="/contact">
+                  <Button variant="outline" size="lg" className="min-w-[200px]">
+                    Contact Us
+                  </Button>
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </section>

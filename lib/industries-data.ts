@@ -36,6 +36,25 @@ export interface IndustryHero {
   backgroundImage: string
 }
 
+export interface IndustryCaseStudy {
+  title: string
+  client: string
+  challenge: string
+  solution: string
+  results: string[]
+}
+
+export interface IndustryFacilitySize {
+  size: string
+  description: string
+  typical: string[]
+}
+
+export interface IndustryFAQ {
+  question: string
+  answer: string
+}
+
 export interface Industry {
   id: string
   name: string
@@ -48,6 +67,9 @@ export interface Industry {
   solutions: IndustrySolution[]
   compliance: string[]
   testimonials: IndustryTestimonial[]
+  caseStudy?: IndustryCaseStudy
+  facilitySizes?: IndustryFacilitySize[]
+  faqs?: IndustryFAQ[]
 }
 
 // ============================================================================
@@ -127,6 +149,64 @@ export const industries: Industry[] = [
         author: 'Jennifer Roberts',
         company: 'HealthFirst Urgent Care',
         role: 'Operations Manager',
+      },
+    ],
+    caseStudy: {
+      title: 'Multi-Specialty Medical Practice',
+      client: 'Regional Health Associates (32,000 sq ft)',
+      challenge:
+        'A busy multi-specialty practice was struggling to maintain consistent sanitation standards across 15 exam rooms, 3 procedure rooms, and shared common areas while accommodating a high patient volume of 200+ daily visits.',
+      solution:
+        'We implemented a customized cleaning protocol with EPA-registered hospital-grade disinfectants, color-coded microfiber systems to prevent cross-contamination, and a flexible schedule that cleaned high-traffic areas multiple times daily during off-peak hours.',
+      results: [
+        '98% reduction in patient complaints related to facility cleanliness',
+        'Zero healthcare-associated infection outbreaks in 18 months',
+        'Perfect scores on all state health department inspections',
+        'Staff satisfaction with facility cleanliness increased from 72% to 96%',
+      ],
+    },
+    facilitySizes: [
+      {
+        size: 'Small Practices',
+        description: '2,000 - 5,000 sq ft',
+        typical: ['Solo practitioner offices', 'Dental offices', 'Therapy clinics', 'Small urgent care'],
+      },
+      {
+        size: 'Medium Facilities',
+        description: '5,000 - 15,000 sq ft',
+        typical: ['Multi-physician practices', 'Outpatient surgery centers', 'Physical therapy centers', 'Diagnostic imaging centers'],
+      },
+      {
+        size: 'Large Complexes',
+        description: '15,000+ sq ft',
+        typical: ['Multi-specialty clinics', 'Ambulatory care centers', 'Medical office buildings', 'Wellness centers'],
+      },
+    ],
+    faqs: [
+      {
+        question: 'Are your cleaning staff trained in healthcare-specific protocols?',
+        answer:
+          'Yes, all team members assigned to healthcare facilities receive specialized training in OSHA bloodborne pathogen standards, proper PPE usage, infection control protocols, and the correct application of EPA-registered disinfectants. We also provide HIPAA privacy training for all staff.',
+      },
+      {
+        question: 'What disinfectants do you use in medical facilities?',
+        answer:
+          'We use EPA-registered, hospital-grade disinfectants that are proven effective against MRSA, C. diff, norovirus, and other healthcare-associated pathogens. All products meet CDC guidelines for healthcare facility disinfection and are safe for use around patients and medical equipment.',
+      },
+      {
+        question: 'Can you clean around our patient care schedule?',
+        answer:
+          'Absolutely. We understand that patient care is your priority. We offer flexible scheduling including evening, overnight, and weekend services. For high-traffic areas, we can provide multiple cleaning passes throughout the day during low-patient-volume periods.',
+      },
+      {
+        question: 'How do you prevent cross-contamination between areas?',
+        answer:
+          'We implement a strict color-coded microfiber system where different colored cloths and mops are designated for specific areas (exam rooms, restrooms, common areas). This system, combined with proper hand hygiene and equipment sanitization, prevents pathogens from spreading between different zones of your facility.',
+      },
+      {
+        question: 'Do you handle medical waste disposal?',
+        answer:
+          'We can empty and replace liners in medical waste containers as part of our cleaning service, but we do not provide medical waste disposal services. We work seamlessly with your existing medical waste disposal vendor and follow all OSHA regulations for handling biohazardous materials.',
       },
     ],
   },

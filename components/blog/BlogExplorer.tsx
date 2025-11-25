@@ -3,9 +3,9 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { Button } from '@/components/ui/Button'
 import { ArrowRight, Calendar, Clock } from 'lucide-react'
 import { inputClassName } from '@/lib/styles/formStyles'
+import { Button } from '@/components/ui/Button'
 
 interface BlogPost {
   slug: string
@@ -24,6 +24,7 @@ interface BlogExplorerProps {
 
 export default function BlogExplorer({ posts, categories }: BlogExplorerProps) {
   const [selectedCategory, setSelectedCategory] = useState<string>('All')
+  const [visibleCount, setVisibleCount] = useState<number>(6)
   const [newsletterEmail, setNewsletterEmail] = useState('')
   const [newsletterStatus, setNewsletterStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
   const [newsletterError, setNewsletterError] = useState<string | null>(null)
@@ -33,6 +34,18 @@ export default function BlogExplorer({ posts, categories }: BlogExplorerProps) {
     selectedCategory === 'All'
       ? posts
       : posts.filter((post) => post.category === selectedCategory)
+
+  const visiblePosts = filteredPosts.slice(0, visibleCount)
+  const hasMorePosts = visibleCount < filteredPosts.length
+
+  const handleLoadMore = () => {
+    setVisibleCount((prev) => Math.min(prev + 6, filteredPosts.length))
+  }
+
+  const handleCategoryChange = (category: string) => {
+    setSelectedCategory(category)
+    setVisibleCount(6) // Reset to 6 when changing category
+  }
 
   const handleImageError = (slug: string) => {
     setImageErrors((prev) => new Set(prev).add(slug))
@@ -77,7 +90,7 @@ export default function BlogExplorer({ posts, categories }: BlogExplorerProps) {
                 <button
                   key={category}
                   type="button"
-                  onClick={() => setSelectedCategory(category)}
+                  onClick={() => handleCategoryChange(category)}
                   aria-pressed={isActive}
                   className={`category-pill ${isActive ? 'active' : ''}`}
                 >
@@ -92,10 +105,11 @@ export default function BlogExplorer({ posts, categories }: BlogExplorerProps) {
       <section className="py-16 bg-white dark:bg-slate-900">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredPosts.map((post) => (
-              <div
+            {visiblePosts.map((post) => (
+              <Link
                 key={post.slug}
-                className="h-full flex flex-col bg-white dark:bg-slate-800 border-2 border-neutral-light-grey dark:border-slate-700 rounded-xl overflow-hidden shadow-sm hover:-translate-y-1 hover:border-brand-bright-blue transition-all duration-300"
+                href={`/blog/${post.slug}`}
+                className="h-full flex flex-col bg-white dark:bg-slate-800 border-2 border-neutral-light-grey dark:border-slate-700 rounded-xl overflow-hidden shadow-sm hover:-translate-y-1 hover:border-brand-bright-blue transition-all duration-300 cursor-pointer group"
               >
                 <div className="relative h-48 bg-neutral-light-grey dark:bg-slate-700 overflow-hidden flex-shrink-0">
                   {imageErrors.has(post.slug) ? (
@@ -106,43 +120,53 @@ export default function BlogExplorer({ posts, categories }: BlogExplorerProps) {
                       </div>
                     </div>
                   ) : (
-                    <Image
-                      src={post.image}
-                      alt={post.title}
-                      fill
-                      loading="lazy"
-                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                      className="object-cover"
-                      placeholder="blur"
-                      blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWEREiMxUf/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
-                      quality={85}
-                      onError={() => handleImageError(post.slug)}
-                    />
+                    <>
+                      <Image
+                        src={post.image}
+                        alt={post.title}
+                        fill
+                        loading="lazy"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                        className="object-cover"
+                        placeholder="blur"
+                        blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWEREiMxUf/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
+                        quality={85}
+                        onError={() => handleImageError(post.slug)}
+                      />
+                      {/* Deep Blue overlay at 60% opacity */}
+                      <div className="absolute inset-0 bg-brand-deep-blue/60" aria-hidden="true" />
+                    </>
                   )}
-                  <div className="absolute top-4 left-4 z-10">
+                </div>
+
+                <div className="p-6 flex flex-col flex-1">
+                  {/* Category Badge - Inside card with 16px margin */}
+                  <div className="mb-3">
                     <span className="inline-block px-3 py-1 bg-brand-deep-blue/90 dark:bg-brand-deep-blue text-white text-xs font-semibold rounded-full">
                       {post.category}
                     </span>
                   </div>
-                </div>
 
-                <div className="p-6 flex flex-col flex-1">
-                  <div className="flex items-center space-x-4 text-sm mb-3">
-                    <div className="flex items-center text-neutral-charcoal/60 dark:text-white/70">
-                      <Calendar className="h-4 w-4 mr-1" />
-                      {new Date(post.publishedDate).toLocaleDateString('en-US', {
-                        month: 'short',
-                        day: 'numeric',
-                        year: 'numeric',
-                      })}
+                  {/* Date and Read Time - Combined on single line in lighter gray */}
+                  <div className="flex items-center gap-3 text-xs text-neutral-charcoal/50 dark:text-white/50 mb-3">
+                    <div className="flex items-center gap-1">
+                      <Calendar className="h-3.5 w-3.5" aria-hidden="true" />
+                      <span>
+                        {new Date(post.publishedDate).toLocaleDateString('en-US', {
+                          month: 'short',
+                          day: 'numeric',
+                          year: 'numeric',
+                        })}
+                      </span>
                     </div>
-                    <div className="flex items-center text-brand-deep-blue dark:text-brand-bright-blue">
-                      <Clock className="h-4 w-4 mr-1" />
-                      {post.readTime}
+                    <span aria-hidden="true">•</span>
+                    <div className="flex items-center gap-1">
+                      <Clock className="h-3.5 w-3.5" aria-hidden="true" />
+                      <span>{post.readTime}</span>
                     </div>
                   </div>
 
-                  <h2 className="text-h3 leading-normal font-semibold text-neutral-charcoal dark:text-white mb-3 line-clamp-2">
+                  <h2 className="text-h3 leading-normal font-semibold text-neutral-charcoal dark:text-white mb-3 line-clamp-2 group-hover:text-brand-bright-blue transition-colors">
                     {post.title}
                   </h2>
 
@@ -150,18 +174,35 @@ export default function BlogExplorer({ posts, categories }: BlogExplorerProps) {
                     {post.excerpt}
                   </p>
 
-                  <div className="mt-auto">
-                    <Link href={`/blog/${post.slug}`}>
-                      <Button variant="tertiary" size="sm" className="w-full">
-                        Read Article
-                        <ArrowRight className="ml-2 h-4 w-4" />
-                      </Button>
-                    </Link>
+                  <div className="mt-auto flex items-center gap-2 text-brand-bright-blue font-semibold text-sm group-hover:gap-3 transition-all">
+                    <span>Read Article</span>
+                    <ArrowRight className="h-4 w-4" aria-hidden="true" />
                   </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
+
+          {/* Load More Section */}
+          {(hasMorePosts || visibleCount > 0) && (
+            <div className="mt-12 text-center">
+              {/* Post Count */}
+              <p className="text-sm text-neutral-charcoal/60 dark:text-white/60 mb-6">
+                Showing {visibleCount} of {filteredPosts.length} article{filteredPosts.length !== 1 ? 's' : ''}
+              </p>
+
+              {/* Load More Button */}
+              {hasMorePosts && (
+                <button
+                  type="button"
+                  onClick={handleLoadMore}
+                  className="inline-flex items-center justify-center px-8 py-3 border-2 border-brand-deep-blue dark:border-brand-bright-blue text-brand-deep-blue dark:text-brand-bright-blue font-semibold rounded-lg transition-all duration-200 hover:bg-brand-deep-blue hover:text-white dark:hover:bg-brand-bright-blue dark:hover:text-white"
+                >
+                  Load More Articles
+                </button>
+              )}
+            </div>
+          )}
         </div>
       </section>
 

@@ -1,8 +1,10 @@
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
+import { Building2, Users, Clock, Heart, ShoppingBag, Factory, ArrowRight, Briefcase, Sparkles, MapPin } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
 import { BreadcrumbSchema, LocalBusinessSchema } from '@/components/Schema'
+import AnimatedCounter from '@/components/ui/AnimatedCounter'
 
 // City data configuration
 interface CityData {
@@ -402,114 +404,241 @@ export default async function LocationPage({
       {/* Hero Section */}
       <section className="hero-section bg-gradient-to-br from-brand-deep-blue to-brand-bright-blue text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="font-extrabold mb-6 leading-tight">
-              Commercial Cleaning Services in {cityData.city}, {cityData.state}
-            </h1>
-            <p className="text-xl md:text-2xl text-white/90 mb-12 max-w-3xl mx-auto leading-relaxed">
-              Professional B2B cleaning services for offices, medical facilities, and commercial
-              properties throughout {cityData.city} and surrounding areas.
-            </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link href="/quote">
-                <Button variant="accent" size="lg" className="min-w-[220px]">
-                  Request a Quote
-                </Button>
+          <div className="max-w-6xl mx-auto">
+            <div className="max-w-4xl mx-auto text-center">
+              <h1 className="font-extrabold mb-6 leading-tight">
+                Commercial Cleaning Services in {cityData.city}, {cityData.state}
+              </h1>
+              <p className="text-xl md:text-2xl text-white/90 mb-12 max-w-3xl mx-auto leading-relaxed">
+                Professional B2B cleaning services for offices, medical facilities, and commercial
+                properties throughout {cityData.city} and surrounding areas.
+              </p>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
+                <Link href="/quote">
+                  <Button variant="accent" size="lg" className="min-w-[220px]">
+                    Request a Quote
+                  </Button>
+                </Link>
+              </div>
+            </div>
+
+            {/* Statistics */}
+            <div className="mt-12 pt-12 border-t border-white/20">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                <AnimatedCounter
+                  value={cityData.businessCount}
+                  label="Businesses Served"
+                  icon={<Building2 className="h-6 w-6 text-white" strokeWidth={2} />}
+                />
+                <AnimatedCounter
+                  value={cityData.population}
+                  label="Population"
+                  icon={<Users className="h-6 w-6 text-white" strokeWidth={2} />}
+                />
+                <AnimatedCounter
+                  value={cityData.responseTime}
+                  label="Response Time"
+                  icon={<Clock className="h-6 w-6 text-white" strokeWidth={2} />}
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Services in City - Simplified */}
+      <section className="py-16">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold mb-4">
+                Commercial Cleaning Services in {cityData.city}
+              </h2>
+              <p className="text-lg text-neutral-charcoal/70 dark:text-white/70 max-w-3xl mx-auto">
+                Professional commercial cleaning solutions for {cityData.city} businesses across all industries.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {/* Office Cleaning */}
+              <Link
+                href="/services/office-cleaning"
+                className="group bg-white dark:bg-slate-800 rounded-xl border-2 border-neutral-light-grey dark:border-slate-700 p-6 transition-all duration-200 hover:border-brand-bright-blue hover:shadow-lg hover:-translate-y-1"
+              >
+                <div className="flex items-start gap-4 mb-4">
+                  <div className="flex-shrink-0 h-12 w-12 rounded-lg bg-brand-deep-blue/10 dark:bg-brand-bright-blue/20 flex items-center justify-center">
+                    <Briefcase className="h-6 w-6 text-brand-deep-blue dark:text-brand-bright-blue" strokeWidth={2} />
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-lg font-bold text-neutral-charcoal dark:text-white mb-2 group-hover:text-brand-bright-blue transition-colors">
+                      Office Cleaning
+                    </h3>
+                    <p className="text-sm text-neutral-charcoal/70 dark:text-white/70 leading-relaxed line-clamp-2">
+                      Daily janitorial services for corporate offices and professional buildings in {cityData.city}.
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-2 text-brand-bright-blue font-semibold text-sm group-hover:gap-3 transition-all">
+                  <span>Learn More</span>
+                  <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                </div>
+              </Link>
+
+              {/* Healthcare Cleaning */}
+              <Link
+                href="/services/healthcare-cleaning"
+                className="group bg-white dark:bg-slate-800 rounded-xl border-2 border-neutral-light-grey dark:border-slate-700 p-6 transition-all duration-200 hover:border-brand-bright-blue hover:shadow-lg hover:-translate-y-1"
+              >
+                <div className="flex items-start gap-4 mb-4">
+                  <div className="flex-shrink-0 h-12 w-12 rounded-lg bg-brand-deep-blue/10 dark:bg-brand-bright-blue/20 flex items-center justify-center">
+                    <Heart className="h-6 w-6 text-brand-deep-blue dark:text-brand-bright-blue" strokeWidth={2} />
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-lg font-bold text-neutral-charcoal dark:text-white mb-2 group-hover:text-brand-bright-blue transition-colors">
+                      Healthcare Cleaning
+                    </h3>
+                    <p className="text-sm text-neutral-charcoal/70 dark:text-white/70 leading-relaxed line-clamp-2">
+                      OSHA-compliant cleaning for medical offices, clinics, and dental practices in {cityData.city}.
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-2 text-brand-bright-blue font-semibold text-sm group-hover:gap-3 transition-all">
+                  <span>Learn More</span>
+                  <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                </div>
+              </Link>
+
+              {/* Retail Cleaning */}
+              <Link
+                href="/services/retail-cleaning"
+                className="group bg-white dark:bg-slate-800 rounded-xl border-2 border-neutral-light-grey dark:border-slate-700 p-6 transition-all duration-200 hover:border-brand-bright-blue hover:shadow-lg hover:-translate-y-1"
+              >
+                <div className="flex items-start gap-4 mb-4">
+                  <div className="flex-shrink-0 h-12 w-12 rounded-lg bg-brand-deep-blue/10 dark:bg-brand-bright-blue/20 flex items-center justify-center">
+                    <ShoppingBag className="h-6 w-6 text-brand-deep-blue dark:text-brand-bright-blue" strokeWidth={2} />
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-lg font-bold text-neutral-charcoal dark:text-white mb-2 group-hover:text-brand-bright-blue transition-colors">
+                      Retail Cleaning
+                    </h3>
+                    <p className="text-sm text-neutral-charcoal/70 dark:text-white/70 leading-relaxed line-clamp-2">
+                      Maintain pristine storefronts and shopping centers throughout {cityData.city}.
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-2 text-brand-bright-blue font-semibold text-sm group-hover:gap-3 transition-all">
+                  <span>Learn More</span>
+                  <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                </div>
+              </Link>
+
+              {/* Industrial Cleaning */}
+              <Link
+                href="/services/industrial-cleaning"
+                className="group bg-white dark:bg-slate-800 rounded-xl border-2 border-neutral-light-grey dark:border-slate-700 p-6 transition-all duration-200 hover:border-brand-bright-blue hover:shadow-lg hover:-translate-y-1"
+              >
+                <div className="flex items-start gap-4 mb-4">
+                  <div className="flex-shrink-0 h-12 w-12 rounded-lg bg-brand-deep-blue/10 dark:bg-brand-bright-blue/20 flex items-center justify-center">
+                    <Factory className="h-6 w-6 text-brand-deep-blue dark:text-brand-bright-blue" strokeWidth={2} />
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-lg font-bold text-neutral-charcoal dark:text-white mb-2 group-hover:text-brand-bright-blue transition-colors">
+                      Industrial Cleaning
+                    </h3>
+                    <p className="text-sm text-neutral-charcoal/70 dark:text-white/70 leading-relaxed line-clamp-2">
+                      Heavy-duty cleaning for manufacturing and warehouse facilities in {cityData.city}.
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-2 text-brand-bright-blue font-semibold text-sm group-hover:gap-3 transition-all">
+                  <span>Learn More</span>
+                  <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                </div>
+              </Link>
+
+              {/* Floor Care */}
+              <Link
+                href="/services/floor-care"
+                className="group bg-white dark:bg-slate-800 rounded-xl border-2 border-neutral-light-grey dark:border-slate-700 p-6 transition-all duration-200 hover:border-brand-bright-blue hover:shadow-lg hover:-translate-y-1"
+              >
+                <div className="flex items-start gap-4 mb-4">
+                  <div className="flex-shrink-0 h-12 w-12 rounded-lg bg-brand-deep-blue/10 dark:bg-brand-bright-blue/20 flex items-center justify-center">
+                    <Sparkles className="h-6 w-6 text-brand-deep-blue dark:text-brand-bright-blue" strokeWidth={2} />
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-lg font-bold text-neutral-charcoal dark:text-white mb-2 group-hover:text-brand-bright-blue transition-colors">
+                      Floor Care & Maintenance
+                    </h3>
+                    <p className="text-sm text-neutral-charcoal/70 dark:text-white/70 leading-relaxed line-clamp-2">
+                      Professional floor stripping, waxing, and polishing services for {cityData.city} facilities.
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-2 text-brand-bright-blue font-semibold text-sm group-hover:gap-3 transition-all">
+                  <span>Learn More</span>
+                  <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                </div>
+              </Link>
+
+              {/* Specialty Services */}
+              <Link
+                href="/services"
+                className="group bg-white dark:bg-slate-800 rounded-xl border-2 border-neutral-light-grey dark:border-slate-700 p-6 transition-all duration-200 hover:border-brand-bright-blue hover:shadow-lg hover:-translate-y-1"
+              >
+                <div className="flex items-start gap-4 mb-4">
+                  <div className="flex-shrink-0 h-12 w-12 rounded-lg bg-brand-deep-blue/10 dark:bg-brand-bright-blue/20 flex items-center justify-center">
+                    <Building2 className="h-6 w-6 text-brand-deep-blue dark:text-brand-bright-blue" strokeWidth={2} />
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-lg font-bold text-neutral-charcoal dark:text-white mb-2 group-hover:text-brand-bright-blue transition-colors">
+                      All Services
+                    </h3>
+                    <p className="text-sm text-neutral-charcoal/70 dark:text-white/70 leading-relaxed line-clamp-2">
+                      View our complete range of commercial cleaning services available in {cityData.city}.
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-2 text-brand-bright-blue font-semibold text-sm group-hover:gap-3 transition-all">
+                  <span>View All Services</span>
+                  <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                </div>
               </Link>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Services in City */}
-      <section className="py-16">
+      {/* Trusted by Businesses Near */}
+      <section className="py-16 bg-white dark:bg-slate-800">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-4">
-            Commercial Cleaning Services We Provide in {cityData.city}
-          </h2>
-          <p className="text-lg text-neutral-charcoal/70 dark:text-white/70 mb-12">
-            Anderson Cleaning offers comprehensive commercial cleaning solutions for {cityData.city}{' '}
-            businesses, including major landmarks like {cityData.landmarks.join(', ')}.
-          </p>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Service Cards */}
-            <div className="bg-white dark:bg-slate-800 rounded-lg shadow-lg p-6">
-              <h3 className="text-xl font-semibold mb-3">Office Cleaning</h3>
-              <p className="text-neutral-charcoal/70 dark:text-white/70 mb-4">
-                Daily janitorial services for {cityData.city} offices and corporate buildings.
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold mb-4">
+                Trusted by Businesses Near {cityData.city} Landmarks
+              </h2>
+              <p className="text-lg text-neutral-charcoal/70 dark:text-white/70 max-w-3xl mx-auto">
+                We proudly serve commercial clients throughout {cityData.city} and surrounding areas.
               </p>
-              <ul className="space-y-2 text-sm text-neutral-charcoal/70 dark:text-white/70">
-                <li>✓ Nightly cleaning crews</li>
-                <li>✓ Day porter services</li>
-                <li>✓ Workstation sanitization</li>
-                <li>✓ Break room maintenance</li>
-              </ul>
             </div>
 
-            <div className="bg-white dark:bg-slate-800 rounded-lg shadow-lg p-6">
-              <h3 className="text-xl font-semibold mb-3">Healthcare Facilities</h3>
-              <p className="text-neutral-charcoal/70 dark:text-white/70 mb-4">
-                OSHA-compliant cleaning for {cityData.city} medical and dental offices.
-              </p>
-              <ul className="space-y-2 text-sm text-neutral-charcoal/70 dark:text-white/70">
-                <li>✓ EPA-registered disinfectants</li>
-                <li>✓ Bloodborne pathogen certified</li>
-                <li>✓ HIPAA-trained staff</li>
-                <li>✓ Terminal cleaning</li>
-              </ul>
-            </div>
-
-            <div className="bg-white dark:bg-slate-800 rounded-lg shadow-lg p-6">
-              <h3 className="text-xl font-semibold mb-3">Retail & Commercial</h3>
-              <p className="text-neutral-charcoal/70 dark:text-white/70 mb-4">
-                Maintain pristine {cityData.city} storefronts and retail spaces.
-              </p>
-              <ul className="space-y-2 text-sm text-neutral-charcoal/70 dark:text-white/70">
-                <li>✓ Floor care & maintenance</li>
-                <li>✓ Window cleaning</li>
-                <li>✓ Customer area focus</li>
-                <li>✓ After-hours service</li>
-              </ul>
-            </div>
-
-            <div className="bg-white dark:bg-slate-800 rounded-lg shadow-lg p-6">
-              <h3 className="text-xl font-semibold mb-3">Medical Office Cleaning</h3>
-              <p className="text-neutral-charcoal/70 dark:text-white/70 mb-4">
-                Specialized cleaning for {cityData.city} medical and dental practices.
-              </p>
-              <ul className="space-y-2 text-sm text-neutral-charcoal/70 dark:text-white/70">
-                <li>✓ Exam room disinfection</li>
-                <li>✓ Waiting area sanitization</li>
-                <li>✓ Biohazard waste protocols</li>
-                <li>✓ OSHA compliance training</li>
-              </ul>
-            </div>
-
-            <div className="bg-white dark:bg-slate-800 rounded-lg shadow-lg p-6">
-              <h3 className="text-xl font-semibold mb-3">Industrial Cleaning</h3>
-              <p className="text-neutral-charcoal/70 dark:text-white/70 mb-4">
-                Heavy-duty cleaning for {cityData.city} manufacturing and warehouse facilities.
-              </p>
-              <ul className="space-y-2 text-sm text-neutral-charcoal/70 dark:text-white/70">
-                <li>✓ Equipment cleaning</li>
-                <li>✓ Floor maintenance</li>
-                <li>✓ High-dusting</li>
-                <li>✓ Safety compliance</li>
-              </ul>
-            </div>
-
-            <div className="bg-white dark:bg-slate-800 rounded-lg shadow-lg p-6">
-              <h3 className="text-xl font-semibold mb-3">Specialty Services</h3>
-              <p className="text-neutral-charcoal/70 dark:text-white/70 mb-4">
-                Additional cleaning services for {cityData.city} businesses.
-              </p>
-              <ul className="space-y-2 text-sm text-neutral-charcoal/70 dark:text-white/70">
-                <li>✓ Carpet cleaning</li>
-                <li>✓ Post-construction cleanup</li>
-                <li>✓ Emergency response</li>
-                <li>✓ Green cleaning options</li>
-              </ul>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+              {cityData.landmarks.map((landmark, index) => (
+                <div
+                  key={index}
+                  className="flex items-center gap-3 p-4 rounded-xl border-2 border-neutral-light-grey dark:border-slate-700 bg-white dark:bg-slate-800/50 hover:border-brand-bright-blue hover:shadow-md transition-all"
+                >
+                  <div className="flex-shrink-0">
+                    <div className="h-10 w-10 rounded-lg bg-gradient-to-br from-brand-deep-blue to-brand-bright-blue flex items-center justify-center">
+                      <MapPin className="h-5 w-5 text-white" strokeWidth={2} />
+                    </div>
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <p className="text-sm font-semibold text-neutral-charcoal dark:text-white leading-tight">
+                      {landmark}
+                    </p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>

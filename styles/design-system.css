@@ -331,17 +331,17 @@ html.dark .form-select {
   /* Layout */
   display: inline-flex;
   align-items: center;
-  padding: 8px 16px;
-  border-radius: 9999px;
+  padding: 10px 20px;
+  border-radius: 8px;
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 600;
   transition: all var(--transition-default);
   cursor: pointer;
 
-  /* Inactive State */
-  background-color: #FFFFFF;
+  /* Inactive State - Outlined */
+  background-color: transparent;
   color: var(--brand-deep-blue);
-  border: 1px solid rgba(0, 42, 134, 0.2);
+  border: 2px solid var(--brand-deep-blue);
 }
 
 /* Hover State */
@@ -351,12 +351,12 @@ html.dark .form-select {
 .category-pill:focus,
 .filter-pill:hover,
 .filter-pill:focus {
-  background-color: #E6F2FA;
+  background-color: rgba(0, 42, 134, 0.05);
   border-color: var(--brand-deep-blue);
   outline: none;
 }
 
-/* Active State */
+/* Active State - Bright Blue Fill */
 .tag-pill.active,
 .tag-pill[aria-pressed="true"],
 .category-pill.active,
@@ -381,9 +381,9 @@ html.dark .form-select {
 html.dark .tag-pill,
 html.dark .category-pill,
 html.dark .filter-pill {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: transparent;
   color: var(--brand-white);
-  border-color: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.4);
 }
 
 html.dark .tag-pill:hover,
@@ -392,9 +392,8 @@ html.dark .category-pill:hover,
 html.dark .category-pill:focus,
 html.dark .filter-pill:hover,
 html.dark .filter-pill:focus {
-  background-color: #E6F2FA;
-  color: var(--brand-deep-blue);
-  border-color: var(--brand-deep-blue);
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: var(--brand-white);
 }
 
 html.dark .tag-pill.active,

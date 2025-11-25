@@ -7,7 +7,9 @@ import {
   ArrowLeft,
   ArrowRight,
   CheckCircle2,
+  ChevronDown,
   ChevronRight,
+  Quote,
   ShieldCheck,
   Sparkles,
   Star,
@@ -17,6 +19,7 @@ import StructuredData from '@/components/StructuredData'
 import { BreadcrumbSchema, FAQSchema } from '@/components/Schema'
 import { Button } from '@/components/ui/Button'
 import ServiceHero from '@/components/services/ServiceHero'
+import FAQAccordion from '@/components/services/FAQAccordion'
 import {
   serviceSlugs,
   servicesData,
@@ -239,16 +242,39 @@ function TestimonialsSection({ service }: { service: ServiceData }) {
           {service.testimonials.map((testimonial) => (
             <div
               key={testimonial.quote}
-              className="rounded-2xl border border-neutral-light-grey bg-white p-6 shadow-sm dark:border-slate-700 dark:bg-slate-900"
+              className="rounded-2xl border border-neutral-light-grey bg-white p-8 shadow-md transition-all duration-300 hover:shadow-xl hover:-translate-y-1 dark:border-slate-700 dark:bg-slate-900"
             >
+              {/* Glass-effect quote icon */}
+              <div className="mb-6 inline-flex">
+                <div className="relative flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-brand-deep-blue to-brand-bright-blue shadow-lg">
+                  <div className="absolute inset-0 rounded-xl bg-white/10 backdrop-blur-sm" />
+                  <Quote className="relative h-7 w-7 text-white" strokeWidth={2} aria-hidden="true" />
+                </div>
+              </div>
+
+              {/* Star rating */}
               <div className="flex items-center gap-1 mb-4">
                 {[1, 2, 3, 4, 5].map((star) => (
                   <Star key={star} className="h-5 w-5 text-yellow-400 fill-yellow-400" />
                 ))}
               </div>
-              <p className="text-lg text-neutral-charcoal/80 dark:text-white/80">&ldquo;{testimonial.quote}&rdquo;</p>
-              <p className="mt-4 text-sm font-semibold text-neutral-charcoal dark:text-white">{testimonial.author}</p>
-              <p className="text-sm text-neutral-charcoal/60 dark:text-white/60">{testimonial.role}</p>
+
+              {/* Testimonial text */}
+              <p className="text-lg text-neutral-charcoal/80 dark:text-white/80 leading-relaxed mb-6">
+                &ldquo;{testimonial.quote}&rdquo;
+              </p>
+
+              {/* Client info with avatar placeholder */}
+              <div className="flex items-center gap-4 pt-4 border-t border-neutral-light-grey dark:border-slate-700">
+                {/* Avatar placeholder - circular with initials */}
+                <div className="flex-shrink-0 flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-brand-deep-blue to-brand-bright-blue text-white font-bold text-sm">
+                  {testimonial.author.split(' ').map(n => n[0]).join('').slice(0, 2)}
+                </div>
+                <div>
+                  <p className="text-base font-semibold text-neutral-charcoal dark:text-white">{testimonial.author}</p>
+                  <p className="text-sm text-neutral-charcoal/60 dark:text-white/60">{testimonial.role}</p>
+                </div>
+              </div>
             </div>
           ))}
         </div>
@@ -264,35 +290,48 @@ function RelatedAndFAQSection({ service }: { service: ServiceData }) {
 
   return (
     <section className="py-16">
-      <div className="container mx-auto grid gap-10 px-6 lg:grid-cols-2">
-        <div>
-          <h2 className="text-3xl font-extrabold text-neutral-charcoal dark:text-white">Related Services</h2>
-          <p className="mt-2 text-base text-neutral-charcoal/70 dark:text-white/70">
-            Combine services for full coverage across your facility.
-          </p>
-          <div className="mt-6 grid gap-4">
-            {related.map((item) => (
-              <Link
-                key={item.slug}
-                href={`/services/${item.slug}`}
-                className="flex items-center justify-between rounded-2xl border border-neutral-light-grey bg-white px-5 py-4 text-lg font-semibold text-brand-deep-blue transition hover:-translate-y-1 hover:border-brand-bright-blue hover:text-brand-bright-blue dark:border-slate-700 dark:bg-slate-900 dark:text-white"
-              >
-                <span>{item.title}</span>
-                <ArrowRight className="h-5 w-5" />
-              </Link>
-            ))}
+      <div className="container mx-auto px-6">
+        {/* Related Services - Full Width with Horizontal Carousel */}
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-8">
+            <h2 className="text-3xl font-extrabold text-neutral-charcoal dark:text-white">Related Services</h2>
+            <p className="mt-2 text-base text-neutral-charcoal/70 dark:text-white/70">
+              Combine services for full coverage across your facility.
+            </p>
+          </div>
+
+          {/* Horizontal scrollable carousel */}
+          <div className="relative">
+            <div className="flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide md:grid md:grid-cols-2 md:overflow-visible lg:grid-cols-3">
+              {related.map((item) => (
+                <Link
+                  key={item.slug}
+                  href={`/services/${item.slug}`}
+                  className="flex-shrink-0 w-[280px] md:w-auto flex flex-col justify-between rounded-2xl border border-neutral-light-grey bg-white px-6 py-5 text-lg font-semibold text-brand-deep-blue transition-all duration-200 hover:-translate-y-1 hover:shadow-lg hover:border-brand-bright-blue hover:text-brand-bright-blue dark:border-slate-700 dark:bg-slate-900 dark:text-white snap-start"
+                >
+                  <span className="mb-2">{item.title}</span>
+                  <ArrowRight className="h-5 w-5 self-end" aria-hidden="true" />
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
-        <div>
-          <h2 className="text-3xl font-extrabold text-neutral-charcoal dark:text-white">Frequently Asked Questions</h2>
-          <div className="mt-6 space-y-4">
-            {service.faqs.map((faq) => (
-              <div key={faq.question} className="rounded-2xl border border-neutral-light-grey bg-white p-5 dark:border-slate-700 dark:bg-slate-900">
-                <p className="text-lg font-semibold text-neutral-charcoal dark:text-white">{faq.question}</p>
-                <p className="mt-2 text-base text-neutral-charcoal/70 dark:text-white/70">{faq.answer}</p>
-              </div>
-            ))}
+
+        {/* Section Divider */}
+        <div className="max-w-6xl mx-auto my-16">
+          <div className="h-px bg-gradient-to-r from-transparent via-neutral-light-grey to-transparent dark:via-slate-700" />
+        </div>
+
+        {/* FAQ Section - Full Width with Accordion */}
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-8">
+            <h2 className="text-3xl font-extrabold text-neutral-charcoal dark:text-white">Frequently Asked Questions</h2>
+            <p className="mt-2 text-base text-neutral-charcoal/70 dark:text-white/70">
+              Find answers to common questions about this service.
+            </p>
           </div>
+
+          <FAQAccordion faqs={service.faqs} />
         </div>
       </div>
     </section>

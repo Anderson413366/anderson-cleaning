@@ -27,16 +27,16 @@ import React from 'react'
 import Link from 'next/link'
 import { Button } from '@/components/ui/Button'
 import { Industry } from '@/lib/industries-data'
-import { getIconComponent } from '@/lib/icon-map'
 import {
   CheckCircle2,
   ArrowLeft,
-  AlertTriangle,
   Award,
   Shield,
   Users,
+  TrendingUp,
+  Building,
 } from 'lucide-react'
-import QuoteFormInline from '@/components/forms/QuoteFormInline'
+import FAQAccordion from '@/components/services/FAQAccordion'
 
 // ============================================================================
 // TYPES & INTERFACES
@@ -44,7 +44,6 @@ import QuoteFormInline from '@/components/forms/QuoteFormInline'
 
 interface IndustryTemplateProps {
   industry: Industry
-  showQuoteForm?: boolean
 }
 
 // ============================================================================
@@ -53,51 +52,49 @@ interface IndustryTemplateProps {
 
 export default function IndustryTemplate({
   industry,
-  showQuoteForm = false,
 }: IndustryTemplateProps) {
-  const IconComponent = getIconComponent(industry.icon)
-
   return (
     <div className="min-h-screen">
       {/* ================================================================
           HERO SECTION
           ================================================================ */}
-      <section className="relative overflow-hidden bg-brand-deep-blue text-white py-16 md:py-24">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10"></div>
+      <section className="relative overflow-hidden bg-gradient-to-br from-brand-deep-blue to-brand-bright-blue text-white pt-20 pb-12 md:pt-24 md:pb-16">
+        {/* Subtle diagonal pattern overlay */}
+        <div
+          className="absolute inset-0 opacity-10 pointer-events-none"
+          style={{
+            backgroundImage:
+              'repeating-linear-gradient(45deg, transparent, transparent 20px, rgba(255, 255, 255, 0.05) 20px, rgba(255, 255, 255, 0.05) 40px)',
+          }}
+          aria-hidden="true"
+        />
 
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          {/* Back Button */}
-          <Link
-            href="/industries"
-            className="inline-flex items-center gap-2 text-brand-bright-blue hover:text-white mb-8 transition-colors group"
-          >
-            <ArrowLeft className="h-4 w-4 transition-transform group-hover:-translate-x-1" />
-            <span>Back to All Industries</span>
-          </Link>
-
-          {/* Hero Content */}
-          <div className="flex flex-col md:flex-row items-start gap-8 max-w-5xl">
-            {/* Icon */}
-            <div className="flex-shrink-0">
-              <div className="w-20 h-20 md:w-24 md:h-24 rounded-2xl bg-white/10 backdrop-blur-sm flex items-center justify-center border border-white/20">
-                <IconComponent className="h-12 w-12 md:h-14 md:w-14 text-white" aria-hidden="true" />
-              </div>
+          <div className="max-w-4xl mx-auto text-center">
+            {/* Back Button - Centered */}
+            <div className="mb-8">
+              <Link
+                href="/industries"
+                className="inline-flex items-center gap-2 text-white/80 hover:text-white transition-colors group"
+              >
+                <ArrowLeft className="h-4 w-4 transition-transform group-hover:-translate-x-1" aria-hidden="true" />
+                <span>Back to All Industries</span>
+              </Link>
             </div>
 
-            {/* Text Content */}
-            <div className="flex-1">
-              <h1 className="text-h1 leading-tight font-extrabold mb-4">
-                {industry.hero.title}
-              </h1>
-              <p className="text-body md:text-body lg:text-h3 text-white/80 mb-8">
-                {industry.hero.subtitle}
-              </p>
+            {/* Hero Content - Centered */}
+            <h1 className="text-[40px] md:text-5xl font-extrabold mb-6 leading-tight">
+              {industry.hero.title}
+            </h1>
+            <p className="text-xl md:text-2xl text-white/90 mb-12 max-w-3xl mx-auto leading-relaxed">
+              {industry.hero.subtitle}
+            </p>
 
-              {/* CTA Button */}
+            {/* CTA Button */}
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link href="/quote">
-                <Button variant="accent" size="lg">
-                  Get Your Free Quote
+                <Button variant="accent" size="lg" className="min-w-[220px]">
+                  Request a Quote
                 </Button>
               </Link>
             </div>
@@ -121,7 +118,7 @@ export default function IndustryTemplate({
       </section>
 
       {/* ================================================================
-          CHALLENGES SECTION
+          CHALLENGES SECTION - Reframed as Solutions
           ================================================================ */}
       <section className="py-16 md:py-20 bg-neutral-off-white dark:bg-slate-900">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -129,15 +126,15 @@ export default function IndustryTemplate({
             {/* Section Header */}
             <div className="text-center mb-12">
               <h2 className="text-h2 leading-tight font-bold text-[var(--color-text-primary)] mb-4">
-                Common {industry.name} Cleaning Challenges
+                How We Address Your Challenges
               </h2>
               <p className="text-body text-[var(--color-text-secondary)] max-w-3xl mx-auto">
-                Every industry has unique cleaning requirements. Here are the specific
-                challenges we address in {industry.name.toLowerCase()}.
+                We understand the unique cleaning requirements in {industry.name.toLowerCase()}.
+                Here's how our specialized approach solves your specific challenges.
               </p>
             </div>
 
-            {/* Challenges Grid */}
+            {/* Challenges Grid - Reframed with positive icons */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {industry.challenges.map((challenge, index) => (
                 <div
@@ -148,17 +145,21 @@ export default function IndustryTemplate({
                     shadow-[var(--shadow-card)]
                     p-6
                     border border-gray-200 dark:border-slate-700
+                    transition-all duration-200
+                    hover:shadow-lg
+                    hover:border-brand-bright-blue
                   "
                 >
-                  {/* Icon */}
+                  {/* Solution-focused Icon in Bright Blue */}
                   <div className="mb-4">
-                    <div className="w-12 h-12 rounded-lg bg-red-100 dark:bg-red-900/30 flex items-center justify-center">
-                      <AlertTriangle className="h-6 w-6 text-red-600 dark:text-red-400" aria-hidden="true" />
+                    <div className="relative w-12 h-12 rounded-lg bg-gradient-to-br from-brand-deep-blue to-brand-bright-blue flex items-center justify-center shadow-md">
+                      <div className="absolute inset-0 rounded-lg bg-white/10 backdrop-blur-sm" />
+                      <CheckCircle2 className="relative h-6 w-6 text-white" strokeWidth={2.5} aria-hidden="true" />
                     </div>
                   </div>
 
-                  {/* Challenge Text */}
-                  <p className="text-body-sm font-semibold text-[var(--color-text-primary)]">
+                  {/* Challenge Text - Now framed as a solution */}
+                  <p className="text-body-sm font-semibold text-[var(--color-text-primary)] leading-relaxed">
                     {challenge}
                   </p>
                 </div>
@@ -221,6 +222,75 @@ export default function IndustryTemplate({
       </section>
 
       {/* ================================================================
+          CASE STUDY SECTION
+          ================================================================ */}
+      {industry.caseStudy && (
+        <section className="py-16 md:py-20 bg-gradient-to-br from-brand-deep-blue to-brand-bright-blue text-white">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-5xl mx-auto">
+              {/* Section Header */}
+              <div className="text-center mb-12">
+                <div className="inline-flex items-center gap-2 mb-4 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm">
+                  <TrendingUp className="h-5 w-5" aria-hidden="true" />
+                  <span className="text-sm font-bold uppercase tracking-wider">Success Story</span>
+                </div>
+                <h2 className="text-h2 leading-tight font-bold mb-4">
+                  {industry.caseStudy.title}
+                </h2>
+                <p className="text-xl text-white/90 font-semibold">
+                  {industry.caseStudy.client}
+                </p>
+              </div>
+
+              {/* Case Study Content */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                {/* Challenge */}
+                <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
+                  <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
+                    <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-white/20 text-sm">
+                      1
+                    </span>
+                    The Challenge
+                  </h3>
+                  <p className="text-white/90 leading-relaxed">
+                    {industry.caseStudy.challenge}
+                  </p>
+                </div>
+
+                {/* Solution */}
+                <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
+                  <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
+                    <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-white/20 text-sm">
+                      2
+                    </span>
+                    Our Solution
+                  </h3>
+                  <p className="text-white/90 leading-relaxed">
+                    {industry.caseStudy.solution}
+                  </p>
+                </div>
+              </div>
+
+              {/* Results */}
+              <div className="bg-white rounded-2xl p-8">
+                <h3 className="text-2xl font-bold mb-6 text-brand-deep-blue">
+                  Measurable Results
+                </h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {industry.caseStudy.results.map((result, index) => (
+                    <div key={index} className="flex items-start gap-3">
+                      <CheckCircle2 className="h-6 w-6 text-brand-bright-blue flex-shrink-0 mt-0.5" strokeWidth={2.5} />
+                      <span className="text-neutral-charcoal/80 leading-relaxed">{result}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* ================================================================
           STANDARDS & COMPLIANCE SECTION
           ================================================================ */}
       <section className="py-16 md:py-20 bg-neutral-off-white dark:bg-slate-900">
@@ -272,6 +342,70 @@ export default function IndustryTemplate({
           </div>
         </div>
       </section>
+
+      {/* ================================================================
+          FACILITY SIZES SECTION
+          ================================================================ */}
+      {industry.facilitySizes && industry.facilitySizes.length > 0 && (
+        <section className="py-16 md:py-20 bg-white dark:bg-slate-900">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-6xl mx-auto">
+              {/* Section Header */}
+              <div className="text-center mb-12">
+                <h2 className="text-h2 leading-tight font-bold text-[var(--color-text-primary)] mb-4">
+                  Facility Sizes We Serve
+                </h2>
+                <p className="text-body text-[var(--color-text-secondary)] max-w-3xl mx-auto">
+                  From small practices to large complexes, we have the experience and resources to handle {industry.name.toLowerCase()} of any size.
+                </p>
+              </div>
+
+              {/* Facility Sizes Grid */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                {industry.facilitySizes.map((facilitySize, index) => (
+                  <div
+                    key={index}
+                    className="bg-neutral-off-white dark:bg-slate-800 rounded-2xl p-8 border-2 border-neutral-light-grey dark:border-slate-700 transition-all duration-200 hover:border-brand-bright-blue hover:shadow-lg"
+                  >
+                    {/* Icon */}
+                    <div className="mb-6">
+                      <div className="relative inline-flex items-center justify-center h-14 w-14 rounded-xl bg-gradient-to-br from-brand-deep-blue to-brand-bright-blue shadow-md">
+                        <div className="absolute inset-0 rounded-xl bg-white/10 backdrop-blur-sm" />
+                        <Building className="relative h-7 w-7 text-white" strokeWidth={2} aria-hidden="true" />
+                      </div>
+                    </div>
+
+                    {/* Size Title */}
+                    <h3 className="text-2xl font-bold text-[var(--color-text-primary)] mb-2">
+                      {facilitySize.size}
+                    </h3>
+
+                    {/* Description */}
+                    <p className="text-lg font-semibold text-brand-bright-blue mb-4">
+                      {facilitySize.description}
+                    </p>
+
+                    {/* Typical Facilities */}
+                    <div className="space-y-2">
+                      <p className="text-sm font-semibold text-[var(--color-text-secondary)] uppercase tracking-wide">
+                        Typical Facilities:
+                      </p>
+                      <ul className="space-y-2">
+                        {facilitySize.typical.map((item, itemIndex) => (
+                          <li key={itemIndex} className="flex items-start gap-2">
+                            <CheckCircle2 className="h-4 w-4 text-brand-bright-blue flex-shrink-0 mt-1" strokeWidth={2.5} />
+                            <span className="text-sm text-[var(--color-text-secondary)]">{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* ================================================================
           TESTIMONIALS SECTION
@@ -326,78 +460,28 @@ export default function IndustryTemplate({
       </section>
 
       {/* ================================================================
-          CTA SECTION
+          FAQ SECTION
           ================================================================ */}
-      <section className="py-16 md:py-20 bg-brand-deep-blue text-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-6xl mx-auto">
-            {showQuoteForm ? (
-              /* Option 1: Quote Form */
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                {/* Left: CTA Text */}
-                <div className="text-white">
-                  <h2 className="text-h2 leading-tight font-bold mb-4">
-                    Ready to Discuss Your {industry.name}?
-                  </h2>
-                  <p className="text-body md:text-body text-white/80 mb-6">
-                    Get a customized cleaning program designed specifically for your facility's
-                    unique requirements.
-                  </p>
-                  <ul className="space-y-3">
-                    <li className="flex items-start gap-3">
-                      <CheckCircle2 className="h-6 w-6 text-brand-bright-blue flex-shrink-0 mt-0.5" />
-                      <span>Free, no-obligation quote</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <CheckCircle2 className="h-6 w-6 text-brand-bright-blue flex-shrink-0 mt-0.5" />
-                      <span>Response within 24 hours</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <CheckCircle2 className="h-6 w-6 text-brand-bright-blue flex-shrink-0 mt-0.5" />
-                      <span>Industry-specific solutions</span>
-                    </li>
-                  </ul>
-                </div>
-
-                {/* Right: Quote Form */}
-                <div>
-                  <QuoteFormInline />
-                </div>
-              </div>
-            ) : (
-              /* Option 2: CTA Button */
-              <div className="text-center text-white">
-                <h2 className="text-h2 leading-tight font-bold mb-4">
-                  Ready to Discuss Your {industry.name}?
+      {industry.faqs && industry.faqs.length > 0 && (
+        <section className="py-16 md:py-20 bg-neutral-off-white dark:bg-slate-800">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-4xl mx-auto">
+              {/* Section Header */}
+              <div className="text-center mb-12">
+                <h2 className="text-h2 leading-tight font-bold text-[var(--color-text-primary)] mb-4">
+                  Frequently Asked Questions
                 </h2>
-                <p className="text-body md:text-body text-white/80 mb-8 max-w-3xl mx-auto">
-                  Get a customized cleaning program designed specifically for your facility's
-                  unique requirements and compliance standards.
+                <p className="text-body text-[var(--color-text-secondary)] max-w-3xl mx-auto">
+                  Get answers to common questions about our {industry.name.toLowerCase()} cleaning services.
                 </p>
-
-                {/* CTA Buttons */}
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Link href="/quote">
-                    <Button variant="accent" size="lg" className="min-w-[200px]">
-                      Get Free Quote
-                    </Button>
-                  </Link>
-
-                  <Link href="/contact">
-                    <Button
-                      variant="outline"
-                      size="lg"
-                      className="min-w-[200px] border-white text-white hover:bg-white/10"
-                    >
-                      Contact Us
-                    </Button>
-                  </Link>
-                </div>
               </div>
-            )}
+
+              {/* FAQ Accordion */}
+              <FAQAccordion faqs={industry.faqs} />
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
     </div>
   )
 }

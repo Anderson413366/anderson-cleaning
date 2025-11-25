@@ -1,6 +1,18 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
+import dynamic from 'next/dynamic'
+import { MapPin } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
+
+// Dynamically import the map to avoid SSR issues with Leaflet
+const ServiceAreaMap = dynamic(() => import('@/components/maps/ServiceAreaMap'), {
+  ssr: false,
+  loading: () => (
+    <div className="h-[500px] w-full rounded-xl bg-neutral-light-grey dark:bg-slate-800 flex items-center justify-center">
+      <p className="text-neutral-charcoal/70 dark:text-white/70">Loading map...</p>
+    </div>
+  ),
+})
 
 export const metadata: Metadata = {
   title: 'Service Areas | Commercial Cleaning Locations | Anderson Cleaning',
@@ -27,10 +39,19 @@ export const metadata: Metadata = {
   },
 }
 
+// City type definition
+type City = {
+  name: string
+  slug: string
+  isPrimary?: boolean
+  isHeadquarters?: boolean
+}
+
 // Western Massachusetts cities we serve
-const massachusettsCities = [
-  { name: 'Springfield', slug: 'springfield-ma' },
-  { name: 'West Springfield', slug: 'west-springfield-ma' },
+const massachusettsCities: City[] = [
+  { name: 'Springfield', slug: 'springfield-ma', isPrimary: true },
+  { name: 'West Springfield', slug: 'west-springfield-ma', isPrimary: true, isHeadquarters: true },
+  { name: 'Worcester', slug: 'worcester-ma', isPrimary: true },
   { name: 'Chicopee', slug: 'chicopee-ma' },
   { name: 'Holyoke', slug: 'holyoke-ma' },
   { name: 'Northampton', slug: 'northampton-ma' },
@@ -47,8 +68,8 @@ const massachusettsCities = [
 ]
 
 // Northern Connecticut cities we serve
-const connecticutCities = [
-  { name: 'Hartford', slug: 'hartford-ct' },
+const connecticutCities: City[] = [
+  { name: 'Hartford', slug: 'hartford-ct', isPrimary: true },
   { name: 'Enfield', slug: 'enfield-ct' },
   { name: 'Windsor', slug: 'windsor-ct' },
   { name: 'East Hartford', slug: 'east-hartford-ct' },
@@ -82,55 +103,100 @@ export default function LocationsHub() {
         </div>
       </section>
 
-      {/* Service Area Overview */}
+      {/* Interactive Map Section */}
       <section className="py-16 bg-white dark:bg-slate-900">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center mb-12">
-            <h2 className="text-h2 font-bold text-neutral-charcoal dark:text-white mb-4">
-              100-Mile Service Radius
-            </h2>
-            <p className="text-body text-neutral-charcoal/70 dark:text-white/80">
-              Headquartered in West Springfield, MA. We provide professional commercial cleaning services throughout Western Massachusetts and Northern Connecticut.
-            </p>
-          </div>
-
-          {/* Massachusetts Cities */}
-          <div className="mb-16">
-            <h3 className="text-h3 font-bold text-brand-deep-blue dark:text-brand-bright-blue mb-8 text-center">
-              Western Massachusetts
-            </h3>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-              {massachusettsCities.map((city) => (
-                <Link
-                  key={city.slug}
-                  href={`/locations/${city.slug}`}
-                  className="group bg-white dark:bg-slate-800 rounded-lg p-4 text-center hover:bg-brand-deep-blue dark:hover:bg-brand-bright-blue transition-all duration-150 border border-neutral-charcoal/10 dark:border-white/10 hover:border-brand-deep-blue dark:hover:border-brand-bright-blue hover:shadow-lg"
-                >
-                  <div className="text-base font-semibold text-neutral-charcoal dark:text-white group-hover:text-white transition-colors">
-                    {city.name}
-                  </div>
-                </Link>
-              ))}
+          <div className="max-w-6xl mx-auto">
+            {/* Section Header */}
+            <div className="max-w-4xl mx-auto text-center mb-12">
+              <h2 className="text-h2 font-bold text-neutral-charcoal dark:text-white mb-4">
+                100-Mile Service Radius
+              </h2>
+              <p className="text-body text-neutral-charcoal/70 dark:text-white/80">
+                Headquartered in West Springfield, MA. We provide professional commercial cleaning services throughout Western Massachusetts and Northern Connecticut.
+              </p>
             </div>
-          </div>
 
-          {/* Connecticut Cities */}
-          <div className="mb-12">
-            <h3 className="text-h3 font-bold text-brand-deep-blue dark:text-brand-bright-blue mb-8 text-center">
-              Northern Connecticut
-            </h3>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-              {connecticutCities.map((city) => (
-                <Link
-                  key={city.slug}
-                  href={`/locations/${city.slug}`}
-                  className="group bg-white dark:bg-slate-800 rounded-lg p-4 text-center hover:bg-brand-deep-blue dark:hover:bg-brand-bright-blue transition-all duration-150 border border-neutral-charcoal/10 dark:border-white/10 hover:border-brand-deep-blue dark:hover:border-brand-bright-blue hover:shadow-lg"
-                >
-                  <div className="text-base font-semibold text-neutral-charcoal dark:text-white group-hover:text-white transition-colors">
-                    {city.name}
-                  </div>
-                </Link>
-              ))}
+            {/* Interactive Map */}
+            <div className="mb-16">
+              <ServiceAreaMap />
+            </div>
+
+            {/* Massachusetts Cities */}
+            <div className="mb-16">
+              <h3 className="text-h3 font-bold text-brand-deep-blue dark:text-brand-bright-blue mb-8 text-center">
+                Western Massachusetts
+              </h3>
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+                {massachusettsCities.map((city) => {
+                  const isLarge = city.isHeadquarters || city.isPrimary
+
+                  return (
+                    <Link
+                      key={city.slug}
+                      href={`/locations/${city.slug}`}
+                      className={`
+                        group relative rounded-xl p-4 text-center transition-all duration-200 hover:shadow-lg hover:-translate-y-1
+                        ${isLarge ? 'md:col-span-1 md:row-span-1' : ''}
+                        ${city.isPrimary
+                          ? 'bg-brand-deep-blue dark:bg-brand-deep-blue text-white border-2 border-brand-deep-blue hover:bg-brand-bright-blue hover:border-brand-bright-blue'
+                          : 'bg-white dark:bg-slate-800 border-2 border-neutral-light-grey dark:border-slate-700 hover:border-brand-bright-blue'
+                        }
+                      `}
+                    >
+                      {/* Headquarters Badge */}
+                      {city.isHeadquarters && (
+                        <div className="absolute -top-2 left-1/2 -translate-x-1/2 inline-flex items-center gap-1 px-3 py-1 rounded-full bg-brand-bright-blue text-white text-xs font-bold uppercase tracking-wider shadow-md whitespace-nowrap">
+                          <MapPin className="h-3 w-3" aria-hidden="true" />
+                          Headquarters
+                        </div>
+                      )}
+
+                      <div className={`
+                        font-semibold transition-colors mt-2
+                        ${city.isPrimary
+                          ? 'text-white text-lg'
+                          : 'text-neutral-charcoal dark:text-white group-hover:text-brand-bright-blue text-base'
+                        }
+                      `}>
+                        {city.name}
+                      </div>
+                    </Link>
+                  )
+                })}
+              </div>
+            </div>
+
+            {/* Connecticut Cities */}
+            <div className="mb-12">
+              <h3 className="text-h3 font-bold text-brand-deep-blue dark:text-brand-bright-blue mb-8 text-center">
+                Northern Connecticut
+              </h3>
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                {connecticutCities.map((city) => (
+                  <Link
+                    key={city.slug}
+                    href={`/locations/${city.slug}`}
+                    className={`
+                      group rounded-xl p-4 text-center transition-all duration-200 hover:shadow-lg hover:-translate-y-1
+                      ${city.isPrimary
+                        ? 'bg-brand-deep-blue dark:bg-brand-deep-blue text-white border-2 border-brand-deep-blue hover:bg-brand-bright-blue hover:border-brand-bright-blue'
+                        : 'bg-white dark:bg-slate-800 border-2 border-neutral-light-grey dark:border-slate-700 hover:border-brand-bright-blue'
+                      }
+                    `}
+                  >
+                    <div className={`
+                      font-semibold transition-colors
+                      ${city.isPrimary
+                        ? 'text-white text-lg'
+                        : 'text-neutral-charcoal dark:text-white group-hover:text-brand-bright-blue text-base'
+                      }
+                    `}>
+                      {city.name}
+                    </div>
+                  </Link>
+                ))}
+              </div>
             </div>
           </div>
         </div>

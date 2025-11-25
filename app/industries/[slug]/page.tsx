@@ -90,7 +90,7 @@ export default async function IndustryPage({
           'Hartford',
         ]}
       />
-      <IndustryTemplate industry={industry} showQuoteForm={false} />
+      <IndustryTemplate industry={industry} />
     </div>
   )
 }
