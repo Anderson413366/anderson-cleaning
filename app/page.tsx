@@ -45,21 +45,21 @@ export default function Home() {
             <h1 className="text-5xl md:text-6xl lg:text-6xl font-bold mb-4 leading-[1.1] tracking-tight text-neutral-charcoal dark:text-white">
               Commercial Cleaning Services
             </h1>
-            <p className="text-2xl md:text-3xl font-semibold text-brand-bright-blue dark:text-brand-bright-blue mb-8">
+            <p className="text-2xl md:text-3xl font-semibold text-brand-bright-blue dark:text-brand-bright-blue mb-6">
               Western MA & Northern CT
             </p>
+
+            {/* Trust Badge - Positioned before CTAs to build confidence */}
+            <div className="mb-8 inline-flex items-center justify-center">
+              <span className="inline-block px-6 py-2.5 rounded-full border-2 border-brand-deep-blue dark:border-brand-bright-blue text-sm font-semibold text-brand-deep-blue dark:text-brand-bright-blue bg-white/50 dark:bg-slate-800/50 backdrop-blur-sm">
+                18+ Years Serving Western Massachusetts Businesses
+              </span>
+            </div>
 
             {/* Supporting Line */}
             <p className="text-xl md:text-2xl text-neutral-charcoal/70 dark:text-white/70 mb-12 max-w-3xl mx-auto leading-relaxed">
               B2B-only janitorial services with W-2 teams, 24/7 support, and OSHA/CDC compliance for your Western MA & Northern CT facility
             </p>
-
-            {/* Trust Statement - Apple-simple */}
-            <div className="mb-12">
-              <p className="text-lg font-semibold text-brand-deep-blue dark:text-brand-bright-blue">
-                18+ Years Serving Western Massachusetts Businesses
-              </p>
-            </div>
 
             {/* CTAs - Standardized */}
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
