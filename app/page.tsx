@@ -35,14 +35,19 @@ export default function Home() {
       {/* Promotional Modal */}
       <PromotionalModal />
 
-      {/* Hero Section - Apple-style simplified */}
+      {/* Hero Section - Apple-style simplified with gradient overlay */}
       <section className="relative bg-white dark:bg-slate-900 pt-32 pb-14 md:pt-40 md:pb-20 lg:pt-48 lg:pb-22">
-        <div className="container mx-auto px-6 lg:px-8">
+        {/* Subtle gradient overlay for visual depth */}
+        <div className="absolute inset-0 bg-gradient-to-b from-brand-deep-blue/5 to-transparent pointer-events-none" aria-hidden="true" />
+        <div className="container mx-auto px-6 lg:px-8 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             {/* Headline */}
-            <h1 className="text-5xl md:text-6xl lg:text-6xl font-bold mb-8 leading-[1.1] tracking-tight text-neutral-charcoal dark:text-white">
-              Commercial Cleaning Services | Western MA & Northern CT
+            <h1 className="text-5xl md:text-6xl lg:text-6xl font-bold mb-4 leading-[1.1] tracking-tight text-neutral-charcoal dark:text-white">
+              Commercial Cleaning Services
             </h1>
+            <p className="text-2xl md:text-3xl font-semibold text-brand-bright-blue dark:text-brand-bright-blue mb-8">
+              Western MA & Northern CT
+            </p>
 
             {/* Supporting Line */}
             <p className="text-xl md:text-2xl text-neutral-charcoal/70 dark:text-white/70 mb-12 max-w-3xl mx-auto leading-relaxed">

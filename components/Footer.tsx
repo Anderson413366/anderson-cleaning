@@ -136,7 +136,7 @@ export default function Footer() {
         </h2>
         <div className="mx-auto max-w-7xl px-6 pb-8 pt-16 lg:px-8">
           {/* Three Columns - Clean Layout with Fixed Column Width */}
-          <div className="mb-12 grid grid-cols-1 gap-y-12 gap-x-8 md:grid-cols-[repeat(3,minmax(200px,1fr))] md:gap-x-12">
+          <div className="pb-12 grid grid-cols-1 gap-y-12 gap-x-8 md:grid-cols-[repeat(3,minmax(200px,1fr))] md:gap-x-12">
             {/* Column 1: Our Services */}
             <div>
               <h3 className="mb-4 text-body-sm font-semibold text-neutral-charcoal dark:text-white">Our Services</h3>
@@ -212,7 +212,7 @@ export default function Footer() {
           </div>
 
           {/* Bottom Bar - Copyright & Legal Links */}
-          <div className="mt-12 border-t border-neutral-charcoal/10 dark:border-white/10 pt-8">
+          <div className="border-t border-brand-deep-blue/10 dark:border-brand-deep-blue/10 pt-12">
             <div className="flex flex-col gap-4 text-sm md:flex-row md:items-center md:justify-between">
               <p className="text-center md:text-left text-[#4B5563] dark:text-white/70">
                 © {currentYear} Anderson Cleaning Company. All rights reserved.

@@ -7,6 +7,7 @@ import { Menu, X, Phone, Mail, ChevronDown } from 'lucide-react'
 import { CONTACT_INFO } from '@/lib/constants'
 import { serviceSlugs, servicesData } from '@/lib/services-data'
 import { industries } from '@/lib/industries-data'
+import { useTheme } from '@/lib/ThemeProvider'
 
 // Simplified navigation - 5 main categories + Contact
 const navigation = [
@@ -76,6 +77,12 @@ export default function Header() {
   const pathname = usePathname()
   const dropdownTimerRef = useRef<NodeJS.Timeout | null>(null)
   const lastScrollY = useRef(0)
+  const { theme } = useTheme()
+
+  // Single logo source based on theme - consolidated approach
+  const logoSrc = theme === 'dark'
+    ? '/brand/white/logo-full-2000-white.png'
+    : '/brand/color/logo-full-2000.png'
 
   useEffect(() => {
     const handleScroll = () => {
@@ -169,17 +176,11 @@ export default function Header() {
         {/* Logo */}
         <div className="flex lg:flex-1">
           <Link href="/" className="-m-1.5 p-1.5 transition-opacity hover:opacity-80">
-            {/* Desktop Logo - Swaps to white in dark mode, hidden on mobile */}
+            {/* Single responsive logo - React-controlled theme swapping */}
             <img
-              src="/brand/color/logo-full-2000.png"
+              src={logoSrc}
               alt="Anderson Cleaning Company"
-              className="logo-desktop"
-            />
-            {/* Mobile Logo Icon - Swaps to white in dark mode, shows only on mobile */}
-            <img
-              src="/brand/color/logo-icon-512.png"
-              alt="Anderson Cleaning Company"
-              className="logo-mobile"
+              className="h-10 w-auto md:h-12 lg:h-14 object-contain"
             />
           </Link>
         </div>
@@ -475,15 +476,15 @@ export default function Header() {
         <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:gap-x-6">
           <a
             href={phoneLink.href}
-            className="inline-flex items-center justify-center h-11 w-11 rounded-full bg-brand-deep-blue text-white hover:bg-[#001f5c] shadow-sm transition-all duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-deep-blue focus-visible:ring-offset-2"
+            className="inline-flex items-center justify-center h-8 w-8 rounded-full bg-transparent border-2 border-brand-deep-blue dark:border-white text-brand-deep-blue dark:text-white hover:bg-brand-deep-blue/10 dark:hover:bg-white/10 transition-all duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-deep-blue focus-visible:ring-offset-2"
             onClick={() => trackPhoneClick('header-desktop')}
             aria-label={`Call Anderson Cleaning Company at ${phoneLink.formatted}`}
           >
-            <Phone className="h-5 w-5" />
+            <Phone className="h-4 w-4" />
           </a>
           <Link
             href="/quote"
-            className="rounded-full bg-brand-deep-blue px-6 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-[#001f5c] transition-all duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-deep-blue focus-visible:ring-offset-2"
+            className="rounded-full bg-brand-red px-7 py-3 text-base font-semibold text-white shadow-sm hover:bg-[#a00d25] transition-all duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red focus-visible:ring-offset-2"
           >
             Quote
           </Link>
@@ -739,7 +740,7 @@ export default function Header() {
                 <div className="py-6">
                   <Link
                     href="/quote"
-                    className="block w-full rounded-full bg-brand-deep-blue px-7 py-4 text-center text-base font-semibold text-white shadow-sm hover:bg-[#001f5c] transition-all duration-150"
+                    className="block w-full rounded-full bg-brand-red px-7 py-4 text-center text-base font-semibold text-white shadow-sm hover:bg-[#a00d25] transition-all duration-150"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     Request a Quote
@@ -760,7 +761,7 @@ export default function Header() {
         <div className="px-4 py-3">
           <Link
             href="/quote"
-            className="block w-full text-center py-3.5 rounded-full bg-brand-deep-blue text-sm font-semibold text-white shadow-sm transition-colors active:bg-[#001f5c]"
+            className="block w-full text-center py-3.5 rounded-full bg-brand-red text-sm font-semibold text-white shadow-sm transition-colors active:bg-[#a00d25]"
           >
             Request a Quote
           </Link>
