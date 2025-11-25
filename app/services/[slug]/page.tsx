@@ -16,6 +16,7 @@ import {
 import StructuredData from '@/components/StructuredData'
 import { BreadcrumbSchema, FAQSchema } from '@/components/Schema'
 import { Button } from '@/components/ui/Button'
+import ServiceHero from '@/components/services/ServiceHero'
 import {
   serviceSlugs,
   servicesData,
@@ -89,7 +90,7 @@ export default async function ServiceDetailPage({ params }: { params: RouteParam
       <BreadcrumbSchema items={breadcrumbs} />
       {faqs.length > 0 && <FAQSchema faqs={faqs} />}
 
-      <HeroSection service={service} ServiceIcon={ServiceIcon} />
+      <ServiceHero service={service} ServiceIcon={ServiceIcon} />
 
       <OverviewSection service={service} />
 
@@ -106,50 +107,6 @@ export default async function ServiceDetailPage({ params }: { params: RouteParam
       <RelatedAndFAQSection service={service} />
       <BlogLinks service={service} />
     </div>
-  )
-}
-
-function HeroSection({ service, ServiceIcon }: { service: ServiceData; ServiceIcon: ElementType }) {
-  return (
-    <section className="hero-section bg-gradient-to-br from-brand-deep-blue to-brand-bright-blue text-white">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto text-center">
-          {/* Breadcrumb Navigation */}
-          <nav className="mb-6" aria-label="Breadcrumb">
-            <ol className="flex items-center justify-center gap-2 text-sm text-white/80">
-              <li>
-                <Link href="/" className="hover:text-white transition-colors duration-150">
-                  Home
-                </Link>
-              </li>
-              <ChevronRight className="h-4 w-4" aria-hidden="true" />
-              <li>
-                <Link href="/services" className="hover:text-white transition-colors duration-150">
-                  Services
-                </Link>
-              </li>
-              <ChevronRight className="h-4 w-4" aria-hidden="true" />
-              <li>
-                <span className="text-white font-semibold" aria-current="page">
-                  {service.title}
-                </span>
-              </li>
-            </ol>
-          </nav>
-          <h1 className="font-extrabold mb-6 leading-tight">
-            {service.h1}
-          </h1>
-          <p className="text-xl md:text-2xl text-white/80 mb-8 max-w-2xl mx-auto">
-            {service.tagline}
-          </p>
-          <Link href="/quote">
-            <Button variant="accent" size="lg">
-              Request a Quote
-            </Button>
-          </Link>
-        </div>
-      </div>
-    </section>
   )
 }
 
