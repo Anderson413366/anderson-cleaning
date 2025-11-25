@@ -232,24 +232,34 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Positive B2B Focus Callout */}
-            <div className="bg-gradient-to-br from-brand-deep-blue to-brand-bright-blue text-white rounded-xl p-8 md:p-10">
-              <h3 className="text-h3 font-bold text-white mb-4">
-                Proudly Serving B2B Facilities
-              </h3>
-              <p className="text-body leading-relaxed text-white/95 mb-6">
-                We specialize in professional commercial cleaning for offices, healthcare facilities,
-                educational institutions, retail spaces, and industrial facilities across Western MA & CT.
-              </p>
-              <p className="text-sm text-white/80 mb-6">
-                We serve B2B clients only and do not offer residential services. Contracted customers also receive access to our full suite of premium add-on services, including specialty cleaning and supply management.
-              </p>
-              <Link
-                href="/quote"
-                className="inline-flex items-center justify-center rounded-[10px] bg-white px-6 py-3 text-button font-semibold text-brand-deep-blue transition-all duration-150 hover:bg-gray-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-brand-deep-blue"
-              >
-                Request a Quote
-              </Link>
+            {/* Positive B2B Focus Callout with pattern overlay */}
+            <div className="relative bg-gradient-to-br from-brand-deep-blue to-brand-bright-blue text-white rounded-xl p-8 md:p-10 overflow-hidden">
+              {/* Diagonal pattern overlay for depth */}
+              <div
+                className="absolute inset-0 pointer-events-none"
+                style={{
+                  backgroundImage: 'repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255, 255, 255, 0.03) 10px, rgba(255, 255, 255, 0.03) 20px)',
+                }}
+                aria-hidden="true"
+              />
+              <div className="relative z-10">
+                <h3 className="text-h3 font-bold text-white mb-4">
+                  Proudly Serving B2B Facilities
+                </h3>
+                <p className="text-body leading-relaxed text-white/95 mb-6">
+                  We specialize in professional commercial cleaning for offices, healthcare facilities,
+                  educational institutions, retail spaces, and industrial facilities across Western MA & CT.
+                </p>
+                <p className="text-sm text-white/80 mb-6">
+                  We serve B2B clients only and do not offer residential services. Contracted customers also receive access to our full suite of premium add-on services, including specialty cleaning and supply management.
+                </p>
+                <Link
+                  href="/quote"
+                  className="inline-flex items-center justify-center rounded-[10px] bg-brand-red px-6 py-3 text-button font-semibold text-white transition-all duration-150 hover:bg-[#a00d25] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-brand-deep-blue"
+                >
+                  Request a Quote
+                </Link>
+              </div>
             </div>
           </div>
         </div>
