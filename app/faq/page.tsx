@@ -1,10 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { Button } from '@/components/ui/Button'
-import { ChevronDown, ChevronUp, Search, Phone, MessageCircle } from 'lucide-react'
-import Link from 'next/link'
-import { inputClassName } from '@/lib/styles/formStyles'
+import { ChevronDown, ChevronUp, Search } from 'lucide-react'
 
 const faqCategories = {
   'Pricing & Contracts': [
@@ -340,41 +337,6 @@ export default function FAQPage() {
                 )
               })
             )}
-          </div>
-        </div>
-      </section>
-
-      {/* Contact CTA */}
-      <section className="py-16 bg-gradient-to-br from-brand-deep-blue to-brand-bright-blue text-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-h2 leading-tight font-bold mb-6">
-              Still Have Questions?
-            </h2>
-            <p className="text-body text-white/80 mb-8">
-              Our team is here to help! We respond to all inquiries within 24 hours.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contact">
-                <Button variant="accent" size="lg">
-                  <MessageCircle className="h-5 w-5 mr-2" />
-                  Contact Us
-                </Button>
-              </Link>
-              <a href="tel:+14133065053">
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="border-white text-white hover:bg-white/10"
-                >
-                  <Phone className="h-5 w-5 mr-2" />
-                  Call (413) 306-5053
-                </Button>
-              </a>
-            </div>
-            <p className="text-sm text-brand-bright-blue/70 mt-6">
-              Monday – Friday: 9 AM – 5 PM EST | 24/7 emergency support for current clients
-            </p>
           </div>
         </div>
       </section>
