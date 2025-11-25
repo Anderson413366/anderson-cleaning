@@ -335,8 +335,18 @@ export default function ServicesPage() {
               return (
                 <div
                   key={i}
-                  className="flex flex-col bg-white dark:bg-slate-800 border-2 border-neutral-light-grey dark:border-slate-700 rounded-xl shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-brand-bright-blue"
+                  className="relative flex flex-col bg-white dark:bg-slate-800 border-2 border-neutral-light-grey dark:border-slate-700 rounded-xl shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-brand-bright-blue"
                 >
+                  {/* Premium badge - top-right positioning */}
+                  {service.availability === 'contracted' && (
+                    <span
+                      className="absolute top-4 right-4 inline-flex items-center px-3 py-1.5 bg-brand-red text-white text-[10px] font-bold uppercase tracking-wide rounded-full"
+                      style={{ boxShadow: '0 0 12px rgba(200, 16, 46, 0.3)' }}
+                    >
+                      Premium Add-on
+                    </span>
+                  )}
+
                   <div className="p-8 flex flex-col h-full">
                     {/* Icon */}
                     <div className="mb-4 inline-flex h-16 w-16 items-center justify-center rounded-xl bg-brand-bright-blue/10 dark:bg-brand-bright-blue/20">
@@ -347,13 +357,6 @@ export default function ServicesPage() {
                     <h3 className="text-h3 font-bold text-neutral-charcoal dark:text-white mb-3">
                       {service.title}
                     </h3>
-
-                    {/* Premium badge if applicable */}
-                    {service.availability === 'contracted' && (
-                      <span className="inline-block px-4 py-1 bg-brand-deep-blue text-white text-[10px] font-semibold uppercase tracking-wide rounded mb-3">
-                        Premium Add-on
-                      </span>
-                    )}
 
                     {/* Tagline */}
                     <p className="text-body text-neutral-charcoal/80 dark:text-white/80 mb-4">
