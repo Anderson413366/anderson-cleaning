@@ -617,7 +617,6 @@ export default function QuoteFormSimplified({ onSuccess }: QuoteFormSimplifiedPr
                 )}
               </div>
             </div>
-            </div>
           )}
 
           {/* Step 3: Service Needs */}
@@ -672,7 +671,6 @@ export default function QuoteFormSimplified({ onSuccess }: QuoteFormSimplifiedPr
                 />
               </div>
             </div>
-          </div>
 
           {/* Instant Estimate */}
           {estimate && (
