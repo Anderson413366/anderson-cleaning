@@ -217,6 +217,122 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Core Principles */}
+      <section className="py-20 bg-neutral-off-white dark:bg-slate-800">
+        <div className="container mx-auto px-6">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-h2 leading-tight font-bold text-neutral-charcoal dark:text-white mb-4 text-center">
+              Built on Three Core Principles
+            </h2>
+            <p className="text-neutral-charcoal/70 dark:text-white/80 text-center mb-12 max-w-3xl mx-auto">
+              Our approach combines the best of both worlds: corporate-grade quality with family business accountability
+            </p>
+
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+              {/* Principle 1: Invest in People */}
+              <div className="bg-white dark:bg-slate-900 border-2 border-neutral-light-grey dark:border-slate-700 rounded-xl p-8 shadow-sm hover:shadow-lg transition-shadow">
+                <div className="flex items-center justify-center w-16 h-16 bg-brand-deep-blue/10 dark:bg-brand-deep-blue/20 rounded-full mb-6 mx-auto">
+                  <Users className="h-8 w-8 text-brand-deep-blue dark:text-brand-bright-blue" />
+                </div>
+                <h3 className="text-h3 font-bold text-neutral-charcoal dark:text-white mb-4 text-center">
+                  Invest in People
+                </h3>
+                <p className="text-body text-neutral-charcoal/80 dark:text-white/80 mb-6 text-center">
+                  Full-time W-2 employees with benefits, training, and career growth opportunities—not independent contractors.
+                </p>
+                <div className="border-t border-neutral-light-grey dark:border-slate-700 pt-6">
+                  <div className="flex items-center justify-center gap-2 text-brand-deep-blue dark:text-brand-bright-blue">
+                    <CheckCircle2 className="h-5 w-5 flex-shrink-0" />
+                    <p className="text-sm font-semibold">40+ hours of training per employee</p>
+                  </div>
+                  <p className="text-xs text-neutral-charcoal/60 dark:text-white/60 text-center mt-2 italic">
+                    "Low turnover means familiar faces and consistent quality"
+                  </p>
+                </div>
+              </div>
+
+              {/* Principle 2: Systems & Standards */}
+              <div className="bg-white dark:bg-slate-900 border-2 border-neutral-light-grey dark:border-slate-700 rounded-xl p-8 shadow-sm hover:shadow-lg transition-shadow">
+                <div className="flex items-center justify-center w-16 h-16 bg-brand-deep-blue/10 dark:bg-brand-deep-blue/20 rounded-full mb-6 mx-auto">
+                  <Target className="h-8 w-8 text-brand-deep-blue dark:text-brand-bright-blue" />
+                </div>
+                <h3 className="text-h3 font-bold text-neutral-charcoal dark:text-white mb-4 text-center">
+                  Systems & Standards
+                </h3>
+                <p className="text-body text-neutral-charcoal/80 dark:text-white/80 mb-6 text-center">
+                  Corporate-grade processes, quality control checklists, and facility-specific Standard Operating Procedures.
+                </p>
+                <div className="border-t border-neutral-light-grey dark:border-slate-700 pt-6">
+                  <div className="flex items-center justify-center gap-2 text-brand-deep-blue dark:text-brand-bright-blue">
+                    <CheckCircle2 className="h-5 w-5 flex-shrink-0" />
+                    <p className="text-sm font-semibold">Custom SOPs for every facility</p>
+                  </div>
+                  <p className="text-xs text-neutral-charcoal/60 dark:text-white/60 text-center mt-2 italic">
+                    "Documented processes ensure nothing gets missed"
+                  </p>
+                </div>
+              </div>
+
+              {/* Principle 3: Personal Touch - FEATURED */}
+              <div className="lg:col-span-1 lg:row-span-1">
+                <div className="relative bg-gradient-to-br from-brand-deep-blue to-brand-bright-blue rounded-xl p-8 shadow-lg border-4 border-brand-bright-blue/30 dark:border-brand-bright-blue/50">
+                  {/* Featured Badge */}
+                  <div className="absolute -top-4 left-1/2 -translate-x-1/2">
+                    <div className="bg-brand-red text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wide shadow-md">
+                      Our Difference
+                    </div>
+                  </div>
+
+                  <div className="flex items-center justify-center w-16 h-16 bg-white/20 rounded-full mb-6 mx-auto mt-2">
+                    <Heart className="h-8 w-8 text-white" />
+                  </div>
+                  <h3 className="text-h3 font-bold text-white mb-4 text-center">
+                    Personal Touch
+                  </h3>
+                  <p className="text-body text-white/95 mb-6 text-center leading-relaxed">
+                    24/7 support with real people who know your name, your facility, and your concerns. No call centers, no runarounds.
+                  </p>
+                  <div className="border-t border-white/30 pt-6">
+                    <div className="flex items-center justify-center gap-2 text-white">
+                      <CheckCircle2 className="h-5 w-5 flex-shrink-0" />
+                      <p className="text-sm font-bold">2-hour emergency response</p>
+                    </div>
+                    <p className="text-xs text-white/80 text-center mt-2 italic font-medium">
+                      "We treat every client like they're our only client"
+                    </p>
+                  </div>
+
+                  {/* Sparkle decorative elements */}
+                  <Sparkles className="absolute top-4 right-4 h-6 w-6 text-white/40" />
+                  <Sparkles className="absolute bottom-4 left-4 h-5 w-5 text-white/30" />
+                </div>
+              </div>
+            </div>
+
+            {/* Supporting Testimonial */}
+            <div className="mt-12 max-w-3xl mx-auto">
+              <div className="bg-white dark:bg-slate-900 border border-neutral-light-grey dark:border-slate-700 rounded-xl p-6 shadow-sm">
+                <div className="flex items-start gap-4">
+                  <div className="flex-shrink-0">
+                    <div className="w-12 h-12 rounded-full bg-brand-bright-blue/10 dark:bg-brand-bright-blue/20 flex items-center justify-center">
+                      <Star className="h-6 w-6 text-brand-bright-blue" />
+                    </div>
+                  </div>
+                  <div className="flex-1">
+                    <p className="text-body italic text-neutral-charcoal/80 dark:text-white/80 mb-3">
+                      "Most cleaning companies promise quality. Anderson delivers it—and backs it up with genuine accountability. If there's ever an issue, they fix it immediately. No excuses."
+                    </p>
+                    <p className="text-sm font-semibold text-neutral-charcoal dark:text-white">
+                      — Local Business Owner, Springfield MA
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Certifications Showcase */}
       <section className="bg-neutral-off-white dark:bg-slate-900">
         <CertificationShowcase />
