@@ -547,7 +547,7 @@ export default function CareersPage() {
             {t.positions.roles.map((role) => (
               <div
                 key={role.title}
-                className="w-[300px] h-[240px] flex flex-col bg-white dark:bg-slate-900 rounded-xl border border-[#E0E0E0] dark:border-slate-700 hover:border-brand-bright-blue transition-all duration-300 hover:-translate-y-1 p-5 shadow-sm"
+                className="w-[300px] min-h-[280px] flex flex-col bg-white dark:bg-slate-900 rounded-xl border border-[#E0E0E0] dark:border-slate-700 hover:border-brand-bright-blue transition-all duration-300 hover:-translate-y-1 p-5 shadow-sm"
               >
                 {/* Title */}
                 <h3 className="text-[16px] font-bold text-brand-deep-blue dark:text-white mb-2">{role.title}</h3>
