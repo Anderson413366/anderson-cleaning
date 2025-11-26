@@ -331,28 +331,30 @@ html.dark .form-select {
   /* Layout */
   display: inline-flex;
   align-items: center;
-  padding: 10px 20px;
+  justify-content: center;
+  height: 36px;
+  padding: 0 20px;
   border-radius: 8px;
-  font-size: 14px;
-  font-weight: 600;
+  font-size: 12px;
+  font-weight: 500;
   transition: all var(--transition-default);
   cursor: pointer;
 
-  /* Inactive State - Outlined */
-  background-color: transparent;
-  color: var(--brand-deep-blue);
-  border: 2px solid var(--brand-deep-blue);
+  /* Inactive State - White with bright-blue border */
+  background-color: var(--brand-white);
+  color: var(--brand-bright-blue);
+  border: 1px solid var(--brand-bright-blue);
 }
 
-/* Hover State */
+/* Hover State - Light blue background */
 .tag-pill:hover,
 .tag-pill:focus,
 .category-pill:hover,
 .category-pill:focus,
 .filter-pill:hover,
 .filter-pill:focus {
-  background-color: rgba(0, 42, 134, 0.05);
-  border-color: var(--brand-deep-blue);
+  background-color: #F0F7FF;
+  border-color: var(--brand-bright-blue);
   outline: none;
 }
 
@@ -382,8 +384,8 @@ html.dark .tag-pill,
 html.dark .category-pill,
 html.dark .filter-pill {
   background-color: transparent;
-  color: var(--brand-white);
-  border-color: rgba(255, 255, 255, 0.4);
+  color: var(--brand-bright-blue);
+  border-color: var(--brand-bright-blue);
 }
 
 html.dark .tag-pill:hover,
@@ -392,8 +394,8 @@ html.dark .category-pill:hover,
 html.dark .category-pill:focus,
 html.dark .filter-pill:hover,
 html.dark .filter-pill:focus {
-  background-color: rgba(255, 255, 255, 0.1);
-  border-color: var(--brand-white);
+  background-color: rgba(0, 119, 217, 0.15);
+  border-color: var(--brand-bright-blue);
 }
 
 html.dark .tag-pill.active,
@@ -549,205 +551,6 @@ textarea:focus-visible {
   outline: 2px solid var(--brand-bright-blue);
   outline-offset: 0;
   box-shadow: 0 0 0 4px rgba(0, 119, 217, 0.2);
-}
-
-/* Skip navigation link - WCAG 2.4.1 */
-.skip-navigation {
-  position: absolute;
-  left: -9999px;
-  z-index: 999;
-  padding: 1em;
-  background-color: var(--brand-deep-blue);
-  color: white;
-  text-decoration: none;
-  font-weight: 600;
-}
-
-.skip-navigation:focus {
-  left: 0;
-  top: 0;
-  outline: 3px solid var(--brand-bright-blue);
-  outline-offset: 2px;
-}
-
-/* ====================================================================
-   GLASS ICON SYSTEM - Apple-inspired glass-morphism icons
-   Issue #81 & #82: Unified icon design with consistent sizing
-   ==================================================================== */
-
-/*
-  Design Specifications:
-  - Container: Circle with gradient fill (#0077D9 to #002A86 at 15% opacity)
-  - Background: backdrop-filter: blur(10px)
-  - Border: 1px solid rgba(255,255,255,0.2)
-  - Shadow: 0 4px 12px rgba(0,42,134,0.15)
-  - Icon: White icon centered, 2px stroke weight
-
-  Standardized Sizes:
-  - Small (32px container, 16px icon) - for inline use
-  - Medium (48px container, 24px icon) - for cards
-  - Large (64px container, 32px icon) - for heroes
-*/
-
-/* Base glass icon container */
-.glass-icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 9999px;
-  background: linear-gradient(135deg, rgba(0, 119, 217, 0.15), rgba(0, 42, 134, 0.15));
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 4px 12px rgba(0, 42, 134, 0.15);
-}
-
-/* Glass icon on dark backgrounds */
-.glass-icon-light {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 9999px;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
-
-/* Solid gradient glass icon (for emphasis) */
-.glass-icon-solid {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 9999px;
-  background: linear-gradient(135deg, var(--brand-bright-blue), var(--brand-deep-blue));
-  box-shadow: 0 4px 12px rgba(0, 42, 134, 0.25);
-}
-
-/* Size: Small (32px container) - for inline use */
-.glass-icon-sm,
-.glass-icon-light-sm,
-.glass-icon-solid-sm {
-  height: 32px;
-  width: 32px;
-}
-
-.glass-icon-sm > svg,
-.glass-icon-light-sm > svg,
-.glass-icon-solid-sm > svg {
-  height: 16px;
-  width: 16px;
-  stroke-width: 2;
-}
-
-/* Size: Medium (48px container) - for cards */
-.glass-icon-md,
-.glass-icon-light-md,
-.glass-icon-solid-md {
-  height: 48px;
-  width: 48px;
-}
-
-.glass-icon-md > svg,
-.glass-icon-light-md > svg,
-.glass-icon-solid-md > svg {
-  height: 24px;
-  width: 24px;
-  stroke-width: 2;
-}
-
-/* Size: Large (64px container) - for heroes */
-.glass-icon-lg,
-.glass-icon-light-lg,
-.glass-icon-solid-lg {
-  height: 64px;
-  width: 64px;
-}
-
-.glass-icon-lg > svg,
-.glass-icon-light-lg > svg,
-.glass-icon-solid-lg > svg {
-  height: 32px;
-  width: 32px;
-  stroke-width: 2;
-}
-
-/* Icon colors */
-.glass-icon > svg {
-  color: var(--brand-deep-blue);
-}
-
-html.dark .glass-icon > svg {
-  color: var(--brand-bright-blue);
-}
-
-.glass-icon-light > svg,
-.glass-icon-solid > svg {
-  color: white;
-}
-
-/* Dark mode adjustments for default glass icon */
-html.dark .glass-icon {
-  background: linear-gradient(135deg, rgba(0, 119, 217, 0.25), rgba(0, 42, 134, 0.25));
-  border-color: rgba(255, 255, 255, 0.15);
-}
-
-/* Hover states for interactive glass icons */
-.glass-icon-interactive:hover,
-.glass-icon-light-interactive:hover,
-.glass-icon-solid-interactive:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(0, 42, 134, 0.2);
-  transition: transform 150ms ease, box-shadow 150ms ease;
-}
-
-/* Glass icon with badge (for step numbers, counts, etc.) */
-.glass-icon-wrapper {
-  position: relative;
-  display: inline-flex;
-}
-
-.glass-icon-badge {
-  position: absolute;
-  top: -4px;
-  right: -4px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 9999px;
-  font-weight: 700;
-  color: white;
-}
-
-.glass-icon-badge-sm {
-  height: 16px;
-  width: 16px;
-  font-size: 10px;
-}
-
-.glass-icon-badge-md {
-  height: 20px;
-  width: 20px;
-  font-size: 11px;
-}
-
-.glass-icon-badge-lg {
-  height: 24px;
-  width: 24px;
-  font-size: 12px;
-}
-
-.glass-icon-badge-red {
-  background-color: var(--brand-red);
-}
-
-.glass-icon-badge-blue {
-  background-color: var(--brand-bright-blue);
-}
-
-.glass-icon-badge-deep-blue {
-  background-color: var(--brand-deep-blue);
 }
 
 /* ====================================================================

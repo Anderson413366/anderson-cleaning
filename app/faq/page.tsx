@@ -1,9 +1,9 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
 import { Button } from '@/components/ui/Button'
-import { ChevronDown, ChevronUp, Search } from 'lucide-react'
+import { ChevronRight, Search } from 'lucide-react'
 
 const faqCategories = {
   'Pricing & Contracts': [
@@ -132,9 +132,59 @@ export default function FAQPage() {
   const [openQuestion, setOpenQuestion] = useState<string | null>(null)
   const [searchQuery, setSearchQuery] = useState('')
   const [isSearchFocused, setIsSearchFocused] = useState(false)
+  const [activeCategory, setActiveCategory] = useState<string>(Object.keys(faqCategories)[0])
+  const sectionRefs = useRef<Map<string, HTMLElement>>(new Map())
 
   const toggleQuestion = (question: string) => {
     setOpenQuestion(openQuestion === question ? null : question)
+  }
+
+  // Generate category ID from name
+  const getCategoryId = (category: string) =>
+    category.toLowerCase().replace(/\s+&\s+/g, '-').replace(/\s+/g, '-')
+
+  // Intersection Observer to track active section
+  useEffect(() => {
+    const observers: IntersectionObserver[] = []
+
+    Object.keys(faqCategories).forEach((category) => {
+      const categoryId = getCategoryId(category)
+      const element = document.getElementById(categoryId)
+
+      if (element) {
+        sectionRefs.current.set(category, element)
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                setActiveCategory(category)
+              }
+            })
+          },
+          {
+            rootMargin: '-20% 0px -60% 0px',
+            threshold: 0
+          }
+        )
+
+        observer.observe(element)
+        observers.push(observer)
+      }
+    })
+
+    return () => {
+      observers.forEach((observer) => observer.disconnect())
+    }
+  }, [searchQuery])
+
+  // Smooth scroll to category
+  const scrollToCategory = (category: string) => {
+    const categoryId = getCategoryId(category)
+    const element = document.getElementById(categoryId)
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }
   }
 
   const filterQuestions = () => {
@@ -223,28 +273,33 @@ export default function FAQPage() {
         </div>
       </section>
 
-      {/* Category Navigation */}
+      {/* Sticky Category Navigation */}
       {!searchQuery && (
-        <section className="py-8 bg-white dark:bg-slate-900 border-b border-neutral-light-grey dark:border-slate-700">
+        <section className="sticky top-0 z-40 py-4 bg-white dark:bg-slate-900 border-b border-neutral-light-grey dark:border-slate-700 shadow-sm">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-4xl mx-auto">
-              <p className="text-sm font-semibold text-neutral-charcoal/70 dark:text-white/70 mb-3">
-                Jump to category:
-              </p>
-              <div className="flex flex-wrap gap-3">
-                {Object.keys(faqCategories).map((category) => {
-                  const categoryId = category.toLowerCase().replace(/\s+&\s+/g, '-').replace(/\s+/g, '-')
-                  return (
-                    <a
-                      key={category}
-                      href={`#${categoryId}`}
-                      className="inline-flex items-center px-4 py-2 rounded-lg bg-white dark:bg-slate-800 border-2 border-brand-deep-blue dark:border-brand-bright-blue text-brand-deep-blue dark:text-brand-bright-blue font-semibold text-sm hover:bg-brand-deep-blue hover:text-white dark:hover:bg-brand-bright-blue dark:hover:text-white transition-all duration-200"
-                    >
-                      {category}
-                    </a>
-                  )
-                })}
-              </div>
+              <nav aria-label="FAQ Categories">
+                <div className="flex flex-wrap gap-3">
+                  {Object.keys(faqCategories).map((category) => {
+                    const isActive = category === activeCategory
+                    return (
+                      <button
+                        key={category}
+                        type="button"
+                        onClick={() => scrollToCategory(category)}
+                        className={`inline-flex items-center px-4 py-2 rounded-lg font-medium text-[14px] transition-all duration-200 ${
+                          isActive
+                            ? 'bg-brand-bright-blue text-white'
+                            : 'bg-white dark:bg-slate-800 text-[#666666] dark:text-white/70 hover:text-brand-bright-blue dark:hover:text-brand-bright-blue border border-[#E0E0E0] dark:border-slate-600'
+                        }`}
+                        aria-current={isActive ? 'true' : undefined}
+                      >
+                        {category}
+                      </button>
+                    )
+                  })}
+                </div>
+              </nav>
             </div>
           </div>
         </section>
@@ -270,12 +325,12 @@ export default function FAQPage() {
               </div>
             ) : (
               Object.entries(filteredFAQs).map(([category, questions], categoryIndex) => {
-                const categoryId = category.toLowerCase().replace(/\s+&\s+/g, '-').replace(/\s+/g, '-')
+                const categoryId = getCategoryId(category)
                 return (
                   <div key={category} className="mb-12">
                     <h2
                       id={categoryId}
-                      className={`text-2xl leading-normal font-bold text-brand-deep-blue dark:text-brand-bright-blue mb-6 scroll-mt-24 ${categoryIndex === 0 ? 'mt-0' : 'mt-12'}`}
+                      className={`text-2xl leading-normal font-bold text-brand-deep-blue dark:text-brand-bright-blue mb-6 scroll-mt-32 ${categoryIndex === 0 ? 'mt-0' : 'mt-12'}`}
                     >
                       {category}
                     </h2>
@@ -296,24 +351,21 @@ export default function FAQPage() {
                             <h3>
                               <button
                                 onClick={() => toggleQuestion(questionId)}
-                                className="group w-full px-6 py-5 text-left flex items-start justify-between hover:bg-neutral-off-white dark:hover:bg-slate-600 transition-colors min-h-[44px]"
+                                className="group w-full px-6 py-4 text-left flex items-center justify-between hover:bg-[#F5F7FB] dark:hover:bg-slate-600 transition-colors duration-200 min-h-[44px]"
                                 aria-expanded={isOpen}
                                 aria-controls={`faq-answer-${questionId}`}
                               >
                                 <span className="font-semibold text-neutral-charcoal dark:text-white text-body pr-4">
                                   {faq.question}
                                 </span>
-                                {isOpen ? (
-                                  <ChevronUp
-                                    className="h-6 w-6 text-brand-bright-blue flex-shrink-0 transition-transform duration-300"
-                                    aria-hidden="true"
-                                  />
-                                ) : (
-                                  <ChevronDown
-                                    className="h-6 w-6 text-neutral-charcoal/50 group-hover:text-brand-deep-blue dark:group-hover:text-brand-bright-blue group-hover:rotate-180 flex-shrink-0 transition-all duration-300"
-                                    aria-hidden="true"
-                                  />
-                                )}
+                                <ChevronRight
+                                  className={`w-5 h-5 flex-shrink-0 transition-all duration-200 ${
+                                    isOpen
+                                      ? 'rotate-90 text-brand-red'
+                                      : 'rotate-0 text-brand-bright-blue'
+                                  }`}
+                                  aria-hidden="true"
+                                />
                               </button>
                             </h3>
                             {isOpen && (

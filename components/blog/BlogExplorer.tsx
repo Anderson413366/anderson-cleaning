@@ -4,8 +4,6 @@ import { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { ArrowRight, Calendar, Clock } from 'lucide-react'
-import { inputClassName } from '@/lib/styles/formStyles'
-import { Button } from '@/components/ui/Button'
 
 interface BlogPost {
   slug: string
@@ -109,9 +107,10 @@ export default function BlogExplorer({ posts, categories }: BlogExplorerProps) {
               <Link
                 key={post.slug}
                 href={`/blog/${post.slug}`}
-                className="h-full flex flex-col bg-white dark:bg-slate-800 border-2 border-neutral-light-grey dark:border-slate-700 rounded-xl overflow-hidden shadow-sm hover:-translate-y-1 hover:border-brand-bright-blue transition-all duration-300 cursor-pointer group"
+                className="flex flex-col bg-white dark:bg-slate-800 border border-[#E0E0E0] dark:border-slate-700 rounded-lg overflow-hidden shadow-sm hover:-translate-y-1 hover:border-brand-bright-blue transition-all duration-300 cursor-pointer group"
               >
-                <div className="relative h-48 bg-neutral-light-grey dark:bg-slate-700 overflow-hidden flex-shrink-0">
+                {/* Image - 16:9 aspect ratio with 4px border-radius */}
+                <div className="relative aspect-video bg-neutral-light-grey dark:bg-slate-700 overflow-hidden rounded-t-[4px]">
                   {imageErrors.has(post.slug) ? (
                     <div className="absolute inset-0 bg-brand-deep-blue flex items-center justify-center">
                       <div className="text-center px-6">
@@ -139,18 +138,19 @@ export default function BlogExplorer({ posts, categories }: BlogExplorerProps) {
                   )}
                 </div>
 
+                {/* Content - 24px padding */}
                 <div className="p-6 flex flex-col flex-1">
-                  {/* Category Badge - Inside card with 16px margin */}
-                  <div className="mb-3">
-                    <span className="inline-block px-3 py-1 bg-brand-deep-blue/90 dark:bg-brand-deep-blue text-white text-xs font-semibold rounded-full">
+                  {/* Category Badge */}
+                  <div className="mb-2">
+                    <span className="inline-block px-3 py-1 bg-brand-deep-blue/90 dark:bg-brand-deep-blue text-white text-[12px] font-medium rounded-full">
                       {post.category}
                     </span>
                   </div>
 
-                  {/* Date and Read Time - Combined on single line in lighter gray */}
-                  <div className="flex items-center gap-3 text-xs text-neutral-charcoal/50 dark:text-white/50 mb-3">
+                  {/* Date and Read Time - 12px #999999 */}
+                  <div className="flex items-center gap-3 text-[12px] text-[#999999] dark:text-white/50 mb-2">
                     <div className="flex items-center gap-1">
-                      <Calendar className="h-3.5 w-3.5" aria-hidden="true" />
+                      <Calendar className="h-3 w-3" aria-hidden="true" />
                       <span>
                         {new Date(post.publishedDate).toLocaleDateString('en-US', {
                           month: 'short',
@@ -161,20 +161,22 @@ export default function BlogExplorer({ posts, categories }: BlogExplorerProps) {
                     </div>
                     <span aria-hidden="true">•</span>
                     <div className="flex items-center gap-1">
-                      <Clock className="h-3.5 w-3.5" aria-hidden="true" />
+                      <Clock className="h-3 w-3" aria-hidden="true" />
                       <span>{post.readTime}</span>
                     </div>
                   </div>
 
-                  <h2 className="text-h3 leading-normal font-semibold text-neutral-charcoal dark:text-white mb-3 line-clamp-2 group-hover:text-brand-bright-blue transition-colors">
+                  {/* Heading - 16px bold #002A86 */}
+                  <h2 className="text-[16px] leading-snug font-bold text-brand-deep-blue dark:text-white mb-2 line-clamp-2 group-hover:text-brand-bright-blue transition-colors">
                     {post.title}
                   </h2>
 
-                  <p className="text-body text-neutral-charcoal/70 dark:text-white/80 mb-6 line-clamp-3 flex-1">
+                  {/* Excerpt - 14px #666666, 2 lines max */}
+                  <p className="text-[14px] text-[#666666] dark:text-white/80 mb-4 line-clamp-2 flex-1">
                     {post.excerpt}
                   </p>
 
-                  <div className="mt-auto flex items-center gap-2 text-brand-bright-blue font-semibold text-sm group-hover:gap-3 transition-all">
+                  <div className="mt-auto flex items-center gap-2 text-brand-bright-blue font-semibold text-[14px] group-hover:gap-3 transition-all">
                     <span>Read Article</span>
                     <ArrowRight className="h-4 w-4" aria-hidden="true" />
                   </div>
@@ -216,7 +218,7 @@ export default function BlogExplorer({ posts, categories }: BlogExplorerProps) {
               Subscribe to our newsletter for monthly cleaning tips, industry updates, and exclusive
               offers.
             </p>
-            <form className="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto" onSubmit={handleSubscribe}>
+            <form className="flex flex-col gap-3 max-w-md mx-auto" onSubmit={handleSubscribe}>
               <input
                 type="email"
                 name="email"
@@ -224,11 +226,15 @@ export default function BlogExplorer({ posts, categories }: BlogExplorerProps) {
                 onChange={(event) => setNewsletterEmail(event.target.value)}
                 placeholder="your.email@company.com"
                 required
-                className={`${inputClassName} flex-1`}
+                className="w-full h-[48px] px-4 text-[16px] text-[#333333] dark:text-white bg-white dark:bg-slate-800 border border-[#D0D0D0] dark:border-slate-600 rounded-lg placeholder:text-[#999999] dark:placeholder:text-white/50 focus:border-brand-bright-blue focus:outline-none focus:shadow-[0_0_0_3px_rgba(0,119,217,0.1)]"
               />
-              <Button type="submit" variant="accent" size="lg" isLoading={newsletterStatus === 'loading'}>
-                {newsletterStatus === 'success' ? 'Subscribed!' : 'Subscribe'}
-              </Button>
+              <button
+                type="submit"
+                disabled={newsletterStatus === 'loading'}
+                className="w-full h-[48px] bg-brand-bright-blue hover:bg-brand-deep-blue text-white text-[12px] font-semibold rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                {newsletterStatus === 'loading' ? 'Subscribing...' : newsletterStatus === 'success' ? 'Subscribed!' : 'Subscribe'}
+              </button>
             </form>
             {newsletterStatus === 'error' && newsletterError && (
               <p className="text-sm text-red-500 mt-2">{newsletterError}</p>
