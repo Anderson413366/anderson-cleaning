@@ -12,6 +12,7 @@ import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 
 import { Button } from '@/components/ui/Button'
+import { GlassIcon } from '@/components/ui/GlassIcon'
 import { industries } from '@/lib/industries-data'
 import { getIconComponent } from '@/lib/icon-map'
 
@@ -89,15 +90,9 @@ export default function IndustriesPage() {
                         </span>
                       </div>
 
+                      {/* Glass-effect icon - Large (64px) for featured industries */}
                       <div className="mb-6">
-                        <div className="relative inline-flex items-center justify-center h-16 w-16 rounded-xl bg-gradient-to-br from-brand-deep-blue to-brand-bright-blue shadow-lg">
-                          <div className="absolute inset-0 rounded-xl bg-white/10 backdrop-blur-sm" />
-                          <IconComponent
-                            className="relative h-12 w-12 text-white"
-                            aria-hidden="true"
-                            strokeWidth={2}
-                          />
-                        </div>
+                        <GlassIcon icon={IconComponent} size="lg" variant="solid" label={industry.name} />
                       </div>
 
                       <h3 className="text-3xl font-bold text-neutral-charcoal dark:text-white mb-4 group-hover:text-brand-bright-blue dark:group-hover:text-brand-bright-blue transition-colors">
@@ -130,15 +125,9 @@ export default function IndustriesPage() {
                     className="group h-full"
                   >
                     <div className="h-full flex flex-col bg-white dark:bg-slate-900 rounded-xl shadow-sm border-2 border-neutral-light-grey dark:border-slate-700 p-8 transition-all duration-300 hover:shadow-xl hover:border-brand-bright-blue hover:-translate-y-1">
+                      {/* Glass-effect icon - Large (64px) for industry cards */}
                       <div className="mb-6">
-                        <div className="relative inline-flex items-center justify-center h-16 w-16 rounded-xl bg-gradient-to-br from-brand-deep-blue to-brand-bright-blue shadow-lg">
-                          <div className="absolute inset-0 rounded-xl bg-white/10 backdrop-blur-sm" />
-                          <IconComponent
-                            className="relative h-12 w-12 text-white"
-                            aria-hidden="true"
-                            strokeWidth={2}
-                          />
-                        </div>
+                        <GlassIcon icon={IconComponent} size="lg" variant="solid" label={industry.name} />
                       </div>
 
                       <h3 className="text-h3 font-bold text-neutral-charcoal dark:text-white mb-4 group-hover:text-brand-bright-blue dark:group-hover:text-brand-bright-blue transition-colors">

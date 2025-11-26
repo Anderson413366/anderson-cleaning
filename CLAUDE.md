@@ -91,6 +91,42 @@ export async function POST(request: Request) {
 - `text-body-sm`: 16px - Smaller body text
 - `text-button`: 18px - Button labels
 
+**Glass Icon System** (`components/ui/GlassIcon.tsx` + `styles/design-system.css`):
+Apple-inspired glass-morphism icons with consistent sizing across the site.
+
+Design Specifications:
+- Container: Circle with gradient fill (#0077D9 to #002A86 at 15% opacity)
+- Background: backdrop-filter: blur(10px)
+- Border: 1px solid rgba(255,255,255,0.2)
+- Shadow: 0 4px 12px rgba(0,42,134,0.15)
+- Icon: White icon centered, 2px stroke weight
+
+Standardized Sizes (use these ONLY):
+- `sm` (32px container, 16px icon) - for inline use, small badges, lists
+- `md` (48px container, 24px icon) - for cards, section headers
+- `lg` (64px container, 32px icon) - for heroes, featured sections
+
+Variants:
+- `default` - Glass effect with gradient background (for light backgrounds)
+- `light` - Inverted for dark backgrounds (white/transparent)
+- `solid` - Filled gradient background for emphasis
+
+Usage:
+```tsx
+import { GlassIcon, GlassIconWithBadge } from '@/components/ui/GlassIcon'
+import { Building2 } from 'lucide-react'
+
+// Basic usage
+<GlassIcon icon={Building2} size="md" variant="default" label="Building" />
+
+// With badge (for step numbers)
+<GlassIconWithBadge icon={Building2} size="lg" variant="default" badge="1" badgeColor="red" />
+```
+
+CSS Classes (for non-React contexts):
+- `.glass-icon` / `.glass-icon-light` / `.glass-icon-solid` - base styles
+- `.glass-icon-sm` / `.glass-icon-md` / `.glass-icon-lg` - sizes
+
 **Global Styles Location**:
 - `styles/design-system.css` - Official design tokens, form fields, pills, accessibility
 - `styles/globals.css` - Imports design-system.css + Tailwind layers

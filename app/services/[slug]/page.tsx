@@ -16,6 +16,7 @@ import {
 } from 'lucide-react'
 
 import StructuredData from '@/components/StructuredData'
+import { GlassIcon } from '@/components/ui/GlassIcon'
 import { BreadcrumbSchema, FAQSchema } from '@/components/Schema'
 import { Button } from '@/components/ui/Button'
 import ServiceHero from '@/components/services/ServiceHero'
@@ -197,12 +198,11 @@ function BenefitsList({ service }: { service: ServiceData }) {
       <ul className="mt-8 grid gap-4 md:grid-cols-2">
         {service.benefits.map((benefit) => (
           <li key={benefit} className="flex items-start gap-4">
-            {/* Glass-effect circle icon in Bright Blue */}
-            <div className="relative flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-brand-bright-blue shadow-md">
-              <div className="absolute inset-0 rounded-full bg-white/20 backdrop-blur-sm" />
-              <CheckCircle2 className="relative h-4 w-4 text-white" strokeWidth={2.5} />
+            {/* Glass-effect icon - Small (32px) */}
+            <div className="flex-shrink-0">
+              <GlassIcon icon={CheckCircle2} size="sm" variant="solid" label="Benefit" />
             </div>
-            <span className="text-base text-neutral-charcoal/80 dark:text-white/80 leading-relaxed pt-0.5">
+            <span className="text-base text-neutral-charcoal/80 dark:text-white/80 leading-relaxed pt-1">
               {benefit}
             </span>
           </li>
@@ -246,12 +246,9 @@ function TestimonialsSection({ service }: { service: ServiceData }) {
               key={testimonial.quote}
               className="rounded-2xl border border-neutral-light-grey bg-white p-8 shadow-md transition-all duration-300 hover:shadow-xl hover:-translate-y-1 dark:border-slate-700 dark:bg-slate-900"
             >
-              {/* Glass-effect quote icon */}
-              <div className="mb-6 inline-flex">
-                <div className="relative flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-brand-deep-blue to-brand-bright-blue shadow-lg">
-                  <div className="absolute inset-0 rounded-xl bg-white/10 backdrop-blur-sm" />
-                  <Quote className="relative h-7 w-7 text-white" strokeWidth={2} aria-hidden="true" />
-                </div>
+              {/* Glass-effect quote icon - Medium (48px) */}
+              <div className="mb-6">
+                <GlassIcon icon={Quote} size="md" variant="solid" label="Quote" />
               </div>
 
               {/* Star rating */}

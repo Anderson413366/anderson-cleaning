@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { Button } from '@/components/ui/Button'
+import { GlassIcon } from '@/components/ui/GlassIcon'
 import QuoteMiniForm from '@/components/forms/QuoteMiniForm'
 import QuoteAdvancedModal from '@/components/forms/QuoteAdvancedModal'
 import PromotionalModal from '@/components/PromotionalModal'
@@ -135,16 +136,14 @@ export default function Home() {
                 label: 'Supply management icon',
               },
             ].map((service, i) => {
-              const Icon = service.icon
               return (
                 <div
                   key={i}
                   className="bg-brand-deep-blue dark:bg-brand-deep-blue text-white rounded-xl p-6 shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
                 >
-                  {/* Glass-morphism icon circle with gradient */}
-                  <div className="relative flex h-16 w-16 items-center justify-center rounded-lg mb-4 bg-gradient-to-br from-brand-bright-blue/20 to-brand-deep-blue/20 backdrop-blur-md shadow-inner">
-                    <Icon className="h-12 w-12 text-white" aria-hidden="true" />
-                    <span className="sr-only">{service.label}</span>
+                  {/* Glass-morphism icon - Large (64px) for service cards */}
+                  <div className="mb-4">
+                    <GlassIcon icon={service.icon} size="lg" variant="light" label={service.label} />
                   </div>
                   <h3 className="text-xl font-bold mb-3 text-white">
                     {service.title}
@@ -185,8 +184,8 @@ export default function Home() {
             <div className="bg-neutral-off-white dark:bg-slate-800 rounded-2xl p-8 mb-8">
               {/* Primary Service Areas with pill-shaped location tags */}
               <div className="mb-8">
-                <h3 className="text-h3 leading-normal font-semibold text-neutral-charcoal dark:text-white mb-6 flex items-center justify-center">
-                  <MapPin className="h-6 w-6 text-brand-deep-blue dark:text-brand-bright-blue mr-2" />
+                <h3 className="text-h3 leading-normal font-semibold text-neutral-charcoal dark:text-white mb-6 flex items-center justify-center gap-3">
+                  <GlassIcon icon={MapPin} size="md" variant="default" label="Location icon" />
                   Primary Service Areas
                 </h3>
                 <div className="flex flex-wrap justify-center gap-3">
@@ -208,8 +207,8 @@ export default function Home() {
 
               {/* Facility Types with pill-shaped tags */}
               <div className="pt-8 border-t border-neutral-charcoal/10 dark:border-white/10">
-                <h3 className="text-h3 leading-normal font-semibold text-neutral-charcoal dark:text-white mb-6 flex items-center justify-center">
-                  <Building2 className="h-6 w-6 text-brand-deep-blue dark:text-brand-bright-blue mr-2" />
+                <h3 className="text-h3 leading-normal font-semibold text-neutral-charcoal dark:text-white mb-6 flex items-center justify-center gap-3">
+                  <GlassIcon icon={Building2} size="md" variant="default" label="Building icon" />
                   Facility Types We Serve
                 </h3>
                 <div className="flex flex-wrap justify-center gap-3">
@@ -432,11 +431,9 @@ export default function Home() {
             {/* Light gray background container with visual separation */}
             <div className="bg-neutral-light-grey dark:bg-slate-800 rounded-2xl py-20 px-8 md:px-12">
               <div className="text-center mb-12">
-                {/* Glass-effect icon */}
+                {/* Glass-effect icon - Large (64px) for hero section */}
                 <div className="flex justify-center mb-6">
-                  <div className="relative flex h-16 w-16 items-center justify-center rounded-lg bg-gradient-to-br from-brand-bright-blue/20 to-brand-deep-blue/20 backdrop-blur-md shadow-inner">
-                    <Mail className="h-8 w-8 text-brand-deep-blue dark:text-brand-bright-blue" aria-hidden="true" />
-                  </div>
+                  <GlassIcon icon={Mail} size="lg" variant="default" label="Email icon" />
                 </div>
                 <h2 className="text-h2 leading-tight font-bold text-neutral-charcoal dark:text-white mb-4">
                   Request Your Free Quote

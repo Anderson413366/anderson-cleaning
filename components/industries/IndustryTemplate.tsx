@@ -26,6 +26,7 @@
 import React from 'react'
 import Link from 'next/link'
 import { Button } from '@/components/ui/Button'
+import { GlassIcon } from '@/components/ui/GlassIcon'
 import { Industry } from '@/lib/industries-data'
 import {
   CheckCircle2,
@@ -151,12 +152,9 @@ export default function IndustryTemplate({
                     hover:border-brand-bright-blue
                   "
                 >
-                  {/* Solution-focused Icon in Bright Blue */}
+                  {/* Solution-focused Icon - Medium (48px) glass effect */}
                   <div className="mb-4">
-                    <div className="relative w-12 h-12 rounded-lg bg-gradient-to-br from-brand-deep-blue to-brand-bright-blue flex items-center justify-center shadow-md">
-                      <div className="absolute inset-0 rounded-lg bg-white/10 backdrop-blur-sm" />
-                      <CheckCircle2 className="relative h-6 w-6 text-white" strokeWidth={2.5} aria-hidden="true" />
-                    </div>
+                    <GlassIcon icon={CheckCircle2} size="md" variant="solid" label="Solution" />
                   </div>
 
                   {/* Challenge Text - Now framed as a solution */}
@@ -322,15 +320,14 @@ export default function IndustryTemplate({
                     border border-neutral-light-grey dark:border-slate-700
                   "
                 >
-                  {/* Icon */}
+                  {/* Icon - Medium (48px) glass effect */}
                   <div className="mb-3">
-                    {index % 3 === 0 ? (
-                      <Shield className="h-8 w-8 text-brand-bright-blue" aria-hidden="true" />
-                    ) : index % 3 === 1 ? (
-                      <Award className="h-8 w-8 text-brand-deep-blue" aria-hidden="true" />
-                    ) : (
-                      <Users className="h-8 w-8 text-brand-bright-blue" aria-hidden="true" />
-                    )}
+                    <GlassIcon
+                      icon={index % 3 === 0 ? Shield : index % 3 === 1 ? Award : Users}
+                      size="md"
+                      variant="solid"
+                      label={item}
+                    />
                   </div>
 
                   {/* Badge Text */}
@@ -368,12 +365,9 @@ export default function IndustryTemplate({
                     key={index}
                     className="bg-neutral-off-white dark:bg-slate-800 rounded-2xl p-8 border-2 border-neutral-light-grey dark:border-slate-700 transition-all duration-200 hover:border-brand-bright-blue hover:shadow-lg"
                   >
-                    {/* Icon */}
+                    {/* Icon - Medium (48px) glass effect */}
                     <div className="mb-6">
-                      <div className="relative inline-flex items-center justify-center h-14 w-14 rounded-xl bg-gradient-to-br from-brand-deep-blue to-brand-bright-blue shadow-md">
-                        <div className="absolute inset-0 rounded-xl bg-white/10 backdrop-blur-sm" />
-                        <Building className="relative h-7 w-7 text-white" strokeWidth={2} aria-hidden="true" />
-                      </div>
+                      <GlassIcon icon={Building} size="md" variant="solid" label={facilitySize.size} />
                     </div>
 
                     {/* Size Title */}

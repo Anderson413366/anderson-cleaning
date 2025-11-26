@@ -28,6 +28,7 @@ import {
 } from 'lucide-react'
 
 import { Button } from '@/components/ui/Button'
+import { GlassIcon, GlassIconWithBadge } from '@/components/ui/GlassIcon'
 import StructuredData from '@/components/StructuredData'
 import QuoteMiniForm from '@/components/forms/QuoteMiniForm'
 import QuoteAdvancedModal from '@/components/forms/QuoteAdvancedModal'
@@ -255,18 +256,18 @@ export default function ServicesPage() {
                   timeframe: '5-7 days',
                 },
               ].map((item, i) => {
-                const Icon = item.icon
                 return (
                   <div key={i} className="relative flex gap-6 animate-fade-in">
-                    {/* Glass-effect circular icon with step number */}
-                    <div className="relative flex-shrink-0">
-                      <div className="flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-brand-bright-blue/20 to-brand-deep-blue/20 backdrop-blur-md border-2 border-brand-deep-blue/30 dark:border-brand-bright-blue/30 shadow-lg">
-                        <Icon className="h-7 w-7 text-brand-deep-blue dark:text-brand-bright-blue" aria-hidden="true" />
-                      </div>
-                      {/* Step number badge */}
-                      <div className="absolute -top-1 -right-1 flex h-6 w-6 items-center justify-center rounded-full bg-brand-red text-white text-xs font-bold">
-                        {item.step}
-                      </div>
+                    {/* Glass-effect circular icon with step number badge - Large (64px) */}
+                    <div className="flex-shrink-0">
+                      <GlassIconWithBadge
+                        icon={item.icon}
+                        size="lg"
+                        variant="default"
+                        badge={item.step}
+                        badgeColor="red"
+                        label={`Step ${item.step}`}
+                      />
                     </div>
 
                     {/* Content */}
@@ -322,18 +323,18 @@ export default function ServicesPage() {
                   timeframe: '5-7 days',
                 },
               ].map((item, i) => {
-                const Icon = item.icon
                 return (
                   <div key={i} className="text-center animate-fade-in" style={{ animationDelay: `${i * 150}ms` }}>
-                    {/* Glass-effect circular icon with step number */}
-                    <div className="relative inline-flex mb-6">
-                      <div className="flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-brand-bright-blue/20 to-brand-deep-blue/20 backdrop-blur-md border-2 border-brand-deep-blue/30 dark:border-brand-bright-blue/30 shadow-lg">
-                        <Icon className="h-7 w-7 text-brand-deep-blue dark:text-brand-bright-blue" aria-hidden="true" />
-                      </div>
-                      {/* Step number badge */}
-                      <div className="absolute -top-1 -right-1 flex h-6 w-6 items-center justify-center rounded-full bg-brand-red text-white text-xs font-bold">
-                        {item.step}
-                      </div>
+                    {/* Glass-effect circular icon with step number badge - Large (64px) */}
+                    <div className="inline-flex mb-6">
+                      <GlassIconWithBadge
+                        icon={item.icon}
+                        size="lg"
+                        variant="default"
+                        badge={item.step}
+                        badgeColor="red"
+                        label={`Step ${item.step}`}
+                      />
                     </div>
 
                     <h3 className="text-h3 leading-normal font-semibold text-neutral-charcoal dark:text-white mb-3">
@@ -386,9 +387,9 @@ export default function ServicesPage() {
                   )}
 
                   <div className="p-8 flex flex-col h-full">
-                    {/* Glass-effect icon with gradient background */}
-                    <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-brand-bright-blue to-brand-deep-blue backdrop-blur-md shadow-lg">
-                      <Icon className="h-6 w-6 text-white" strokeWidth={2} aria-hidden="true" />
+                    {/* Glass-effect icon - Medium (48px) for service cards */}
+                    <div className="mb-4">
+                      <GlassIcon icon={Icon} size="md" variant="solid" label={service.title} />
                     </div>
 
                     {/* Title */}
@@ -484,12 +485,11 @@ export default function ServicesPage() {
                 badge: 'Green Seal'
               },
             ].map((item, i) => {
-              const Icon = item.icon
               return (
                 <div key={i} className="text-center bg-white/10 backdrop-blur-md border-2 border-white/20 rounded-xl p-8 hover:bg-white/15 transition-all duration-300">
-                  {/* Glass-effect icon */}
-                  <div className="inline-flex items-center justify-center w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full mb-4 border-2 border-white/30">
-                    <Icon className="h-8 w-8 text-white" strokeWidth={2} />
+                  {/* Glass-effect icon - Large (64px) for quality assurance section */}
+                  <div className="mb-4 flex justify-center">
+                    <GlassIcon icon={item.icon} size="lg" variant="light" label={item.title} />
                   </div>
 
                   {/* Animated stat */}
@@ -584,11 +584,9 @@ export default function ServicesPage() {
                 key={study.title}
                 className="relative bg-white dark:bg-slate-800 rounded-xl border-2 border-neutral-light-grey dark:border-slate-700 p-8 hover:border-brand-bright-blue dark:hover:border-brand-bright-blue hover:shadow-xl transition-all duration-300"
               >
-                {/* Industry icon badge - top-right */}
+                {/* Industry icon badge - top-right - Medium (48px) */}
                 <div className="absolute top-6 right-6">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br from-brand-bright-blue to-brand-deep-blue shadow-lg">
-                    <study.icon className="h-6 w-6 text-white" strokeWidth={2} />
-                  </div>
+                  <GlassIcon icon={study.icon} size="md" variant="solid" label={study.industry} />
                 </div>
 
                 {/* Large red metric number */}

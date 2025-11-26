@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { Button } from '@/components/ui/Button'
+import { GlassIcon } from '@/components/ui/GlassIcon'
 import StatsBar from '@/components/sections/StatsBar'
 import { CertificationShowcase } from '@/components/Certifications'
 import { YEARS_IN_BUSINESS } from '@/lib/constants'
@@ -77,16 +78,14 @@ export default function AboutPage() {
                   description: 'Comprehensive liability coverage. All staff background checked',
                 },
               ].map((item, index) => {
-                const Icon = item.icon
                 return (
                   <div
                     key={index}
                     className="flex items-start gap-4 bg-neutral-off-white dark:bg-slate-800 border-2 border-brand-deep-blue/20 dark:border-brand-bright-blue/30 rounded-lg p-6 hover:border-brand-bright-blue/50 dark:hover:border-brand-bright-blue/60 transition-colors"
                   >
+                    {/* Glass-effect icon - Medium (48px) */}
                     <div className="flex-shrink-0">
-                      <div className="flex items-center justify-center w-12 h-12 bg-brand-deep-blue/10 dark:bg-brand-bright-blue/20 rounded-full">
-                        <Icon className="h-6 w-6 text-brand-deep-blue dark:text-brand-bright-blue" />
-                      </div>
+                      <GlassIcon icon={item.icon} size="md" variant="default" label={item.title} />
                     </div>
                     <div className="flex-1 min-w-0">
                       <h3 className="font-bold text-neutral-charcoal dark:text-white mb-1 text-base leading-tight">
@@ -404,8 +403,9 @@ export default function AboutPage() {
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
               {/* Principle 1: Invest in People */}
               <div className="bg-white dark:bg-slate-900 border-2 border-neutral-light-grey dark:border-slate-700 rounded-xl p-8 shadow-sm hover:shadow-lg transition-shadow">
-                <div className="flex items-center justify-center w-16 h-16 bg-brand-deep-blue/10 dark:bg-brand-deep-blue/20 rounded-full mb-6 mx-auto">
-                  <Users className="h-8 w-8 text-brand-deep-blue dark:text-brand-bright-blue" />
+                {/* Glass-effect icon - Large (64px) */}
+                <div className="flex justify-center mb-6">
+                  <GlassIcon icon={Users} size="lg" variant="default" label="Invest in People" />
                 </div>
                 <h3 className="text-h3 font-bold text-neutral-charcoal dark:text-white mb-4 text-center">
                   Invest in People
@@ -426,8 +426,9 @@ export default function AboutPage() {
 
               {/* Principle 2: Systems & Standards */}
               <div className="bg-white dark:bg-slate-900 border-2 border-neutral-light-grey dark:border-slate-700 rounded-xl p-8 shadow-sm hover:shadow-lg transition-shadow">
-                <div className="flex items-center justify-center w-16 h-16 bg-brand-deep-blue/10 dark:bg-brand-deep-blue/20 rounded-full mb-6 mx-auto">
-                  <Target className="h-8 w-8 text-brand-deep-blue dark:text-brand-bright-blue" />
+                {/* Glass-effect icon - Large (64px) */}
+                <div className="flex justify-center mb-6">
+                  <GlassIcon icon={Target} size="lg" variant="default" label="Systems & Standards" />
                 </div>
                 <h3 className="text-h3 font-bold text-neutral-charcoal dark:text-white mb-4 text-center">
                   Systems & Standards
@@ -456,8 +457,9 @@ export default function AboutPage() {
                     </div>
                   </div>
 
-                  <div className="flex items-center justify-center w-16 h-16 bg-white/20 rounded-full mb-6 mx-auto mt-2">
-                    <Heart className="h-8 w-8 text-white" />
+                  {/* Glass-effect icon - Large (64px) - Light variant for dark background */}
+                  <div className="flex justify-center mb-6 mt-2">
+                    <GlassIcon icon={Heart} size="lg" variant="light" label="Personal Touch" />
                   </div>
                   <h3 className="text-h3 font-bold text-white mb-4 text-center">
                     Personal Touch
@@ -695,11 +697,11 @@ export default function AboutPage() {
                     description: 'We source supplies from area vendors whenever possible to reinvest locally.',
                   },
                 ].map((item, idx) => {
-                  const Icon = item.icon
                   return (
                     <div key={idx} className="text-center">
-                      <div className="mx-auto mb-3 inline-flex h-14 w-14 items-center justify-center rounded-full bg-brand-deep-blue/10 text-brand-deep-blue dark:bg-white/10 dark:text-white">
-                        <Icon className="h-7 w-7" aria-hidden="true" />
+                      {/* Glass-effect icon - Medium (48px) */}
+                      <div className="flex justify-center mb-3">
+                        <GlassIcon icon={item.icon} size="md" variant="default" label={item.title} />
                       </div>
                       <h3 className="font-bold text-neutral-charcoal dark:text-white mb-2">
                         {item.title}
