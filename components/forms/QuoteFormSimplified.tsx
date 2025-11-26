@@ -5,7 +5,7 @@ import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import * as z from 'zod'
 import { Button } from '@/components/ui/Button'
-import { Phone, Mail, CheckCircle2, Loader2, DollarSign } from 'lucide-react'
+import { Phone, Mail, CheckCircle2, Loader2, DollarSign, ChevronRight, ChevronLeft } from 'lucide-react'
 import { CONTACT_INFO } from '@/lib/constants'
 import FormLegalNotice from './FormLegalNotice'
 
@@ -62,11 +62,15 @@ export default function QuoteFormSimplified({ onSuccess }: QuoteFormSimplifiedPr
   const [submitError, setSubmitError] = useState<string | null>(null)
   const [submitSuccess, setSubmitSuccess] = useState(false)
   const [estimate, setEstimate] = useState<{ low: number; high: number } | null>(null)
+  const [currentStep, setCurrentStep] = useState(1)
+  const totalSteps = 3
 
   const {
     register,
     handleSubmit,
     watch,
+    setValue,
+    trigger,
     formState: { errors },
   } = useForm<QuoteFormData>({
     resolver: zodResolver(quoteSchema),
@@ -74,6 +78,34 @@ export default function QuoteFormSimplified({ onSuccess }: QuoteFormSimplifiedPr
       consent: false,
     },
   })
+
+  // Load saved progress from localStorage
+  useEffect(() => {
+    const savedData = localStorage.getItem('quoteFormData')
+    const savedStep = localStorage.getItem('quoteFormStep')
+    if (savedData) {
+      const parsed = JSON.parse(savedData)
+      Object.keys(parsed).forEach((key) => {
+        setValue(key as keyof QuoteFormData, parsed[key])
+      })
+    }
+    if (savedStep) {
+      setCurrentStep(parseInt(savedStep))
+    }
+  }, [setValue])
+
+  // Save form data to localStorage on change
+  useEffect(() => {
+    const subscription = watch((value) => {
+      localStorage.setItem('quoteFormData', JSON.stringify(value))
+    })
+    return () => subscription.unsubscribe()
+  }, [watch])
+
+  // Save current step to localStorage
+  useEffect(() => {
+    localStorage.setItem('quoteFormStep', currentStep.toString())
+  }, [currentStep])
 
   const squareFootage = watch('squareFootage')
   const cleaningFrequency = watch('cleaningFrequency')
@@ -93,6 +125,28 @@ export default function QuoteFormSimplified({ onSuccess }: QuoteFormSimplifiedPr
       setEstimate(null)
     }
   }, [squareFootage, cleaningFrequency])
+
+  // Step navigation handlers
+  const handleNext = async () => {
+    let fieldsToValidate: (keyof QuoteFormData)[] = []
+
+    if (currentStep === 1) {
+      fieldsToValidate = ['fullName', 'company', 'email', 'phone']
+    } else if (currentStep === 2) {
+      fieldsToValidate = ['address', 'city', 'zipCode', 'facilityType', 'squareFootage']
+    }
+
+    const isValid = await trigger(fieldsToValidate)
+    if (isValid) {
+      setCurrentStep((prev) => Math.min(prev + 1, totalSteps))
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+    }
+  }
+
+  const handleBack = () => {
+    setCurrentStep((prev) => Math.max(prev - 1, 1))
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
 
   const onSubmit = async (data: QuoteFormData) => {
     try {
@@ -126,6 +180,10 @@ export default function QuoteFormSimplified({ onSuccess }: QuoteFormSimplifiedPr
           cleaning_frequency: data.cleaningFrequency,
         })
       }
+
+      // Clear saved form data
+      localStorage.removeItem('quoteFormData')
+      localStorage.removeItem('quoteFormStep')
 
       // Show success message
       setSubmitSuccess(true)
@@ -201,11 +259,52 @@ export default function QuoteFormSimplified({ onSuccess }: QuoteFormSimplifiedPr
       {/* Header */}
       <div className="mb-8 text-center">
         <h2 className="mb-3 text-3xl font-bold text-neutral-charcoal dark:text-white">
-          Quick 60-Second Form
+          Request Your Free Quote
         </h2>
-        <p className="text-neutral-charcoal/70 dark:text-white/80">
+        <p className="text-neutral-charcoal/70 dark:text-white/80 mb-6">
           No spam, no pressure. Just honest pricing for quality commercial cleaning.
         </p>
+
+        {/* Progress Indicator */}
+        <div className="max-w-2xl mx-auto">
+          <div className="flex items-center justify-between mb-2">
+            {[1, 2, 3].map((step) => (
+              <div key={step} className="flex items-center flex-1">
+                <div className="flex items-center w-full">
+                  <div
+                    className={`flex items-center justify-center w-10 h-10 rounded-full border-2 font-semibold transition-all ${
+                      step === currentStep
+                        ? 'border-brand-bright-blue bg-brand-bright-blue text-white'
+                        : step < currentStep
+                        ? 'border-brand-bright-blue bg-brand-bright-blue text-white'
+                        : 'border-gray-300 dark:border-gray-600 bg-white dark:bg-slate-800 text-gray-400 dark:text-gray-500'
+                    }`}
+                  >
+                    {step < currentStep ? (
+                      <CheckCircle2 className="h-5 w-5" />
+                    ) : (
+                      step
+                    )}
+                  </div>
+                  {step < 3 && (
+                    <div
+                      className={`h-1 w-full mx-2 rounded transition-all ${
+                        step < currentStep
+                          ? 'bg-brand-bright-blue'
+                          : 'bg-gray-300 dark:bg-gray-600'
+                      }`}
+                    />
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="flex justify-between text-xs text-neutral-charcoal/60 dark:text-white/60">
+            <span className={currentStep === 1 ? 'font-semibold text-brand-bright-blue' : ''}>Contact Info</span>
+            <span className={currentStep === 2 ? 'font-semibold text-brand-bright-blue' : ''}>Facility Details</span>
+            <span className={currentStep === 3 ? 'font-semibold text-brand-bright-blue' : ''}>Service Needs</span>
+          </div>
+        </div>
       </div>
 
       {/* Trust Badges */}
@@ -253,11 +352,12 @@ export default function QuoteFormSimplified({ onSuccess }: QuoteFormSimplifiedPr
         )}
 
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-8">
-          {/* Contact Information Section */}
-          <div className="space-y-4">
-            <h3 className="text-xl font-semibold text-brand-deep-blue dark:text-brand-bright-blue mb-6">
-              Your Information
-            </h3>
+          {/* Step 1: Contact Information */}
+          {currentStep === 1 && (
+            <div className="space-y-4">
+              <h3 className="text-xl font-semibold text-brand-deep-blue dark:text-brand-bright-blue mb-6">
+                Your Information
+              </h3>
 
             <div className="grid gap-4 md:grid-cols-2">
               <div>
@@ -326,13 +426,15 @@ export default function QuoteFormSimplified({ onSuccess }: QuoteFormSimplifiedPr
                 )}
               </div>
             </div>
-          </div>
+            </div>
+          )}
 
-          {/* Facility Information Section */}
-          <div className="space-y-4">
-            <h3 className="text-xl font-semibold text-brand-deep-blue dark:text-brand-bright-blue mb-6">
-              Facility Details
-            </h3>
+          {/* Step 2: Facility Information */}
+          {currentStep === 2 && (
+            <div className="space-y-4">
+              <h3 className="text-xl font-semibold text-brand-deep-blue dark:text-brand-bright-blue mb-6">
+                Facility Details
+              </h3>
 
             <div>
               <label htmlFor="address" className="mb-2 block text-sm font-medium text-neutral-charcoal dark:text-white">
@@ -429,6 +531,15 @@ export default function QuoteFormSimplified({ onSuccess }: QuoteFormSimplifiedPr
                 )}
               </div>
             </div>
+            </div>
+          )}
+
+          {/* Step 3: Service Needs */}
+          {currentStep === 3 && (
+            <div className="space-y-4">
+              <h3 className="text-xl font-semibold text-brand-deep-blue dark:text-brand-bright-blue mb-6">
+                Service Needs
+              </h3>
 
             <div className="grid gap-4 md:grid-cols-2">
               <div>
@@ -537,6 +648,9 @@ export default function QuoteFormSimplified({ onSuccess }: QuoteFormSimplifiedPr
             <p className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.consent.message}</p>
           )}
 
+            </div>
+          )}
+
           {/* Honeypot */}
           <input
             {...register('website')}
@@ -547,29 +661,59 @@ export default function QuoteFormSimplified({ onSuccess }: QuoteFormSimplifiedPr
             aria-hidden="true"
           />
 
-          {/* Submit Button */}
-          <div className="space-y-4">
-            <Button
-              type="submit"
-              variant="accent"
-              disabled={isSubmitting}
-              className="w-full h-14 text-lg font-semibold"
-            >
-              {isSubmitting ? (
-                <>
-                  <Loader2 className="mr-2 h-5 w-5 animate-spin" />
-                  Submitting...
-                </>
-              ) : (
-                'Request Quote'
-              )}
-            </Button>
+          {/* Navigation Buttons */}
+          <div className="flex justify-between items-center pt-6 border-t border-gray-200 dark:border-gray-700">
+            {currentStep > 1 ? (
+              <Button
+                type="button"
+                variant="outline"
+                onClick={handleBack}
+                className="flex items-center gap-2"
+              >
+                <ChevronLeft className="h-4 w-4" />
+                Back
+              </Button>
+            ) : (
+              <div />
+            )}
 
-            <div className="text-center text-sm text-neutral-charcoal/70 dark:text-white/70">
-              <p>✓ No contracts required · ✓ Response within 24 hours · ✓ No spam</p>
-            </div>
-            <FormLegalNotice className="text-center" />
+            {currentStep < totalSteps ? (
+              <Button
+                type="button"
+                variant="accent"
+                onClick={handleNext}
+                className="flex items-center gap-2 ml-auto"
+              >
+                Next Step
+                <ChevronRight className="h-4 w-4" />
+              </Button>
+            ) : (
+              <Button
+                type="submit"
+                variant="accent"
+                disabled={isSubmitting}
+                className="ml-auto h-12 px-8 font-semibold"
+              >
+                {isSubmitting ? (
+                  <>
+                    <Loader2 className="mr-2 h-5 w-5 animate-spin" />
+                    Submitting...
+                  </>
+                ) : (
+                  'Submit Quote Request'
+                )}
+              </Button>
+            )}
           </div>
+
+          {currentStep === totalSteps && (
+            <div className="space-y-4 mt-4">
+              <div className="text-center text-sm text-neutral-charcoal/70 dark:text-white/70">
+                <p>✓ No contracts required · ✓ Response within 24 hours · ✓ No spam</p>
+              </div>
+              <FormLegalNotice className="text-center" />
+            </div>
+          )}
         </form>
       </div>
 
