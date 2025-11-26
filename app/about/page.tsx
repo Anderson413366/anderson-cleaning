@@ -57,62 +57,162 @@ export default function AboutPage() {
       {/* Our Story */}
       <section className="py-20 bg-white dark:bg-slate-900">
         <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-h2 leading-tight font-bold text-neutral-charcoal dark:text-white mb-6 text-center">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-h2 leading-tight font-bold text-neutral-charcoal dark:text-white mb-4 text-center">
               Our Story
             </h2>
-            <div className="space-y-6 text-body leading-relaxed text-neutral-charcoal/80 dark:text-white/80 text-center md:text-left">
-              <p>
-                Anderson Cleaning Company was founded with a simple but powerful vision: to provide
-                corporate-grade commercial cleaning services with the accountability and personal
-                attention of a family business.
-              </p>
-              <p>
-                After years of watching businesses struggle with unreliable cleaning contractors,
-                high turnover, and inconsistent quality, we knew there had to be a better way. We
-                built Anderson Cleaning Company on three core principles:
-              </p>
-            </div>
-            <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
-              {[
-                {
-                  icon: Users,
-                  title: 'Invest in People',
-                  description: 'Full-time salaried employees, not contractors',
-                },
-                {
-                  icon: Target,
-                  title: 'Systems & Standards',
-                  description: 'Corporate-grade processes and quality control',
-                },
-                {
-                  icon: Heart,
-                  title: 'Personal Touch',
-                  description: '24/7 support with real accountability',
-                },
-              ].map((principle, index) => {
-                const Icon = principle.icon
-                return (
-                  <div
-                    key={index}
-                    className="bg-neutral-off-white dark:bg-slate-800 border border-neutral-light-grey dark:border-slate-700 rounded-xl p-6 text-center"
-                  >
-                    <Icon className="h-12 w-12 text-brand-deep-blue dark:text-brand-bright-blue mx-auto mb-4" />
-                    <h3 className="font-bold text-neutral-charcoal dark:text-white mb-2">
-                      {principle.title}
-                    </h3>
-                    <p className="text-body text-neutral-charcoal/80 dark:text-white/80">
-                      {principle.description}
-                    </p>
-                  </div>
-                )
-              })}
-            </div>
-            <p className="text-body leading-relaxed text-neutral-charcoal/80 dark:text-white/80 mt-10 text-center md:text-left">
-              Today, we serve dozens of commercial facilities across Massachusetts and Connecticut,
-              from small professional offices to large corporate campuses. Our secret? We treat
-              every client like they're our only client.
+            <p className="text-neutral-charcoal/70 dark:text-white/80 text-center mb-16 max-w-3xl mx-auto">
+              Built on a foundation of reliability, quality, and genuine care for our clients
             </p>
+
+            {/* Timeline with Milestones */}
+            <div className="relative">
+              {/* Vertical line (hidden on mobile) */}
+              <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-brand-bright-blue/30 dark:bg-brand-bright-blue/20 -translate-x-1/2"></div>
+
+              <div className="space-y-12 md:space-y-16">
+                {/* Milestone 1: Founded */}
+                <div className="relative grid md:grid-cols-2 gap-8 items-center">
+                  {/* Left side - Image placeholder */}
+                  <div className="md:text-right order-2 md:order-1">
+                    <div className="bg-gradient-to-br from-brand-deep-blue/10 to-brand-bright-blue/10 dark:from-brand-deep-blue/20 dark:to-brand-bright-blue/20 rounded-xl p-8 md:p-12 border-2 border-brand-deep-blue/20 dark:border-brand-bright-blue/30">
+                      <div className="flex items-center justify-center mb-4">
+                        <Building2 className="h-16 w-16 md:h-20 md:w-20 text-brand-deep-blue dark:text-brand-bright-blue" />
+                      </div>
+                      <p className="text-sm font-semibold text-brand-deep-blue dark:text-brand-bright-blue uppercase tracking-wide">
+                        The Beginning
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Center badge */}
+                  <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center justify-center w-16 h-16 rounded-full bg-brand-deep-blue dark:bg-brand-bright-blue text-white font-bold text-lg shadow-lg border-4 border-white dark:border-slate-900 order-3">
+                    2007
+                  </div>
+
+                  {/* Right side - Content */}
+                  <div className="order-1 md:order-3">
+                    <div className="bg-white dark:bg-slate-800 border border-neutral-light-grey dark:border-slate-700 rounded-xl p-6 md:p-8 shadow-sm">
+                      <div className="flex items-center gap-3 mb-4 md:hidden">
+                        <div className="flex items-center justify-center w-12 h-12 rounded-full bg-brand-deep-blue dark:bg-brand-bright-blue text-white font-bold">
+                          2007
+                        </div>
+                        <h3 className="text-h3 font-bold text-neutral-charcoal dark:text-white">
+                          Founded on Vision
+                        </h3>
+                      </div>
+                      <h3 className="hidden md:block text-h3 font-bold text-neutral-charcoal dark:text-white mb-4">
+                        Founded on Vision
+                      </h3>
+                      <p className="text-body text-neutral-charcoal/80 dark:text-white/80 mb-4">
+                        Anderson Cleaning Company was founded with a simple but powerful vision: provide corporate-grade commercial cleaning with the accountability and personal attention of a family business.
+                      </p>
+                      <p className="text-body text-neutral-charcoal/80 dark:text-white/80">
+                        After watching businesses struggle with unreliable contractors, high turnover, and inconsistent quality, we knew there had to be a better way.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Milestone 2: First 100 Clients */}
+                <div className="relative grid md:grid-cols-2 gap-8 items-center">
+                  {/* Left side - Content */}
+                  <div className="order-1">
+                    <div className="bg-white dark:bg-slate-800 border border-neutral-light-grey dark:border-slate-700 rounded-xl p-6 md:p-8 shadow-sm">
+                      <div className="flex items-center gap-3 mb-4 md:hidden">
+                        <div className="flex items-center justify-center w-12 h-12 rounded-full bg-brand-deep-blue dark:bg-brand-bright-blue text-white font-bold">
+                          2015
+                        </div>
+                        <h3 className="text-h3 font-bold text-neutral-charcoal dark:text-white">
+                          100+ Clients Strong
+                        </h3>
+                      </div>
+                      <h3 className="hidden md:block text-h3 font-bold text-neutral-charcoal dark:text-white mb-4">
+                        100+ Clients Strong
+                      </h3>
+                      <p className="text-body text-neutral-charcoal/80 dark:text-white/80 mb-4">
+                        By staying true to our core principles—investing in people, implementing corporate systems, and maintaining our personal touch—we grew to serve over 100 commercial facilities.
+                      </p>
+                      <div className="grid grid-cols-3 gap-4 mt-6">
+                        {[
+                          { icon: Users, label: 'W-2 Employees' },
+                          { icon: Target, label: 'Quality Systems' },
+                          { icon: Heart, label: 'Personal Care' },
+                        ].map((item, idx) => {
+                          const Icon = item.icon
+                          return (
+                            <div key={idx} className="text-center">
+                              <Icon className="h-8 w-8 mx-auto mb-2 text-brand-bright-blue" />
+                              <p className="text-xs text-neutral-charcoal/70 dark:text-white/70">{item.label}</p>
+                            </div>
+                          )
+                        })}
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Center badge */}
+                  <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center justify-center w-16 h-16 rounded-full bg-brand-deep-blue dark:bg-brand-bright-blue text-white font-bold text-lg shadow-lg border-4 border-white dark:border-slate-900 order-2">
+                    2015
+                  </div>
+
+                  {/* Right side - Image placeholder */}
+                  <div className="order-2 md:order-3">
+                    <div className="bg-gradient-to-br from-brand-bright-blue/10 to-brand-deep-blue/10 dark:from-brand-bright-blue/20 dark:to-brand-deep-blue/20 rounded-xl p-8 md:p-12 border-2 border-brand-bright-blue/20 dark:border-brand-bright-blue/30">
+                      <div className="flex items-center justify-center mb-4">
+                        <TrendingUp className="h-16 w-16 md:h-20 md:w-20 text-brand-bright-blue" />
+                      </div>
+                      <p className="text-sm font-semibold text-brand-bright-blue uppercase tracking-wide text-center">
+                        Growing Together
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Milestone 3: Today */}
+                <div className="relative grid md:grid-cols-2 gap-8 items-center">
+                  {/* Left side - Image placeholder */}
+                  <div className="md:text-right order-2 md:order-1">
+                    <div className="bg-gradient-to-br from-brand-deep-blue to-brand-bright-blue rounded-xl p-8 md:p-12 text-white">
+                      <div className="flex items-center justify-center mb-4">
+                        <Star className="h-16 w-16 md:h-20 md:w-20" />
+                      </div>
+                      <p className="text-sm font-bold uppercase tracking-wide">
+                        Excellence in Service
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Center badge */}
+                  <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center justify-center w-16 h-16 rounded-full bg-brand-deep-blue dark:bg-brand-bright-blue text-white font-bold text-lg shadow-lg border-4 border-white dark:border-slate-900 order-3">
+                    Today
+                  </div>
+
+                  {/* Right side - Content */}
+                  <div className="order-1 md:order-3">
+                    <div className="bg-white dark:bg-slate-800 border border-neutral-light-grey dark:border-slate-700 rounded-xl p-6 md:p-8 shadow-sm">
+                      <div className="flex items-center gap-3 mb-4 md:hidden">
+                        <div className="flex items-center justify-center w-12 h-12 rounded-full bg-brand-deep-blue dark:bg-brand-bright-blue text-white font-bold text-sm">
+                          Today
+                        </div>
+                        <h3 className="text-h3 font-bold text-neutral-charcoal dark:text-white">
+                          Trusted Partner
+                        </h3>
+                      </div>
+                      <h3 className="hidden md:block text-h3 font-bold text-neutral-charcoal dark:text-white mb-4">
+                        Trusted Partner
+                      </h3>
+                      <p className="text-body text-neutral-charcoal/80 dark:text-white/80 mb-4">
+                        Today, we serve commercial facilities across Massachusetts and Connecticut, from small professional offices to large corporate campuses. With {YEARS_IN_BUSINESS}+ years of experience, we continue to grow while staying true to our founding vision.
+                      </p>
+                      <p className="text-body font-semibold text-brand-deep-blue dark:text-brand-bright-blue">
+                        Our secret? We treat every client like they're our only client.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
