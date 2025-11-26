@@ -299,20 +299,39 @@ function RelatedAndFAQSection({ service }: { service: ServiceData }) {
             </p>
           </div>
 
-          {/* Horizontal scrollable carousel */}
-          <div className="relative">
-            <div className="flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide md:grid md:grid-cols-2 md:overflow-visible lg:grid-cols-3">
-              {related.map((item) => (
+          {/* Related Services Cards - 240px × 160px with icons and descriptions */}
+          <div className="flex gap-6 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide justify-center flex-wrap md:flex-nowrap md:overflow-visible">
+            {related.map((item) => {
+              const Icon = item.icon
+              return (
                 <Link
                   key={item.slug}
                   href={`/services/${item.slug}`}
-                  className="flex-shrink-0 w-[280px] md:w-auto flex flex-col justify-between rounded-2xl border border-neutral-light-grey bg-white px-6 py-5 text-lg font-semibold text-brand-deep-blue transition-all duration-200 hover:-translate-y-1 hover:shadow-lg hover:border-brand-bright-blue hover:text-brand-bright-blue dark:border-slate-700 dark:bg-slate-900 dark:text-white snap-start"
+                  className="group flex-shrink-0 w-[240px] h-[160px] flex flex-col rounded-xl border border-[#E0E0E0] bg-[#F5F7FB] dark:bg-slate-800 dark:border-slate-700 p-6 transition-all duration-200 hover:-translate-y-1 hover:shadow-lg hover:border-brand-bright-blue snap-start"
                 >
-                  <span className="mb-2">{item.title}</span>
-                  <ArrowRight className="h-5 w-5 self-end" aria-hidden="true" />
+                  {/* Icon */}
+                  <div className="flex items-center justify-center w-10 h-10 rounded-full bg-brand-bright-blue mb-3">
+                    <Icon className="h-5 w-5 text-white" strokeWidth={2} aria-hidden="true" />
+                  </div>
+
+                  {/* Title */}
+                  <h3 className="text-sm font-bold text-brand-deep-blue dark:text-white mb-1 line-clamp-1">
+                    {item.title}
+                  </h3>
+
+                  {/* Description - 14px, single line */}
+                  <p className="text-sm text-[#666666] dark:text-white/70 line-clamp-1 mb-auto">
+                    {item.tagline.split('.')[0]}
+                  </p>
+
+                  {/* Learn More Link */}
+                  <div className="flex items-center gap-1 text-sm font-semibold text-brand-bright-blue group-hover:underline">
+                    <span>Learn More</span>
+                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
+                  </div>
                 </Link>
-              ))}
-            </div>
+              )
+            })}
           </div>
         </div>
 
