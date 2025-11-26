@@ -85,64 +85,58 @@ export default function Home() {
             </p>
           </div>
 
-          {/* Unified Services Grid - 3x2 layout with consistent styling */}
+          {/* Unified Services Grid - Apple-style minimal cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
             {[
               {
                 title: 'Office & Commercial Cleaning',
-                description: 'Daily and weekly cleaning programs designed to keep your workplace spotless, professional, and welcoming',
+                description: 'Daily programs for spotless, professional workplaces',
                 icon: Building2,
-                label: 'Office building icon',
               },
               {
                 title: 'Janitorial Services',
-                description: 'Comprehensive facility care with reliable W-2 teams, consistent schedules, and accountable service',
+                description: 'Reliable W-2 teams with consistent schedules',
                 icon: Sparkles,
-                label: 'Janitorial icon',
               },
               {
                 title: 'Floor & Carpet Care',
-                description: 'Strip, wax, buff, and deep cleaning for pristine floors',
+                description: 'Strip, wax, buff, and deep cleaning services',
                 icon: Zap,
-                label: 'Floor care icon',
               },
               {
                 title: 'Window Cleaning',
-                description: 'Interior & exterior, streak-free results every time',
+                description: 'Interior and exterior streak-free results',
                 icon: Square,
-                label: 'Window cleaning icon',
               },
               {
                 title: 'Post-Construction',
                 description: 'Move-in ready cleanup after renovations',
                 icon: HardHat,
-                label: 'Construction icon',
               },
               {
                 title: 'Supply Management',
-                description: 'Auto-replenishment of consumables and supplies',
+                description: 'Auto-replenishment of consumables',
                 icon: Package,
-                label: 'Supply management icon',
               },
-            ].map((service, i) => {
-              return (
-                <div
-                  key={i}
-                  className="bg-brand-deep-blue dark:bg-brand-deep-blue text-white rounded-xl p-6 shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
-                >
-                  {/* Glass-morphism icon - Large (64px) for service cards */}
-                  <div className="mb-4">
-                    <GlassIcon icon={service.icon} size="lg" variant="light" label={service.label} />
-                  </div>
-                  <h3 className="text-xl font-bold mb-3 text-white">
-                    {service.title}
-                  </h3>
-                  <p className="text-base leading-relaxed text-white/90">
-                    {service.description}
-                  </p>
+            ].map((service, i) => (
+              <div
+                key={i}
+                className="h-[240px] bg-white dark:bg-slate-800 rounded-xl p-6 border border-neutral-light-grey dark:border-slate-700 hover:border-brand-bright-blue hover:shadow-lg transition-all duration-200 flex flex-col"
+              >
+                {/* Icon */}
+                <div className="mb-4">
+                  <GlassIcon icon={service.icon} size="lg" variant="solid" label={service.title} />
                 </div>
-              )
-            })}
+                {/* Title - 16px bold #002A86 */}
+                <h3 className="text-base font-bold text-brand-deep-blue dark:text-white mb-2">
+                  {service.title}
+                </h3>
+                {/* Description - 14px #666666, single line */}
+                <p className="text-sm text-[#666666] dark:text-white/70">
+                  {service.description}
+                </p>
+              </div>
+            ))}
           </div>
 
           <div className="text-center mt-8">
