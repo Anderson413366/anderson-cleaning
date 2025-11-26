@@ -369,7 +369,7 @@ export default function QuoteFormSimplified({ onSuccess }: QuoteFormSimplifiedPr
                     {...register('fullName')}
                     id="fullName"
                     type="text"
-                    className={`w-full rounded-lg border-2 px-4 py-2 pr-10 focus:ring-2 dark:bg-slate-900 dark:text-white transition-colors ${getFieldState('fullName').className}`}
+                    className={`w-full rounded-lg border-2 px-4 py-3 pr-10 focus:ring-2 dark:bg-slate-900 dark:text-white transition-colors min-h-[48px] ${getFieldState('fullName').className}`}
                     placeholder="John Smith"
                   />
                   {getFieldState('fullName').isValid && (
@@ -393,7 +393,7 @@ export default function QuoteFormSimplified({ onSuccess }: QuoteFormSimplifiedPr
                     {...register('company')}
                     id="company"
                     type="text"
-                    className={`w-full rounded-lg border-2 px-4 py-2 pr-10 focus:ring-2 dark:bg-slate-900 dark:text-white transition-colors ${getFieldState('company').className}`}
+                    className={`w-full rounded-lg border-2 px-4 py-3 pr-10 focus:ring-2 dark:bg-slate-900 dark:text-white transition-colors min-h-[48px] ${getFieldState('company').className}`}
                     placeholder="ABC Corporation"
                   />
                   {getFieldState('company').isValid && (
@@ -419,7 +419,7 @@ export default function QuoteFormSimplified({ onSuccess }: QuoteFormSimplifiedPr
                     {...register('email')}
                     id="email"
                     type="email"
-                    className={`w-full rounded-lg border-2 px-4 py-2 pr-10 focus:ring-2 dark:bg-slate-900 dark:text-white transition-colors ${getFieldState('email').className}`}
+                    className={`w-full rounded-lg border-2 px-4 py-3 pr-10 focus:ring-2 dark:bg-slate-900 dark:text-white transition-colors min-h-[48px] ${getFieldState('email').className}`}
                     placeholder="john@company.com"
                   />
                   {getFieldState('email').isValid && (
@@ -443,7 +443,7 @@ export default function QuoteFormSimplified({ onSuccess }: QuoteFormSimplifiedPr
                     {...register('phone')}
                     id="phone"
                     type="tel"
-                    className={`w-full rounded-lg border-2 px-4 py-2 pr-10 focus:ring-2 dark:bg-slate-900 dark:text-white transition-colors ${getFieldState('phone').className}`}
+                    className={`w-full rounded-lg border-2 px-4 py-3 pr-10 focus:ring-2 dark:bg-slate-900 dark:text-white transition-colors min-h-[48px] ${getFieldState('phone').className}`}
                     placeholder={CONTACT_INFO.phone.formatted}
                   />
                   {getFieldState('phone').isValid && (
@@ -477,7 +477,7 @@ export default function QuoteFormSimplified({ onSuccess }: QuoteFormSimplifiedPr
                   {...register('address')}
                   id="address"
                   type="text"
-                  className={`w-full rounded-lg border-2 px-4 py-2 pr-10 focus:ring-2 dark:bg-slate-900 dark:text-white transition-colors ${getFieldState('address').className}`}
+                  className={`w-full rounded-lg border-2 px-4 py-3 pr-10 focus:ring-2 dark:bg-slate-900 dark:text-white transition-colors min-h-[48px] ${getFieldState('address').className}`}
                   placeholder="123 Main Street"
                 />
                 {getFieldState('address').isValid && (
@@ -502,7 +502,7 @@ export default function QuoteFormSimplified({ onSuccess }: QuoteFormSimplifiedPr
                     {...register('city')}
                     id="city"
                     type="text"
-                    className={`w-full rounded-lg border-2 px-4 py-2 pr-10 focus:ring-2 dark:bg-slate-900 dark:text-white transition-colors ${getFieldState('city').className}`}
+                    className={`w-full rounded-lg border-2 px-4 py-3 pr-10 focus:ring-2 dark:bg-slate-900 dark:text-white transition-colors min-h-[48px] ${getFieldState('city').className}`}
                     placeholder="Springfield"
                   />
                   {getFieldState('city').isValid && (
@@ -526,7 +526,7 @@ export default function QuoteFormSimplified({ onSuccess }: QuoteFormSimplifiedPr
                     {...register('zipCode')}
                     id="zipCode"
                     type="text"
-                    className={`w-full rounded-lg border-2 px-4 py-2 pr-10 focus:ring-2 dark:bg-slate-900 dark:text-white transition-colors ${getFieldState('zipCode').className}`}
+                    className={`w-full rounded-lg border-2 px-4 py-3 pr-10 focus:ring-2 dark:bg-slate-900 dark:text-white transition-colors min-h-[48px] ${getFieldState('zipCode').className}`}
                     placeholder="01089"
                     maxLength={5}
                   />
@@ -605,7 +605,7 @@ export default function QuoteFormSimplified({ onSuccess }: QuoteFormSimplifiedPr
                   {...register('squareFootage', { valueAsNumber: true })}
                   id="squareFootage"
                   type="number"
-                  className="w-full rounded-lg border-2 border-gray-300 px-4 py-2 focus:border-brand-bright-blue focus:ring-2 focus:ring-brand-bright-blue/20 dark:border-gray-600 dark:bg-slate-900 dark:text-white"
+                  className="w-full rounded-lg border-2 border-gray-300 px-4 py-3 focus:border-brand-bright-blue focus:ring-2 focus:ring-brand-bright-blue/20 dark:border-gray-600 dark:bg-slate-900 dark:text-white min-h-[48px]"
                   placeholder="5000"
                   min="1000"
                 />
@@ -667,7 +667,7 @@ export default function QuoteFormSimplified({ onSuccess }: QuoteFormSimplifiedPr
                   id="desiredStartDate"
                   type="date"
                   min={new Date().toISOString().split('T')[0]}
-                  className="w-full rounded-lg border-2 border-gray-300 px-4 py-2 focus:border-brand-bright-blue focus:ring-2 focus:ring-brand-bright-blue/20 dark:border-gray-600 dark:bg-slate-900 dark:text-white"
+                  className="w-full rounded-lg border-2 border-gray-300 px-4 py-3 focus:border-brand-bright-blue focus:ring-2 focus:ring-brand-bright-blue/20 dark:border-gray-600 dark:bg-slate-900 dark:text-white min-h-[48px]"
                 />
               </div>
             </div>
@@ -714,7 +714,7 @@ export default function QuoteFormSimplified({ onSuccess }: QuoteFormSimplifiedPr
               id="specialRequests"
               rows={4}
               maxLength={500}
-              className="w-full rounded-lg border-2 border-gray-300 px-4 py-2 focus:border-brand-bright-blue focus:ring-2 focus:ring-brand-bright-blue/20 dark:border-gray-600 dark:bg-slate-900 dark:text-white"
+              className="w-full rounded-lg border-2 border-gray-300 px-4 py-3 focus:border-brand-bright-blue focus:ring-2 focus:ring-brand-bright-blue/20 dark:border-gray-600 dark:bg-slate-900 dark:text-white min-h-[48px]"
               placeholder="Tell us about any special requirements, current challenges, or questions..."
             />
             <p className="mt-1 text-xs text-neutral-charcoal/60 dark:text-neutral-charcoal">

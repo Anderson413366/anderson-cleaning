@@ -205,7 +205,7 @@ export default function QuoteForm({ onSuccess }: QuoteFormProps) {
                     {...register('fullName')}
                     type="text"
                     id="fullName"
-                    className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-slate-800 text-neutral-charcoal dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-slate-800 text-neutral-charcoal dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-primary-500 min-h-[48px]"
                     placeholder="John Smith"
                   />
                   {errors.fullName && (
@@ -227,7 +227,7 @@ export default function QuoteForm({ onSuccess }: QuoteFormProps) {
                     {...register('company')}
                     type="text"
                     id="company"
-                    className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-slate-800 text-neutral-charcoal dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-slate-800 text-neutral-charcoal dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-primary-500 min-h-[48px]"
                     placeholder="ABC Corporation"
                   />
                   {errors.company && (
@@ -249,7 +249,7 @@ export default function QuoteForm({ onSuccess }: QuoteFormProps) {
                     {...register('email')}
                     type="email"
                     id="email"
-                    className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-slate-800 text-neutral-charcoal dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-slate-800 text-neutral-charcoal dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-primary-500 min-h-[48px]"
                     placeholder="john@abccorp.com"
                   />
                   {errors.email && (
@@ -272,7 +272,7 @@ export default function QuoteForm({ onSuccess }: QuoteFormProps) {
                     type="tel"
                     id="phone"
                     autoComplete="tel"
-                    className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-slate-800 text-neutral-charcoal dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-slate-800 text-neutral-charcoal dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-primary-500 min-h-[48px]"
                     placeholder="(413) 306-5053"
                   />
                   {errors.phone && (
@@ -309,7 +309,7 @@ export default function QuoteForm({ onSuccess }: QuoteFormProps) {
                   {...register('address')}
                   type="text"
                   id="address"
-                  className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-slate-800 text-neutral-charcoal dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                  className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-slate-800 text-neutral-charcoal dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-primary-500 min-h-[48px]"
                   placeholder="123 Main Street"
                 />
                 {errors.address && (
@@ -332,7 +332,7 @@ export default function QuoteForm({ onSuccess }: QuoteFormProps) {
                     {...register('city')}
                     type="text"
                     id="city"
-                    className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-slate-800 text-neutral-charcoal dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-slate-800 text-neutral-charcoal dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-primary-500 min-h-[48px]"
                     placeholder="Springfield"
                   />
                   {errors.city && (
@@ -354,7 +354,7 @@ export default function QuoteForm({ onSuccess }: QuoteFormProps) {
                     {...register('zipCode')}
                     type="text"
                     id="zipCode"
-                    className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-slate-800 text-neutral-charcoal dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-slate-800 text-neutral-charcoal dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-primary-500 min-h-[48px]"
                     placeholder="01089"
                   />
                   {errors.zipCode && (
@@ -376,7 +376,7 @@ export default function QuoteForm({ onSuccess }: QuoteFormProps) {
                     {...register('squareFootage', { valueAsNumber: true })}
                     type="number"
                     id="squareFootage"
-                    className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-slate-800 text-neutral-charcoal dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-slate-800 text-neutral-charcoal dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-primary-500 min-h-[48px]"
                     placeholder="5000"
                   />
                   {errors.squareFootage && (
@@ -399,7 +399,7 @@ export default function QuoteForm({ onSuccess }: QuoteFormProps) {
                     type="date"
                     id="desiredStartDate"
                     min={new Date().toISOString().split('T')[0]}
-                    className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-slate-800 text-neutral-charcoal dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-slate-800 text-neutral-charcoal dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-primary-500 min-h-[48px]"
                   />
                   {errors.desiredStartDate && (
                     <p className="mt-1 text-sm text-red-600 dark:text-red-400">
@@ -421,7 +421,7 @@ export default function QuoteForm({ onSuccess }: QuoteFormProps) {
                   <select
                     {...register('facilityType')}
                     id="facilityType"
-                    className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-slate-800 text-neutral-charcoal dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-slate-800 text-neutral-charcoal dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-primary-500 min-h-[48px]"
                   >
                     <option value="">Select a facility type</option>
                     {Object.entries(facilityTypeLabels).map(([value, label]) => (
@@ -448,7 +448,7 @@ export default function QuoteForm({ onSuccess }: QuoteFormProps) {
                   <select
                     {...register('cleaningFrequency')}
                     id="cleaningFrequency"
-                    className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-slate-800 text-neutral-charcoal dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-slate-800 text-neutral-charcoal dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-primary-500 min-h-[48px]"
                   >
                     <option value="">Select frequency</option>
                     {Object.entries(cleaningFrequencyLabels).map(([value, label]) => (
@@ -563,7 +563,7 @@ export default function QuoteForm({ onSuccess }: QuoteFormProps) {
                   id="specialRequests"
                   rows={5}
                   maxLength={500}
-                  className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-slate-800 text-neutral-charcoal dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                  className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-slate-800 text-neutral-charcoal dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-primary-500 min-h-[48px]"
                   placeholder="e.g., We need eco-friendly products due to allergies, prefer evening cleaning, have specific compliance requirements..."
                 />
                 <p className="mt-1 text-sm text-neutral-charcoal/60 dark:text-white/70">
