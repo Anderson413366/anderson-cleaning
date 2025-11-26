@@ -42,14 +42,16 @@ const Button = forwardRef<HTMLButtonElement | HTMLDivElement, ButtonProps>(
     let sizeStyles = ''
     switch (size) {
       case 'sm':
-        sizeStyles = 'h-10 px-5 text-sm'
+        // Small buttons: 48px minimum height for mobile touch targets
+        sizeStyles = 'h-12 px-5 text-sm'
         break
       case 'lg':
         // Default size per spec: padding 14px 28px (h-[56px] px-7)
         sizeStyles = 'h-[56px] px-7 text-base font-semibold'
         break
       case 'icon':
-        sizeStyles = 'h-10 w-10'
+        // Icon buttons: 48px minimum for mobile touch targets
+        sizeStyles = 'h-12 w-12'
         break
       default: // 'default' size - standard button size
         // padding: 14px 28px as specified
