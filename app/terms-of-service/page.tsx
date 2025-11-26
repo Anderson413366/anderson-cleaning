@@ -7,7 +7,7 @@ const lastUpdated = {
 }
 
 export const metadata: Metadata = {
-  title: 'Terms of Service | Anderson Cleaning Company',
+  title: 'Terms of Service',
   description:
     'Review the commercial cleaning service terms that govern engagements with Anderson Cleaning Company in Western Massachusetts and Northern Connecticut.',
 }

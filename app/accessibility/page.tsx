@@ -7,7 +7,7 @@ const lastUpdated = {
 }
 
 export const metadata: Metadata = {
-  title: 'Accessibility Statement | Anderson Cleaning Company',
+  title: 'Accessibility Statement',
   description:
     'Learn how Anderson Cleaning Company designs its digital experiences to meet WCAG 2.1 AA accessibility standards.',
 }
