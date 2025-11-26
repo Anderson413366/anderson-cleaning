@@ -18,6 +18,7 @@ import {
   Leaf,
   Handshake,
   Star,
+  Phone,
 } from 'lucide-react'
 
 export const metadata: Metadata = {
@@ -217,8 +218,131 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Core Principles */}
+      {/* Leadership Team */}
       <section className="py-20 bg-neutral-off-white dark:bg-slate-800">
+        <div className="container mx-auto px-6">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-h2 leading-tight font-bold text-neutral-charcoal dark:text-white mb-4 text-center">
+              Meet Our Leadership Team
+            </h2>
+            <p className="text-neutral-charcoal/70 dark:text-white/80 text-center mb-12 max-w-3xl mx-auto">
+              Experienced professionals dedicated to delivering exceptional service and building lasting relationships
+            </p>
+
+            {/* Leadership Team Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+              {/* Team Member 1: Founder/Owner */}
+              <div className="bg-white dark:bg-slate-900 border-2 border-neutral-light-grey dark:border-slate-700 rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
+                <div className="relative h-64 bg-gradient-to-br from-brand-deep-blue to-brand-bright-blue flex items-center justify-center">
+                  <Users className="h-24 w-24 text-white/40" />
+                  <div className="absolute bottom-4 left-4 bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full">
+                    <p className="text-xs font-bold text-white uppercase tracking-wide">Founder</p>
+                  </div>
+                </div>
+                <div className="p-6">
+                  <h3 className="text-h3 font-bold text-neutral-charcoal dark:text-white mb-1">
+                    Anderson Gomes
+                  </h3>
+                  <p className="text-sm font-semibold text-brand-deep-blue dark:text-brand-bright-blue mb-4">
+                    Owner & Founder
+                  </p>
+                  <p className="text-body-sm text-neutral-charcoal/80 dark:text-white/80 leading-relaxed">
+                    Founded Anderson Cleaning in 2007 with a vision to provide corporate-grade cleaning with family business accountability. Oversees operations and client relationships.
+                  </p>
+                </div>
+              </div>
+
+              {/* Team Member 2: Operations Manager */}
+              <div className="bg-white dark:bg-slate-900 border-2 border-neutral-light-grey dark:border-slate-700 rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
+                <div className="relative h-64 bg-gradient-to-br from-brand-bright-blue/80 to-brand-deep-blue/80 flex items-center justify-center">
+                  <Target className="h-24 w-24 text-white/40" />
+                  <div className="absolute bottom-4 left-4 bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full">
+                    <p className="text-xs font-bold text-white uppercase tracking-wide">Operations</p>
+                  </div>
+                </div>
+                <div className="p-6">
+                  <h3 className="text-h3 font-bold text-neutral-charcoal dark:text-white mb-1">
+                    Operations Manager
+                  </h3>
+                  <p className="text-sm font-semibold text-brand-deep-blue dark:text-brand-bright-blue mb-4">
+                    Director of Operations
+                  </p>
+                  <p className="text-body-sm text-neutral-charcoal/80 dark:text-white/80 leading-relaxed">
+                    Manages daily operations, staff scheduling, and quality control systems. Ensures every facility receives consistent, high-quality service.
+                  </p>
+                </div>
+              </div>
+
+              {/* Team Member 3: Quality Assurance */}
+              <div className="bg-white dark:bg-slate-900 border-2 border-neutral-light-grey dark:border-slate-700 rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
+                <div className="relative h-64 bg-gradient-to-br from-brand-deep-blue/70 to-brand-bright-blue/70 flex items-center justify-center">
+                  <Award className="h-24 w-24 text-white/40" />
+                  <div className="absolute bottom-4 left-4 bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full">
+                    <p className="text-xs font-bold text-white uppercase tracking-wide">Quality</p>
+                  </div>
+                </div>
+                <div className="p-6">
+                  <h3 className="text-h3 font-bold text-neutral-charcoal dark:text-white mb-1">
+                    Quality Assurance Manager
+                  </h3>
+                  <p className="text-sm font-semibold text-brand-deep-blue dark:text-brand-bright-blue mb-4">
+                    Quality Control Director
+                  </p>
+                  <p className="text-body-sm text-neutral-charcoal/80 dark:text-white/80 leading-relaxed">
+                    Conducts regular facility inspections, monitors compliance with SOPs, and implements corrective action plans to maintain our quality standards.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Account Management Team Preview */}
+            <div className="bg-gradient-to-br from-brand-deep-blue to-brand-bright-blue rounded-xl p-8 md:p-10 text-white">
+              <div className="max-w-3xl mx-auto text-center">
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-white/20 rounded-full mb-6">
+                  <Heart className="h-8 w-8 text-white" />
+                </div>
+                <h3 className="text-h2 font-bold mb-4">
+                  Your Dedicated Account Management Team
+                </h3>
+                <p className="text-body text-white/95 mb-6 leading-relaxed">
+                  Every client is assigned a dedicated account manager who knows your facility, your team, and your specific needs. No call centers, no ticket systems—just real people who genuinely care about your success.
+                </p>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+                  {[
+                    {
+                      icon: Phone,
+                      title: '24/7 Direct Line',
+                      description: 'Call or text anytime—real people answer',
+                    },
+                    {
+                      icon: Clock,
+                      title: '2-Hour Response',
+                      description: 'Emergency on-site arrival guaranteed',
+                    },
+                    {
+                      icon: CheckCircle2,
+                      title: 'Proactive Support',
+                      description: 'Regular check-ins to ensure satisfaction',
+                    },
+                  ].map((item, idx) => {
+                    const Icon = item.icon
+                    return (
+                      <div key={idx} className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
+                        <Icon className="h-8 w-8 mx-auto mb-3 text-white" />
+                        <h4 className="font-bold text-white mb-2">{item.title}</h4>
+                        <p className="text-sm text-white/80">{item.description}</p>
+                      </div>
+                    )
+                  })}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Core Principles */}
+      <section className="py-20 bg-white dark:bg-slate-900">
         <div className="container mx-auto px-6">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-h2 leading-tight font-bold text-neutral-charcoal dark:text-white mb-4 text-center">
