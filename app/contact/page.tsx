@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import ContactForm from '@/components/forms/ContactForm'
-import { Phone, Mail, MapPin, Clock, CheckCircle2, Zap, AlertCircle } from 'lucide-react'
+import Link from 'next/link'
+import { Phone, Mail, MapPin, Clock, Zap, AlertCircle, ArrowRight } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Contact Us - Commercial Cleaning Services Springfield MA',
@@ -132,23 +133,16 @@ export default function ContactPage() {
                 <h3 className="text-h3 leading-normal font-semibold text-neutral-charcoal dark:text-white mb-3">
                   Service Area
                 </h3>
-                <p className="text-neutral-charcoal/80 dark:text-white/80 mb-3">
-                  We serve commercial facilities throughout:
+                <p className="text-neutral-charcoal/80 dark:text-white/80 mb-4">
+                  Serving Western MA & Northern CT
                 </p>
-                <ul className="space-y-2 text-sm text-neutral-charcoal/80 dark:text-white/80">
-                  <li className="flex items-center">
-                    <CheckCircle2 className="h-4 w-4 text-brand-bright-blue mr-2 flex-shrink-0" />
-                    Western Massachusetts
-                  </li>
-                  <li className="flex items-center">
-                    <CheckCircle2 className="h-4 w-4 text-accent-500 mr-2 flex-shrink-0" />
-                    Northern Connecticut
-                  </li>
-                  <li className="flex items-center">
-                    <CheckCircle2 className="h-4 w-4 text-accent-500 mr-2 flex-shrink-0" />
-                    100-mile radius of West Springfield
-                  </li>
-                </ul>
+                <Link
+                  href="/locations"
+                  className="inline-flex items-center gap-2 text-brand-bright-blue hover:text-brand-deep-blue dark:hover:text-white font-semibold text-sm transition-colors group"
+                >
+                  <span>View All Locations</span>
+                  <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                </Link>
               </div>
 
               {/* Emergency Contact */}
