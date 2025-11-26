@@ -472,13 +472,21 @@ export default function QuoteFormSimplified({ onSuccess }: QuoteFormSimplifiedPr
               <label htmlFor="address" className="mb-2 block text-sm font-medium text-neutral-charcoal dark:text-white">
                 Street Address <span className="text-red-500">*</span>
               </label>
-              <input
-                {...register('address')}
-                id="address"
-                type="text"
-                className="w-full rounded-lg border-2 border-gray-300 px-4 py-2 focus:border-brand-bright-blue focus:ring-2 focus:ring-brand-bright-blue/20 dark:border-gray-600 dark:bg-slate-900 dark:text-white"
-                placeholder="123 Main Street"
-              />
+              <div className="relative">
+                <input
+                  {...register('address')}
+                  id="address"
+                  type="text"
+                  className={`w-full rounded-lg border-2 px-4 py-2 pr-10 focus:ring-2 dark:bg-slate-900 dark:text-white transition-colors ${getFieldState('address').className}`}
+                  placeholder="123 Main Street"
+                />
+                {getFieldState('address').isValid && (
+                  <Check className="absolute right-3 top-1/2 -translate-y-1/2 h-5 w-5 text-green-500" />
+                )}
+                {getFieldState('address').hasError && (
+                  <X className="absolute right-3 top-1/2 -translate-y-1/2 h-5 w-5 text-red-500" />
+                )}
+              </div>
               {errors.address && (
                 <p className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.address.message}</p>
               )}
@@ -489,13 +497,21 @@ export default function QuoteFormSimplified({ onSuccess }: QuoteFormSimplifiedPr
                 <label htmlFor="city" className="mb-2 block text-sm font-medium text-neutral-charcoal dark:text-white">
                   City <span className="text-red-500">*</span>
                 </label>
-                <input
-                  {...register('city')}
-                  id="city"
-                  type="text"
-                  className="w-full rounded-lg border-2 border-gray-300 px-4 py-2 focus:border-brand-bright-blue focus:ring-2 focus:ring-brand-bright-blue/20 dark:border-gray-600 dark:bg-slate-900 dark:text-white"
-                  placeholder="Springfield"
-                />
+                <div className="relative">
+                  <input
+                    {...register('city')}
+                    id="city"
+                    type="text"
+                    className={`w-full rounded-lg border-2 px-4 py-2 pr-10 focus:ring-2 dark:bg-slate-900 dark:text-white transition-colors ${getFieldState('city').className}`}
+                    placeholder="Springfield"
+                  />
+                  {getFieldState('city').isValid && (
+                    <Check className="absolute right-3 top-1/2 -translate-y-1/2 h-5 w-5 text-green-500" />
+                  )}
+                  {getFieldState('city').hasError && (
+                    <X className="absolute right-3 top-1/2 -translate-y-1/2 h-5 w-5 text-red-500" />
+                  )}
+                </div>
                 {errors.city && (
                   <p className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.city.message}</p>
                 )}
@@ -505,14 +521,22 @@ export default function QuoteFormSimplified({ onSuccess }: QuoteFormSimplifiedPr
                 <label htmlFor="zipCode" className="mb-2 block text-sm font-medium text-neutral-charcoal dark:text-white">
                   ZIP Code <span className="text-red-500">*</span>
                 </label>
-                <input
-                  {...register('zipCode')}
-                  id="zipCode"
-                  type="text"
-                  className="w-full rounded-lg border-2 border-gray-300 px-4 py-2 focus:border-brand-bright-blue focus:ring-2 focus:ring-brand-bright-blue/20 dark:border-gray-600 dark:bg-slate-900 dark:text-white"
-                  placeholder="01089"
-                  maxLength={5}
-                />
+                <div className="relative">
+                  <input
+                    {...register('zipCode')}
+                    id="zipCode"
+                    type="text"
+                    className={`w-full rounded-lg border-2 px-4 py-2 pr-10 focus:ring-2 dark:bg-slate-900 dark:text-white transition-colors ${getFieldState('zipCode').className}`}
+                    placeholder="01089"
+                    maxLength={5}
+                  />
+                  {getFieldState('zipCode').isValid && (
+                    <Check className="absolute right-3 top-1/2 -translate-y-1/2 h-5 w-5 text-green-500" />
+                  )}
+                  {getFieldState('zipCode').hasError && (
+                    <X className="absolute right-3 top-1/2 -translate-y-1/2 h-5 w-5 text-red-500" />
+                  )}
+                </div>
                 {errors.zipCode && (
                   <p className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.zipCode.message}</p>
                 )}
@@ -608,18 +632,26 @@ export default function QuoteFormSimplified({ onSuccess }: QuoteFormSimplifiedPr
                 <label htmlFor="cleaningFrequency" className="mb-2 block text-sm font-medium text-neutral-charcoal dark:text-white">
                   Desired Cleaning Frequency <span className="text-red-500">*</span>
                 </label>
-                <select
-                  {...register('cleaningFrequency')}
-                  id="cleaningFrequency"
-                  className="w-full h-12 rounded-lg border-2 border-gray-300 px-4 focus:border-brand-bright-blue focus:ring-2 focus:ring-brand-bright-blue/20 dark:border-gray-600 dark:bg-slate-900 dark:text-white"
-                >
-                  <option value="">Select frequency...</option>
-                  {frequencies.map((freq) => (
-                    <option key={freq.value} value={freq.value}>
-                      {freq.label}
-                    </option>
-                  ))}
-                </select>
+                <div className="relative">
+                  <select
+                    {...register('cleaningFrequency')}
+                    id="cleaningFrequency"
+                    className={`w-full h-12 rounded-lg border-2 px-4 pr-10 focus:ring-2 dark:bg-slate-900 dark:text-white transition-colors ${getFieldState('cleaningFrequency').className}`}
+                  >
+                    <option value="">Select frequency...</option>
+                    {frequencies.map((freq) => (
+                      <option key={freq.value} value={freq.value}>
+                        {freq.label}
+                      </option>
+                    ))}
+                  </select>
+                  {getFieldState('cleaningFrequency').isValid && (
+                    <Check className="absolute right-10 top-1/2 -translate-y-1/2 h-5 w-5 text-green-500 pointer-events-none" />
+                  )}
+                  {getFieldState('cleaningFrequency').hasError && (
+                    <X className="absolute right-10 top-1/2 -translate-y-1/2 h-5 w-5 text-red-500 pointer-events-none" />
+                  )}
+                </div>
                 {errors.cleaningFrequency && (
                   <p className="mt-1 text-sm text-red-600 dark:text-red-400">
                     {errors.cleaningFrequency.message}
