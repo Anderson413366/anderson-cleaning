@@ -31,7 +31,6 @@ import {
 
 export default function Home() {
   const [showAdvancedModal, setShowAdvancedModal] = useState(false)
-  const [activeTestimonial, setActiveTestimonial] = useState(0)
   return (
     <div className="min-h-screen bg-neutral-off-white dark:bg-slate-900 transition-colors duration-300">
       {/* Promotional Modal */}
@@ -243,7 +242,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Testimonials Section with Featured Center Card & Mobile Carousel */}
+      {/* Testimonials Section - Static 3-column grid */}
       <section className="py-20 bg-neutral-off-white dark:bg-slate-900">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
@@ -258,8 +257,8 @@ export default function Home() {
             <p className="text-body text-neutral-charcoal/80 dark:text-white/70">5.0 stars from satisfied clients</p>
           </div>
 
-          {/* Desktop: Grid with Featured Center Card */}
-          <div className="hidden md:grid md:grid-cols-3 gap-8 items-center">
+          {/* Static responsive grid - 1 col mobile, 3 col desktop */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
                 quote:
@@ -288,11 +287,7 @@ export default function Home() {
             ].map((testimonial, i) => (
               <div
                 key={i}
-                className={`bg-white dark:bg-slate-800 rounded-xl p-8 transition-all duration-300 ${
-                  i === 1
-                    ? 'scale-110 shadow-[0_8px_24px_rgba(0,42,134,0.16)] z-10'
-                    : 'shadow-[0_2px_8px_rgba(0,42,134,0.08)]'
-                }`}
+                className="bg-white dark:bg-slate-800 rounded-xl p-8 shadow-[0_2px_8px_rgba(0,42,134,0.08)]"
               >
                 <div className="flex items-center space-x-1 mb-4" role="img" aria-label={`${testimonial.rating} out of 5 stars`}>
                   {[...Array(testimonial.rating)].map((_, j) => (
@@ -308,7 +303,6 @@ export default function Home() {
                   </p>
                   <p className="text-body-sm text-neutral-charcoal/70 dark:text-white/80">{testimonial.company}</p>
                 </div>
-                {/* Company Logo Badge */}
                 <div className="flex items-center justify-center">
                   <div className="inline-flex items-center justify-center h-12 w-12 rounded-lg bg-brand-deep-blue/10 dark:bg-brand-bright-blue/10">
                     <span className="text-sm font-bold text-brand-deep-blue dark:text-brand-bright-blue">
@@ -318,85 +312,6 @@ export default function Home() {
                 </div>
               </div>
             ))}
-          </div>
-
-          {/* Mobile: Carousel with Dot Navigation */}
-          <div className="md:hidden">
-            <div className="relative overflow-hidden">
-              <div
-                className="flex transition-transform duration-300 ease-in-out"
-                style={{ transform: `translateX(-${activeTestimonial * 100}%)` }}
-              >
-                {[
-                  {
-                    quote:
-                      'Anderson Cleaning Company transformed our medical office. Their attention to detail and OSHA compliance gives us complete peace of mind.',
-                    author: 'Dr. Sarah Mitchell',
-                    company: 'Springfield Family Medicine',
-                    companyInitials: 'SFM',
-                    rating: 5,
-                  },
-                  {
-                    quote:
-                      "We've tried three cleaning companies before Anderson. The difference is night and day. Their team is professional, consistent, and truly cares.",
-                    author: 'Michael Chen',
-                    company: 'TechStart Solutions',
-                    companyInitials: 'TS',
-                    rating: 5,
-                  },
-                  {
-                    quote:
-                      "The 24/7 support isn't just marketing – they really do respond in minutes. When we had an emergency spill, they had someone there within the hour.",
-                    author: 'Jennifer Rodriguez',
-                    company: 'Northeast Manufacturing',
-                    companyInitials: 'NM',
-                    rating: 5,
-                  },
-                ].map((testimonial, i) => (
-                  <div key={i} className="w-full flex-shrink-0 px-4">
-                    <div className="bg-white dark:bg-slate-800 rounded-xl p-8 shadow-[0_2px_8px_rgba(0,42,134,0.08)]">
-                      <div className="flex items-center space-x-1 mb-4" role="img" aria-label={`${testimonial.rating} out of 5 stars`}>
-                        {[...Array(testimonial.rating)].map((_, j) => (
-                          <Star key={j} className="h-[18px] w-[18px] text-brand-deep-blue fill-brand-deep-blue" aria-hidden="true" />
-                        ))}
-                      </div>
-                      <blockquote className="text-body leading-relaxed text-neutral-charcoal dark:text-white mb-4">
-                        "{testimonial.quote}"
-                      </blockquote>
-                      <div className="border-t border-neutral-light-grey dark:border-slate-700 pt-4 mb-4">
-                        <p className="font-semibold text-neutral-charcoal dark:text-white">
-                          {testimonial.author}
-                        </p>
-                        <p className="text-body-sm text-neutral-charcoal/70 dark:text-white/80">{testimonial.company}</p>
-                      </div>
-                      <div className="flex items-center justify-center">
-                        <div className="inline-flex items-center justify-center h-12 w-12 rounded-lg bg-brand-deep-blue/10 dark:bg-brand-bright-blue/10">
-                          <span className="text-sm font-bold text-brand-deep-blue dark:text-brand-bright-blue">
-                            {testimonial.companyInitials}
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Dot Navigation */}
-            <div className="flex items-center justify-center gap-2 mt-6">
-              {[0, 1, 2].map((index) => (
-                <button
-                  key={index}
-                  onClick={() => setActiveTestimonial(index)}
-                  className={`h-2.5 rounded-full transition-all duration-300 ${
-                    activeTestimonial === index
-                      ? 'w-8 bg-brand-bright-blue'
-                      : 'w-2.5 bg-neutral-charcoal/20 dark:bg-white/20'
-                  }`}
-                  aria-label={`Go to testimonial ${index + 1}`}
-                />
-              ))}
-            </div>
           </div>
         </div>
       </section>
