@@ -5,7 +5,7 @@ import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import * as z from 'zod'
 import { Button } from '@/components/ui/Button'
-import { Phone, Mail, CheckCircle2, Loader2, DollarSign, ChevronRight, ChevronLeft } from 'lucide-react'
+import { Phone, Mail, CheckCircle2, Loader2, DollarSign, ChevronRight, ChevronLeft, Building2, Hospital, GraduationCap, ShoppingBag, Warehouse, MoreHorizontal } from 'lucide-react'
 import { CONTACT_INFO } from '@/lib/constants'
 import FormLegalNotice from './FormLegalNotice'
 
@@ -37,12 +37,12 @@ const quoteSchema = z.object({
 type QuoteFormData = z.infer<typeof quoteSchema>
 
 const facilityTypes = [
-  { value: 'office', label: 'Office Building' },
-  { value: 'medical', label: 'Medical/Healthcare' },
-  { value: 'education', label: 'School/Education' },
-  { value: 'retail', label: 'Retail Store' },
-  { value: 'industrial', label: 'Industrial/Warehouse' },
-  { value: 'other', label: 'Other' },
+  { value: 'office', label: 'Office Building', icon: Building2 },
+  { value: 'medical', label: 'Medical/Healthcare', icon: Hospital },
+  { value: 'education', label: 'School/Education', icon: GraduationCap },
+  { value: 'retail', label: 'Retail Store', icon: ShoppingBag },
+  { value: 'industrial', label: 'Industrial/Warehouse', icon: Warehouse },
+  { value: 'other', label: 'Other', icon: MoreHorizontal },
 ]
 
 const frequencies = [
@@ -109,6 +109,7 @@ export default function QuoteFormSimplified({ onSuccess }: QuoteFormSimplifiedPr
 
   const squareFootage = watch('squareFootage')
   const cleaningFrequency = watch('cleaningFrequency')
+  const selectedFacilityType = watch('facilityType')
 
   // Calculate instant estimate
   useEffect(() => {
@@ -487,29 +488,59 @@ export default function QuoteFormSimplified({ onSuccess }: QuoteFormSimplifiedPr
               </div>
             </div>
 
-            <div className="grid gap-4 md:grid-cols-2">
-              <div>
-                <label htmlFor="facilityType" className="mb-2 block text-sm font-medium text-neutral-charcoal dark:text-white">
-                  Facility Type <span className="text-red-500">*</span>
-                </label>
-                <select
-                  {...register('facilityType')}
-                  id="facilityType"
-                  className="w-full h-12 rounded-lg border-2 border-gray-300 px-4 focus:border-brand-bright-blue focus:ring-2 focus:ring-brand-bright-blue/20 dark:border-gray-600 dark:bg-slate-900 dark:text-white"
-                >
-                  <option value="">Select type...</option>
-                  {facilityTypes.map((type) => (
-                    <option key={type.value} value={type.value}>
-                      {type.label}
-                    </option>
-                  ))}
-                </select>
-                {errors.facilityType && (
-                  <p className="mt-1 text-sm text-red-600 dark:text-red-400">
-                    {errors.facilityType.message}
-                  </p>
-                )}
+            {/* Facility Type - Card Selection */}
+            <div className="col-span-full">
+              <label className="mb-4 block text-sm font-medium text-neutral-charcoal dark:text-white">
+                Facility Type <span className="text-red-500">*</span>
+              </label>
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+                {facilityTypes.map((type) => {
+                  const Icon = type.icon
+                  const isSelected = selectedFacilityType === type.value
+                  return (
+                    <label
+                      key={type.value}
+                      className={`relative flex flex-col items-center justify-center p-4 rounded-lg border-2 cursor-pointer transition-all ${
+                        isSelected
+                          ? 'border-brand-bright-blue bg-brand-bright-blue/5 dark:bg-brand-bright-blue/10'
+                          : 'border-gray-300 dark:border-gray-600 hover:border-brand-bright-blue/50 bg-white dark:bg-slate-800'
+                      }`}
+                    >
+                      <input
+                        {...register('facilityType')}
+                        type="radio"
+                        value={type.value}
+                        className="sr-only"
+                      />
+                      <Icon
+                        className={`h-8 w-8 mb-2 ${
+                          isSelected
+                            ? 'text-brand-bright-blue'
+                            : 'text-neutral-charcoal/60 dark:text-white/60'
+                        }`}
+                      />
+                      <span
+                        className={`text-sm font-medium text-center ${
+                          isSelected
+                            ? 'text-brand-bright-blue'
+                            : 'text-neutral-charcoal dark:text-white'
+                        }`}
+                      >
+                        {type.label}
+                      </span>
+                      {isSelected && (
+                        <CheckCircle2 className="absolute top-2 right-2 h-5 w-5 text-brand-bright-blue" />
+                      )}
+                    </label>
+                  )
+                })}
               </div>
+              {errors.facilityType && (
+                <p className="mt-2 text-sm text-red-600 dark:text-red-400">
+                  {errors.facilityType.message}
+                </p>
+              )}
+            </div>
 
               <div>
                 <label htmlFor="squareFootage" className="mb-2 block text-sm font-medium text-neutral-charcoal dark:text-white">
