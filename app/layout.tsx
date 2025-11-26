@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { headers } from 'next/headers'
 import { Inter } from 'next/font/google'
 import '../styles/globals.css'
-import 'leaflet/dist/leaflet.css'
+// leaflet.css moved to ServiceAreaMap component (only loaded when map is used)
 import { ThemeProvider } from '@/lib/ThemeProvider'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'

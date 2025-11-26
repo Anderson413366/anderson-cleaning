@@ -98,7 +98,7 @@ export default function PrivacyPolicyPage() {
             </aside>
 
             {/* Main Content */}
-            <main className="lg:col-span-9">
+            <div className="lg:col-span-9" role="region" aria-label="Privacy policy content">
               <div className="mx-auto max-w-4xl rounded-3xl bg-white p-8 shadow-xl dark:bg-slate-800 print:shadow-none print:rounded-none">
                 <header className="mb-10 border-b border-neutral-light-grey pb-6 dark:border-white/10 print:border-black">
                   <p className="text-sm tracking-wide text-brand-bright-blue uppercase print:text-black">Legal</p>
@@ -330,7 +330,7 @@ export default function PrivacyPolicyPage() {
                   </div>
                 </section>
               </div>
-            </main>
+            </div>
           </div>
         </div>
       </div>

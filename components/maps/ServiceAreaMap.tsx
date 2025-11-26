@@ -1,17 +1,20 @@
 'use client'
 
+// Leaflet CSS - only loaded when map component is rendered (code-split)
+import 'leaflet/dist/leaflet.css'
+
 import { useEffect } from 'react'
 import { MapContainer, TileLayer, Circle, Marker, Popup, useMap } from 'react-leaflet'
 import L from 'leaflet'
 import { Plus, Minus } from 'lucide-react'
 
-// Custom blue marker icon with brand colors
-const createCustomIcon = () => {
+// Custom blue marker icon with brand colors and accessibility
+const createCustomIcon = (cityName: string) => {
   return L.divIcon({
     className: 'custom-marker',
     html: `
-      <div style="position: relative;">
-        <svg width="32" height="42" viewBox="0 0 32 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <div style="position: relative;" role="img" aria-label="${cityName} service location">
+        <svg width="32" height="42" viewBox="0 0 32 42" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <path d="M16 0C7.163 0 0 7.163 0 16c0 13 16 26 16 26s16-13 16-26c0-8.837-7.163-16-16-16z" fill="#0077D9"/>
           <circle cx="16" cy="16" r="6" fill="white"/>
         </svg>
@@ -39,14 +42,14 @@ function CustomZoomControls() {
     <div className="absolute top-4 right-4 z-[1000] flex flex-col gap-2">
       <button
         onClick={handleZoomIn}
-        className="flex items-center justify-center h-10 w-10 bg-white dark:bg-slate-800 border-2 border-brand-deep-blue dark:border-brand-bright-blue rounded-lg shadow-lg hover:bg-brand-bright-blue hover:text-white transition-all duration-150"
+        className="flex items-center justify-center w-[40px] h-[40px] bg-white dark:bg-slate-800 border-2 border-brand-bright-blue rounded-lg shadow-lg cursor-pointer text-brand-bright-blue hover:bg-[#F0F7FF] dark:hover:bg-brand-bright-blue/20 focus:outline-none focus:ring-2 focus:ring-brand-bright-blue focus:ring-offset-2 transition-all duration-150"
         aria-label="Zoom in"
       >
         <Plus className="h-5 w-5" strokeWidth={2} />
       </button>
       <button
         onClick={handleZoomOut}
-        className="flex items-center justify-center h-10 w-10 bg-white dark:bg-slate-800 border-2 border-brand-deep-blue dark:border-brand-bright-blue rounded-lg shadow-lg hover:bg-brand-bright-blue hover:text-white transition-all duration-150"
+        className="flex items-center justify-center w-[40px] h-[40px] bg-white dark:bg-slate-800 border-2 border-brand-bright-blue rounded-lg shadow-lg cursor-pointer text-brand-bright-blue hover:bg-[#F0F7FF] dark:hover:bg-brand-bright-blue/20 focus:outline-none focus:ring-2 focus:ring-brand-bright-blue focus:ring-offset-2 transition-all duration-150"
         aria-label="Zoom out"
       >
         <Minus className="h-5 w-5" strokeWidth={2} />
@@ -71,8 +74,6 @@ const cities = [
 ]
 
 export default function ServiceAreaMap() {
-  const customIcon = createCustomIcon()
-
   return (
     <div className="h-[500px] w-full rounded-xl overflow-hidden border border-[#D0D0D0] dark:border-slate-600 shadow-[0_2px_8px_rgba(0,0,0,0.08)] relative">
       <MapContainer
@@ -105,7 +106,12 @@ export default function ServiceAreaMap() {
 
         {/* City markers with custom blue pins */}
         {cities.map((city) => (
-          <Marker key={city.name} position={city.position} icon={customIcon}>
+          <Marker
+            key={city.name}
+            position={city.position}
+            icon={createCustomIcon(city.name)}
+            title={`${city.name} - Click to view details`}
+          >
             <Popup>
               <div className="p-2">
                 <div className="text-sm font-bold text-brand-deep-blue mb-1">{city.name}</div>

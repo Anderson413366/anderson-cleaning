@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Image from 'next/image'
 import { X } from 'lucide-react'
 
 interface Certification {
@@ -97,28 +98,32 @@ export function CertificationBar() {
                   className="flex flex-col items-center space-y-2"
                 >
                   <div className="flex h-20 w-20 items-center justify-center">
-                    <img
+                    <Image
                       src={cert.logo}
                       alt={cert.name}
+                      width={80}
+                      height={80}
                       loading="lazy"
                       className="max-h-full max-w-full object-contain grayscale transition-all duration-300 group-hover:grayscale-0"
                     />
                   </div>
-                  <span className="text-center text-xs text-neutral-charcoal/70 transition-colors group-hover:text-brand-bright-blue dark:text-neutral-charcoal dark:group-hover:text-brand-bright-blue">
+                  <span className="text-center text-xs text-neutral-charcoal/85 transition-colors group-hover:text-brand-bright-blue dark:text-white/85 dark:group-hover:text-brand-bright-blue">
                     {cert.name}
                   </span>
                 </a>
               ) : (
                 <div className="flex flex-col items-center space-y-2">
                   <div className="flex h-20 w-20 items-center justify-center">
-                    <img
+                    <Image
                       src={cert.logo}
                       alt={cert.name}
+                      width={80}
+                      height={80}
                       loading="lazy"
                       className="max-h-full max-w-full object-contain grayscale transition-all duration-300 group-hover:grayscale-0"
                     />
                   </div>
-                  <span className="text-center text-xs text-neutral-charcoal/70 dark:text-white/70">
+                  <span className="text-center text-xs text-neutral-charcoal/85 dark:text-white/85">
                     {cert.name}
                   </span>
                 </div>
@@ -149,7 +154,10 @@ export function CertificationShowcase() {
           </p>
         </div>
 
-        {/* Active Certifications - Prominent Display */}
+        {/* Verified Certifications - Prominent Display */}
+        <h3 className="text-xl font-semibold text-neutral-charcoal dark:text-white mb-6 text-center">
+          Verified Certifications
+        </h3>
         <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-5 mb-16">
           {activeCerts.map((cert) => (
             <div
@@ -158,9 +166,11 @@ export function CertificationShowcase() {
               onClick={() => setSelectedCert(cert)}
             >
               <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center">
-                <img
+                <Image
                   src={cert.logo}
                   alt={cert.name}
+                  width={64}
+                  height={64}
                   loading="lazy"
                   className="max-h-full max-w-full object-contain"
                 />
@@ -175,7 +185,7 @@ export function CertificationShowcase() {
           <div className="border-t border-neutral-light-grey dark:border-slate-700 pt-12">
             <div className="mb-8 text-center">
               <h3 className="text-xl font-semibold text-neutral-charcoal/70 dark:text-white/70 mb-2">
-                Certifications in Progress
+                Pursuing Certifications
               </h3>
               <p className="text-sm text-neutral-charcoal/60 dark:text-white/60 max-w-2xl mx-auto">
                 We're continuously improving our credentials to serve you better
@@ -189,16 +199,18 @@ export function CertificationShowcase() {
                   onClick={() => setSelectedCert(cert)}
                 >
                   <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center">
-                    <img
+                    <Image
                       src={cert.logo}
                       alt={cert.name}
+                      width={48}
+                      height={48}
                       loading="lazy"
                       className="max-h-full max-w-full object-contain grayscale opacity-60"
                     />
                   </div>
-                  <h4 className="font-medium text-neutral-charcoal/70 dark:text-white/70 text-xs">{cert.name}</h4>
-                  <span className="mt-2 inline-block rounded bg-neutral-light-grey/50 dark:bg-slate-700/50 px-2 py-0.5 text-[10px] font-medium text-neutral-charcoal/60 dark:text-white/60">
-                    In Progress
+                  <h4 className="font-medium text-neutral-charcoal/85 dark:text-white/85 text-xs">{cert.name}</h4>
+                  <span className="mt-2 inline-block rounded bg-neutral-light-grey/50 dark:bg-slate-700/50 px-2 py-0.5 text-[12px] font-medium text-[#999999]">
+                    pending
                   </span>
                 </div>
               ))}
@@ -230,9 +242,11 @@ export function CertificationShowcase() {
               </div>
 
               <div className="mx-auto mb-6 flex h-32 w-32 items-center justify-center">
-                <img
+                <Image
                   src={selectedCert.logo}
                   alt={selectedCert.name}
+                  width={128}
+                  height={128}
                   className="max-h-full max-w-full object-contain"
                 />
               </div>

@@ -1,8 +1,7 @@
 'use client'
 
-import React, { useContext, useState, useCallback } from 'react'
+import React, { useContext, useState, useCallback, useEffect } from 'react'
 import { useAppContext } from '@/lib/careers/AppContext'
-import { motion, AnimatePresence } from 'framer-motion'
 import { Button } from '@/components/ui/Button'
 import ProgressBar from '@/components/ui/ProgressBar'
 import CareersHero from './CareersHero'
@@ -38,9 +37,18 @@ const CareersPage: React.FC = () => {
   } = context
 
   const [showIntro, setShowIntro] = useState(true)
+  const [isAnimating, setIsAnimating] = useState(false)
+  const [animationDirection, setAnimationDirection] = useState<'forward' | 'backward'>('forward')
 
   const CurrentSectionComponent = SECTIONS_CONFIG[currentSectionIndex]?.component
   const currentSectionConfig = SECTIONS_CONFIG[currentSectionIndex]
+
+  // Trigger entrance animation when section changes
+  useEffect(() => {
+    setIsAnimating(true)
+    const timer = setTimeout(() => setIsAnimating(false), 50)
+    return () => clearTimeout(timer)
+  }, [currentSectionIndex])
 
   const handleNextSection = useCallback(() => {
     // Validate current section before proceeding
@@ -54,6 +62,7 @@ const CareersPage: React.FC = () => {
 
     if (Object.keys(errors).length === 0) {
       if (currentSectionIndex < SECTIONS_CONFIG.length - 1) {
+        setAnimationDirection('forward')
         setCurrentSectionIndex((prev) => prev + 1)
         window.scrollTo(0, 0)
       } else {
@@ -77,6 +86,7 @@ const CareersPage: React.FC = () => {
 
   const handlePrevSection = useCallback(() => {
     if (currentSectionIndex > 0) {
+      setAnimationDirection('backward')
       setCurrentSectionIndex((prev) => prev - 1)
       window.scrollTo(0, 0)
       setFormErrors({}) // Clear errors when moving back
@@ -126,17 +136,19 @@ const CareersPage: React.FC = () => {
             <Alert type="error" message={t('submissionErrorMessage') as string} className="mb-4" />
           )}
 
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={currentSectionIndex}
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -50 }}
-            transition={{ duration: 0.3 }}
-          >
-            {CurrentSectionComponent && <CurrentSectionComponent />}
-          </motion.div>
-        </AnimatePresence>
+        {/* Section transition with CSS animations */}
+        <div
+          key={currentSectionIndex}
+          className={`transition-all duration-300 ease-out ${
+            isAnimating
+              ? animationDirection === 'forward'
+                ? 'opacity-0 translate-x-12'
+                : 'opacity-0 -translate-x-12'
+              : 'opacity-100 translate-x-0'
+          }`}
+        >
+          {CurrentSectionComponent && <CurrentSectionComponent />}
+        </div>
 
         <div className="mt-8 flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0 sm:space-x-4">
           <Button

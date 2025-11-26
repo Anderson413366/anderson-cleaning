@@ -116,7 +116,7 @@ export default function PromotionalModal() {
 
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row gap-3">
-            <Link href="/promotions" className="flex-1" onClick={handleClose}>
+            <Link href="/promotions" className="flex-1" onClick={handleClose} aria-label="Learn more about our current promotions and referral rewards">
               <Button variant="outline" size="lg" className="w-full group">
                 Learn More
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />

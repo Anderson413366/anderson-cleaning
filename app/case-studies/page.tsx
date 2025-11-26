@@ -71,6 +71,7 @@ export default function CaseStudiesPage() {
                   <Link
                     key={study.id}
                     href={`/case-studies/${study.slug}`}
+                    aria-label={`Read case study: ${study.client.name} - ${study.client.industry}`}
                     className="group block bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
                   >
                     {/* Featured Image Placeholder */}

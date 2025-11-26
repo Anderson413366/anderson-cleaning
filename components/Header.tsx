@@ -184,6 +184,7 @@ export default function Header() {
               width={200}
               height={56}
               priority
+              sizes="(max-width: 768px) 150px, (max-width: 1024px) 175px, 200px"
               className="h-10 w-auto md:h-12 lg:h-14 object-contain"
             />
           </Link>
@@ -508,6 +509,7 @@ export default function Header() {
                   alt="Anderson Cleaning Company"
                   width={40}
                   height={40}
+                  sizes="40px"
                   className="h-10 w-auto dark:hidden"
                 />
                 <Image
@@ -515,6 +517,7 @@ export default function Header() {
                   alt="Anderson Cleaning Company"
                   width={40}
                   height={40}
+                  sizes="40px"
                   className="hidden h-10 w-auto dark:block"
                 />
               </Link>
