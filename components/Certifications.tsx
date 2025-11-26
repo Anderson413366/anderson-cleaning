@@ -131,6 +131,8 @@ export function CertificationBar() {
 
 export function CertificationShowcase() {
   const [selectedCert, setSelectedCert] = useState<Certification | null>(null)
+  const activeCerts = CERTIFICATIONS.filter((cert) => cert.status === 'active')
+  const pendingCerts = CERTIFICATIONS.filter((cert) => cert.status === 'pending')
 
   return (
     <section className="py-16">
@@ -145,11 +147,12 @@ export function CertificationShowcase() {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-4">
-          {CERTIFICATIONS.map((cert) => (
+        {/* Active Certifications - Prominent Display */}
+        <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-5 mb-16">
+          {activeCerts.map((cert) => (
             <div
               key={cert.id}
-              className="cursor-pointer rounded-lg bg-white border-2 border-brand-deep-blue p-6 text-center shadow-md transition-all duration-300 hover:shadow-xl dark:bg-white dark:border-brand-deep-blue"
+              className="cursor-pointer rounded-lg bg-white border-2 border-brand-deep-blue p-6 text-center shadow-md transition-all duration-300 hover:shadow-xl hover:scale-105 dark:bg-white dark:border-brand-deep-blue"
               onClick={() => setSelectedCert(cert)}
             >
               <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center">
@@ -160,14 +163,44 @@ export function CertificationShowcase() {
                 />
               </div>
               <h3 className="font-semibold text-neutral-charcoal text-sm">{cert.name}</h3>
-              {cert.status === 'pending' && (
-                <span className="mt-2 inline-block rounded bg-[#E6F2FA] px-2 py-1 text-xs font-semibold text-brand-bright-blue">
-                  In Progress
-                </span>
-              )}
             </div>
           ))}
         </div>
+
+        {/* In Progress Certifications - Secondary, De-emphasized */}
+        {pendingCerts.length > 0 && (
+          <div className="border-t border-neutral-light-grey dark:border-slate-700 pt-12">
+            <div className="mb-8 text-center">
+              <h3 className="text-xl font-semibold text-neutral-charcoal/70 dark:text-white/70 mb-2">
+                Certifications in Progress
+              </h3>
+              <p className="text-sm text-neutral-charcoal/60 dark:text-white/60 max-w-2xl mx-auto">
+                We're continuously improving our credentials to serve you better
+              </p>
+            </div>
+            <div className="grid grid-cols-3 gap-4 max-w-2xl mx-auto">
+              {pendingCerts.map((cert) => (
+                <div
+                  key={cert.id}
+                  className="cursor-pointer rounded-lg bg-neutral-off-white dark:bg-slate-800/50 border border-neutral-light-grey/50 dark:border-slate-700/50 p-4 text-center transition-all duration-300 hover:border-brand-bright-blue/50 opacity-75"
+                  onClick={() => setSelectedCert(cert)}
+                >
+                  <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center">
+                    <img
+                      src={cert.logo}
+                      alt={cert.name}
+                      className="max-h-full max-w-full object-contain grayscale opacity-60"
+                    />
+                  </div>
+                  <h4 className="font-medium text-neutral-charcoal/70 dark:text-white/70 text-xs">{cert.name}</h4>
+                  <span className="mt-2 inline-block rounded bg-neutral-light-grey/50 dark:bg-slate-700/50 px-2 py-0.5 text-[10px] font-medium text-neutral-charcoal/60 dark:text-white/60">
+                    In Progress
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
 
         {/* Modal for Certification Details */}
         {selectedCert && (
