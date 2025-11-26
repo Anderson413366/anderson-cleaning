@@ -4,7 +4,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 import { Button } from '@/components/ui/Button'
 import QuoteFormSimplified from '@/components/forms/QuoteFormSimplified'
-import { CheckCircle2, Sparkles } from 'lucide-react'
+import { CheckCircle2, Sparkles, Phone, Clock } from 'lucide-react'
 import { CONTACT_INFO } from '@/lib/constants'
 
 export default function QuotePage() {
@@ -90,7 +90,95 @@ export default function QuotePage() {
       {/* Main Content */}
       <section className="py-12">
         <div className="container mx-auto px-6">
-          <QuoteFormSimplified onSuccess={handleSuccess} />
+          <div className="max-w-7xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+              {/* Quote Form - 2 columns on desktop */}
+              <div className="lg:col-span-2">
+                <QuoteFormSimplified onSuccess={handleSuccess} />
+              </div>
+
+              {/* Sidebar - 1 column on desktop, hidden on mobile */}
+              <div className="hidden lg:block lg:col-span-1 space-y-6">
+                {/* Prefer to Talk Now? CTA Card */}
+                <div className="bg-white dark:bg-slate-800 border-2 border-brand-deep-blue dark:border-brand-bright-blue rounded-lg p-6 shadow-sm">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="flex-shrink-0">
+                      <div className="h-12 w-12 rounded-full bg-brand-deep-blue/10 dark:bg-brand-bright-blue/10 flex items-center justify-center">
+                        <Phone className="h-6 w-6 text-brand-deep-blue dark:text-brand-bright-blue" />
+                      </div>
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-bold text-neutral-charcoal dark:text-white">
+                        Prefer to Talk Now?
+                      </h3>
+                    </div>
+                  </div>
+
+                  <p className="text-sm text-neutral-charcoal/70 dark:text-white/80 mb-4">
+                    Call us directly for immediate assistance with your cleaning needs
+                  </p>
+
+                  <a
+                    href={CONTACT_INFO.phone.href}
+                    className="flex items-center justify-center gap-2 w-full rounded-lg bg-brand-deep-blue dark:bg-brand-bright-blue px-6 py-3 font-semibold text-white transition-colors hover:bg-brand-bright-blue dark:hover:bg-brand-deep-blue"
+                  >
+                    <Phone className="h-5 w-5" />
+                    {CONTACT_INFO.phone.formatted}
+                  </a>
+
+                  <div className="mt-4 pt-4 border-t border-neutral-light-grey dark:border-slate-700">
+                    <div className="flex items-start gap-2">
+                      <Clock className="h-4 w-4 text-brand-deep-blue dark:text-brand-bright-blue mt-0.5 flex-shrink-0" />
+                      <div className="text-xs text-neutral-charcoal/70 dark:text-white/70">
+                        <p className="font-semibold mb-1">Office Hours</p>
+                        <p>{CONTACT_INFO.hours.office}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Mobile CTA - shown only on mobile, positioned after form */}
+            <div className="lg:hidden mt-6">
+              <div className="bg-white dark:bg-slate-800 border-2 border-brand-deep-blue dark:border-brand-bright-blue rounded-lg p-6 shadow-sm">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="flex-shrink-0">
+                    <div className="h-12 w-12 rounded-full bg-brand-deep-blue/10 dark:bg-brand-bright-blue/10 flex items-center justify-center">
+                      <Phone className="h-6 w-6 text-brand-deep-blue dark:text-brand-bright-blue" />
+                    </div>
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-bold text-neutral-charcoal dark:text-white">
+                      Prefer to Talk Now?
+                    </h3>
+                  </div>
+                </div>
+
+                <p className="text-sm text-neutral-charcoal/70 dark:text-white/80 mb-4">
+                  Call us directly for immediate assistance with your cleaning needs
+                </p>
+
+                <a
+                  href={CONTACT_INFO.phone.href}
+                  className="flex items-center justify-center gap-2 w-full rounded-lg bg-brand-deep-blue dark:bg-brand-bright-blue px-6 py-3 font-semibold text-white transition-colors hover:bg-brand-bright-blue dark:hover:bg-brand-deep-blue"
+                >
+                  <Phone className="h-5 w-5" />
+                  {CONTACT_INFO.phone.formatted}
+                </a>
+
+                <div className="mt-4 pt-4 border-t border-neutral-light-grey dark:border-slate-700">
+                  <div className="flex items-start gap-2">
+                    <Clock className="h-4 w-4 text-brand-deep-blue dark:text-brand-bright-blue mt-0.5 flex-shrink-0" />
+                    <div className="text-xs text-neutral-charcoal/70 dark:text-white/70">
+                      <p className="font-semibold mb-1">Office Hours</p>
+                      <p>{CONTACT_INFO.hours.office}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 

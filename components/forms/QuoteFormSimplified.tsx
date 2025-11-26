@@ -344,25 +344,6 @@ export default function QuoteFormSimplified({ onSuccess }: QuoteFormSimplifiedPr
 
       {/* Main Form Card */}
       <div className="rounded-xl border-2 border-neutral-light-grey bg-white p-8 shadow-lg dark:border-slate-700 dark:bg-slate-800">
-        {/* Quick Contact Option */}
-        <div className="mb-6 rounded-lg border border-brand-bright-blue/30 bg-brand-bright-blue/5 p-4 dark:bg-brand-bright-blue/10">
-          <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
-            <div>
-              <p className="font-semibold text-brand-bright-blue dark:text-white">Prefer to talk now?</p>
-              <p className="text-sm text-neutral-charcoal/70 dark:text-white/80">
-                Call us directly for immediate assistance
-              </p>
-            </div>
-            <a
-              href={CONTACT_INFO.phone.href}
-              className="flex items-center gap-2 rounded-lg bg-brand-bright-blue px-6 py-3 font-semibold text-white transition-colors hover:bg-teal-700"
-            >
-              <Phone className="h-5 w-5" />
-              {CONTACT_INFO.phone.formatted}
-            </a>
-          </div>
-        </div>
-
         {/* Error Message */}
         {submitError && (
           <div className="mb-6 rounded-lg border border-red-200 bg-red-50 p-4 dark:border-red-800 dark:bg-red-900/20">
