@@ -316,59 +316,34 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Services Grid - Standardized responsive layout */}
+      {/* Services Grid - Fixed height cards for visual consistency */}
       <section className="py-20 bg-neutral-off-white dark:bg-slate-900">
         <div className="container mx-auto px-6">
-          {/* Consistent 3-column desktop, 2-column tablet, 1-column mobile */}
-          <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 auto-rows-fr">
+          {/* 3-column grid with fixed card dimensions */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-[980px] mx-auto">
             {services.map((service, i) => {
               const Icon = service.icon
               return (
-                <div
+                <a
                   key={i}
-                  className="flex flex-col bg-white dark:bg-slate-800 border-2 border-neutral-light-grey dark:border-slate-700 rounded-xl shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-brand-bright-blue"
+                  href={`/services/${service.slug}`}
+                  className="block h-[280px] bg-white dark:bg-slate-800 border border-neutral-light-grey dark:border-slate-700 rounded-xl p-6 transition-all duration-200 hover:-translate-y-1 hover:border-brand-bright-blue hover:shadow-lg"
                 >
-                  <div className="p-8 flex flex-col h-full">
-                    {/* Glass-effect icon - Medium (48px) for service cards */}
-                    <div className="mb-4">
-                      <GlassIcon icon={Icon} size="md" variant="solid" label={service.title} />
-                    </div>
-
-                    {/* Title */}
-                    <h3 className="text-h3 font-bold text-neutral-charcoal dark:text-white mb-3">
-                      {service.title}
-                    </h3>
-
-                    {/* Tagline */}
-                    <p className="text-body text-neutral-charcoal/80 dark:text-white/80 mb-4">
-                      {service.tagline}
-                    </p>
-
-                    {/* Features list - takes up remaining space */}
-                    <ul className="space-y-2 mb-6 flex-grow">
-                      {service.highlights.map((feature, j) => (
-                        <li
-                          key={j}
-                          className="flex items-start text-body-sm text-neutral-charcoal/80 dark:text-white/80"
-                        >
-                          <CheckCircle2 className="h-4 w-4 text-brand-bright-blue mr-2 mt-0.5 flex-shrink-0" />
-                          <span>{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
-
-                    {/* Learn More link - always bottom-aligned */}
-                    <div className="mt-auto pt-4 border-t border-neutral-light-grey/50 dark:border-slate-700/50">
-                      <a
-                        href={`/services/${service.slug}`}
-                        className="inline-flex items-center gap-2 text-brand-deep-blue dark:text-brand-bright-blue font-semibold hover:text-brand-bright-blue dark:hover:text-white transition-colors group"
-                      >
-                        <span>Learn More</span>
-                        <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                      </a>
-                    </div>
+                  {/* Icon - 56px circle #0077D9 */}
+                  <div className="flex items-center justify-center w-14 h-14 rounded-full bg-brand-bright-blue mb-4">
+                    <Icon className="h-7 w-7 text-white" strokeWidth={2} />
                   </div>
-                </div>
+
+                  {/* Title - 16px bold #002A86 */}
+                  <h3 className="text-base font-bold text-brand-deep-blue dark:text-white mb-2">
+                    {service.title}
+                  </h3>
+
+                  {/* Description - 14px #666666, 2 lines max with ellipsis */}
+                  <p className="text-sm text-[#666666] dark:text-white/70 line-clamp-2">
+                    {service.tagline}
+                  </p>
+                </a>
               )
             })}
           </div>
