@@ -20,7 +20,6 @@ import {
   Mail,
   MapPin,
   Package,
-  Phone,
   Shield,
   Sparkles,
   Square,
@@ -53,19 +52,20 @@ export default function Home() {
               Western MA & Northern CT
             </p>
 
-            {/* CTAs - Clean, direct action */}
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            {/* CTAs - Clear primary/secondary hierarchy */}
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+              {/* Primary CTA - Quote form conversion */}
               <Link
                 href="/quote"
-                className="inline-flex items-center justify-center rounded-full bg-brand-bright-blue px-8 py-4 text-lg font-semibold text-white shadow-sm hover:bg-[#006bc4] transition-all duration-150"
+                className="inline-flex items-center justify-center h-12 px-6 rounded-full bg-brand-bright-blue text-white font-bold text-base hover:bg-[#006bc4] transition-colors"
               >
                 Get Your Quote
               </Link>
+              {/* Secondary - Phone as text link only */}
               <a
                 href="tel:+14133065053"
-                className="inline-flex items-center justify-center gap-2 text-lg font-medium text-brand-bright-blue hover:text-[#006bc4] transition-colors dark:text-white dark:hover:text-white/80"
+                className="text-base text-brand-bright-blue hover:underline transition-colors dark:text-brand-bright-blue"
               >
-                <Phone className="h-5 w-5" />
                 (413) 306-5053
               </a>
             </div>
