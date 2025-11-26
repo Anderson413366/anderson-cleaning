@@ -374,18 +374,8 @@ export default function ServicesPage() {
               return (
                 <div
                   key={i}
-                  className="relative flex flex-col bg-white dark:bg-slate-800 border-2 border-neutral-light-grey dark:border-slate-700 rounded-xl shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-brand-bright-blue"
+                  className="flex flex-col bg-white dark:bg-slate-800 border-2 border-neutral-light-grey dark:border-slate-700 rounded-xl shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-brand-bright-blue"
                 >
-                  {/* Premium badge - top-right positioning */}
-                  {service.availability === 'contracted' && (
-                    <span
-                      className="absolute top-4 right-4 inline-flex items-center px-3 py-1.5 bg-brand-red text-white text-[10px] font-bold uppercase tracking-wide rounded-full"
-                      style={{ boxShadow: '0 0 12px rgba(200, 16, 46, 0.3)' }}
-                    >
-                      Premium Add-on
-                    </span>
-                  )}
-
                   <div className="p-8 flex flex-col h-full">
                     {/* Glass-effect icon - Medium (48px) for service cards */}
                     <div className="mb-4">
