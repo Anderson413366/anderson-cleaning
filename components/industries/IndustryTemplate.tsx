@@ -110,7 +110,7 @@ export default function IndustryTemplate({
       <section className="py-16 md:py-20 bg-white dark:bg-slate-900">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
-            <div className="space-y-6 text-body text-[var(--color-text-secondary)] leading-relaxed">
+            <div className="space-y-6 text-lg text-neutral-charcoal/80 dark:text-white/80 leading-relaxed">
               {industry.overview.map((paragraph, index) => (
                 <p key={index}>{paragraph}</p>
               ))}
@@ -127,12 +127,12 @@ export default function IndustryTemplate({
           <div className="max-w-6xl mx-auto">
             {/* Section Header */}
             <div className="text-center mb-12">
-              <h2 className="text-h2 leading-tight font-bold text-[var(--color-text-primary)] mb-4">
+              <h2 className="text-3xl font-extrabold text-neutral-charcoal dark:text-white mb-4">
                 How We Address Your Challenges
               </h2>
-              <p className="text-body text-[var(--color-text-secondary)] max-w-3xl mx-auto">
+              <p className="text-base text-neutral-charcoal/70 dark:text-white/70 max-w-3xl mx-auto">
                 We understand the unique cleaning requirements in {industry.name.toLowerCase()}.
-                Here's how our specialized approach solves your specific challenges.
+                Here&apos;s how our specialized approach solves your specific challenges.
               </p>
             </div>
 
@@ -141,16 +141,7 @@ export default function IndustryTemplate({
               {industry.challenges.map((challenge, index) => (
                 <div
                   key={index}
-                  className="
-                    bg-white dark:bg-slate-900
-                    rounded-[var(--border-radius-lg)]
-                    shadow-[var(--shadow-card)]
-                    p-6
-                    border border-brand-deep-blue/10 dark:border-white/10
-                    transition-all duration-200
-                    hover:shadow-lg
-                    hover:border-brand-bright-blue
-                  "
+                  className="bg-white dark:bg-slate-900 rounded-2xl shadow-md p-6 border border-brand-deep-blue/10 dark:border-white/10 transition-all duration-200 hover:shadow-lg hover:border-brand-bright-blue"
                 >
                   {/* Solution-focused Icon - Medium (48px) glass effect */}
                   <div className="mb-4">
@@ -158,7 +149,7 @@ export default function IndustryTemplate({
                   </div>
 
                   {/* Challenge Text - Now framed as a solution */}
-                  <p className="text-body-sm font-semibold text-[var(--color-text-primary)] leading-relaxed">
+                  <p className="text-base font-semibold text-neutral-charcoal dark:text-white leading-relaxed">
                     {challenge}
                   </p>
                 </div>
@@ -176,10 +167,10 @@ export default function IndustryTemplate({
           <div className="max-w-6xl mx-auto">
             {/* Section Header */}
             <div className="text-center mb-12">
-              <h2 className="text-h2 leading-tight font-bold text-[var(--color-text-primary)] mb-4">
+              <h2 className="text-3xl font-extrabold text-neutral-charcoal dark:text-white mb-4">
                 How We Serve {industry.name}
               </h2>
-              <p className="text-body text-[var(--color-text-secondary)] max-w-3xl mx-auto">
+              <p className="text-base text-neutral-charcoal/70 dark:text-white/70 max-w-3xl mx-auto">
                 Our specialized approach combines industry expertise with proven cleaning
                 protocols to deliver exceptional results.
               </p>
@@ -190,27 +181,20 @@ export default function IndustryTemplate({
               {industry.solutions.map((solution, index) => (
                 <div
                   key={index}
-                  className="
-                    bg-white
-                    dark:bg-slate-800
-                    rounded-[var(--border-radius-lg)]
-                    shadow-[var(--shadow-card)]
-                    p-8
-                    border border-neutral-light-grey dark:border-slate-700
-                  "
+                  className="bg-white dark:bg-slate-800 rounded-2xl shadow-md p-8 border border-neutral-light-grey dark:border-slate-700 transition-all duration-200 hover:shadow-lg"
                 >
                   {/* Number Badge */}
                   <div className="flex items-center gap-4 mb-4">
-                    <div className="w-10 h-10 rounded-full bg-brand-deep-blue text-white flex items-center justify-center font-bold text-body flex-shrink-0">
+                    <div className="w-10 h-10 rounded-full bg-brand-deep-blue text-white flex items-center justify-center font-bold text-lg flex-shrink-0">
                       {index + 1}
                     </div>
-                    <h3 className="text-h3 leading-normal font-semibold text-[var(--color-text-primary)]">
+                    <h3 className="text-xl font-semibold text-neutral-charcoal dark:text-white">
                       {solution.title}
                     </h3>
                   </div>
 
                   {/* Description */}
-                  <p className="text-body text-[var(--color-text-secondary)] leading-relaxed">
+                  <p className="text-base text-neutral-charcoal/80 dark:text-white/80 leading-relaxed">
                     {solution.description}
                   </p>
                 </div>
@@ -233,7 +217,7 @@ export default function IndustryTemplate({
                   <TrendingUp className="h-5 w-5" aria-hidden="true" />
                   <span className="text-sm font-bold uppercase tracking-wider">Success Story</span>
                 </div>
-                <h2 className="text-h2 leading-tight font-bold mb-4">
+                <h2 className="text-3xl font-extrabold mb-4">
                   {industry.caseStudy.title}
                 </h2>
                 <p className="text-xl text-white/90 font-semibold">
@@ -297,28 +281,20 @@ export default function IndustryTemplate({
           <div className="max-w-6xl mx-auto">
             {/* Section Header */}
             <div className="text-center mb-12">
-              <h2 className="text-h2 leading-tight font-bold text-[var(--color-text-primary)] mb-4">
+              <h2 className="text-3xl font-extrabold text-neutral-charcoal dark:text-white mb-4">
                 Standards & Compliance
               </h2>
-              <p className="text-body text-[var(--color-text-secondary)] max-w-3xl mx-auto">
+              <p className="text-base text-neutral-charcoal/70 dark:text-white/70 max-w-3xl mx-auto">
                 We maintain the highest standards and certifications required for your industry.
               </p>
             </div>
 
-            {/* Compliance Badges Grid */}
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+            {/* Compliance Badges Grid - 2 columns on mobile, 3 on tablet+ */}
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
               {industry.compliance.map((item, index) => (
                 <div
                   key={index}
-                  className="
-                    bg-white dark:bg-slate-900
-                    rounded-[var(--border-radius-lg)]
-                    shadow-[var(--shadow-card)]
-                    p-6
-                    flex flex-col items-center justify-center
-                    text-center
-                    border border-neutral-light-grey dark:border-slate-700
-                  "
+                  className="bg-white dark:bg-slate-900 rounded-2xl shadow-md p-6 flex flex-col items-center justify-center text-center border border-neutral-light-grey dark:border-slate-700 transition-all duration-200 hover:shadow-lg hover:border-brand-bright-blue"
                 >
                   {/* Icon - Medium (48px) glass effect */}
                   <div className="mb-3">
@@ -331,7 +307,7 @@ export default function IndustryTemplate({
                   </div>
 
                   {/* Badge Text */}
-                  <p className="text-sm font-semibold text-[var(--color-text-primary)] leading-tight">
+                  <p className="text-sm font-semibold text-neutral-charcoal dark:text-white leading-tight">
                     {item}
                   </p>
                 </div>
@@ -350,10 +326,10 @@ export default function IndustryTemplate({
             <div className="max-w-6xl mx-auto">
               {/* Section Header */}
               <div className="text-center mb-12">
-                <h2 className="text-h2 leading-tight font-bold text-[var(--color-text-primary)] mb-4">
+                <h2 className="text-3xl font-extrabold text-neutral-charcoal dark:text-white mb-4">
                   Facility Sizes We Serve
                 </h2>
-                <p className="text-body text-[var(--color-text-secondary)] max-w-3xl mx-auto">
+                <p className="text-base text-neutral-charcoal/70 dark:text-white/70 max-w-3xl mx-auto">
                   From small practices to large complexes, we have the experience and resources to handle {industry.name.toLowerCase()} of any size.
                 </p>
               </div>
@@ -371,7 +347,7 @@ export default function IndustryTemplate({
                     </div>
 
                     {/* Size Title */}
-                    <h3 className="text-2xl font-bold text-[var(--color-text-primary)] mb-2">
+                    <h3 className="text-2xl font-bold text-neutral-charcoal dark:text-white mb-2">
                       {facilitySize.size}
                     </h3>
 
@@ -382,14 +358,14 @@ export default function IndustryTemplate({
 
                     {/* Typical Facilities */}
                     <div className="space-y-2">
-                      <p className="text-sm font-semibold text-[var(--color-text-secondary)] uppercase tracking-wide">
+                      <p className="text-sm font-semibold text-neutral-charcoal/70 dark:text-white/70 uppercase tracking-wide">
                         Typical Facilities:
                       </p>
                       <ul className="space-y-2">
                         {facilitySize.typical.map((item, itemIndex) => (
                           <li key={itemIndex} className="flex items-start gap-2">
                             <CheckCircle2 className="h-4 w-4 text-brand-bright-blue flex-shrink-0 mt-1" strokeWidth={2.5} />
-                            <span className="text-sm text-[var(--color-text-secondary)]">{item}</span>
+                            <span className="text-sm text-neutral-charcoal/70 dark:text-white/70">{item}</span>
                           </li>
                         ))}
                       </ul>
@@ -420,45 +396,39 @@ export default function IndustryTemplate({
           <div className="max-w-6xl mx-auto">
             {/* Section Header */}
             <div className="text-center mb-12">
-              <h2 className="text-h2 leading-tight font-bold text-[var(--color-text-primary)] mb-4">
+              <h2 className="text-3xl font-extrabold text-neutral-charcoal dark:text-white mb-4">
                 What Our {industry.name} Clients Say
               </h2>
             </div>
 
             {/* Testimonials Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {industry.testimonials.map((testimonial, index) => (
-              <div
-                key={index}
-                className="
-                    bg-white dark:bg-slate-800
-                    rounded-[var(--border-radius-lg)]
-                    shadow-[var(--shadow-card)]
-                    p-8
-                    border border-neutral-light-grey dark:border-slate-700
-                  "
-              >
-                {/* Quote */}
-                <div className="mb-6">
-                  <p className="text-body text-[var(--color-text-primary)] leading-relaxed italic">
-                    "{testimonial.quote}"
-                  </p>
-                </div>
+              {industry.testimonials.map((testimonial, index) => (
+                <div
+                  key={index}
+                  className="bg-white dark:bg-slate-800 rounded-2xl shadow-md p-8 border border-neutral-light-grey dark:border-slate-700 transition-all duration-200 hover:shadow-lg hover:-translate-y-1"
+                >
+                  {/* Quote */}
+                  <div className="mb-6">
+                    <p className="text-lg text-neutral-charcoal dark:text-white leading-relaxed italic">
+                      &ldquo;{testimonial.quote}&rdquo;
+                    </p>
+                  </div>
 
-                {/* Author */}
-                <div className="border-t border-neutral-light-grey dark:border-slate-700 pt-4">
-                  <p className="font-bold text-[var(--color-text-primary)]">
-                    {testimonial.author}
-                  </p>
-                  <p className="text-sm text-[var(--color-text-secondary)]">
-                    {testimonial.role}
-                  </p>
-                  <p className="text-sm text-[var(--color-text-tertiary)]">
-                    {testimonial.company}
-                  </p>
+                  {/* Author */}
+                  <div className="border-t border-neutral-light-grey dark:border-slate-700 pt-4">
+                    <p className="font-bold text-neutral-charcoal dark:text-white">
+                      {testimonial.author}
+                    </p>
+                    <p className="text-sm text-neutral-charcoal/70 dark:text-white/70">
+                      {testimonial.role}
+                    </p>
+                    <p className="text-sm text-neutral-charcoal/60 dark:text-white/60">
+                      {testimonial.company}
+                    </p>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
             </div>
           </div>
         </div>
@@ -473,10 +443,10 @@ export default function IndustryTemplate({
             <div className="max-w-4xl mx-auto">
               {/* Section Header */}
               <div className="text-center mb-12">
-                <h2 className="text-h2 leading-tight font-bold text-[var(--color-text-primary)] mb-4">
+                <h2 className="text-3xl font-extrabold text-neutral-charcoal dark:text-white mb-4">
                   Frequently Asked Questions
                 </h2>
-                <p className="text-body text-[var(--color-text-secondary)] max-w-3xl mx-auto">
+                <p className="text-base text-neutral-charcoal/70 dark:text-white/70 max-w-3xl mx-auto">
                   Get answers to common questions about our {industry.name.toLowerCase()} cleaning services.
                 </p>
               </div>
