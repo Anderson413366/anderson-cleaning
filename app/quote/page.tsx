@@ -4,7 +4,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 import { Button } from '@/components/ui/Button'
 import QuoteFormSimplified from '@/components/forms/QuoteFormSimplified'
-import { CheckCircle2, Sparkles, Phone, Clock } from 'lucide-react'
+import { CheckCircle2, Sparkles } from 'lucide-react'
 import { CONTACT_INFO } from '@/lib/constants'
 
 export default function QuotePage() {
@@ -91,91 +91,23 @@ export default function QuotePage() {
       <section className="py-12">
         <div className="container mx-auto px-6">
           <div className="max-w-7xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
-              {/* Quote Form - 2 columns on desktop */}
-              <div className="lg:col-span-2">
-                <QuoteFormSimplified onSuccess={handleSuccess} />
-              </div>
+            {/* Quote Form - Full width */}
+            <div className="max-w-4xl mx-auto">
+              <QuoteFormSimplified onSuccess={handleSuccess} />
 
-              {/* Sidebar - 1 column on desktop, hidden on mobile */}
-              <div className="hidden lg:block lg:col-span-1 space-y-6">
-                {/* Prefer to Talk Now? CTA Card */}
-                <div className="bg-white dark:bg-slate-800 border-2 border-brand-deep-blue dark:border-brand-bright-blue rounded-lg p-6 shadow-sm">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="flex-shrink-0">
-                      <div className="h-12 w-12 rounded-full bg-brand-deep-blue/10 dark:bg-brand-bright-blue/10 flex items-center justify-center">
-                        <Phone className="h-6 w-6 text-brand-deep-blue dark:text-brand-bright-blue" />
-                      </div>
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-bold text-neutral-charcoal dark:text-white">
-                        Prefer to Talk Now?
-                      </h3>
-                    </div>
-                  </div>
-
-                  <p className="text-sm text-neutral-charcoal/70 dark:text-white/80 mb-4">
-                    Call us directly for immediate assistance with your cleaning needs
-                  </p>
-
+              {/* Prefer to Talk? - Single subtle callout below form */}
+              <div className="mt-8 border-l-4 border-brand-bright-blue bg-[#F5F7FB] dark:bg-slate-800/50 p-4 rounded-r-lg">
+                <p className="text-[14px] text-[#333333] dark:text-white/80">
+                  <span className="font-semibold">Prefer to talk?</span>{' '}
+                  Call us directly at{' '}
                   <a
                     href={CONTACT_INFO.phone.href}
-                    className="flex items-center justify-center gap-2 w-full rounded-lg bg-brand-deep-blue dark:bg-brand-bright-blue px-6 py-3 font-semibold text-white transition-colors hover:bg-brand-bright-blue dark:hover:bg-brand-deep-blue"
+                    className="font-semibold text-brand-bright-blue hover:underline"
                   >
-                    <Phone className="h-5 w-5" />
                     {CONTACT_INFO.phone.formatted}
                   </a>
-
-                  <div className="mt-4 pt-4 border-t border-neutral-light-grey dark:border-slate-700">
-                    <div className="flex items-start gap-2">
-                      <Clock className="h-4 w-4 text-brand-deep-blue dark:text-brand-bright-blue mt-0.5 flex-shrink-0" />
-                      <div className="text-xs text-neutral-charcoal/70 dark:text-white/70">
-                        <p className="font-semibold mb-1">Office Hours</p>
-                        <p>{CONTACT_INFO.hours.office}</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Mobile CTA - shown only on mobile, positioned after form */}
-            <div className="lg:hidden mt-6">
-              <div className="bg-white dark:bg-slate-800 border-2 border-brand-deep-blue dark:border-brand-bright-blue rounded-lg p-6 shadow-sm">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="flex-shrink-0">
-                    <div className="h-12 w-12 rounded-full bg-brand-deep-blue/10 dark:bg-brand-bright-blue/10 flex items-center justify-center">
-                      <Phone className="h-6 w-6 text-brand-deep-blue dark:text-brand-bright-blue" />
-                    </div>
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-bold text-neutral-charcoal dark:text-white">
-                      Prefer to Talk Now?
-                    </h3>
-                  </div>
-                </div>
-
-                <p className="text-sm text-neutral-charcoal/70 dark:text-white/80 mb-4">
-                  Call us directly for immediate assistance with your cleaning needs
+                  {' '}({CONTACT_INFO.hours.office})
                 </p>
-
-                <a
-                  href={CONTACT_INFO.phone.href}
-                  className="flex items-center justify-center gap-2 w-full rounded-lg bg-brand-deep-blue dark:bg-brand-bright-blue px-6 py-3 font-semibold text-white transition-colors hover:bg-brand-bright-blue dark:hover:bg-brand-deep-blue"
-                >
-                  <Phone className="h-5 w-5" />
-                  {CONTACT_INFO.phone.formatted}
-                </a>
-
-                <div className="mt-4 pt-4 border-t border-neutral-light-grey dark:border-slate-700">
-                  <div className="flex items-start gap-2">
-                    <Clock className="h-4 w-4 text-brand-deep-blue dark:text-brand-bright-blue mt-0.5 flex-shrink-0" />
-                    <div className="text-xs text-neutral-charcoal/70 dark:text-white/70">
-                      <p className="font-semibold mb-1">Office Hours</p>
-                      <p>{CONTACT_INFO.hours.office}</p>
-                    </div>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
@@ -189,40 +121,43 @@ export default function QuotePage() {
             <h2 className="text-h2 font-bold text-center text-neutral-charcoal dark:text-white mb-12">
               Why Request a Quote from Anderson Cleaning Company?
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-md text-center">
-                  <div className="inline-flex items-center justify-center w-14 h-14 bg-brand-deep-blue/10 text-brand-deep-blue dark:bg-white/10 dark:text-white rounded-full mb-4">
-                    <Sparkles className="h-7 w-7" />
+            {/* 3 uniform cards: 300px × 200px, centered layout */}
+            <div className="flex flex-wrap justify-center gap-6">
+              {[
+                {
+                  icon: <Sparkles className="h-7 w-7 text-white" />,
+                  title: 'No Obligation',
+                  description: 'Free consultation and walk-through with zero commitment',
+                },
+                {
+                  icon: <CheckCircle2 className="h-7 w-7 text-white" />,
+                  title: 'Transparent Pricing',
+                  description: 'Clear, itemized proposals with no hidden fees',
+                },
+                {
+                  icon: <span className="text-[18px] font-bold text-white">24h</span>,
+                  title: 'Fast Turnaround',
+                  description: 'Detailed proposal within 24 hours of site visit',
+                },
+              ].map((card, idx) => (
+                <div
+                  key={idx}
+                  className="w-[300px] h-[200px] bg-white dark:bg-slate-800 border border-[#E0E0E0] dark:border-slate-700 rounded-xl p-6 text-center flex flex-col items-center justify-center"
+                >
+                  {/* Icon: 56px circle #0077D9 */}
+                  <div className="w-14 h-14 rounded-full bg-brand-bright-blue flex items-center justify-center mb-4">
+                    {card.icon}
                   </div>
-                  <h3 className="text-h3 font-semibold text-neutral-charcoal dark:text-white mb-2">
-                    No Obligation
+                  {/* Heading: 16px bold #002A86 */}
+                  <h3 className="text-[16px] font-bold text-brand-deep-blue dark:text-white mb-2">
+                    {card.title}
                   </h3>
-                <p className="text-sm text-neutral-charcoal/70 dark:text-white/80">
-                  Free consultation and walk-through with zero commitment or pressure to sign
-                </p>
-              </div>
-              <div className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-md text-center">
-                <div className="inline-flex items-center justify-center w-14 h-14 bg-green-100 dark:bg-green-900/30 rounded-full mb-4">
-                  <CheckCircle2 className="h-7 w-7 text-green-600 dark:text-green-400" />
+                  {/* Description: 14px #666666, 2 lines max */}
+                  <p className="text-[14px] text-[#666666] dark:text-white/70 line-clamp-2">
+                    {card.description}
+                  </p>
                 </div>
-                <h3 className="text-body font-bold text-neutral-charcoal dark:text-white mb-2">
-                  Transparent Pricing
-                </h3>
-                <p className="text-sm text-neutral-charcoal/70 dark:text-white/80">
-                  Clear, itemized proposals with no hidden fees or surprise charges
-                </p>
-              </div>
-              <div className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-md text-center">
-                <div className="inline-flex items-center justify-center w-14 h-14 bg-brand-bright-blue/10 dark:bg-brand-bright-blue/30/30 rounded-full mb-4">
-                  <span className="text-h3 font-bold text-brand-bright-blue dark:text-brand-bright-blue">24h</span>
-                </div>
-                <h3 className="text-body font-bold text-neutral-charcoal dark:text-white mb-2">
-                  Fast Turnaround
-                </h3>
-                <p className="text-sm text-neutral-charcoal/70 dark:text-white/80">
-                  Receive your detailed proposal within 24 hours of our site visit
-                </p>
-              </div>
+              ))}
             </div>
           </div>
         </div>

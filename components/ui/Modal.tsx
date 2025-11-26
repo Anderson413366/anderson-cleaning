@@ -1,7 +1,6 @@
 'use client'
 
-import React, { useEffect, useRef } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import React, { useEffect, useRef, useState } from 'react'
 import { Button } from './Button'
 import { X } from 'lucide-react'
 
@@ -32,7 +31,7 @@ interface ModalProps {
  * - ESC key to close
  * - Body scroll lock when open
  * - Backdrop click to close (optional)
- * - Smooth animations with prefers-reduced-motion support
+ * - Smooth CSS animations (no framer-motion dependency)
  * - ARIA attributes for screen readers
  *
  * @example
@@ -56,6 +55,28 @@ const Modal: React.FC<ModalProps> = ({
 }) => {
   const modalRef = useRef<HTMLDivElement>(null)
   const titleId = `modal-title-${React.useId()}`
+  const [isVisible, setIsVisible] = useState(false)
+  const [shouldRender, setShouldRender] = useState(false)
+
+  // Handle open/close animations
+  useEffect(() => {
+    if (isOpen) {
+      setShouldRender(true)
+      // Trigger entrance animation after mount
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          setIsVisible(true)
+        })
+      })
+    } else {
+      setIsVisible(false)
+      // Wait for exit animation before unmounting
+      const timer = setTimeout(() => {
+        setShouldRender(false)
+      }, 200)
+      return () => clearTimeout(timer)
+    }
+  }, [isOpen])
 
   // Handle ESC key to close
   useEffect(() => {
@@ -97,7 +118,7 @@ const Modal: React.FC<ModalProps> = ({
     }
   }, [isOpen])
 
-  if (!isOpen) return null
+  if (!shouldRender) return null
 
   const sizeClasses = {
     sm: 'max-w-sm',
@@ -113,52 +134,45 @@ const Modal: React.FC<ModalProps> = ({
   }
 
   return (
-    <AnimatePresence>
-      {isOpen && (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm"
-          onClick={handleOverlayClick}
-          aria-hidden="true"
-        >
-          <motion.div
-            ref={modalRef}
-            initial={{ scale: 0.9, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            exit={{ scale: 0.9, opacity: 0 }}
-            transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-            className={`relative bg-white dark:bg-slate-800 rounded-lg shadow-xl ${sizeClasses[size]} w-full p-6`}
-            onClick={(e) => e.stopPropagation()}
-            role="dialog"
-            aria-modal="true"
-            aria-labelledby={titleId}
+    <div
+      className={`fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm transition-opacity duration-200 ${
+        isVisible ? 'opacity-100' : 'opacity-0'
+      }`}
+      onClick={handleOverlayClick}
+      aria-hidden="true"
+    >
+      <div
+        ref={modalRef}
+        className={`relative bg-white dark:bg-slate-800 rounded-lg shadow-xl ${sizeClasses[size]} w-full p-6 transition-all duration-200 ${
+          isVisible ? 'scale-100 opacity-100' : 'scale-95 opacity-0'
+        }`}
+        onClick={(e) => e.stopPropagation()}
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby={titleId}
+      >
+        <div className="flex items-start justify-between mb-4">
+          <h2 id={titleId} className="text-body font-semibold text-neutral-charcoal dark:text-white">
+            {title}
+          </h2>
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={onClose}
+            className="text-neutral-charcoal/50 hover:text-neutral-charcoal/70 dark:text-white/80 dark:hover:text-slate-200"
+            aria-label="Close modal"
           >
-            <div className="flex items-start justify-between mb-4">
-              <h2 id={titleId} className="text-body font-semibold text-neutral-charcoal dark:text-white">
-                {title}
-              </h2>
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={onClose}
-                className="text-neutral-charcoal/50 hover:text-neutral-charcoal/70 dark:text-white/80 dark:hover:text-slate-200"
-                aria-label="Close modal"
-              >
-                <X className="h-5 w-5" />
-              </Button>
-            </div>
-            <div className="text-sm text-neutral-charcoal/80 dark:text-white/80 mb-6">{children}</div>
-            {footerActions && (
-              <div className="flex justify-end space-x-3 pt-4 border-t border-brand-deep-blue/10 dark:border-white/10">
-                {footerActions}
-              </div>
-            )}
-          </motion.div>
-        </motion.div>
-      )}
-    </AnimatePresence>
+            <X className="h-5 w-5" />
+          </Button>
+        </div>
+        <div className="text-sm text-neutral-charcoal/80 dark:text-white/80 mb-6">{children}</div>
+        {footerActions && (
+          <div className="flex justify-end space-x-3 pt-4 border-t border-brand-deep-blue/10 dark:border-white/10">
+            {footerActions}
+          </div>
+        )}
+      </div>
+    </div>
   )
 }
 

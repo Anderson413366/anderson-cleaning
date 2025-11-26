@@ -9,14 +9,14 @@ interface FormLegalNoticeProps {
 export default function FormLegalNotice({ className = '' }: FormLegalNoticeProps) {
   return (
     <p
-      className={`text-xs text-neutral-charcoal/70 dark:text-neutral-charcoal leading-relaxed mt-4 ${className}`.trim()}
+      className={`text-[13px] text-[#666666] dark:text-white/70 leading-relaxed pt-5 ${className}`.trim()}
     >
       By submitting this form, you agree to our{' '}
-      <Link href="/privacy-policy" className="text-brand-bright-blue hover:underline dark:text-brand-bright-blue">
+      <Link href="/privacy-policy" className="text-[13px] text-brand-bright-blue underline hover:text-brand-deep-blue dark:text-brand-bright-blue dark:hover:text-white">
         Privacy Policy
       </Link>{' '}
       and{' '}
-      <Link href="/terms-of-service" className="text-brand-bright-blue hover:underline dark:text-brand-bright-blue">
+      <Link href="/terms-of-service" className="text-[13px] text-brand-bright-blue underline hover:text-brand-deep-blue dark:text-brand-bright-blue dark:hover:text-white">
         Terms of Service
       </Link>
       . Your information will never be sold to third parties.

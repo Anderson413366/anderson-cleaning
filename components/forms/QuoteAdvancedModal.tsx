@@ -105,8 +105,8 @@ export default function QuoteAdvancedModal({
       <div className="max-h-[90vh] w-full max-w-2xl overflow-y-auto rounded-lg bg-white p-6">
         <div className="mb-6 flex items-center justify-between">
           <h2 className="text-h2">Detailed Quote Request</h2>
-          <button onClick={onClose} className="rounded p-2 hover:bg-neutral-light-grey">
-            <X className="h-6 w-6" />
+          <button onClick={onClose} className="rounded p-2 hover:bg-neutral-light-grey" aria-label="Close quote form">
+            <X className="h-6 w-6" aria-hidden="true" />
           </button>
         </div>
 

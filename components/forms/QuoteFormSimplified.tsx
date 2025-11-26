@@ -284,44 +284,51 @@ export default function QuoteFormSimplified({ onSuccess }: QuoteFormSimplifiedPr
           No spam, no pressure. Just honest pricing for quality commercial cleaning.
         </p>
 
-        {/* Progress Indicator */}
-        <div className="max-w-2xl mx-auto">
-          <div className="flex items-center justify-between mb-2">
-            {[1, 2, 3].map((step) => (
-              <div key={step} className="flex items-center flex-1">
-                <div className="flex items-center w-full">
-                  <div
-                    className={`flex items-center justify-center w-10 h-10 rounded-full border-2 font-semibold transition-all ${
-                      step === currentStep
-                        ? 'border-brand-bright-blue bg-brand-bright-blue text-white'
-                        : step < currentStep
-                        ? 'border-brand-bright-blue bg-brand-bright-blue text-white'
-                        : 'border-gray-300 dark:border-gray-600 bg-white dark:bg-slate-800 text-gray-400 dark:text-gray-500'
-                    }`}
-                  >
-                    {step < currentStep ? (
-                      <CheckCircle2 className="h-5 w-5" />
-                    ) : (
-                      step
-                    )}
-                  </div>
-                  {step < 3 && (
-                    <div
-                      className={`h-1 w-full mx-2 rounded transition-all ${
-                        step < currentStep
-                          ? 'bg-brand-bright-blue'
-                          : 'bg-gray-300 dark:bg-gray-600'
-                      }`}
-                    />
+        {/* Progress Indicator - Redesigned per specs */}
+        <div className="max-w-md mx-auto">
+          <div className="relative flex items-center justify-between">
+            {/* Connecting line behind circles */}
+            <div className="absolute top-5 left-5 right-5 h-[2px] bg-[#E0E0E0] dark:bg-slate-600" />
+            <div
+              className="absolute top-5 left-5 h-[2px] bg-brand-bright-blue transition-all duration-300"
+              style={{ width: `${((currentStep - 1) / 2) * 100}%` }}
+            />
+
+            {/* Step circles with labels */}
+            {[
+              { num: 1, label: 'Contact Info' },
+              { num: 2, label: 'Facility Details' },
+              { num: 3, label: 'Service Needs' },
+            ].map(({ num, label }) => (
+              <div key={num} className="relative z-10 flex flex-col items-center">
+                <div
+                  className={`flex items-center justify-center w-10 h-10 rounded-full font-semibold transition-all ${
+                    num < currentStep
+                      ? 'bg-brand-bright-blue text-white'
+                      : num === currentStep
+                      ? 'bg-brand-bright-blue text-white'
+                      : 'bg-[#E0E0E0] dark:bg-slate-600 text-[#666666] dark:text-slate-400'
+                  }`}
+                >
+                  {num < currentStep ? (
+                    <Check className="h-5 w-5 text-white" strokeWidth={3} />
+                  ) : (
+                    num
                   )}
                 </div>
+                <span
+                  className={`mt-2 text-[12px] whitespace-nowrap ${
+                    num === currentStep
+                      ? 'font-semibold text-brand-bright-blue'
+                      : num < currentStep
+                      ? 'font-medium text-brand-bright-blue'
+                      : 'text-[#666666] dark:text-slate-400'
+                  }`}
+                >
+                  {label}
+                </span>
               </div>
             ))}
-          </div>
-          <div className="flex justify-between text-xs text-neutral-charcoal/60 dark:text-white/60">
-            <span className={currentStep === 1 ? 'font-semibold text-brand-bright-blue' : ''}>Contact Info</span>
-            <span className={currentStep === 2 ? 'font-semibold text-brand-bright-blue' : ''}>Facility Details</span>
-            <span className={currentStep === 3 ? 'font-semibold text-brand-bright-blue' : ''}>Service Needs</span>
           </div>
         </div>
       </div>
@@ -354,110 +361,113 @@ export default function QuoteFormSimplified({ onSuccess }: QuoteFormSimplifiedPr
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-8">
           {/* Step 1: Contact Information */}
           {currentStep === 1 && (
-            <div className="space-y-4">
+            <div>
               <h3 className="text-xl font-semibold text-brand-deep-blue dark:text-brand-bright-blue mb-6">
                 Your Information
               </h3>
 
-            <div className="grid gap-4 md:grid-cols-2">
-              <div>
-                <label htmlFor="fullName" className="mb-2 block text-sm font-medium text-neutral-charcoal dark:text-white">
-                  Full Name <span className="text-red-500">*</span>
-                </label>
-                <div className="relative">
-                  <input
-                    {...register('fullName')}
-                    id="fullName"
-                    type="text"
-                    className={`w-full rounded-lg border-2 px-4 py-3 pr-10 focus:ring-2 dark:bg-slate-900 dark:text-white transition-colors min-h-[48px] ${getFieldState('fullName').className}`}
-                    placeholder="John Smith"
-                  />
-                  {getFieldState('fullName').isValid && (
-                    <Check className="absolute right-3 top-1/2 -translate-y-1/2 h-5 w-5 text-green-500" />
-                  )}
-                  {getFieldState('fullName').hasError && (
-                    <X className="absolute right-3 top-1/2 -translate-y-1/2 h-5 w-5 text-red-500" />
+              {/* 2-column grid: 24px column gap, 20px row gap. Mobile: single column */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-5">
+                {/* Full Name */}
+                <div>
+                  <label htmlFor="fullName" className="mb-3 block text-[14px] font-medium text-[#333333] dark:text-white">
+                    Full Name <span className="text-red-500">*</span>
+                  </label>
+                  <div className="relative">
+                    <input
+                      {...register('fullName')}
+                      id="fullName"
+                      type="text"
+                      className={`w-full h-[48px] rounded-lg border border-[#D0D0D0] px-4 pr-10 text-[16px] focus:border-brand-bright-blue focus:shadow-[0_0_0_3px_rgba(0,119,217,0.1)] focus:outline-none dark:bg-slate-900 dark:border-slate-600 dark:text-white transition-colors ${getFieldState('fullName').hasError ? 'border-brand-red' : ''} ${getFieldState('fullName').isValid ? 'border-brand-bright-blue' : ''}`}
+                      placeholder="John Smith"
+                    />
+                    {getFieldState('fullName').isValid && (
+                      <Check className="absolute right-3 top-1/2 -translate-y-1/2 h-5 w-5 text-green-500" />
+                    )}
+                    {getFieldState('fullName').hasError && (
+                      <X className="absolute right-3 top-1/2 -translate-y-1/2 h-5 w-5 text-red-500" />
+                    )}
+                  </div>
+                  {errors.fullName && (
+                    <p className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.fullName.message}</p>
                   )}
                 </div>
-                {errors.fullName && (
-                  <p className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.fullName.message}</p>
-                )}
-              </div>
 
-              <div>
-                <label htmlFor="company" className="mb-2 block text-sm font-medium text-neutral-charcoal dark:text-white">
-                  Company Name <span className="text-red-500">*</span>
-                </label>
-                <div className="relative">
-                  <input
-                    {...register('company')}
-                    id="company"
-                    type="text"
-                    className={`w-full rounded-lg border-2 px-4 py-3 pr-10 focus:ring-2 dark:bg-slate-900 dark:text-white transition-colors min-h-[48px] ${getFieldState('company').className}`}
-                    placeholder="ABC Corporation"
-                  />
-                  {getFieldState('company').isValid && (
-                    <Check className="absolute right-3 top-1/2 -translate-y-1/2 h-5 w-5 text-green-500" />
-                  )}
-                  {getFieldState('company').hasError && (
-                    <X className="absolute right-3 top-1/2 -translate-y-1/2 h-5 w-5 text-red-500" />
+                {/* Company Name */}
+                <div>
+                  <label htmlFor="company" className="mb-3 block text-[14px] font-medium text-[#333333] dark:text-white">
+                    Company Name <span className="text-red-500">*</span>
+                  </label>
+                  <div className="relative">
+                    <input
+                      {...register('company')}
+                      id="company"
+                      type="text"
+                      className={`w-full h-[48px] rounded-lg border border-[#D0D0D0] px-4 pr-10 text-[16px] focus:border-brand-bright-blue focus:shadow-[0_0_0_3px_rgba(0,119,217,0.1)] focus:outline-none dark:bg-slate-900 dark:border-slate-600 dark:text-white transition-colors ${getFieldState('company').hasError ? 'border-brand-red' : ''} ${getFieldState('company').isValid ? 'border-brand-bright-blue' : ''}`}
+                      placeholder="ABC Corporation"
+                    />
+                    {getFieldState('company').isValid && (
+                      <Check className="absolute right-3 top-1/2 -translate-y-1/2 h-5 w-5 text-green-500" />
+                    )}
+                    {getFieldState('company').hasError && (
+                      <X className="absolute right-3 top-1/2 -translate-y-1/2 h-5 w-5 text-red-500" />
+                    )}
+                  </div>
+                  {errors.company && (
+                    <p className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.company.message}</p>
                   )}
                 </div>
-                {errors.company && (
-                  <p className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.company.message}</p>
-                )}
-              </div>
-            </div>
 
-            <div className="grid gap-4 md:grid-cols-2">
-              <div>
-                <label htmlFor="email" className="mb-2 block text-sm font-medium text-neutral-charcoal dark:text-white">
-                  Email Address <span className="text-red-500">*</span>
-                </label>
-                <div className="relative">
-                  <input
-                    {...register('email')}
-                    id="email"
-                    type="email"
-                    className={`w-full rounded-lg border-2 px-4 py-3 pr-10 focus:ring-2 dark:bg-slate-900 dark:text-white transition-colors min-h-[48px] ${getFieldState('email').className}`}
-                    placeholder="john@company.com"
-                  />
-                  {getFieldState('email').isValid && (
-                    <Check className="absolute right-3 top-1/2 -translate-y-1/2 h-5 w-5 text-green-500" />
-                  )}
-                  {getFieldState('email').hasError && (
-                    <X className="absolute right-3 top-1/2 -translate-y-1/2 h-5 w-5 text-red-500" />
+                {/* Email */}
+                <div>
+                  <label htmlFor="email" className="mb-3 block text-[14px] font-medium text-[#333333] dark:text-white">
+                    Email Address <span className="text-red-500">*</span>
+                  </label>
+                  <div className="relative">
+                    <input
+                      {...register('email')}
+                      id="email"
+                      type="email"
+                      className={`w-full h-[48px] rounded-lg border border-[#D0D0D0] px-4 pr-10 text-[16px] focus:border-brand-bright-blue focus:shadow-[0_0_0_3px_rgba(0,119,217,0.1)] focus:outline-none dark:bg-slate-900 dark:border-slate-600 dark:text-white transition-colors ${getFieldState('email').hasError ? 'border-brand-red' : ''} ${getFieldState('email').isValid ? 'border-brand-bright-blue' : ''}`}
+                      placeholder="john@company.com"
+                    />
+                    {getFieldState('email').isValid && (
+                      <Check className="absolute right-3 top-1/2 -translate-y-1/2 h-5 w-5 text-green-500" />
+                    )}
+                    {getFieldState('email').hasError && (
+                      <X className="absolute right-3 top-1/2 -translate-y-1/2 h-5 w-5 text-red-500" />
+                    )}
+                  </div>
+                  {errors.email && (
+                    <p className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.email.message}</p>
                   )}
                 </div>
-                {errors.email && (
-                  <p className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.email.message}</p>
-                )}
-              </div>
 
-              <div>
-                <label htmlFor="phone" className="mb-2 block text-sm font-medium text-neutral-charcoal dark:text-white">
-                  Phone Number <span className="text-red-500">*</span>
-                </label>
-                <div className="relative">
-                  <input
-                    {...register('phone')}
-                    id="phone"
-                    type="tel"
-                    className={`w-full rounded-lg border-2 px-4 py-3 pr-10 focus:ring-2 dark:bg-slate-900 dark:text-white transition-colors min-h-[48px] ${getFieldState('phone').className}`}
-                    placeholder={CONTACT_INFO.phone.formatted}
-                  />
-                  {getFieldState('phone').isValid && (
-                    <Check className="absolute right-3 top-1/2 -translate-y-1/2 h-5 w-5 text-green-500" />
-                  )}
-                  {getFieldState('phone').hasError && (
-                    <X className="absolute right-3 top-1/2 -translate-y-1/2 h-5 w-5 text-red-500" />
+                {/* Phone */}
+                <div>
+                  <label htmlFor="phone" className="mb-3 block text-[14px] font-medium text-[#333333] dark:text-white">
+                    Phone Number <span className="text-red-500">*</span>
+                  </label>
+                  <div className="relative">
+                    <input
+                      {...register('phone')}
+                      id="phone"
+                      type="tel"
+                      className={`w-full h-[48px] rounded-lg border border-[#D0D0D0] px-4 pr-10 text-[16px] focus:border-brand-bright-blue focus:shadow-[0_0_0_3px_rgba(0,119,217,0.1)] focus:outline-none dark:bg-slate-900 dark:border-slate-600 dark:text-white transition-colors ${getFieldState('phone').hasError ? 'border-brand-red' : ''} ${getFieldState('phone').isValid ? 'border-brand-bright-blue' : ''}`}
+                      placeholder={CONTACT_INFO.phone.formatted}
+                    />
+                    {getFieldState('phone').isValid && (
+                      <Check className="absolute right-3 top-1/2 -translate-y-1/2 h-5 w-5 text-green-500" />
+                    )}
+                    {getFieldState('phone').hasError && (
+                      <X className="absolute right-3 top-1/2 -translate-y-1/2 h-5 w-5 text-red-500" />
+                    )}
+                  </div>
+                  {errors.phone && (
+                    <p className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.phone.message}</p>
                   )}
                 </div>
-                {errors.phone && (
-                  <p className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.phone.message}</p>
-                )}
               </div>
-            </div>
             </div>
           )}
 
