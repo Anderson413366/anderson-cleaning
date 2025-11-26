@@ -63,17 +63,17 @@ export default function AboutPage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {[
                 {
-                  icon: Users,
+                  icon: 'Users',
                   title: 'Full-Time W-2 Employees',
                   description: 'No contractors—trained professionals with benefits and accountability',
                 },
                 {
-                  icon: Clock,
+                  icon: 'Clock',
                   title: '24/7 Support',
                   description: 'Real people answer. Emergency on-site arrival in 2 hours or less',
                 },
                 {
-                  icon: Shield,
+                  icon: 'Shield',
                   title: 'Fully Insured & Bonded',
                   description: 'Comprehensive liability coverage. All staff background checked',
                 },
@@ -405,7 +405,7 @@ export default function AboutPage() {
               <div className="bg-white dark:bg-slate-900 border-2 border-neutral-light-grey dark:border-slate-700 rounded-xl p-8 shadow-sm hover:shadow-lg transition-shadow">
                 {/* Glass-effect icon - Large (64px) */}
                 <div className="flex justify-center mb-6">
-                  <GlassIcon icon={Users} size="lg" variant="default" label="Invest in People" />
+                  <GlassIcon icon="Users" size="lg" variant="default" label="Invest in People" />
                 </div>
                 <h3 className="text-h3 font-bold text-neutral-charcoal dark:text-white mb-4 text-center">
                   Invest in People
@@ -428,7 +428,7 @@ export default function AboutPage() {
               <div className="bg-white dark:bg-slate-900 border-2 border-neutral-light-grey dark:border-slate-700 rounded-xl p-8 shadow-sm hover:shadow-lg transition-shadow">
                 {/* Glass-effect icon - Large (64px) */}
                 <div className="flex justify-center mb-6">
-                  <GlassIcon icon={Target} size="lg" variant="default" label="Systems & Standards" />
+                  <GlassIcon icon="Target" size="lg" variant="default" label="Systems & Standards" />
                 </div>
                 <h3 className="text-h3 font-bold text-neutral-charcoal dark:text-white mb-4 text-center">
                   Systems & Standards
@@ -459,7 +459,7 @@ export default function AboutPage() {
 
                   {/* Glass-effect icon - Large (64px) - Light variant for dark background */}
                   <div className="flex justify-center mb-6 mt-2">
-                    <GlassIcon icon={Heart} size="lg" variant="light" label="Personal Touch" />
+                    <GlassIcon icon="Heart" size="lg" variant="light" label="Personal Touch" />
                   </div>
                   <h3 className="text-h3 font-bold text-white mb-4 text-center">
                     Personal Touch
@@ -682,17 +682,17 @@ export default function AboutPage() {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {[
                   {
-                    icon: Handshake,
+                    icon: 'Handshake',
                     title: 'Local Hiring',
                     description: 'We employ local residents to keep jobs and economic benefits in our community.',
                   },
                   {
-                    icon: Heart,
+                    icon: 'Heart',
                     title: 'Community Support',
                     description: 'Regular donations and volunteer work for local charities, schools, and events.',
                   },
                   {
-                    icon: Star,
+                    icon: 'Star',
                     title: 'Local Partnerships',
                     description: 'We source supplies from area vendors whenever possible to reinvest locally.',
                   },

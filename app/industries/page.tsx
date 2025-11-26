@@ -14,7 +14,6 @@ import { ArrowRight } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
 import { GlassIcon } from '@/components/ui/GlassIcon'
 import { industries } from '@/lib/industries-data'
-import { getIconComponent } from '@/lib/icon-map'
 
 export const metadata: Metadata = {
   title: 'Industries We Serve',
@@ -77,8 +76,6 @@ export default function IndustriesPage() {
             {/* Featured Industries - Healthcare & Corporate Offices */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {featuredIndustries.map((industry) => {
-                const IconComponent = getIconComponent(industry.icon)
-
                 return (
                   <Link
                     key={industry.id}
@@ -95,7 +92,7 @@ export default function IndustriesPage() {
 
                       {/* Glass-effect icon - Large (64px) for featured industries */}
                       <div className="mb-6">
-                        <GlassIcon icon={IconComponent} size="lg" variant="solid" label={industry.name} />
+                        <GlassIcon icon={industry.icon} size="lg" variant="solid" label={industry.name} />
                       </div>
 
                       <h3 className="text-3xl font-bold text-neutral-charcoal dark:text-white mb-4 group-hover:text-brand-bright-blue dark:group-hover:text-brand-bright-blue transition-colors">
@@ -119,8 +116,6 @@ export default function IndustriesPage() {
             {/* Secondary Industries */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {secondaryIndustries.map((industry) => {
-                const IconComponent = getIconComponent(industry.icon)
-
                 return (
                   <Link
                     key={industry.id}
@@ -130,7 +125,7 @@ export default function IndustriesPage() {
                     <div className="h-full flex flex-col bg-white dark:bg-slate-900 rounded-xl shadow-sm border-2 border-neutral-light-grey dark:border-slate-700 p-8 transition-all duration-300 hover:shadow-xl hover:border-brand-bright-blue hover:-translate-y-1">
                       {/* Glass-effect icon - Large (64px) for industry cards */}
                       <div className="mb-6">
-                        <GlassIcon icon={IconComponent} size="lg" variant="solid" label={industry.name} />
+                        <GlassIcon icon={industry.icon} size="lg" variant="solid" label={industry.name} />
                       </div>
 
                       <h3 className="text-h3 font-bold text-neutral-charcoal dark:text-white mb-4 group-hover:text-brand-bright-blue dark:group-hover:text-brand-bright-blue transition-colors">

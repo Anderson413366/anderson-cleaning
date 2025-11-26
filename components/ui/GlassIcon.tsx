@@ -2,6 +2,38 @@
 
 import { type LucideIcon } from 'lucide-react'
 import { clsx } from 'clsx'
+import {
+  Heart,
+  Building2,
+  Factory,
+  AlertTriangle,
+  Sprout,
+  Briefcase,
+  GraduationCap,
+  ShoppingBag,
+  Stethoscope,
+  Warehouse,
+  ClipboardCheck,
+  FileText,
+  Users,
+  CheckCircle2,
+  MapPin,
+  Mail,
+  Clock,
+  Shield,
+  Target,
+  Handshake,
+  Star,
+  Award,
+  Phone,
+  Zap,
+  Package,
+  HardHat,
+  Square,
+  Sparkles,
+  TrendingUp,
+  Globe,
+} from 'lucide-react'
 
 /**
  * GlassIcon Component - Apple-inspired glass-morphism icon system
@@ -19,11 +51,46 @@ import { clsx } from 'clsx'
  * - lg (64px container, 32px icon) - for heroes
  */
 
+// Icon name to component mapping - used for server component compatibility
+const iconMap: Record<string, LucideIcon> = {
+  Heart,
+  Building2,
+  Factory,
+  AlertTriangle,
+  Sprout,
+  Briefcase,
+  GraduationCap,
+  ShoppingBag,
+  Stethoscope,
+  Warehouse,
+  ClipboardCheck,
+  FileText,
+  Users,
+  CheckCircle2,
+  MapPin,
+  Mail,
+  Clock,
+  Shield,
+  Target,
+  Handshake,
+  Star,
+  Award,
+  Phone,
+  Zap,
+  Package,
+  HardHat,
+  Square,
+  Sparkles,
+  TrendingUp,
+  Globe,
+}
+
 export type GlassIconSize = 'sm' | 'md' | 'lg'
 export type GlassIconVariant = 'default' | 'light' | 'solid'
 
 interface GlassIconProps {
-  icon: LucideIcon
+  /** Icon can be either a Lucide icon component (client use only) or icon name string (server compatible) */
+  icon: LucideIcon | string
   size?: GlassIconSize
   variant?: GlassIconVariant
   className?: string
@@ -64,7 +131,7 @@ const variantConfig = {
 }
 
 export function GlassIcon({
-  icon: Icon,
+  icon,
   size = 'md',
   variant = 'default',
   className,
@@ -72,6 +139,17 @@ export function GlassIcon({
 }: GlassIconProps) {
   const { container: containerSize, icon: iconSize } = sizeConfig[size]
   const { container: containerStyle, icon: iconStyle } = variantConfig[variant]
+
+  // Resolve icon: if string, look up in map; otherwise use directly
+  let Icon: LucideIcon
+  if (typeof icon === 'string') {
+    Icon = iconMap[icon] || Briefcase
+    if (!iconMap[icon]) {
+      console.warn(`GlassIcon: Icon "${icon}" not found in icon map. Using default Briefcase icon.`)
+    }
+  } else {
+    Icon = icon
+  }
 
   return (
     <div
