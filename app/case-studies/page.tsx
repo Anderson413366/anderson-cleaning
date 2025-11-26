@@ -53,10 +53,10 @@ export default function CaseStudiesPage() {
           <div className="max-w-7xl mx-auto">
             {/* Section Intro */}
             <div className="text-center mb-12">
-              <h2 className="text-h3 leading-normal font-bold text-[var(--color-text-primary)] mb-4">
+              <h2 className="text-h3 leading-normal font-bold text-neutral-charcoal dark:text-white mb-4">
                 Featured Case Studies
               </h2>
-              <p className="text-body text-[var(--color-text-secondary)] max-w-3xl mx-auto">
+              <p className="text-body text-neutral-charcoal/70 dark:text-white/80 max-w-3xl mx-auto">
                 From healthcare facilities to manufacturing plants, we deliver solutions tailored to
                 your industry's unique challenges.
               </p>
@@ -71,7 +71,7 @@ export default function CaseStudiesPage() {
                   <Link
                     key={study.id}
                     href={`/case-studies/${study.slug}`}
-                    className="group block bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-xl)] transition-all duration-300 hover:-translate-y-1"
+                    className="group block bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
                   >
                     {/* Featured Image Placeholder */}
                     <div className="relative h-48 bg-neutral-off-white dark:bg-slate-900 overflow-hidden">
@@ -87,7 +87,7 @@ export default function CaseStudiesPage() {
 
                       {/* Industry Badge */}
                       <div className="absolute top-4 left-4 px-3 py-1 bg-white dark:bg-slate-900 rounded-full shadow-md">
-                        <span className="text-xs font-semibold text-[var(--color-text-primary)]">
+                        <span className="text-xs font-semibold text-neutral-charcoal dark:text-white">
                           {study.client.industry}
                         </span>
                       </div>
@@ -107,10 +107,10 @@ export default function CaseStudiesPage() {
                     {/* Card Content */}
                     <div className="p-6">
                       {/* Challenge Headline */}
-                      <h3 className="text-sm font-semibold text-[var(--color-text-secondary)] uppercase tracking-wide mb-2">
+                      <h3 className="text-sm font-semibold text-neutral-charcoal/70 dark:text-white/80 uppercase tracking-wide mb-2">
                         The Challenge
                       </h3>
-                      <p className="text-body font-bold text-[var(--color-text-primary)] mb-4 line-clamp-2">
+                      <p className="text-body font-bold text-neutral-charcoal dark:text-white mb-4 line-clamp-2">
                         {study.challenge.headline}
                       </p>
 
@@ -133,14 +133,14 @@ export default function CaseStudiesPage() {
                       </div>
 
                       {/* Client Info */}
-                      <div className="text-sm text-[var(--color-text-secondary)] mb-4">
+                      <div className="text-sm text-neutral-charcoal/70 dark:text-white/80 mb-4">
                         <span className="font-semibold">{study.client.name}</span>
                         <span className="mx-2">•</span>
                         <span>{study.client.location}</span>
                       </div>
 
                       {/* Read More Link */}
-                      <div className="flex items-center gap-2 text-[var(--color-primary-base)] font-semibold group-hover:gap-3 transition-all duration-200">
+                      <div className="flex items-center gap-2 text-brand-bright-blue font-semibold group-hover:gap-3 transition-all duration-200">
                         <span>Read Full Story</span>
                         <ArrowRight
                           className="h-5 w-5 group-hover:translate-x-1 transition-transform duration-200"
@@ -162,10 +162,10 @@ export default function CaseStudiesPage() {
       <section className="py-16 bg-neutral-off-white dark:bg-slate-800">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-h3 leading-normal font-bold text-[var(--color-text-primary)] mb-4">
+            <h2 className="text-h3 leading-normal font-bold text-neutral-charcoal dark:text-white mb-4">
               Don't See Your Industry?
             </h2>
-            <p className="text-body text-[var(--color-text-secondary)] mb-8">
+            <p className="text-body text-neutral-charcoal/70 dark:text-white/80 mb-8">
               We serve businesses across healthcare, corporate offices, manufacturing, retail,
               education, and more. Every facility has unique challenges—let's discuss yours.
             </p>
@@ -195,44 +195,44 @@ export default function CaseStudiesPage() {
       <section className="py-16 md:py-20 bg-white dark:bg-slate-900">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mx-auto">
-            <h2 className="text-h3 leading-normal font-bold text-[var(--color-text-primary)] mb-12 text-center">
+            <h2 className="text-h3 leading-normal font-bold text-neutral-charcoal dark:text-white mb-12 text-center">
               Our Track Record
             </h2>
 
             {/* Stats Grid */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="text-center">
-                <div className="text-h1 font-extrabold text-[var(--color-primary-base)] mb-2">
+                <div className="text-h1 font-extrabold text-brand-bright-blue mb-2">
                   100%
                 </div>
-                <div className="text-body font-semibold text-[var(--color-text-primary)] mb-2">
+                <div className="text-body font-semibold text-neutral-charcoal dark:text-white mb-2">
                   Client Satisfaction
                 </div>
-                <div className="text-sm text-[var(--color-text-secondary)]">
+                <div className="text-sm text-neutral-charcoal/70 dark:text-white/80">
                   Every case study client renewed their contract
                 </div>
               </div>
 
               <div className="text-center">
-                <div className="text-h1 font-extrabold text-[var(--color-primary-base)] mb-2">
+                <div className="text-h1 font-extrabold text-brand-bright-blue mb-2">
                   40%
                 </div>
-                <div className="text-body font-semibold text-[var(--color-text-primary)] mb-2">
+                <div className="text-body font-semibold text-neutral-charcoal dark:text-white mb-2">
                   Average Improvement
                 </div>
-                <div className="text-sm text-[var(--color-text-secondary)]">
+                <div className="text-sm text-neutral-charcoal/70 dark:text-white/80">
                   Measurable outcomes in key performance indicators
                 </div>
               </div>
 
               <div className="text-center">
-                <div className="text-h1 font-extrabold text-[var(--color-primary-base)] mb-2">
+                <div className="text-h1 font-extrabold text-brand-bright-blue mb-2">
                   &lt;3 weeks
                 </div>
-                <div className="text-body font-semibold text-[var(--color-text-primary)] mb-2">
+                <div className="text-body font-semibold text-neutral-charcoal dark:text-white mb-2">
                   Implementation Time
                 </div>
-                <div className="text-sm text-[var(--color-text-secondary)]">
+                <div className="text-sm text-neutral-charcoal/70 dark:text-white/80">
                   From consultation to full program launch
                 </div>
               </div>
