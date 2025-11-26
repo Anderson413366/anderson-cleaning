@@ -1,8 +1,9 @@
 'use client'
 
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { Button } from '@/components/ui/Button'
+import { AlertTriangle, Search, Phone, Mail, RefreshCw, Home, ArrowRight } from 'lucide-react'
 
 export default function Error({
   error,
@@ -11,144 +12,153 @@ export default function Error({
   error: Error & { digest?: string }
   reset: () => void
 }) {
+  const [searchQuery, setSearchQuery] = useState('')
+
   useEffect(() => {
     // Log error to error reporting service (Sentry)
     console.error('Application error:', error)
   }, [error])
 
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault()
+    if (searchQuery.trim()) {
+      // Redirect to Google site search as fallback
+      window.location.href = `https://www.google.com/search?q=site:andersoncleaning.com+${encodeURIComponent(searchQuery)}`
+    }
+  }
+
+  const popularPages = [
+    { name: 'Our Services', href: '/services', description: 'Commercial cleaning solutions' },
+    { name: 'Get a Quote', href: '/quote', description: 'Free customized estimate' },
+    { name: 'About Us', href: '/about', description: 'Learn about our company' },
+    { name: 'Contact', href: '/contact', description: 'Get in touch with us' },
+    { name: 'Industries', href: '/industries', description: 'Specialized industry solutions' },
+    { name: 'Careers', href: '/careers', description: 'Join our team' },
+  ]
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-neutral-off-white dark:bg-slate-900 px-4">
-      <div className="max-w-2xl w-full text-center">
-        {/* Error Illustration */}
-        <div className="mb-8">
-          <svg
-            className="w-full h-64 mx-auto"
-            viewBox="0 0 600 300"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            {/* Background */}
-            <circle
-              cx="300"
-              y="150"
-              r="100"
-              className="fill-red-100 dark:fill-red-900/30"
-            />
+    <div className="min-h-screen flex items-center justify-center bg-neutral-off-white dark:bg-slate-900 px-4 py-16">
+      <div className="max-w-3xl w-full">
+        {/* Error Icon and Message */}
+        <div className="text-center mb-8">
+          <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-brand-red/10 dark:bg-brand-red/20 mb-6">
+            <AlertTriangle className="h-10 w-10 text-brand-red" aria-hidden="true" />
+          </div>
 
-            {/* Broken Broom Icon */}
-            <g transform="translate(280, 100)">
-              {/* Broom handle (broken) */}
-              <line
-                x1="20"
-                y1="10"
-                x2="25"
-                y2="40"
-                className="stroke-gray-600 dark:stroke-gray-400"
-                strokeWidth="3"
-              />
-              <line
-                x1="25"
-                y1="45"
-                x2="30"
-                y2="75"
-                className="stroke-gray-600 dark:stroke-gray-400"
-                strokeWidth="3"
-              />
+          <h1 className="text-h1 font-bold text-neutral-charcoal dark:text-white mb-4">
+            Something Went Wrong
+          </h1>
 
-              {/* Break indicator */}
-              <circle cx="27" cy="42" r="4" className="fill-red-500" />
+          <p className="text-body text-neutral-charcoal/70 dark:text-white/80 mb-2 max-w-lg mx-auto">
+            We apologize for the inconvenience. An unexpected error has occurred.
+            Our team has been notified and we're working to fix it.
+          </p>
 
-              {/* Broom bristles */}
-              <path
-                d="M25 75 L15 95 L35 95 Z"
-                className="fill-amber-600 dark:fill-amber-500"
-              />
-            </g>
+          {error.digest && (
+            <p className="text-sm text-neutral-charcoal/50 dark:text-white/50 font-mono mt-4">
+              Error ID: {error.digest}
+            </p>
+          )}
 
-            {/* Alert icon */}
-            <circle
-              cx="350"
-              cy="120"
-              r="20"
-              className="fill-red-500 dark:fill-red-600"
-            />
-            <text
-              x="350"
-              y="130"
-              textAnchor="middle"
-              className="fill-white text-h3 font-bold"
-            >
-              !
-            </text>
-          </svg>
+          {/* Error details for development */}
+          {process.env.NODE_ENV === 'development' && error.message && (
+            <div className="mt-4 p-4 bg-brand-red/5 dark:bg-brand-red/10 border border-brand-red/20 dark:border-brand-red/30 rounded-lg max-w-lg mx-auto">
+              <p className="text-sm text-red-800 dark:text-red-300 font-mono text-left break-all">
+                {error.message}
+              </p>
+            </div>
+          )}
         </div>
 
-        {/* Error Message */}
-        <h1 className="text-h1 font-bold text-neutral-charcoal dark:text-white mb-4">
-          Oops!
-        </h1>
-
-        <h2 className="text-h3 font-semibold text-neutral-charcoal dark:text-white mb-4">
-          Something went wrong
-        </h2>
-
-        <p className="text-body text-neutral-charcoal/70 dark:text-white/80 mb-2 max-w-md mx-auto">
-          We encountered an unexpected error. Our team has been notified and
-          we're working to fix it.
-        </p>
-
-        {/* Error details for development */}
-        {process.env.NODE_ENV === 'development' && error.message && (
-          <div className="mt-6 p-4 bg-brand-red/5 dark:bg-brand-red/10 border border-brand-red/20 dark:border-brand-red/30 rounded-lg max-w-md mx-auto">
-            <p className="text-sm text-red-800 dark:text-red-300 font-mono text-left break-all">
-              {error.message}
-            </p>
-          </div>
-        )}
-
-        {error.digest && (
-          <p className="mt-4 text-sm text-neutral-charcoal/60 dark:text-white/70">
-            Error ID: {error.digest}
-          </p>
-        )}
-
         {/* Action Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
-          <Button variant="primary" size="lg" onClick={reset}>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+          <Button
+            variant="primary"
+            size="lg"
+            onClick={() => reset()}
+            className="inline-flex items-center gap-2"
+          >
+            <RefreshCw className="h-5 w-5" aria-hidden="true" />
             Try Again
           </Button>
 
           <Link href="/">
-            <Button variant="outline" size="lg">
-              Go to Homepage
+            <Button variant="outline" size="lg" className="inline-flex items-center gap-2 w-full sm:w-auto">
+              <Home className="h-5 w-5" aria-hidden="true" />
+              Back to Home
             </Button>
           </Link>
         </div>
 
-        {/* Support Information */}
-        <div className="mt-12 pt-8 border-t border-brand-deep-blue/10 dark:border-white/10">
-          <p className="text-sm text-neutral-charcoal/70 dark:text-white/80 mb-4">
-            Need immediate assistance?
-          </p>
+        {/* Search Bar */}
+        <div className="bg-white dark:bg-slate-800 rounded-xl border-2 border-brand-deep-blue/10 dark:border-white/10 p-6 mb-8">
+          <h2 className="text-lg font-semibold text-neutral-charcoal dark:text-white mb-4 text-center">
+            Search Our Site
+          </h2>
+          <form onSubmit={handleSearch} className="flex gap-3">
+            <div className="relative flex-1">
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-neutral-charcoal/40 dark:text-white/40" aria-hidden="true" />
+              <input
+                type="text"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                placeholder="Search for services, industries, or information..."
+                aria-label="Search"
+                className="w-full pl-10 pr-4 py-3 rounded-lg border-2 border-brand-deep-blue/20 dark:border-white/20 bg-neutral-off-white dark:bg-slate-700 text-neutral-charcoal dark:text-white placeholder:text-neutral-charcoal/50 dark:placeholder:text-white/50 focus:border-brand-bright-blue focus:outline-none transition-colors"
+              />
+            </div>
+            <Button type="submit" variant="primary">
+              Search
+            </Button>
+          </form>
+        </div>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 text-sm">
+        {/* Popular Pages */}
+        <div className="mb-8">
+          <h2 className="text-lg font-semibold text-neutral-charcoal dark:text-white mb-4 text-center">
+            Popular Pages
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {popularPages.map((page) => (
+              <Link
+                key={page.href}
+                href={page.href}
+                className="group flex items-center justify-between p-4 bg-white dark:bg-slate-800 rounded-lg border-2 border-brand-deep-blue/10 dark:border-white/10 hover:border-brand-bright-blue transition-all duration-200"
+              >
+                <div>
+                  <p className="font-semibold text-neutral-charcoal dark:text-white group-hover:text-brand-bright-blue transition-colors">
+                    {page.name}
+                  </p>
+                  <p className="text-sm text-neutral-charcoal/60 dark:text-white/60">
+                    {page.description}
+                  </p>
+                </div>
+                <ArrowRight className="h-5 w-5 text-brand-bright-blue opacity-0 group-hover:opacity-100 transition-opacity" aria-hidden="true" />
+              </Link>
+            ))}
+          </div>
+        </div>
+
+        {/* Contact Options */}
+        <div className="bg-gradient-to-br from-brand-deep-blue to-brand-bright-blue rounded-xl p-6 text-white">
+          <h2 className="text-lg font-semibold mb-4 text-center">
+            Need Help? Contact Us
+          </h2>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="tel:+14133065053"
-              className="text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300 hover:underline"
+              className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-lg px-6 py-3 transition-colors"
             >
-              Call (413) 306-5053
+              <Phone className="h-5 w-5" aria-hidden="true" />
+              <span className="font-semibold">(413) 306-5053</span>
             </a>
-
-            <span className="hidden sm:inline text-neutral-charcoal/40 dark:text-neutral-charcoal/80">
-              •
-            </span>
-
-            <Link
-              href="/contact"
-              className="text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300 hover:underline"
+            <a
+              href="mailto:info@andersoncleaning.com"
+              className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-lg px-6 py-3 transition-colors"
             >
-              Contact Support
-            </Link>
+              <Mail className="h-5 w-5" aria-hidden="true" />
+              <span className="font-semibold">info@andersoncleaning.com</span>
+            </a>
           </div>
         </div>
       </div>

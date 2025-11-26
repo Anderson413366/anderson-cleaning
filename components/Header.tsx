@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useMemo, useCallback, useRef } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { Menu, X, Phone, Mail, ChevronDown } from 'lucide-react'
 import { CONTACT_INFO } from '@/lib/constants'
@@ -177,9 +178,12 @@ export default function Header() {
         <div className="flex lg:flex-1">
           <Link href="/" className="-m-1.5 p-1.5 transition-opacity hover:opacity-80">
             {/* Single responsive logo - React-controlled theme swapping */}
-            <img
+            <Image
               src={logoSrc}
               alt="Anderson Cleaning Company"
+              width={200}
+              height={56}
+              priority
               className="h-10 w-auto md:h-12 lg:h-14 object-contain"
             />
           </Link>
@@ -499,19 +503,19 @@ export default function Header() {
             <div className="flex items-center justify-between">
               <Link href="/" className="-m-1.5 p-1.5" onClick={() => setMobileMenuOpen(false)}>
                 <span className="sr-only">Anderson Cleaning Company</span>
-                <img
+                <Image
                   src="/brand/color/logo-icon-512.png"
                   alt="Anderson Cleaning Company"
+                  width={40}
+                  height={40}
                   className="h-10 w-auto dark:hidden"
-                  width="40"
-                  height="40"
                 />
-                <img
+                <Image
                   src="/brand/white/logo-icon-512-white.png"
                   alt="Anderson Cleaning Company"
+                  width={40}
+                  height={40}
                   className="hidden h-10 w-auto dark:block"
-                  width="40"
-                  height="40"
                 />
               </Link>
               <button

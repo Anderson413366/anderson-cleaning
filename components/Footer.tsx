@@ -117,7 +117,7 @@ export default function Footer() {
               href="/quote"
               className="inline-flex items-center justify-center rounded-[10px] bg-brand-red px-7 py-[14px] text-base font-semibold text-white transition-all duration-150 hover:bg-[#a00d25] active:bg-[#8a0b20] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2"
             >
-              Get Your Free Quote
+              Start Today
             </Link>
             <a
               href="tel:+14133065053"

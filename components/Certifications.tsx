@@ -100,6 +100,7 @@ export function CertificationBar() {
                     <img
                       src={cert.logo}
                       alt={cert.name}
+                      loading="lazy"
                       className="max-h-full max-w-full object-contain grayscale transition-all duration-300 group-hover:grayscale-0"
                     />
                   </div>
@@ -113,6 +114,7 @@ export function CertificationBar() {
                     <img
                       src={cert.logo}
                       alt={cert.name}
+                      loading="lazy"
                       className="max-h-full max-w-full object-contain grayscale transition-all duration-300 group-hover:grayscale-0"
                     />
                   </div>
@@ -159,6 +161,7 @@ export function CertificationShowcase() {
                 <img
                   src={cert.logo}
                   alt={cert.name}
+                  loading="lazy"
                   className="max-h-full max-w-full object-contain"
                 />
               </div>
@@ -189,6 +192,7 @@ export function CertificationShowcase() {
                     <img
                       src={cert.logo}
                       alt={cert.name}
+                      loading="lazy"
                       className="max-h-full max-w-full object-contain grayscale opacity-60"
                     />
                   </div>

@@ -70,7 +70,7 @@ export default function Home() {
                 href="/quote"
                 className="inline-flex items-center justify-center rounded-full bg-brand-bright-blue px-8 py-4 text-lg font-semibold text-white shadow-sm hover:bg-[#006bc4] transition-all duration-150"
               >
-                Request a Quote
+                Get Your Quote
               </Link>
               <a
                 href="tel:+14133065053"
@@ -251,15 +251,9 @@ export default function Home() {
                   We specialize in professional commercial cleaning for offices, healthcare facilities,
                   educational institutions, retail spaces, and industrial facilities across Western MA & CT.
                 </p>
-                <p className="text-sm text-white/80 mb-6">
+                <p className="text-sm text-white/80">
                   We serve B2B clients only and do not offer residential services. Contracted customers also receive access to our full suite of premium add-on services, including specialty cleaning and supply management.
                 </p>
-                <Link
-                  href="/quote"
-                  className="inline-flex items-center justify-center rounded-[10px] bg-brand-red px-6 py-3 text-button font-semibold text-white transition-all duration-150 hover:bg-[#a00d25] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-brand-deep-blue"
-                >
-                  Request a Quote
-                </Link>
               </div>
             </div>
           </div>
