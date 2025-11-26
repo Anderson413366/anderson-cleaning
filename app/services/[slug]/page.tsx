@@ -200,7 +200,7 @@ function BenefitsList({ service }: { service: ServiceData }) {
           <li key={benefit} className="flex items-start gap-4">
             {/* Glass-effect icon - Small (32px) */}
             <div className="flex-shrink-0">
-              <GlassIcon icon={CheckCircle2} size="sm" variant="solid" label="Benefit" />
+              <GlassIcon icon="CheckCircle2" size="sm" variant="solid" label="Benefit" />
             </div>
             <span className="text-base text-neutral-charcoal/80 dark:text-white/80 leading-relaxed pt-1">
               {benefit}
@@ -248,7 +248,7 @@ function TestimonialsSection({ service }: { service: ServiceData }) {
             >
               {/* Glass-effect quote icon - Medium (48px) */}
               <div className="mb-6">
-                <GlassIcon icon={Quote} size="md" variant="solid" label="Quote" />
+                <GlassIcon icon="Quote" size="md" variant="solid" label="Quote" />
               </div>
 
               {/* Star rating */}

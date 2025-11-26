@@ -154,7 +154,7 @@ export default function IndustryTemplate({
                 >
                   {/* Solution-focused Icon - Medium (48px) glass effect */}
                   <div className="mb-4">
-                    <GlassIcon icon={CheckCircle2} size="md" variant="solid" label="Solution" />
+                    <GlassIcon icon="CheckCircle2" size="md" variant="solid" label="Solution" />
                   </div>
 
                   {/* Challenge Text - Now framed as a solution */}
@@ -323,7 +323,7 @@ export default function IndustryTemplate({
                   {/* Icon - Medium (48px) glass effect */}
                   <div className="mb-3">
                     <GlassIcon
-                      icon={index % 3 === 0 ? Shield : index % 3 === 1 ? Award : Users}
+                      icon={index % 3 === 0 ? 'Shield' : index % 3 === 1 ? 'Award' : 'Users'}
                       size="md"
                       variant="solid"
                       label={item}
@@ -367,7 +367,7 @@ export default function IndustryTemplate({
                   >
                     {/* Icon - Medium (48px) glass effect */}
                     <div className="mb-6">
-                      <GlassIcon icon={Building} size="md" variant="solid" label={facilitySize.size} />
+                      <GlassIcon icon="Building" size="md" variant="solid" label={facilitySize.size} />
                     </div>
 
                     {/* Size Title */}

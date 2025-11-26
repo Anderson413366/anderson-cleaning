@@ -4,6 +4,7 @@ import { type LucideIcon } from 'lucide-react'
 import { clsx } from 'clsx'
 import {
   Heart,
+  Building,
   Building2,
   Factory,
   AlertTriangle,
@@ -33,6 +34,9 @@ import {
   Sparkles,
   TrendingUp,
   Globe,
+  Quote,
+  ArrowRight,
+  Leaf,
 } from 'lucide-react'
 
 /**
@@ -54,6 +58,7 @@ import {
 // Icon name to component mapping - used for server component compatibility
 const iconMap: Record<string, LucideIcon> = {
   Heart,
+  Building,
   Building2,
   Factory,
   AlertTriangle,
@@ -83,6 +88,9 @@ const iconMap: Record<string, LucideIcon> = {
   Sparkles,
   TrendingUp,
   Globe,
+  Quote,
+  ArrowRight,
+  Leaf,
 }
 
 export type GlassIconSize = 'sm' | 'md' | 'lg'
