@@ -554,10 +554,10 @@ export default function ServicesPage() {
       </section>
 
       {/* Our Service Area */}
-      <section className="py-16 bg-white dark:bg-slate-900">
+      <section className="pt-24 pb-16 bg-white dark:bg-slate-900">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-h2 font-bold text-neutral-charcoal dark:text-white mb-4">
+            <h2 className="text-2xl font-bold text-brand-deep-blue dark:text-white mb-4">
               Our Service Area
             </h2>
             <p className="text-body text-neutral-charcoal/70 dark:text-white/80 max-w-3xl mx-auto">

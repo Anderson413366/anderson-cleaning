@@ -74,7 +74,7 @@ export default function ServiceAreaMap() {
   const customIcon = createCustomIcon()
 
   return (
-    <div className="h-[500px] w-full rounded-xl overflow-hidden border-2 border-neutral-light-grey dark:border-slate-700 relative">
+    <div className="h-[500px] w-full rounded-xl overflow-hidden border border-[#D0D0D0] dark:border-slate-600 shadow-[0_2px_8px_rgba(0,0,0,0.08)] relative">
       <MapContainer
         center={centerPoint}
         zoom={8}
