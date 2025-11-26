@@ -5,7 +5,34 @@
  * and Sentry for monitoring and optimization.
  */
 
-import * as Sentry from '@sentry/nextjs'
+// Lazy-loaded Sentry functions to reduce initial bundle size (~200-400KB savings)
+// Sentry is only loaded when needed for error tracking or performance monitoring
+const lazySentrySetMeasurement = async (name: string, value: number, unit: string) => {
+  if (process.env.NODE_ENV === 'production') {
+    const Sentry = await import('@sentry/nextjs')
+    Sentry.setMeasurement(name, value, unit as 'none' | 'millisecond')
+  }
+}
+
+const lazySentryCaptureMessage = async (message: string, options: { level: 'warning' | 'info' | 'error'; tags?: Record<string, string | number | boolean>; extra?: Record<string, unknown> }) => {
+  if (process.env.NODE_ENV === 'production') {
+    const Sentry = await import('@sentry/nextjs')
+    Sentry.captureMessage(message, {
+      level: options.level,
+      tags: options.tags,
+      extra: options.extra,
+    })
+  } else {
+    console.log(`[Sentry ${options.level}]`, message, options)
+  }
+}
+
+const lazySentryAddBreadcrumb = async (breadcrumb: { category: string; message: string; level: 'info' | 'warning' | 'error'; data?: Record<string, unknown> }) => {
+  if (process.env.NODE_ENV === 'production') {
+    const Sentry = await import('@sentry/nextjs')
+    Sentry.addBreadcrumb(breadcrumb)
+  }
+}
 
 /**
  * Core Web Vitals metric types
@@ -68,17 +95,17 @@ function sendToGoogleAnalytics(metric: Metric) {
 }
 
 /**
- * Send metric to Sentry
+ * Send metric to Sentry (lazy-loaded)
  */
 function sendToSentry(metric: Metric) {
   const { name, value, rating } = metric
 
-  // Send as measurement to Sentry
-  Sentry.setMeasurement(name, value, name === 'CLS' ? 'none' : 'millisecond')
+  // Send as measurement to Sentry (lazy-loaded)
+  lazySentrySetMeasurement(name, value, name === 'CLS' ? 'none' : 'millisecond')
 
   // If metric is poor, send as message for alerting
   if (rating === 'poor') {
-    Sentry.captureMessage(`Poor ${name}: ${value}`, {
+    lazySentryCaptureMessage(`Poor ${name}: ${value}`, {
       level: 'warning',
       tags: {
         metric_name: name,
@@ -129,8 +156,8 @@ export function trackPerformance(eventName: string, data?: Record<string, any>) 
     })
   }
 
-  // Send to Sentry
-  Sentry.addBreadcrumb({
+  // Send to Sentry (lazy-loaded)
+  lazySentryAddBreadcrumb({
     category: 'performance',
     message: eventName,
     level: 'info',
@@ -273,9 +300,9 @@ export function observeLongTasks() {
             start_time: Math.round(entry.startTime),
           })
 
-          // Report to Sentry if very long
+          // Report to Sentry if very long (lazy-loaded)
           if (entry.duration > 200) {
-            Sentry.captureMessage(`Long task detected: ${Math.round(entry.duration)}ms`, {
+            lazySentryCaptureMessage(`Long task detected: ${Math.round(entry.duration)}ms`, {
               level: 'warning',
               tags: { task_duration: Math.round(entry.duration) },
             })

@@ -229,6 +229,54 @@ li a {
   display: inline;
 }
 
+/* =================================
+   LINK ACCESSIBILITY - WCAG 2.2 AA
+   Links must be distinguishable by more than color alone
+   ================================= */
+
+/* Inline links in content areas get underline decoration */
+p a,
+li a,
+td a,
+dd a,
+article a,
+section a:not([class*="button"]):not([class*="btn"]):not([class*="px-"]) {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+  transition: text-decoration-color 0.15s ease-in-out;
+}
+
+/* Hover state - enhance underline visibility */
+p a:hover,
+li a:hover,
+td a:hover,
+dd a:hover,
+article a:hover,
+section a:not([class*="button"]):not([class*="btn"]):not([class*="px-"]):hover {
+  text-decoration-thickness: 2px;
+}
+
+/* Navigation links, buttons, and styled links - no underline by default */
+nav a,
+header a,
+footer a,
+[class*="button"] a,
+[class*="btn"] a {
+  text-decoration: none;
+}
+
+/* Navigation links get underline on hover/focus for clarity */
+nav a:hover,
+nav a:focus,
+header a:hover,
+header a:focus,
+footer a:hover,
+footer a:focus {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
 /* Error styling for form validation */
 [aria-invalid="true"],
 .error-field {

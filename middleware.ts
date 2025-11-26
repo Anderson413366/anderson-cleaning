@@ -319,8 +319,10 @@ function getSecurityHeaders(pathname: string, nonce: string): Record<string, str
   }
 
   // HSTS (only in production and over HTTPS)
+  // Strong HSTS policy: 2 years, includeSubDomains, preload
+  // Note: Only add 'preload' if you've submitted to hstspreload.org
   if (!isDev) {
-    headers['Strict-Transport-Security'] = 'max-age=31536000; includeSubDomains'
+    headers['Strict-Transport-Security'] = 'max-age=63072000; includeSubDomains; preload'
   }
 
   // X-Frame-Options (vary by route)

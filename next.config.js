@@ -37,6 +37,10 @@ const nextConfig = {
   // Compression
   compress: true,
 
+  // Production source maps for better debugging and Lighthouse compliance
+  // Safe for client-side code (already visible in browser)
+  productionBrowserSourceMaps: true,
+
   // Performance optimizations
   poweredByHeader: false,
   generateEtags: true,
@@ -73,30 +77,36 @@ const nextConfig = {
             key: 'Permissions-Policy',
             value: 'camera=(), microphone=(), geolocation=()',
           },
+          // Strong HSTS policy: 2 years, includeSubDomains, preload
+          // Backup for middleware (some edge cases may not go through middleware)
+          {
+            key: 'Strict-Transport-Security',
+            value: 'max-age=63072000; includeSubDomains; preload',
+          },
         ],
       },
       {
-        // Cache static assets (reduced from 1 year to 1 day)
+        // Cache static assets - 1 year (safe for versioned/hashed files)
         source: '/static/(.*)',
         headers: [
           {
             key: 'Cache-Control',
-            value: 'public, max-age=86400, must-revalidate',
+            value: 'public, max-age=31536000, immutable',
           },
         ],
       },
       {
-        // Cache images (reduced from 1 year to 7 days)
+        // Cache images - 1 year (content rarely changes, URLs can be versioned)
         source: '/:all*(svg|jpg|jpeg|png|gif|ico|webp|avif)',
         headers: [
           {
             key: 'Cache-Control',
-            value: 'public, max-age=604800, must-revalidate',
+            value: 'public, max-age=31536000, immutable',
           },
         ],
       },
       {
-        // Cache Next.js hashed static files (keep 1 year - safe because hashed)
+        // Cache Next.js hashed static files - 1 year (safe because hashed)
         source: '/_next/static/:path*',
         headers: [
           {
@@ -106,12 +116,32 @@ const nextConfig = {
         ],
       },
       {
-        // Cache fonts (reduced from 1 year to 30 days)
+        // Cache fonts - 1 year (fonts rarely change)
         source: '/fonts/:path*',
         headers: [
           {
             key: 'Cache-Control',
-            value: 'public, max-age=2592000, must-revalidate',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
+      {
+        // Cache brand assets - 1 year (logos, icons rarely change)
+        source: '/brand/:path*',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
+      {
+        // Cache certification logos - 1 year
+        source: '/certifications/:path*',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
           },
         ],
       },
@@ -167,9 +197,8 @@ const nextConfig = {
     ]
   },
 
-  // Webpack configuration
+  // Webpack configuration - optimized chunk splitting for better caching and smaller initial load
   webpack: (config, { isServer }) => {
-    // Optimize for performance
     if (!isServer) {
       config.optimization = {
         ...config.optimization,
@@ -177,24 +206,79 @@ const nextConfig = {
         runtimeChunk: 'single',
         splitChunks: {
           chunks: 'all',
+          maxInitialRequests: 25,
+          minSize: 20000,
           cacheGroups: {
             default: false,
             vendors: false,
-            // Vendor chunk
+
+            // React core - small, critical, cached long-term
+            react: {
+              name: 'react',
+              test: /[\\/]node_modules[\\/](react|react-dom|scheduler)[\\/]/,
+              chunks: 'all',
+              priority: 40,
+              enforce: true,
+            },
+
+            // Sanity CMS - large, only needed for /studio route
+            sanity: {
+              name: 'sanity',
+              test: /[\\/]node_modules[\\/](@sanity|sanity|@portabletext)[\\/]/,
+              chunks: 'all',
+              priority: 35,
+              enforce: true,
+            },
+
+            // Sentry - loaded lazily, separate chunk
+            sentry: {
+              name: 'sentry',
+              test: /[\\/]node_modules[\\/](@sentry|@opentelemetry)[\\/]/,
+              chunks: 'all',
+              priority: 35,
+              enforce: true,
+            },
+
+            // Map libraries - only loaded on pages with maps
+            maps: {
+              name: 'maps',
+              test: /[\\/]node_modules[\\/](leaflet|react-leaflet)[\\/]/,
+              chunks: 'all',
+              priority: 30,
+              enforce: true,
+            },
+
+            // Form libraries - common across many pages
+            forms: {
+              name: 'forms',
+              test: /[\\/]node_modules[\\/](react-hook-form|@hookform|zod)[\\/]/,
+              chunks: 'all',
+              priority: 25,
+            },
+
+            // UI utilities - icons, etc.
+            ui: {
+              name: 'ui',
+              test: /[\\/]node_modules[\\/](lucide-react|clsx|tailwind-merge)[\\/]/,
+              chunks: 'all',
+              priority: 25,
+            },
+
+            // All other vendor code
             vendor: {
               name: 'vendor',
+              test: /[\\/]node_modules[\\/]/,
               chunks: 'all',
-              test: /node_modules/,
-              priority: 20,
+              priority: 10,
             },
-            // Common chunk
+
+            // Common app code shared across pages
             common: {
               name: 'common',
               minChunks: 2,
               chunks: 'all',
-              priority: 10,
+              priority: 5,
               reuseExistingChunk: true,
-              enforce: true,
             },
           },
         },
@@ -207,7 +291,15 @@ const nextConfig = {
   // Experimental features
   experimental: {
     optimizeCss: true,
-    optimizePackageImports: ['lucide-react', 'framer-motion'],
+    // Tree-shake these packages to only include used exports
+    // Note: Modern browser targeting via "browserslist" in package.json
+    optimizePackageImports: [
+      'lucide-react',        // Only import used icons
+      'react-hook-form',     // Form utilities
+      'zod',                 // Schema validation
+      '@sanity/client',      // Sanity client
+      'date-fns',            // Date utilities (if used)
+    ],
   },
 }
 

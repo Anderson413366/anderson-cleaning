@@ -58,6 +58,14 @@
     "web-vitals": "^5.1.0",
     "zod": "^3.23.0"
   },
+  "browserslist": [
+    "last 2 Chrome versions",
+    "last 2 Firefox versions",
+    "last 2 Safari versions",
+    "last 2 Edge versions",
+    "not IE 11",
+    "not dead"
+  ],
   "devDependencies": {
     "@axe-core/react": "^4.11.0",
     "@lhci/cli": "^0.15.1",
