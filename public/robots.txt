@@ -1,4 +1,4 @@
-# *
+# All crawlers
 User-agent: *
 Allow: /
 Disallow: /studio
@@ -13,8 +13,5 @@ Allow: /
 Disallow: /studio
 Disallow: /api/*
 
-# Host
-Host: https://anderson-cleaning-site.vercel.app
-
-# Sitemaps
-Sitemap: https://anderson-cleaning-site.vercel.app/sitemap.xml
+# Sitemap
+Sitemap: https://andersoncleaning.com/sitemap.xml
