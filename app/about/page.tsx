@@ -55,6 +55,55 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Key Differentiators - Badge Row */}
+      <section className="py-12 border-b border-neutral-light-grey dark:border-slate-700 bg-white dark:bg-slate-900">
+        <div className="container mx-auto px-6">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {[
+                {
+                  icon: Users,
+                  title: 'Full-Time W-2 Employees',
+                  description: 'No contractors—trained professionals with benefits and accountability',
+                },
+                {
+                  icon: Clock,
+                  title: '24/7 Support',
+                  description: 'Real people answer. Emergency on-site arrival in 2 hours or less',
+                },
+                {
+                  icon: Shield,
+                  title: 'Fully Insured & Bonded',
+                  description: 'Comprehensive liability coverage. All staff background checked',
+                },
+              ].map((item, index) => {
+                const Icon = item.icon
+                return (
+                  <div
+                    key={index}
+                    className="flex items-start gap-4 bg-neutral-off-white dark:bg-slate-800 border-2 border-brand-deep-blue/20 dark:border-brand-bright-blue/30 rounded-lg p-6 hover:border-brand-bright-blue/50 dark:hover:border-brand-bright-blue/60 transition-colors"
+                  >
+                    <div className="flex-shrink-0">
+                      <div className="flex items-center justify-center w-12 h-12 bg-brand-deep-blue/10 dark:bg-brand-bright-blue/20 rounded-full">
+                        <Icon className="h-6 w-6 text-brand-deep-blue dark:text-brand-bright-blue" />
+                      </div>
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <h3 className="font-bold text-neutral-charcoal dark:text-white mb-1 text-base leading-tight">
+                        {item.title}
+                      </h3>
+                      <p className="text-sm text-neutral-charcoal/70 dark:text-white/70 leading-snug">
+                        {item.description}
+                      </p>
+                    </div>
+                  </div>
+                )
+              })}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Our Story */}
       <section className="py-20 bg-white dark:bg-slate-900">
         <div className="container mx-auto px-6">
@@ -460,97 +509,6 @@ export default function AboutPage() {
       {/* Certifications Showcase */}
       <section className="bg-neutral-off-white dark:bg-slate-900">
         <CertificationShowcase />
-      </section>
-
-      {/* What Makes Us Different */}
-      <section className="py-20 bg-neutral-off-white dark:bg-slate-900">
-        <div className="container mx-auto px-6">
-          <h2 className="text-h2 leading-tight font-bold text-neutral-charcoal dark:text-white mb-4 text-center">
-            What Makes Us Different
-          </h2>
-          <p className="text-neutral-charcoal/70 dark:text-white/80 text-center mb-12 max-w-2xl mx-auto">
-            We're not the biggest cleaning company, but we're relentlessly focused on your
-            success
-          </p>
-
-          <div className="max-w-6xl mx-auto space-y-8">
-            {/* Featured Top 3 Differentiators */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {[
-                {
-                  icon: Users,
-                  title: 'Full-Time W-2 Employees',
-                  description:
-                    'No independent contractors. Our cleaners are W-2 employees with benefits, training, and accountability.',
-                },
-                {
-                  icon: Clock,
-                  title: '24/7 Support',
-                  description:
-                    'Real people answer the phone, day or night. Current clients receive emergency support with on-site arrival in 2 hours or less.',
-                },
-                {
-                  icon: Shield,
-                  title: 'Fully Insured & Bonded',
-                  description:
-                    "Comprehensive general liability and workers' comp insurance. All staff undergo background checks.",
-                },
-              ].map((item, index) => {
-                const Icon = item.icon
-                return (
-                  <div
-                    key={index}
-                    className="bg-gradient-to-br from-brand-deep-blue to-brand-bright-blue text-white rounded-xl p-8 shadow-lg"
-                  >
-                    <Icon className="h-14 w-14 mb-4" />
-                    <h3 className="text-2xl font-bold mb-4">
-                      {item.title}
-                    </h3>
-                    <p className="text-lg leading-relaxed text-white/95">{item.description}</p>
-                  </div>
-                )
-              })}
-            </div>
-
-            {/* Secondary Benefits */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {[
-                {
-                  icon: CheckCircle2,
-                  title: 'Quality Assurance',
-                  description:
-                    'Regular inspections, detailed checklists, and corrective action plans ensure consistent quality.',
-                },
-                {
-                  icon: Award,
-                  title: 'Industry-Specific Training',
-                  description:
-                    'Teams trained on OSHA standards, industry protocols, and facility-specific procedures.',
-                },
-                {
-                  icon: Heart,
-                  title: 'We Actually Care',
-                  description:
-                    'Your account manager knows your name, your facility, and your concerns. No call centers.',
-                },
-              ].map((item, index) => {
-                const Icon = item.icon
-                return (
-                  <div
-                    key={index}
-                    className="bg-white dark:bg-slate-800 border border-neutral-light-grey dark:border-slate-700 rounded-xl p-6 shadow-sm"
-                  >
-                    <Icon className="h-10 w-10 text-brand-bright-blue mb-3" />
-                    <h3 className="text-lg font-semibold text-neutral-charcoal dark:text-white mb-2">
-                      {item.title}
-                    </h3>
-                    <p className="text-body-sm text-neutral-charcoal/80 dark:text-white/80">{item.description}</p>
-                  </div>
-                )
-              })}
-            </div>
-          </div>
-        </div>
       </section>
 
       {/* By the Numbers - Animated Stats Bar */}
