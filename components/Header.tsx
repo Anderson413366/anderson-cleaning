@@ -189,7 +189,7 @@ export default function Header() {
         <div className="flex lg:hidden">
           <button
             type="button"
-            className="-m-2.5 inline-flex items-center justify-center rounded-lg p-2.5 text-neutral-charcoal dark:text-white border-2 border-neutral-charcoal/20 dark:border-white/20 hover:bg-neutral-charcoal/5 dark:hover:bg-white/10 transition-colors"
+            className="-m-2.5 inline-flex items-center justify-center rounded-lg p-3 text-neutral-charcoal dark:text-white border-2 border-neutral-charcoal/20 dark:border-white/20 hover:bg-neutral-charcoal/5 dark:hover:bg-white/10 transition-colors min-h-[48px] min-w-[48px]"
             onClick={() => setMobileMenuOpen(true)}
             aria-label="Open main menu"
             aria-expanded={mobileMenuOpen}
@@ -516,7 +516,7 @@ export default function Header() {
               </Link>
               <button
                 type="button"
-                className="-m-2.5 rounded-full p-2.5 text-neutral-charcoal dark:text-white hover:bg-neutral-light-grey dark:hover:bg-white/10 transition-colors"
+                className="-m-2.5 rounded-full p-3 text-neutral-charcoal dark:text-white hover:bg-neutral-light-grey dark:hover:bg-white/10 transition-colors min-h-[48px] min-w-[48px] inline-flex items-center justify-center"
                 onClick={() => setMobileMenuOpen(false)}
                 aria-label="Close menu"
               >
@@ -526,12 +526,22 @@ export default function Header() {
             </div>
             <div className="mt-6 flow-root">
               <div className="-my-6 divide-y divide-gray-500/10 dark:divide-white/10">
-                {/* Prominent Call to Action - First Item */}
-                <div className="py-6">
+                {/* Primary CTAs - Quote and Phone */}
+                <div className="py-6 space-y-4">
+                  {/* Request Quote CTA - Primary Action */}
+                  <Link
+                    href="/quote"
+                    className="block w-full rounded-full bg-brand-red px-7 py-4 text-center text-base font-semibold text-white shadow-sm hover:bg-[#a00d25] transition-all duration-150"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    Request a Quote
+                  </Link>
+
+                  {/* Phone CTA - Secondary Action */}
                   <a
                     href={phoneLink.href}
                     onClick={() => trackPhoneClick('header-mobile-menu-top')}
-                    className="flex items-center justify-between p-4 rounded-xl bg-brand-bright-blue/10 dark:bg-white/10 hover:bg-brand-bright-blue/20 dark:hover:bg-white/20 transition-colors"
+                    className="flex items-center justify-between p-4 rounded-xl bg-brand-bright-blue/10 dark:bg-white/10 hover:bg-brand-bright-blue/20 dark:hover:bg-white/20 transition-colors min-h-[56px]"
                   >
                     <div>
                       <div className="text-xs font-semibold uppercase tracking-wider text-neutral-charcoal/60 dark:text-white/60 mb-1">
@@ -556,23 +566,23 @@ export default function Header() {
                           activeDropdown === 'mobile-services' ? null : 'mobile-services'
                         )
                       }
-                      className="flex w-full items-center justify-between py-2 text-left font-semibold text-neutral-charcoal dark:text-white"
+                      className="flex w-full items-center justify-between py-4 text-left text-base font-semibold text-neutral-charcoal dark:text-white min-h-[48px]"
                       aria-expanded={activeDropdown === 'mobile-services'}
                     >
                       Services
                       <ChevronDown
-                        className={`h-4 w-4 transition-transform ${
+                        className={`h-5 w-5 transition-transform ${
                           activeDropdown === 'mobile-services' ? 'rotate-180' : ''
                         }`}
                       />
                     </button>
                     {activeDropdown === 'mobile-services' && (
-                      <div className="space-y-2 pl-4 pb-2">
+                      <div className="space-y-1 pl-4 pb-2 mt-2">
                         {SERVICES_MENU.map((service) => (
                           <Link
                             key={service.href}
                             href={service.href}
-                            className="block py-2 text-sm text-neutral-charcoal/70 hover:text-brand-bright-blue dark:text-neutral-charcoal dark:hover:text-brand-bright-blue"
+                            className="block py-3 text-sm text-neutral-charcoal/70 hover:text-brand-bright-blue dark:text-neutral-charcoal dark:hover:text-brand-bright-blue min-h-[44px] flex items-center"
                             onClick={() => setMobileMenuOpen(false)}
                           >
                             {service.title}
@@ -580,7 +590,7 @@ export default function Header() {
                         ))}
                         <Link
                           href="/services"
-                          className="block py-2 text-sm font-medium text-brand-bright-blue hover:text-[#006bc4]"
+                          className="block py-3 text-sm font-medium text-brand-bright-blue hover:text-[#006bc4] min-h-[44px] flex items-center"
                           onClick={() => setMobileMenuOpen(false)}
                         >
                           View All →
@@ -597,23 +607,23 @@ export default function Header() {
                           activeDropdown === 'mobile-industries' ? null : 'mobile-industries'
                         )
                       }
-                      className="flex w-full items-center justify-between py-2 text-left font-semibold text-neutral-charcoal dark:text-white"
+                      className="flex w-full items-center justify-between py-4 text-left text-base font-semibold text-neutral-charcoal dark:text-white min-h-[48px]"
                       aria-expanded={activeDropdown === 'mobile-industries'}
                     >
                       Industries
                       <ChevronDown
-                        className={`h-4 w-4 transition-transform ${
+                        className={`h-5 w-5 transition-transform ${
                           activeDropdown === 'mobile-industries' ? 'rotate-180' : ''
                         }`}
                       />
                     </button>
                     {activeDropdown === 'mobile-industries' && (
-                      <div className="space-y-1 pl-4 pb-2">
+                      <div className="space-y-1 pl-4 pb-2 mt-2">
                         {INDUSTRIES_MENU.map((industry) => (
                           <Link
                             key={industry.href}
                             href={industry.href}
-                            className="block py-2 text-sm text-neutral-charcoal/70 hover:text-brand-bright-blue dark:text-neutral-charcoal dark:hover:text-brand-bright-blue"
+                            className="block py-3 text-sm text-neutral-charcoal/70 hover:text-brand-bright-blue dark:text-neutral-charcoal dark:hover:text-brand-bright-blue min-h-[44px] flex items-center"
                             onClick={() => setMobileMenuOpen(false)}
                           >
                             {industry.title}
@@ -621,7 +631,7 @@ export default function Header() {
                         ))}
                         <Link
                           href="/industries"
-                          className="block py-2 text-sm font-medium text-brand-bright-blue hover:text-[#006bc4]"
+                          className="block py-3 text-sm font-medium text-brand-bright-blue hover:text-[#006bc4] min-h-[44px] flex items-center"
                           onClick={() => setMobileMenuOpen(false)}
                         >
                           View All →
@@ -638,39 +648,39 @@ export default function Header() {
                           activeDropdown === 'mobile-locations' ? null : 'mobile-locations'
                         )
                       }
-                      className="flex w-full items-center justify-between py-2 text-left font-semibold text-neutral-charcoal dark:text-white"
+                      className="flex w-full items-center justify-between py-4 text-left text-base font-semibold text-neutral-charcoal dark:text-white min-h-[48px]"
                       aria-expanded={activeDropdown === 'mobile-locations'}
                     >
                       Locations
                       <ChevronDown
-                        className={`h-4 w-4 transition-transform ${
+                        className={`h-5 w-5 transition-transform ${
                           activeDropdown === 'mobile-locations' ? 'rotate-180' : ''
                         }`}
                       />
                     </button>
                     {activeDropdown === 'mobile-locations' && (
-                      <div className="space-y-2 pl-4 pb-2">
-                        <div className="text-xs font-semibold uppercase tracking-wider text-neutral-charcoal/60 dark:text-neutral-charcoal py-1">
+                      <div className="space-y-1 pl-4 pb-2 mt-2">
+                        <div className="text-xs font-semibold uppercase tracking-wider text-neutral-charcoal/60 dark:text-neutral-charcoal py-2">
                           Massachusetts
                         </div>
                         {LOCATIONS_MENU.massachusetts.map((location) => (
                           <Link
                             key={location.slug}
                             href={`/locations/${location.slug}`}
-                            className="block py-1 text-sm text-neutral-charcoal/70 hover:text-brand-bright-blue dark:text-neutral-charcoal dark:hover:text-brand-bright-blue"
+                            className="block py-2.5 text-sm text-neutral-charcoal/70 hover:text-brand-bright-blue dark:text-neutral-charcoal dark:hover:text-brand-bright-blue min-h-[40px] flex items-center"
                             onClick={() => setMobileMenuOpen(false)}
                           >
                             {location.name}
                           </Link>
                         ))}
-                        <div className="text-xs font-semibold uppercase tracking-wider text-neutral-charcoal/60 dark:text-neutral-charcoal py-1 pt-3">
+                        <div className="text-xs font-semibold uppercase tracking-wider text-neutral-charcoal/60 dark:text-neutral-charcoal py-2 pt-4">
                           Connecticut
                         </div>
                         {LOCATIONS_MENU.connecticut.map((location) => (
                           <Link
                             key={location.slug}
                             href={`/locations/${location.slug}`}
-                            className="block py-1 text-sm text-neutral-charcoal/70 hover:text-brand-bright-blue dark:text-neutral-charcoal dark:hover:text-brand-bright-blue"
+                            className="block py-2.5 text-sm text-neutral-charcoal/70 hover:text-brand-bright-blue dark:text-neutral-charcoal dark:hover:text-brand-bright-blue min-h-[40px] flex items-center"
                             onClick={() => setMobileMenuOpen(false)}
                           >
                             {location.name}
@@ -678,7 +688,7 @@ export default function Header() {
                         ))}
                         <Link
                           href="/locations"
-                          className="block py-2 text-sm font-medium text-brand-bright-blue hover:text-[#006bc4] pt-3"
+                          className="block py-3 text-sm font-medium text-brand-bright-blue hover:text-[#006bc4] pt-3 min-h-[44px] flex items-center"
                           onClick={() => setMobileMenuOpen(false)}
                         >
                           View All →
@@ -695,23 +705,23 @@ export default function Header() {
                           activeDropdown === 'mobile-resources' ? null : 'mobile-resources'
                         )
                       }
-                      className="flex w-full items-center justify-between py-2 text-left font-semibold text-neutral-charcoal dark:text-white"
+                      className="flex w-full items-center justify-between py-4 text-left text-base font-semibold text-neutral-charcoal dark:text-white min-h-[48px]"
                       aria-expanded={activeDropdown === 'mobile-resources'}
                     >
                       Resources
                       <ChevronDown
-                        className={`h-4 w-4 transition-transform ${
+                        className={`h-5 w-5 transition-transform ${
                           activeDropdown === 'mobile-resources' ? 'rotate-180' : ''
                         }`}
                       />
                     </button>
                     {activeDropdown === 'mobile-resources' && (
-                      <div className="space-y-2 pl-4 pb-2">
+                      <div className="space-y-1 pl-4 pb-2 mt-2">
                         {RESOURCES_MENU.map((item) => (
                           <Link
                             key={item.href}
                             href={item.href}
-                            className="block py-2 text-sm text-neutral-charcoal/70 hover:text-brand-bright-blue dark:text-neutral-charcoal dark:hover:text-brand-bright-blue"
+                            className="block py-3 text-sm text-neutral-charcoal/70 hover:text-brand-bright-blue dark:text-neutral-charcoal dark:hover:text-brand-bright-blue min-h-[44px] flex items-center"
                             onClick={() => setMobileMenuOpen(false)}
                           >
                             {item.name}
@@ -726,7 +736,7 @@ export default function Header() {
                     <Link
                       key={item.name}
                       href={item.href}
-                      className={`-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 hover:bg-neutral-light-grey dark:hover:bg-slate-800 ${
+                      className={`-mx-3 block rounded-lg px-3 py-4 text-base font-semibold leading-7 hover:bg-neutral-light-grey dark:hover:bg-slate-800 min-h-[48px] flex items-center ${
                         pathname === item.href
                           ? 'text-brand-bright-blue bg-neutral-light-grey dark:bg-slate-800'
                           : 'text-neutral-charcoal dark:text-white'
@@ -736,15 +746,6 @@ export default function Header() {
                       {item.name}
                     </Link>
                   ))}
-                </div>
-                <div className="py-6">
-                  <Link
-                    href="/quote"
-                    className="block w-full rounded-full bg-brand-red px-7 py-4 text-center text-base font-semibold text-white shadow-sm hover:bg-[#a00d25] transition-all duration-150"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    Request a Quote
-                  </Link>
                 </div>
               </div>
             </div>
