@@ -37,36 +37,67 @@ type City = {
   isHeadquarters?: boolean
 }
 
-// Western Massachusetts cities we serve
-const massachusettsCities: City[] = [
-  { name: 'Springfield', slug: 'springfield-ma', isPrimary: true },
-  { name: 'West Springfield', slug: 'west-springfield-ma', isPrimary: true, isHeadquarters: true },
-  { name: 'Worcester', slug: 'worcester-ma', isPrimary: true },
-  { name: 'Chicopee', slug: 'chicopee-ma' },
-  { name: 'Holyoke', slug: 'holyoke-ma' },
-  { name: 'Northampton', slug: 'northampton-ma' },
-  { name: 'Amherst', slug: 'amherst-ma' },
-  { name: 'Westfield', slug: 'westfield-ma' },
-  { name: 'Agawam', slug: 'agawam-ma' },
-  { name: 'Easthampton', slug: 'easthampton-ma' },
-  { name: 'Palmer', slug: 'palmer-ma' },
-  { name: 'Ware', slug: 'ware-ma' },
-  { name: 'Ludlow', slug: 'ludlow-ma' },
-  { name: 'South Hadley', slug: 'south-hadley-ma' },
-  { name: 'Belchertown', slug: 'belchertown-ma' },
-  { name: 'Granby', slug: 'granby-ma' },
+// Region type definition
+type Region = {
+  name: string
+  cities: City[]
+}
+
+// Massachusetts regions grouped geographically
+const massachusettsRegions: Region[] = [
+  {
+    name: 'Greater Springfield',
+    cities: [
+      { name: 'Springfield', slug: 'springfield-ma', isPrimary: true },
+      { name: 'West Springfield', slug: 'west-springfield-ma', isPrimary: true, isHeadquarters: true },
+      { name: 'Chicopee', slug: 'chicopee-ma' },
+      { name: 'Agawam', slug: 'agawam-ma' },
+      { name: 'Ludlow', slug: 'ludlow-ma' },
+      { name: 'Westfield', slug: 'westfield-ma' },
+    ],
+  },
+  {
+    name: 'Pioneer Valley',
+    cities: [
+      { name: 'Northampton', slug: 'northampton-ma' },
+      { name: 'Amherst', slug: 'amherst-ma' },
+      { name: 'Holyoke', slug: 'holyoke-ma' },
+      { name: 'Easthampton', slug: 'easthampton-ma' },
+      { name: 'South Hadley', slug: 'south-hadley-ma' },
+      { name: 'Granby', slug: 'granby-ma' },
+    ],
+  },
+  {
+    name: 'Central Massachusetts',
+    cities: [
+      { name: 'Worcester', slug: 'worcester-ma', isPrimary: true },
+      { name: 'Palmer', slug: 'palmer-ma' },
+      { name: 'Ware', slug: 'ware-ma' },
+      { name: 'Belchertown', slug: 'belchertown-ma' },
+    ],
+  },
 ]
 
-// Northern Connecticut cities we serve
-const connecticutCities: City[] = [
-  { name: 'Hartford', slug: 'hartford-ct', isPrimary: true },
-  { name: 'Enfield', slug: 'enfield-ct' },
-  { name: 'Windsor', slug: 'windsor-ct' },
-  { name: 'East Hartford', slug: 'east-hartford-ct' },
-  { name: 'West Hartford', slug: 'west-hartford-ct' },
-  { name: 'Bloomfield', slug: 'bloomfield-ct' },
-  { name: 'Suffield', slug: 'suffield-ct' },
-  { name: 'Somers', slug: 'somers-ct' },
+// Connecticut regions grouped geographically
+const connecticutRegions: Region[] = [
+  {
+    name: 'Greater Hartford',
+    cities: [
+      { name: 'Hartford', slug: 'hartford-ct', isPrimary: true },
+      { name: 'East Hartford', slug: 'east-hartford-ct' },
+      { name: 'West Hartford', slug: 'west-hartford-ct' },
+      { name: 'Bloomfield', slug: 'bloomfield-ct' },
+    ],
+  },
+  {
+    name: 'North Central Connecticut',
+    cities: [
+      { name: 'Enfield', slug: 'enfield-ct' },
+      { name: 'Windsor', slug: 'windsor-ct' },
+      { name: 'Suffield', slug: 'suffield-ct' },
+      { name: 'Somers', slug: 'somers-ct' },
+    ],
+  },
 ]
 
 export default function LocationsHub() {
@@ -112,79 +143,79 @@ export default function LocationsHub() {
               <ServiceAreaMapClient />
             </div>
 
-            {/* Massachusetts Cities */}
+            {/* Massachusetts Regions */}
             <div className="mb-16">
-              <h3 className="text-h3 font-bold text-brand-deep-blue dark:text-brand-bright-blue mb-8 text-center">
+              <h3 className="text-h3 font-bold text-brand-deep-blue dark:text-brand-bright-blue mb-10 text-center">
                 Western Massachusetts
               </h3>
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-                {massachusettsCities.map((city) => {
-                  const isLarge = city.isHeadquarters || city.isPrimary
-
-                  return (
-                    <Link
-                      key={city.slug}
-                      href={`/locations/${city.slug}`}
-                      className={`
-                        group relative rounded-xl p-4 text-center transition-all duration-200 hover:shadow-lg hover:-translate-y-1
-                        ${isLarge ? 'md:col-span-1 md:row-span-1' : ''}
-                        ${city.isPrimary
-                          ? 'bg-brand-deep-blue dark:bg-brand-deep-blue text-white border-2 border-brand-deep-blue hover:bg-brand-bright-blue hover:border-brand-bright-blue'
-                          : 'bg-white dark:bg-slate-800 border-2 border-neutral-light-grey dark:border-slate-700 hover:border-brand-bright-blue'
-                        }
-                      `}
-                    >
-                      {/* Headquarters Badge */}
-                      {city.isHeadquarters && (
-                        <div className="absolute -top-2 left-1/2 -translate-x-1/2 inline-flex items-center gap-1 px-3 py-1 rounded-full bg-brand-bright-blue text-white text-xs font-bold uppercase tracking-wider shadow-md whitespace-nowrap">
-                          <MapPin className="h-3 w-3" aria-hidden="true" />
-                          Headquarters
-                        </div>
-                      )}
-
-                      <div className={`
-                        font-semibold transition-colors mt-2
-                        ${city.isPrimary
-                          ? 'text-white text-lg'
-                          : 'text-neutral-charcoal dark:text-white group-hover:text-brand-bright-blue text-base'
-                        }
-                      `}>
-                        {city.name}
-                      </div>
-                    </Link>
-                  )
-                })}
+              <div className="space-y-8">
+                {massachusettsRegions.map((region) => (
+                  <div key={region.name}>
+                    {/* Region Subheading */}
+                    <h4 className="text-[18px] font-bold text-brand-deep-blue dark:text-brand-bright-blue mb-4 text-center">
+                      {region.name}
+                    </h4>
+                    {/* Cities in Region */}
+                    <div className="flex flex-wrap justify-center gap-4">
+                      {region.cities.map((city) => (
+                        <Link
+                          key={city.slug}
+                          href={`/locations/${city.slug}`}
+                          className={`
+                            group relative flex items-center justify-center w-[140px] h-[44px] rounded-lg text-[14px] font-semibold text-center transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5
+                            ${city.isPrimary
+                              ? 'bg-brand-bright-blue text-white border-2 border-brand-bright-blue hover:bg-brand-deep-blue hover:border-brand-deep-blue'
+                              : 'bg-white dark:bg-slate-800 text-brand-bright-blue border-2 border-brand-bright-blue/30 hover:border-brand-bright-blue hover:bg-[#F0F7FF] dark:hover:bg-brand-bright-blue/10'
+                            }
+                          `}
+                        >
+                          {/* Headquarters Badge */}
+                          {city.isHeadquarters && (
+                            <div className="absolute -top-2 left-1/2 -translate-x-1/2 inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-brand-deep-blue text-white text-[10px] font-bold uppercase tracking-wider shadow-md whitespace-nowrap">
+                              <MapPin className="h-2.5 w-2.5" aria-hidden="true" />
+                              HQ
+                            </div>
+                          )}
+                          {city.name}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
 
-            {/* Connecticut Cities */}
+            {/* Connecticut Regions */}
             <div className="mb-12">
-              <h3 className="text-h3 font-bold text-brand-deep-blue dark:text-brand-bright-blue mb-8 text-center">
+              <h3 className="text-h3 font-bold text-brand-deep-blue dark:text-brand-bright-blue mb-10 text-center">
                 Northern Connecticut
               </h3>
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                {connecticutCities.map((city) => (
-                  <Link
-                    key={city.slug}
-                    href={`/locations/${city.slug}`}
-                    className={`
-                      group rounded-xl p-4 text-center transition-all duration-200 hover:shadow-lg hover:-translate-y-1
-                      ${city.isPrimary
-                        ? 'bg-brand-deep-blue dark:bg-brand-deep-blue text-white border-2 border-brand-deep-blue hover:bg-brand-bright-blue hover:border-brand-bright-blue'
-                        : 'bg-white dark:bg-slate-800 border-2 border-neutral-light-grey dark:border-slate-700 hover:border-brand-bright-blue'
-                      }
-                    `}
-                  >
-                    <div className={`
-                      font-semibold transition-colors
-                      ${city.isPrimary
-                        ? 'text-white text-lg'
-                        : 'text-neutral-charcoal dark:text-white group-hover:text-brand-bright-blue text-base'
-                      }
-                    `}>
-                      {city.name}
+              <div className="space-y-8">
+                {connecticutRegions.map((region) => (
+                  <div key={region.name}>
+                    {/* Region Subheading */}
+                    <h4 className="text-[18px] font-bold text-brand-deep-blue dark:text-brand-bright-blue mb-4 text-center">
+                      {region.name}
+                    </h4>
+                    {/* Cities in Region */}
+                    <div className="flex flex-wrap justify-center gap-4">
+                      {region.cities.map((city) => (
+                        <Link
+                          key={city.slug}
+                          href={`/locations/${city.slug}`}
+                          className={`
+                            group flex items-center justify-center w-[140px] h-[44px] rounded-lg text-[14px] font-semibold text-center transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5
+                            ${city.isPrimary
+                              ? 'bg-brand-bright-blue text-white border-2 border-brand-bright-blue hover:bg-brand-deep-blue hover:border-brand-deep-blue'
+                              : 'bg-white dark:bg-slate-800 text-brand-bright-blue border-2 border-brand-bright-blue/30 hover:border-brand-bright-blue hover:bg-[#F0F7FF] dark:hover:bg-brand-bright-blue/10'
+                            }
+                          `}
+                        >
+                          {city.name}
+                        </Link>
+                      ))}
                     </div>
-                  </Link>
+                  </div>
                 ))}
               </div>
             </div>

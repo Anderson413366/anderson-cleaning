@@ -307,6 +307,7 @@ function RelatedAndFAQSection({ service }: { service: ServiceData }) {
                 <Link
                   key={item.slug}
                   href={`/services/${item.slug}`}
+                  aria-label={`Learn more about ${item.title}`}
                   className="group flex-shrink-0 w-[240px] h-[160px] flex flex-col rounded-xl border border-[#E0E0E0] bg-[#F5F7FB] dark:bg-slate-800 dark:border-slate-700 p-6 transition-all duration-200 hover:-translate-y-1 hover:shadow-lg hover:border-brand-bright-blue snap-start"
                 >
                   {/* Icon */}

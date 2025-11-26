@@ -26,6 +26,10 @@ interface CityData {
   }>
   competitors: string[]
   whyChooseUs: string[]
+  // New fields for local market context
+  localContext: string
+  facilityTypes: string[]
+  caseStudySlugs?: string[]
 }
 
 const CITY_DATA: Record<string, CityData> = {
@@ -61,6 +65,9 @@ const CITY_DATA: Record<string, CityData> = {
       'Only CIMS-certified cleaner headquartered in Western MA',
       'Emergency response within 2 hours for Springfield clients',
     ],
+    localContext: 'Serving over 150 commercial facilities throughout Greater Springfield, from State Street corporate offices to Baystate Medical Center clinics. As the economic hub of Western Massachusetts, Springfield businesses trust our team for reliable, professional service.',
+    facilityTypes: ['Downtown office towers', 'Medical practices', 'Financial institutions', 'Government buildings', 'Educational facilities'],
+    caseStudySlugs: ['medical-office-reduces-sick-days', 'corporate-office-improves-employee-satisfaction'],
   },
   'west-springfield-ma': {
     city: 'West Springfield',
@@ -94,6 +101,9 @@ const CITY_DATA: Record<string, CityData> = {
       'Deep knowledge of West Springfield building codes and requirements',
       'Preferred vendor for multiple West Springfield properties',
     ],
+    localContext: 'Our headquarters at 103 Wayside Avenue means West Springfield businesses get same-day service and the fastest response times in the region. From Riverdale Road retailers to Memorial Avenue professional offices, we know this community inside and out.',
+    facilityTypes: ['Retail centers', 'Professional office buildings', 'Medical offices', 'Light industrial facilities', 'The Big E vendors'],
+    caseStudySlugs: ['corporate-office-improves-employee-satisfaction'],
   },
   'hartford-ct': {
     city: 'Hartford',
@@ -127,6 +137,9 @@ const CITY_DATA: Record<string, CityData> = {
       'Connecticut licensed and insured',
       'Serving Hartford\'s insurance district since 2007',
     ],
+    localContext: 'Connecticut\'s capital city and insurance hub demands premium commercial cleaning. We serve 75+ Hartford facilities including downtown office towers, medical practices near Hartford Hospital, and government buildings throughout the Capitol district.',
+    facilityTypes: ['Insurance company headquarters', 'Class A office buildings', 'Medical centers', 'Government facilities', 'Convention spaces'],
+    caseStudySlugs: ['corporate-office-improves-employee-satisfaction', 'medical-office-reduces-sick-days'],
   },
   'worcester-county-ma': {
     city: 'Worcester County',
@@ -160,6 +173,9 @@ const CITY_DATA: Record<string, CityData> = {
       'Flexible scheduling for manufacturing and healthcare facilities',
       'Proven track record with Worcester\'s major employers',
     ],
+    localContext: 'Central Massachusetts\' largest county requires a commercial cleaner who understands diverse industries. From biotech labs on the I-495 corridor to manufacturing plants in Auburn, we deliver consistent quality across 40+ Worcester County facilities.',
+    facilityTypes: ['Biotech laboratories', 'Manufacturing plants', 'Medical offices', 'University buildings', 'Distribution centers'],
+    caseStudySlugs: ['manufacturing-facility-improves-safety-record', 'medical-office-reduces-sick-days'],
   },
   'northampton-amherst-ma': {
     city: 'Northampton & Amherst',
@@ -193,6 +209,9 @@ const CITY_DATA: Record<string, CityData> = {
       'Experience with historic buildings and modern facilities',
       'Supporting the local Northampton/Amherst business community',
     ],
+    localContext: 'The Five College region demands environmentally-conscious cleaning. We serve tech startups on King Street, professional offices in downtown Northampton, and businesses near the UMass campus with green-certified products and sustainable practices.',
+    facilityTypes: ['Tech company offices', 'Professional service firms', 'Educational buildings', 'Medical practices', 'Creative agencies'],
+    caseStudySlugs: ['corporate-office-improves-employee-satisfaction'],
   },
   'chicopee-ma': {
     city: 'Chicopee',
@@ -226,6 +245,9 @@ const CITY_DATA: Record<string, CityData> = {
       'Family-owned company serving Chicopee for 18+ years',
       'Competitive pricing for small to mid-size businesses',
     ],
+    localContext: 'A manufacturing and distribution hub just minutes from our headquarters. We clean warehouses along Westover Industrial Park, medical supply facilities, and retail spaces throughout Chicopee Falls and Willimansett neighborhoods.',
+    facilityTypes: ['Warehouses and distribution centers', 'Manufacturing facilities', 'Medical supply companies', 'Retail stores', 'Government buildings'],
+    caseStudySlugs: ['manufacturing-facility-improves-safety-record'],
   },
   'holyoke-ma': {
     city: 'Holyoke',
@@ -259,6 +281,9 @@ const CITY_DATA: Record<string, CityData> = {
       'Specialized floor care for high-traffic retail spaces',
       'Part of the Holyoke area for nearly two decades',
     ],
+    localContext: 'Historic mill city reinventing itself as an innovation hub. We serve converted mill buildings in the Innovation District, medical facilities near Holyoke Medical Center, and high-traffic retail spaces at Holyoke Mall and throughout downtown.',
+    facilityTypes: ['Historic mill building conversions', 'Medical centers', 'Retail spaces', 'Educational facilities', 'Municipal buildings'],
+    caseStudySlugs: ['corporate-office-improves-employee-satisfaction'],
   },
   'enfield-ct': {
     city: 'Enfield',
@@ -292,6 +317,9 @@ const CITY_DATA: Record<string, CityData> = {
       'Quick response times from nearby West Springfield',
       'Competitive pricing for Enfield area businesses',
     ],
+    localContext: 'Connecticut\'s northernmost town and a key gateway between Massachusetts and Hartford. We provide commercial cleaning for office parks along Route 5, retail centers near Enfield Square, and medical practices serving the growing community.',
+    facilityTypes: ['Office parks and business centers', 'Retail and shopping centers', 'Medical offices', 'Manufacturing facilities', 'Professional service firms'],
+    caseStudySlugs: ['corporate-office-improves-employee-satisfaction'],
   },
   'windsor-ct': {
     city: 'Windsor',
@@ -325,6 +353,9 @@ const CITY_DATA: Record<string, CityData> = {
       'Reliable cross-border service with local accountability',
       'Long-term relationships with Windsor commercial properties',
     ],
+    localContext: 'Connecticut\'s first town, Windsor combines historic charm with modern business districts. We clean insurance company offices, healthcare facilities, and professional buildings throughout Windsor and neighboring Windsor Locks near Bradley International Airport.',
+    facilityTypes: ['Insurance company offices', 'Healthcare facilities', 'Professional office buildings', 'Corporate headquarters', 'Airport-adjacent businesses'],
+    caseStudySlugs: ['corporate-office-improves-employee-satisfaction', 'medical-office-reduces-sick-days'],
   },
 }
 
@@ -446,6 +477,64 @@ export default async function LocationPage({
         </div>
       </section>
 
+      {/* Local Market Expertise Section */}
+      {cityData.localContext && (
+        <section className="py-16 bg-white dark:bg-slate-800">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto">
+              <div className="text-center mb-8">
+                <h2 className="text-3xl font-bold text-brand-deep-blue dark:text-white mb-4">
+                  Your Local {cityData.city} Cleaning Partner
+                </h2>
+                <p className="text-lg text-neutral-charcoal/80 dark:text-white/80 leading-relaxed">
+                  {cityData.localContext}
+                </p>
+              </div>
+
+              {/* Facility Types */}
+              {cityData.facilityTypes && cityData.facilityTypes.length > 0 && (
+                <div className="mt-8">
+                  <h3 className="text-xl font-semibold text-brand-deep-blue dark:text-white mb-4 text-center">
+                    Facilities We Serve in {cityData.city}
+                  </h3>
+                  <div className="flex flex-wrap justify-center gap-3">
+                    {cityData.facilityTypes.map((facility, index) => (
+                      <span
+                        key={index}
+                        className="inline-flex items-center px-4 py-2 bg-brand-deep-blue/5 dark:bg-brand-bright-blue/10 text-brand-deep-blue dark:text-brand-bright-blue rounded-full text-sm font-medium border border-brand-deep-blue/10 dark:border-brand-bright-blue/20"
+                      >
+                        {facility}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Case Study Links */}
+              {cityData.caseStudySlugs && cityData.caseStudySlugs.length > 0 && (
+                <div className="mt-8 text-center">
+                  <p className="text-sm text-neutral-charcoal/70 dark:text-white/70 mb-3">
+                    See our work in action:
+                  </p>
+                  <div className="flex flex-wrap justify-center gap-4">
+                    {cityData.caseStudySlugs.map((slug, index) => (
+                      <Link
+                        key={index}
+                        href={`/case-studies/${slug}`}
+                        className="inline-flex items-center gap-2 text-brand-bright-blue hover:text-brand-deep-blue dark:hover:text-white font-semibold text-sm transition-colors"
+                      >
+                        <span>View Case Study</span>
+                        <ArrowRight className="h-4 w-4" />
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Services in City - Simplified */}
       <section className="py-16">
         <div className="container mx-auto px-4">
@@ -463,6 +552,7 @@ export default async function LocationPage({
               {/* Office Cleaning */}
               <Link
                 href="/services/office-cleaning"
+                aria-label="Learn more about Office Cleaning services"
                 className="group bg-white dark:bg-slate-800 rounded-xl border-2 border-neutral-light-grey dark:border-slate-700 p-6 transition-all duration-200 hover:border-brand-bright-blue hover:shadow-lg hover:-translate-y-1"
               >
                 <div className="flex items-start gap-4 mb-4">
@@ -487,6 +577,7 @@ export default async function LocationPage({
               {/* Healthcare Cleaning */}
               <Link
                 href="/services/healthcare-cleaning"
+                aria-label="Learn more about Healthcare Cleaning services"
                 className="group bg-white dark:bg-slate-800 rounded-xl border-2 border-neutral-light-grey dark:border-slate-700 p-6 transition-all duration-200 hover:border-brand-bright-blue hover:shadow-lg hover:-translate-y-1"
               >
                 <div className="flex items-start gap-4 mb-4">
@@ -511,6 +602,7 @@ export default async function LocationPage({
               {/* Retail Cleaning */}
               <Link
                 href="/services/retail-cleaning"
+                aria-label="Learn more about Retail Cleaning services"
                 className="group bg-white dark:bg-slate-800 rounded-xl border-2 border-neutral-light-grey dark:border-slate-700 p-6 transition-all duration-200 hover:border-brand-bright-blue hover:shadow-lg hover:-translate-y-1"
               >
                 <div className="flex items-start gap-4 mb-4">
@@ -535,6 +627,7 @@ export default async function LocationPage({
               {/* Industrial Cleaning */}
               <Link
                 href="/services/industrial-cleaning"
+                aria-label="Learn more about Industrial Cleaning services"
                 className="group bg-white dark:bg-slate-800 rounded-xl border-2 border-neutral-light-grey dark:border-slate-700 p-6 transition-all duration-200 hover:border-brand-bright-blue hover:shadow-lg hover:-translate-y-1"
               >
                 <div className="flex items-start gap-4 mb-4">
@@ -559,6 +652,7 @@ export default async function LocationPage({
               {/* Floor Care */}
               <Link
                 href="/services/floor-care"
+                aria-label="Learn more about Floor Care and Maintenance services"
                 className="group bg-white dark:bg-slate-800 rounded-xl border-2 border-neutral-light-grey dark:border-slate-700 p-6 transition-all duration-200 hover:border-brand-bright-blue hover:shadow-lg hover:-translate-y-1"
               >
                 <div className="flex items-start gap-4 mb-4">
@@ -583,6 +677,7 @@ export default async function LocationPage({
               {/* Specialty Services */}
               <Link
                 href="/services"
+                aria-label="View all cleaning services we offer"
                 className="group bg-white dark:bg-slate-800 rounded-xl border-2 border-neutral-light-grey dark:border-slate-700 p-6 transition-all duration-200 hover:border-brand-bright-blue hover:shadow-lg hover:-translate-y-1"
               >
                 <div className="flex items-start gap-4 mb-4">

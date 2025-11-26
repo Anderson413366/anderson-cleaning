@@ -264,8 +264,8 @@ export default function ServicesPage() {
                           <p className="text-sm text-neutral-charcoal/80 dark:text-white/80 mb-2">
                             {item.description}
                           </p>
-                          {/* Duration label - 12px #999999 */}
-                          <span className="text-xs text-[#999999]">
+                          {/* Duration label - 12px, WCAG compliant */}
+                          <span className="text-xs text-neutral-charcoal/80 dark:text-white/80">
                             {item.timeframe}
                           </span>
                         </div>
@@ -292,8 +292,8 @@ export default function ServicesPage() {
                           <p className="text-sm text-neutral-charcoal/80 dark:text-white/80 mb-3">
                             {item.description}
                           </p>
-                          {/* Duration label - 12px #999999 */}
-                          <span className="text-xs text-[#999999]">
+                          {/* Duration label - 12px, WCAG compliant */}
+                          <span className="text-xs text-neutral-charcoal/80 dark:text-white/80">
                             {item.timeframe}
                           </span>
                         </div>

@@ -13,11 +13,8 @@ import {
   Clock,
   Target,
   CheckCircle2,
-  TrendingUp,
-  Building2,
   Sparkles,
   Leaf,
-  Handshake,
   Star,
   Phone,
 } from 'lucide-react'
@@ -88,9 +85,9 @@ export default function AboutPage() {
                       <GlassIcon icon={item.icon} size="md" variant="default" label={item.title} />
                     </div>
                     <div className="flex-1 min-w-0">
-                      <h3 className="font-bold text-neutral-charcoal dark:text-white mb-1 text-base leading-tight">
+                      <p className="font-bold text-neutral-charcoal dark:text-white mb-1 text-base leading-tight">
                         {item.title}
-                      </h3>
+                      </p>
                       <p className="text-sm text-neutral-charcoal/70 dark:text-white/70 leading-snug">
                         {item.description}
                       </p>
@@ -103,10 +100,10 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Our Story */}
+      {/* Our Story - Clean Vertical Timeline */}
       <section className="py-20 bg-white dark:bg-slate-900">
         <div className="container mx-auto px-6">
-          <div className="max-w-6xl mx-auto">
+          <div className="max-w-4xl mx-auto">
             <h2 className="text-h2 leading-tight font-bold text-neutral-charcoal dark:text-white mb-4 text-center">
               Our Story
             </h2>
@@ -114,150 +111,70 @@ export default function AboutPage() {
               Built on a foundation of reliability, quality, and genuine care for our clients
             </p>
 
-            {/* Timeline with Milestones */}
+            {/* Clean Vertical Timeline */}
             <div className="relative">
-              {/* Vertical line (hidden on mobile) */}
-              <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-brand-bright-blue/30 dark:bg-brand-bright-blue/20 -translate-x-1/2"></div>
+              {/* Vertical timeline line - 2px #E0E0E0 */}
+              <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-[2px] bg-[#E0E0E0] dark:bg-slate-600 md:-translate-x-1/2"></div>
 
-              <div className="space-y-12 md:space-y-16">
-                {/* Milestone 1: Founded */}
-                <div className="relative grid md:grid-cols-2 gap-8 items-center">
-                  {/* Left side - Image placeholder */}
-                  <div className="md:text-right order-2 md:order-1">
-                    <div className="bg-gradient-to-br from-brand-deep-blue/10 to-brand-bright-blue/10 dark:from-brand-deep-blue/20 dark:to-brand-bright-blue/20 rounded-xl p-8 md:p-12 border-2 border-brand-deep-blue/20 dark:border-brand-bright-blue/30">
-                      <div className="flex items-center justify-center mb-4">
-                        <Building2 className="h-16 w-16 md:h-20 md:w-20 text-brand-deep-blue dark:text-brand-bright-blue" />
-                      </div>
-                      <p className="text-sm font-semibold text-brand-deep-blue dark:text-brand-bright-blue uppercase tracking-wide">
-                        The Beginning
-                      </p>
+              {/* Timeline items with 80px spacing */}
+              <div className="space-y-[80px]">
+                {/* 2007 - Founded */}
+                <div className="relative flex flex-col md:flex-row md:items-start">
+                  {/* Year marker - 48px circle #0077D9 with white text */}
+                  <div className="absolute left-0 md:left-1/2 md:-translate-x-1/2 z-10">
+                    <div className="flex items-center justify-center w-12 h-12 rounded-full bg-brand-bright-blue text-white font-bold text-sm shadow-md">
+                      2007
                     </div>
                   </div>
 
-                  {/* Center badge */}
-                  <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center justify-center w-16 h-16 rounded-full bg-brand-deep-blue dark:bg-brand-bright-blue text-white font-bold text-lg shadow-lg border-4 border-white dark:border-slate-900 order-3">
-                    2007
-                  </div>
-
-                  {/* Right side - Content */}
-                  <div className="order-1 md:order-3">
-                    <div className="bg-white dark:bg-slate-800 border border-neutral-light-grey dark:border-slate-700 rounded-xl p-6 md:p-8 shadow-sm">
-                      <div className="flex items-center gap-3 mb-4 md:hidden">
-                        <div className="flex items-center justify-center w-12 h-12 rounded-full bg-brand-deep-blue dark:bg-brand-bright-blue text-white font-bold">
-                          2007
-                        </div>
-                        <h3 className="text-h3 font-bold text-neutral-charcoal dark:text-white">
-                          Founded on Vision
-                        </h3>
-                      </div>
-                      <h3 className="hidden md:block text-h3 font-bold text-neutral-charcoal dark:text-white mb-4">
-                        Founded on Vision
-                      </h3>
-                      <p className="text-body text-neutral-charcoal/80 dark:text-white/80 mb-4">
-                        Anderson Cleaning Company was founded with a simple but powerful vision: provide corporate-grade commercial cleaning with the accountability and personal attention of a family business.
-                      </p>
-                      <p className="text-body text-neutral-charcoal/80 dark:text-white/80">
-                        After watching businesses struggle with unreliable contractors, high turnover, and inconsistent quality, we knew there had to be a better way.
-                      </p>
-                    </div>
+                  {/* Content - Right side on desktop, below marker on mobile */}
+                  <div className="ml-16 md:ml-0 md:w-1/2 md:pl-10 md:text-left">
+                    <h3 className="text-lg font-bold text-brand-deep-blue dark:text-white mb-2">
+                      Founded on Vision
+                    </h3>
+                    <p className="text-[14px] text-[#333333] dark:text-white/80 leading-relaxed">
+                      Anderson Cleaning Company was founded with a simple vision: provide corporate-grade commercial cleaning with the accountability of a family business. We saw businesses struggling with unreliable contractors and knew there had to be a better way.
+                    </p>
                   </div>
                 </div>
 
-                {/* Milestone 2: First 100 Clients */}
-                <div className="relative grid md:grid-cols-2 gap-8 items-center">
-                  {/* Left side - Content */}
-                  <div className="order-1">
-                    <div className="bg-white dark:bg-slate-800 border border-neutral-light-grey dark:border-slate-700 rounded-xl p-6 md:p-8 shadow-sm">
-                      <div className="flex items-center gap-3 mb-4 md:hidden">
-                        <div className="flex items-center justify-center w-12 h-12 rounded-full bg-brand-deep-blue dark:bg-brand-bright-blue text-white font-bold">
-                          2015
-                        </div>
-                        <h3 className="text-h3 font-bold text-neutral-charcoal dark:text-white">
-                          100+ Clients Strong
-                        </h3>
-                      </div>
-                      <h3 className="hidden md:block text-h3 font-bold text-neutral-charcoal dark:text-white mb-4">
-                        100+ Clients Strong
-                      </h3>
-                      <p className="text-body text-neutral-charcoal/80 dark:text-white/80 mb-4">
-                        By staying true to our core principles—investing in people, implementing corporate systems, and maintaining our personal touch—we grew to serve over 100 commercial facilities.
-                      </p>
-                      <div className="grid grid-cols-3 gap-4 mt-6">
-                        {[
-                          { icon: Users, label: 'W-2 Employees' },
-                          { icon: Target, label: 'Quality Systems' },
-                          { icon: Heart, label: 'Personal Care' },
-                        ].map((item, idx) => {
-                          const Icon = item.icon
-                          return (
-                            <div key={idx} className="text-center">
-                              <Icon className="h-8 w-8 mx-auto mb-2 text-brand-bright-blue" />
-                              <p className="text-xs text-neutral-charcoal/70 dark:text-white/70">{item.label}</p>
-                            </div>
-                          )
-                        })}
-                      </div>
+                {/* 2015 - Growth */}
+                <div className="relative flex flex-col md:flex-row md:items-start">
+                  {/* Year marker */}
+                  <div className="absolute left-0 md:left-1/2 md:-translate-x-1/2 z-10">
+                    <div className="flex items-center justify-center w-12 h-12 rounded-full bg-brand-bright-blue text-white font-bold text-sm shadow-md">
+                      2015
                     </div>
                   </div>
 
-                  {/* Center badge */}
-                  <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center justify-center w-16 h-16 rounded-full bg-brand-deep-blue dark:bg-brand-bright-blue text-white font-bold text-lg shadow-lg border-4 border-white dark:border-slate-900 order-2">
-                    2015
-                  </div>
-
-                  {/* Right side - Image placeholder */}
-                  <div className="order-2 md:order-3">
-                    <div className="bg-gradient-to-br from-brand-bright-blue/10 to-brand-deep-blue/10 dark:from-brand-bright-blue/20 dark:to-brand-deep-blue/20 rounded-xl p-8 md:p-12 border-2 border-brand-bright-blue/20 dark:border-brand-bright-blue/30">
-                      <div className="flex items-center justify-center mb-4">
-                        <TrendingUp className="h-16 w-16 md:h-20 md:w-20 text-brand-bright-blue" />
-                      </div>
-                      <p className="text-sm font-semibold text-brand-bright-blue uppercase tracking-wide text-center">
-                        Growing Together
-                      </p>
-                    </div>
+                  {/* Content - Left side on desktop (alternating) */}
+                  <div className="ml-16 md:ml-0 md:w-1/2 md:pr-10 md:text-right md:order-first">
+                    <h3 className="text-lg font-bold text-brand-deep-blue dark:text-white mb-2">
+                      100+ Clients Strong
+                    </h3>
+                    <p className="text-[14px] text-[#333333] dark:text-white/80 leading-relaxed">
+                      By investing in people, implementing quality systems, and maintaining our personal touch, we grew to serve over 100 commercial facilities. Our W-2 employee model proved that quality and reliability go hand in hand.
+                    </p>
                   </div>
                 </div>
 
-                {/* Milestone 3: Today */}
-                <div className="relative grid md:grid-cols-2 gap-8 items-center">
-                  {/* Left side - Image placeholder */}
-                  <div className="md:text-right order-2 md:order-1">
-                    <div className="bg-gradient-to-br from-brand-deep-blue to-brand-bright-blue rounded-xl p-8 md:p-12 text-white">
-                      <div className="flex items-center justify-center mb-4">
-                        <Star className="h-16 w-16 md:h-20 md:w-20" />
-                      </div>
-                      <p className="text-sm font-bold uppercase tracking-wide">
-                        Excellence in Service
-                      </p>
+                {/* Today */}
+                <div className="relative flex flex-col md:flex-row md:items-start">
+                  {/* Year marker */}
+                  <div className="absolute left-0 md:left-1/2 md:-translate-x-1/2 z-10">
+                    <div className="flex items-center justify-center w-12 h-12 rounded-full bg-brand-bright-blue text-white font-bold text-[11px] shadow-md">
+                      Today
                     </div>
                   </div>
 
-                  {/* Center badge */}
-                  <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center justify-center w-16 h-16 rounded-full bg-brand-deep-blue dark:bg-brand-bright-blue text-white font-bold text-lg shadow-lg border-4 border-white dark:border-slate-900 order-3">
-                    Today
-                  </div>
-
-                  {/* Right side - Content */}
-                  <div className="order-1 md:order-3">
-                    <div className="bg-white dark:bg-slate-800 border border-neutral-light-grey dark:border-slate-700 rounded-xl p-6 md:p-8 shadow-sm">
-                      <div className="flex items-center gap-3 mb-4 md:hidden">
-                        <div className="flex items-center justify-center w-12 h-12 rounded-full bg-brand-deep-blue dark:bg-brand-bright-blue text-white font-bold text-sm">
-                          Today
-                        </div>
-                        <h3 className="text-h3 font-bold text-neutral-charcoal dark:text-white">
-                          Trusted Partner
-                        </h3>
-                      </div>
-                      <h3 className="hidden md:block text-h3 font-bold text-neutral-charcoal dark:text-white mb-4">
-                        Trusted Partner
-                      </h3>
-                      <p className="text-body text-neutral-charcoal/80 dark:text-white/80 mb-4">
-                        Today, we serve commercial facilities across Massachusetts and Connecticut, from small professional offices to large corporate campuses. With {YEARS_IN_BUSINESS}+ years of experience, we continue to grow while staying true to our founding vision.
-                      </p>
-                      <p className="text-body font-semibold text-brand-deep-blue dark:text-brand-bright-blue">
-                        Our secret? We treat every client like they're our only client.
-                      </p>
-                    </div>
+                  {/* Content - Right side on desktop */}
+                  <div className="ml-16 md:ml-0 md:w-1/2 md:pl-10 md:text-left">
+                    <h3 className="text-lg font-bold text-brand-deep-blue dark:text-white mb-2">
+                      Trusted Partner
+                    </h3>
+                    <p className="text-[14px] text-[#333333] dark:text-white/80 leading-relaxed">
+                      Today, we serve commercial facilities across Massachusetts and Connecticut—from professional offices to corporate campuses. With {YEARS_IN_BUSINESS}+ years of experience, our secret remains simple: we treat every client like they&apos;re our only client.
+                    </p>
                   </div>
                 </div>
               </div>
@@ -277,70 +194,53 @@ export default function AboutPage() {
               Experienced professionals dedicated to delivering exceptional service and building lasting relationships
             </p>
 
-            {/* Leadership Team Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-              {/* Team Member 1: Founder/Owner */}
-              <div className="bg-white dark:bg-slate-900 border-2 border-neutral-light-grey dark:border-slate-700 rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
-                <div className="relative h-64 bg-gradient-to-br from-brand-deep-blue to-brand-bright-blue flex items-center justify-center">
-                  <Users className="h-24 w-24 text-white/40" />
-                  <div className="absolute bottom-4 left-4 bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full">
-                    <p className="text-xs font-bold text-white uppercase tracking-wide">Founder</p>
+            {/* Leadership Team Grid - 240px cards, 24px gaps */}
+            <div className="flex flex-wrap justify-center gap-6 mb-16">
+              {[
+                {
+                  name: 'Anderson Gomes',
+                  title: 'Owner & Founder',
+                  bio: 'Founded Anderson Cleaning in 2007 with a vision for corporate-grade cleaning with family business accountability.',
+                  icon: Users,
+                },
+                {
+                  name: 'Operations Director',
+                  title: 'Director of Operations',
+                  bio: 'Manages daily operations, staff scheduling, and quality control to ensure consistent, high-quality service.',
+                  icon: Target,
+                },
+                {
+                  name: 'Quality Manager',
+                  title: 'Quality Assurance Lead',
+                  bio: 'Conducts facility inspections, monitors SOP compliance, and implements corrective action plans.',
+                  icon: Award,
+                },
+              ].map((member, idx) => {
+                const Icon = member.icon
+                return (
+                  <div
+                    key={idx}
+                    className="w-[240px] bg-white dark:bg-slate-900 border border-neutral-light-grey dark:border-slate-700 rounded-xl p-6 text-center shadow-sm hover:shadow-md transition-shadow"
+                  >
+                    {/* 120x120 icon circle - consistent #0077D9 background */}
+                    <div className="w-[120px] h-[120px] mx-auto mb-4 rounded-full bg-brand-bright-blue flex items-center justify-center">
+                      <Icon className="h-12 w-12 text-white" strokeWidth={1.5} />
+                    </div>
+                    {/* Name: 16px bold #002A86 */}
+                    <h3 className="text-[16px] font-bold text-brand-deep-blue dark:text-white mb-1">
+                      {member.name}
+                    </h3>
+                    {/* Title: 14px #0077D9 */}
+                    <p className="text-[14px] text-brand-bright-blue mb-3">
+                      {member.title}
+                    </p>
+                    {/* Bio: 13px #666666, 2-3 lines */}
+                    <p className="text-[13px] text-[#666666] dark:text-white/70 leading-relaxed line-clamp-3">
+                      {member.bio}
+                    </p>
                   </div>
-                </div>
-                <div className="p-6">
-                  <h3 className="text-h3 font-bold text-neutral-charcoal dark:text-white mb-1">
-                    Anderson Gomes
-                  </h3>
-                  <p className="text-sm font-semibold text-brand-deep-blue dark:text-brand-bright-blue mb-4">
-                    Owner & Founder
-                  </p>
-                  <p className="text-body-sm text-neutral-charcoal/80 dark:text-white/80 leading-relaxed">
-                    Founded Anderson Cleaning in 2007 with a vision to provide corporate-grade cleaning with family business accountability. Oversees operations and client relationships.
-                  </p>
-                </div>
-              </div>
-
-              {/* Team Member 2: Operations Manager */}
-              <div className="bg-white dark:bg-slate-900 border-2 border-neutral-light-grey dark:border-slate-700 rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
-                <div className="relative h-64 bg-gradient-to-br from-brand-bright-blue/80 to-brand-deep-blue/80 flex items-center justify-center">
-                  <Target className="h-24 w-24 text-white/40" />
-                  <div className="absolute bottom-4 left-4 bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full">
-                    <p className="text-xs font-bold text-white uppercase tracking-wide">Operations</p>
-                  </div>
-                </div>
-                <div className="p-6">
-                  <h3 className="text-h3 font-bold text-neutral-charcoal dark:text-white mb-1">
-                    Operations Manager
-                  </h3>
-                  <p className="text-sm font-semibold text-brand-deep-blue dark:text-brand-bright-blue mb-4">
-                    Director of Operations
-                  </p>
-                  <p className="text-body-sm text-neutral-charcoal/80 dark:text-white/80 leading-relaxed">
-                    Manages daily operations, staff scheduling, and quality control systems. Ensures every facility receives consistent, high-quality service.
-                  </p>
-                </div>
-              </div>
-
-              {/* Team Member 3: Quality Assurance */}
-              <div className="bg-white dark:bg-slate-900 border-2 border-neutral-light-grey dark:border-slate-700 rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
-                <div className="relative h-64 bg-gradient-to-br from-brand-deep-blue/70 to-brand-bright-blue/70 flex items-center justify-center">
-                  <Award className="h-24 w-24 text-white/40" />
-                  <div className="absolute bottom-4 left-4 bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full">
-                    <p className="text-xs font-bold text-white uppercase tracking-wide">Quality</p>
-                  </div>
-                </div>
-                <div className="p-6">
-                  <h3 className="text-h3 font-bold text-neutral-charcoal dark:text-white mb-1">
-                    Quality Assurance Manager
-                  </h3>
-                  <p className="text-sm font-semibold text-brand-deep-blue dark:text-brand-bright-blue mb-4">
-                    Quality Control Director
-                  </p>
-                  <p className="text-body-sm text-neutral-charcoal/80 dark:text-white/80 leading-relaxed">
-                    Conducts regular facility inspections, monitors compliance with SOPs, and implements corrective action plans to maintain our quality standards.
-                  </p>
-                </div>
-              </div>
+                )
+              })}
             </div>
 
             {/* Account Management Team Preview */}
@@ -389,7 +289,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Core Principles */}
+      {/* Core Principles - Clean 3-card layout */}
       <section className="py-20 bg-white dark:bg-slate-900">
         <div className="container mx-auto px-6">
           <div className="max-w-6xl mx-auto">
@@ -400,109 +300,53 @@ export default function AboutPage() {
               Our approach combines the best of both worlds: corporate-grade quality with family business accountability
             </p>
 
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-              {/* Principle 1: Invest in People */}
-              <div className="bg-white dark:bg-slate-900 border-2 border-neutral-light-grey dark:border-slate-700 rounded-xl p-8 shadow-sm hover:shadow-lg transition-shadow">
-                {/* Glass-effect icon - Large (64px) */}
-                <div className="flex justify-center mb-6">
-                  <GlassIcon icon="Users" size="lg" variant="default" label="Invest in People" />
-                </div>
-                <h3 className="text-h3 font-bold text-neutral-charcoal dark:text-white mb-4 text-center">
-                  Invest in People
-                </h3>
-                <p className="text-body text-neutral-charcoal/80 dark:text-white/80 mb-6 text-center">
-                  Full-time W-2 employees with benefits, training, and career growth opportunities—not independent contractors.
-                </p>
-                <div className="border-t border-neutral-light-grey dark:border-slate-700 pt-6">
-                  <div className="flex items-center justify-center gap-2 text-brand-deep-blue dark:text-brand-bright-blue">
-                    <CheckCircle2 className="h-5 w-5 flex-shrink-0" />
-                    <p className="text-sm font-semibold">40+ hours of training per employee</p>
-                  </div>
-                  <p className="text-xs text-neutral-charcoal/60 dark:text-white/60 text-center mt-2 italic">
-                    "Low turnover means familiar faces and consistent quality"
-                  </p>
-                </div>
-              </div>
-
-              {/* Principle 2: Systems & Standards */}
-              <div className="bg-white dark:bg-slate-900 border-2 border-neutral-light-grey dark:border-slate-700 rounded-xl p-8 shadow-sm hover:shadow-lg transition-shadow">
-                {/* Glass-effect icon - Large (64px) */}
-                <div className="flex justify-center mb-6">
-                  <GlassIcon icon="Target" size="lg" variant="default" label="Systems & Standards" />
-                </div>
-                <h3 className="text-h3 font-bold text-neutral-charcoal dark:text-white mb-4 text-center">
-                  Systems & Standards
-                </h3>
-                <p className="text-body text-neutral-charcoal/80 dark:text-white/80 mb-6 text-center">
-                  Corporate-grade processes, quality control checklists, and facility-specific Standard Operating Procedures.
-                </p>
-                <div className="border-t border-neutral-light-grey dark:border-slate-700 pt-6">
-                  <div className="flex items-center justify-center gap-2 text-brand-deep-blue dark:text-brand-bright-blue">
-                    <CheckCircle2 className="h-5 w-5 flex-shrink-0" />
-                    <p className="text-sm font-semibold">Custom SOPs for every facility</p>
-                  </div>
-                  <p className="text-xs text-neutral-charcoal/60 dark:text-white/60 text-center mt-2 italic">
-                    "Documented processes ensure nothing gets missed"
-                  </p>
-                </div>
-              </div>
-
-              {/* Principle 3: Personal Touch - FEATURED */}
-              <div className="lg:col-span-1 lg:row-span-1">
-                <div className="relative bg-gradient-to-br from-brand-deep-blue to-brand-bright-blue rounded-xl p-8 shadow-lg border-4 border-brand-bright-blue/30 dark:border-brand-bright-blue/50">
-                  {/* Featured Badge */}
-                  <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                    <div className="bg-brand-red text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wide shadow-md">
-                      Our Difference
+            {/* 3 cards side-by-side: 300px width × 200px height */}
+            <div className="flex flex-wrap justify-center gap-6">
+              {[
+                {
+                  icon: Users,
+                  title: 'Invest in People',
+                  description: 'Full-time W-2 employees with benefits and training—not contractors.',
+                  quote: 'Low turnover means familiar faces and consistent quality',
+                },
+                {
+                  icon: Target,
+                  title: 'Systems & Standards',
+                  description: 'Corporate-grade processes, quality checklists, and custom SOPs.',
+                  quote: 'Documented processes ensure nothing gets missed',
+                },
+                {
+                  icon: Heart,
+                  title: 'Personal Touch',
+                  description: '24/7 support with real people who know your name and facility.',
+                  quote: 'We treat every client like they\'re our only client',
+                },
+              ].map((principle, idx) => {
+                const Icon = principle.icon
+                return (
+                  <div
+                    key={idx}
+                    className="w-[300px] h-[200px] bg-white dark:bg-slate-800 border border-neutral-light-grey dark:border-slate-700 rounded-xl p-5 text-center flex flex-col items-center justify-center shadow-sm hover:shadow-md transition-shadow"
+                  >
+                    {/* Icon 64px centered */}
+                    <div className="w-16 h-16 rounded-full bg-brand-bright-blue flex items-center justify-center mb-3">
+                      <Icon className="h-8 w-8 text-white" strokeWidth={1.5} />
                     </div>
-                  </div>
-
-                  {/* Glass-effect icon - Large (64px) - Light variant for dark background */}
-                  <div className="flex justify-center mb-6 mt-2">
-                    <GlassIcon icon="Heart" size="lg" variant="light" label="Personal Touch" />
-                  </div>
-                  <h3 className="text-h3 font-bold text-white mb-4 text-center">
-                    Personal Touch
-                  </h3>
-                  <p className="text-body text-white/95 mb-6 text-center leading-relaxed">
-                    24/7 support with real people who know your name, your facility, and your concerns. No call centers, no runarounds.
-                  </p>
-                  <div className="border-t border-white/30 pt-6">
-                    <div className="flex items-center justify-center gap-2 text-white">
-                      <CheckCircle2 className="h-5 w-5 flex-shrink-0" />
-                      <p className="text-sm font-bold">2-hour emergency response</p>
-                    </div>
-                    <p className="text-xs text-white/80 text-center mt-2 italic font-medium">
-                      "We treat every client like they're our only client"
+                    {/* Title: 18px bold #002A86 */}
+                    <h3 className="text-[18px] font-bold text-brand-deep-blue dark:text-white mb-2">
+                      {principle.title}
+                    </h3>
+                    {/* Description: 14px #666666, 2 lines max */}
+                    <p className="text-[14px] text-[#666666] dark:text-white/70 leading-snug line-clamp-2 mb-2">
+                      {principle.description}
+                    </p>
+                    {/* Quote: italic 12px #0077D9 */}
+                    <p className="text-[12px] italic text-brand-bright-blue">
+                      &ldquo;{principle.quote}&rdquo;
                     </p>
                   </div>
-
-                  {/* Sparkle decorative elements */}
-                  <Sparkles className="absolute top-4 right-4 h-6 w-6 text-white/40" />
-                  <Sparkles className="absolute bottom-4 left-4 h-5 w-5 text-white/30" />
-                </div>
-              </div>
-            </div>
-
-            {/* Supporting Testimonial */}
-            <div className="mt-12 max-w-3xl mx-auto">
-              <div className="bg-white dark:bg-slate-900 border border-neutral-light-grey dark:border-slate-700 rounded-xl p-6 shadow-sm">
-                <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0">
-                    <div className="w-12 h-12 rounded-full bg-brand-bright-blue/10 dark:bg-brand-bright-blue/20 flex items-center justify-center">
-                      <Star className="h-6 w-6 text-brand-bright-blue" />
-                    </div>
-                  </div>
-                  <div className="flex-1">
-                    <p className="text-body italic text-neutral-charcoal/80 dark:text-white/80 mb-3">
-                      "Most cleaning companies promise quality. Anderson delivers it—and backs it up with genuine accountability. If there's ever an issue, they fix it immediately. No excuses."
-                    </p>
-                    <p className="text-sm font-semibold text-neutral-charcoal dark:text-white">
-                      — Local Business Owner, Springfield MA
-                    </p>
-                  </div>
-                </div>
-              </div>
+                )
+              })}
             </div>
           </div>
         </div>

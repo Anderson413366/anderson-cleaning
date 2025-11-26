@@ -27,13 +27,9 @@ export const metadata: Metadata = {
 export const revalidate = 86400
 
 export default function IndustriesPage() {
-  // Separate featured and secondary industries
-  const featuredIndustries = industries.filter(ind =>
-    ['healthcare', 'corporate-offices'].includes(ind.slug)
-  )
-
-  const secondaryIndustries = industries.filter(ind =>
-    ['educational-facilities', 'retail-stores', 'manufacturing-warehouses'].includes(ind.slug)
+  // All industries displayed equally (no featured/secondary distinction)
+  const allIndustries = industries.filter(ind =>
+    ['healthcare', 'corporate-offices', 'educational-facilities', 'retail-stores', 'manufacturing-warehouses'].includes(ind.slug)
   )
 
   return (
@@ -59,7 +55,7 @@ export default function IndustriesPage() {
         </div>
       </section>
 
-      {/* Industry Cards Grid */}
+      {/* Industry Cards Grid - All industries displayed equally */}
       <section className="py-16 md:py-20 bg-neutral-off-white dark:bg-slate-800">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
@@ -72,79 +68,36 @@ export default function IndustriesPage() {
             </p>
           </div>
 
-          <div className="max-w-7xl mx-auto space-y-12">
-            {/* Featured Industries - Healthcare & Corporate Offices */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {featuredIndustries.map((industry) => {
-                return (
-                  <Link
-                    key={industry.id}
-                    href={`/industries/${industry.slug}`}
-                    className="group h-full"
-                  >
-                    <div className="h-full flex flex-col bg-white dark:bg-slate-900 rounded-2xl shadow-md border-2 border-brand-deep-blue/20 dark:border-brand-bright-blue/30 p-10 transition-all duration-300 hover:shadow-2xl hover:border-brand-bright-blue hover:-translate-y-2">
-                      {/* Featured badge */}
-                      <div className="inline-flex items-center gap-2 self-start mb-4 px-3 py-1 rounded-full bg-brand-bright-blue/10 dark:bg-brand-bright-blue/20">
-                        <span className="text-xs font-bold uppercase tracking-wider text-brand-deep-blue dark:text-brand-bright-blue">
-                          Primary Focus
-                        </span>
-                      </div>
+          {/* Unified grid - all cards visually identical */}
+          <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {allIndustries.map((industry) => (
+              <Link
+                key={industry.id}
+                href={`/industries/${industry.slug}`}
+                className="group h-full"
+                aria-label={`Learn more about ${industry.name} cleaning services`}
+              >
+                <div className="h-full min-h-[280px] flex flex-col bg-white dark:bg-slate-900 rounded-xl border border-[#E0E0E0] dark:border-slate-700 p-6 transition-all duration-300 hover:shadow-lg hover:border-brand-bright-blue hover:-translate-y-1">
+                  {/* Icon - 56px circle with brand blue */}
+                  <div className="mb-5">
+                    <GlassIcon icon={industry.icon} size="lg" variant="default" label={industry.name} />
+                  </div>
 
-                      {/* Glass-effect icon - Large (64px) for featured industries */}
-                      <div className="mb-6">
-                        <GlassIcon icon={industry.icon} size="lg" variant="solid" label={industry.name} />
-                      </div>
+                  <h3 className="text-h3 font-bold text-neutral-charcoal dark:text-white mb-3 group-hover:text-brand-bright-blue dark:group-hover:text-brand-bright-blue transition-colors">
+                    {industry.name}
+                  </h3>
 
-                      <h3 className="text-3xl font-bold text-neutral-charcoal dark:text-white mb-4 group-hover:text-brand-bright-blue dark:group-hover:text-brand-bright-blue transition-colors">
-                        {industry.name}
-                      </h3>
+                  <p className="text-body text-neutral-charcoal/80 dark:text-white/80 leading-relaxed flex-1">
+                    {industry.shortDescription}
+                  </p>
 
-                      <p className="text-lg text-neutral-charcoal/80 dark:text-white/80 leading-relaxed flex-1 mb-6">
-                        {industry.shortDescription}
-                      </p>
-
-                      <div className="flex items-center gap-2 text-brand-bright-blue font-semibold text-lg group-hover:gap-4 transition-all">
-                        <span>Learn More</span>
-                        <ArrowRight className="h-6 w-6" aria-hidden="true" />
-                      </div>
-                    </div>
-                  </Link>
-                )
-              })}
-            </div>
-
-            {/* Secondary Industries */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {secondaryIndustries.map((industry) => {
-                return (
-                  <Link
-                    key={industry.id}
-                    href={`/industries/${industry.slug}`}
-                    className="group h-full"
-                  >
-                    <div className="h-full flex flex-col bg-white dark:bg-slate-900 rounded-xl shadow-sm border-2 border-neutral-light-grey dark:border-slate-700 p-8 transition-all duration-300 hover:shadow-xl hover:border-brand-bright-blue hover:-translate-y-1">
-                      {/* Glass-effect icon - Large (64px) for industry cards */}
-                      <div className="mb-6">
-                        <GlassIcon icon={industry.icon} size="lg" variant="solid" label={industry.name} />
-                      </div>
-
-                      <h3 className="text-h3 font-bold text-neutral-charcoal dark:text-white mb-4 group-hover:text-brand-bright-blue dark:group-hover:text-brand-bright-blue transition-colors">
-                        {industry.name}
-                      </h3>
-
-                      <p className="text-body text-neutral-charcoal/80 dark:text-white/80 leading-relaxed flex-1">
-                        {industry.shortDescription}
-                      </p>
-
-                      <div className="flex items-center gap-2 text-brand-bright-blue font-semibold group-hover:gap-3 transition-all mt-6">
-                        <span>Learn More</span>
-                        <ArrowRight className="h-5 w-5" aria-hidden="true" />
-                      </div>
-                    </div>
-                  </Link>
-                )
-              })}
-            </div>
+                  <div className="flex items-center gap-2 text-brand-bright-blue font-semibold group-hover:gap-3 transition-all mt-5">
+                    <span>Learn More</span>
+                    <ArrowRight className="h-5 w-5" aria-hidden="true" />
+                  </div>
+                </div>
+              </Link>
+            ))}
           </div>
         </div>
       </section>

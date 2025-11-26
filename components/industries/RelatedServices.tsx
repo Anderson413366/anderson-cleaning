@@ -78,6 +78,7 @@ export default function RelatedServices({
               <Link
                 key={service.slug}
                 href={`/services/${service.slug}`}
+                aria-label={`Learn more about ${service.title}`}
                 className="
                   group
                   bg-white dark:bg-slate-800
@@ -110,9 +111,9 @@ export default function RelatedServices({
                 </p>
 
                 {/* Arrow Icon */}
-                <div className="flex items-center gap-2 text-brand-bright-blue font-semibold text-sm">
+                <div className="flex items-center gap-2 text-brand-bright-blue font-semibold text-sm" aria-hidden="true">
                   <span>Learn more</span>
-                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
+                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </div>
               </Link>
             ))}

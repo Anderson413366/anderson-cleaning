@@ -31,11 +31,6 @@ import { Industry } from '@/lib/industries-data'
 import {
   CheckCircle2,
   ArrowLeft,
-  Award,
-  Shield,
-  Users,
-  TrendingUp,
-  Building,
 } from 'lucide-react'
 import FAQAccordion from '@/components/services/FAQAccordion'
 import RelatedServices from '@/components/industries/RelatedServices'
@@ -205,67 +200,79 @@ export default function IndustryTemplate({
       </section>
 
       {/* ================================================================
-          CASE STUDY SECTION
+          INDUSTRY EXPERTISE (CASE STUDY) SECTION
           ================================================================ */}
       {industry.caseStudy && (
-        <section className="py-16 md:py-20 bg-gradient-to-br from-brand-deep-blue to-brand-bright-blue text-white">
+        <section className="py-[60px] bg-white dark:bg-slate-900">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-5xl mx-auto">
+            <div className="max-w-[1200px] mx-auto">
               {/* Section Header */}
-              <div className="text-center mb-12">
-                <div className="inline-flex items-center gap-2 mb-4 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm">
-                  <TrendingUp className="h-5 w-5" aria-hidden="true" />
-                  <span className="text-sm font-bold uppercase tracking-wider">Success Story</span>
-                </div>
-                <h2 className="text-3xl font-extrabold mb-4">
-                  {industry.caseStudy.title}
+              <div className="mb-10">
+                <h2 className="text-2xl font-bold text-neutral-charcoal dark:text-white mb-2">
+                  Industry Expertise
                 </h2>
-                <p className="text-xl text-white/90 font-semibold">
-                  {industry.caseStudy.client}
+                <p className="text-base text-neutral-charcoal/70 dark:text-white/70">
+                  See how we&apos;ve helped other {industry.name.toLowerCase()} achieve their cleaning goals.
                 </p>
               </div>
 
-              {/* Case Study Content */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-                {/* Challenge */}
-                <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
-                  <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
-                    <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-white/20 text-sm">
-                      1
-                    </span>
-                    The Challenge
+              {/* Case Study Card */}
+              <div className="bg-neutral-off-white dark:bg-slate-800 rounded-xl border border-[#E0E0E0] dark:border-slate-700 overflow-hidden">
+                {/* Card Header */}
+                <div className="bg-brand-deep-blue text-white p-6">
+                  <p className="text-sm font-semibold uppercase tracking-wide text-white/70 mb-1">
+                    Case Study
+                  </p>
+                  <h3 className="text-xl font-bold">
+                    {industry.caseStudy.title}
                   </h3>
-                  <p className="text-white/90 leading-relaxed">
-                    {industry.caseStudy.challenge}
+                  <p className="text-white/80 mt-1">
+                    {industry.caseStudy.client}
                   </p>
                 </div>
 
-                {/* Solution */}
-                <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
-                  <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
-                    <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-white/20 text-sm">
-                      2
-                    </span>
-                    Our Solution
-                  </h3>
-                  <p className="text-white/90 leading-relaxed">
-                    {industry.caseStudy.solution}
-                  </p>
-                </div>
-              </div>
-
-              {/* Results */}
-              <div className="bg-white rounded-2xl p-8">
-                <h3 className="text-2xl font-bold mb-6 text-brand-deep-blue">
-                  Measurable Results
-                </h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {industry.caseStudy.results.map((result, index) => (
-                    <div key={index} className="flex items-start gap-3">
-                      <CheckCircle2 className="h-6 w-6 text-brand-bright-blue flex-shrink-0 mt-0.5" strokeWidth={2.5} />
-                      <span className="text-neutral-charcoal/80 leading-relaxed">{result}</span>
+                {/* Card Body */}
+                <div className="p-6 md:p-8">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                    {/* Challenge */}
+                    <div>
+                      <h4 className="text-sm font-semibold uppercase tracking-wide text-neutral-charcoal/60 dark:text-white/60 mb-3">
+                        The Challenge
+                      </h4>
+                      <p className="text-base text-neutral-charcoal dark:text-white leading-relaxed">
+                        {industry.caseStudy.challenge}
+                      </p>
                     </div>
-                  ))}
+
+                    {/* Solution */}
+                    <div>
+                      <h4 className="text-sm font-semibold uppercase tracking-wide text-neutral-charcoal/60 dark:text-white/60 mb-3">
+                        Our Solution
+                      </h4>
+                      <p className="text-base text-neutral-charcoal dark:text-white leading-relaxed">
+                        {industry.caseStudy.solution}
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Results */}
+                  <div className="border-t border-[#E0E0E0] dark:border-slate-700 pt-6">
+                    <h4 className="text-sm font-semibold uppercase tracking-wide text-neutral-charcoal/60 dark:text-white/60 mb-4">
+                      Results Achieved
+                    </h4>
+                    <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                      {industry.caseStudy.results.map((result, index) => (
+                        <li key={index} className="flex items-start gap-3">
+                          <CheckCircle2
+                            className="h-[14px] w-[14px] text-brand-bright-blue flex-shrink-0 mt-1"
+                            strokeWidth={2.5}
+                            aria-hidden="true"
+                          />
+                          <span className="text-base text-neutral-charcoal dark:text-white">{result}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
@@ -274,44 +281,37 @@ export default function IndustryTemplate({
       )}
 
       {/* ================================================================
-          STANDARDS & COMPLIANCE SECTION
+          REGULATORY COMPLIANCE SECTION
           ================================================================ */}
-      <section className="py-16 md:py-20 bg-neutral-off-white dark:bg-slate-900">
+      <section className="py-[60px] bg-neutral-off-white dark:bg-slate-900">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-6xl mx-auto">
+          <div className="max-w-[1200px] mx-auto">
             {/* Section Header */}
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-extrabold text-neutral-charcoal dark:text-white mb-4">
-                Standards & Compliance
+            <div className="mb-10">
+              <h2 className="text-2xl font-bold text-neutral-charcoal dark:text-white mb-2">
+                Regulatory Compliance
               </h2>
-              <p className="text-base text-neutral-charcoal/70 dark:text-white/70 max-w-3xl mx-auto">
-                We maintain the highest standards and certifications required for your industry.
+              <p className="text-base text-neutral-charcoal/70 dark:text-white/70">
+                We maintain all required certifications and follow strict protocols for your industry.
               </p>
             </div>
 
-            {/* Compliance Badges Grid - 2 columns on mobile, 3 on tablet+ */}
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
-              {industry.compliance.map((item, index) => (
-                <div
-                  key={index}
-                  className="bg-white dark:bg-slate-900 rounded-2xl shadow-md p-6 flex flex-col items-center justify-center text-center border border-neutral-light-grey dark:border-slate-700 transition-all duration-200 hover:shadow-lg hover:border-brand-bright-blue"
-                >
-                  {/* Icon - Medium (48px) glass effect */}
-                  <div className="mb-3">
-                    <GlassIcon
-                      icon={index % 3 === 0 ? 'Shield' : index % 3 === 1 ? 'Award' : 'Users'}
-                      size="md"
-                      variant="solid"
-                      label={item}
+            {/* Compliance List - Clean checkmarks */}
+            <div className="bg-white dark:bg-slate-800 rounded-xl border border-[#E0E0E0] dark:border-slate-700 p-6 md:p-8">
+              <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {industry.compliance.map((item, index) => (
+                  <li key={index} className="flex items-start gap-3">
+                    <CheckCircle2
+                      className="h-[14px] w-[14px] text-brand-bright-blue flex-shrink-0 mt-1"
+                      strokeWidth={2.5}
+                      aria-hidden="true"
                     />
-                  </div>
-
-                  {/* Badge Text */}
-                  <p className="text-sm font-semibold text-neutral-charcoal dark:text-white leading-tight">
-                    {item}
-                  </p>
-                </div>
-              ))}
+                    <span className="text-base text-neutral-charcoal dark:text-white">
+                      {item}
+                    </span>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </div>
