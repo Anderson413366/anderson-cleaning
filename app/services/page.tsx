@@ -12,23 +12,15 @@ import {
   CheckCircle2,
   ChevronDown,
   ChevronRight,
-  ClipboardList,
-  Clock,
   Factory,
-  FileCheck,
-  HardHat,
   MapPin,
   Shield,
   Sparkles,
-  Square,
-  TrendingUp,
-  UserCheck,
   Users,
-  Zap,
 } from 'lucide-react'
 
 import { Button } from '@/components/ui/Button'
-import { GlassIcon, GlassIconWithBadge } from '@/components/ui/GlassIcon'
+import { GlassIcon } from '@/components/ui/GlassIcon'
 import StructuredData from '@/components/StructuredData'
 import QuoteMiniForm from '@/components/forms/QuoteMiniForm'
 import QuoteAdvancedModal from '@/components/forms/QuoteAdvancedModal'
@@ -221,136 +213,96 @@ export default function ServicesPage() {
 
           {/* Timeline - Vertical on mobile, horizontal on desktop */}
           <div className="max-w-6xl mx-auto">
-            {/* Mobile: Vertical Timeline */}
-            <div className="md:hidden space-y-12 relative">
-              {/* Vertical connecting line */}
-              <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-brand-deep-blue/20 dark:bg-brand-bright-blue/20" aria-hidden="true" />
-
-              {[
+            {/* Timeline steps data */}
+            {(() => {
+              const steps = [
                 {
-                  icon: ClipboardList,
                   step: '1',
                   title: 'Facility Walk-Through',
                   description: 'We tour your space to understand layout, traffic patterns, and special requirements. Free consultation, no obligation.',
                   timeframe: '1-2 days',
                 },
                 {
-                  icon: FileCheck,
                   step: '2',
                   title: 'Custom SOPs',
                   description: 'We create detailed Standard Operating Procedures specific to your facility—no cookie-cutter checklists.',
                   timeframe: '2-3 days',
                 },
                 {
-                  icon: UserCheck,
                   step: '3',
                   title: 'Team Training',
                   description: 'Our staff receives 40+ hours of training plus facility-specific instruction before they ever clean your space.',
                   timeframe: '3-4 days',
                 },
                 {
-                  icon: TrendingUp,
                   step: '4',
                   title: 'Supervised Start',
                   description: 'First week includes extra oversight and quality checks to ensure we meet your standards from day one.',
                   timeframe: '5-7 days',
                 },
-              ].map((item, i) => {
-                return (
-                  <div key={i} className="relative flex gap-6 animate-fade-in">
-                    {/* Glass-effect circular icon with step number badge - Large (64px) */}
-                    <div className="flex-shrink-0">
-                      <GlassIconWithBadge
-                        icon={item.icon}
-                        size="lg"
-                        variant="default"
-                        badge={item.step}
-                        badgeColor="red"
-                        label={`Step ${item.step}`}
-                      />
-                    </div>
+              ]
 
-                    {/* Content */}
-                    <div className="flex-1 pt-1">
-                      <h3 className="text-h3 leading-normal font-semibold text-neutral-charcoal dark:text-white mb-2">
-                        {item.title}
-                      </h3>
-                      <p className="text-body text-neutral-charcoal/80 dark:text-white/80 mb-3">
-                        {item.description}
-                      </p>
-                      <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-brand-deep-blue/10 dark:bg-brand-bright-blue/10 text-sm font-semibold text-brand-deep-blue dark:text-brand-bright-blue">
-                        <Clock className="h-4 w-4" />
-                        {item.timeframe}
+              return (
+                <>
+                  {/* Mobile: Vertical Timeline */}
+                  <div className="md:hidden space-y-8 relative">
+                    {/* Vertical connecting line - 1px #E0E0E0 */}
+                    <div className="absolute left-5 top-10 bottom-10 w-px bg-[#E0E0E0] dark:bg-slate-600" aria-hidden="true" />
+
+                    {steps.map((item, i) => (
+                      <div key={i} className="relative flex gap-5">
+                        {/* Step circle - 40px #0077D9 with white number */}
+                        <div className="flex-shrink-0 flex items-center justify-center w-10 h-10 rounded-full bg-brand-bright-blue text-white font-bold text-base z-10">
+                          {item.step}
+                        </div>
+
+                        {/* Content */}
+                        <div className="flex-1 pt-1">
+                          <h3 className="text-lg font-semibold text-neutral-charcoal dark:text-white mb-1">
+                            {item.title}
+                          </h3>
+                          <p className="text-sm text-neutral-charcoal/80 dark:text-white/80 mb-2">
+                            {item.description}
+                          </p>
+                          {/* Duration label - 12px #999999 */}
+                          <span className="text-xs text-[#999999]">
+                            {item.timeframe}
+                          </span>
+                        </div>
                       </div>
+                    ))}
+                  </div>
+
+                  {/* Desktop: Horizontal Timeline */}
+                  <div className="hidden md:block relative">
+                    {/* Horizontal connecting line - 1px #E0E0E0 */}
+                    <div className="absolute left-[calc(12.5%+20px)] right-[calc(12.5%+20px)] top-5 h-px bg-[#E0E0E0] dark:bg-slate-600" aria-hidden="true" />
+
+                    <div className="grid grid-cols-4 gap-8">
+                      {steps.map((item, i) => (
+                        <div key={i} className="text-center">
+                          {/* Step circle - 40px #0077D9 with white number */}
+                          <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-brand-bright-blue text-white font-bold text-base mb-4 relative z-10">
+                            {item.step}
+                          </div>
+
+                          <h3 className="text-lg font-semibold text-neutral-charcoal dark:text-white mb-2">
+                            {item.title}
+                          </h3>
+                          <p className="text-sm text-neutral-charcoal/80 dark:text-white/80 mb-3">
+                            {item.description}
+                          </p>
+                          {/* Duration label - 12px #999999 */}
+                          <span className="text-xs text-[#999999]">
+                            {item.timeframe}
+                          </span>
+                        </div>
+                      ))}
                     </div>
                   </div>
-                )
-              })}
-            </div>
-
-            {/* Desktop: Horizontal Timeline */}
-            <div className="hidden md:grid md:grid-cols-4 gap-8 relative">
-              {/* Horizontal connecting line */}
-              <div className="absolute left-0 right-0 top-8 h-0.5 bg-brand-deep-blue/20 dark:bg-brand-bright-blue/20 -z-10" aria-hidden="true" />
-
-              {[
-                {
-                  icon: ClipboardList,
-                  step: '1',
-                  title: 'Facility Walk-Through',
-                  description: 'We tour your space to understand layout, traffic patterns, and special requirements. Free consultation, no obligation.',
-                  timeframe: '1-2 days',
-                },
-                {
-                  icon: FileCheck,
-                  step: '2',
-                  title: 'Custom SOPs',
-                  description: 'We create detailed Standard Operating Procedures specific to your facility—no cookie-cutter checklists.',
-                  timeframe: '2-3 days',
-                },
-                {
-                  icon: UserCheck,
-                  step: '3',
-                  title: 'Team Training',
-                  description: 'Our staff receives 40+ hours of training plus facility-specific instruction before they ever clean your space.',
-                  timeframe: '3-4 days',
-                },
-                {
-                  icon: TrendingUp,
-                  step: '4',
-                  title: 'Supervised Start',
-                  description: 'First week includes extra oversight and quality checks to ensure we meet your standards from day one.',
-                  timeframe: '5-7 days',
-                },
-              ].map((item, i) => {
-                return (
-                  <div key={i} className="text-center animate-fade-in" style={{ animationDelay: `${i * 150}ms` }}>
-                    {/* Glass-effect circular icon with step number badge - Large (64px) */}
-                    <div className="inline-flex mb-6">
-                      <GlassIconWithBadge
-                        icon={item.icon}
-                        size="lg"
-                        variant="default"
-                        badge={item.step}
-                        badgeColor="red"
-                        label={`Step ${item.step}`}
-                      />
-                    </div>
-
-                    <h3 className="text-h3 leading-normal font-semibold text-neutral-charcoal dark:text-white mb-3">
-                      {item.title}
-                    </h3>
-                    <p className="text-body text-neutral-charcoal/80 dark:text-white/80 mb-4">
-                      {item.description}
-                    </p>
-                    <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-brand-deep-blue/10 dark:bg-brand-bright-blue/10 text-sm font-semibold text-brand-deep-blue dark:text-brand-bright-blue">
-                      <Clock className="h-4 w-4" />
-                      {item.timeframe}
-                    </div>
-                  </div>
-                )
-              })}
-            </div>
+                </>
+              )
+            })()}
           </div>
 
           <div className="mt-16 text-center">
