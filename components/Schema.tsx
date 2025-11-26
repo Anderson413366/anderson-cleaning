@@ -121,44 +121,8 @@ export function LocalBusinessSchema({ pageName, serviceArea, nonce }: LocalBusin
         },
       ],
     },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.8',
-      reviewCount: '150',
-      bestRating: '5',
-    },
-    review: [
-      {
-        '@type': 'Review',
-        author: {
-          '@type': 'Person',
-          name: 'Dr. Sarah Mitchell',
-        },
-        datePublished: '2024-11-15',
-        reviewBody:
-          'Anderson Cleaning has transformed our medical facility. Their attention to healthcare protocols is unmatched.',
-        reviewRating: {
-          '@type': 'Rating',
-          ratingValue: '5',
-          bestRating: '5',
-        },
-      },
-      {
-        '@type': 'Review',
-        author: {
-          '@type': 'Person',
-          name: 'John Davis',
-        },
-        datePublished: '2024-10-22',
-        reviewBody:
-          'Professional, reliable, and thorough. Our office has never looked better. Highly recommend!',
-        reviewRating: {
-          '@type': 'Rating',
-          ratingValue: '5',
-          bestRating: '5',
-        },
-      },
-    ],
+    // Note: aggregateRating is defined in layout.tsx via generateLocalBusinessSchema()
+    // to avoid duplicate ratings across pages
     priceRange: '$$',
     paymentAccepted: ['Cash', 'Check', 'Credit Card', 'Invoice', 'ACH'],
     currenciesAccepted: 'USD',
