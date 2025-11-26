@@ -70,6 +70,7 @@ export interface Industry {
   caseStudy?: IndustryCaseStudy
   facilitySizes?: IndustryFacilitySize[]
   faqs?: IndustryFAQ[]
+  services?: string[] // Service slugs applicable to this industry (e.g., ['office-cleaning', 'janitorial-services'])
 }
 
 // ============================================================================
@@ -92,6 +93,7 @@ export const industries: Industry[] = [
       subtitle: 'Medical-grade cleaning that meets OSHA and CDC standards',
       backgroundImage: '/images/industries/healthcare-hero.jpg',
     },
+    services: ['healthcare-cleaning', 'janitorial-services', 'emergency-cleaning', 'day-porter'],
     overview: [
       'Healthcare facilities require the highest standards of cleanliness to protect vulnerable patients and prevent healthcare-associated infections (HAIs). Our specialized medical facility cleaning services are designed to meet OSHA regulations, CDC guidelines, and state health department requirements.',
       'Our team is trained in proper infection control protocols, including the correct use of EPA-registered disinfectants, proper PPE usage, and medical waste handling procedures. We understand the critical importance of maintaining a sterile environment in medical settings.',
@@ -226,6 +228,7 @@ export const industries: Industry[] = [
       subtitle: 'Professional environments that impress clients and inspire teams',
       backgroundImage: '/images/industries/corporate-hero.jpg',
     },
+    services: ['office-cleaning', 'janitorial-services', 'floor-care', 'window-cleaning', 'day-porter'],
     overview: [
       'A clean, well-maintained office environment is essential for employee productivity, client impressions, and workplace health. Our corporate office cleaning services are designed to keep your workspace looking professional while creating a healthy environment for your team.',
       'We understand the unique needs of corporate environments, from executive suites to collaborative workspaces. Our services are customized to match your office layout, traffic patterns, and specific requirements, ensuring every area receives the appropriate level of attention.',
@@ -301,6 +304,7 @@ export const industries: Industry[] = [
       subtitle: 'Creating healthy learning environments for students and staff',
       backgroundImage: '/images/industries/education-hero.jpg',
     },
+    services: ['janitorial-services', 'floor-care', 'emergency-cleaning', 'day-porter'],
     overview: [
       'Educational facilities face unique cleaning challenges with high student traffic, diverse spaces, and the critical importance of maintaining healthy environments for learning. Our school and university cleaning services are designed to create safe, sanitary spaces that support student health and academic success.',
       'We understand that educational facilities require specialized attention to different areas—from classrooms and laboratories to cafeterias, gymnasiums, and dormitories. Our team is trained in proper disinfection protocols for high-touch surfaces and effective strategies for managing the spread of illness in school settings.',
@@ -377,6 +381,7 @@ export const industries: Industry[] = [
       subtitle: 'Clean stores that drive sales and enhance customer experience',
       backgroundImage: '/images/industries/retail-hero.jpg',
     },
+    services: ['janitorial-services', 'floor-care', 'window-cleaning', 'day-porter'],
     overview: [
       'In retail, first impressions matter. A clean, well-maintained store creates a positive shopping experience that encourages customers to browse longer and return more often. Our retail cleaning services are designed to keep your store looking its best while maintaining the welcoming atmosphere that drives sales.',
       'We understand the unique challenges of retail environments—from managing high foot traffic to cleaning around merchandise displays. Our team is trained to work efficiently without disrupting your customers or moving product, ensuring your store remains operational and attractive at all times.',
@@ -452,6 +457,7 @@ export const industries: Industry[] = [
       subtitle: 'Industrial cleaning that keeps your operation running safely and efficiently',
       backgroundImage: '/images/industries/manufacturing-hero.jpg',
     },
+    services: ['janitorial-services', 'floor-care', 'post-construction', 'emergency-cleaning'],
     overview: [
       'Manufacturing and warehouse facilities require specialized cleaning services that go beyond standard commercial cleaning. Our industrial cleaning team understands the unique challenges of production environments, from managing industrial dust and debris to maintaining safe, compliant facilities that meet OSHA standards.',
       'We provide comprehensive cleaning solutions for all areas of your facility, including production floors, warehouses, break rooms, offices, and restrooms. Our services are designed to support your operational efficiency while maintaining the safety and cleanliness standards required in industrial settings.',
@@ -537,4 +543,20 @@ export function getAllIndustrySlugs(): string[] {
  */
 export function getIndustryById(id: string): Industry | undefined {
   return industries.find((industry) => industry.id === id)
+}
+
+/**
+ * Get industry by name (case-insensitive, partial match)
+ * Useful for mapping service industry names to industry pages
+ */
+export function getIndustryByName(name: string): Industry | undefined {
+  const normalizedName = name.toLowerCase().trim()
+  return industries.find((industry) => {
+    const industryName = industry.name.toLowerCase()
+    // Exact match
+    if (industryName === normalizedName) return true
+    // Partial match for names like "Corporate offices" matching "Corporate Offices"
+    if (industryName.includes(normalizedName) || normalizedName.includes(industryName)) return true
+    return false
+  })
 }

@@ -37,6 +37,7 @@ import {
   Building,
 } from 'lucide-react'
 import FAQAccordion from '@/components/services/FAQAccordion'
+import RelatedServices from '@/components/industries/RelatedServices'
 
 // ============================================================================
 // TYPES & INTERFACES
@@ -405,6 +406,16 @@ export default function IndustryTemplate({
             </div>
           </div>
         </section>
+      )}
+
+      {/* ================================================================
+          RELATED SERVICES SECTION
+          ================================================================ */}
+      {industry.services && industry.services.length > 0 && (
+        <RelatedServices
+          industryName={industry.name}
+          serviceSlugs={industry.services}
+        />
       )}
 
       {/* ================================================================

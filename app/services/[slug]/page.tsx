@@ -20,6 +20,7 @@ import { BreadcrumbSchema, FAQSchema } from '@/components/Schema'
 import { Button } from '@/components/ui/Button'
 import ServiceHero from '@/components/services/ServiceHero'
 import FAQAccordion from '@/components/services/FAQAccordion'
+import RelatedIndustries from '@/components/services/RelatedIndustries'
 import {
   serviceSlugs,
   servicesData,
@@ -114,6 +115,7 @@ export default async function ServiceDetailPage({ params }: { params: RouteParam
       </section>
 
       <TestimonialsSection service={service} />
+      <RelatedIndustries serviceName={service.title} industryNames={service.industries} />
       <RelatedAndFAQSection service={service} />
       <BlogLinks service={service} />
     </div>
