@@ -5,7 +5,7 @@ import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import * as z from 'zod'
 import { Button } from '@/components/ui/Button'
-import { Phone, Mail, CheckCircle2, Loader2, DollarSign, ChevronRight, ChevronLeft, Building2, Hospital, GraduationCap, ShoppingBag, Warehouse, MoreHorizontal } from 'lucide-react'
+import { Phone, Mail, CheckCircle2, Loader2, DollarSign, ChevronRight, ChevronLeft, Building2, Hospital, GraduationCap, ShoppingBag, Warehouse, MoreHorizontal, Check, X } from 'lucide-react'
 import { CONTACT_INFO } from '@/lib/constants'
 import FormLegalNotice from './FormLegalNotice'
 
@@ -71,9 +71,10 @@ export default function QuoteFormSimplified({ onSuccess }: QuoteFormSimplifiedPr
     watch,
     setValue,
     trigger,
-    formState: { errors },
+    formState: { errors, touchedFields, dirtyFields },
   } = useForm<QuoteFormData>({
     resolver: zodResolver(quoteSchema),
+    mode: 'onBlur',
     defaultValues: {
       consent: false,
     },
@@ -147,6 +148,23 @@ export default function QuoteFormSimplified({ onSuccess }: QuoteFormSimplifiedPr
   const handleBack = () => {
     setCurrentStep((prev) => Math.max(prev - 1, 1))
     window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+
+  // Helper to get field validation state
+  const getFieldState = (fieldName: keyof QuoteFormData) => {
+    const hasError = !!errors[fieldName]
+    const isTouched = !!touchedFields[fieldName] || !!dirtyFields[fieldName]
+    const isValid = isTouched && !hasError
+
+    return {
+      hasError,
+      isValid,
+      className: hasError
+        ? 'border-red-500 focus:border-red-500 focus:ring-red-500/20'
+        : isValid
+        ? 'border-green-500 focus:border-green-500 focus:ring-green-500/20'
+        : 'border-gray-300 dark:border-gray-600 focus:border-brand-bright-blue focus:ring-brand-bright-blue/20',
+    }
   }
 
   const onSubmit = async (data: QuoteFormData) => {
@@ -365,13 +383,21 @@ export default function QuoteFormSimplified({ onSuccess }: QuoteFormSimplifiedPr
                 <label htmlFor="fullName" className="mb-2 block text-sm font-medium text-neutral-charcoal dark:text-white">
                   Full Name <span className="text-red-500">*</span>
                 </label>
-                <input
-                  {...register('fullName')}
-                  id="fullName"
-                  type="text"
-                  className="w-full rounded-lg border-2 border-gray-300 px-4 py-2 focus:border-brand-bright-blue focus:ring-2 focus:ring-brand-bright-blue/20 dark:border-gray-600 dark:bg-slate-900 dark:text-white"
-                  placeholder="John Smith"
-                />
+                <div className="relative">
+                  <input
+                    {...register('fullName')}
+                    id="fullName"
+                    type="text"
+                    className={`w-full rounded-lg border-2 px-4 py-2 pr-10 focus:ring-2 dark:bg-slate-900 dark:text-white transition-colors ${getFieldState('fullName').className}`}
+                    placeholder="John Smith"
+                  />
+                  {getFieldState('fullName').isValid && (
+                    <Check className="absolute right-3 top-1/2 -translate-y-1/2 h-5 w-5 text-green-500" />
+                  )}
+                  {getFieldState('fullName').hasError && (
+                    <X className="absolute right-3 top-1/2 -translate-y-1/2 h-5 w-5 text-red-500" />
+                  )}
+                </div>
                 {errors.fullName && (
                   <p className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.fullName.message}</p>
                 )}
@@ -381,13 +407,21 @@ export default function QuoteFormSimplified({ onSuccess }: QuoteFormSimplifiedPr
                 <label htmlFor="company" className="mb-2 block text-sm font-medium text-neutral-charcoal dark:text-white">
                   Company Name <span className="text-red-500">*</span>
                 </label>
-                <input
-                  {...register('company')}
-                  id="company"
-                  type="text"
-                  className="w-full rounded-lg border-2 border-gray-300 px-4 py-2 focus:border-brand-bright-blue focus:ring-2 focus:ring-brand-bright-blue/20 dark:border-gray-600 dark:bg-slate-900 dark:text-white"
-                  placeholder="ABC Corporation"
-                />
+                <div className="relative">
+                  <input
+                    {...register('company')}
+                    id="company"
+                    type="text"
+                    className={`w-full rounded-lg border-2 px-4 py-2 pr-10 focus:ring-2 dark:bg-slate-900 dark:text-white transition-colors ${getFieldState('company').className}`}
+                    placeholder="ABC Corporation"
+                  />
+                  {getFieldState('company').isValid && (
+                    <Check className="absolute right-3 top-1/2 -translate-y-1/2 h-5 w-5 text-green-500" />
+                  )}
+                  {getFieldState('company').hasError && (
+                    <X className="absolute right-3 top-1/2 -translate-y-1/2 h-5 w-5 text-red-500" />
+                  )}
+                </div>
                 {errors.company && (
                   <p className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.company.message}</p>
                 )}
@@ -399,13 +433,21 @@ export default function QuoteFormSimplified({ onSuccess }: QuoteFormSimplifiedPr
                 <label htmlFor="email" className="mb-2 block text-sm font-medium text-neutral-charcoal dark:text-white">
                   Email Address <span className="text-red-500">*</span>
                 </label>
-                <input
-                  {...register('email')}
-                  id="email"
-                  type="email"
-                  className="w-full rounded-lg border-2 border-gray-300 px-4 py-2 focus:border-brand-bright-blue focus:ring-2 focus:ring-brand-bright-blue/20 dark:border-gray-600 dark:bg-slate-900 dark:text-white"
-                  placeholder="john@company.com"
-                />
+                <div className="relative">
+                  <input
+                    {...register('email')}
+                    id="email"
+                    type="email"
+                    className={`w-full rounded-lg border-2 px-4 py-2 pr-10 focus:ring-2 dark:bg-slate-900 dark:text-white transition-colors ${getFieldState('email').className}`}
+                    placeholder="john@company.com"
+                  />
+                  {getFieldState('email').isValid && (
+                    <Check className="absolute right-3 top-1/2 -translate-y-1/2 h-5 w-5 text-green-500" />
+                  )}
+                  {getFieldState('email').hasError && (
+                    <X className="absolute right-3 top-1/2 -translate-y-1/2 h-5 w-5 text-red-500" />
+                  )}
+                </div>
                 {errors.email && (
                   <p className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.email.message}</p>
                 )}
@@ -415,13 +457,21 @@ export default function QuoteFormSimplified({ onSuccess }: QuoteFormSimplifiedPr
                 <label htmlFor="phone" className="mb-2 block text-sm font-medium text-neutral-charcoal dark:text-white">
                   Phone Number <span className="text-red-500">*</span>
                 </label>
-                <input
-                  {...register('phone')}
-                  id="phone"
-                  type="tel"
-                  className="w-full rounded-lg border-2 border-gray-300 px-4 py-2 focus:border-brand-bright-blue focus:ring-2 focus:ring-brand-bright-blue/20 dark:border-gray-600 dark:bg-slate-900 dark:text-white"
-                  placeholder={CONTACT_INFO.phone.formatted}
-                />
+                <div className="relative">
+                  <input
+                    {...register('phone')}
+                    id="phone"
+                    type="tel"
+                    className={`w-full rounded-lg border-2 px-4 py-2 pr-10 focus:ring-2 dark:bg-slate-900 dark:text-white transition-colors ${getFieldState('phone').className}`}
+                    placeholder={CONTACT_INFO.phone.formatted}
+                  />
+                  {getFieldState('phone').isValid && (
+                    <Check className="absolute right-3 top-1/2 -translate-y-1/2 h-5 w-5 text-green-500" />
+                  )}
+                  {getFieldState('phone').hasError && (
+                    <X className="absolute right-3 top-1/2 -translate-y-1/2 h-5 w-5 text-red-500" />
+                  )}
+                </div>
                 {errors.phone && (
                   <p className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.phone.message}</p>
                 )}
