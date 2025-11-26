@@ -461,86 +461,81 @@ export default function ServicesPage() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {[
               {
                 title: 'Healthcare Facility Cost Reduction',
                 location: 'Springfield, MA',
                 industry: 'Healthcare',
+                facilitySize: '45,000 sq ft medical complex',
                 metricNumber: '28%',
                 metricLabel: 'Cost Reduction',
-                progress: 72, // Visual representation
+                progress: 72,
                 description:
-                  'A major healthcare facility in Springfield reduced their cleaning costs by 28% while improving patient satisfaction scores through our optimized cleaning protocols and supply management.',
+                  'This multi-specialty medical complex with 12 exam rooms and 3 procedure suites was spending $8,200/month on cleaning with inconsistent results. We implemented OSHA-compliant infection control protocols, optimized their supply chain to eliminate waste, and deployed a dedicated 4-person evening team. Within 90 days, monthly costs dropped to $5,900 while patient satisfaction scores improved by 15 points.',
                 icon: Building2,
               },
               {
                 title: 'Zero Complaints Achievement',
                 location: 'Hartford, CT',
                 industry: 'Corporate Office',
+                facilitySize: '3-floor, 200-employee HQ',
                 metricNumber: 'Zero',
                 metricLabel: 'Complaints in 6 Months',
                 progress: 100,
                 description:
-                  'A corporate office in Hartford went from receiving weekly cleaning complaints to zero complaints over 6 months with our quality assurance program and dedicated account management.',
+                  'A regional insurance headquarters was receiving 4-6 cleaning complaints weekly from staff, damaging workplace morale. We conducted a facility audit, identified 23 recurring problem areas, and created custom checklists with photo documentation. Our dedicated account manager performs weekly walk-throughs with their facilities director. Result: zero complaints logged in 6 consecutive months.',
                 icon: Building,
               },
               {
                 title: 'Post-Construction Excellence',
-                location: 'Western Massachusetts',
+                location: 'Chicopee, MA',
                 industry: 'Manufacturing',
+                facilitySize: '120,000 sq ft production floor',
                 metricNumber: '100%',
                 metricLabel: 'On Time & Budget',
                 progress: 100,
                 description:
-                  "A manufacturing plant's post-construction cleanup was completed under budget and ahead of schedule, allowing them to resume operations 2 days early.",
+                  'After a $2.3M facility expansion, this precision manufacturing plant needed move-in ready cleanup within a tight 5-day window before production restart. We mobilized a 12-person crew working double shifts, removing construction debris, degreasing equipment surfaces, and achieving cleanroom-adjacent standards. Delivered 2 days early, saving the client an estimated $45,000 in delayed production costs.',
                 icon: Factory,
               },
             ].map((study) => (
               <div
                 key={study.title}
-                className="relative bg-white dark:bg-slate-800 rounded-xl border-2 border-neutral-light-grey dark:border-slate-700 p-8 hover:border-brand-bright-blue dark:hover:border-brand-bright-blue hover:shadow-xl transition-all duration-300"
+                className="relative bg-white dark:bg-slate-800 rounded-xl border-2 border-neutral-light-grey dark:border-slate-700 p-6 min-h-[380px] hover:border-brand-bright-blue dark:hover:border-brand-bright-blue hover:shadow-xl transition-all duration-300 flex flex-col"
               >
-                {/* Industry icon badge - top-right - Medium (48px) */}
-                <div className="absolute top-6 right-6">
-                  <GlassIcon icon={study.icon} size="md" variant="solid" label={study.industry} />
+                {/* Industry icon badge - top-right - Small (32px) to save space */}
+                <div className="absolute top-5 right-5">
+                  <GlassIcon icon={study.icon} size="sm" variant="solid" label={study.industry} />
                 </div>
 
                 {/* Large red metric number */}
-                <div className="mb-4">
-                  <div className="text-5xl font-bold text-brand-red mb-1" style={{ lineHeight: '1' }}>
+                <div className="mb-3">
+                  <div className="text-4xl font-bold text-brand-red mb-0.5" style={{ lineHeight: '1' }}>
                     {study.metricNumber}
                   </div>
-                  <div className="text-sm font-semibold text-neutral-charcoal/70 dark:text-white/70 uppercase tracking-wide">
+                  <div className="text-xs font-semibold text-neutral-charcoal/70 dark:text-white/70 uppercase tracking-wide">
                     {study.metricLabel}
                   </div>
                 </div>
 
-                {/* Progress bar */}
-                <div className="mb-6">
-                  <div className="h-2 bg-neutral-light-grey dark:bg-slate-700 rounded-full overflow-hidden">
-                    <div
-                      className="h-full bg-gradient-to-r from-brand-red to-brand-bright-blue rounded-full transition-all duration-1000"
-                      style={{ width: `${study.progress}%` }}
-                    />
-                  </div>
-                </div>
-
                 {/* Title */}
-                <h3 className="text-h3 font-semibold text-neutral-charcoal dark:text-white mb-3">
+                <h3 className="text-lg font-bold text-neutral-charcoal dark:text-white mb-2 pr-10">
                   {study.title}
                 </h3>
 
-                {/* Location and industry */}
-                <div className="flex items-center gap-2 text-sm text-neutral-charcoal/60 dark:text-white/80 mb-4">
-                  <MapPin className="h-4 w-4" />
-                  <span>
-                    {study.location} • {study.industry}
+                {/* Location, industry, and facility size */}
+                <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-neutral-charcoal/60 dark:text-white/70 mb-3">
+                  <span className="flex items-center gap-1">
+                    <MapPin className="h-3 w-3" />
+                    {study.location}
                   </span>
+                  <span>•</span>
+                  <span>{study.facilitySize}</span>
                 </div>
 
-                {/* Description */}
-                <p className="text-body-sm text-neutral-charcoal/70 dark:text-white/80">
+                {/* Description - flex-grow to fill remaining space */}
+                <p className="text-sm text-neutral-charcoal/80 dark:text-white/80 leading-relaxed flex-grow">
                   {study.description}
                 </p>
               </div>
