@@ -17,7 +17,7 @@ export default function Error({
   }, [error])
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-neutral-off-white dark:from-gray-900 dark:to-red-900/20 px-4">
+    <div className="min-h-screen flex items-center justify-center bg-neutral-off-white dark:bg-slate-900 px-4">
       <div className="max-w-2xl w-full text-center">
         {/* Error Illustration */}
         <div className="mb-8">
@@ -99,7 +99,7 @@ export default function Error({
 
         {/* Error details for development */}
         {process.env.NODE_ENV === 'development' && error.message && (
-          <div className="mt-6 p-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg max-w-md mx-auto">
+          <div className="mt-6 p-4 bg-brand-red/5 dark:bg-brand-red/10 border border-brand-red/20 dark:border-brand-red/30 rounded-lg max-w-md mx-auto">
             <p className="text-sm text-red-800 dark:text-red-300 font-mono text-left break-all">
               {error.message}
             </p>
@@ -126,7 +126,7 @@ export default function Error({
         </div>
 
         {/* Support Information */}
-        <div className="mt-12 pt-8 border-t border-gray-200 dark:border-gray-700">
+        <div className="mt-12 pt-8 border-t border-brand-deep-blue/10 dark:border-white/10">
           <p className="text-sm text-neutral-charcoal/70 dark:text-white/80 mb-4">
             Need immediate assistance?
           </p>

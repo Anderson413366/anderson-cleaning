@@ -208,7 +208,7 @@ textarea::placeholder {
   color: rgba(0, 0, 0, 0.6);
 }
 
-/* Focus State - High contrast with brand colors */
+/* Focus State - Bright Blue #0077D9 per Item 84 */
 .form-field:focus,
 input[type="text"]:focus,
 input[type="email"]:focus,
@@ -220,10 +220,9 @@ input[type="search"]:focus,
 input[type="date"]:focus,
 textarea:focus,
 select:focus {
-  border-color: var(--brand-deep-blue);
-  outline: 2px solid var(--brand-deep-blue);
-  outline-offset: 2px;
-  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05), 0 0 0 2px rgba(0, 42, 134, 0.15);
+  border-color: var(--brand-bright-blue);
+  outline: none;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05), 0 0 0 3px rgba(0, 119, 217, 0.2);
 }
 
 /* Error State */
@@ -277,7 +276,8 @@ html.dark input:focus,
 html.dark textarea:focus,
 html.dark select:focus {
   border-color: var(--brand-bright-blue);
-  box-shadow: 0 0 0 2px rgba(0, 119, 217, 0.3);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 119, 217, 0.2);
 }
 
 html.dark .form-field:disabled,
@@ -748,4 +748,110 @@ html.dark .glass-icon {
 
 .glass-icon-badge-deep-blue {
   background-color: var(--brand-deep-blue);
+}
+
+/* ====================================================================
+   BRAND-COMPLIANT COLOR UTILITIES - Item 83
+   Replace gray colors with Deep Blue at 5-20% opacity
+   ==================================================================== */
+
+/*
+  Per Item 83 requirements:
+  - NO off-brand grays (gray-*, grey-*)
+  - Use Deep Blue at 5-20% opacity for borders, dividers, subtle backgrounds
+  - Use brand colors only: #002A86, #0077D9, #C8102E, #FFFFFF
+*/
+
+/* Border utilities using Deep Blue at various opacities */
+.border-brand-subtle {
+  border-color: rgba(0, 42, 134, 0.1);
+}
+
+.border-brand-light {
+  border-color: rgba(0, 42, 134, 0.15);
+}
+
+.border-brand-medium {
+  border-color: rgba(0, 42, 134, 0.2);
+}
+
+/* Background utilities using Deep Blue at various opacities */
+.bg-brand-subtle {
+  background-color: rgba(0, 42, 134, 0.03);
+}
+
+.bg-brand-light {
+  background-color: rgba(0, 42, 134, 0.05);
+}
+
+.bg-brand-medium {
+  background-color: rgba(0, 42, 134, 0.08);
+}
+
+/* Dark mode variants */
+html.dark .border-brand-subtle {
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+html.dark .border-brand-light {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+html.dark .border-brand-medium {
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+html.dark .bg-brand-subtle {
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+html.dark .bg-brand-light {
+  background-color: rgba(255, 255, 255, 0.04);
+}
+
+html.dark .bg-brand-medium {
+  background-color: rgba(255, 255, 255, 0.06);
+}
+
+/* Divider utilities */
+.divider-brand {
+  border-color: rgba(0, 42, 134, 0.1);
+}
+
+html.dark .divider-brand {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* ====================================================================
+   FOCUS STATES - Brand-Compliant (Item 84)
+   Bright Blue #0077D9 with subtle outer glow
+   ==================================================================== */
+
+/*
+  Custom focus states for interactive elements:
+  - 2px solid border in Bright Blue #0077D9
+  - Subtle outer glow: 0 0 0 3px rgba(0,119,217,0.2)
+*/
+
+/* Generic focus-visible for buttons and links */
+button:focus-visible,
+a:focus-visible,
+[role="button"]:focus-visible {
+  outline: 2px solid var(--brand-bright-blue);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px rgba(0, 119, 217, 0.2);
+}
+
+/* Focus state utility class */
+.focus-brand:focus,
+.focus-brand:focus-visible {
+  outline: 2px solid var(--brand-bright-blue);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px rgba(0, 119, 217, 0.2);
+}
+
+/* Remove default focus ring when using brand focus */
+.focus-brand:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
 }

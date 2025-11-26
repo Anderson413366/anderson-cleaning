@@ -227,8 +227,8 @@ export default function Header() {
 
             {/* Services Dropdown Menu */}
             {activeDropdown === 'services' && (
-              <div className="absolute left-0 top-full mt-2 w-96 rounded-lg border border-gray-200 bg-white shadow-xl dark:border-white/10 dark:bg-slate-800">
-                <div className="border-b border-gray-100 px-4 pb-2 pt-4 dark:border-white/10">
+              <div className="absolute left-0 top-full mt-2 w-96 rounded-lg border border-brand-deep-blue/10 bg-white shadow-xl dark:border-white/10 dark:bg-slate-800">
+                <div className="border-b border-brand-deep-blue/10 px-4 pb-2 pt-4 dark:border-white/10">
                   <h3 className="text-xs font-semibold uppercase tracking-wider text-neutral-charcoal/60 dark:text-neutral-charcoal">
                     Our Services
                   </h3>
@@ -250,7 +250,7 @@ export default function Header() {
                     </Link>
                   ))}
                 </div>
-                <div className="border-t border-gray-100 px-4 pt-3 pb-4 dark:border-white/10">
+                <div className="border-t border-brand-deep-blue/10 px-4 pt-3 pb-4 dark:border-white/10">
                   <Link
                     href="/services"
                     className="text-sm font-medium text-brand-bright-blue hover:text-[#006bc4] dark:hover:text-white"
@@ -289,8 +289,8 @@ export default function Header() {
 
             {/* Industries Dropdown Menu */}
             {activeDropdown === 'industries' && (
-              <div className="absolute left-0 top-full mt-2 w-72 rounded-lg border border-gray-200 bg-white shadow-xl dark:border-white/10 dark:bg-slate-800">
-                <div className="border-b border-gray-100 px-4 pb-2 pt-4 dark:border-white/10">
+              <div className="absolute left-0 top-full mt-2 w-72 rounded-lg border border-brand-deep-blue/10 bg-white shadow-xl dark:border-white/10 dark:bg-slate-800">
+                <div className="border-b border-brand-deep-blue/10 px-4 pb-2 pt-4 dark:border-white/10">
                   <h3 className="text-xs font-semibold uppercase tracking-wider text-neutral-charcoal/60 dark:text-neutral-charcoal">
                     Industries We Serve
                   </h3>
@@ -307,7 +307,7 @@ export default function Header() {
                     </div>
                   </Link>
                 ))}
-                <div className="border-t border-gray-100 px-4 pt-3 pb-4 dark:border-white/10">
+                <div className="border-t border-brand-deep-blue/10 px-4 pt-3 pb-4 dark:border-white/10">
                   <Link
                     href="/industries"
                     className="text-sm font-medium text-brand-bright-blue hover:text-[#006bc4] dark:hover:text-white"
@@ -346,8 +346,8 @@ export default function Header() {
 
             {/* Locations Dropdown Menu */}
             {activeDropdown === 'locations' && (
-              <div className="absolute left-0 top-full mt-2 w-80 rounded-lg border border-gray-200 bg-white shadow-xl dark:border-white/10 dark:bg-slate-800">
-                <div className="border-b border-gray-100 px-4 pb-2 pt-4 dark:border-white/10">
+              <div className="absolute left-0 top-full mt-2 w-80 rounded-lg border border-brand-deep-blue/10 bg-white shadow-xl dark:border-white/10 dark:bg-slate-800">
+                <div className="border-b border-brand-deep-blue/10 px-4 pb-2 pt-4 dark:border-white/10">
                   <h3 className="text-xs font-semibold uppercase tracking-wider text-neutral-charcoal/60 dark:text-neutral-charcoal">
                     Service Areas
                   </h3>
@@ -388,7 +388,7 @@ export default function Header() {
                     </ul>
                   </div>
                 </div>
-                <div className="border-t border-gray-100 px-4 pt-3 pb-4 dark:border-white/10">
+                <div className="border-t border-brand-deep-blue/10 px-4 pt-3 pb-4 dark:border-white/10">
                   <Link
                     href="/locations"
                     className="text-sm font-medium text-brand-bright-blue hover:text-[#006bc4] dark:hover:text-white"
@@ -426,8 +426,8 @@ export default function Header() {
 
             {/* Resources Dropdown Menu */}
             {activeDropdown === 'resources' && (
-              <div className="absolute left-0 top-full mt-2 w-80 rounded-lg border border-gray-200 bg-white shadow-xl dark:border-white/10 dark:bg-slate-800">
-                <div className="border-b border-gray-100 px-4 pb-2 pt-4 dark:border-white/10">
+              <div className="absolute left-0 top-full mt-2 w-80 rounded-lg border border-brand-deep-blue/10 bg-white shadow-xl dark:border-white/10 dark:bg-slate-800">
+                <div className="border-b border-brand-deep-blue/10 px-4 pb-2 pt-4 dark:border-white/10">
                   <h3 className="text-xs font-semibold uppercase tracking-wider text-neutral-charcoal/60 dark:text-neutral-charcoal">
                     Resources & Learning
                   </h3>
@@ -755,7 +755,7 @@ export default function Header() {
 
       {/* Mobile Sticky Contact Bar - Single Quote CTA */}
       <div
-        className={`fixed bottom-0 left-0 right-0 z-[120] bg-white/95 backdrop-blur-sm border-t border-gray-200 shadow-lg transition-transform duration-200 dark:border-white/10 dark:bg-brand-deep-blue/95 lg:hidden ${
+        className={`fixed bottom-0 left-0 right-0 z-[120] bg-white/95 backdrop-blur-sm border-t border-brand-deep-blue/10 shadow-lg transition-transform duration-200 dark:border-white/10 dark:bg-brand-deep-blue/95 lg:hidden ${
           mobileMenuOpen ? 'translate-y-full' : 'translate-y-0'
         }`}
       >

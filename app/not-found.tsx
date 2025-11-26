@@ -88,7 +88,7 @@ export default function NotFound() {
         </div>
 
         {/* Helpful Links */}
-        <div className="mt-12 pt-8 border-t border-gray-200 dark:border-gray-700">
+        <div className="mt-12 pt-8 border-t border-brand-deep-blue/10 dark:border-white/10">
           <p className="text-sm text-neutral-charcoal/60 dark:text-white/70 mb-4">
             Maybe you were looking for:
           </p>

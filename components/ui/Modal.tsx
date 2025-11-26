@@ -151,7 +151,7 @@ const Modal: React.FC<ModalProps> = ({
             </div>
             <div className="text-sm text-neutral-charcoal/80 dark:text-white/80 mb-6">{children}</div>
             {footerActions && (
-              <div className="flex justify-end space-x-3 pt-4 border-t border-gray-200 dark:border-slate-700">
+              <div className="flex justify-end space-x-3 pt-4 border-t border-brand-deep-blue/10 dark:border-white/10">
                 {footerActions}
               </div>
             )}

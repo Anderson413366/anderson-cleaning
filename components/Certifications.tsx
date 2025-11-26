@@ -84,7 +84,7 @@ export function CertificationBar() {
   const activeCerts = CERTIFICATIONS.filter((cert) => cert.status === 'active')
 
   return (
-    <section className="border-y border-gray-200 bg-gray-50 py-8 dark:border-white/10 dark:bg-slate-900">
+    <section className="border-y border-brand-deep-blue/10 bg-brand-deep-blue/[0.03] py-8 dark:border-white/10 dark:bg-slate-900">
       <div className="container mx-auto px-4">
         <div className="flex flex-wrap items-center justify-center gap-8">
           {activeCerts.map((cert) => (

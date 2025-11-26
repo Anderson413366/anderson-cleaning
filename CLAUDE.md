@@ -78,10 +78,15 @@ export async function POST(request: Request) {
 
 ### Design System Architecture
 
-**Official Brand Colors** (Pantone-specified):
-- `brand-deep-blue`: #002A86 (Pantone 2747C) - Primary
-- `brand-bright-blue`: #0077D9 (Pantone 3005C) - Accents/CTAs
-- `brand-red`: #C8102E (Pantone 193C) - Alerts/errors
+**Official Brand Colors** (Pantone-specified - STRICT COMPLIANCE per Item 83):
+- `brand-deep-blue`: #002A86 (Pantone 2747C) - Primary, headers, dark backgrounds
+- `brand-bright-blue`: #0077D9 (Pantone 3005C) - Links, CTAs, highlights, focus states
+- `brand-red`: #C8102E (Pantone 193C) - Alerts, errors, urgency CTAs, premium badges
+- `brand-white`: #FFFFFF - Backgrounds, text on dark
+
+**IMPORTANT**: No off-brand grays (gray-*, grey-*). For subtle borders/backgrounds, use Deep Blue at 5-20% opacity:
+- Borders: `border-brand-deep-blue/10` (light), `dark:border-white/10` (dark mode)
+- Backgrounds: `bg-brand-deep-blue/[0.03]` to `bg-brand-deep-blue/[0.08]`
 
 **Typography System** (`tailwind.config.ts`):
 - `text-h1`: 40px - Page headlines
@@ -126,6 +131,12 @@ import { Building2 } from 'lucide-react'
 CSS Classes (for non-React contexts):
 - `.glass-icon` / `.glass-icon-light` / `.glass-icon-solid` - base styles
 - `.glass-icon-sm` / `.glass-icon-md` / `.glass-icon-lg` - sizes
+
+**Focus States** (Item 84 - Bright Blue #0077D9):
+All interactive elements use brand-compliant focus states:
+- Form inputs: `border-color: var(--brand-bright-blue)` + `box-shadow: 0 0 0 3px rgba(0,119,217,0.2)`
+- Buttons/links: `outline: 2px solid var(--brand-bright-blue)` + `outline-offset: 2px`
+- Utility class: `.focus-brand` - applies brand focus styling
 
 **Global Styles Location**:
 - `styles/design-system.css` - Official design tokens, form fields, pills, accessibility

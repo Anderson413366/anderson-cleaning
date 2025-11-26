@@ -163,13 +163,13 @@ export default function HeroQuickQuoteForm() {
             required
             value={formData.name}
             onChange={handleChange}
-            className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-slate-700 text-neutral-charcoal dark:text-white"
+            className="w-full px-4 py-3 border-2 border-brand-deep-blue/20 dark:border-white/20 rounded-lg focus:border-brand-bright-blue focus:shadow-[0_0_0_3px_rgba(0,119,217,0.2)] focus:outline-none bg-white dark:bg-slate-800 text-neutral-charcoal dark:text-white"
             placeholder="John Smith"
             aria-invalid={!!errors.name}
             aria-describedby={errors.name ? 'hero-name-error' : undefined}
           />
           {errors.name && (
-            <p id="hero-name-error" className="mt-1 text-sm text-red-600">
+            <p id="hero-name-error" className="mt-1 text-sm text-brand-red">
               {errors.name}
             </p>
           )}
@@ -189,13 +189,13 @@ export default function HeroQuickQuoteForm() {
             required
             value={formData.company}
             onChange={handleChange}
-            className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-slate-700 text-neutral-charcoal dark:text-white"
+            className="w-full px-4 py-3 border-2 border-brand-deep-blue/20 dark:border-white/20 rounded-lg focus:border-brand-bright-blue focus:shadow-[0_0_0_3px_rgba(0,119,217,0.2)] focus:outline-none bg-white dark:bg-slate-800 text-neutral-charcoal dark:text-white"
             placeholder="ABC Corp"
             aria-invalid={!!errors.company}
             aria-describedby={errors.company ? 'hero-company-error' : undefined}
           />
           {errors.company && (
-            <p id="hero-company-error" className="mt-1 text-sm text-red-600">
+            <p id="hero-company-error" className="mt-1 text-sm text-brand-red">
               {errors.company}
             </p>
           )}
@@ -215,13 +215,13 @@ export default function HeroQuickQuoteForm() {
             required
             value={formData.email}
             onChange={handleChange}
-            className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-slate-700 text-neutral-charcoal dark:text-white"
+            className="w-full px-4 py-3 border-2 border-brand-deep-blue/20 dark:border-white/20 rounded-lg focus:border-brand-bright-blue focus:shadow-[0_0_0_3px_rgba(0,119,217,0.2)] focus:outline-none bg-white dark:bg-slate-800 text-neutral-charcoal dark:text-white"
             placeholder="john@company.com"
             aria-invalid={!!errors.email}
             aria-describedby={errors.email ? 'hero-email-error' : undefined}
           />
           {errors.email && (
-            <p id="hero-email-error" className="mt-1 text-sm text-red-600">
+            <p id="hero-email-error" className="mt-1 text-sm text-brand-red">
               {errors.email}
             </p>
           )}
@@ -242,13 +242,13 @@ export default function HeroQuickQuoteForm() {
             autoComplete="tel"
             value={formData.phone}
             onChange={handleChange}
-            className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-slate-700 text-neutral-charcoal dark:text-white"
+            className="w-full px-4 py-3 border-2 border-brand-deep-blue/20 dark:border-white/20 rounded-lg focus:border-brand-bright-blue focus:shadow-[0_0_0_3px_rgba(0,119,217,0.2)] focus:outline-none bg-white dark:bg-slate-800 text-neutral-charcoal dark:text-white"
             placeholder="(413) 306-5053"
             aria-invalid={!!errors.phone}
             aria-describedby={errors.phone ? 'hero-phone-error' : undefined}
           />
           {errors.phone && (
-            <p id="hero-phone-error" className="mt-1 text-sm text-red-600">
+            <p id="hero-phone-error" className="mt-1 text-sm text-brand-red">
               {errors.phone}
             </p>
           )}
@@ -267,7 +267,7 @@ export default function HeroQuickQuoteForm() {
             required
             value={formData.facilityType}
             onChange={handleChange}
-            className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-slate-700 text-neutral-charcoal dark:text-white"
+            className="w-full px-4 py-3 border-2 border-brand-deep-blue/20 dark:border-white/20 rounded-lg focus:border-brand-bright-blue focus:shadow-[0_0_0_3px_rgba(0,119,217,0.2)] focus:outline-none bg-white dark:bg-slate-800 text-neutral-charcoal dark:text-white"
             aria-invalid={!!errors.facilityType}
             aria-describedby={errors.facilityType ? 'hero-facility-error' : undefined}
           >
@@ -278,7 +278,7 @@ export default function HeroQuickQuoteForm() {
             ))}
           </select>
           {errors.facilityType && (
-            <p id="hero-facility-error" className="mt-1 text-sm text-red-600">
+            <p id="hero-facility-error" className="mt-1 text-sm text-brand-red">
               {errors.facilityType}
             </p>
           )}

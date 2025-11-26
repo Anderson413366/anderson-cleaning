@@ -18,7 +18,7 @@ const FormInput = forwardRef<HTMLInputElement, FormInputProps>(
         >
           {label}
           {isRequired && (
-            <span className="text-red-500 ml-1">{t('requiredFieldIndicator') as string}</span>
+            <span className="text-brand-red ml-1">{t('requiredFieldIndicator') as string}</span>
           )}
         </label>
         <input
@@ -26,12 +26,12 @@ const FormInput = forwardRef<HTMLInputElement, FormInputProps>(
           id={name}
           name={name}
           ref={ref}
-          className={`mt-1 block w-full px-3 py-2 bg-white dark:bg-slate-800 border border-gray-300 dark:border-slate-600 rounded-md shadow-sm placeholder-gray-400 dark:placeholder-gray-500 dark:placeholder-gray-400 dark:placeholder-gray-500 dark:placeholder-gray-400
-                      focus:outline-none focus:ring-primary focus:border-primary sm:text-sm
-                      ${error ? 'border-red-500 dark:border-red-400' : ''} ${className || ''}`}
+          className={`mt-1 block w-full px-3 py-2 bg-white dark:bg-slate-800 border-2 border-brand-deep-blue/20 dark:border-white/20 rounded-md shadow-sm placeholder-neutral-charcoal/50 dark:placeholder-white/50
+                      focus:outline-none focus:border-brand-bright-blue focus:shadow-[0_0_0_3px_rgba(0,119,217,0.2)] sm:text-sm transition-all
+                      ${error ? 'border-brand-red dark:border-brand-red' : ''} ${className || ''}`}
           {...props}
         />
-        {error && <p className="mt-1 text-xs text-red-500 dark:text-red-400">{error}</p>}
+        {error && <p className="mt-1 text-xs text-brand-red">{error}</p>}
       </div>
     )
   }

@@ -146,7 +146,7 @@ export default function IndustryTemplate({
                     rounded-[var(--border-radius-lg)]
                     shadow-[var(--shadow-card)]
                     p-6
-                    border border-gray-200 dark:border-slate-700
+                    border border-brand-deep-blue/10 dark:border-white/10
                     transition-all duration-200
                     hover:shadow-lg
                     hover:border-brand-bright-blue

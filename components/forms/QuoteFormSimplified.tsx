@@ -160,10 +160,10 @@ export default function QuoteFormSimplified({ onSuccess }: QuoteFormSimplifiedPr
       hasError,
       isValid,
       className: hasError
-        ? 'border-red-500 focus:border-red-500 focus:ring-red-500/20'
+        ? 'border-brand-red focus:border-brand-red focus:shadow-[0_0_0_3px_rgba(200,16,46,0.2)]'
         : isValid
-        ? 'border-green-500 focus:border-green-500 focus:ring-green-500/20'
-        : 'border-gray-300 dark:border-gray-600 focus:border-brand-bright-blue focus:ring-brand-bright-blue/20',
+        ? 'border-brand-bright-blue focus:border-brand-bright-blue focus:shadow-[0_0_0_3px_rgba(0,119,217,0.2)]'
+        : 'border-brand-deep-blue/20 dark:border-white/20 focus:border-brand-bright-blue focus:shadow-[0_0_0_3px_rgba(0,119,217,0.2)]',
     }
   }
 
@@ -605,7 +605,7 @@ export default function QuoteFormSimplified({ onSuccess }: QuoteFormSimplifiedPr
                   {...register('squareFootage', { valueAsNumber: true })}
                   id="squareFootage"
                   type="number"
-                  className="w-full rounded-lg border-2 border-gray-300 px-4 py-3 focus:border-brand-bright-blue focus:ring-2 focus:ring-brand-bright-blue/20 dark:border-gray-600 dark:bg-slate-900 dark:text-white min-h-[48px]"
+                  className="w-full rounded-lg border-2 border-brand-deep-blue/20 px-4 py-3 focus:border-brand-bright-blue focus:shadow-[0_0_0_3px_rgba(0,119,217,0.2)] focus:outline-none dark:border-white/20 dark:bg-slate-900 dark:text-white min-h-[48px]"
                   placeholder="5000"
                   min="1000"
                 />
@@ -667,7 +667,7 @@ export default function QuoteFormSimplified({ onSuccess }: QuoteFormSimplifiedPr
                   id="desiredStartDate"
                   type="date"
                   min={new Date().toISOString().split('T')[0]}
-                  className="w-full rounded-lg border-2 border-gray-300 px-4 py-3 focus:border-brand-bright-blue focus:ring-2 focus:ring-brand-bright-blue/20 dark:border-gray-600 dark:bg-slate-900 dark:text-white min-h-[48px]"
+                  className="w-full rounded-lg border-2 border-brand-deep-blue/20 px-4 py-3 focus:border-brand-bright-blue focus:shadow-[0_0_0_3px_rgba(0,119,217,0.2)] focus:outline-none dark:border-white/20 dark:bg-slate-900 dark:text-white min-h-[48px]"
                 />
               </div>
             </div>
@@ -714,7 +714,7 @@ export default function QuoteFormSimplified({ onSuccess }: QuoteFormSimplifiedPr
               id="specialRequests"
               rows={4}
               maxLength={500}
-              className="w-full rounded-lg border-2 border-gray-300 px-4 py-3 focus:border-brand-bright-blue focus:ring-2 focus:ring-brand-bright-blue/20 dark:border-gray-600 dark:bg-slate-900 dark:text-white min-h-[48px]"
+              className="w-full rounded-lg border-2 border-brand-deep-blue/20 px-4 py-3 focus:border-brand-bright-blue focus:shadow-[0_0_0_3px_rgba(0,119,217,0.2)] focus:outline-none dark:border-white/20 dark:bg-slate-900 dark:text-white min-h-[48px]"
               placeholder="Tell us about any special requirements, current challenges, or questions..."
             />
             <p className="mt-1 text-xs text-neutral-charcoal/60 dark:text-neutral-charcoal">
