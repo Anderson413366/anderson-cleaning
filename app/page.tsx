@@ -4,29 +4,18 @@ import { useState } from 'react'
 import Link from 'next/link'
 import { Button } from '@/components/ui/Button'
 import { GlassIcon } from '@/components/ui/GlassIcon'
-import QuoteMiniForm from '@/components/forms/QuoteMiniForm'
 import QuoteAdvancedModal from '@/components/forms/QuoteAdvancedModal'
 import PromotionalModal from '@/components/PromotionalModal'
 import {
   ArrowRight,
-  Award,
-  BookOpen,
   Building2,
-  CheckCircle2,
-  Clock,
   HardHat,
-  Headphones,
-  HelpCircle,
-  Mail,
   MapPin,
   Package,
-  Shield,
   Sparkles,
   Square,
   Star,
-  Users,
   Zap,
-  Gift,
 } from 'lucide-react'
 
 export default function Home() {
@@ -316,26 +305,22 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Final CTA Section with Quote Form - Enhanced Container */}
-      <section className="py-20 bg-white dark:bg-slate-900">
+      {/* Homepage-specific CTA Section */}
+      <section className="py-20 bg-gradient-to-r from-brand-deep-blue to-brand-bright-blue">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-[700px] mx-auto">
-            {/* Light gray background container with visual separation */}
-            <div className="bg-neutral-light-grey dark:bg-slate-800 rounded-2xl py-20 px-8 md:px-12">
-              <div className="text-center mb-12">
-                {/* Glass-effect icon - Large (64px) for hero section */}
-                <div className="flex justify-center mb-6">
-                  <GlassIcon icon={Mail} size="lg" variant="default" label="Email icon" />
-                </div>
-                <h2 className="text-h2 leading-tight font-bold text-neutral-charcoal dark:text-white mb-4">
-                  Request Your Free Quote
-                </h2>
-                <p className="text-body text-neutral-charcoal/70 dark:text-white/80">
-                  Tell us about your facility and we'll provide a custom quote within 24 hours
-                </p>
-              </div>
-              <QuoteMiniForm />
-            </div>
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
+              Ready for 18+ Years of Excellence?
+            </h2>
+            <p className="text-xl text-white/90 mb-8">
+              Join 100+ businesses that trust Anderson Cleaning for their facilities
+            </p>
+            <Link
+              href="/quote"
+              className="inline-flex items-center justify-center h-12 px-8 rounded-lg bg-brand-bright-blue text-white font-bold text-base border-2 border-white hover:bg-white hover:text-brand-bright-blue transition-all duration-150"
+            >
+              Get Your Free Quote Today
+            </Link>
           </div>
         </div>
       </section>

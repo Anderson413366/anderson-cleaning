@@ -1,7 +1,6 @@
 'use client'
 
 import Link from 'next/link'
-import { Phone, Mail, MapPin } from 'lucide-react'
 
 const navigation = {
   services: [
@@ -103,33 +102,6 @@ export default function Footer() {
 
   return (
     <>
-      {/* CTA Section - Above Footer - Distinctive gradient with urgent red CTA */}
-      <section className="bg-gradient-to-r from-brand-deep-blue to-brand-bright-blue py-16 md:py-20">
-        <div className="mx-auto max-w-7xl px-6 text-center lg:px-8">
-          <h2 className="mb-6 text-3xl font-bold leading-tight text-white md:text-4xl">
-            Ready to Experience Professional Cleaning?
-          </h2>
-          <p className="mx-auto mb-8 max-w-2xl text-lg leading-relaxed text-white/90">
-            Join 100+ businesses that trust Anderson Cleaning Company for their facility maintenance
-          </p>
-          <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <Link
-              href="/quote"
-              className="inline-flex items-center justify-center rounded-[10px] bg-brand-red px-7 py-[14px] text-base font-semibold text-white transition-all duration-150 hover:bg-[#a00d25] active:bg-[#8a0b20] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2"
-            >
-              Start Today
-            </Link>
-            <a
-              href="tel:+14133065053"
-              className="inline-flex items-center justify-center gap-2 rounded-[10px] border-2 border-white bg-transparent px-7 py-[14px] text-base font-semibold text-white transition-all duration-150 hover:bg-white/10 active:bg-white/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2"
-            >
-              <Phone className="h-5 w-5" />
-              Call (413) 306-5053
-            </a>
-          </div>
-        </div>
-      </section>
-
       {/* Main Footer - Three Columns with Dark Mode Support */}
       <footer className="bg-neutral-off-white dark:bg-brand-deep-blue text-neutral-charcoal dark:text-white transition-colors duration-300" aria-labelledby="footer-heading">
         <h2 id="footer-heading" className="sr-only">
