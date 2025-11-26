@@ -217,18 +217,30 @@ export default function CareerApplicationForm() {
               {errors.phone && <p className="text-sm text-red-600 mt-1">{errors.phone.message}</p>}
             </div>
             <div>
-              <label className="block text-body-sm font-semibold mb-2 text-neutral-charcoal dark:text-white">
-                Resume (PDF/DOC, max 5MB)
+              <label className="block text-[14px] font-medium text-[#333333] dark:text-white mb-2">
+                Resume
               </label>
-              <label className="flex items-center justify-center gap-2 border-2 border-dashed border-neutral-light-grey rounded px-4 py-6 cursor-pointer hover:border-brand-bright-blue transition-colors">
-                <Upload className="h-5 w-5" />
-                <span>Upload File</span>
-                {/* Hidden native input lets screen readers trigger uploads while keeping the custom UI */}
+              <label className="flex flex-col items-center justify-center gap-2 border-2 border-dashed border-neutral-light-grey rounded-lg px-4 py-6 cursor-pointer hover:border-brand-bright-blue hover:bg-[#F5F7FB] dark:hover:bg-slate-700/50 transition-all">
+                {resumeFilename ? (
+                  <>
+                    <CheckCircle2 className="h-6 w-6 text-brand-bright-blue" aria-hidden="true" />
+                    <span className="text-[14px] font-medium text-brand-deep-blue dark:text-white">{resumeFilename}</span>
+                    <span className="text-[12px] text-[#999999]">Click to replace</span>
+                  </>
+                ) : (
+                  <>
+                    <Upload className="h-6 w-6 text-[#666666] dark:text-white/60" aria-hidden="true" />
+                    <span className="text-[14px] font-medium text-[#333333] dark:text-white">
+                      Click to upload or drag and drop
+                    </span>
+                  </>
+                )}
                 <input type="file" accept=".pdf,.doc,.docx" onChange={handleFileUpload} className="hidden" />
               </label>
+              <p className="text-[12px] text-[#999999] mt-2">PDF or DOC, max 5MB</p>
               {recoveryCode && (
-                <p className="text-body-sm text-neutral-charcoal dark:text-white mt-2">
-                  Recovery Code: <span className="font-semibold">{recoveryCode}</span>
+                <p className="text-[12px] text-[#666666] dark:text-white/70 mt-2">
+                  Recovery Code: <span className="font-semibold text-brand-deep-blue dark:text-white">{recoveryCode}</span>
                 </p>
               )}
             </div>

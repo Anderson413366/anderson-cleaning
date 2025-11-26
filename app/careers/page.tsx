@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from 'react'
 import { useSearchParams } from 'next/navigation'
-import Link from 'next/link'
 import { Button } from '@/components/ui/Button'
 import { GlassIcon } from '@/components/ui/GlassIcon'
 import CareerApplicationForm from '@/components/forms/CareerApplicationForm'
@@ -11,13 +10,10 @@ import {
   GraduationCap,
   TrendingUp,
   MapPin,
-  Clock,
-  Sparkles,
   CheckCircle2,
   Globe,
   Heart,
   Shield,
-  Users,
   Award,
   Briefcase,
 } from 'lucide-react'
@@ -87,32 +83,34 @@ const translations = {
         {
           title: 'Cleaning Specialist',
           locationLabel: 'Springfield/Hartford Area',
-          rateLabel: '$15–20/hour',
+          typeLabel: 'Part-time & Full-time',
+          rateLabel: '$15–20 per hour',
           bullets: [
-            'Part-time & Full-time available',
-            'Evening/Night shifts',
+            'Evening and night shifts',
             'No experience required',
+            'Paid training provided',
           ],
         },
         {
           title: 'Field Supervisor',
-          locationLabel: 'West Springfield',
-          rateLabel: '$20–25/hour',
+          locationLabel: 'West Springfield, MA',
+          typeLabel: 'Full-time W-2',
+          rateLabel: '$20–25 per hour',
           bullets: [
-            'Full-time W-2 position',
             '2+ years experience required',
             'Lead & train team members',
+            'Company vehicle provided',
           ],
         },
         {
           title: 'Operations Assistant',
-          locationLabel: '4:30 PM – 10 PM',
-          rateLabel: 'Premium Pay',
+          locationLabel: 'Springfield/Hartford Area',
+          typeLabel: 'Full-time or Part-time',
+          rateLabel: '$18–22 per hour',
           bullets: [
-            'Evening hours (4:30 PM – 10 PM)',
-            'Night differential + base pay',
-            'Full-time or Part-time',
-            'Fewer distractions',
+            'Evening shift (4:30–10 PM)',
+            'Night differential included',
+            'Flexible scheduling',
           ],
         },
       ],
@@ -176,32 +174,34 @@ const translations = {
         {
           title: 'Especialista en Limpieza',
           locationLabel: 'Área Springfield/Hartford',
-          rateLabel: '$15–20/hora',
+          typeLabel: 'Tiempo parcial y completo',
+          rateLabel: '$15–20 por hora',
           bullets: [
-            'Tiempo parcial y completo disponible',
-            'Turnos de noche',
+            'Turnos de tarde y noche',
             'No se requiere experiencia',
+            'Capacitación pagada',
           ],
         },
         {
           title: 'Supervisor de Campo',
-          locationLabel: 'West Springfield',
-          rateLabel: '$20–25/hora',
+          locationLabel: 'West Springfield, MA',
+          typeLabel: 'Tiempo completo W-2',
+          rateLabel: '$20–25 por hora',
           bullets: [
-            'Posición W-2 tiempo completo',
             '2+ años de experiencia requeridos',
-            'Liderar y entrenar miembros del equipo',
+            'Liderar y entrenar equipo',
+            'Vehículo de empresa incluido',
           ],
         },
         {
           title: 'Asistente de Operaciones',
-          locationLabel: '4:30 PM – 10 PM',
-          rateLabel: 'Pago Premium',
+          locationLabel: 'Área Springfield/Hartford',
+          typeLabel: 'Tiempo completo o parcial',
+          rateLabel: '$18–22 por hora',
           bullets: [
-            'Horario nocturno (4:30 PM – 10 PM)',
-            'Diferencial nocturno + pago base',
-            'Tiempo completo o parcial',
-            'Menos distracciones',
+            'Turno nocturno (4:30–10 PM)',
+            'Diferencial nocturno incluido',
+            'Horario flexible',
           ],
         },
       ],
@@ -265,32 +265,34 @@ const translations = {
         {
           title: 'Especialista em Limpeza',
           locationLabel: 'Área Springfield/Hartford',
-          rateLabel: '$15–20/hora',
+          typeLabel: 'Meio período e integral',
+          rateLabel: '$15–20 por hora',
           bullets: [
-            'Meio período e período integral disponível',
-            'Turnos noturnos',
+            'Turnos de tarde e noite',
             'Não é necessária experiência',
+            'Treinamento remunerado',
           ],
         },
         {
           title: 'Supervisor de Campo',
-          locationLabel: 'West Springfield',
-          rateLabel: '$20–25/hora',
+          locationLabel: 'West Springfield, MA',
+          typeLabel: 'Período integral W-2',
+          rateLabel: '$20–25 por hora',
           bullets: [
-            'Posição W-2 período integral',
             '2+ anos de experiência necessários',
-            'Liderar e treinar membros da equipe',
+            'Liderar e treinar equipe',
+            'Veículo da empresa incluído',
           ],
         },
         {
           title: 'Assistente de Operações',
-          locationLabel: '4:30 PM – 10 PM',
-          rateLabel: 'Pagamento Premium',
+          locationLabel: 'Área Springfield/Hartford',
+          typeLabel: 'Período integral ou parcial',
+          rateLabel: '$18–22 por hora',
           bullets: [
-            'Horário noturno (4:30 PM – 10 PM)',
-            'Adicional noturno + salário base',
-            'Período integral ou parcial',
-            'Menos distrações',
+            'Turno noturno (4:30–10 PM)',
+            'Adicional noturno incluído',
+            'Horário flexível',
           ],
         },
       ],
@@ -354,32 +356,34 @@ const translations = {
         {
           title: 'Specialist în Curățenie',
           locationLabel: 'Zona Springfield/Hartford',
-          rateLabel: '$15–20/oră',
+          typeLabel: 'Part-time și full-time',
+          rateLabel: '$15–20 pe oră',
           bullets: [
-            'Part-time și full-time disponibil',
-            'Ture de seară/noapte',
+            'Ture de seară și noapte',
             'Nu este necesară experiență',
+            'Instruire plătită',
           ],
         },
         {
           title: 'Supervizor de Teren',
-          locationLabel: 'West Springfield',
-          rateLabel: '$20–25/oră',
+          locationLabel: 'West Springfield, MA',
+          typeLabel: 'Full-time W-2',
+          rateLabel: '$20–25 pe oră',
           bullets: [
-            'Poziție W-2 full-time',
             '2+ ani experiență necesari',
-            'Conduce și instruiește membrii echipei',
+            'Conduce și instruiește echipa',
+            'Vehicul de companie inclus',
           ],
         },
         {
           title: 'Asistent Operațiuni',
-          locationLabel: '4:30 PM – 10 PM',
-          rateLabel: 'Plată Premium',
+          locationLabel: 'Zona Springfield/Hartford',
+          typeLabel: 'Full-time sau part-time',
+          rateLabel: '$18–22 pe oră',
           bullets: [
-            'Program de seară (4:30 PM – 10 PM)',
-            'Diferențial de noapte + plată de bază',
-            'Full-time sau part-time',
-            'Mai puține distrageri',
+            'Tură de seară (4:30–10 PM)',
+            'Diferențial de noapte inclus',
+            'Program flexibil',
           ],
         },
       ],
@@ -415,11 +419,12 @@ export default function CareersPage() {
     window.history.pushState({}, '', url.toString())
   }
 
-  const roleIcons = [
-    { locationIcon: <MapPin className="h-4 w-4" />, rateIcon: <DollarSign className="h-4 w-4" /> },
-    { locationIcon: <MapPin className="h-4 w-4" />, rateIcon: <DollarSign className="h-4 w-4" /> },
-    { locationIcon: <Clock className="h-4 w-4" />, rateIcon: <Sparkles className="h-4 w-4" /> },
-  ]
+  // Consistent icons for all job cards
+  const roleIcons = {
+    locationIcon: <MapPin className="h-4 w-4" aria-hidden="true" />,
+    rateIcon: <DollarSign className="h-4 w-4" aria-hidden="true" />,
+    typeIcon: <Briefcase className="h-4 w-4" aria-hidden="true" />,
+  }
 
   return (
     <main>
@@ -428,7 +433,7 @@ export default function CareersPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             {/* Language Selector */}
-            <div className="flex justify-center mb-8">
+            <div className="flex flex-col items-center gap-2 mb-8">
               <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 border border-white/20">
                 <Globe className="h-4 w-4 text-white/80" aria-hidden="true" />
                 <span className="text-sm text-white/80 sr-only">{t.languageSelector.label}</span>
@@ -450,6 +455,11 @@ export default function CareersPage() {
                   ))}
                 </div>
               </div>
+              {currentLang !== 'en' && (
+                <p className="text-[12px] text-white/60">
+                  Application form available in English only
+                </p>
+              )}
             </div>
 
             <h1 className="font-extrabold mb-6 leading-tight">{t.hero.title}</h1>
@@ -533,36 +543,46 @@ export default function CareersPage() {
             {t.positions.sectionTitle}
           </h2>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-            {t.positions.roles.map((role, index) => (
+          <div className="flex flex-wrap justify-center gap-6 max-w-6xl mx-auto">
+            {t.positions.roles.map((role) => (
               <div
                 key={role.title}
-                className="h-full flex flex-col bg-white dark:bg-slate-900 rounded-xl border-2 border-neutral-light-grey dark:border-slate-700 hover:border-brand-bright-blue transition-all duration-300 hover:-translate-y-1 p-6 shadow-sm"
+                className="w-[300px] h-[240px] flex flex-col bg-white dark:bg-slate-900 rounded-xl border border-[#E0E0E0] dark:border-slate-700 hover:border-brand-bright-blue transition-all duration-300 hover:-translate-y-1 p-5 shadow-sm"
               >
-                <div className="mb-4">
-                  <GlassIcon icon={Briefcase} size="md" variant="solid" label={role.title} />
-                </div>
-                <h3 className="text-h3 font-bold text-neutral-charcoal dark:text-white mb-3">{role.title}</h3>
-                <div className="flex items-center gap-2 text-neutral-charcoal/80 dark:text-white/80 mb-2">
-                  {roleIcons[index].locationIcon}
-                  <span className="text-body-sm">{role.locationLabel}</span>
-                </div>
-                <div className="flex items-center gap-2 text-brand-bright-blue mb-4">
-                  {roleIcons[index].rateIcon}
-                  <span className="text-body-sm font-bold">{role.rateLabel}</span>
+                {/* Title */}
+                <h3 className="text-[16px] font-bold text-brand-deep-blue dark:text-white mb-2">{role.title}</h3>
+
+                {/* Location */}
+                <div className="flex items-center gap-2 text-[#666666] dark:text-white/70 mb-1">
+                  {roleIcons.locationIcon}
+                  <span className="text-[13px]">{role.locationLabel}</span>
                 </div>
 
-                <ul className="space-y-2 mb-6 text-body-sm flex-1">
-                  {role.bullets.map((bullet) => (
-                    <li key={bullet} className="flex items-start gap-2 text-neutral-charcoal/80 dark:text-white/80">
-                      <CheckCircle2 className="h-4 w-4 text-brand-bright-blue mt-0.5 flex-shrink-0" aria-hidden="true" />
-                      <span>{bullet}</span>
+                {/* Employment Type */}
+                <div className="flex items-center gap-2 text-[#666666] dark:text-white/70 mb-1">
+                  {roleIcons.typeIcon}
+                  <span className="text-[13px]">{role.typeLabel}</span>
+                </div>
+
+                {/* Pay Rate */}
+                <div className="flex items-center gap-2 text-brand-bright-blue mb-3">
+                  {roleIcons.rateIcon}
+                  <span className="text-[13px] font-bold">{role.rateLabel}</span>
+                </div>
+
+                {/* Bullets (3 max) */}
+                <ul className="space-y-1 mb-3 flex-1">
+                  {role.bullets.slice(0, 3).map((bullet) => (
+                    <li key={bullet} className="flex items-start gap-2 text-[#666666] dark:text-white/70">
+                      <CheckCircle2 className="h-3.5 w-3.5 text-brand-bright-blue mt-0.5 flex-shrink-0" aria-hidden="true" />
+                      <span className="text-[12px] leading-tight">{bullet}</span>
                     </li>
                   ))}
                 </ul>
 
+                {/* Apply Button */}
                 <a href="#application-form" className="inline-block w-full mt-auto">
-                  <Button variant="secondary" size="sm" className="w-full">
+                  <Button variant="secondary" size="sm" className="w-full text-[12px]">
                     {t.positions.applyNow}
                   </Button>
                 </a>
