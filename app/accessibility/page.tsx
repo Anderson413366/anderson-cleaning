@@ -11,6 +11,9 @@ export const metadata: Metadata = {
   title: 'Accessibility Statement',
   description:
     'Learn how Anderson Cleaning Company designs its digital experiences to meet WCAG 2.1 AA accessibility standards.',
+  alternates: {
+    canonical: 'https://andersoncleaning.com/accessibility',
+  },
 }
 
 export default function AccessibilityPage() {

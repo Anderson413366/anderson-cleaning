@@ -23,10 +23,10 @@ import {
 } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'About Us - Commercial Cleaning Company Western Massachusetts',
+  title: 'About Us',
   description: '18+ years serving Western MA & CT businesses with professional commercial cleaning. Family-owned, W-2 employees, OSHA/CDC compliant. Learn about our commitment to quality and service excellence.',
   alternates: {
-    canonical: '/about',
+    canonical: 'https://andersoncleaning.com/about',
   },
 }
 

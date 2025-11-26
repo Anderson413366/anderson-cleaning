@@ -17,9 +17,12 @@ import { industries } from '@/lib/industries-data'
 import { getIconComponent } from '@/lib/icon-map'
 
 export const metadata: Metadata = {
-  title: 'Industries We Serve | Anderson Cleaning Company Services',
+  title: 'Industries We Serve',
   description:
     'Specialized commercial cleaning services for healthcare, corporate offices, schools, retail stores, and manufacturing facilities. Expert solutions for your industry.',
+  alternates: {
+    canonical: 'https://andersoncleaning.com/industries',
+  },
 }
 
 export const revalidate = 86400

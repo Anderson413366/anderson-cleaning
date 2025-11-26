@@ -5,10 +5,10 @@ import { Gift, Users, DollarSign, CheckCircle2, ArrowRight, Sparkles, Calendar, 
 import { SpecialOfferSchema } from '@/components/Schema'
 
 export const metadata: Metadata = {
-  title: 'Special Offers & Promotions - Commercial Cleaning Deals',
+  title: 'Special Offers & Promotions',
   description: 'Save on commercial cleaning services with Anderson Cleaning Company\'s special offers. New client discounts, referral rewards, and seasonal promotions available in Western MA & CT.',
   alternates: {
-    canonical: '/promotions',
+    canonical: 'https://andersoncleaning.com/promotions',
   },
 }
 

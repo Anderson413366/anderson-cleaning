@@ -18,10 +18,10 @@ import {
 } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Supply Management Services - Automated Office Supplies Western MA',
+  title: 'Supply Management Services',
   description: 'Never run out of essential supplies with Anderson Cleaning Company\'s supply management program. Automated inventory tracking, bulk pricing, and scheduled delivery for Western MA & CT businesses.',
   alternates: {
-    canonical: '/supply-management',
+    canonical: 'https://andersoncleaning.com/supply-management',
   },
 }
 

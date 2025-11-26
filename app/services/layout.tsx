@@ -5,6 +5,9 @@ const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://andersoncleaning.co
 export const metadata: Metadata = {
   title: 'Commercial Cleaning Services',
   description: 'Professional commercial cleaning services including office cleaning, healthcare facility cleaning, and janitorial services for Western MA & Northern CT.',
+  alternates: {
+    canonical: `${baseUrl}/services`,
+  },
   openGraph: {
     title: 'Commercial Cleaning Services | Anderson Cleaning Company',
     description: 'Office • Healthcare • Janitorial cleaning services for commercial facilities in Western Massachusetts and Northern Connecticut.',

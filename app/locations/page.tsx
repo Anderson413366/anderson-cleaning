@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/Button'
 import ServiceAreaMapClient from '@/components/maps/ServiceAreaMapClient'
 
 export const metadata: Metadata = {
-  title: 'Service Areas | Commercial Cleaning Locations | Anderson Cleaning',
+  title: 'Service Areas',
   description:
     'Anderson Cleaning provides professional commercial cleaning services throughout Western Massachusetts and Northern Connecticut. Find your local service area.',
   keywords: [

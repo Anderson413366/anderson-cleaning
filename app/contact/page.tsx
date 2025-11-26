@@ -4,10 +4,10 @@ import Link from 'next/link'
 import { Phone, Mail, MapPin, Clock, Zap, AlertCircle, ArrowRight } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Contact Us - Commercial Cleaning Services Springfield MA',
+  title: 'Contact Us',
   description: 'Contact Anderson Cleaning Company for professional commercial cleaning services in Western Massachusetts & Northern Connecticut. Call (413) 306-5053 or request a quote. 24/7 support for current clients.',
   alternates: {
-    canonical: '/contact',
+    canonical: 'https://andersoncleaning.com/contact',
   },
 }
 

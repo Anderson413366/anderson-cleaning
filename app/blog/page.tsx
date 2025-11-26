@@ -4,10 +4,10 @@ import { Button } from '@/components/ui/Button'
 import BlogExplorer from '@/components/blog/BlogExplorer'
 
 export const metadata: Metadata = {
-  title: 'Blog - Commercial Cleaning Tips & Industry Insights',
+  title: 'Commercial Cleaning Resources & Insights',
   description: 'Expert advice on commercial cleaning, office maintenance, health & safety, sustainability, and facility management. Tips from professional cleaners serving Western MA & CT.',
   alternates: {
-    canonical: '/blog',
+    canonical: 'https://andersoncleaning.com/blog',
   },
 }
 

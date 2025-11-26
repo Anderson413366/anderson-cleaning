@@ -7,10 +7,10 @@ import TestimonialsExplorer from '@/components/testimonials/TestimonialsExplorer
 import { Testimonial } from '@/lib/testimonials/types'
 
 export const metadata: Metadata = {
-  title: 'Client Testimonials - Commercial Cleaning Reviews Western MA',
+  title: 'Client Testimonials',
   description: 'Read testimonials from businesses across Western Massachusetts & Northern Connecticut who trust Anderson Cleaning Company. 5-star rated commercial cleaning services with proven results.',
   alternates: {
-    canonical: '/testimonials',
+    canonical: 'https://andersoncleaning.com/testimonials',
   },
 }
 
