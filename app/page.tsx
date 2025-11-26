@@ -38,33 +38,22 @@ export default function Home() {
       {/* Promotional Modal */}
       <PromotionalModal />
 
-      {/* Hero Section - Apple-style simplified with gradient overlay */}
-      <section className="relative bg-white dark:bg-slate-900 pt-32 pb-14 md:pt-40 md:pb-20 lg:pt-48 lg:pb-22">
+      {/* Hero Section - Apple-style single focus with clear hierarchy */}
+      <section className="relative bg-white dark:bg-slate-900 pt-32 pb-16 md:pt-40 md:pb-20 lg:pt-48 lg:pb-24">
         {/* Subtle gradient overlay for visual depth */}
         <div className="absolute inset-0 bg-gradient-to-b from-brand-deep-blue/5 to-transparent pointer-events-none" aria-hidden="true" />
         <div className="container mx-auto px-6 lg:px-8 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            {/* Headline */}
-            <h1 className="text-5xl md:text-6xl lg:text-6xl font-bold mb-4 leading-[1.1] tracking-tight text-neutral-charcoal dark:text-white">
+            {/* Primary Headline - 72px bold, single focus point */}
+            <h1 className="text-[40px] md:text-[56px] lg:text-[72px] font-bold mb-4 leading-[1.05] tracking-tight text-brand-deep-blue dark:text-white">
               Commercial Cleaning Services
             </h1>
-            <p className="text-2xl md:text-3xl font-semibold text-brand-bright-blue dark:text-brand-bright-blue mb-6">
+            {/* Geographic Qualifier - 32px medium, subordinate position */}
+            <p className="text-[24px] md:text-[32px] font-medium text-brand-bright-blue mb-12">
               Western MA & Northern CT
             </p>
 
-            {/* Trust Badge - Positioned before CTAs to build confidence */}
-            <div className="mb-8 inline-flex items-center justify-center">
-              <span className="inline-block px-6 py-2.5 rounded-full border-2 border-brand-deep-blue dark:border-brand-bright-blue text-sm font-semibold text-brand-deep-blue dark:text-brand-bright-blue bg-white/50 dark:bg-slate-800/50 backdrop-blur-sm">
-                18+ Years Serving Western Massachusetts Businesses
-              </span>
-            </div>
-
-            {/* Supporting Line */}
-            <p className="text-xl md:text-2xl text-neutral-charcoal/70 dark:text-white/70 mb-12 max-w-3xl mx-auto leading-relaxed">
-              B2B-only janitorial services with W-2 teams, 24/7 support, and OSHA/CDC compliance for your Western MA & Northern CT facility
-            </p>
-
-            {/* CTAs - Standardized */}
+            {/* CTAs - Clean, direct action */}
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link
                 href="/quote"
