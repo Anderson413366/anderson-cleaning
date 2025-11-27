@@ -68,13 +68,13 @@ export default function IndustriesPage() {
             </p>
           </div>
 
-          {/* Unified grid - all cards visually identical */}
-          <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {/* Unified grid - flexbox for centered last row alignment */}
+          <div className="max-w-7xl mx-auto flex flex-wrap justify-center gap-6">
             {allIndustries.map((industry) => (
               <Link
                 key={industry.id}
                 href={`/industries/${industry.slug}`}
-                className="group h-full"
+                className="group w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]"
                 aria-label={`Learn more about ${industry.name} cleaning services`}
               >
                 <div className="h-full min-h-[280px] flex flex-col bg-white dark:bg-slate-900 rounded-xl border border-[#E0E0E0] dark:border-slate-700 p-6 transition-all duration-300 hover:shadow-lg hover:border-brand-bright-blue hover:-translate-y-1">
@@ -91,9 +91,9 @@ export default function IndustriesPage() {
                     {industry.shortDescription}
                   </p>
 
-                  <div className="flex items-center gap-2 text-brand-bright-blue font-semibold group-hover:gap-3 transition-all mt-5">
+                  <div className="flex items-center gap-2 text-brand-bright-blue font-semibold mt-5">
                     <span>Learn More</span>
-                    <ArrowRight className="h-5 w-5" aria-hidden="true" />
+                    <ArrowRight className="h-5 w-5 transition-transform duration-200 ease-out group-hover:translate-x-1" aria-hidden="true" />
                   </div>
                 </div>
               </Link>
