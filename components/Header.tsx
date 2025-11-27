@@ -516,7 +516,7 @@ export default function Header() {
           </a>
           <Link
             href="/quote"
-            className="rounded-full bg-brand-red px-7 py-3 text-base font-semibold text-white shadow-sm hover:bg-[#a00d25] transition-all duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red focus-visible:ring-offset-2"
+            className="rounded-full bg-brand-red h-12 px-6 text-base font-semibold text-white shadow-sm hover:bg-[#a00d25] transition-all duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red focus-visible:ring-offset-2 inline-flex items-center justify-center"
           >
             Quote
           </Link>
@@ -565,7 +565,7 @@ export default function Header() {
                   {/* Request Quote CTA - Primary Action */}
                   <Link
                     href="/quote"
-                    className="block w-full rounded-full bg-brand-red px-7 py-4 text-center text-base font-semibold text-white shadow-sm hover:bg-[#a00d25] transition-all duration-150"
+                    className="flex items-center justify-center w-full rounded-full bg-brand-red h-12 px-6 text-center text-base font-semibold text-white shadow-sm hover:bg-[#a00d25] transition-all duration-150"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     Request a Quote
@@ -796,7 +796,7 @@ export default function Header() {
         <div className="px-4 py-3">
           <Link
             href="/quote"
-            className="block w-full text-center py-3.5 rounded-full bg-brand-red text-sm font-semibold text-white shadow-sm transition-colors active:bg-[#a00d25]"
+            className="flex items-center justify-center w-full h-12 px-6 rounded-full bg-brand-red text-sm font-semibold text-white shadow-sm transition-colors active:bg-[#a00d25]"
           >
             Request a Quote
           </Link>
