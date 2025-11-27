@@ -65,6 +65,8 @@ const massachusettsRegions: Region[] = [
       { name: 'Easthampton', slug: 'easthampton-ma' },
       { name: 'South Hadley', slug: 'south-hadley-ma' },
       { name: 'Granby', slug: 'granby-ma' },
+      { name: 'Greenfield', slug: 'greenfield-ma' },
+      { name: 'Athol', slug: 'athol-ma' },
     ],
   },
   {
@@ -74,6 +76,14 @@ const massachusettsRegions: Region[] = [
       { name: 'Palmer', slug: 'palmer-ma' },
       { name: 'Ware', slug: 'ware-ma' },
       { name: 'Belchertown', slug: 'belchertown-ma' },
+      { name: 'Gardner', slug: 'gardner-ma' },
+    ],
+  },
+  {
+    name: 'The Berkshires',
+    cities: [
+      { name: 'Pittsfield', slug: 'pittsfield-ma', isPrimary: true },
+      { name: 'Great Barrington', slug: 'great-barrington-ma' },
     ],
   },
 ]
@@ -131,10 +141,10 @@ export default function LocationsHub() {
             {/* Section Header */}
             <div className="max-w-4xl mx-auto text-center mb-12">
               <h2 className="text-h2 font-bold text-neutral-charcoal dark:text-white mb-4">
-                100-Mile Service Radius
+                Our Service Region
               </h2>
               <p className="text-body text-neutral-charcoal/70 dark:text-white/80">
-                Headquartered in West Springfield, MA. We provide professional commercial cleaning services throughout Western Massachusetts and Northern Connecticut.
+                Headquartered in West Springfield, MA. We provide professional commercial cleaning services throughout Western Massachusetts, Central Massachusetts, the Berkshires, and Northern Connecticut.
               </p>
             </div>
 
@@ -291,7 +301,21 @@ export default function LocationsHub() {
                       clipRule="evenodd"
                     />
                   </svg>
-                  <span>Worcester County (Western), Massachusetts</span>
+                  <span>Berkshire County, Massachusetts</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <svg
+                    className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                  <span>Worcester County, Massachusetts</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <svg
@@ -329,7 +353,7 @@ export default function LocationsHub() {
                 Extended Service Area
               </h3>
               <p className="text-neutral-charcoal/70 dark:text-white/70 mb-4">
-                We serve all businesses within 100 miles of our West Springfield headquarters,
+                We serve businesses throughout Western MA, Central MA, the Berkshires, and Northern CT,
                 including:
               </p>
               <ul className="space-y-2 text-neutral-charcoal/80 dark:text-white/80">
@@ -343,11 +367,15 @@ export default function LocationsHub() {
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-brand-bright-blue dark:text-brand-bright-blue font-bold">•</span>
-                  <span>Greater Hartford Area</span>
+                  <span>The Berkshires</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-brand-bright-blue dark:text-brand-bright-blue font-bold">•</span>
                   <span>Central Massachusetts</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-brand-bright-blue dark:text-brand-bright-blue font-bold">•</span>
+                  <span>Greater Hartford Area</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-brand-bright-blue dark:text-brand-bright-blue font-bold">•</span>

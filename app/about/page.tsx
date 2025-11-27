@@ -592,7 +592,7 @@ export default function AboutPage() {
             </h2>
             <p className="text-body text-neutral-charcoal/70 dark:text-white/80 mb-8">
               Based in West Springfield, MA, we provide commercial cleaning services throughout
-              Western Massachusetts and Northern Connecticut within a 100-mile radius.
+              Western Massachusetts, Central Massachusetts, the Berkshires, and Northern Connecticut.
             </p>
             {/* Regional Location Groups */}
             <div className="max-w-2xl mx-auto space-y-6">

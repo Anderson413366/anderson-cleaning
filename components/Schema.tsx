@@ -69,6 +69,12 @@ export function LocalBusinessSchema({ pageName, serviceArea, nonce }: LocalBusin
           { '@type': 'City', name: 'Amherst' },
           { '@type': 'City', name: 'Worcester' },
           { '@type': 'City', name: 'Westfield' },
+          { '@type': 'City', name: 'Pittsfield' },
+          { '@type': 'City', name: 'Great Barrington' },
+          { '@type': 'City', name: 'Greenfield' },
+          { '@type': 'City', name: 'Gardner' },
+          { '@type': 'City', name: 'Athol' },
+          { '@type': 'City', name: 'Palmer' },
         ],
       },
       {
@@ -88,7 +94,7 @@ export function LocalBusinessSchema({ pageName, serviceArea, nonce }: LocalBusin
         latitude: 42.107,
         longitude: -72.6209,
       },
-      geoRadius: '100 mi',
+      geoRadius: '60 mi',
     },
     hasOfferCatalog: {
       '@type': 'OfferCatalog',

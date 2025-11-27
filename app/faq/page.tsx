@@ -108,7 +108,7 @@ const faqCategories = {
     {
       question: 'What areas do you serve?',
       answer:
-        'We service commercial facilities within 100 miles of West Springfield, MA, including all of Western Massachusetts (Springfield, Worcester, Northampton, Amherst, Pittsfield) and Northern Connecticut (Hartford area). If you\'re unsure whether your location is within our service area, contact us—we\'re happy to check!',
+        'We service commercial facilities throughout Western Massachusetts, Central Massachusetts, the Berkshires, and Northern Connecticut. This includes Springfield, Northampton, Pittsfield, Great Barrington, Greenfield, Gardner, Athol, Palmer, and the Greater Hartford area. If you\'re unsure whether your location is within our service area, contact us—we\'re happy to check!',
     },
     {
       question: 'How quickly do you respond to service requests?',

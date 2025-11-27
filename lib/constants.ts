@@ -36,7 +36,7 @@ export const COMPANY_INFO = {
   tagline: 'Commercial Cleaning Excellence Since 2007',
   founded: 2007,
   serviceRadius: {
-    miles: 100,
+    miles: 60,
     center: 'West Springfield, MA',
     zipCode: '01089',
   },

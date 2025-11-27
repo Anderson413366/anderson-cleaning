@@ -150,7 +150,7 @@ export default function Home() {
                 Serving Massachusetts & Connecticut
               </h2>
               <p className="text-body text-neutral-charcoal/70 dark:text-white/80">
-                Within 100 miles of West Springfield, MA
+                Serving Western MA, Central MA & Northern CT
               </p>
             </div>
 
