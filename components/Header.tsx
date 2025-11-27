@@ -167,6 +167,19 @@ export default function Header() {
     setActiveDropdown(null)
   }
 
+  // Toggle dropdown on click (for Resources button)
+  const handleDropdownClick = (dropdown: string) => {
+    setActiveDropdown(activeDropdown === dropdown ? null : dropdown)
+  }
+
+  // Keyboard support for dropdown toggle
+  const handleDropdownKeyDown = (e: React.KeyboardEvent, dropdown: string) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault()
+      handleDropdownClick(dropdown)
+    }
+  }
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-[100] bg-white/95 backdrop-blur-lg transition-all duration-300 dark:bg-brand-deep-blue/95 dark:backdrop-blur-lg ${
@@ -232,7 +245,10 @@ export default function Header() {
 
             {/* Services Dropdown Menu */}
             {activeDropdown === 'services' && (
-              <div className="absolute left-0 top-full mt-2 w-96 rounded-lg border border-brand-deep-blue/10 bg-white shadow-xl dark:border-white/10 dark:bg-slate-800">
+              <div
+                className="absolute left-0 top-full mt-2 w-96 rounded-lg border border-brand-deep-blue/10 bg-white shadow-xl dark:border-white/10 dark:bg-slate-800 animate-dropdown-slide"
+                role="menu"
+              >
                 <div className="border-b border-brand-deep-blue/10 px-4 pb-2 pt-4 dark:border-white/10">
                   <h3 className="text-xs font-semibold uppercase tracking-wider text-neutral-charcoal/60 dark:text-neutral-charcoal">
                     Our Services
@@ -294,7 +310,10 @@ export default function Header() {
 
             {/* Industries Dropdown Menu */}
             {activeDropdown === 'industries' && (
-              <div className="absolute left-0 top-full mt-2 w-72 rounded-lg border border-brand-deep-blue/10 bg-white shadow-xl dark:border-white/10 dark:bg-slate-800">
+              <div
+                className="absolute left-0 top-full mt-2 w-72 rounded-lg border border-brand-deep-blue/10 bg-white shadow-xl dark:border-white/10 dark:bg-slate-800 animate-dropdown-slide"
+                role="menu"
+              >
                 <div className="border-b border-brand-deep-blue/10 px-4 pb-2 pt-4 dark:border-white/10">
                   <h3 className="text-xs font-semibold uppercase tracking-wider text-neutral-charcoal/60 dark:text-neutral-charcoal">
                     Industries We Serve
@@ -351,7 +370,10 @@ export default function Header() {
 
             {/* Locations Dropdown Menu */}
             {activeDropdown === 'locations' && (
-              <div className="absolute left-0 top-full mt-2 w-80 rounded-lg border border-brand-deep-blue/10 bg-white shadow-xl dark:border-white/10 dark:bg-slate-800">
+              <div
+                className="absolute left-0 top-full mt-2 w-80 rounded-lg border border-brand-deep-blue/10 bg-white shadow-xl dark:border-white/10 dark:bg-slate-800 animate-dropdown-slide"
+                role="menu"
+              >
                 <div className="border-b border-brand-deep-blue/10 px-4 pb-2 pt-4 dark:border-white/10">
                   <h3 className="text-xs font-semibold uppercase tracking-wider text-neutral-charcoal/60 dark:text-neutral-charcoal">
                     Service Areas
@@ -413,6 +435,8 @@ export default function Header() {
             onMouseLeave={handleDropdownLeave}
           >
             <button
+              onClick={() => handleDropdownClick('resources')}
+              onKeyDown={(e) => handleDropdownKeyDown(e, 'resources')}
               className={`flex items-center gap-1 text-sm font-medium tracking-wide leading-6 transition-all duration-150 ${
                 pathname.startsWith('/blog') || pathname.startsWith('/faq') || pathname.startsWith('/case-studies') || pathname.startsWith('/testimonials') || pathname.startsWith('/careers') || pathname.startsWith('/promotions')
                   ? 'text-brand-bright-blue dark:text-white'
@@ -431,7 +455,10 @@ export default function Header() {
 
             {/* Resources Dropdown Menu */}
             {activeDropdown === 'resources' && (
-              <div className="absolute left-0 top-full mt-2 w-80 rounded-lg border border-brand-deep-blue/10 bg-white shadow-xl dark:border-white/10 dark:bg-slate-800">
+              <div
+                className="absolute left-0 top-full mt-2 w-80 rounded-lg border border-brand-deep-blue/10 bg-white shadow-xl dark:border-white/10 dark:bg-slate-800 animate-dropdown-slide"
+                role="menu"
+              >
                 <div className="border-b border-brand-deep-blue/10 px-4 pb-2 pt-4 dark:border-white/10">
                   <h3 className="text-xs font-semibold uppercase tracking-wider text-neutral-charcoal/60 dark:text-neutral-charcoal">
                     Resources & Learning

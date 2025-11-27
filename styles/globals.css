@@ -98,6 +98,26 @@ body {
   }
 }
 
+/* =================================
+   DROPDOWN ANIMATION
+   ================================= */
+
+/* Smooth 200ms slide-down animation for dropdown menus */
+@keyframes dropdown-slide {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-dropdown-slide {
+  animation: dropdown-slide 200ms ease-out;
+}
+
 /* Screen reader only class - visually hidden but accessible to assistive tech */
 .sr-only {
   position: absolute;
