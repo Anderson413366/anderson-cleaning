@@ -590,15 +590,52 @@ export default function AboutPage() {
               Based in West Springfield, MA, we provide commercial cleaning services throughout
               Western Massachusetts and Northern Connecticut within a 100-mile radius.
             </p>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
-              <Link href="/locations/springfield-ma" className="text-neutral-charcoal/80 dark:text-white/80 hover:text-brand-bright-blue dark:hover:text-brand-bright-blue transition-colors underline-offset-2 hover:underline">Springfield, MA</Link>
-              <Link href="/locations/worcester-county-ma" className="text-neutral-charcoal/80 dark:text-white/80 hover:text-brand-bright-blue dark:hover:text-brand-bright-blue transition-colors underline-offset-2 hover:underline">Worcester, MA</Link>
-              <Link href="/locations/northampton-amherst-ma" className="text-neutral-charcoal/80 dark:text-white/80 hover:text-brand-bright-blue dark:hover:text-brand-bright-blue transition-colors underline-offset-2 hover:underline">Northampton, MA</Link>
-              <Link href="/locations/hartford-ct" className="text-neutral-charcoal/80 dark:text-white/80 hover:text-brand-bright-blue dark:hover:text-brand-bright-blue transition-colors underline-offset-2 hover:underline">Hartford, CT</Link>
-              <Link href="/locations/holyoke-ma" className="text-neutral-charcoal/80 dark:text-white/80 hover:text-brand-bright-blue dark:hover:text-brand-bright-blue transition-colors underline-offset-2 hover:underline">Holyoke, MA</Link>
-              <Link href="/locations/chicopee-ma" className="text-neutral-charcoal/80 dark:text-white/80 hover:text-brand-bright-blue dark:hover:text-brand-bright-blue transition-colors underline-offset-2 hover:underline">Chicopee, MA</Link>
-              <Link href="/locations/west-springfield-ma" className="text-neutral-charcoal/80 dark:text-white/80 hover:text-brand-bright-blue dark:hover:text-brand-bright-blue transition-colors underline-offset-2 hover:underline">West Springfield, MA</Link>
-              <Link href="/locations/enfield-ct" className="text-neutral-charcoal/80 dark:text-white/80 hover:text-brand-bright-blue dark:hover:text-brand-bright-blue transition-colors underline-offset-2 hover:underline">Enfield, CT</Link>
+            {/* Regional Location Groups */}
+            <div className="max-w-2xl mx-auto space-y-6">
+              {/* Massachusetts Locations */}
+              <div>
+                <h3 className="text-base font-semibold text-brand-deep-blue dark:text-white mb-3">
+                  Massachusetts
+                </h3>
+                <div className="flex flex-wrap gap-x-4 gap-y-2">
+                  <Link href="/locations/springfield-ma" className="text-sm text-brand-bright-blue hover:underline transition-colors underline-offset-2">
+                    Springfield
+                  </Link>
+                  <Link href="/locations/west-springfield-ma" className="text-sm text-brand-bright-blue hover:underline transition-colors underline-offset-2">
+                    West Springfield
+                  </Link>
+                  <Link href="/locations/worcester-county-ma" className="text-sm text-brand-bright-blue hover:underline transition-colors underline-offset-2">
+                    Worcester
+                  </Link>
+                  <Link href="/locations/northampton-amherst-ma" className="text-sm text-brand-bright-blue hover:underline transition-colors underline-offset-2">
+                    Northampton
+                  </Link>
+                  <Link href="/locations/holyoke-ma" className="text-sm text-brand-bright-blue hover:underline transition-colors underline-offset-2">
+                    Holyoke
+                  </Link>
+                  <Link href="/locations/chicopee-ma" className="text-sm text-brand-bright-blue hover:underline transition-colors underline-offset-2">
+                    Chicopee
+                  </Link>
+                </div>
+              </div>
+
+              {/* Connecticut Locations */}
+              <div>
+                <h3 className="text-base font-semibold text-brand-deep-blue dark:text-white mb-3">
+                  Connecticut
+                </h3>
+                <div className="flex flex-wrap gap-x-4 gap-y-2">
+                  <Link href="/locations/hartford-ct" className="text-sm text-brand-bright-blue hover:underline transition-colors underline-offset-2">
+                    Hartford
+                  </Link>
+                  <Link href="/locations/enfield-ct" className="text-sm text-brand-bright-blue hover:underline transition-colors underline-offset-2">
+                    Enfield
+                  </Link>
+                  <Link href="/locations/windsor-ct" className="text-sm text-brand-bright-blue hover:underline transition-colors underline-offset-2">
+                    Windsor
+                  </Link>
+                </div>
+              </div>
             </div>
             <p className="text-sm text-neutral-charcoal/60 dark:text-white/70 mt-8">
               Don't see your city? Contact us-we may serve your area!
