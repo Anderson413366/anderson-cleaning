@@ -84,7 +84,7 @@ const translations = {
           title: 'Cleaning Specialist',
           locationLabel: 'Springfield/Hartford Area',
           typeLabel: 'Part-time & Full-time',
-          rateLabel: '$15–20 per hour',
+          rateLabel: '$15-20/hour',
           bullets: [
             'Evening and night shifts',
             'No experience required',
@@ -95,7 +95,7 @@ const translations = {
           title: 'Field Supervisor',
           locationLabel: 'West Springfield, MA',
           typeLabel: 'Full-time W-2',
-          rateLabel: '$20–25 per hour',
+          rateLabel: '$20-25/hour',
           bullets: [
             '2+ years experience required',
             'Lead & train team members',
@@ -106,7 +106,7 @@ const translations = {
           title: 'Operations Assistant',
           locationLabel: 'Springfield/Hartford Area',
           typeLabel: 'Full-time or Part-time',
-          rateLabel: '$18–22 per hour',
+          rateLabel: '$18-22/hour',
           bullets: [
             'Evening shift (4:30–10 PM)',
             'Night differential included',
@@ -175,7 +175,7 @@ const translations = {
           title: 'Especialista en Limpieza',
           locationLabel: 'Área Springfield/Hartford',
           typeLabel: 'Tiempo parcial y completo',
-          rateLabel: '$15–20 por hora',
+          rateLabel: '$15-20/hora',
           bullets: [
             'Turnos de tarde y noche',
             'No se requiere experiencia',
@@ -186,7 +186,7 @@ const translations = {
           title: 'Supervisor de Campo',
           locationLabel: 'West Springfield, MA',
           typeLabel: 'Tiempo completo W-2',
-          rateLabel: '$20–25 por hora',
+          rateLabel: '$20-25/hora',
           bullets: [
             '2+ años de experiencia requeridos',
             'Liderar y entrenar equipo',
@@ -197,7 +197,7 @@ const translations = {
           title: 'Asistente de Operaciones',
           locationLabel: 'Área Springfield/Hartford',
           typeLabel: 'Tiempo completo o parcial',
-          rateLabel: '$18–22 por hora',
+          rateLabel: '$18-22/hora',
           bullets: [
             'Turno nocturno (4:30–10 PM)',
             'Diferencial nocturno incluido',
@@ -266,7 +266,7 @@ const translations = {
           title: 'Especialista em Limpeza',
           locationLabel: 'Área Springfield/Hartford',
           typeLabel: 'Meio período e integral',
-          rateLabel: '$15–20 por hora',
+          rateLabel: '$15-20/hora',
           bullets: [
             'Turnos de tarde e noite',
             'Não é necessária experiência',
@@ -277,7 +277,7 @@ const translations = {
           title: 'Supervisor de Campo',
           locationLabel: 'West Springfield, MA',
           typeLabel: 'Período integral W-2',
-          rateLabel: '$20–25 por hora',
+          rateLabel: '$20-25/hora',
           bullets: [
             '2+ anos de experiência necessários',
             'Liderar e treinar equipe',
@@ -288,7 +288,7 @@ const translations = {
           title: 'Assistente de Operações',
           locationLabel: 'Área Springfield/Hartford',
           typeLabel: 'Período integral ou parcial',
-          rateLabel: '$18–22 por hora',
+          rateLabel: '$18-22/hora',
           bullets: [
             'Turno noturno (4:30–10 PM)',
             'Adicional noturno incluído',
@@ -357,7 +357,7 @@ const translations = {
           title: 'Specialist în Curățenie',
           locationLabel: 'Zona Springfield/Hartford',
           typeLabel: 'Part-time și full-time',
-          rateLabel: '$15–20 pe oră',
+          rateLabel: '$15-20/oră',
           bullets: [
             'Ture de seară și noapte',
             'Nu este necesară experiență',
@@ -368,7 +368,7 @@ const translations = {
           title: 'Supervizor de Teren',
           locationLabel: 'West Springfield, MA',
           typeLabel: 'Full-time W-2',
-          rateLabel: '$20–25 pe oră',
+          rateLabel: '$20-25/oră',
           bullets: [
             '2+ ani experiență necesari',
             'Conduce și instruiește echipa',
@@ -379,7 +379,7 @@ const translations = {
           title: 'Asistent Operațiuni',
           locationLabel: 'Zona Springfield/Hartford',
           typeLabel: 'Full-time sau part-time',
-          rateLabel: '$18–22 pe oră',
+          rateLabel: '$18-22/oră',
           bullets: [
             'Tură de seară (4:30–10 PM)',
             'Diferențial de noapte inclus',
