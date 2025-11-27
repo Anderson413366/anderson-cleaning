@@ -166,7 +166,7 @@ export default function Home() {
                     'Springfield & West Springfield',
                     'Worcester County',
                     'Northampton & Amherst',
-                    'Hartford, CT area',
+                    'North Central CT',
                   ].map((location) => (
                     <span
                       key={location}

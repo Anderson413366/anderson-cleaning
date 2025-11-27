@@ -81,9 +81,10 @@ export function LocalBusinessSchema({ pageName, serviceArea, nonce }: LocalBusin
         '@type': 'State',
         name: 'Connecticut',
         containsPlace: [
-          { '@type': 'City', name: 'Hartford' },
           { '@type': 'City', name: 'Enfield' },
           { '@type': 'City', name: 'Windsor' },
+          { '@type': 'City', name: 'Suffield' },
+          { '@type': 'City', name: 'Somers' },
         ],
       },
     ],

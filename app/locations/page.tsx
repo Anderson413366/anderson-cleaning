@@ -91,18 +91,9 @@ const massachusettsRegions: Region[] = [
 // Connecticut regions grouped geographically
 const connecticutRegions: Region[] = [
   {
-    name: 'Greater Hartford',
-    cities: [
-      { name: 'Hartford', slug: 'hartford-ct', isPrimary: true },
-      { name: 'East Hartford', slug: 'east-hartford-ct' },
-      { name: 'West Hartford', slug: 'west-hartford-ct' },
-      { name: 'Bloomfield', slug: 'bloomfield-ct' },
-    ],
-  },
-  {
     name: 'North Central Connecticut',
     cities: [
-      { name: 'Enfield', slug: 'enfield-ct' },
+      { name: 'Enfield', slug: 'enfield-ct', isPrimary: true },
       { name: 'Windsor', slug: 'windsor-ct' },
       { name: 'Suffield', slug: 'suffield-ct' },
       { name: 'Somers', slug: 'somers-ct' },
@@ -329,21 +320,7 @@ export default function LocationsHub() {
                       clipRule="evenodd"
                     />
                   </svg>
-                  <span>Hartford County, Connecticut</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <svg
-                    className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                  <span>Tolland County, Connecticut</span>
+                  <span>North Central Connecticut</span>
                 </li>
               </ul>
             </div>
@@ -375,10 +352,6 @@ export default function LocationsHub() {
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-brand-bright-blue dark:text-brand-bright-blue font-bold">•</span>
-                  <span>Greater Hartford Area</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-brand-bright-blue dark:text-brand-bright-blue font-bold">•</span>
                   <span>North Central Connecticut</span>
                 </li>
               </ul>
@@ -406,7 +379,7 @@ export default function LocationsHub() {
             Why Businesses Throughout the Region Choose Anderson Cleaning
           </h2>
           <p className="text-lg text-neutral-charcoal/70 dark:text-white/70 mb-12 text-center max-w-3xl mx-auto">
-            Whether you&apos;re in Springfield, MA or Hartford, CT, you&apos;ll receive the same
+            Whether you&apos;re in Springfield, Worcester, or Enfield, you&apos;ll receive the same
             professional, reliable service that has made us the region&apos;s trusted commercial
             cleaning partner.
           </p>

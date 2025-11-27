@@ -629,9 +629,6 @@ export default function AboutPage() {
                   Connecticut
                 </h3>
                 <div className="flex flex-wrap gap-x-4 gap-y-2">
-                  <Link href="/locations/hartford-ct" className="text-sm text-brand-bright-blue hover:underline transition-colors underline-offset-2">
-                    Hartford
-                  </Link>
                   <Link href="/locations/enfield-ct" className="text-sm text-brand-bright-blue hover:underline transition-colors underline-offset-2">
                     Enfield
                   </Link>
