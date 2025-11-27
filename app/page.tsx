@@ -50,10 +50,11 @@ export default function Home() {
               >
                 Get Your Quote
               </Link>
-              {/* Secondary - Phone as text link only */}
+              {/* Secondary - Phone link with Apple-level polish */}
               <a
                 href="tel:+14133065053"
-                className="text-base text-brand-bright-blue hover:underline transition-colors dark:text-brand-bright-blue"
+                className="inline-flex items-center justify-center min-h-[48px] px-4 text-lg font-semibold text-brand-bright-blue hover:underline transition-all dark:text-brand-bright-blue"
+                aria-label="Call us at (413) 306-5053"
               >
                 (413) 306-5053
               </a>
