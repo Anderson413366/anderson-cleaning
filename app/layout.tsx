@@ -12,6 +12,7 @@ import WebVitalsReporter from '@/components/WebVitalsReporter'
 import SkipLink from '@/components/SkipLink'
 import AccessibilityProvider from '@/components/AccessibilityProvider'
 import DarkModeLogger from '@/components/DarkModeLogger'
+import Breadcrumbs from '@/components/Breadcrumbs'
 import {
   generateOrganizationSchema,
   generateLocalBusinessSchema,
@@ -255,6 +256,9 @@ export default async function RootLayout({ children }: { children: React.ReactNo
             <SkipLink />
             <Header />
             <main className="min-h-screen pt-28 pb-24 lg:pb-0" id="main-content" tabIndex={-1}>
+              <div className="mx-auto max-w-7xl">
+                <Breadcrumbs />
+              </div>
               {children}
             </main>
             <Footer />
