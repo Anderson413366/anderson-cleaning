@@ -658,3 +658,60 @@ a:focus-visible,
   outline: none;
   box-shadow: none;
 }
+
+/* ====================================================================
+   MOBILE RESPONSIVENESS - Items 38-40 (Apple Design Audit)
+   Touch targets, form fields, and CTA buttons
+   ==================================================================== */
+
+/*
+  Item 38: Mobile Navigation Hamburger Menu
+  - Already handled in Header.tsx with min-h-[56px] min-w-[56px]
+  - Safe-area-inset applied via pb-safe-bottom utility
+*/
+
+/*
+  Item 39: Mobile Form Field Sizing
+  - Ensure 48px minimum height on mobile
+  - 16px font size to prevent iOS zoom on focus
+*/
+@media (max-width: 767px) {
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="url"],
+  input[type="password"],
+  input[type="number"],
+  input[type="search"],
+  input[type="date"],
+  textarea,
+  select {
+    min-height: 48px;
+    font-size: 16px !important; /* Prevents iOS zoom on focus */
+  }
+}
+
+/*
+  Item 40: Mobile CTA Button Sizing
+  - Full-width primary buttons on mobile (<768px)
+  - Maintain 48px minimum height
+*/
+@media (max-width: 767px) {
+  /* Primary CTA buttons - full width on mobile */
+  .btn-primary,
+  .btn-cta,
+  button[type="submit"],
+  form button:last-of-type,
+  a[href="/quote"],
+  .mobile-full-width {
+    width: 100%;
+    min-height: 48px;
+  }
+
+  /* Ensure buttons in forms are full width */
+  form .inline-flex[type="submit"],
+  form button.bg-brand-bright-blue,
+  form button.bg-brand-red {
+    width: 100%;
+  }
+}
