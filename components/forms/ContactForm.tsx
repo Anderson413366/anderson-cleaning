@@ -6,7 +6,6 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { Button } from '@/components/ui/Button'
 import { contactFormSchema, type ContactFormData } from '@/lib/validation/quote'
 import { Send, Loader2, CheckCircle2, AlertCircle } from 'lucide-react'
-import { inputClassName, labelClassName, errorClassName } from '@/lib/styles/formStyles'
 import FormLegalNotice from './FormLegalNotice'
 
 interface ContactFormProps {
@@ -121,64 +120,64 @@ export default function ContactForm({ onSuccess }: ContactFormProps) {
 
         {/* Name */}
         <div>
-          <label htmlFor="name" className={labelClassName}>
-            Name <span className="text-brand-bright-blue text-[10px] relative -top-0.5">*</span>
+          <label htmlFor="name" className="block text-[14px] font-medium text-[#333333] dark:text-white/90 mb-2">
+            Name <span className="text-brand-red">*</span>
           </label>
           <input
             {...register('name')}
             type="text"
             id="name"
-            className={inputClassName}
+            className="w-full h-[48px] px-4 bg-white dark:bg-slate-700 text-neutral-charcoal dark:text-white border border-[#D0D0D0] dark:border-slate-600 rounded-lg placeholder:text-[#999999] dark:placeholder:text-slate-400 focus:outline-none focus:border-[2px] focus:border-brand-bright-blue focus:shadow-[0_0_0_3px_rgba(0,119,217,0.15)] transition-all"
             placeholder="John Smith"
           />
-          {errors.name && <p className={errorClassName}>{errors.name.message}</p>}
+          {errors.name && <p className="mt-2 text-sm text-brand-red">{errors.name.message}</p>}
         </div>
 
         {/* Email */}
         <div>
-          <label htmlFor="email" className={labelClassName}>
-            Email Address <span className="text-brand-bright-blue text-[10px] relative -top-0.5">*</span>
+          <label htmlFor="email" className="block text-[14px] font-medium text-[#333333] dark:text-white/90 mb-2">
+            Email Address <span className="text-brand-red">*</span>
           </label>
           <input
             {...register('email')}
             type="email"
             id="email"
-            className={inputClassName}
+            className="w-full h-[48px] px-4 bg-white dark:bg-slate-700 text-neutral-charcoal dark:text-white border border-[#D0D0D0] dark:border-slate-600 rounded-lg placeholder:text-[#999999] dark:placeholder:text-slate-400 focus:outline-none focus:border-[2px] focus:border-brand-bright-blue focus:shadow-[0_0_0_3px_rgba(0,119,217,0.15)] transition-all"
             placeholder="john@example.com"
           />
-          {errors.email && <p className={errorClassName}>{errors.email.message}</p>}
+          {errors.email && <p className="mt-2 text-sm text-brand-red">{errors.email.message}</p>}
         </div>
 
         {/* Phone */}
         <div>
-          <label htmlFor="phone" className={labelClassName}>
-            Phone Number <span className="text-brand-bright-blue text-[10px] relative -top-0.5">*</span>
+          <label htmlFor="phone" className="block text-[14px] font-medium text-[#333333] dark:text-white/90 mb-2">
+            Phone Number <span className="text-brand-red">*</span>
           </label>
           <input
             {...register('phone')}
             type="tel"
             id="phone"
             autoComplete="tel"
-            className={inputClassName}
+            className="w-full h-[48px] px-4 bg-white dark:bg-slate-700 text-neutral-charcoal dark:text-white border border-[#D0D0D0] dark:border-slate-600 rounded-lg placeholder:text-[#999999] dark:placeholder:text-slate-400 focus:outline-none focus:border-[2px] focus:border-brand-bright-blue focus:shadow-[0_0_0_3px_rgba(0,119,217,0.15)] transition-all"
             placeholder="(413) 306-5053"
           />
-          {errors.phone && <p className={errorClassName}>{errors.phone.message}</p>}
+          {errors.phone && <p className="mt-2 text-sm text-brand-red">{errors.phone.message}</p>}
         </div>
 
         {/* Message */}
         <div>
-          <label htmlFor="message" className={labelClassName}>
-            Message <span className="text-brand-bright-blue text-[10px] relative -top-0.5">*</span>
+          <label htmlFor="message" className="block text-[14px] font-medium text-[#333333] dark:text-white/90 mb-2">
+            Message <span className="text-brand-red">*</span>
           </label>
           <textarea
             {...register('message')}
             id="message"
             rows={6}
             maxLength={1000}
-            className={inputClassName}
+            className="w-full px-4 py-3 bg-white dark:bg-slate-700 text-neutral-charcoal dark:text-white border border-[#D0D0D0] dark:border-slate-600 rounded-lg placeholder:text-[#999999] dark:placeholder:text-slate-400 focus:outline-none focus:border-[2px] focus:border-brand-bright-blue focus:shadow-[0_0_0_3px_rgba(0,119,217,0.15)] transition-all"
             placeholder="Tell us about your cleaning needs, questions, or concerns..."
           />
-          {errors.message && <p className={errorClassName}>{errors.message.message}</p>}
+          {errors.message && <p className="mt-2 text-sm text-brand-red">{errors.message.message}</p>}
         </div>
 
         {/* Honeypot field - spam prevention (hidden from all users and bots should fill it) */}

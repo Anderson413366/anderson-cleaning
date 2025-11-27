@@ -377,15 +377,15 @@ export default function QuoteFormSimplified({ onSuccess }: QuoteFormSimplifiedPr
               <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-5">
                 {/* Full Name */}
                 <div>
-                  <label htmlFor="fullName" className="mb-3 block text-[14px] font-medium text-[#333333] dark:text-white">
-                    Full Name <span className="text-red-500">*</span>
+                  <label htmlFor="fullName" className="block text-[14px] font-medium text-[#333333] dark:text-white/90 mb-2">
+                    Full Name <span className="text-brand-red">*</span>
                   </label>
                   <div className="relative">
                     <input
                       {...register('fullName')}
                       id="fullName"
                       type="text"
-                      className={`w-full h-[48px] rounded-lg border border-[#D0D0D0] px-4 pr-10 text-[16px] focus:border-brand-bright-blue focus:shadow-[0_0_0_3px_rgba(0,119,217,0.1)] focus:outline-none dark:bg-slate-900 dark:border-slate-600 dark:text-white transition-colors ${getFieldState('fullName').hasError ? 'border-brand-red' : ''} ${getFieldState('fullName').isValid ? 'border-brand-bright-blue' : ''}`}
+                      className={`w-full h-[48px] px-4 pr-10 bg-white dark:bg-slate-700 text-neutral-charcoal dark:text-white border border-[#D0D0D0] dark:border-slate-600 rounded-lg placeholder:text-[#999999] dark:placeholder:text-slate-400 focus:outline-none focus:border-[2px] focus:border-brand-bright-blue focus:shadow-[0_0_0_3px_rgba(0,119,217,0.15)] transition-all ${getFieldState('fullName').hasError ? '!border-brand-red' : ''} ${getFieldState('fullName').isValid ? '!border-brand-bright-blue' : ''}`}
                       placeholder="John Smith"
                     />
                     {getFieldState('fullName').isValid && (
@@ -396,21 +396,21 @@ export default function QuoteFormSimplified({ onSuccess }: QuoteFormSimplifiedPr
                     )}
                   </div>
                   {errors.fullName && (
-                    <p className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.fullName.message}</p>
+                    <p className="mt-2 text-sm text-brand-red">{errors.fullName.message}</p>
                   )}
                 </div>
 
                 {/* Company Name */}
                 <div>
-                  <label htmlFor="company" className="mb-3 block text-[14px] font-medium text-[#333333] dark:text-white">
-                    Company Name <span className="text-red-500">*</span>
+                  <label htmlFor="company" className="block text-[14px] font-medium text-[#333333] dark:text-white/90 mb-2">
+                    Company Name <span className="text-brand-red">*</span>
                   </label>
                   <div className="relative">
                     <input
                       {...register('company')}
                       id="company"
                       type="text"
-                      className={`w-full h-[48px] rounded-lg border border-[#D0D0D0] px-4 pr-10 text-[16px] focus:border-brand-bright-blue focus:shadow-[0_0_0_3px_rgba(0,119,217,0.1)] focus:outline-none dark:bg-slate-900 dark:border-slate-600 dark:text-white transition-colors ${getFieldState('company').hasError ? 'border-brand-red' : ''} ${getFieldState('company').isValid ? 'border-brand-bright-blue' : ''}`}
+                      className={`w-full h-[48px] px-4 pr-10 bg-white dark:bg-slate-700 text-neutral-charcoal dark:text-white border border-[#D0D0D0] dark:border-slate-600 rounded-lg placeholder:text-[#999999] dark:placeholder:text-slate-400 focus:outline-none focus:border-[2px] focus:border-brand-bright-blue focus:shadow-[0_0_0_3px_rgba(0,119,217,0.15)] transition-all ${getFieldState('company').hasError ? '!border-brand-red' : ''} ${getFieldState('company').isValid ? '!border-brand-bright-blue' : ''}`}
                       placeholder="ABC Corporation"
                     />
                     {getFieldState('company').isValid && (
@@ -421,21 +421,21 @@ export default function QuoteFormSimplified({ onSuccess }: QuoteFormSimplifiedPr
                     )}
                   </div>
                   {errors.company && (
-                    <p className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.company.message}</p>
+                    <p className="mt-2 text-sm text-brand-red">{errors.company.message}</p>
                   )}
                 </div>
 
                 {/* Email */}
                 <div>
-                  <label htmlFor="email" className="mb-3 block text-[14px] font-medium text-[#333333] dark:text-white">
-                    Email Address <span className="text-red-500">*</span>
+                  <label htmlFor="email" className="block text-[14px] font-medium text-[#333333] dark:text-white/90 mb-2">
+                    Email Address <span className="text-brand-red">*</span>
                   </label>
                   <div className="relative">
                     <input
                       {...register('email')}
                       id="email"
                       type="email"
-                      className={`w-full h-[48px] rounded-lg border border-[#D0D0D0] px-4 pr-10 text-[16px] focus:border-brand-bright-blue focus:shadow-[0_0_0_3px_rgba(0,119,217,0.1)] focus:outline-none dark:bg-slate-900 dark:border-slate-600 dark:text-white transition-colors ${getFieldState('email').hasError ? 'border-brand-red' : ''} ${getFieldState('email').isValid ? 'border-brand-bright-blue' : ''}`}
+                      className={`w-full h-[48px] px-4 pr-10 bg-white dark:bg-slate-700 text-neutral-charcoal dark:text-white border border-[#D0D0D0] dark:border-slate-600 rounded-lg placeholder:text-[#999999] dark:placeholder:text-slate-400 focus:outline-none focus:border-[2px] focus:border-brand-bright-blue focus:shadow-[0_0_0_3px_rgba(0,119,217,0.15)] transition-all ${getFieldState('email').hasError ? '!border-brand-red' : ''} ${getFieldState('email').isValid ? '!border-brand-bright-blue' : ''}`}
                       placeholder="john@company.com"
                     />
                     {getFieldState('email').isValid && (
@@ -446,21 +446,22 @@ export default function QuoteFormSimplified({ onSuccess }: QuoteFormSimplifiedPr
                     )}
                   </div>
                   {errors.email && (
-                    <p className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.email.message}</p>
+                    <p className="mt-2 text-sm text-brand-red">{errors.email.message}</p>
                   )}
                 </div>
 
                 {/* Phone */}
                 <div>
-                  <label htmlFor="phone" className="mb-3 block text-[14px] font-medium text-[#333333] dark:text-white">
-                    Phone Number <span className="text-red-500">*</span>
+                  <label htmlFor="phone" className="block text-[14px] font-medium text-[#333333] dark:text-white/90 mb-2">
+                    Phone Number <span className="text-brand-red">*</span>
                   </label>
                   <div className="relative">
                     <input
                       {...register('phone')}
                       id="phone"
                       type="tel"
-                      className={`w-full h-[48px] rounded-lg border border-[#D0D0D0] px-4 pr-10 text-[16px] focus:border-brand-bright-blue focus:shadow-[0_0_0_3px_rgba(0,119,217,0.1)] focus:outline-none dark:bg-slate-900 dark:border-slate-600 dark:text-white transition-colors ${getFieldState('phone').hasError ? 'border-brand-red' : ''} ${getFieldState('phone').isValid ? 'border-brand-bright-blue' : ''}`}
+                      autoComplete="tel"
+                      className={`w-full h-[48px] px-4 pr-10 bg-white dark:bg-slate-700 text-neutral-charcoal dark:text-white border border-[#D0D0D0] dark:border-slate-600 rounded-lg placeholder:text-[#999999] dark:placeholder:text-slate-400 focus:outline-none focus:border-[2px] focus:border-brand-bright-blue focus:shadow-[0_0_0_3px_rgba(0,119,217,0.15)] transition-all ${getFieldState('phone').hasError ? '!border-brand-red' : ''} ${getFieldState('phone').isValid ? '!border-brand-bright-blue' : ''}`}
                       placeholder={CONTACT_INFO.phone.formatted}
                     />
                     {getFieldState('phone').isValid && (
@@ -471,7 +472,7 @@ export default function QuoteFormSimplified({ onSuccess }: QuoteFormSimplifiedPr
                     )}
                   </div>
                   {errors.phone && (
-                    <p className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.phone.message}</p>
+                    <p className="mt-2 text-sm text-brand-red">{errors.phone.message}</p>
                   )}
                 </div>
               </div>
@@ -486,15 +487,15 @@ export default function QuoteFormSimplified({ onSuccess }: QuoteFormSimplifiedPr
               </h3>
 
             <div>
-              <label htmlFor="address" className="mb-2 block text-sm font-medium text-neutral-charcoal dark:text-white">
-                Street Address <span className="text-red-500">*</span>
+              <label htmlFor="address" className="block text-[14px] font-medium text-[#333333] dark:text-white/90 mb-2">
+                Street Address <span className="text-brand-red">*</span>
               </label>
               <div className="relative">
                 <input
                   {...register('address')}
                   id="address"
                   type="text"
-                  className={`w-full rounded-lg border-2 px-4 py-3 pr-10 focus:ring-2 dark:bg-slate-900 dark:text-white transition-colors min-h-[48px] ${getFieldState('address').className}`}
+                  className={`w-full h-[48px] px-4 pr-10 bg-white dark:bg-slate-700 text-neutral-charcoal dark:text-white border border-[#D0D0D0] dark:border-slate-600 rounded-lg placeholder:text-[#999999] dark:placeholder:text-slate-400 focus:outline-none focus:border-[2px] focus:border-brand-bright-blue focus:shadow-[0_0_0_3px_rgba(0,119,217,0.15)] transition-all ${getFieldState('address').hasError ? '!border-brand-red' : ''} ${getFieldState('address').isValid ? '!border-brand-bright-blue' : ''}`}
                   placeholder="123 Main Street"
                 />
                 {getFieldState('address').isValid && (
@@ -505,21 +506,21 @@ export default function QuoteFormSimplified({ onSuccess }: QuoteFormSimplifiedPr
                 )}
               </div>
               {errors.address && (
-                <p className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.address.message}</p>
+                <p className="mt-2 text-sm text-brand-red">{errors.address.message}</p>
               )}
             </div>
 
-            <div className="grid gap-4 md:grid-cols-2">
+            <div className="grid gap-5 md:grid-cols-2">
               <div>
-                <label htmlFor="city" className="mb-2 block text-sm font-medium text-neutral-charcoal dark:text-white">
-                  City <span className="text-red-500">*</span>
+                <label htmlFor="city" className="block text-[14px] font-medium text-[#333333] dark:text-white/90 mb-2">
+                  City <span className="text-brand-red">*</span>
                 </label>
                 <div className="relative">
                   <input
                     {...register('city')}
                     id="city"
                     type="text"
-                    className={`w-full rounded-lg border-2 px-4 py-3 pr-10 focus:ring-2 dark:bg-slate-900 dark:text-white transition-colors min-h-[48px] ${getFieldState('city').className}`}
+                    className={`w-full h-[48px] px-4 pr-10 bg-white dark:bg-slate-700 text-neutral-charcoal dark:text-white border border-[#D0D0D0] dark:border-slate-600 rounded-lg placeholder:text-[#999999] dark:placeholder:text-slate-400 focus:outline-none focus:border-[2px] focus:border-brand-bright-blue focus:shadow-[0_0_0_3px_rgba(0,119,217,0.15)] transition-all ${getFieldState('city').hasError ? '!border-brand-red' : ''} ${getFieldState('city').isValid ? '!border-brand-bright-blue' : ''}`}
                     placeholder="Springfield"
                   />
                   {getFieldState('city').isValid && (
@@ -530,20 +531,20 @@ export default function QuoteFormSimplified({ onSuccess }: QuoteFormSimplifiedPr
                   )}
                 </div>
                 {errors.city && (
-                  <p className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.city.message}</p>
+                  <p className="mt-2 text-sm text-brand-red">{errors.city.message}</p>
                 )}
               </div>
 
               <div>
-                <label htmlFor="zipCode" className="mb-2 block text-sm font-medium text-neutral-charcoal dark:text-white">
-                  ZIP Code <span className="text-red-500">*</span>
+                <label htmlFor="zipCode" className="block text-[14px] font-medium text-[#333333] dark:text-white/90 mb-2">
+                  ZIP Code <span className="text-brand-red">*</span>
                 </label>
                 <div className="relative">
                   <input
                     {...register('zipCode')}
                     id="zipCode"
                     type="text"
-                    className={`w-full rounded-lg border-2 px-4 py-3 pr-10 focus:ring-2 dark:bg-slate-900 dark:text-white transition-colors min-h-[48px] ${getFieldState('zipCode').className}`}
+                    className={`w-full h-[48px] px-4 pr-10 bg-white dark:bg-slate-700 text-neutral-charcoal dark:text-white border border-[#D0D0D0] dark:border-slate-600 rounded-lg placeholder:text-[#999999] dark:placeholder:text-slate-400 focus:outline-none focus:border-[2px] focus:border-brand-bright-blue focus:shadow-[0_0_0_3px_rgba(0,119,217,0.15)] transition-all ${getFieldState('zipCode').hasError ? '!border-brand-red' : ''} ${getFieldState('zipCode').isValid ? '!border-brand-bright-blue' : ''}`}
                     placeholder="01089"
                     maxLength={5}
                   />
@@ -555,15 +556,15 @@ export default function QuoteFormSimplified({ onSuccess }: QuoteFormSimplifiedPr
                   )}
                 </div>
                 {errors.zipCode && (
-                  <p className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.zipCode.message}</p>
+                  <p className="mt-2 text-sm text-brand-red">{errors.zipCode.message}</p>
                 )}
               </div>
             </div>
 
             {/* Facility Type - Card Selection */}
             <div className="col-span-full">
-              <label className="mb-4 block text-sm font-medium text-neutral-charcoal dark:text-white">
-                Facility Type <span className="text-red-500">*</span>
+              <label className="block text-[14px] font-medium text-[#333333] dark:text-white/90 mb-2">
+                Facility Type <span className="text-brand-red">*</span>
               </label>
               <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
                 {facilityTypes.map((type) => {
@@ -608,27 +609,27 @@ export default function QuoteFormSimplified({ onSuccess }: QuoteFormSimplifiedPr
                 })}
               </div>
               {errors.facilityType && (
-                <p className="mt-2 text-sm text-red-600 dark:text-red-400">
+                <p className="mt-2 text-sm text-brand-red">
                   {errors.facilityType.message}
                 </p>
               )}
             </div>
 
               <div>
-                <label htmlFor="squareFootage" className="mb-2 block text-sm font-medium text-neutral-charcoal dark:text-white">
+                <label htmlFor="squareFootage" className="block text-[14px] font-medium text-[#333333] dark:text-white/90 mb-2">
                   Approximate Square Footage
                 </label>
                 <input
                   {...register('squareFootage', { valueAsNumber: true })}
                   id="squareFootage"
                   type="number"
-                  className="w-full rounded-lg border-2 border-brand-deep-blue/20 px-4 py-3 focus:border-brand-bright-blue focus:shadow-[0_0_0_3px_rgba(0,119,217,0.2)] focus:outline-none dark:border-white/20 dark:bg-slate-900 dark:text-white min-h-[48px]"
+                  className="w-full h-[48px] px-4 bg-white dark:bg-slate-700 text-neutral-charcoal dark:text-white border border-[#D0D0D0] dark:border-slate-600 rounded-lg placeholder:text-[#999999] dark:placeholder:text-slate-400 focus:outline-none focus:border-[2px] focus:border-brand-bright-blue focus:shadow-[0_0_0_3px_rgba(0,119,217,0.15)] transition-all"
                   placeholder="5000"
                   min="1000"
                 />
-                <p className="mt-1 text-xs text-neutral-charcoal/60 dark:text-neutral-charcoal">Minimum: 1,000 sq ft</p>
+                <p className="mt-1 text-xs text-neutral-charcoal/60 dark:text-white/60">Minimum: 1,000 sq ft</p>
                 {errors.squareFootage && (
-                  <p className="mt-1 text-sm text-red-600 dark:text-red-400">
+                  <p className="mt-2 text-sm text-brand-red">
                     {errors.squareFootage.message}
                   </p>
                 )}
@@ -643,16 +644,16 @@ export default function QuoteFormSimplified({ onSuccess }: QuoteFormSimplifiedPr
                 Service Needs
               </h3>
 
-            <div className="grid gap-4 md:grid-cols-2">
+            <div className="grid gap-5 md:grid-cols-2">
               <div>
-                <label htmlFor="cleaningFrequency" className="mb-2 block text-sm font-medium text-neutral-charcoal dark:text-white">
-                  Desired Cleaning Frequency <span className="text-red-500">*</span>
+                <label htmlFor="cleaningFrequency" className="block text-[14px] font-medium text-[#333333] dark:text-white/90 mb-2">
+                  Desired Cleaning Frequency <span className="text-brand-red">*</span>
                 </label>
                 <div className="relative">
                   <select
                     {...register('cleaningFrequency')}
                     id="cleaningFrequency"
-                    className={`w-full h-12 rounded-lg border-2 px-4 pr-10 focus:ring-2 dark:bg-slate-900 dark:text-white transition-colors ${getFieldState('cleaningFrequency').className}`}
+                    className={`w-full h-[48px] px-4 pr-10 bg-white dark:bg-slate-700 text-neutral-charcoal dark:text-white border border-[#D0D0D0] dark:border-slate-600 rounded-lg focus:outline-none focus:border-[2px] focus:border-brand-bright-blue focus:shadow-[0_0_0_3px_rgba(0,119,217,0.15)] transition-all ${getFieldState('cleaningFrequency').hasError ? '!border-brand-red' : ''} ${getFieldState('cleaningFrequency').isValid ? '!border-brand-bright-blue' : ''}`}
                   >
                     <option value="">Select frequency...</option>
                     {frequencies.map((freq) => (
@@ -669,14 +670,14 @@ export default function QuoteFormSimplified({ onSuccess }: QuoteFormSimplifiedPr
                   )}
                 </div>
                 {errors.cleaningFrequency && (
-                  <p className="mt-1 text-sm text-red-600 dark:text-red-400">
+                  <p className="mt-2 text-sm text-brand-red">
                     {errors.cleaningFrequency.message}
                   </p>
                 )}
               </div>
 
               <div>
-                <label htmlFor="desiredStartDate" className="mb-2 block text-sm font-medium text-neutral-charcoal dark:text-white">
+                <label htmlFor="desiredStartDate" className="block text-[14px] font-medium text-[#333333] dark:text-white/90 mb-2">
                   When do you need service?
                 </label>
                 <input
@@ -684,7 +685,7 @@ export default function QuoteFormSimplified({ onSuccess }: QuoteFormSimplifiedPr
                   id="desiredStartDate"
                   type="date"
                   min={new Date().toISOString().split('T')[0]}
-                  className="w-full rounded-lg border-2 border-brand-deep-blue/20 px-4 py-3 focus:border-brand-bright-blue focus:shadow-[0_0_0_3px_rgba(0,119,217,0.2)] focus:outline-none dark:border-white/20 dark:bg-slate-900 dark:text-white min-h-[48px]"
+                  className="w-full h-[48px] px-4 bg-white dark:bg-slate-700 text-neutral-charcoal dark:text-white border border-[#D0D0D0] dark:border-slate-600 rounded-lg focus:outline-none focus:border-[2px] focus:border-brand-bright-blue focus:shadow-[0_0_0_3px_rgba(0,119,217,0.15)] transition-all"
                 />
               </div>
             </div>
@@ -723,7 +724,7 @@ export default function QuoteFormSimplified({ onSuccess }: QuoteFormSimplifiedPr
 
           {/* Additional Information */}
           <div>
-            <label htmlFor="specialRequests" className="mb-2 block text-sm font-medium text-neutral-charcoal dark:text-white">
+            <label htmlFor="specialRequests" className="block text-[14px] font-medium text-[#333333] dark:text-white/90 mb-2">
               Additional Information (Optional)
             </label>
             <textarea
@@ -731,10 +732,10 @@ export default function QuoteFormSimplified({ onSuccess }: QuoteFormSimplifiedPr
               id="specialRequests"
               rows={4}
               maxLength={500}
-              className="w-full rounded-lg border-2 border-brand-deep-blue/20 px-4 py-3 focus:border-brand-bright-blue focus:shadow-[0_0_0_3px_rgba(0,119,217,0.2)] focus:outline-none dark:border-white/20 dark:bg-slate-900 dark:text-white min-h-[48px]"
+              className="w-full px-4 py-3 bg-white dark:bg-slate-700 text-neutral-charcoal dark:text-white border border-[#D0D0D0] dark:border-slate-600 rounded-lg placeholder:text-[#999999] dark:placeholder:text-slate-400 focus:outline-none focus:border-[2px] focus:border-brand-bright-blue focus:shadow-[0_0_0_3px_rgba(0,119,217,0.15)] transition-all"
               placeholder="Tell us about any special requirements, current challenges, or questions..."
             />
-            <p className="mt-1 text-xs text-neutral-charcoal/60 dark:text-neutral-charcoal">
+            <p className="mt-1 text-xs text-neutral-charcoal/60 dark:text-white/60">
               {watch('specialRequests')?.length || 0}/500 characters
             </p>
           </div>
@@ -754,7 +755,7 @@ export default function QuoteFormSimplified({ onSuccess }: QuoteFormSimplifiedPr
             </label>
           </div>
           {errors.consent && (
-            <p className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.consent.message}</p>
+            <p className="mt-2 text-sm text-brand-red">{errors.consent.message}</p>
           )}
 
             </div>

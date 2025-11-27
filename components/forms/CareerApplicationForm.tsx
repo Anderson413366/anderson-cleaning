@@ -182,39 +182,40 @@ export default function CareerApplicationForm() {
         {step === 1 && (
           <div className="space-y-5">
             <div>
-              <label className="block text-body-sm font-semibold mb-2 text-neutral-charcoal dark:text-white">
-                Full Name *
+              <label className="block text-[14px] font-medium text-[#333333] dark:text-white/90 mb-2">
+                Full Name <span className="text-brand-red">*</span>
               </label>
               <input
                 {...register('full_name')}
                 onFocus={generateRecoveryCode}
-                className="w-full border-2 border-neutral-light-grey rounded px-4 py-2 focus:border-brand-bright-blue outline-none bg-white dark:bg-slate-800 text-neutral-charcoal dark:text-white placeholder:text-neutral-charcoal dark:placeholder:text-neutral-charcoal/60 dark:placeholder:text-neutral-charcoal"
+                className="w-full h-[48px] px-4 bg-white dark:bg-slate-700 text-neutral-charcoal dark:text-white border border-[#D0D0D0] dark:border-slate-600 rounded-lg placeholder:text-[#999999] dark:placeholder:text-slate-400 focus:outline-none focus:border-[2px] focus:border-brand-bright-blue focus:shadow-[0_0_0_3px_rgba(0,119,217,0.15)] transition-all"
               />
-              {errors.full_name && <p className="text-sm text-red-600 mt-1">{errors.full_name.message}</p>}
+              {errors.full_name && <p className="mt-2 text-sm text-brand-red">{errors.full_name.message}</p>}
             </div>
             <div>
-              <label className="block text-body-sm font-semibold mb-2 text-neutral-charcoal dark:text-white">
-                Email *
+              <label className="block text-[14px] font-medium text-[#333333] dark:text-white/90 mb-2">
+                Email <span className="text-brand-red">*</span>
               </label>
               <input
                 {...register('email')}
                 type="email"
-                className="w-full border-2 border-neutral-light-grey rounded px-4 py-2 focus:border-brand-bright-blue outline-none bg-white dark:bg-slate-800 text-neutral-charcoal dark:text-white placeholder:text-neutral-charcoal dark:placeholder:text-neutral-charcoal/60 dark:placeholder:text-neutral-charcoal"
+                className="w-full h-[48px] px-4 bg-white dark:bg-slate-700 text-neutral-charcoal dark:text-white border border-[#D0D0D0] dark:border-slate-600 rounded-lg placeholder:text-[#999999] dark:placeholder:text-slate-400 focus:outline-none focus:border-[2px] focus:border-brand-bright-blue focus:shadow-[0_0_0_3px_rgba(0,119,217,0.15)] transition-all"
               />
-              {errors.email && <p className="text-sm text-red-600 mt-1">{errors.email.message}</p>}
+              {errors.email && <p className="mt-2 text-sm text-brand-red">{errors.email.message}</p>}
             </div>
             <div>
-              <label className="block text-body-sm font-semibold mb-2 text-neutral-charcoal dark:text-white">
-                Phone *
+              <label className="block text-[14px] font-medium text-[#333333] dark:text-white/90 mb-2">
+                Phone <span className="text-brand-red">*</span>
               </label>
               <input
                 {...register('phone')}
                 type="tel"
+                autoComplete="tel"
                 placeholder="1234567890"
                 maxLength={10}
-                className="w-full border-2 border-neutral-light-grey rounded px-4 py-2 focus:border-brand-bright-blue outline-none bg-white dark:bg-slate-800 text-neutral-charcoal dark:text-white placeholder:text-neutral-charcoal dark:placeholder:text-neutral-charcoal/60 dark:placeholder:text-neutral-charcoal"
+                className="w-full h-[48px] px-4 bg-white dark:bg-slate-700 text-neutral-charcoal dark:text-white border border-[#D0D0D0] dark:border-slate-600 rounded-lg placeholder:text-[#999999] dark:placeholder:text-slate-400 focus:outline-none focus:border-[2px] focus:border-brand-bright-blue focus:shadow-[0_0_0_3px_rgba(0,119,217,0.15)] transition-all"
               />
-              {errors.phone && <p className="text-sm text-red-600 mt-1">{errors.phone.message}</p>}
+              {errors.phone && <p className="mt-2 text-sm text-brand-red">{errors.phone.message}</p>}
             </div>
             <div>
               <label className="block text-[14px] font-medium text-[#333333] dark:text-white mb-2">
@@ -258,12 +259,12 @@ export default function CareerApplicationForm() {
         {step === 2 && (
           <div className="space-y-5">
             <div>
-              <label className="block text-body-sm font-semibold mb-2 text-neutral-charcoal dark:text-white">
-                Position Applying For *
+              <label className="block text-[14px] font-medium text-[#333333] dark:text-white/90 mb-2">
+                Position Applying For <span className="text-brand-red">*</span>
               </label>
               <select
                 {...register('position')}
-                className="w-full border-2 border-neutral-light-grey rounded px-4 py-2 focus:border-brand-bright-blue outline-none bg-white dark:bg-slate-800 text-neutral-charcoal dark:text-white"
+                className="w-full h-[48px] px-4 bg-white dark:bg-slate-700 text-neutral-charcoal dark:text-white border border-[#D0D0D0] dark:border-slate-600 rounded-lg focus:outline-none focus:border-[2px] focus:border-brand-bright-blue focus:shadow-[0_0_0_3px_rgba(0,119,217,0.15)] transition-all"
               >
                 <option value="">Select a position...</option>
                 {POSITIONS.map((pos) => (
@@ -272,20 +273,20 @@ export default function CareerApplicationForm() {
                   </option>
                 ))}
               </select>
-              {errors.position && <p className="text-sm text-red-600 mt-1">{errors.position.message}</p>}
+              {errors.position && <p className="mt-2 text-sm text-brand-red">{errors.position.message}</p>}
             </div>
             <div>
-              <label className="block text-body-sm font-semibold mb-2 text-neutral-charcoal dark:text-white">
-                Why Anderson Cleaning Company? *
+              <label className="block text-[14px] font-medium text-[#333333] dark:text-white/90 mb-2">
+                Why Anderson Cleaning Company? <span className="text-brand-red">*</span>
               </label>
               <textarea
                 {...register('why_anderson')}
                 rows={4}
                 placeholder="Tell us why you want to join our team..."
-                className="w-full border-2 border-neutral-light-grey rounded px-4 py-2 focus:border-brand-bright-blue outline-none bg-white dark:bg-slate-800 text-neutral-charcoal dark:text-white placeholder:text-neutral-charcoal dark:placeholder:text-neutral-charcoal/60 dark:placeholder:text-neutral-charcoal"
+                className="w-full px-4 py-3 bg-white dark:bg-slate-700 text-neutral-charcoal dark:text-white border border-[#D0D0D0] dark:border-slate-600 rounded-lg placeholder:text-[#999999] dark:placeholder:text-slate-400 focus:outline-none focus:border-[2px] focus:border-brand-bright-blue focus:shadow-[0_0_0_3px_rgba(0,119,217,0.15)] transition-all"
               />
               {errors.why_anderson && (
-                <p className="text-sm text-red-600 mt-1">{errors.why_anderson.message}</p>
+                <p className="mt-2 text-sm text-brand-red">{errors.why_anderson.message}</p>
               )}
             </div>
             <div className="flex gap-4">
@@ -307,8 +308,8 @@ export default function CareerApplicationForm() {
         {step === 3 && (
           <div className="space-y-5">
             <div>
-              <label className="block text-body-sm font-semibold mb-2 text-neutral-charcoal dark:text-white">
-                Availability *
+              <label className="block text-[14px] font-medium text-[#333333] dark:text-white/90 mb-2">
+                Availability <span className="text-brand-red">*</span>
               </label>
               <div className="space-y-2">
                 {AVAILABILITY_OPTIONS.map((option) => (
@@ -320,23 +321,23 @@ export default function CareerApplicationForm() {
                       onChange={(e) => handleAvailabilityChange(option, e.target.checked)}
                       className="w-5 h-5"
                     />
-                    <span className="text-neutral-charcoal dark:text-white">{option}</span>
+                    <span className="text-[14px] text-neutral-charcoal dark:text-white">{option}</span>
                   </label>
                 ))}
               </div>
               {errors.availability && (
-                <p className="text-sm text-red-600 mt-1">{errors.availability.message}</p>
+                <p className="mt-2 text-sm text-brand-red">{errors.availability.message}</p>
               )}
             </div>
             <div>
-              <label className="block text-body-sm font-semibold mb-2 text-neutral-charcoal dark:text-white">
+              <label className="block text-[14px] font-medium text-[#333333] dark:text-white/90 mb-2">
                 Cover Letter (Optional)
               </label>
               <textarea
                 {...register('cover_letter')}
                 rows={4}
                 placeholder="Additional information..."
-                className="w-full border-2 border-neutral-light-grey rounded px-4 py-2 focus:border-brand-bright-blue outline-none bg-white dark:bg-slate-800 text-neutral-charcoal dark:text-white placeholder:text-neutral-charcoal dark:placeholder:text-neutral-charcoal/60 dark:placeholder:text-neutral-charcoal"
+                className="w-full px-4 py-3 bg-white dark:bg-slate-700 text-neutral-charcoal dark:text-white border border-[#D0D0D0] dark:border-slate-600 rounded-lg placeholder:text-[#999999] dark:placeholder:text-slate-400 focus:outline-none focus:border-[2px] focus:border-brand-bright-blue focus:shadow-[0_0_0_3px_rgba(0,119,217,0.15)] transition-all"
               />
             </div>
             <div className="flex gap-4">
