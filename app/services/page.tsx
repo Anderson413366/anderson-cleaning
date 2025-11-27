@@ -10,7 +10,6 @@ import {
   Building,
   Building2,
   CheckCircle2,
-  ChevronDown,
   ChevronRight,
   Factory,
   MapPin,
@@ -24,6 +23,7 @@ import { GlassIcon } from '@/components/ui/GlassIcon'
 import StructuredData from '@/components/StructuredData'
 import QuoteMiniForm from '@/components/forms/QuoteMiniForm'
 import QuoteAdvancedModal from '@/components/forms/QuoteAdvancedModal'
+import FAQAccordion from '@/components/services/FAQAccordion'
 import { serviceSlugs, servicesData } from '@/lib/services-data'
 
 // Dynamic import for ServiceAreaMap to avoid SSR issues
@@ -40,7 +40,6 @@ export default function ServicesPage() {
   const [showAdvancedModal, setShowAdvancedModal] = useState(false)
   const [trainingHours, setTrainingHours] = useState(0)
   const statsRef = useRef<HTMLDivElement>(null)
-  const [expandedFaqs, setExpandedFaqs] = useState<number[]>([0]) // First FAQ expanded by default
   // JSON-LD Structured Data for SEO
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -607,41 +606,41 @@ export default function ServicesPage() {
 
 
 
-      {/* FAQ - Interactive Accordion */}
+      {/* FAQ - Interactive Accordion with IntersectionObserver */}
       <section className="py-20 bg-neutral-off-white dark:bg-slate-900">
         <div className="container mx-auto px-6 max-w-4xl">
           <h2 className="text-h2 font-bold text-neutral-charcoal dark:text-white mb-12 text-center">
             Frequently Asked Questions
           </h2>
-          <div className="space-y-4">
-            {[
+          <FAQAccordion
+            faqs={[
               {
-                q: 'Are you insured and bonded?',
-                items: [
+                question: 'Are you insured and bonded?',
+                answer: [
                   'Comprehensive general liability insurance',
                   "Workers' compensation insurance",
                   'All staff undergo background checks',
                 ],
               },
               {
-                q: 'Do you provide cleaning supplies and equipment?',
-                items: [
+                question: 'Do you provide cleaning supplies and equipment?',
+                answer: [
                   'All cleaning supplies included',
                   'Professional equipment provided',
                   'Optional: Supply Management service for consumables (paper, soap, etc.)',
                 ],
               },
               {
-                q: 'How do you ensure quality?',
-                items: [
+                question: 'How do you ensure quality?',
+                answer: [
                   'Detailed checklists for every service',
                   'Regular quality audits',
                   'Corrective action within 24 hours',
                 ],
               },
               {
-                q: 'What is your onboarding process?',
-                items: [
+                question: 'What is your onboarding process?',
+                answer: [
                   '1. Comprehensive facility walk-through',
                   '2. Create custom SOPs for your space',
                   '3. Train our team on your requirements',
@@ -649,74 +648,16 @@ export default function ServicesPage() {
                 ],
               },
               {
-                q: 'Can I get project/specialty work without a regular contract?',
-                items: [
+                question: 'Can I get project/specialty work without a regular contract?',
+                answer: [
                   'No—project work requires an active cleaning contract',
                   'Includes: floor care, windows, post-construction',
                   'Why: Ensures proper scheduling & resource allocation',
                 ],
               },
-            ].map((faq, i) => {
-              const isExpanded = expandedFaqs.includes(i)
-
-              const toggleFaq = () => {
-                if (isExpanded) {
-                  setExpandedFaqs(expandedFaqs.filter((index) => index !== i))
-                } else {
-                  setExpandedFaqs([...expandedFaqs, i])
-                }
-              }
-
-              return (
-                <div
-                  key={i}
-                  className={`bg-white dark:bg-slate-800 border-2 rounded-lg shadow-sm transition-all duration-300 overflow-hidden ${
-                    isExpanded
-                      ? 'border-brand-bright-blue shadow-md'
-                      : 'border-neutral-light-grey dark:border-slate-700 hover:border-brand-bright-blue/50'
-                  }`}
-                >
-                  {/* Question - Clickable header */}
-                  <button
-                    onClick={toggleFaq}
-                    className={`w-full flex items-center justify-between p-6 text-left transition-colors duration-300 ${
-                      isExpanded ? 'bg-brand-bright-blue/5 dark:bg-brand-bright-blue/10' : ''
-                    }`}
-                    aria-expanded={isExpanded}
-                  >
-                    <h3 className="text-h3 leading-normal font-semibold text-neutral-charcoal dark:text-white pr-4">
-                      {faq.q}
-                    </h3>
-                    <ChevronDown
-                      className={`h-6 w-6 text-brand-bright-blue flex-shrink-0 transition-transform duration-300 ${
-                        isExpanded ? 'rotate-180' : ''
-                      }`}
-                      strokeWidth={2}
-                    />
-                  </button>
-
-                  {/* Answer - Collapsible content */}
-                  <div
-                    className={`transition-all duration-300 ease-in-out ${
-                      isExpanded ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'
-                    }`}
-                    style={{ overflow: 'hidden' }}
-                  >
-                    <div className={`p-6 pt-0 border-l-4 ${isExpanded ? 'border-brand-bright-blue' : 'border-transparent'}`}>
-                      <ul className="space-y-3">
-                        {faq.items.map((item, j) => (
-                          <li key={j} className="flex items-start text-body text-neutral-charcoal/80 dark:text-white/80">
-                            <CheckCircle2 className="h-5 w-5 text-brand-bright-blue mr-3 mt-0.5 flex-shrink-0" />
-                            <span>{item}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              )
-            })}
-          </div>
+            ]}
+            defaultExpanded={3}
+          />
         </div>
       </section>
 
