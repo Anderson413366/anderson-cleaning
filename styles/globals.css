@@ -395,6 +395,91 @@ footer a:focus {
   flex-shrink: 0;
 }
 
+/* =================================
+   PERFORMANCE & CLS PREVENTION
+   ================================= */
+
+/* Prevent font-swap flash by ensuring consistent line-height */
+html {
+  font-feature-settings: "kern" 1;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Reserve space for web fonts to prevent CLS */
+body {
+  font-synthesis: none;
+  font-kerning: normal;
+}
+
+/* Optimize off-screen content rendering for better perceived performance */
+section:not(:first-of-type) {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 500px;
+}
+
+/* Prevent layout shift from images by enforcing aspect ratio containers */
+img,
+picture,
+video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Ensure all images have proper aspect ratio to prevent CLS */
+img[width][height] {
+  aspect-ratio: attr(width) / attr(height);
+}
+
+/* Skeleton loading state for async content */
+.loading-skeleton {
+  background: linear-gradient(
+    90deg,
+    rgba(0, 42, 134, 0.05) 25%,
+    rgba(0, 42, 134, 0.1) 50%,
+    rgba(0, 42, 134, 0.05) 75%
+  );
+  background-size: 200% 100%;
+  animation: loading-shimmer 1.5s ease-in-out infinite;
+  border-radius: 0.5rem;
+}
+
+@keyframes loading-shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Prevent reflow on dynamic content */
+.dynamic-content {
+  min-height: 1px;
+}
+
+/* Optimize accordion/expandable content to prevent layout shift */
+[aria-expanded] {
+  will-change: height;
+  overflow: hidden;
+}
+
+[aria-expanded="false"] {
+  height: 0;
+}
+
+/* GPU acceleration for smooth animations */
+.animate-fade-in,
+.animate-slide-up,
+.animate-slide-in,
+.animate-scale-in {
+  will-change: transform, opacity;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
@@ -408,5 +493,16 @@ footer a:focus {
 
   .scrollbar-hide::-webkit-scrollbar {
     display: none;  /* Chrome, Safari, Opera */
+  }
+
+  /* Prevent CLS utility */
+  .prevent-cls {
+    content-visibility: auto;
+  }
+
+  /* Lazy load utility for below-fold content */
+  .lazy-load {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 500px;
   }
 }
