@@ -34,6 +34,7 @@
     "@sanity/vision": "^4.15.0",
     "@sentry/nextjs": "^8.0.0",
     "@supabase/supabase-js": "^2.81.1",
+    "@upstash/redis": "^1.35.7",
     "@vercel/og": "^0.6.0",
     "canvas": "^3.2.0",
     "clsx": "^2.1.0",
