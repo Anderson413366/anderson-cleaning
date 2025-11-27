@@ -55,7 +55,8 @@ export default function ContactPage() {
                 </h3>
 
                 <div className="space-y-4">
-                  <div className="flex items-start space-x-3">
+                  {/* Phone */}
+                  <div className="flex items-start space-x-3 pb-4 border-b border-[#E5E7EB] dark:border-slate-600">
                     <Phone className="h-5 w-5 text-brand-bright-blue mt-1 flex-shrink-0" />
                     <div>
                       <p className="font-semibold text-neutral-charcoal dark:text-white">Phone</p>
@@ -71,7 +72,8 @@ export default function ContactPage() {
                     </div>
                   </div>
 
-                  <div className="flex items-start space-x-3">
+                  {/* Email */}
+                  <div className="flex items-start space-x-3 pb-4 border-b border-[#E5E7EB] dark:border-slate-600">
                     <Mail className="h-5 w-5 text-brand-bright-blue mt-1 flex-shrink-0" />
                     <div>
                       <p className="font-semibold text-neutral-charcoal dark:text-white">Email</p>
@@ -85,6 +87,7 @@ export default function ContactPage() {
                     </div>
                   </div>
 
+                  {/* Office */}
                   <div className="flex items-start space-x-3">
                     <MapPin className="h-5 w-5 text-brand-bright-blue mt-1 flex-shrink-0" />
                     <div>
