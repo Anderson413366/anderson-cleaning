@@ -147,13 +147,13 @@ export default function BlogExplorer({ posts, categories }: BlogExplorerProps) {
                 href={`/blog/${post.slug}`}
                 className="flex flex-col bg-white dark:bg-slate-800 border border-[#E0E0E0] dark:border-slate-700 rounded-lg overflow-hidden shadow-sm hover:-translate-y-1 hover:border-brand-bright-blue transition-all duration-300 cursor-pointer group"
               >
-                {/* Image - 16:9 aspect ratio with 4px border-radius */}
-                <div className="relative aspect-video bg-neutral-light-grey dark:bg-slate-700 overflow-hidden rounded-t-[4px]">
+                {/* Image - 16:9 aspect ratio with 4px border-radius and brand gradient fallback */}
+                <div className="relative aspect-video overflow-hidden rounded-t-[4px]" style={{ background: 'linear-gradient(135deg, #0077D9 0%, #002A86 100%)' }}>
                   {imageErrors.has(post.slug) ? (
-                    <div className="absolute inset-0 bg-brand-deep-blue flex items-center justify-center">
+                    <div className="absolute inset-0 flex items-center justify-center">
                       <div className="text-center px-6">
-                        <div className="text-white/20 text-6xl font-bold mb-2">AC</div>
-                        <div className="text-white/40 text-sm font-medium">Anderson Cleaning</div>
+                        <div className="text-white/30 text-6xl font-bold mb-2">AC</div>
+                        <div className="text-white/50 text-sm font-medium">Anderson Cleaning</div>
                       </div>
                     </div>
                   ) : (
