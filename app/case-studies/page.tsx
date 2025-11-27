@@ -62,8 +62,8 @@ export default function CaseStudiesPage() {
               </p>
             </div>
 
-            {/* Case Study Cards Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Case Study Cards Grid - 2 columns on desktop */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
               {caseStudies.map((study) => {
                 const IconComponent = getIconComponent(study.icon)
 
@@ -72,10 +72,10 @@ export default function CaseStudiesPage() {
                     key={study.id}
                     href={`/case-studies/${study.slug}`}
                     aria-label={`Read case study: ${study.client.name} - ${study.client.industry}`}
-                    className="group block bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+                    className="group flex flex-col w-full max-w-[400px] mx-auto bg-white dark:bg-slate-800 rounded-lg overflow-hidden border border-[#E0E0E0] dark:border-white/10 hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
                   >
-                    {/* Featured Image Placeholder */}
-                    <div className="relative h-48 bg-neutral-off-white dark:bg-slate-900 overflow-hidden">
+                    {/* Featured Image - 16:9 Aspect Ratio */}
+                    <div className="relative aspect-video bg-gradient-to-br from-brand-deep-blue to-brand-bright-blue overflow-hidden">
                       {/* Icon Overlay */}
                       <div className="absolute inset-0 flex items-center justify-center">
                         <div className="w-20 h-20 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
@@ -106,27 +106,29 @@ export default function CaseStudiesPage() {
                     </div>
 
                     {/* Card Content */}
-                    <div className="p-6">
-                      {/* Challenge Headline */}
-                      <h3 className="text-sm font-semibold text-neutral-charcoal/70 dark:text-white/80 uppercase tracking-wide mb-2">
-                        The Challenge
-                      </h3>
-                      <p className="text-body font-bold text-neutral-charcoal dark:text-white mb-4 line-clamp-2">
+                    <div className="p-6 flex flex-col flex-1">
+                      {/* Headline - 16px bold #002A86 */}
+                      <h3 className="text-[16px] font-bold text-brand-deep-blue dark:text-white mb-3 line-clamp-2">
                         {study.challenge.headline}
+                      </h3>
+
+                      {/* Snippet - 14px #666666 */}
+                      <p className="text-[14px] text-[#666666] dark:text-white/70 mb-4 line-clamp-3">
+                        {study.challenge.description[0]}
                       </p>
 
-                      {/* Key Result */}
-                      <div className="mb-4 p-3 bg-brand-bright-blue dark:bg-brand-bright-blue rounded-lg">
+                      {/* Key Result Box */}
+                      <div className="mb-4 p-3 bg-brand-bright-blue/10 dark:bg-brand-bright-blue/20 rounded-lg border border-brand-bright-blue/20">
                         <div className="flex items-start gap-2">
                           <TrendingUp
-                            className="h-5 w-5 text-white mt-0.5 flex-shrink-0"
+                            className="h-4 w-4 text-brand-bright-blue mt-0.5 flex-shrink-0"
                             aria-hidden="true"
                           />
                           <div>
-                            <div className="text-xs font-semibold text-white uppercase tracking-wide mb-1">
+                            <div className="text-[12px] font-semibold text-neutral-charcoal dark:text-white/80 uppercase tracking-wide mb-1">
                               Key Result
                             </div>
-                            <div className="text-sm font-bold text-brand-deep-blue dark:text-white">
+                            <div className="text-[14px] font-bold text-brand-deep-blue dark:text-white">
                               {study.keyResult}
                             </div>
                           </div>
@@ -134,17 +136,17 @@ export default function CaseStudiesPage() {
                       </div>
 
                       {/* Client Info */}
-                      <div className="text-sm text-neutral-charcoal/70 dark:text-white/80 mb-4">
+                      <div className="text-[13px] text-neutral-charcoal/70 dark:text-white/70 mb-4">
                         <span className="font-semibold">{study.client.name}</span>
                         <span className="mx-2">•</span>
                         <span>{study.client.location}</span>
                       </div>
 
-                      {/* Read More Link */}
-                      <div className="flex items-center gap-2 text-brand-bright-blue font-semibold group-hover:gap-3 transition-all duration-200">
-                        <span>Read Full Story</span>
+                      {/* Read More Link - #0077D9 */}
+                      <div className="flex items-center gap-2 text-brand-bright-blue font-semibold text-[14px] group-hover:gap-3 transition-all duration-200 mt-auto">
+                        <span>Read Full Case Study</span>
                         <ArrowRight
-                          className="h-5 w-5 group-hover:translate-x-1 transition-transform duration-200"
+                          className="h-4 w-4 group-hover:translate-x-1 transition-transform duration-200"
                           aria-hidden="true"
                         />
                       </div>
