@@ -135,7 +135,7 @@ function OverviewSection({ service }: { service: ServiceData }) {
             {paragraph}
           </p>
         ))}
-        <div className="rounded-2xl border border-brand-deep-blue/20 bg-brand-deep-blue/5 p-6 dark:bg-white/5">
+        <div className="rounded-2xl border border-brand-deep-blue/20 border-l-4 border-l-brand-bright-blue bg-[#F8FAFC] p-6 dark:bg-white/5">
           <p className="text-base font-semibold text-brand-deep-blue dark:text-brand-bright-blue">Key Differentiator</p>
           <p className="text-lg text-neutral-charcoal/80 dark:text-white/80">{service.differentiator}</p>
         </div>

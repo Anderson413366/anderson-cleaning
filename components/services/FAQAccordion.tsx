@@ -83,10 +83,10 @@ export default function FAQAccordion({ faqs, defaultExpanded = 3 }: FAQAccordion
               <span className="text-base font-semibold text-neutral-charcoal dark:text-white pr-4">
                 {faq.question}
               </span>
-              {/* Chevron icon - 20x20px #0077D9, rotates 180° on expand */}
+              {/* Chevron icon - 20x20px, rotates 180° on expand, red when expanded */}
               <ChevronDown
-                className={`h-5 w-5 flex-shrink-0 text-brand-bright-blue transition-transform duration-200 ${
-                  isOpen(index) ? 'rotate-180' : ''
+                className={`h-5 w-5 flex-shrink-0 transition-all duration-200 ${
+                  isOpen(index) ? 'rotate-180 text-brand-red' : 'text-brand-bright-blue'
                 }`}
                 aria-hidden="true"
               />

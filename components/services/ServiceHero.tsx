@@ -76,10 +76,10 @@ export default function ServiceHero({ service }: ServiceHeroProps) {
                   const Icon = badge.icon
                   return (
                     <div key={index} className="flex flex-col items-center text-center">
-                      <div className="mb-3 flex h-20 w-20 items-center justify-center rounded-xl bg-white/10 backdrop-blur-sm">
+                      <div className="mb-4 flex h-20 w-20 items-center justify-center rounded-xl bg-white/10 backdrop-blur-sm">
                         <Icon className="h-9 w-9 text-white" strokeWidth={2} aria-hidden="true" />
                       </div>
-                      <p className="text-sm font-semibold text-white">{badge.label}</p>
+                      <p className="text-sm font-semibold text-white mb-2">{badge.label}</p>
                       <p className="text-xs text-white/70">{badge.description}</p>
                     </div>
                   )
@@ -93,10 +93,10 @@ export default function ServiceHero({ service }: ServiceHeroProps) {
                   return (
                     <div key={index} className="flex items-center">
                       <div className="flex flex-col items-center text-center">
-                        <div className="mb-3 flex h-20 w-20 items-center justify-center rounded-xl bg-white/10 backdrop-blur-sm">
+                        <div className="mb-4 flex h-20 w-20 items-center justify-center rounded-xl bg-white/10 backdrop-blur-sm">
                           <Icon className="h-9 w-9 text-white" strokeWidth={2} aria-hidden="true" />
                         </div>
-                        <p className="text-sm font-semibold text-white">{badge.label}</p>
+                        <p className="text-sm font-semibold text-white mb-2">{badge.label}</p>
                         <p className="text-xs text-white/70">{badge.description}</p>
                       </div>
                       {/* Divider (not on last item) */}
