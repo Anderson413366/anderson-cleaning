@@ -179,7 +179,7 @@ export default function Footer() {
                       relative group
                       text-brand-bright-blue dark:text-brand-bright-blue
                       transition-all duration-150
-                      hover:text-brand-deep-blue hover:-translate-y-0.5 dark:hover:text-white
+                      hover:opacity-80 hover:-translate-y-0.5
                       ${index < navigation.social.length - 1 ? 'mr-3' : ''}
                     `}
                     aria-label={item.name}
