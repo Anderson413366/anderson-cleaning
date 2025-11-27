@@ -169,9 +169,9 @@ export default function LocationsHub() {
                             }
                           `}
                         >
-                          {/* Headquarters Badge */}
+                          {/* Headquarters Badge - prominent red pill positioned top-right */}
                           {city.isHeadquarters && (
-                            <div className="absolute -top-2 left-1/2 -translate-x-1/2 inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-brand-deep-blue text-white text-[10px] font-bold uppercase tracking-wider shadow-md whitespace-nowrap">
+                            <div className="absolute -top-2 -right-2 inline-flex items-center gap-1 px-2 py-1 rounded-full bg-brand-red text-white text-[10px] font-bold uppercase tracking-wider shadow-md whitespace-nowrap">
                               <MapPin className="h-2.5 w-2.5" aria-hidden="true" />
                               HQ
                             </div>
