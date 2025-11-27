@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, Suspense } from 'react'
 import { useSearchParams } from 'next/navigation'
 import { Button } from '@/components/ui/Button'
 import { GlassIcon } from '@/components/ui/GlassIcon'
@@ -394,7 +394,7 @@ const translations = {
   },
 }
 
-export default function CareersPage() {
+function CareersContent() {
   const searchParams = useSearchParams()
   const [currentLang, setCurrentLang] = useState<Language>('en')
 
@@ -604,5 +604,13 @@ export default function CareersPage() {
         </div>
       </section>
     </main>
+  )
+}
+
+export default function CareersPage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen bg-white dark:bg-slate-900" />}>
+      <CareersContent />
+    </Suspense>
   )
 }
