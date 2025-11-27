@@ -300,7 +300,14 @@ export default function QuoteFormSimplified({ onSuccess }: QuoteFormSimplifiedPr
               { num: 2, label: 'Facility Details' },
               { num: 3, label: 'Service Needs' },
             ].map(({ num, label }) => (
-              <div key={num} className="relative z-10 flex flex-col items-center">
+              <div
+                key={num}
+                className={`relative z-10 flex flex-col items-center px-3 py-2 rounded-lg transition-all ${
+                  num === currentStep
+                    ? 'bg-brand-bright-blue/10 dark:bg-brand-bright-blue/20'
+                    : ''
+                }`}
+              >
                 <div
                   className={`flex items-center justify-center w-10 h-10 rounded-full font-semibold transition-all ${
                     num < currentStep
