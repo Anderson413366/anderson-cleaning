@@ -123,6 +123,11 @@ const config: Config = {
         '18': '4.5rem', // 72px
         '88': '22rem', // 352px
         '128': '32rem', // 512px
+        // Safe area insets for iPhone notch devices
+        'safe-top': 'var(--safe-area-inset-top)',
+        'safe-bottom': 'var(--safe-area-inset-bottom)',
+        'safe-left': 'var(--safe-area-inset-left)',
+        'safe-right': 'var(--safe-area-inset-right)',
       },
       borderRadius: {
         // Consistent border radius

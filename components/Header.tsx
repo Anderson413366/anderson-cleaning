@@ -762,7 +762,7 @@ export default function Header() {
 
       {/* Mobile Sticky Contact Bar - Single Quote CTA */}
       <div
-        className={`fixed bottom-0 left-0 right-0 z-[120] bg-white/95 backdrop-blur-sm border-t border-brand-deep-blue/10 shadow-lg transition-transform duration-200 dark:border-white/10 dark:bg-brand-deep-blue/95 lg:hidden ${
+        className={`fixed bottom-0 left-0 right-0 z-[120] bg-white/95 backdrop-blur-sm border-t border-brand-deep-blue/10 shadow-lg transition-transform duration-200 dark:border-white/10 dark:bg-brand-deep-blue/95 lg:hidden pb-safe-bottom ${
           mobileMenuOpen ? 'translate-y-full' : 'translate-y-0'
         }`}
       >

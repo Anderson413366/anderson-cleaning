@@ -29,6 +29,13 @@ const inter = Inter({
 
 const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://andersoncleaning.com'
 
+// Viewport configuration for safe-area support on notched devices
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  viewportFit: 'cover',
+}
+
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {

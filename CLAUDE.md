@@ -154,6 +154,23 @@ All `<input>`, `<textarea>`, `<select>` elements automatically receive:
 - `.hero-section` - Enhanced hero spacing (96px desktop, 64px mobile)
 - `.hero-badge` - Extra margin for secondary hero elements
 
+### Mobile Safe-Area Support
+
+**iPhone Notch Compatibility** (`app/layout.tsx` + `styles/globals.css` + `tailwind.config.ts`):
+- Viewport: `viewportFit: 'cover'` enables safe-area insets
+- CSS Variables: `--safe-area-inset-*` with 16px minimum fallback for bottom
+- Tailwind Utilities: `pb-safe-bottom`, `pt-safe-top`, `pl-safe-left`, `pr-safe-right`
+- Applied to: Footer, CookieBanner, Header mobile sticky nav
+- Ensures bottom CTAs and fixed elements don't overlap iPhone notch/home indicator
+
+**Usage**:
+```tsx
+// Apply to fixed bottom elements
+<div className="fixed bottom-0 left-0 right-0 pb-safe-bottom">
+  {/* Content */}
+</div>
+```
+
 ### Dark Mode Implementation
 
 **Theme Provider** (`lib/ThemeProvider.tsx`):

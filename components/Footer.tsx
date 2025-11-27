@@ -103,7 +103,7 @@ export default function Footer() {
   return (
     <>
       {/* Main Footer - Four Columns with Standardized Styling */}
-      <footer className="bg-neutral-off-white dark:bg-brand-deep-blue text-neutral-charcoal dark:text-white transition-colors duration-300 border-t border-[#E0E0E0] dark:border-white/10" aria-labelledby="footer-heading">
+      <footer className="bg-neutral-off-white dark:bg-brand-deep-blue text-neutral-charcoal dark:text-white transition-colors duration-300 border-t border-[#E0E0E0] dark:border-white/10 pb-safe-bottom" aria-labelledby="footer-heading">
         <h2 id="footer-heading" className="sr-only">
           Footer
         </h2>
