@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, useRef } from 'react'
+import { useState, useRef } from 'react'
 import Link from 'next/link'
 import dynamic from 'next/dynamic'
 
@@ -38,7 +38,7 @@ const ServiceAreaMap = dynamic(() => import('@/components/maps/ServiceAreaMap'),
 
 export default function ServicesPage() {
   const [showAdvancedModal, setShowAdvancedModal] = useState(false)
-  const [trainingHours, setTrainingHours] = useState(40)
+  const trainingHours = 40 // Static value - no animation needed
   const statsRef = useRef<HTMLDivElement>(null)
   // JSON-LD Structured Data for SEO
   const jsonLd = {
@@ -117,39 +117,6 @@ export default function ServicesPage() {
   }
 
   const services = serviceSlugs.map((slug) => servicesData[slug])
-
-  // Animated counter effect for training hours
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting && trainingHours === 0) {
-            let current = 0
-            const target = 40
-            const duration = 2000 // 2 seconds
-            const increment = target / (duration / 16) // 60fps
-
-            const timer = setInterval(() => {
-              current += increment
-              if (current >= target) {
-                setTrainingHours(target)
-                clearInterval(timer)
-              } else {
-                setTrainingHours(Math.floor(current))
-              }
-            }, 16)
-          }
-        })
-      },
-      { threshold: 0.5 }
-    )
-
-    if (statsRef.current) {
-      observer.observe(statsRef.current)
-    }
-
-    return () => observer.disconnect()
-  }, [trainingHours])
 
   return (
     <div className="min-h-screen bg-neutral-off-white dark:bg-slate-900 transition-colors duration-300">

@@ -217,7 +217,7 @@ export default function AboutPage() {
                 return (
                   <div
                     key={idx}
-                    className="w-[240px] bg-white dark:bg-slate-900 border border-neutral-light-grey dark:border-slate-700 rounded-xl p-6 text-center shadow-sm hover:shadow-md transition-shadow"
+                    className="w-[240px] bg-white dark:bg-slate-900 border border-neutral-light-grey dark:border-slate-700 rounded-xl p-6 text-center shadow-sm hover:shadow-lg hover:border-brand-bright-blue hover:-translate-y-1 transition-all duration-200"
                   >
                     {/* 120x120 avatar circle - #0077D9 background, white initials */}
                     <div className="w-[120px] h-[120px] mx-auto mb-4 rounded-full bg-brand-bright-blue flex items-center justify-center shadow-lg">
@@ -402,7 +402,7 @@ export default function AboutPage() {
               ].map((item, index) => (
                 <div
                   key={index}
-                  className="flex items-start gap-4 bg-white dark:bg-slate-800 border border-neutral-light-grey dark:border-slate-700 rounded-xl p-6 shadow-sm"
+                  className="flex items-start gap-4 bg-white dark:bg-slate-800 border border-neutral-light-grey dark:border-slate-700 rounded-xl p-6 shadow-sm hover:shadow-lg hover:border-brand-bright-blue hover:-translate-y-1 transition-all duration-200"
                 >
                   <div className="flex items-center justify-center w-10 h-10 bg-brand-deep-blue text-white rounded-full text-body font-bold flex-shrink-0">
                     {index + 1}

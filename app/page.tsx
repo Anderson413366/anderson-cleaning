@@ -278,7 +278,7 @@ export default function Home() {
             ].map((testimonial, i) => (
               <div
                 key={i}
-                className="bg-white dark:bg-slate-800 rounded-xl p-8 shadow-[0_2px_8px_rgba(0,42,134,0.08)]"
+                className="bg-white dark:bg-slate-800 rounded-xl p-8 shadow-[0_2px_8px_rgba(0,42,134,0.08)] border border-transparent hover:border-brand-bright-blue hover:shadow-[0_4px_16px_rgba(0,42,134,0.12)] hover:-translate-y-1 transition-all duration-200"
               >
                 <div className="flex items-center space-x-1 mb-4" role="img" aria-label={`${testimonial.rating} out of 5 stars`}>
                   {[...Array(testimonial.rating)].map((_, j) => (
