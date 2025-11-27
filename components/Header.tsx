@@ -207,13 +207,13 @@ export default function Header() {
         <div className="flex lg:hidden">
           <button
             type="button"
-            className="-m-2.5 inline-flex items-center justify-center rounded-lg p-3 text-neutral-charcoal dark:text-white border-2 border-neutral-charcoal/20 dark:border-white/20 hover:bg-neutral-charcoal/5 dark:hover:bg-white/10 transition-colors min-h-[48px] min-w-[48px]"
+            className="-m-2.5 inline-flex items-center justify-center rounded-lg p-3 text-neutral-charcoal dark:text-white border-2 border-neutral-charcoal/20 dark:border-white/20 hover:bg-neutral-charcoal/5 dark:hover:bg-white/10 transition-colors min-h-[56px] min-w-[56px]"
             onClick={() => setMobileMenuOpen(true)}
             aria-label="Open main menu"
             aria-expanded={mobileMenuOpen}
           >
             <span className="sr-only">Open main menu</span>
-            <Menu className="h-7 w-7" aria-hidden="true" strokeWidth={2} />
+            <Menu className="h-7 w-7" aria-hidden="true" strokeWidth={2.5} />
           </button>
         </div>
 
@@ -550,12 +550,12 @@ export default function Header() {
               </Link>
               <button
                 type="button"
-                className="-m-2.5 rounded-full p-3 text-neutral-charcoal dark:text-white hover:bg-neutral-light-grey dark:hover:bg-white/10 transition-colors min-h-[48px] min-w-[48px] inline-flex items-center justify-center"
+                className="-m-2.5 rounded-full p-3 text-neutral-charcoal dark:text-white hover:bg-neutral-light-grey dark:hover:bg-white/10 transition-colors min-h-[56px] min-w-[56px] inline-flex items-center justify-center"
                 onClick={() => setMobileMenuOpen(false)}
                 aria-label="Close menu"
               >
                 <span className="sr-only">Close menu</span>
-                <X className="h-6 w-6" aria-hidden="true" />
+                <X className="h-7 w-7" aria-hidden="true" strokeWidth={2.5} />
               </button>
             </div>
             <div className="mt-6 flow-root">
@@ -600,7 +600,7 @@ export default function Header() {
                           activeDropdown === 'mobile-services' ? null : 'mobile-services'
                         )
                       }
-                      className="flex w-full items-center justify-between py-4 text-left text-base font-semibold text-neutral-charcoal dark:text-white min-h-[48px]"
+                      className="flex w-full items-center justify-between py-4 text-left text-lg font-semibold text-neutral-charcoal dark:text-white min-h-[48px]"
                       aria-expanded={activeDropdown === 'mobile-services'}
                     >
                       Services
@@ -616,7 +616,7 @@ export default function Header() {
                           <Link
                             key={service.href}
                             href={service.href}
-                            className="block py-3 text-sm text-neutral-charcoal/70 hover:text-brand-bright-blue dark:text-neutral-charcoal dark:hover:text-brand-bright-blue min-h-[44px] flex items-center"
+                            className="block py-3 text-base text-neutral-charcoal/70 hover:text-brand-bright-blue dark:text-neutral-charcoal dark:hover:text-brand-bright-blue min-h-[48px] flex items-center"
                             onClick={() => setMobileMenuOpen(false)}
                           >
                             {service.title}
@@ -624,7 +624,7 @@ export default function Header() {
                         ))}
                         <Link
                           href="/services"
-                          className="block py-3 text-sm font-medium text-brand-bright-blue hover:text-[#006bc4] min-h-[44px] flex items-center"
+                          className="block py-3 text-base font-medium text-brand-bright-blue hover:text-[#006bc4] min-h-[48px] flex items-center"
                           onClick={() => setMobileMenuOpen(false)}
                         >
                           View All →
@@ -641,7 +641,7 @@ export default function Header() {
                           activeDropdown === 'mobile-industries' ? null : 'mobile-industries'
                         )
                       }
-                      className="flex w-full items-center justify-between py-4 text-left text-base font-semibold text-neutral-charcoal dark:text-white min-h-[48px]"
+                      className="flex w-full items-center justify-between py-4 text-left text-lg font-semibold text-neutral-charcoal dark:text-white min-h-[48px]"
                       aria-expanded={activeDropdown === 'mobile-industries'}
                     >
                       Industries
@@ -657,7 +657,7 @@ export default function Header() {
                           <Link
                             key={industry.href}
                             href={industry.href}
-                            className="block py-3 text-sm text-neutral-charcoal/70 hover:text-brand-bright-blue dark:text-neutral-charcoal dark:hover:text-brand-bright-blue min-h-[44px] flex items-center"
+                            className="block py-3 text-base text-neutral-charcoal/70 hover:text-brand-bright-blue dark:text-neutral-charcoal dark:hover:text-brand-bright-blue min-h-[48px] flex items-center"
                             onClick={() => setMobileMenuOpen(false)}
                           >
                             {industry.title}
@@ -665,7 +665,7 @@ export default function Header() {
                         ))}
                         <Link
                           href="/industries"
-                          className="block py-3 text-sm font-medium text-brand-bright-blue hover:text-[#006bc4] min-h-[44px] flex items-center"
+                          className="block py-3 text-base font-medium text-brand-bright-blue hover:text-[#006bc4] min-h-[48px] flex items-center"
                           onClick={() => setMobileMenuOpen(false)}
                         >
                           View All →
@@ -682,7 +682,7 @@ export default function Header() {
                           activeDropdown === 'mobile-locations' ? null : 'mobile-locations'
                         )
                       }
-                      className="flex w-full items-center justify-between py-4 text-left text-base font-semibold text-neutral-charcoal dark:text-white min-h-[48px]"
+                      className="flex w-full items-center justify-between py-4 text-left text-lg font-semibold text-neutral-charcoal dark:text-white min-h-[48px]"
                       aria-expanded={activeDropdown === 'mobile-locations'}
                     >
                       Locations
@@ -701,7 +701,7 @@ export default function Header() {
                           <Link
                             key={location.slug}
                             href={`/locations/${location.slug}`}
-                            className="block py-2.5 text-sm text-neutral-charcoal/70 hover:text-brand-bright-blue dark:text-neutral-charcoal dark:hover:text-brand-bright-blue min-h-[40px] flex items-center"
+                            className="block py-3 text-base text-neutral-charcoal/70 hover:text-brand-bright-blue dark:text-neutral-charcoal dark:hover:text-brand-bright-blue min-h-[48px] flex items-center"
                             onClick={() => setMobileMenuOpen(false)}
                           >
                             {location.name}
@@ -714,7 +714,7 @@ export default function Header() {
                           <Link
                             key={location.slug}
                             href={`/locations/${location.slug}`}
-                            className="block py-2.5 text-sm text-neutral-charcoal/70 hover:text-brand-bright-blue dark:text-neutral-charcoal dark:hover:text-brand-bright-blue min-h-[40px] flex items-center"
+                            className="block py-3 text-base text-neutral-charcoal/70 hover:text-brand-bright-blue dark:text-neutral-charcoal dark:hover:text-brand-bright-blue min-h-[48px] flex items-center"
                             onClick={() => setMobileMenuOpen(false)}
                           >
                             {location.name}
@@ -722,7 +722,7 @@ export default function Header() {
                         ))}
                         <Link
                           href="/locations"
-                          className="block py-3 text-sm font-medium text-brand-bright-blue hover:text-[#006bc4] pt-3 min-h-[44px] flex items-center"
+                          className="block py-3 text-base font-medium text-brand-bright-blue hover:text-[#006bc4] pt-3 min-h-[48px] flex items-center"
                           onClick={() => setMobileMenuOpen(false)}
                         >
                           View All →
@@ -739,7 +739,7 @@ export default function Header() {
                           activeDropdown === 'mobile-resources' ? null : 'mobile-resources'
                         )
                       }
-                      className="flex w-full items-center justify-between py-4 text-left text-base font-semibold text-neutral-charcoal dark:text-white min-h-[48px]"
+                      className="flex w-full items-center justify-between py-4 text-left text-lg font-semibold text-neutral-charcoal dark:text-white min-h-[48px]"
                       aria-expanded={activeDropdown === 'mobile-resources'}
                     >
                       Resources
@@ -755,7 +755,7 @@ export default function Header() {
                           <Link
                             key={item.href}
                             href={item.href}
-                            className="block py-3 text-sm text-neutral-charcoal/70 hover:text-brand-bright-blue dark:text-neutral-charcoal dark:hover:text-brand-bright-blue min-h-[44px] flex items-center"
+                            className="block py-3 text-base text-neutral-charcoal/70 hover:text-brand-bright-blue dark:text-neutral-charcoal dark:hover:text-brand-bright-blue min-h-[48px] flex items-center"
                             onClick={() => setMobileMenuOpen(false)}
                           >
                             {item.name}
