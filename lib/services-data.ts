@@ -192,7 +192,7 @@ export const servicesData: Record<ServiceSlug, ServiceData> = {
     heroImage: hero('healthcare-cleaning', 'Healthcare cleaning specialist disinfecting a Massachusetts medical office'),
     differentiator: 'HIPAA-aware staff with OSHA and bloodborne pathogen certifications.',
     overview: [
-      'Healthcare providers across Hampden, Hampshire, and Hartford counties trust our EVS-trained supervisors to maintain exam rooms, imaging suites, and waiting areas without interrupting patient care. We begin by performing a compliance audit that references your accreditation body, infection control plans, and manufacturer instructions for your equipment. From there we build color-coded SOPs that address terminal cleaning sequences, sharps isolation, chemo spill kits, and any special handling instructions your medical director requires.',
+      'Healthcare providers across Western Massachusetts and Northern Connecticut trust our EVS-trained supervisors to maintain exam rooms, imaging suites, and waiting areas without interrupting patient care. We begin by performing a compliance audit that references your accreditation body, infection control plans, and manufacturer instructions for your equipment. From there we build color-coded SOPs that address terminal cleaning sequences, sharps isolation, chemo spill kits, and any special handling instructions your medical director requires.',
       'Our program emphasizes preventing cross-contamination. Microfiber cloths and mops are segmented by color for clinical, semi-clinical, and public spaces, and each device is laundered to CDC standards after a single room use. EPA List N disinfectants are selected for efficacy against emerging pathogens but also for compatibility with stainless steel, vinyl upholstery, and electronic monitoring surfaces. We document chemical dwell times in our mobile app so your infection control nurse can review timestamps anytime.',
       'Because your staff manages PHI, every Anderson team member receives HIPAA awareness training, annual bloodborne pathogen refreshers, and respirator fit testing when required. We coordinate directly with practice managers to schedule cleaning windows after last patient discharge or during low census blocks. If an urgent site needs support, we deploy a certified disinfection team within four hours and provide completion documentation for your regulatory files.',
     ],
@@ -402,7 +402,7 @@ export const servicesData: Record<ServiceSlug, ServiceData> = {
       {
         quote: 'They handle our campus interior glass overnight so we never disturb patients. Their pressure washing team keeps our facade spotless too.',
         author: 'Emily Donahue',
-        role: 'Director of Facilities, Hartford Medical Arts',
+        role: 'Director of Facilities, Pioneer Valley Medical Center',
       },
     ],
     relatedServices: ['floor-care', 'day-porter', 'office-cleaning'],
@@ -580,7 +580,7 @@ export const servicesData: Record<ServiceSlug, ServiceData> = {
       {
         quote: 'During flu season our porter disinfects touchpoints hourly and keeps visitors calm. Facilities leadership noticed the difference immediately.',
         author: 'Rachel Freeman',
-        role: 'COO, Hartford Medical Pavilion',
+        role: 'COO, Springfield Medical Pavilion',
       },
     ],
     relatedServices: ['office-cleaning', 'janitorial-services', 'window-cleaning'],

@@ -87,7 +87,7 @@ export default async function IndustryPage({
           'Chicopee',
           'Holyoke',
           'Northampton',
-          'Hartford',
+          'Enfield',
         ]}
       />
       <IndustryTemplate industry={industry} />

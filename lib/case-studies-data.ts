@@ -180,7 +180,7 @@ export const caseStudies: CaseStudy[] = [
     client: {
       name: 'Harrington & Associates Law',
       industry: 'Corporate Offices',
-      location: 'Worcester, MA',
+      location: 'Springfield, MA',
       facilitySize: '22,000 sq ft',
       employees: 68,
     },
@@ -192,7 +192,7 @@ export const caseStudies: CaseStudy[] = [
     challenge: {
       headline: 'Poor office presentation damaging professional image and employee morale',
       description: [
-        'Harrington & Associates is a prestigious law firm serving corporate clients across New England. Their Worcester headquarters occupies three floors of a downtown office building, with conference rooms, private offices, a law library, and client reception areas that see dozens of visitors daily.',
+        'Harrington & Associates is a prestigious law firm serving corporate clients across New England. Their Springfield headquarters occupies three floors of a downtown office building, with conference rooms, private offices, a law library, and client reception areas that see dozens of visitors daily.',
         'Despite charging premium rates, the firm\'s office appearance was undermining their professional image. Carpets showed visible stains and traffic patterns. Dust accumulated on conference room tables between cleanings. Restrooms frequently ran out of supplies during business hours. Client-facing areas looked tired and unkempt.',
         'An internal employee satisfaction survey revealed that workplace cleanliness was the #2 complaint, with 64% of attorneys and staff expressing dissatisfaction. Several partners reported that clients had made comments about the office appearance. The firm\'s previous cleaning service came sporadically, often skipped scheduled visits without notice, and showed little attention to detail.',
         'The managing partner recognized that office environment directly impacts both employee retention and client perception. They needed a cleaning partner who understood that a law firm\'s office is a reflection of its professionalism and attention to detail.',
@@ -481,7 +481,7 @@ export const caseStudies: CaseStudy[] = [
     client: {
       name: 'Hamilton & Associates Law',
       industry: 'Corporate Offices',
-      location: 'Hartford, CT',
+      location: 'Springfield, MA',
       facilitySize: '45,000 sq ft',
       employees: 82,
     },
@@ -493,7 +493,7 @@ export const caseStudies: CaseStudy[] = [
     challenge: {
       headline: 'Corporate sustainability goals required LEED certification and healthier workplace',
       description: [
-        'Hamilton & Associates Law is a prestigious corporate law firm representing Fortune 500 clients across industries with strong environmental, social, and governance (ESG) commitments. To maintain relevance with these clients, the firm needed to demonstrate its own commitment to sustainability through LEED Gold certification of their Hartford headquarters.',
+        'Hamilton & Associates Law is a prestigious corporate law firm representing Fortune 500 clients across industries with strong environmental, social, and governance (ESG) commitments. To maintain relevance with these clients, the firm needed to demonstrate its own commitment to sustainability through LEED Gold certification of their Springfield headquarters.',
         'The firm\'s existing cleaning program used traditional chemical-based products that left strong odors in the office overnight. Several partners and staff members had reported respiratory irritation, headaches, and sensitivity to cleaning product fragrances. The managing partner wanted a healthier workplace that aligned with the firm\'s values.',
         'LEED certification requires documented green cleaning policies, use of environmentally preferable products, and measurable improvements in indoor environmental quality. The firm\'s previous cleaning contractor had no green cleaning program and no experience with LEED requirements. The certification audit was scheduled for 18 months out, creating a firm deadline.',
         'Beyond certification, the firm\'s leadership recognized that younger attorneys and staff increasingly prioritize employer sustainability practices. A green workplace was becoming not just an environmental issue, but a talent recruitment and retention advantage in a competitive legal market.',

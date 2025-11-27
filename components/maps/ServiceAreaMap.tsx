@@ -61,16 +61,16 @@ function CustomZoomControls() {
 // West Springfield, MA (zip 01089) - center point
 const centerPoint: [number, number] = [42.1015, -72.5898]
 
-// 100 miles in meters (1 mile = 1609.34 meters)
-const radiusInMeters = 100 * 1609.34
+// 60 miles in meters (1 mile = 1609.34 meters)
+const radiusInMeters = 60 * 1609.34
 
-// Major cities to mark on the map
+// Major cities to mark on the map - actual service areas
 const cities = [
   { name: 'West Springfield, MA', position: [42.1015, -72.5898] as [number, number] },
   { name: 'Springfield, MA', position: [42.1015, -72.5898] as [number, number] },
-  { name: 'Hartford, CT', position: [41.7658, -72.6734] as [number, number] },
-  { name: 'Worcester, MA', position: [42.2626, -71.8023] as [number, number] },
-  { name: 'New Haven, CT', position: [41.3083, -72.9279] as [number, number] },
+  { name: 'Northampton, MA', position: [42.3251, -72.6412] as [number, number] },
+  { name: 'Pittsfield, MA', position: [42.4501, -73.2454] as [number, number] },
+  { name: 'Enfield, CT', position: [41.9762, -72.5918] as [number, number] },
 ]
 
 export default function ServiceAreaMap() {
@@ -91,7 +91,7 @@ export default function ServiceAreaMap() {
           maxZoom={19}
         />
 
-        {/* 100-mile service radius - semi-transparent Bright Blue circle */}
+        {/* 60-mile service radius - semi-transparent Bright Blue circle */}
         <Circle
           center={centerPoint}
           radius={radiusInMeters}

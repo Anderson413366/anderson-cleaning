@@ -64,7 +64,6 @@ const LOCATIONS_MENU = {
     { name: 'Northampton & Amherst', slug: 'northampton-amherst-ma' },
   ],
   connecticut: [
-    { name: 'Hartford', slug: 'hartford-ct' },
     { name: 'Enfield', slug: 'enfield-ct' },
     { name: 'Windsor', slug: 'windsor-ct' },
   ],

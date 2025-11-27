@@ -24,7 +24,7 @@ const formSchema = z.object({
 type FormData = z.infer<typeof formSchema>
 
 const POSITIONS = [
-  'Cleaning Specialist - Springfield/Hartford',
+  'Cleaning Specialist - Western MA & North CT',
   'Field Supervisor - West Springfield',
   'Operations Assistant - Evening Shift',
   'Other - Specify in cover letter',

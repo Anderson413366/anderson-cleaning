@@ -281,7 +281,7 @@ const CITY_DATA: Record<string, CityData> = {
       'Quick response times from nearby West Springfield',
       'Competitive pricing for Enfield area businesses',
     ],
-    localContext: 'Connecticut\'s northernmost town and a key gateway between Massachusetts and Hartford. We provide commercial cleaning for office parks along Route 5, retail centers near Enfield Square, and medical practices serving the growing community.',
+    localContext: 'Connecticut\'s northernmost town and a gateway between Massachusetts and central Connecticut. We provide commercial cleaning for office parks along Route 5, retail centers near Enfield Square, and medical practices serving the growing community.',
     facilityTypes: ['Office parks and business centers', 'Retail and shopping centers', 'Medical offices', 'Manufacturing facilities', 'Professional service firms'],
     caseStudySlugs: ['corporate-office-improves-employee-satisfaction'],
   },

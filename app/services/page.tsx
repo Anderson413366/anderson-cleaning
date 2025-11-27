@@ -73,12 +73,12 @@ export default function ServicesPage() {
         },
         {
           '@type': 'City',
-          name: 'Worcester',
+          name: 'Northampton',
           containedIn: { '@type': 'State', name: 'Massachusetts' },
         },
         {
           '@type': 'City',
-          name: 'Hartford',
+          name: 'Enfield',
           containedIn: { '@type': 'State', name: 'Connecticut' },
         },
       ],
@@ -443,7 +443,7 @@ export default function ServicesPage() {
               },
               {
                 title: 'Zero Complaints Achievement',
-                location: 'Hartford, CT',
+                location: 'Springfield, MA',
                 industry: 'Corporate Office',
                 facilitySize: '3-floor, 200-employee HQ',
                 metricNumber: 'Zero',
@@ -558,7 +558,7 @@ export default function ServicesPage() {
                   Major Cities Served
                 </h3>
                 <ul className="space-y-2 text-body-sm text-neutral-charcoal/70 dark:text-white/80">
-                  {['Springfield, MA', 'Hartford, CT', 'Worcester, MA', 'New Haven, CT'].map((city) => (
+                  {['Springfield, MA', 'Northampton, MA', 'Pittsfield, MA', 'Enfield, CT'].map((city) => (
                     <li key={city} className="flex items-start">
                       <MapPin className="h-5 w-5 text-brand-bright-blue mr-2 mt-0.5 flex-shrink-0" />
                       <span>{city}</span>

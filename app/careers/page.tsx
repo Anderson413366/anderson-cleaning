@@ -82,7 +82,7 @@ const translations = {
       roles: [
         {
           title: 'Cleaning Specialist',
-          locationLabel: 'Springfield/Hartford Area',
+          locationLabel: 'Western MA & North CT',
           typeLabel: 'Part-time & Full-time',
           rateLabel: '$15-20/hour',
           bullets: [
@@ -104,7 +104,7 @@ const translations = {
         },
         {
           title: 'Operations Assistant',
-          locationLabel: 'Springfield/Hartford Area',
+          locationLabel: 'Western MA & North CT',
           typeLabel: 'Full-time or Part-time',
           rateLabel: '$18-22/hour',
           bullets: [
@@ -173,7 +173,7 @@ const translations = {
       roles: [
         {
           title: 'Especialista en Limpieza',
-          locationLabel: 'Área Springfield/Hartford',
+          locationLabel: 'Western MA e North CT',
           typeLabel: 'Tiempo parcial y completo',
           rateLabel: '$15-20/hora',
           bullets: [
@@ -195,7 +195,7 @@ const translations = {
         },
         {
           title: 'Asistente de Operaciones',
-          locationLabel: 'Área Springfield/Hartford',
+          locationLabel: 'Western MA e North CT',
           typeLabel: 'Tiempo completo o parcial',
           rateLabel: '$18-22/hora',
           bullets: [
@@ -264,7 +264,7 @@ const translations = {
       roles: [
         {
           title: 'Especialista em Limpeza',
-          locationLabel: 'Área Springfield/Hartford',
+          locationLabel: 'Western MA e North CT',
           typeLabel: 'Meio período e integral',
           rateLabel: '$15-20/hora',
           bullets: [
@@ -286,7 +286,7 @@ const translations = {
         },
         {
           title: 'Assistente de Operações',
-          locationLabel: 'Área Springfield/Hartford',
+          locationLabel: 'Western MA e North CT',
           typeLabel: 'Período integral ou parcial',
           rateLabel: '$18-22/hora',
           bullets: [
@@ -355,7 +355,7 @@ const translations = {
       roles: [
         {
           title: 'Specialist în Curățenie',
-          locationLabel: 'Zona Springfield/Hartford',
+          locationLabel: 'Western MA e North CT',
           typeLabel: 'Part-time și full-time',
           rateLabel: '$15-20/oră',
           bullets: [
@@ -377,7 +377,7 @@ const translations = {
         },
         {
           title: 'Asistent Operațiuni',
-          locationLabel: 'Zona Springfield/Hartford',
+          locationLabel: 'Western MA e North CT',
           typeLabel: 'Full-time sau part-time',
           rateLabel: '$18-22/oră',
           bullets: [

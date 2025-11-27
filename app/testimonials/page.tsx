@@ -95,7 +95,7 @@ const testimonials: Testimonial[] = [
       "Best investment we've made for our office. The supply management program means we never run out of soap, paper towels, or cleaning supplies. It's one less thing I have to worry about, and Anderson's bulk pricing actually saves us money.",
     name: "Kevin O'Brien",
     title: 'Office Manager',
-    company: 'Hartford Law Associates',
+    company: 'Springfield Law Associates',
     industry: 'Office',
     service: 'Supply Management',
     rating: 5,
