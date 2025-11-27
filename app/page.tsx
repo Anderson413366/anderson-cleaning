@@ -111,7 +111,7 @@ export default function Home() {
             ].map((service, i) => (
               <div
                 key={i}
-                className="h-[240px] bg-white dark:bg-slate-800 rounded-xl p-6 border border-neutral-light-grey dark:border-slate-700 hover:border-brand-bright-blue hover:shadow-lg transition-all duration-200 flex flex-col"
+                className="h-[240px] bg-white dark:bg-slate-800 rounded-xl p-6 border border-neutral-light-grey dark:border-slate-700 hover:border-brand-bright-blue hover:scale-[1.02] hover:shadow-[0_4px_12px_rgba(0,42,134,0.1)] transition-all duration-200 ease-in-out flex flex-col"
               >
                 {/* Icon */}
                 <div className="mb-4">
