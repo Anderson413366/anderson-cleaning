@@ -181,17 +181,20 @@ export default function ContactForm({ onSuccess }: ContactFormProps) {
           {errors.message && <p className={errorClassName}>{errors.message.message}</p>}
         </div>
 
-        {/* Honeypot field - hidden from users */}
-        <input
-          {...register('website')}
-          type="text"
-          id="website"
-          name="website"
-          tabIndex={-1}
-          autoComplete="off"
-          className="absolute left-[-9999px]"
-          aria-hidden="true"
-        />
+        {/* Honeypot field - spam prevention (hidden from all users and bots should fill it) */}
+        <div className="sr-only" aria-hidden="true">
+          <label htmlFor="website" className="block text-sm font-medium">
+            Website
+          </label>
+          <input
+            {...register('website')}
+            type="text"
+            id="website"
+            name="website"
+            tabIndex={-1}
+            autoComplete="off"
+          />
+        </div>
 
         {/* Submit Button */}
         <Button
