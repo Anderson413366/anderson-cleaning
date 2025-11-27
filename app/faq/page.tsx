@@ -342,8 +342,10 @@ export default function FAQPage() {
                         return (
                           <div
                             key={index}
-                            className={`bg-white dark:bg-slate-700 overflow-hidden transition-all duration-300 ${
-                              isOpen ? 'border-l-4 border-l-brand-bright-blue' : 'border-l-4 border-l-transparent'
+                            className={`overflow-hidden transition-all duration-300 ${
+                              isOpen
+                                ? 'bg-[#F8FAFC] dark:bg-slate-600 border-l-4 border-l-brand-bright-blue'
+                                : 'bg-white dark:bg-slate-700 border-l-4 border-l-transparent'
                             } ${!isLastInCategory ? 'border-b border-neutral-light-grey dark:border-slate-600' : ''} ${
                               index === 0 ? 'rounded-t-lg' : ''
                             } ${isLastInCategory ? 'rounded-b-lg' : ''}`}
@@ -359,11 +361,12 @@ export default function FAQPage() {
                                   {faq.question}
                                 </span>
                                 <ChevronRight
-                                  className={`w-5 h-5 flex-shrink-0 transition-all duration-200 ${
+                                  className={`w-5 h-5 flex-shrink-0 ${
                                     isOpen
                                       ? 'rotate-90 text-brand-red'
                                       : 'rotate-0 text-brand-bright-blue'
                                   }`}
+                                  style={{ transition: 'transform 200ms ease-in-out, color 200ms ease-in-out' }}
                                   aria-hidden="true"
                                 />
                               </button>
