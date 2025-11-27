@@ -396,6 +396,198 @@ footer a:focus {
 }
 
 /* =================================
+   UNIVERSAL INTERACTIVE ELEMENT FEEDBACK
+   Ensures all interactive elements have obvious, consistent visual feedback
+   ================================= */
+
+/* Universal cursor pointer for all interactive elements */
+button,
+a,
+[role="button"],
+[role="link"],
+label[for],
+input[type="checkbox"],
+input[type="radio"],
+input[type="submit"],
+input[type="button"],
+input[type="reset"],
+select,
+summary,
+[tabindex]:not([tabindex="-1"]) {
+  cursor: pointer;
+}
+
+/* Universal smooth transitions - 200ms for professional feel */
+button,
+a,
+input,
+textarea,
+select,
+[role="button"],
+[role="link"],
+label,
+.button,
+.btn {
+  transition: all 200ms ease-in-out;
+}
+
+/* Button hover states - ensure all buttons darken on hover */
+button:not(:disabled):hover,
+[role="button"]:not([aria-disabled="true"]):hover,
+input[type="submit"]:not(:disabled):hover,
+input[type="button"]:not(:disabled):hover,
+input[type="reset"]:not(:disabled):hover,
+.button:not(.disabled):hover,
+.btn:not(.disabled):hover {
+  filter: brightness(0.92);
+  transform: translateY(-1px);
+}
+
+/* Button active/pressed states */
+button:not(:disabled):active,
+[role="button"]:not([aria-disabled="true"]):active,
+input[type="submit"]:not(:disabled):active,
+input[type="button"]:not(:disabled):active,
+input[type="reset"]:not(:disabled):active {
+  transform: translateY(0);
+  filter: brightness(0.88);
+}
+
+/* Link hover states - ensure all content links underline */
+a:not([class*="button"]):not([class*="btn"]):not([class*="nav"]):hover {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+/* Navigation and button-styled links - no underline but opacity change */
+nav a:hover,
+header a:hover,
+footer a:hover,
+[class*="button"] a:hover,
+[class*="btn"] a:hover {
+  opacity: 0.85;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* Input focus rings - 2px border with shadow for all browsers */
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+input[type="number"]:focus,
+input[type="search"]:focus,
+input[type="date"]:focus,
+textarea:focus {
+  border-width: 2px;
+  border-color: var(--brand-bright-blue);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 119, 217, 0.2);
+}
+
+/* Checkbox and radio button focus rings */
+input[type="checkbox"],
+input[type="radio"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--brand-deep-blue);
+  border-radius: 4px;
+  position: relative;
+  transition: all 200ms ease-in-out;
+  background-color: white;
+}
+
+input[type="radio"] {
+  border-radius: 50%;
+}
+
+/* Checkbox/radio hover state */
+input[type="checkbox"]:hover,
+input[type="radio"]:hover {
+  border-color: var(--brand-bright-blue);
+  box-shadow: 0 0 0 3px rgba(0, 119, 217, 0.1);
+}
+
+/* Checkbox/radio focus state */
+input[type="checkbox"]:focus,
+input[type="radio"]:focus {
+  outline: none;
+  border-color: var(--brand-bright-blue);
+  box-shadow: 0 0 0 3px rgba(0, 119, 217, 0.2);
+}
+
+/* Checkbox/radio checked state */
+input[type="checkbox"]:checked,
+input[type="radio"]:checked {
+  background-color: var(--brand-bright-blue);
+  border-color: var(--brand-bright-blue);
+}
+
+/* Checkbox checkmark */
+input[type="checkbox"]:checked::before {
+  content: "✓";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* Radio button dot */
+input[type="radio"]:checked::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: white;
+}
+
+/* Disabled state for all interactive elements */
+button:disabled,
+input:disabled,
+textarea:disabled,
+select:disabled,
+[aria-disabled="true"] {
+  opacity: 0.5;
+  cursor: not-allowed;
+  filter: none;
+  transform: none;
+}
+
+/* Dark mode adjustments */
+.dark input[type="checkbox"],
+.dark input[type="radio"] {
+  border-color: var(--brand-white);
+  background-color: transparent;
+}
+
+.dark input[type="checkbox"]:hover,
+.dark input[type="radio"]:hover {
+  border-color: var(--brand-bright-blue);
+}
+
+.dark input[type="checkbox"]:checked,
+.dark input[type="radio"]:checked {
+  background-color: var(--brand-bright-blue);
+  border-color: var(--brand-bright-blue);
+}
+
+/* Select dropdown hover state */
+select:hover:not(:disabled) {
+  border-color: var(--brand-bright-blue);
+}
+
+/* =================================
    PERFORMANCE & CLS PREVENTION
    ================================= */
 
