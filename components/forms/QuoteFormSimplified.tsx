@@ -340,18 +340,18 @@ export default function QuoteFormSimplified({ onSuccess }: QuoteFormSimplifiedPr
         </div>
       </div>
 
-      {/* Trust Badges */}
+      {/* Trust Badges - Brand blue checkmarks for on-brand consistency */}
       <div className="mb-8 flex flex-wrap justify-center gap-6">
         <div className="flex items-center gap-2">
-          <CheckCircle2 className="h-5 w-5 text-green-500" />
+          <CheckCircle2 className="h-5 w-5 text-brand-bright-blue" />
           <span className="text-sm text-neutral-charcoal dark:text-white">No Contracts Required</span>
         </div>
         <div className="flex items-center gap-2">
-          <CheckCircle2 className="h-5 w-5 text-green-500" />
+          <CheckCircle2 className="h-5 w-5 text-brand-bright-blue" />
           <span className="text-sm text-neutral-charcoal dark:text-white">Licensed & Insured</span>
         </div>
         <div className="flex items-center gap-2">
-          <CheckCircle2 className="h-5 w-5 text-green-500" />
+          <CheckCircle2 className="h-5 w-5 text-brand-bright-blue" />
           <span className="text-sm text-neutral-charcoal dark:text-white">24-Hour Response</span>
         </div>
       </div>
