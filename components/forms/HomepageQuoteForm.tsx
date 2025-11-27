@@ -169,12 +169,14 @@ export default function HomepageQuoteForm() {
             className="block text-[14px] font-medium text-[#333333] dark:text-white/90 mb-2"
           >
             Your Name <span className="text-brand-red">*</span>
+            <span className="sr-only">(required)</span>
           </label>
           <input
             type="text"
             id="homepage-name"
             name="name"
             required
+            aria-required="true"
             value={formData.name}
             onChange={handleChange}
             className="w-full h-[48px] px-4 bg-white dark:bg-slate-700 text-neutral-charcoal dark:text-white border border-[#D0D0D0] dark:border-slate-600 rounded-lg placeholder:text-[#999999] dark:placeholder:text-slate-400 focus:outline-none focus:border-[2px] focus:border-brand-bright-blue focus:shadow-[0_0_0_3px_rgba(0,119,217,0.15)] transition-all"
@@ -196,12 +198,14 @@ export default function HomepageQuoteForm() {
             className="block text-[14px] font-medium text-[#333333] dark:text-white/90 mb-2"
           >
             Company Name <span className="text-brand-red">*</span>
+            <span className="sr-only">(required)</span>
           </label>
           <input
             type="text"
             id="homepage-company"
             name="company"
             required
+            aria-required="true"
             value={formData.company}
             onChange={handleChange}
             className="w-full h-[48px] px-4 bg-white dark:bg-slate-700 text-neutral-charcoal dark:text-white border border-[#D0D0D0] dark:border-slate-600 rounded-lg placeholder:text-[#999999] dark:placeholder:text-slate-400 focus:outline-none focus:border-[2px] focus:border-brand-bright-blue focus:shadow-[0_0_0_3px_rgba(0,119,217,0.15)] transition-all"
@@ -223,12 +227,14 @@ export default function HomepageQuoteForm() {
             className="block text-[14px] font-medium text-[#333333] dark:text-white/90 mb-2"
           >
             Business Email <span className="text-brand-red">*</span>
+            <span className="sr-only">(required)</span>
           </label>
           <input
             type="email"
             id="homepage-email"
             name="email"
             required
+            aria-required="true"
             value={formData.email}
             onChange={handleChange}
             className="w-full h-[48px] px-4 bg-white dark:bg-slate-700 text-neutral-charcoal dark:text-white border border-[#D0D0D0] dark:border-slate-600 rounded-lg placeholder:text-[#999999] dark:placeholder:text-slate-400 focus:outline-none focus:border-[2px] focus:border-brand-bright-blue focus:shadow-[0_0_0_3px_rgba(0,119,217,0.15)] transition-all"
@@ -250,12 +256,14 @@ export default function HomepageQuoteForm() {
             className="block text-[14px] font-medium text-[#333333] dark:text-white/90 mb-2"
           >
             Phone Number <span className="text-brand-red">*</span>
+            <span className="sr-only">(required)</span>
           </label>
           <input
             type="tel"
             id="homepage-phone"
             name="phone"
             required
+            aria-required="true"
             autoComplete="tel"
             value={formData.phone}
             onChange={handleChange}
@@ -278,11 +286,13 @@ export default function HomepageQuoteForm() {
             className="block text-[14px] font-medium text-[#333333] dark:text-white/90 mb-2"
           >
             Facility Type <span className="text-brand-red">*</span>
+            <span className="sr-only">(required)</span>
           </label>
           <select
             id="homepage-facility"
             name="facilityType"
             required
+            aria-required="true"
             value={formData.facilityType}
             onChange={handleChange}
             className="w-full h-[48px] px-4 bg-white dark:bg-slate-700 text-neutral-charcoal dark:text-white border border-[#D0D0D0] dark:border-slate-600 rounded-lg focus:outline-none focus:border-[2px] focus:border-brand-bright-blue focus:shadow-[0_0_0_3px_rgba(0,119,217,0.15)] transition-all appearance-none bg-[url('data:image/svg+xml;charset=utf-8,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2724%27 height=%2724%27 viewBox=%270 0 24 24%27 fill=%27none%27 stroke=%27%23666666%27 stroke-width=%272%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27%3E%3Cpolyline points=%276 9 12 15 18 9%27/%3E%3C/svg%3E')] bg-[length:20px] bg-[right_12px_center] bg-no-repeat pr-12"
