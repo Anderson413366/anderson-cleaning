@@ -10,7 +10,7 @@ const lastUpdated = {
   dateTime: '2025-02-20',
 }
 
-const listStyles = 'list-disc pl-6 space-y-2 text-neutral-charcoal/80 dark:text-white/80'
+const listStyles = 'list-disc pl-6 space-y-2 text-[16px] leading-[1.6] text-neutral-charcoal/80 dark:text-white/80'
 
 // Table of Contents structure
 const sections = [
@@ -111,20 +111,20 @@ export default function PrivacyPolicyPage() {
                       {lastUpdated.label}
                     </time>
                   </p>
-                  <p className="mt-4 text-neutral-charcoal/80 dark:text-white/80 print:text-black">
+                  <p className="mt-4 text-[16px] leading-[1.6] text-neutral-charcoal/80 dark:text-white/80 print:text-black">
                     Anderson Cleaning Company ("we," "us," or "our") provides commercial cleaning services
                     for organizations throughout Western Massachusetts and Northern Connecticut. This
-                    Privacy Policy describes how we collect, use, and safeguard personal information when
+                    Privacy Policy describes how we collect, use, and safeguard <span className="font-semibold text-brand-bright-blue dark:text-brand-bright-blue print:text-black">personal information</span> when
                     you visit {COMPANY_INFO.name}&apos;s website, request quotes, or engage with our
                     services.
                   </p>
                 </header>
 
-                <section id="information-we-collect" className="mb-10 scroll-mt-24">
-                  <h2 className="text-2xl font-semibold text-neutral-charcoal dark:text-white print:text-black">
+                <section id="information-we-collect" className="pt-10 mb-10 scroll-mt-24">
+                  <h2 className="text-[24px] font-bold text-brand-deep-blue dark:text-white print:text-black">
                     1. Information We Collect
                   </h2>
-                  <div className="mt-4 space-y-6 text-neutral-charcoal/80 dark:text-white/80 print:text-black">
+                  <div className="mt-4 space-y-6 text-[16px] leading-[1.6] text-neutral-charcoal/80 dark:text-white/80 print:text-black">
                     <div>
                       <h3 className="font-semibold text-neutral-charcoal dark:text-white print:text-black">
                         Contact &amp; Quote Information
@@ -172,8 +172,8 @@ export default function PrivacyPolicyPage() {
                   </div>
                 </section>
 
-                <section id="how-we-use-information" className="mb-10 scroll-mt-24">
-                  <h2 className="text-2xl font-semibold text-neutral-charcoal dark:text-white print:text-black">
+                <section id="how-we-use-information" className="pt-10 mb-10 scroll-mt-24">
+                  <h2 className="text-[24px] font-bold text-brand-deep-blue dark:text-white print:text-black">
                     2. How We Use Information
                   </h2>
                   <ul className={`${listStyles} mt-4 print:text-black`}>
@@ -186,13 +186,13 @@ export default function PrivacyPolicyPage() {
                   </ul>
                 </section>
 
-                <section id="information-sharing" className="mb-10 scroll-mt-24">
-                  <h2 className="text-2xl font-semibold text-neutral-charcoal dark:text-white print:text-black">
+                <section id="information-sharing" className="pt-10 mb-10 scroll-mt-24">
+                  <h2 className="text-[24px] font-bold text-brand-deep-blue dark:text-white print:text-black">
                     3. Information Sharing
                   </h2>
-                  <div className="mt-4 space-y-4 text-neutral-charcoal/80 dark:text-white/80 print:text-black">
+                  <div className="mt-4 space-y-4 text-[16px] leading-[1.6] text-neutral-charcoal/80 dark:text-white/80 print:text-black">
                     <p>
-                      We do <strong>not</strong> sell, rent, or trade personal information. Information may
+                      We do <strong>not</strong> sell, rent, or trade <span className="font-semibold text-brand-bright-blue dark:text-brand-bright-blue print:text-black">personal information</span>. Information may
                       be shared only in these specific scenarios:
                     </p>
                     <ul className={`${listStyles} print:text-black`}>
@@ -215,11 +215,11 @@ export default function PrivacyPolicyPage() {
                   </div>
                 </section>
 
-                <section id="data-security" className="mb-10 scroll-mt-24">
-                  <h2 className="text-2xl font-semibold text-neutral-charcoal dark:text-white print:text-black">
+                <section id="data-security" className="pt-10 mb-10 scroll-mt-24">
+                  <h2 className="text-[24px] font-bold text-brand-deep-blue dark:text-white print:text-black">
                     4. Data Security
                   </h2>
-                  <div className="mt-4 space-y-4 text-neutral-charcoal/80 dark:text-white/80 print:text-black">
+                  <div className="mt-4 space-y-4 text-[16px] leading-[1.6] text-neutral-charcoal/80 dark:text-white/80 print:text-black">
                     <p>
                       We implement industry-standard security measures to protect your information:
                     </p>
@@ -237,12 +237,12 @@ export default function PrivacyPolicyPage() {
                   </div>
                 </section>
 
-                <section id="your-rights" className="mb-10 scroll-mt-24">
-                  <h2 className="text-2xl font-semibold text-neutral-charcoal dark:text-white print:text-black">
+                <section id="your-rights" className="pt-10 mb-10 scroll-mt-24">
+                  <h2 className="text-[24px] font-bold text-brand-deep-blue dark:text-white print:text-black">
                     5. Your Rights
                   </h2>
-                  <div className="mt-4 space-y-4 text-neutral-charcoal/80 dark:text-white/80 print:text-black">
-                    <p>You have the following rights regarding your personal information:</p>
+                  <div className="mt-4 space-y-4 text-[16px] leading-[1.6] text-neutral-charcoal/80 dark:text-white/80 print:text-black">
+                    <p>You have the following rights regarding your <span className="font-semibold text-brand-bright-blue dark:text-brand-bright-blue print:text-black">personal information</span>:</p>
                     <ul className={`${listStyles} print:text-black`}>
                       <li>
                         <strong>Access:</strong> Request a copy of the personal information we hold about
@@ -270,11 +270,11 @@ export default function PrivacyPolicyPage() {
                   </div>
                 </section>
 
-                <section id="cookie-policy" className="mb-10 scroll-mt-24">
-                  <h2 className="text-2xl font-semibold text-neutral-charcoal dark:text-white print:text-black">
+                <section id="cookie-policy" className="pt-10 mb-10 scroll-mt-24">
+                  <h2 className="text-[24px] font-bold text-brand-deep-blue dark:text-white print:text-black">
                     6. Cookie Policy
                   </h2>
-                  <div className="mt-4 space-y-4 text-neutral-charcoal/80 dark:text-white/80 print:text-black">
+                  <div className="mt-4 space-y-4 text-[16px] leading-[1.6] text-neutral-charcoal/80 dark:text-white/80 print:text-black">
                     <p>
                       We use cookies to improve your browsing experience. Our cookies are categorized as:
                     </p>
@@ -299,11 +299,11 @@ export default function PrivacyPolicyPage() {
                   </div>
                 </section>
 
-                <section id="contact-information" className="mb-10 scroll-mt-24">
-                  <h2 className="text-2xl font-semibold text-neutral-charcoal dark:text-white print:text-black">
+                <section id="contact-information" className="pt-10 mb-10 scroll-mt-24">
+                  <h2 className="text-[24px] font-bold text-brand-deep-blue dark:text-white print:text-black">
                     7. Contact Information
                   </h2>
-                  <div className="mt-4 space-y-4 text-neutral-charcoal/80 dark:text-white/80 print:text-black">
+                  <div className="mt-4 space-y-4 text-[16px] leading-[1.6] text-neutral-charcoal/80 dark:text-white/80 print:text-black">
                     <p>
                       If you have questions about this Privacy Policy or wish to exercise your privacy
                       rights, please contact us:
