@@ -80,32 +80,32 @@ export default function Home() {
             {[
               {
                 title: 'Office & Commercial Cleaning',
-                description: 'Daily programs for spotless, professional workplaces',
+                description: 'Keep your workplace spotless with daily cleaning programs',
                 icon: Building2,
               },
               {
                 title: 'Janitorial Services',
-                description: 'Reliable W-2 teams with consistent schedules',
+                description: 'Trusted W-2 teams on reliable, consistent schedules',
                 icon: Sparkles,
               },
               {
                 title: 'Floor & Carpet Care',
-                description: 'Strip, wax, buff, and deep cleaning services',
+                description: 'Floor stripping, waxing, buffing, and deep carpet cleaning',
                 icon: Zap,
               },
               {
                 title: 'Window Cleaning',
-                description: 'Interior and exterior streak-free results',
+                description: 'Streak-free window cleaning inside and out',
                 icon: Square,
               },
               {
                 title: 'Post-Construction',
-                description: 'Move-in ready cleanup after renovations',
+                description: 'Move-in ready cleanup after any renovation project',
                 icon: HardHat,
               },
               {
                 title: 'Supply Management',
-                description: 'Auto-replenishment of consumables',
+                description: 'Auto-replenished restroom and breakroom supplies',
                 icon: Package,
               },
             ].map((service, i) => (
