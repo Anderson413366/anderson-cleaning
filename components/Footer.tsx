@@ -22,8 +22,8 @@ const navigation = {
       href: 'https://www.linkedin.com/company/anderson-cleaning-inc-',
       icon: (
         <svg
-          width="20"
-          height="20"
+          width="24"
+          height="24"
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"
@@ -42,8 +42,8 @@ const navigation = {
       href: 'https://www.facebook.com/Andersonclean/',
       icon: (
         <svg
-          width="20"
-          height="20"
+          width="24"
+          height="24"
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"
@@ -60,8 +60,8 @@ const navigation = {
       href: 'https://x.com/andersoncleaning',
       icon: (
         <svg
-          width="20"
-          height="20"
+          width="24"
+          height="24"
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"
@@ -79,8 +79,8 @@ const navigation = {
       href: 'https://www.instagram.com/andersoncleaningma/',
       icon: (
         <svg
-          width="20"
-          height="20"
+          width="24"
+          height="24"
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"
@@ -170,17 +170,36 @@ export default function Footer() {
             {/* Column 4: Social */}
             <div>
               <h3 className="mb-4 text-[14px] font-bold text-brand-deep-blue dark:text-white uppercase">Social</h3>
-              <div className="flex gap-4">
-                {navigation.social.map((item) => (
+              <div className="flex">
+                {navigation.social.map((item, index) => (
                   <a
                     key={item.name}
                     href={item.href}
-                    className="text-brand-deep-blue dark:text-white/90 transition-all duration-150 hover:text-brand-bright-blue hover:-translate-y-0.5 dark:hover:text-white"
+                    className={`
+                      relative group
+                      text-brand-bright-blue dark:text-brand-bright-blue
+                      transition-all duration-150
+                      hover:text-brand-deep-blue hover:-translate-y-0.5 dark:hover:text-white
+                      ${index < navigation.social.length - 1 ? 'mr-3' : ''}
+                    `}
                     aria-label={item.name}
                     target="_blank"
                     rel="noopener noreferrer"
+                    title={item.name}
                   >
                     {item.icon}
+                    {/* Tooltip on hover */}
+                    <span className="
+                      absolute bottom-full left-1/2 -translate-x-1/2 mb-2
+                      px-2 py-1 bg-neutral-charcoal dark:bg-white
+                      text-white dark:text-neutral-charcoal
+                      text-[12px] font-medium rounded
+                      opacity-0 group-hover:opacity-100
+                      pointer-events-none transition-opacity duration-150
+                      whitespace-nowrap
+                    ">
+                      {item.name}
+                    </span>
                   </a>
                 ))}
               </div>
