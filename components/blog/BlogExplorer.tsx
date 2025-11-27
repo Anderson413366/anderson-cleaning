@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { ArrowRight, Calendar, Clock } from 'lucide-react'
+import { ArrowRight, Calendar, Clock, Search } from 'lucide-react'
 
 interface BlogPost {
   slug: string
@@ -21,6 +21,7 @@ interface BlogExplorerProps {
 }
 
 export default function BlogExplorer({ posts, categories }: BlogExplorerProps) {
+  const [searchQuery, setSearchQuery] = useState<string>('')
   const [selectedCategory, setSelectedCategory] = useState<string>('All')
   const [visibleCount, setVisibleCount] = useState<number>(6)
   const [newsletterEmail, setNewsletterEmail] = useState('')
@@ -28,10 +29,20 @@ export default function BlogExplorer({ posts, categories }: BlogExplorerProps) {
   const [newsletterError, setNewsletterError] = useState<string | null>(null)
   const [imageErrors, setImageErrors] = useState<Set<string>>(new Set())
 
-  const filteredPosts =
-    selectedCategory === 'All'
-      ? posts
-      : posts.filter((post) => post.category === selectedCategory)
+  // Filter by search query and category
+  const filteredPosts = posts.filter((post) => {
+    // Filter by search query (case-insensitive search in title, excerpt, and category)
+    const matchesSearch =
+      searchQuery === '' ||
+      post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      post.excerpt.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      post.category.toLowerCase().includes(searchQuery.toLowerCase())
+
+    // Filter by category
+    const matchesCategory = selectedCategory === 'All' || post.category === selectedCategory
+
+    return matchesSearch && matchesCategory
+  })
 
   const visiblePosts = filteredPosts.slice(0, visibleCount)
   const hasMorePosts = visibleCount < filteredPosts.length
@@ -43,6 +54,11 @@ export default function BlogExplorer({ posts, categories }: BlogExplorerProps) {
   const handleCategoryChange = (category: string) => {
     setSelectedCategory(category)
     setVisibleCount(6) // Reset to 6 when changing category
+  }
+
+  const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchQuery(event.target.value)
+    setVisibleCount(6) // Reset to 6 when searching
   }
 
   const handleImageError = (slug: string) => {
@@ -79,6 +95,28 @@ export default function BlogExplorer({ posts, categories }: BlogExplorerProps) {
 
   return (
     <>
+      {/* Search Section */}
+      <section className="bg-white dark:bg-slate-900 border-b border-neutral-light-grey dark:border-slate-700 py-8">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl mx-auto">
+            <div className="relative">
+              <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                <Search className="h-5 w-5 text-[#999999] dark:text-white/50" aria-hidden="true" />
+              </div>
+              <input
+                type="text"
+                value={searchQuery}
+                onChange={handleSearchChange}
+                placeholder="Search blog articles..."
+                className="w-full h-[48px] pl-12 pr-4 text-[16px] text-[#333333] dark:text-white bg-white dark:bg-slate-800 border border-[#D0D0D0] dark:border-slate-600 rounded-lg placeholder:text-[#999999] dark:placeholder:text-white/50 focus:border-brand-bright-blue focus:outline-none focus:shadow-[0_0_0_3px_rgba(0,119,217,0.1)] transition-all"
+                aria-label="Search blog articles"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Category Filters */}
       <section className="bg-neutral-off-white dark:bg-slate-900 border-b border-neutral-light-grey dark:border-slate-700 py-6">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-wrap gap-3">
