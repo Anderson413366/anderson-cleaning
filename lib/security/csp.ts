@@ -35,7 +35,6 @@ export const cspDirectives: CSPDirectives = {
     'https://www.google-analytics.com',
     'https://www.clarity.ms',
     'https://assets.calendly.com',
-    'https://cdn.sanity.io',
     'https://vercel.live',
   ],
 
@@ -50,7 +49,6 @@ export const cspDirectives: CSPDirectives = {
     "'self'",
     'data:',
     'blob:',
-    'https://cdn.sanity.io',
     'https://images.unsplash.com',
     'https://www.googletagmanager.com',
     'https://www.google-analytics.com',
@@ -70,8 +68,6 @@ export const cspDirectives: CSPDirectives = {
     'https://analytics.google.com',
     'https://www.clarity.ms',
     'https://api.resend.com',
-    'https://cdn.sanity.io',
-    'https://*.sanity.io',
     'https://vercel.live',
     'wss://ws-us3.pusher.com',
     'wss://*.pusher.com',
@@ -85,10 +81,7 @@ export const cspDirectives: CSPDirectives = {
     'https://vercel.live',
   ],
 
-  'media-src': [
-    "'self'",
-    'https://cdn.sanity.io',
-  ],
+  'media-src': ["'self'"],
 
   'object-src': ["'none'"],
 
