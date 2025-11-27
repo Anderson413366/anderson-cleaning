@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { Button } from '@/components/ui/Button'
 import { GlassIcon } from '@/components/ui/GlassIcon'
 import QuoteAdvancedModal from '@/components/forms/QuoteAdvancedModal'
+import HomepageQuoteForm from '@/components/forms/HomepageQuoteForm'
 import PromotionalModal from '@/components/PromotionalModal'
 import {
   ArrowRight,
@@ -302,6 +303,13 @@ export default function Home() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Quote Form Section - Custom branded design */}
+      <section className="py-20 bg-white dark:bg-slate-900">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <HomepageQuoteForm />
         </div>
       </section>
 
