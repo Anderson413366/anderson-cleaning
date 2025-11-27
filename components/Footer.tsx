@@ -102,23 +102,23 @@ export default function Footer() {
 
   return (
     <>
-      {/* Main Footer - Three Columns with Dark Mode Support */}
-      <footer className="bg-neutral-off-white dark:bg-brand-deep-blue text-neutral-charcoal dark:text-white transition-colors duration-300" aria-labelledby="footer-heading">
+      {/* Main Footer - Four Columns with Standardized Styling */}
+      <footer className="bg-neutral-off-white dark:bg-brand-deep-blue text-neutral-charcoal dark:text-white transition-colors duration-300 border-t border-[#E0E0E0] dark:border-white/10" aria-labelledby="footer-heading">
         <h2 id="footer-heading" className="sr-only">
           Footer
         </h2>
-        <div className="mx-auto max-w-7xl px-6 pb-8 pt-16 lg:px-8">
-          {/* Three Columns - Clean Layout with Fixed Column Width */}
-          <div className="pb-12 grid grid-cols-1 gap-y-12 gap-x-8 md:grid-cols-[repeat(3,minmax(200px,1fr))] md:gap-x-12">
+        <div className="mx-auto max-w-7xl px-[40px] py-[60px]">
+          {/* Four Columns - Standardized Layout */}
+          <div className="pb-12 grid grid-cols-1 gap-y-12 gap-x-8 md:grid-cols-2 lg:grid-cols-4 lg:gap-x-12">
             {/* Column 1: Our Services */}
             <div>
-              <h3 className="mb-4 text-body-sm font-semibold text-neutral-charcoal dark:text-white">Our Services</h3>
+              <h3 className="mb-4 text-[14px] font-bold text-brand-deep-blue dark:text-white uppercase">Our Services</h3>
               <ul className="space-y-2.5">
                 {navigation.services.map((item) => (
                   <li key={item.name}>
                     <Link
                       href={item.href}
-                      className="text-body-sm text-neutral-charcoal/70 dark:text-white/75 transition-colors duration-150 hover:text-brand-bright-blue dark:hover:text-white"
+                      className="text-[13px] text-brand-bright-blue dark:text-brand-bright-blue transition-all duration-150 hover:underline"
                     >
                       {item.name}
                     </Link>
@@ -129,13 +129,13 @@ export default function Footer() {
 
             {/* Column 2: Quick Links */}
             <div>
-              <h3 className="mb-4 text-body-sm font-semibold text-neutral-charcoal dark:text-white">Quick Links</h3>
+              <h3 className="mb-4 text-[14px] font-bold text-brand-deep-blue dark:text-white uppercase">Quick Links</h3>
               <ul className="space-y-2.5">
                 {navigation.company.map((item) => (
                   <li key={item.name}>
                     <Link
                       href={item.href}
-                      className="text-body-sm text-neutral-charcoal/70 dark:text-white/75 transition-colors duration-150 hover:text-brand-bright-blue dark:hover:text-white"
+                      className="text-[13px] text-brand-bright-blue dark:text-brand-bright-blue transition-all duration-150 hover:underline"
                     >
                       {item.name}
                     </Link>
@@ -146,72 +146,75 @@ export default function Footer() {
 
             {/* Column 3: Get in Touch */}
             <div>
-              <h3 className="mb-4 text-body-sm font-semibold text-neutral-charcoal dark:text-white">Get in Touch</h3>
+              <h3 className="mb-4 text-[14px] font-bold text-brand-deep-blue dark:text-white uppercase">Get in Touch</h3>
               <div className="space-y-2.5">
                 <a
                   href="tel:+14133065053"
-                  className="block text-body-sm text-neutral-charcoal/70 dark:text-white/75 transition-colors duration-150 hover:text-brand-bright-blue dark:hover:text-white"
+                  className="block text-[13px] text-brand-bright-blue dark:text-brand-bright-blue transition-all duration-150 hover:underline"
                 >
                   (413) 306-5053
                 </a>
                 <a
                   href="mailto:info@andersoncleaning.com"
-                  className="block text-body-sm text-neutral-charcoal/70 dark:text-white/75 transition-colors duration-150 hover:text-brand-bright-blue dark:hover:text-white"
+                  className="block text-[13px] text-brand-bright-blue dark:text-brand-bright-blue transition-all duration-150 hover:underline"
                 >
                   info@andersoncleaning.com
                 </a>
-                <div className="text-body-sm text-neutral-charcoal/70 dark:text-white/75">
+                <div className="text-[13px] text-neutral-charcoal dark:text-white/80">
                   <div>103 Wayside Avenue</div>
                   <div>West Springfield, MA 01089</div>
                 </div>
+              </div>
+            </div>
 
-                {/* Social Icons - Deep Blue, no backgrounds */}
-                <div className="flex gap-4 pt-4">
-                  {navigation.social.map((item) => (
-                    <a
-                      key={item.name}
-                      href={item.href}
-                      className="text-brand-deep-blue dark:text-white/90 transition-all duration-150 hover:text-brand-bright-blue hover:-translate-y-0.5 dark:hover:text-white"
-                      aria-label={item.name}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      {item.icon}
-                    </a>
-                  ))}
-                </div>
+            {/* Column 4: Social */}
+            <div>
+              <h3 className="mb-4 text-[14px] font-bold text-brand-deep-blue dark:text-white uppercase">Social</h3>
+              <div className="flex gap-4">
+                {navigation.social.map((item) => (
+                  <a
+                    key={item.name}
+                    href={item.href}
+                    className="text-brand-deep-blue dark:text-white/90 transition-all duration-150 hover:text-brand-bright-blue hover:-translate-y-0.5 dark:hover:text-white"
+                    aria-label={item.name}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {item.icon}
+                  </a>
+                ))}
               </div>
             </div>
           </div>
 
           {/* Bottom Bar - Copyright & Legal Links */}
           <div className="border-t border-brand-deep-blue/10 dark:border-brand-deep-blue/10 pt-12">
-            <div className="flex flex-col gap-4 text-sm md:flex-row md:items-center md:justify-between">
-              <p className="text-center md:text-left text-[#4B5563] dark:text-white/70">
+            <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+              <p className="text-center md:text-left text-[12px] text-[#999999] dark:text-white/70">
                 © {currentYear} Anderson Cleaning Company. All rights reserved.
               </p>
               <nav className="flex flex-wrap gap-6">
                 <Link
                   href="/privacy-policy"
-                  className="text-neutral-charcoal/70 dark:text-white/70 transition-colors hover:text-brand-bright-blue dark:hover:text-white"
+                  className="text-[13px] text-brand-bright-blue dark:text-brand-bright-blue transition-all duration-150 hover:underline"
                 >
                   Privacy Policy
                 </Link>
                 <Link
                   href="/terms-of-service"
-                  className="text-neutral-charcoal/70 dark:text-white/70 transition-colors hover:text-brand-bright-blue dark:hover:text-white"
+                  className="text-[13px] text-brand-bright-blue dark:text-brand-bright-blue transition-all duration-150 hover:underline"
                 >
                   Terms of Service
                 </Link>
                 <Link
                   href="/accessibility"
-                  className="text-neutral-charcoal/70 dark:text-white/70 transition-colors hover:text-brand-bright-blue dark:hover:text-white"
+                  className="text-[13px] text-brand-bright-blue dark:text-brand-bright-blue transition-all duration-150 hover:underline"
                 >
                   Accessibility
                 </Link>
                 <Link
                   href="/sitemap.xml"
-                  className="text-neutral-charcoal/70 dark:text-white/70 transition-colors hover:text-brand-bright-blue dark:hover:text-white"
+                  className="text-[13px] text-brand-bright-blue dark:text-brand-bright-blue transition-all duration-150 hover:underline"
                 >
                   Sitemap
                 </Link>
