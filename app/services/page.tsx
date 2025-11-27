@@ -38,7 +38,7 @@ const ServiceAreaMap = dynamic(() => import('@/components/maps/ServiceAreaMap'),
 
 export default function ServicesPage() {
   const [showAdvancedModal, setShowAdvancedModal] = useState(false)
-  const [trainingHours, setTrainingHours] = useState(0)
+  const [trainingHours, setTrainingHours] = useState(40)
   const statsRef = useRef<HTMLDivElement>(null)
   // JSON-LD Structured Data for SEO
   const jsonLd = {
