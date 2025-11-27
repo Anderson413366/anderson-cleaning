@@ -9,13 +9,11 @@ import {
   Users,
   Heart,
   Shield,
-  Award,
   Clock,
   Target,
   CheckCircle2,
   Sparkles,
   Leaf,
-  Star,
   Phone,
 } from 'lucide-react'
 
@@ -111,24 +109,24 @@ export default function AboutPage() {
               Built on a foundation of reliability, quality, and genuine care for our clients
             </p>
 
-            {/* Clean Vertical Timeline */}
-            <div className="relative">
-              {/* Vertical timeline line - 2px #E0E0E0 */}
-              <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-[2px] bg-[#E0E0E0] dark:bg-slate-600 md:-translate-x-1/2"></div>
+            {/* Clean Vertical Timeline - Left-aligned for consistent reading flow */}
+            <div className="relative max-w-2xl mx-auto">
+              {/* Vertical timeline line - 2px, positioned left */}
+              <div className="absolute left-6 top-0 bottom-0 w-[2px] bg-[#E0E0E0] dark:bg-slate-600"></div>
 
-              {/* Timeline items with 80px spacing */}
-              <div className="space-y-[80px]">
+              {/* Timeline items with 48px spacing */}
+              <div className="space-y-12">
                 {/* 2007 - Founded */}
-                <div className="relative flex flex-col md:flex-row md:items-start">
-                  {/* Year marker - 48px circle #0077D9 with white text */}
-                  <div className="absolute left-0 md:left-1/2 md:-translate-x-1/2 z-10">
+                <div className="relative flex items-start">
+                  {/* Year marker - inline label style */}
+                  <div className="flex-shrink-0 z-10">
                     <div className="flex items-center justify-center w-12 h-12 rounded-full bg-brand-bright-blue text-white font-bold text-sm shadow-md">
                       2007
                     </div>
                   </div>
 
-                  {/* Content - Right side on desktop, below marker on mobile */}
-                  <div className="ml-16 md:ml-0 md:w-1/2 md:pl-10 md:text-left">
+                  {/* Content - Left-aligned, consistent */}
+                  <div className="ml-6 flex-1">
                     <h3 className="text-lg font-bold text-brand-deep-blue dark:text-white mb-2">
                       Founded on Vision
                     </h3>
@@ -139,16 +137,16 @@ export default function AboutPage() {
                 </div>
 
                 {/* 2015 - Growth */}
-                <div className="relative flex flex-col md:flex-row md:items-start">
+                <div className="relative flex items-start">
                   {/* Year marker */}
-                  <div className="absolute left-0 md:left-1/2 md:-translate-x-1/2 z-10">
+                  <div className="flex-shrink-0 z-10">
                     <div className="flex items-center justify-center w-12 h-12 rounded-full bg-brand-bright-blue text-white font-bold text-sm shadow-md">
                       2015
                     </div>
                   </div>
 
-                  {/* Content - Left side on desktop (alternating) */}
-                  <div className="ml-16 md:ml-0 md:w-1/2 md:pr-10 md:text-right md:order-first">
+                  {/* Content - Left-aligned, consistent */}
+                  <div className="ml-6 flex-1">
                     <h3 className="text-lg font-bold text-brand-deep-blue dark:text-white mb-2">
                       100+ Clients Strong
                     </h3>
@@ -159,16 +157,16 @@ export default function AboutPage() {
                 </div>
 
                 {/* Today */}
-                <div className="relative flex flex-col md:flex-row md:items-start">
+                <div className="relative flex items-start">
                   {/* Year marker */}
-                  <div className="absolute left-0 md:left-1/2 md:-translate-x-1/2 z-10">
+                  <div className="flex-shrink-0 z-10">
                     <div className="flex items-center justify-center w-12 h-12 rounded-full bg-brand-bright-blue text-white font-bold text-[11px] shadow-md">
                       Today
                     </div>
                   </div>
 
-                  {/* Content - Right side on desktop */}
-                  <div className="ml-16 md:ml-0 md:w-1/2 md:pl-10 md:text-left">
+                  {/* Content - Left-aligned, consistent */}
+                  <div className="ml-6 flex-1">
                     <h3 className="text-lg font-bold text-brand-deep-blue dark:text-white mb-2">
                       Trusted Partner
                     </h3>
@@ -201,30 +199,31 @@ export default function AboutPage() {
                   name: 'Anderson Gomes',
                   title: 'Owner & Founder',
                   bio: 'Founded Anderson Cleaning in 2007 with a vision for corporate-grade cleaning with family business accountability.',
-                  icon: Users,
+                  initials: 'AG',
                 },
                 {
                   name: 'Operations Director',
                   title: 'Director of Operations',
                   bio: 'Manages daily operations, staff scheduling, and quality control to ensure consistent, high-quality service.',
-                  icon: Target,
+                  initials: 'OD',
                 },
                 {
                   name: 'Quality Manager',
                   title: 'Quality Assurance Lead',
                   bio: 'Conducts facility inspections, monitors SOP compliance, and implements corrective action plans.',
-                  icon: Award,
+                  initials: 'QA',
                 },
               ].map((member, idx) => {
-                const Icon = member.icon
                 return (
                   <div
                     key={idx}
                     className="w-[240px] bg-white dark:bg-slate-900 border border-neutral-light-grey dark:border-slate-700 rounded-xl p-6 text-center shadow-sm hover:shadow-md transition-shadow"
                   >
-                    {/* 120x120 icon circle - consistent #0077D9 background */}
-                    <div className="w-[120px] h-[120px] mx-auto mb-4 rounded-full bg-brand-bright-blue flex items-center justify-center">
-                      <Icon className="h-12 w-12 text-white" strokeWidth={1.5} />
+                    {/* 120x120 avatar circle - #0077D9 background, white initials */}
+                    <div className="w-[120px] h-[120px] mx-auto mb-4 rounded-full bg-brand-bright-blue flex items-center justify-center shadow-lg">
+                      <span className="text-[40px] font-bold text-white tracking-wide">
+                        {member.initials}
+                      </span>
                     </div>
                     {/* Name: 16px bold #002A86 */}
                     <h3 className="text-[16px] font-bold text-brand-deep-blue dark:text-white mb-1">
@@ -275,10 +274,15 @@ export default function AboutPage() {
                   ].map((item, idx) => {
                     const Icon = item.icon
                     return (
-                      <div key={idx} className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
-                        <Icon className="h-8 w-8 mx-auto mb-3 text-white" />
+                      <div
+                        key={idx}
+                        className="bg-white/15 backdrop-blur-sm rounded-lg p-5 border border-white/20 min-h-[140px] flex flex-col items-center justify-center"
+                      >
+                        <div className="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center mb-3">
+                          <Icon className="h-6 w-6 text-white" strokeWidth={2} />
+                        </div>
                         <h4 className="font-bold text-white mb-2">{item.title}</h4>
-                        <p className="text-sm text-white/80">{item.description}</p>
+                        <p className="text-sm text-white/90">{item.description}</p>
                       </div>
                     )
                   })}
