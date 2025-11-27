@@ -295,8 +295,8 @@ export default function Home() {
                   <p className="text-body-sm text-neutral-charcoal/70 dark:text-white/80">{testimonial.company}</p>
                 </div>
                 <div className="flex items-center justify-center">
-                  <div className="inline-flex items-center justify-center h-12 w-12 rounded-lg bg-brand-deep-blue/10 dark:bg-brand-bright-blue/10">
-                    <span className="text-sm font-bold text-brand-deep-blue dark:text-brand-bright-blue">
+                  <div className="inline-flex items-center justify-center h-12 w-12 rounded-lg bg-brand-bright-blue dark:bg-brand-bright-blue">
+                    <span className="text-sm font-bold text-white dark:text-white">
                       {testimonial.companyInitials}
                     </span>
                   </div>
