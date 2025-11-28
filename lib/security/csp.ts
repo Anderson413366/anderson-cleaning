@@ -120,11 +120,10 @@ export function generateCSPHeader(directives: CSPDirectives): string {
 export function getCSPHeader(nonce: string): string {
   const nonceDirectives = { ...cspDirectives }
 
-  // Replace 'unsafe-inline' with nonce for scripts
+  // Replace 'unsafe-inline' with nonce for scripts (no unsafe-eval in production)
   nonceDirectives['script-src'] = [
     "'self'",
-    "'unsafe-eval'", // Required for Next.js dev mode
-    `'nonce-${nonce}'`, // Use nonce instead of unsafe-inline
+    `'nonce-${nonce}'`,
     ...cspDirectives['script-src'].filter(
       (src) => !["'self'", "'unsafe-eval'", "'unsafe-inline'"].includes(src)
     ),
