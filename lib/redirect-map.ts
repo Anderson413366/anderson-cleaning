@@ -79,6 +79,8 @@ export const REDIRECT_MAP: Record<string, RedirectConfig> = {
   '/home-cleaning-company': { destination: '/services', permanent: true },
   '/home-preview': { destination: '/', permanent: true },
   '/industrial-cleaning': { destination: '/industries/manufacturing-warehouses', permanent: true },
+  '/industries/manufacturing': { destination: '/industries/manufacturing-warehouses', permanent: true },
+  '/industries/retail': { destination: '/industries/retail-stores', permanent: true },
   '/industries-served-tailored-commercial-cleaning-solutions': { destination: '/industries', permanent: true },
   '/janitorial-cleaning-services': { destination: '/services/janitorial-services', permanent: true },
   '/janitorial-services': { destination: '/services/janitorial-services', permanent: true },
