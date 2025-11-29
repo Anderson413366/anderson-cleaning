@@ -86,50 +86,57 @@ export default function Home() {
                 title: 'Office & Commercial Cleaning',
                 description: 'Keep your workplace spotless with daily cleaning programs',
                 icon: Building2,
+                href: '/services/office-cleaning',
               },
               {
                 title: 'Janitorial Services',
                 description: 'Trusted W-2 teams on reliable, consistent schedules',
                 icon: Sparkles,
+                href: '/services/janitorial-services',
               },
               {
                 title: 'Floor & Carpet Care',
                 description: 'Floor stripping, waxing, buffing, and deep carpet cleaning',
                 icon: Zap,
+                href: '/services/floor-care',
               },
               {
                 title: 'Window Cleaning',
                 description: 'Streak-free window cleaning inside and out',
                 icon: Square,
+                href: '/services/window-cleaning',
               },
               {
                 title: 'Post-Construction',
                 description: 'Move-in ready cleanup after any renovation project',
                 icon: HardHat,
+                href: '/services/post-construction-cleaning',
               },
               {
                 title: 'Supply Management',
                 description: 'Auto-replenished restroom and breakroom supplies',
                 icon: Package,
+                href: '/supply-management',
               },
-            ].map((service, i) => (
-              <div
-                key={i}
-                className="h-[240px] bg-white dark:bg-slate-800 rounded-xl p-6 border border-neutral-light-grey dark:border-slate-700 hover:border-brand-bright-blue hover:scale-[1.02] hover:shadow-[0_4px_12px_rgba(0,42,134,0.1)] transition-all duration-200 ease-in-out flex flex-col"
+            ].map((service) => (
+              <Link
+                key={service.href}
+                href={service.href}
+                className="h-[240px] bg-white dark:bg-slate-800 rounded-xl p-6 border border-neutral-light-grey dark:border-slate-700 hover:border-brand-bright-blue hover:scale-[1.02] hover:shadow-[0_4px_12px_rgba(0,42,134,0.1)] transition-all duration-200 ease-in-out flex flex-col group"
               >
                 {/* Icon */}
                 <div className="mb-4">
                   <GlassIcon icon={service.icon} size="lg" variant="solid" label={service.title} />
                 </div>
                 {/* Title - 16px bold #002A86 */}
-                <h3 className="text-base font-bold text-brand-deep-blue dark:text-white mb-2">
+                <h3 className="text-base font-bold text-brand-deep-blue dark:text-white mb-2 group-hover:text-brand-bright-blue transition-colors">
                   {service.title}
                 </h3>
                 {/* Description - 14px #666666, single line */}
                 <p className="text-sm text-[#666666] dark:text-white/70">
                   {service.description}
                 </p>
-              </div>
+              </Link>
             ))}
           </div>
 
