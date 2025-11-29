@@ -106,8 +106,8 @@ export const REDIRECT_MAP: Record<string, RedirectConfig> = {
   '/retail-store-cleaning': { destination: '/industries/retail-stores', permanent: true },
   '/servicing': { destination: '/services', permanent: true },
   '/sitemap': { destination: '/', permanent: true },
-  '/supply-management': { destination: '/services/supply-management', permanent: true },
-  '/supply-management-services': { destination: '/services/supply-management', permanent: true },
+  // Removed: '/supply-management' redirect - actual page exists at /supply-management
+  '/supply-management-services': { destination: '/supply-management', permanent: true },
   '/tag': { destination: '/blog', permanent: true },
   '/thank-you': { destination: '/contact', permanent: true },
   '/um': { destination: '/contact', permanent: true },
