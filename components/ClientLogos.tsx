@@ -78,7 +78,7 @@ function ClientLogo({ client }: { client: Client }) {
 export default function ClientLogos() {
   return (
     <section
-      className="py-12 bg-white dark:bg-slate-900"
+      className="py-8 bg-white dark:bg-slate-900 border-t border-brand-deep-blue/10 dark:border-white/10"
       aria-label="Our trusted clients"
     >
       <div className="max-w-6xl mx-auto px-4">
