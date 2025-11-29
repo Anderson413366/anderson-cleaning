@@ -109,7 +109,7 @@ export default function Footer() {
         </h2>
         <div className="mx-auto max-w-7xl px-[40px] py-[60px]">
           {/* Four Columns - Standardized Layout */}
-          <div className="pb-12 grid grid-cols-1 gap-y-12 gap-x-8 md:grid-cols-2 lg:grid-cols-4 lg:gap-x-12">
+          <div className="pb-12 grid grid-cols-1 gap-y-12 gap-x-8 md:grid-cols-2 lg:grid-cols-4 lg:gap-x-[60px]">
             {/* Column 1: Our Services */}
             <div>
               <h3 className="mb-4 text-[14px] font-bold text-neutral-charcoal dark:text-white uppercase tracking-[1.2px]">Our Services</h3>

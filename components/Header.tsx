@@ -200,8 +200,10 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-[100] bg-white/95 backdrop-blur-lg transition-all duration-300 dark:bg-brand-deep-blue/95 dark:backdrop-blur-lg ${
-        scrolled ? 'shadow-md border-b border-neutral-light-grey dark:border-white/10' : 'shadow-sm'
+      className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-300 ${
+        scrolled
+          ? 'bg-white/[0.98] dark:bg-brand-deep-blue/[0.98] backdrop-blur-md shadow-[0_2px_16px_rgba(0,42,134,0.08)] border-b border-neutral-light-grey dark:border-white/10'
+          : 'bg-white/95 dark:bg-brand-deep-blue/95 backdrop-blur-lg shadow-sm'
       } ${hideHeader ? 'lg:translate-y-0 -translate-y-full' : 'translate-y-0'}`}
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between p-5 lg:px-8" aria-label="Global">
@@ -273,10 +275,10 @@ export default function Header() {
             {/* Services Dropdown Menu */}
             {activeDropdown === 'services' && (
               <div
-                className="absolute left-0 top-full mt-2 w-96 rounded-lg border border-brand-deep-blue/10 bg-white shadow-xl dark:border-white/10 dark:bg-slate-800 animate-dropdown-slide"
+                className="absolute left-0 top-full mt-2 w-96 rounded-lg border border-brand-deep-blue/10 bg-white shadow-[0_8px_32px_rgba(0,42,134,0.12)] dark:border-white/10 dark:bg-slate-800 animate-dropdown-slide py-4"
                 role="menu"
               >
-                <div className="border-b border-brand-deep-blue/10 px-4 pb-2 pt-4 dark:border-white/10">
+                <div className="border-b border-brand-deep-blue/10 px-6 pb-3 dark:border-white/10">
                   <h3 className="text-xs font-semibold uppercase tracking-wider text-neutral-charcoal/60 dark:text-neutral-charcoal">
                     Our Services
                   </h3>
@@ -286,10 +288,10 @@ export default function Header() {
                     <Link
                       key={service.href}
                       href={service.href}
-                      className="group block px-4 py-3 transition-colors hover:bg-brand-bright-blue/50 dark:hover:bg-slate-700"
+                      className="group block px-6 py-3.5 transition-all duration-200 hover:bg-brand-bright-blue/[0.06] dark:hover:bg-slate-700"
                       onClick={closeDropdown}
                     >
-                      <div className="font-medium text-neutral-charcoal group-hover:text-brand-bright-blue dark:text-white dark:group-hover:text-brand-bright-blue">
+                      <div className="text-base font-medium text-neutral-charcoal group-hover:text-brand-bright-blue dark:text-white dark:group-hover:text-brand-bright-blue">
                         {service.title}
                       </div>
                       <div className="mt-1 text-sm text-neutral-charcoal/70 dark:text-white/70">
@@ -298,7 +300,7 @@ export default function Header() {
                     </Link>
                   ))}
                 </div>
-                <div className="border-t border-brand-deep-blue/10 px-4 pt-3 pb-4 dark:border-white/10">
+                <div className="border-t border-brand-deep-blue/10 px-6 pt-3 dark:border-white/10">
                   <Link
                     href="/services"
                     className="text-sm font-medium text-brand-bright-blue hover:text-[#006bc4] dark:hover:text-white"
@@ -338,10 +340,10 @@ export default function Header() {
             {/* Industries Dropdown Menu */}
             {activeDropdown === 'industries' && (
               <div
-                className="absolute left-0 top-full mt-2 w-72 rounded-lg border border-brand-deep-blue/10 bg-white shadow-xl dark:border-white/10 dark:bg-slate-800 animate-dropdown-slide"
+                className="absolute left-0 top-full mt-2 w-72 rounded-lg border border-brand-deep-blue/10 bg-white shadow-[0_8px_32px_rgba(0,42,134,0.12)] dark:border-white/10 dark:bg-slate-800 animate-dropdown-slide py-4"
                 role="menu"
               >
-                <div className="border-b border-brand-deep-blue/10 px-4 pb-2 pt-4 dark:border-white/10">
+                <div className="border-b border-brand-deep-blue/10 px-6 pb-3 dark:border-white/10">
                   <h3 className="text-xs font-semibold uppercase tracking-wider text-neutral-charcoal/60 dark:text-neutral-charcoal">
                     Industries We Serve
                   </h3>
@@ -350,15 +352,15 @@ export default function Header() {
                   <Link
                     key={industry.href}
                     href={industry.href}
-                    className="group block px-4 py-3 transition-colors hover:bg-brand-bright-blue/50 dark:hover:bg-slate-700"
+                    className="group block px-6 py-3.5 transition-all duration-200 hover:bg-brand-bright-blue/[0.06] dark:hover:bg-slate-700"
                     onClick={closeDropdown}
                   >
-                    <div className="font-medium text-neutral-charcoal group-hover:text-brand-bright-blue dark:text-white dark:group-hover:text-brand-bright-blue">
+                    <div className="text-base font-medium text-neutral-charcoal group-hover:text-brand-bright-blue dark:text-white dark:group-hover:text-brand-bright-blue">
                       {industry.title}
                     </div>
                   </Link>
                 ))}
-                <div className="border-t border-brand-deep-blue/10 px-4 pt-3 pb-4 dark:border-white/10">
+                <div className="border-t border-brand-deep-blue/10 px-6 pt-3 dark:border-white/10">
                   <Link
                     href="/industries"
                     className="text-sm font-medium text-brand-bright-blue hover:text-[#006bc4] dark:hover:text-white"
@@ -398,24 +400,24 @@ export default function Header() {
             {/* Locations Dropdown Menu */}
             {activeDropdown === 'locations' && (
               <div
-                className="absolute left-0 top-full mt-2 w-80 rounded-lg border border-brand-deep-blue/10 bg-white shadow-xl dark:border-white/10 dark:bg-slate-800 animate-dropdown-slide"
+                className="absolute left-0 top-full mt-2 w-80 rounded-lg border border-brand-deep-blue/10 bg-white shadow-[0_8px_32px_rgba(0,42,134,0.12)] dark:border-white/10 dark:bg-slate-800 animate-dropdown-slide py-4"
                 role="menu"
               >
-                <div className="border-b border-brand-deep-blue/10 px-4 pb-2 pt-4 dark:border-white/10">
+                <div className="border-b border-brand-deep-blue/10 px-6 pb-3 dark:border-white/10">
                   <h3 className="text-xs font-semibold uppercase tracking-wider text-neutral-charcoal/60 dark:text-neutral-charcoal">
                     Service Areas
                   </h3>
                 </div>
-                <div className="grid grid-cols-2 gap-4 p-4">
+                <div className="grid grid-cols-2 gap-4 p-6">
                   {/* Massachusetts */}
                   <div>
                     <h4 className="mb-2 font-semibold text-neutral-charcoal/80 dark:text-white/80">Massachusetts</h4>
-                    <ul className="space-y-1">
+                    <ul className="space-y-2">
                       {LOCATIONS_MENU.massachusetts.map((location) => (
                         <li key={location.slug}>
                           <Link
                             href={`/locations/${location.slug}`}
-                            className="text-sm text-neutral-charcoal/70 hover:text-brand-bright-blue dark:text-neutral-charcoal dark:hover:text-brand-bright-blue"
+                            className="text-base text-neutral-charcoal/70 hover:text-brand-bright-blue transition-colors duration-200 dark:text-neutral-charcoal dark:hover:text-brand-bright-blue"
                             onClick={closeDropdown}
                           >
                             {location.name}
@@ -427,12 +429,12 @@ export default function Header() {
                   {/* Connecticut */}
                   <div>
                     <h4 className="mb-2 font-semibold text-neutral-charcoal/80 dark:text-white/80">Connecticut</h4>
-                    <ul className="space-y-1">
+                    <ul className="space-y-2">
                       {LOCATIONS_MENU.connecticut.map((location) => (
                         <li key={location.slug}>
                           <Link
                             href={`/locations/${location.slug}`}
-                            className="text-sm text-neutral-charcoal/70 hover:text-brand-bright-blue dark:text-neutral-charcoal dark:hover:text-brand-bright-blue"
+                            className="text-base text-neutral-charcoal/70 hover:text-brand-bright-blue transition-colors duration-200 dark:text-neutral-charcoal dark:hover:text-brand-bright-blue"
                             onClick={closeDropdown}
                           >
                             {location.name}
@@ -442,7 +444,7 @@ export default function Header() {
                     </ul>
                   </div>
                 </div>
-                <div className="border-t border-brand-deep-blue/10 px-4 pt-3 pb-4 dark:border-white/10">
+                <div className="border-t border-brand-deep-blue/10 px-6 pt-3 dark:border-white/10">
                   <Link
                     href="/locations"
                     className="text-sm font-medium text-brand-bright-blue hover:text-[#006bc4] dark:hover:text-white"
@@ -482,10 +484,10 @@ export default function Header() {
             {/* Resources Dropdown Menu */}
             {activeDropdown === 'resources' && (
               <div
-                className="absolute left-0 top-full mt-2 w-80 rounded-lg border border-brand-deep-blue/10 bg-white shadow-xl dark:border-white/10 dark:bg-slate-800 animate-dropdown-slide"
+                className="absolute left-0 top-full mt-2 w-80 rounded-lg border border-brand-deep-blue/10 bg-white shadow-[0_8px_32px_rgba(0,42,134,0.12)] dark:border-white/10 dark:bg-slate-800 animate-dropdown-slide py-4"
                 role="menu"
               >
-                <div className="border-b border-brand-deep-blue/10 px-4 pb-2 pt-4 dark:border-white/10">
+                <div className="border-b border-brand-deep-blue/10 px-6 pb-3 dark:border-white/10">
                   <h3 className="text-xs font-semibold uppercase tracking-wider text-neutral-charcoal/60 dark:text-neutral-charcoal">
                     Resources & Learning
                   </h3>
@@ -495,10 +497,10 @@ export default function Header() {
                     <Link
                       key={item.href}
                       href={item.href}
-                      className="group block px-4 py-3 transition-colors hover:bg-brand-bright-blue/50 dark:hover:bg-slate-700"
+                      className="group block px-6 py-3.5 transition-all duration-200 hover:bg-brand-bright-blue/[0.06] dark:hover:bg-slate-700"
                       onClick={closeDropdown}
                     >
-                      <div className="font-medium text-neutral-charcoal group-hover:text-brand-bright-blue dark:text-white dark:group-hover:text-brand-bright-blue">
+                      <div className="text-base font-medium text-neutral-charcoal group-hover:text-brand-bright-blue dark:text-white dark:group-hover:text-brand-bright-blue">
                         {item.name}
                       </div>
                       <div className="mt-1 text-sm text-neutral-charcoal/70 dark:text-white/70">

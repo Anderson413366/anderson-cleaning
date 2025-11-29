@@ -126,18 +126,23 @@ export default async function ServiceDetailPage({ params }: { params: RouteParam
 function OverviewSection({ service }: { service: ServiceData }) {
   return (
     <section className="py-16">
-      <div className="container mx-auto max-w-5xl space-y-6 px-6">
-        <div className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-1 text-sm font-semibold text-brand-deep-blue dark:bg-slate-800 dark:text-white">
+      <div className="container mx-auto max-w-[720px] px-6">
+        <div className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-1 text-sm font-semibold text-brand-deep-blue dark:bg-slate-800 dark:text-white mb-8">
           <Sparkles className="h-4 w-4" /> Service Overview
         </div>
-        {service.overview.map((paragraph, index) => (
-          <p key={index} className="text-lg leading-relaxed text-neutral-charcoal/80 dark:text-white/80">
-            {paragraph}
-          </p>
-        ))}
-        <div className="rounded-2xl border border-brand-deep-blue/20 border-l-4 border-l-brand-bright-blue bg-[#F8FAFC] p-6 dark:bg-white/5">
-          <p className="text-base font-semibold text-brand-deep-blue dark:text-brand-bright-blue">Key Differentiator</p>
-          <p className="text-lg text-neutral-charcoal/80 dark:text-white/80">{service.differentiator}</p>
+        <div className="space-y-6">
+          {service.overview.map((paragraph, index) => (
+            <p
+              key={index}
+              className={`text-[17px] leading-[1.7] text-neutral-charcoal/80 dark:text-white/80 ${index > 0 ? 'indent-4' : ''}`}
+            >
+              {paragraph}
+            </p>
+          ))}
+        </div>
+        <div className="mt-10 rounded-lg border-l-4 border-l-brand-bright-blue bg-brand-bright-blue/[0.04] p-6 md:px-8 md:py-6 dark:bg-brand-bright-blue/10">
+          <p className="text-[18px] font-semibold text-brand-deep-blue dark:text-brand-bright-blue mb-2">Key Differentiator</p>
+          <p className="text-[18px] font-semibold text-neutral-charcoal/80 dark:text-white/80 leading-relaxed">{service.differentiator}</p>
         </div>
       </div>
     </section>
