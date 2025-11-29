@@ -821,7 +821,7 @@ export default async function BlogPost({
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link href="/quote">
                   <Button variant="primary" size="lg">
-                    Get a Free Quote
+                    Get Your Free Quote
                   </Button>
                 </Link>
                 <Link href="/blog">

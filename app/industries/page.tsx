@@ -47,7 +47,7 @@ export default function IndustriesPage() {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link href="/quote">
                 <Button variant="accent" size="lg" className="min-w-[220px]">
-                  Request a Quote
+                  Get Your Free Quote
                 </Button>
               </Link>
             </div>
@@ -120,7 +120,7 @@ export default function IndustriesPage() {
                 {/* Primary CTA - solid #0077D9, white text, 48px height */}
                 <Link href="/quote">
                   <Button variant="primary" className="min-w-[200px] h-[48px] px-7 text-base font-semibold">
-                    Request a Quote
+                    Get Your Free Quote
                   </Button>
                 </Link>
                 {/* Secondary CTA - white background, 1px #0077D9 border, #0077D9 text, 48px height */}

@@ -316,7 +316,7 @@ export default function HomepageQuoteForm() {
         <button
           type="submit"
           disabled={isSubmitting}
-          className="w-full h-[48px] bg-brand-bright-blue hover:bg-[#006bc4] disabled:bg-brand-bright-blue/50 text-white font-bold text-base rounded-lg transition-colors flex items-center justify-center gap-2 focus:outline-none focus:ring-2 focus:ring-brand-bright-blue focus:ring-offset-2"
+          className="w-full h-[48px] bg-brand-bright-blue hover:bg-[#0066CC] disabled:bg-brand-bright-blue/50 text-white font-bold text-base rounded-lg transition-colors flex items-center justify-center gap-2 focus:outline-none focus:ring-2 focus:ring-brand-bright-blue focus:ring-offset-2"
         >
           {isSubmitting ? (
             <>

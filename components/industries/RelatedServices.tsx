@@ -126,7 +126,7 @@ export default function RelatedServices({
             </p>
             <Link
               href="/quote"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-brand-bright-blue text-white rounded-lg font-semibold hover:bg-[#006bc4] transition-colors"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-brand-bright-blue text-white rounded-lg font-semibold hover:bg-[#0066CC] transition-colors"
             >
               Request a Custom Quote
               <ArrowRight className="h-5 w-5" aria-hidden="true" />

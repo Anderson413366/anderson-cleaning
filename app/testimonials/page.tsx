@@ -212,7 +212,7 @@ export default function TestimonialsPage() {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link href="/quote">
                 <Button variant="accent" size="lg" className="min-w-[220px]">
-                  Request a Quote
+                  Get Your Free Quote
                 </Button>
               </Link>
             </div>

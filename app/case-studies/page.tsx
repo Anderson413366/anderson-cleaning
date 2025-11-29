@@ -37,7 +37,7 @@ export default function CaseStudiesPage() {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link href="/quote">
                 <Button variant="accent" size="lg" className="min-w-[220px]">
-                  Request a Quote
+                  Get Your Free Quote
                 </Button>
               </Link>
             </div>
@@ -261,7 +261,7 @@ export default function CaseStudiesPage() {
               size="lg"
               onClick={() => (window.location.href = '/quote')}
             >
-              Request a Quote
+              Get Your Free Quote
             </Button>
           </div>
         </div>

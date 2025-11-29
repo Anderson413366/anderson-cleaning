@@ -264,7 +264,7 @@ export function CertificationShowcase() {
                   href={selectedCert.verificationUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block rounded-lg bg-brand-bright-blue px-6 py-2 text-white transition-colors hover:bg-[#006bc4]"
+                  className="inline-block rounded-lg bg-brand-bright-blue px-6 py-2 text-white transition-colors hover:bg-[#0066CC]"
                 >
                   Verify Certification →
                 </a>

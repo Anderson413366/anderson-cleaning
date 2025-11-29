@@ -36,7 +36,7 @@ const Button = forwardRef<HTMLButtonElement | HTMLDivElement, ButtonProps>(
       default:
         // PRIMARY BUTTON - Bright blue background, white text
         variantStyles =
-          'bg-brand-bright-blue text-white hover:bg-[#006bc4] active:bg-[#005aa3] dark:bg-brand-bright-blue dark:hover:bg-[#006bc4] dark:active:bg-[#005aa3]'
+          'bg-brand-bright-blue text-white hover:bg-[#0066CC] active:bg-[#005aa3] dark:bg-brand-bright-blue dark:hover:bg-[#0066CC] dark:active:bg-[#005aa3]'
     }
 
     let sizeStyles = ''

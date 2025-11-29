@@ -932,7 +932,7 @@ export default async function LocationPage({
           {/* Single Primary CTA */}
           <Link
             href="/quote"
-            className="inline-block bg-brand-bright-blue text-white px-8 py-4 rounded-lg font-semibold hover:bg-[#006bc4] transition-colors shadow-lg"
+            className="inline-block bg-brand-bright-blue text-white px-8 py-4 rounded-lg font-semibold hover:bg-[#0066CC] transition-colors shadow-lg"
           >
             Request a Quote
           </Link>

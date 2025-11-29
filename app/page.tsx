@@ -47,9 +47,9 @@ export default function Home() {
               {/* Primary CTA - Quote form conversion */}
               <Link
                 href="/quote"
-                className="inline-flex items-center justify-center h-12 px-6 rounded-full bg-brand-bright-blue text-white font-bold text-base hover:bg-[#006bc4] transition-colors"
+                className="inline-flex items-center justify-center h-12 px-6 rounded-full bg-brand-bright-blue text-white font-bold text-base hover:bg-[#0066CC] transition-colors"
               >
-                Get Your Quote
+                Get Your Free Quote
               </Link>
               {/* Secondary - Phone link with Apple-level polish */}
               <a
@@ -143,7 +143,7 @@ export default function Home() {
           <div className="text-center mt-8">
             <Link
               href="/services"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-brand-bright-blue text-white font-semibold rounded hover:bg-[#006bc4] transition-all duration-150 group"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-brand-bright-blue text-white font-semibold rounded hover:bg-[#0066CC] transition-all duration-150 group"
             >
               View All Services
               <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
@@ -339,9 +339,9 @@ export default function Home() {
             </p>
             <Link
               href="/quote"
-              className="inline-flex items-center justify-center h-12 px-8 rounded-lg bg-brand-bright-blue text-white font-bold text-base border-2 border-white hover:bg-white hover:text-brand-bright-blue transition-all duration-150"
+              className="inline-flex items-center justify-center h-12 px-8 rounded-lg bg-brand-bright-blue text-white font-bold text-base border-2 border-white hover:bg-[#0066CC] transition-all duration-150"
             >
-              Get Your Free Quote Today
+              Get Your Free Quote
             </Link>
           </div>
         </div>
