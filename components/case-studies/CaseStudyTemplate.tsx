@@ -140,10 +140,10 @@ export default function CaseStudyTemplate({
               {caseStudy.results.metrics.slice(0, 3).map((metric, index) => (
                 <div
                   key={index}
-                  className="bg-gradient-to-br from-brand-bright-blue/5 to-brand-deep-blue/5 dark:from-brand-bright-blue/10 dark:to-brand-deep-blue/10 rounded-xl p-8 border border-brand-deep-blue/10 dark:border-white/10 text-center"
+                  className="bg-brand-bright-blue/[0.08] dark:bg-brand-bright-blue/[0.15] rounded-xl p-8 border border-brand-bright-blue/20 dark:border-white/10 text-center"
                 >
-                  {/* KPI Number - 36px bold #0077D9 */}
-                  <div className="text-[36px] md:text-[40px] font-bold text-brand-bright-blue mb-2 leading-none">
+                  {/* KPI Number - 48px bold #0077D9 */}
+                  <div className="text-[48px] font-bold text-brand-bright-blue mb-2 leading-none">
                     {metric.value}
                   </div>
                   {/* Label */}

@@ -74,15 +74,17 @@ export default function CaseStudiesPage() {
                     aria-label={`Read case study: ${study.client.name} - ${study.client.industry}`}
                     className="group flex flex-col w-full max-w-[400px] mx-auto bg-white dark:bg-slate-800 rounded-lg overflow-hidden border border-[#E0E0E0] dark:border-white/10 hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
                   >
-                    {/* Featured Image - 16:9 Aspect Ratio */}
+                    {/* Featured Image - 16:9 Aspect Ratio with Key Metric */}
                     <div className="relative aspect-video bg-gradient-to-br from-brand-deep-blue to-brand-bright-blue overflow-hidden">
-                      {/* Icon Overlay */}
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <div className="w-20 h-20 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
-                          <IconComponent
-                            className="h-10 w-10 text-white"
-                            aria-hidden="true"
-                          />
+                      {/* Key Result Metric Display */}
+                      <div className="absolute inset-0 flex flex-col items-center justify-center text-white px-4">
+                        {/* Large Metric Value */}
+                        <div className="text-[40px] md:text-[48px] font-bold leading-none mb-1">
+                          {study.results.metrics[0]?.value || ''}
+                        </div>
+                        {/* Metric Label */}
+                        <div className="text-[14px] font-medium text-white/90 text-center">
+                          {study.results.metrics[0]?.label || ''}
                         </div>
                       </div>
 
@@ -93,16 +95,13 @@ export default function CaseStudiesPage() {
                         </span>
                       </div>
 
-                      {/* Image placeholder instruction (hidden from users, visible in code) */}
-                      {/*
-                        TODO: Replace with actual image
-                        <Image
-                          src={study.featuredImage}
-                          alt={study.title}
-                          fill
-                          className="object-cover"
+                      {/* Icon Badge - Bottom Right */}
+                      <div className="absolute bottom-4 right-4 w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
+                        <IconComponent
+                          className="h-5 w-5 text-white"
+                          aria-hidden="true"
                         />
-                      */}
+                      </div>
                     </div>
 
                     {/* Card Content */}

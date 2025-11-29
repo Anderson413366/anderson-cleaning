@@ -54,13 +54,11 @@ const TestimonialsExplorer = ({ testimonials }: TestimonialsExplorerProps) => {
                 >
                   {category}
                   {category !== 'All' && (
-                    <span className="ml-2 text-[12px] opacity-75">
-                      (
+                    <span className="ml-2 inline-flex items-center justify-center min-w-[20px] h-[20px] px-1.5 text-[11px] font-bold bg-brand-bright-blue/20 text-brand-bright-blue rounded-full">
                       {
                         testimonials.filter((t) => mapIndustryToCategory(t.industry) === category)
                           .length
                       }
-                      )
                     </span>
                   )}
                 </button>
@@ -114,21 +112,21 @@ const TestimonialsExplorer = ({ testimonials }: TestimonialsExplorerProps) => {
                     </blockquote>
 
                     {/* Author Info */}
-                    <div className="flex-shrink-0">
-                      {/* Name - 14px bold #002A86 */}
-                      <p className="text-[14px] font-bold text-brand-deep-blue dark:text-white mb-1">
+                    <div className="flex-shrink-0 pt-2">
+                      {/* Name - 18px bold #1C2526 */}
+                      <p className="text-[18px] font-bold text-[#1C2526] dark:text-white mb-1">
                         {testimonial.name}
                       </p>
                       {/* Title - 12px #666666 */}
                       <p className="text-[12px] text-[#666666] dark:text-white/70 leading-tight">
                         {testimonial.title}
-                        {testimonial.company && (
-                          <>
-                            <br />
-                            {testimonial.company}
-                          </>
-                        )}
                       </p>
+                      {/* Company - 14px #0077D9 */}
+                      {testimonial.company && (
+                        <p className="text-[14px] font-medium text-brand-bright-blue mt-0.5">
+                          {testimonial.company}
+                        </p>
+                      )}
                     </div>
                   </div>
                 ))}
