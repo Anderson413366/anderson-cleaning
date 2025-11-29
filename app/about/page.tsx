@@ -99,7 +99,7 @@ export default function AboutPage() {
       </section>
 
       {/* Our Story - Clean Vertical Timeline */}
-      <section className="py-20 bg-white dark:bg-slate-900">
+      <section className="py-20 md:py-30 bg-white dark:bg-slate-900">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-h2 leading-tight font-bold text-neutral-charcoal dark:text-white mb-4 text-center">
@@ -182,7 +182,7 @@ export default function AboutPage() {
       </section>
 
       {/* Leadership Team */}
-      <section className="py-20 bg-neutral-off-white dark:bg-slate-800">
+      <section className="py-20 md:py-30 bg-neutral-off-white dark:bg-slate-800">
         <div className="container mx-auto px-6">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-h2 leading-tight font-bold text-neutral-charcoal dark:text-white mb-4 text-center">
@@ -217,7 +217,7 @@ export default function AboutPage() {
                 return (
                   <div
                     key={idx}
-                    className="w-[240px] bg-white dark:bg-slate-900 border border-neutral-light-grey dark:border-slate-700 rounded-xl p-6 text-center shadow-sm hover:shadow-lg hover:border-brand-bright-blue hover:-translate-y-1 transition-all duration-200"
+                    className="w-[240px] bg-white dark:bg-slate-900 border border-neutral-light-grey dark:border-slate-700 rounded p-6 text-center shadow-sm hover:shadow-lg hover:border-brand-bright-blue hover:-translate-y-1 transition-all duration-200"
                   >
                     {/* 120x120 avatar circle - #0077D9 background, white initials */}
                     <div className="w-[120px] h-[120px] mx-auto mb-4 rounded-full bg-brand-bright-blue flex items-center justify-center shadow-lg">
@@ -243,7 +243,7 @@ export default function AboutPage() {
             </div>
 
             {/* Account Management Team Preview */}
-            <div className="bg-gradient-to-br from-brand-deep-blue to-brand-bright-blue rounded-xl p-8 md:p-10 text-white">
+            <div className="bg-gradient-to-br from-brand-deep-blue to-brand-bright-blue rounded p-8 md:p-10 text-white">
               <div className="max-w-3xl mx-auto text-center">
                 <div className="inline-flex items-center justify-center w-16 h-16 bg-white/20 rounded-full mb-6">
                   <Heart className="h-8 w-8 text-white" />
@@ -294,7 +294,7 @@ export default function AboutPage() {
       </section>
 
       {/* Core Principles - Clean 3-card layout */}
-      <section className="py-20 bg-white dark:bg-slate-900">
+      <section className="py-20 md:py-30 bg-white dark:bg-slate-900">
         <div className="container mx-auto px-6">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-h2 leading-tight font-bold text-neutral-charcoal dark:text-white mb-4 text-center">
@@ -330,7 +330,7 @@ export default function AboutPage() {
                 return (
                   <div
                     key={idx}
-                    className="w-[300px] h-[200px] bg-white dark:bg-slate-800 border border-neutral-light-grey dark:border-slate-700 rounded-xl p-5 text-center flex flex-col items-center justify-center shadow-sm hover:shadow-md transition-shadow"
+                    className="w-[300px] h-[200px] bg-white dark:bg-slate-800 border border-neutral-light-grey dark:border-slate-700 rounded p-5 text-center flex flex-col items-center justify-center shadow-sm hover:shadow-md transition-shadow"
                   >
                     {/* Icon 64px centered */}
                     <div className="w-16 h-16 rounded-full bg-brand-bright-blue flex items-center justify-center mb-3">
@@ -365,7 +365,7 @@ export default function AboutPage() {
       <StatsBar background="gray" />
 
       {/* Our Approach */}
-      <section className="py-20 bg-neutral-off-white dark:bg-slate-900">
+      <section className="py-20 md:py-30 bg-neutral-off-white dark:bg-slate-900">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-h2 leading-tight font-bold text-neutral-charcoal dark:text-white mb-12 text-center">
@@ -402,7 +402,7 @@ export default function AboutPage() {
               ].map((item, index) => (
                 <div
                   key={index}
-                  className="flex items-start gap-4 bg-white dark:bg-slate-800 border border-neutral-light-grey dark:border-slate-700 rounded-xl p-6 shadow-sm hover:shadow-lg hover:border-brand-bright-blue hover:-translate-y-1 transition-all duration-200"
+                  className="flex items-start gap-4 bg-white dark:bg-slate-800 border border-neutral-light-grey dark:border-slate-700 rounded p-6 shadow-sm hover:shadow-lg hover:border-brand-bright-blue hover:-translate-y-1 transition-all duration-200"
                 >
                   <div className="flex items-center justify-center w-10 h-10 bg-brand-deep-blue text-white rounded-full text-body font-bold flex-shrink-0">
                     {index + 1}
@@ -421,7 +421,7 @@ export default function AboutPage() {
       </section>
 
       {/* Green & Safety Commitments */}
-      <section className="py-20 bg-white dark:bg-slate-900">
+      <section className="py-20 md:py-30 bg-white dark:bg-slate-900">
         <div className="container mx-auto px-6">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-h2 leading-tight font-bold text-neutral-charcoal dark:text-white mb-4 text-center">
@@ -433,7 +433,7 @@ export default function AboutPage() {
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="bg-neutral-off-white dark:bg-slate-800 border border-neutral-light-grey dark:border-slate-700 rounded-xl p-8">
+              <div className="bg-neutral-off-white dark:bg-slate-800 border border-neutral-light-grey dark:border-slate-700 rounded p-8">
                 <div className="flex items-center gap-3 mb-6">
                   <Leaf className="h-6 w-6 text-brand-bright-blue" />
                   <h3 className="text-h3 font-bold text-neutral-charcoal dark:text-white">
@@ -472,7 +472,7 @@ export default function AboutPage() {
                 </ul>
               </div>
 
-              <div className="bg-neutral-off-white dark:bg-slate-800 border border-neutral-light-grey dark:border-slate-700 rounded-xl p-8">
+              <div className="bg-neutral-off-white dark:bg-slate-800 border border-neutral-light-grey dark:border-slate-700 rounded p-8">
                 <div className="flex items-center gap-3 mb-6">
                   <Shield className="h-6 w-6 text-brand-deep-blue dark:text-brand-bright-blue" />
                   <h3 className="text-h3 font-bold text-neutral-charcoal dark:text-white">
@@ -516,7 +516,7 @@ export default function AboutPage() {
       </section>
 
       {/* Community Involvement */}
-      <section className="py-20 bg-neutral-off-white dark:bg-slate-900">
+      <section className="py-20 md:py-30 bg-neutral-off-white dark:bg-slate-900">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-h2 leading-tight font-bold text-neutral-charcoal dark:text-white mb-6">
@@ -526,7 +526,7 @@ export default function AboutPage() {
               Anderson Cleaning Company is more than just a business—we're active members of the Western
               Massachusetts and Northern Connecticut communities we serve.
             </p>
-            <div className="bg-white dark:bg-slate-800 border border-neutral-light-grey dark:border-slate-700 rounded-xl p-8 shadow-sm">
+            <div className="bg-white dark:bg-slate-800 border border-neutral-light-grey dark:border-slate-700 rounded p-8 shadow-sm">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {[
                   {
@@ -567,10 +567,10 @@ export default function AboutPage() {
       </section>
 
       {/* Our Commitment */}
-      <section className="py-20">
+      <section className="py-20 md:py-30">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto">
-            <div className="bg-gradient-to-br from-brand-deep-blue to-brand-bright-blue rounded-2xl p-8 md:p-12 text-white text-center">
+            <div className="bg-gradient-to-br from-brand-deep-blue to-brand-bright-blue rounded p-8 md:p-12 text-white text-center">
               <Sparkles className="h-16 w-16 text-brand-bright-blue mx-auto mb-6" />
               <h2 className="text-h2 leading-tight font-bold mb-6">Our Commitment to You</h2>
               <p className="text-body text-white/80">
@@ -584,7 +584,7 @@ export default function AboutPage() {
       </section>
 
       {/* Service Area */}
-      <section className="py-20 bg-neutral-off-white dark:bg-slate-900">
+      <section className="py-20 md:py-30 bg-neutral-off-white dark:bg-slate-900">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-h2 leading-tight font-bold text-neutral-charcoal dark:text-white mb-6">

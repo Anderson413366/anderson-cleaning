@@ -30,7 +30,7 @@ import { serviceSlugs, servicesData } from '@/lib/services-data'
 const ServiceAreaMap = dynamic(() => import('@/components/maps/ServiceAreaMap'), {
   ssr: false,
   loading: () => (
-    <div className="h-[500px] w-full rounded-xl border-2 border-neutral-light-grey dark:border-slate-700 bg-neutral-light-grey dark:bg-slate-800 flex items-center justify-center">
+    <div className="h-[500px] w-full rounded border-2 border-neutral-light-grey dark:border-slate-700 bg-neutral-light-grey dark:bg-slate-800 flex items-center justify-center">
       <span className="text-neutral-charcoal/70 dark:text-white/80">Loading map...</span>
     </div>
   ),
@@ -166,7 +166,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Onboarding Process - Timeline with scroll animations */}
-      <section className="py-20 bg-white dark:bg-slate-900">
+      <section className="py-20 md:py-30 bg-white dark:bg-slate-900">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center mb-16">
             <h2 className="text-h2 leading-tight font-bold text-neutral-charcoal dark:text-white mb-4">
@@ -272,7 +272,7 @@ export default function ServicesPage() {
           </div>
 
           <div className="mt-16 text-center">
-            <div className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-brand-bright-blue/10 dark:bg-brand-bright-blue/20 border-2 border-brand-bright-blue/30">
+            <div className="inline-flex items-center gap-2 px-6 py-3 rounded bg-brand-bright-blue/10 dark:bg-brand-bright-blue/20 border-2 border-brand-bright-blue/30">
               <CheckCircle2 className="h-5 w-5 text-brand-bright-blue" />
               <p className="text-neutral-charcoal dark:text-white font-semibold">
                 <strong>Total Timeline:</strong> Most clients are fully onboarded within 7-10 business days
@@ -283,7 +283,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Services Grid - Fixed height cards for visual consistency */}
-      <section className="py-20 bg-neutral-off-white dark:bg-slate-900">
+      <section className="py-20 md:py-30 bg-neutral-off-white dark:bg-slate-900">
         <div className="container mx-auto px-6">
           {/* 3-column grid with fixed card dimensions */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-[980px] mx-auto">
@@ -293,7 +293,7 @@ export default function ServicesPage() {
                 <a
                   key={i}
                   href={`/services/${service.slug}`}
-                  className="block h-[280px] bg-white dark:bg-slate-800 border border-neutral-light-grey dark:border-slate-700 rounded-xl p-6 transition-all duration-200 hover:-translate-y-1 hover:border-brand-bright-blue hover:shadow-lg"
+                  className="block h-[280px] bg-white dark:bg-slate-800 border border-neutral-light-grey dark:border-slate-700 rounded p-6 transition-all duration-200 hover:-translate-y-1 hover:border-brand-bright-blue hover:shadow-lg"
                 >
                   {/* Icon - 56px circle #0077D9 */}
                   <div className="flex items-center justify-center w-14 h-14 rounded-full bg-brand-bright-blue mb-4">
@@ -317,7 +317,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Quality Assurance - Full-width banner with Deep Blue background */}
-      <section ref={statsRef} className="relative py-20 bg-gradient-to-br from-brand-deep-blue to-brand-bright-blue overflow-hidden">
+      <section ref={statsRef} className="relative py-20 md:py-30 bg-gradient-to-br from-brand-deep-blue to-brand-bright-blue overflow-hidden">
         {/* Subtle pattern overlay */}
         <div className="absolute inset-0 opacity-5 pointer-events-none" style={{
           backgroundImage: 'repeating-linear-gradient(45deg, transparent, transparent 30px, rgba(255, 255, 255, 0.1) 30px, rgba(255, 255, 255, 0.1) 60px)',
@@ -369,7 +369,7 @@ export default function ServicesPage() {
               },
             ].map((item, i) => {
               return (
-                <div key={i} className="text-center bg-white/10 backdrop-blur-md border-2 border-white/20 rounded-xl p-8 hover:bg-white/15 transition-all duration-300">
+                <div key={i} className="text-center bg-white/10 backdrop-blur-md border-2 border-white/20 rounded p-8 hover:bg-white/15 transition-all duration-300">
                   {/* Glass-effect icon - Large (64px) for quality assurance section */}
                   <div className="mb-4 flex justify-center">
                     <GlassIcon icon={item.icon} size="lg" variant="light" label={item.title} />
@@ -395,7 +395,7 @@ export default function ServicesPage() {
 
           {/* Additional certifications banner */}
           <div className="mt-16 text-center">
-            <div className="inline-flex items-center gap-6 px-8 py-4 rounded-xl bg-white/10 backdrop-blur-md border-2 border-white/20">
+            <div className="inline-flex items-center gap-6 px-8 py-4 rounded bg-white/10 backdrop-blur-md border-2 border-white/20">
               <div className="flex items-center gap-2">
                 <Shield className="h-6 w-6 text-white" />
                 <span className="text-white font-semibold">Fully Insured & Bonded</span>
@@ -416,7 +416,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Case Studies */}
-      <section className="py-16 bg-neutral-off-white dark:bg-slate-900">
+      <section className="py-20 md:py-30 bg-neutral-off-white dark:bg-slate-900">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-h2 font-bold text-neutral-charcoal dark:text-white mb-4">
@@ -468,7 +468,7 @@ export default function ServicesPage() {
             ].map((study) => (
               <div
                 key={study.title}
-                className="relative bg-white dark:bg-slate-800 rounded-xl border-2 border-neutral-light-grey dark:border-slate-700 p-6 min-h-[380px] hover:border-brand-bright-blue dark:hover:border-brand-bright-blue hover:shadow-xl transition-all duration-300 flex flex-col"
+                className="relative bg-white dark:bg-slate-800 rounded border-2 border-neutral-light-grey dark:border-slate-700 p-6 min-h-[380px] hover:border-brand-bright-blue dark:hover:border-brand-bright-blue hover:shadow-xl transition-all duration-300 flex flex-col"
               >
                 {/* Industry icon badge - top-right - Small (32px) to save space */}
                 <div className="absolute top-5 right-5">
@@ -574,7 +574,7 @@ export default function ServicesPage() {
 
 
       {/* FAQ - Interactive Accordion with IntersectionObserver */}
-      <section className="py-20 bg-neutral-off-white dark:bg-slate-900">
+      <section className="py-20 md:py-30 bg-neutral-off-white dark:bg-slate-900">
         <div className="container mx-auto px-6 max-w-4xl">
           <h2 className="text-h2 font-bold text-neutral-charcoal dark:text-white mb-12 text-center">
             Frequently Asked Questions

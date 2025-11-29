@@ -68,7 +68,7 @@ export default function Home() {
       <ClientLogos />
 
       {/* Services Overview Section - Apple-style hierarchy */}
-      <section id="services" className="py-20 bg-white dark:bg-slate-900 transition-colors">
+      <section id="services" className="py-20 md:py-30 bg-white dark:bg-slate-900 transition-colors">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-h2 leading-tight font-bold text-neutral-charcoal dark:text-white mb-4">
@@ -122,7 +122,7 @@ export default function Home() {
               <Link
                 key={service.href}
                 href={service.href}
-                className="h-[240px] bg-white dark:bg-slate-800 rounded-xl p-6 border border-neutral-light-grey dark:border-slate-700 hover:border-brand-bright-blue hover:scale-[1.02] hover:shadow-[0_4px_12px_rgba(0,42,134,0.1)] transition-all duration-200 ease-in-out flex flex-col group"
+                className="h-[240px] bg-white dark:bg-slate-800 rounded p-6 border border-neutral-light-grey dark:border-slate-700 hover:border-brand-bright-blue hover:scale-[1.02] hover:shadow-[0_4px_12px_rgba(0,42,134,0.1)] transition-all duration-200 ease-in-out flex flex-col group"
               >
                 {/* Icon */}
                 <div className="mb-4">
@@ -153,7 +153,7 @@ export default function Home() {
       </section>
 
       {/* Coverage Area Section */}
-      <section className="py-20 bg-white dark:bg-slate-900">
+      <section className="py-20 md:py-30 bg-white dark:bg-slate-900">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
@@ -165,7 +165,7 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="bg-neutral-off-white dark:bg-slate-800 rounded-2xl p-8 mb-8">
+            <div className="bg-neutral-off-white dark:bg-slate-800 rounded p-8 mb-8">
               {/* Primary Service Areas with pill-shaped location tags */}
               <div className="mb-8">
                 <h3 className="text-h3 leading-normal font-semibold text-neutral-charcoal dark:text-white mb-6 flex items-center justify-center gap-3">
@@ -220,7 +220,7 @@ export default function Home() {
             </div>
 
             {/* Positive B2B Focus Callout with pattern overlay */}
-            <div className="relative bg-gradient-to-br from-brand-deep-blue to-brand-bright-blue text-white rounded-xl p-8 md:p-10 overflow-hidden">
+            <div className="relative bg-gradient-to-br from-brand-deep-blue to-brand-bright-blue text-white rounded p-8 md:p-10 overflow-hidden">
               {/* Diagonal pattern overlay for depth */}
               <div
                 className="absolute inset-0 pointer-events-none"
@@ -247,7 +247,7 @@ export default function Home() {
       </section>
 
       {/* Testimonials Section - Static 3-column grid */}
-      <section className="py-20 bg-neutral-off-white dark:bg-slate-900">
+      <section className="py-20 md:py-30 bg-neutral-off-white dark:bg-slate-900">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-h2 leading-tight font-bold text-neutral-charcoal dark:text-white mb-4">
@@ -291,7 +291,7 @@ export default function Home() {
             ].map((testimonial, i) => (
               <div
                 key={i}
-                className="bg-white dark:bg-slate-800 rounded-xl p-8 shadow-[0_2px_8px_rgba(0,42,134,0.08)] border border-transparent hover:border-brand-bright-blue hover:shadow-[0_4px_16px_rgba(0,42,134,0.12)] hover:-translate-y-1 transition-all duration-200"
+                className="bg-white dark:bg-slate-800 rounded p-8 shadow-[0_2px_8px_rgba(0,42,134,0.08)] border border-transparent hover:border-brand-bright-blue hover:shadow-[0_4px_16px_rgba(0,42,134,0.12)] hover:-translate-y-1 transition-all duration-200"
               >
                 <div className="flex items-center space-x-1 mb-4" role="img" aria-label={`${testimonial.rating} out of 5 stars`}>
                   {[...Array(testimonial.rating)].map((_, j) => (
@@ -321,14 +321,14 @@ export default function Home() {
       </section>
 
       {/* Quote Form Section - Custom branded design */}
-      <section className="py-20 bg-white dark:bg-slate-900">
+      <section className="py-20 md:py-30 bg-white dark:bg-slate-900">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <HomepageQuoteForm />
         </div>
       </section>
 
       {/* Homepage-specific CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-brand-deep-blue to-brand-bright-blue">
+      <section className="py-20 md:py-30 bg-gradient-to-r from-brand-deep-blue to-brand-bright-blue">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">

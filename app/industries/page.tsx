@@ -77,7 +77,7 @@ export default function IndustriesPage() {
                 className="group w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]"
                 aria-label={`Learn more about ${industry.name} cleaning services`}
               >
-                <div className="h-full min-h-[280px] flex flex-col bg-white dark:bg-slate-900 rounded-xl border border-[#E0E0E0] dark:border-slate-700 p-6 transition-all duration-300 hover:shadow-lg hover:border-brand-bright-blue hover:-translate-y-1">
+                <div className="h-full min-h-[280px] flex flex-col bg-white dark:bg-slate-900 rounded border border-[#E0E0E0] dark:border-slate-700 p-6 transition-all duration-300 hover:shadow-lg hover:border-brand-bright-blue hover:-translate-y-1">
                   {/* Icon - 56px circle with brand blue */}
                   <div className="mb-5">
                     <GlassIcon icon={industry.icon} size="lg" variant="default" label={industry.name} />
@@ -105,7 +105,7 @@ export default function IndustriesPage() {
       {/* CTA Banner - "Not Sure Which Category?" */}
       <section className="py-16 md:py-20 bg-white dark:bg-slate-900">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-5xl mx-auto bg-brand-bright-blue/10 dark:bg-brand-bright-blue/15 rounded-2xl border-2 border-brand-bright-blue/30 dark:border-brand-bright-blue/40 p-8 md:p-12">
+          <div className="max-w-5xl mx-auto bg-brand-bright-blue/10 dark:bg-brand-bright-blue/15 rounded border-2 border-brand-bright-blue/30 dark:border-brand-bright-blue/40 p-8 md:p-12">
             <div className="text-center">
               <h2 className="text-3xl md:text-4xl font-bold text-neutral-charcoal dark:text-white mb-4">
                 Not Sure Which Category Fits Your Business?

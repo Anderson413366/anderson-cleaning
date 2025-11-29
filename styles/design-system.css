@@ -127,6 +127,26 @@ html.dark {
 }
 
 /* ====================================================================
+   SECTION SPACING SYSTEM - 120px major section padding
+   ==================================================================== */
+
+/*
+  Major content sections use 120px vertical padding on desktop
+  Scales down to 80px on mobile for better proportion
+*/
+.section-spacing {
+  padding-top: 5rem; /* 80px on mobile */
+  padding-bottom: 5rem;
+}
+
+@media (min-width: 768px) {
+  .section-spacing {
+    padding-top: 7.5rem; /* 120px on desktop */
+    padding-bottom: 7.5rem;
+  }
+}
+
+/* ====================================================================
    HERO SECTION SPACING - Accounts for fixed navigation bar
    ==================================================================== */
 

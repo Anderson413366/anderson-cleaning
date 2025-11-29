@@ -142,7 +142,7 @@ export function CertificationShowcase() {
   const pendingCerts = CERTIFICATIONS.filter((cert) => cert.status === 'pending')
 
   return (
-    <section className="py-16">
+    <section className="py-20 md:py-30">
       <div className="container mx-auto px-4">
         <div className="mb-12 text-center">
           <h2 className="mb-4 text-3xl font-bold text-neutral-charcoal dark:text-white">

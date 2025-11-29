@@ -121,6 +121,7 @@ const config: Config = {
       spacing: {
         // Consistent spacing scale for OCD-friendly layouts
         '18': '4.5rem', // 72px
+        '30': '7.5rem', // 120px - major section padding
         '88': '22rem', // 352px
         '128': '32rem', // 512px
         // Safe area insets for iPhone notch devices

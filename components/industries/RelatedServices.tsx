@@ -53,7 +53,7 @@ export default function RelatedServices({
   }
 
   return (
-    <section className="py-16 md:py-20 bg-white dark:bg-slate-900">
+    <section className="py-20 md:py-30 bg-white dark:bg-slate-900">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}

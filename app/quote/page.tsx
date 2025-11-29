@@ -35,7 +35,7 @@ export default function QuotePage() {
         <section className="py-8 bg-brand-bright-blue/10 border-b border-brand-bright-blue/30">
           <div className="container mx-auto px-6">
             <div className="max-w-4xl mx-auto">
-              <div className="bg-white dark:bg-slate-800 rounded-xl p-8 border border-brand-bright-blue/40 shadow-sm">
+              <div className="bg-white dark:bg-slate-800 rounded p-8 border border-brand-bright-blue/40 shadow-sm">
                 <div className="flex items-start gap-4">
                   <div className="flex-shrink-0">
                     <div className="h-12 w-12 rounded-full bg-brand-bright-blue flex items-center justify-center">
@@ -135,7 +135,7 @@ export default function QuotePage() {
               ].map((card, idx) => (
                 <div
                   key={idx}
-                  className="w-[300px] h-[200px] bg-white dark:bg-slate-800 border border-[#E0E0E0] dark:border-slate-700 rounded-xl p-6 text-center flex flex-col items-center justify-center"
+                  className="w-[300px] h-[200px] bg-white dark:bg-slate-800 border border-[#E0E0E0] dark:border-slate-700 rounded p-6 text-center flex flex-col items-center justify-center"
                 >
                   {/* Icon: 56px circle #0077D9 */}
                   <div className="w-14 h-14 rounded-full bg-brand-bright-blue flex items-center justify-center mb-4">
@@ -167,7 +167,7 @@ export default function QuotePage() {
               If you already know what you need, skip the form and schedule your free on-site
               consultation directly.
             </p>
-              <div className="bg-white dark:bg-slate-800 rounded-xl p-8 border border-neutral-light-grey dark:border-slate-700">
+              <div className="bg-white dark:bg-slate-800 rounded p-8 border border-neutral-light-grey dark:border-slate-700">
               <p className="text-neutral-charcoal/80 dark:text-white/80 mb-6">
                 Call us at{' '}
                 <a

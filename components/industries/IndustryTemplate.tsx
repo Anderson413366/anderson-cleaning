@@ -136,7 +136,7 @@ export default function IndustryTemplate({
               {industry.challenges.map((challenge, index) => (
                 <div
                   key={index}
-                  className="bg-white dark:bg-slate-900 rounded-2xl shadow-md p-6 border border-brand-deep-blue/10 dark:border-white/10 transition-all duration-200 hover:shadow-lg hover:border-brand-bright-blue"
+                  className="bg-white dark:bg-slate-900 rounded shadow-md p-6 border border-brand-deep-blue/10 dark:border-white/10 transition-all duration-200 hover:shadow-lg hover:border-brand-bright-blue"
                 >
                   {/* Solution-focused Icon - Medium (48px) glass effect */}
                   <div className="mb-4">
@@ -176,7 +176,7 @@ export default function IndustryTemplate({
               {industry.solutions.map((solution, index) => (
                 <div
                   key={index}
-                  className="bg-white dark:bg-slate-800 rounded-2xl shadow-md p-8 border border-neutral-light-grey dark:border-slate-700 transition-all duration-200 hover:shadow-lg"
+                  className="bg-white dark:bg-slate-800 rounded shadow-md p-8 border border-neutral-light-grey dark:border-slate-700 transition-all duration-200 hover:shadow-lg"
                 >
                   {/* Number Badge */}
                   <div className="flex items-center gap-4 mb-4">
@@ -217,7 +217,7 @@ export default function IndustryTemplate({
               </div>
 
               {/* Case Study Card */}
-              <div className="bg-neutral-off-white dark:bg-slate-800 rounded-xl border border-[#E0E0E0] dark:border-slate-700 overflow-hidden">
+              <div className="bg-neutral-off-white dark:bg-slate-800 rounded border border-[#E0E0E0] dark:border-slate-700 overflow-hidden">
                 {/* Card Header */}
                 <div className="bg-brand-deep-blue text-white p-6">
                   <p className="text-sm font-semibold uppercase tracking-wide text-white/70 mb-1">
@@ -297,7 +297,7 @@ export default function IndustryTemplate({
             </div>
 
             {/* Compliance List - Clean checkmarks */}
-            <div className="bg-white dark:bg-slate-800 rounded-xl border border-[#E0E0E0] dark:border-slate-700 p-6 md:p-8">
+            <div className="bg-white dark:bg-slate-800 rounded border border-[#E0E0E0] dark:border-slate-700 p-6 md:p-8">
               <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {industry.compliance.map((item, index) => (
                   <li key={index} className="flex items-start gap-3">
@@ -339,7 +339,7 @@ export default function IndustryTemplate({
                 {industry.facilitySizes.map((facilitySize, index) => (
                   <div
                     key={index}
-                    className="bg-neutral-off-white dark:bg-slate-800 rounded-2xl p-8 border-2 border-neutral-light-grey dark:border-slate-700 transition-all duration-200 hover:border-brand-bright-blue hover:shadow-lg"
+                    className="bg-neutral-off-white dark:bg-slate-800 rounded p-8 border-2 border-neutral-light-grey dark:border-slate-700 transition-all duration-200 hover:border-brand-bright-blue hover:shadow-lg"
                   >
                     {/* Icon - Medium (48px) glass effect */}
                     <div className="mb-6">
@@ -406,7 +406,7 @@ export default function IndustryTemplate({
               {industry.testimonials.map((testimonial, index) => (
                 <div
                   key={index}
-                  className="bg-white dark:bg-slate-800 rounded-2xl shadow-md p-8 border border-neutral-light-grey dark:border-slate-700 transition-all duration-200 hover:shadow-lg hover:-translate-y-1"
+                  className="bg-white dark:bg-slate-800 rounded shadow-md p-8 border border-neutral-light-grey dark:border-slate-700 transition-all duration-200 hover:shadow-lg hover:-translate-y-1"
                 >
                   {/* Quote */}
                   <div className="mb-6">

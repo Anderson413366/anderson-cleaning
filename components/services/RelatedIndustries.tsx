@@ -37,7 +37,7 @@ export default function RelatedIndustries({
   serviceName,
 }: RelatedIndustriesProps) {
   return (
-    <section className="py-16 bg-neutral-off-white dark:bg-slate-800/60">
+    <section className="py-20 md:py-30 bg-neutral-off-white dark:bg-slate-800/60">
       <div className="container mx-auto px-6">
         <div className="max-w-3xl mx-auto text-center">
           {/* Section Header */}
