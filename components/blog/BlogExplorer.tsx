@@ -107,7 +107,7 @@ export default function BlogExplorer({ posts, categories }: BlogExplorerProps) {
                 type="text"
                 value={searchQuery}
                 onChange={handleSearchChange}
-                placeholder="Search blog articles..."
+                placeholder="Search cleaning tips, compliance guides, industry insights..."
                 className="w-full h-[48px] pl-12 pr-4 text-[16px] text-[#333333] dark:text-white bg-white dark:bg-slate-800 border border-[#D0D0D0] dark:border-slate-600 rounded-lg placeholder:text-[#999999] dark:placeholder:text-white/50 focus:border-brand-bright-blue focus:outline-none focus:shadow-[0_0_0_3px_rgba(0,119,217,0.1)] transition-all"
                 aria-label="Search blog articles"
               />

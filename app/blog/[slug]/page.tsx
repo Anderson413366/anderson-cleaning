@@ -529,7 +529,7 @@ export default async function BlogPost({
         url={`https://andersoncleaning.com/blog/${slug}`}
       />
       {/* Article Header */}
-      <article className="pt-28 pb-12">
+      <article className="pt-12 pb-12">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           {/* Back Button */}
           <div className="mb-8">
