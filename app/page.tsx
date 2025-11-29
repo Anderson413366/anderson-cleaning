@@ -153,7 +153,7 @@ export default function Home() {
       </section>
 
       {/* Coverage Area Section */}
-      <section className="py-20 md:py-30 bg-white dark:bg-slate-900">
+      <section className="py-20 md:py-[120px] bg-white dark:bg-slate-900">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
@@ -182,7 +182,7 @@ export default function Home() {
                     <Link
                       key={location.href}
                       href={location.href}
-                      className="inline-block px-5 py-2.5 rounded-full border-2 border-brand-deep-blue dark:border-brand-bright-blue bg-white dark:bg-slate-900 text-brand-deep-blue dark:text-brand-bright-blue font-semibold text-sm transition-all duration-200 hover:bg-brand-bright-blue hover:text-white hover:border-brand-bright-blue"
+                      className="inline-flex items-center h-11 px-6 rounded-[22px] border-2 border-brand-deep-blue dark:border-brand-bright-blue bg-white dark:bg-slate-900 text-brand-deep-blue dark:text-brand-bright-blue font-semibold text-[15px] transition-all duration-200 hover:bg-brand-bright-blue hover:text-white hover:border-brand-bright-blue"
                     >
                       {location.name}
                     </Link>
@@ -210,7 +210,7 @@ export default function Home() {
                     <Link
                       key={facility.name}
                       href={facility.href}
-                      className="inline-block px-5 py-2.5 rounded-full border-2 border-brand-deep-blue dark:border-brand-bright-blue bg-white dark:bg-slate-900 text-brand-deep-blue dark:text-brand-bright-blue font-semibold text-sm transition-all duration-200 hover:bg-brand-bright-blue hover:text-white hover:border-brand-bright-blue"
+                      className="inline-flex items-center h-11 px-6 rounded-[22px] border-2 border-brand-deep-blue dark:border-brand-bright-blue bg-white dark:bg-slate-900 text-brand-deep-blue dark:text-brand-bright-blue font-semibold text-[15px] transition-all duration-200 hover:bg-brand-bright-blue hover:text-white hover:border-brand-bright-blue"
                     >
                       {facility.name}
                     </Link>
@@ -253,9 +253,9 @@ export default function Home() {
             <h2 className="text-h2 leading-tight font-bold text-neutral-charcoal dark:text-white mb-4">
               What Our Clients Say
             </h2>
-            <div className="flex items-center justify-center space-x-1 mb-2" role="img" aria-label="5 out of 5 stars">
+            <div className="flex items-center justify-center gap-2 mb-2" role="img" aria-label="5 out of 5 stars">
               {[1, 2, 3, 4, 5].map((star) => (
-                <Star key={star} className="h-[18px] w-[18px] text-brand-deep-blue fill-brand-deep-blue" aria-hidden="true" />
+                <Star key={star} className="h-5 w-5 text-brand-bright-blue fill-brand-bright-blue" aria-hidden="true" />
               ))}
             </div>
             <p className="text-body text-neutral-charcoal/80 dark:text-white/70">5.0 stars from satisfied clients</p>
@@ -291,21 +291,21 @@ export default function Home() {
             ].map((testimonial, i) => (
               <div
                 key={i}
-                className="bg-white dark:bg-slate-800 rounded p-8 shadow-[0_2px_8px_rgba(0,42,134,0.08)] border border-transparent hover:border-brand-bright-blue hover:shadow-[0_4px_16px_rgba(0,42,134,0.12)] hover:-translate-y-1 transition-all duration-200"
+                className="bg-white dark:bg-slate-800 rounded-lg p-8 shadow-[0_2px_8px_rgba(0,42,134,0.08)] border border-transparent hover:border-brand-bright-blue hover:shadow-[0_4px_16px_rgba(0,42,134,0.12)] hover:-translate-y-1 transition-all duration-200"
               >
-                <div className="flex items-center space-x-1 mb-4" role="img" aria-label={`${testimonial.rating} out of 5 stars`}>
+                <div className="flex items-center gap-2 mb-4" role="img" aria-label={`${testimonial.rating} out of 5 stars`}>
                   {[...Array(testimonial.rating)].map((_, j) => (
-                    <Star key={j} className="h-[18px] w-[18px] text-brand-deep-blue fill-brand-deep-blue" aria-hidden="true" />
+                    <Star key={j} className="h-5 w-5 text-brand-bright-blue fill-brand-bright-blue" aria-hidden="true" />
                   ))}
                 </div>
-                <blockquote className="text-body leading-relaxed text-neutral-charcoal dark:text-white mb-4">
-                  "{testimonial.quote}"
+                <blockquote className="text-lg leading-relaxed italic text-neutral-charcoal dark:text-white mb-6 pl-5 border-l-4 border-brand-bright-blue">
+                  {testimonial.quote}
                 </blockquote>
                 <div className="border-t border-neutral-light-grey dark:border-slate-700 pt-4 mb-4">
-                  <p className="font-semibold text-neutral-charcoal dark:text-white">
+                  <p className="text-base font-bold text-[#1C2526] dark:text-white mb-1">
                     {testimonial.author}
                   </p>
-                  <p className="text-body-sm text-neutral-charcoal/70 dark:text-white/80">{testimonial.company}</p>
+                  <p className="text-sm text-[#1C2526]/60 dark:text-white/70">{testimonial.company}</p>
                 </div>
                 <div className="flex items-center justify-center">
                   <div className="inline-flex items-center justify-center h-12 w-12 rounded-lg bg-brand-bright-blue dark:bg-brand-bright-blue">

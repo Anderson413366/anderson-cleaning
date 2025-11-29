@@ -112,13 +112,13 @@ export default function Footer() {
           <div className="pb-12 grid grid-cols-1 gap-y-12 gap-x-8 md:grid-cols-2 lg:grid-cols-4 lg:gap-x-12">
             {/* Column 1: Our Services */}
             <div>
-              <h3 className="mb-4 text-[14px] font-bold text-brand-deep-blue dark:text-white uppercase">Our Services</h3>
+              <h3 className="mb-4 text-[14px] font-bold text-neutral-charcoal dark:text-white uppercase tracking-[1.2px]">Our Services</h3>
               <ul className="space-y-2.5">
                 {navigation.services.map((item) => (
                   <li key={item.name}>
                     <Link
                       href={item.href}
-                      className="text-[13px] text-brand-bright-blue dark:text-brand-bright-blue transition-all duration-150 hover:underline"
+                      className="text-[15px] text-neutral-charcoal/70 dark:text-white/70 transition-all duration-150 hover:text-brand-bright-blue dark:hover:text-white"
                     >
                       {item.name}
                     </Link>
@@ -129,13 +129,13 @@ export default function Footer() {
 
             {/* Column 2: Quick Links */}
             <div>
-              <h3 className="mb-4 text-[14px] font-bold text-brand-deep-blue dark:text-white uppercase">Quick Links</h3>
+              <h3 className="mb-4 text-[14px] font-bold text-neutral-charcoal dark:text-white uppercase tracking-[1.2px]">Quick Links</h3>
               <ul className="space-y-2.5">
                 {navigation.company.map((item) => (
                   <li key={item.name}>
                     <Link
                       href={item.href}
-                      className="text-[13px] text-brand-bright-blue dark:text-brand-bright-blue transition-all duration-150 hover:underline"
+                      className="text-[15px] text-neutral-charcoal/70 dark:text-white/70 transition-all duration-150 hover:text-brand-bright-blue dark:hover:text-white"
                     >
                       {item.name}
                     </Link>
@@ -146,21 +146,21 @@ export default function Footer() {
 
             {/* Column 3: Get in Touch */}
             <div>
-              <h3 className="mb-4 text-[14px] font-bold text-brand-deep-blue dark:text-white uppercase">Get in Touch</h3>
+              <h3 className="mb-4 text-[14px] font-bold text-neutral-charcoal dark:text-white uppercase tracking-[1.2px]">Get in Touch</h3>
               <div className="space-y-2.5">
                 <a
                   href="tel:+14133065053"
-                  className="block text-[13px] text-brand-bright-blue dark:text-brand-bright-blue transition-all duration-150 hover:underline"
+                  className="block text-[15px] text-neutral-charcoal/70 dark:text-white/70 transition-all duration-150 hover:text-brand-bright-blue dark:hover:text-white"
                 >
                   (413) 306-5053
                 </a>
                 <a
                   href="mailto:info@andersoncleaning.com"
-                  className="block text-[13px] text-brand-bright-blue dark:text-brand-bright-blue transition-all duration-150 hover:underline"
+                  className="block text-[15px] text-neutral-charcoal/70 dark:text-white/70 transition-all duration-150 hover:text-brand-bright-blue dark:hover:text-white"
                 >
                   info@andersoncleaning.com
                 </a>
-                <div className="text-[13px] text-neutral-charcoal dark:text-white/80">
+                <div className="text-[15px] text-neutral-charcoal/70 dark:text-white/70">
                   <div>103 Wayside Avenue</div>
                   <div>West Springfield, MA 01089</div>
                 </div>
@@ -169,7 +169,7 @@ export default function Footer() {
 
             {/* Column 4: Social */}
             <div>
-              <h3 className="mb-4 text-[14px] font-bold text-brand-deep-blue dark:text-white uppercase">Social</h3>
+              <h3 className="mb-4 text-[14px] font-bold text-neutral-charcoal dark:text-white uppercase tracking-[1.2px]">Social</h3>
               <div className="flex">
                 {navigation.social.map((item, index) => (
                   <a
@@ -207,33 +207,33 @@ export default function Footer() {
           </div>
 
           {/* Bottom Bar - Copyright & Legal Links */}
-          <div className="border-t border-brand-deep-blue/10 dark:border-brand-deep-blue/10 pt-12">
+          <div className="border-t border-brand-deep-blue/10 dark:border-white/10 pt-12">
             <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-              <p className="text-center md:text-left text-[12px] text-[#999999] dark:text-white/70">
+              <p className="text-center md:text-left text-[13px] text-neutral-charcoal/60 dark:text-white/60">
                 © {currentYear} Anderson Cleaning Company. All rights reserved.
               </p>
               <nav className="flex flex-wrap gap-6">
                 <Link
                   href="/privacy-policy"
-                  className="text-[13px] text-brand-bright-blue dark:text-brand-bright-blue transition-all duration-150 hover:underline"
+                  className="text-[15px] text-neutral-charcoal/70 dark:text-white/70 transition-all duration-150 hover:text-brand-bright-blue dark:hover:text-white"
                 >
                   Privacy Policy
                 </Link>
                 <Link
                   href="/terms-of-service"
-                  className="text-[13px] text-brand-bright-blue dark:text-brand-bright-blue transition-all duration-150 hover:underline"
+                  className="text-[15px] text-neutral-charcoal/70 dark:text-white/70 transition-all duration-150 hover:text-brand-bright-blue dark:hover:text-white"
                 >
                   Terms of Service
                 </Link>
                 <Link
                   href="/accessibility"
-                  className="text-[13px] text-brand-bright-blue dark:text-brand-bright-blue transition-all duration-150 hover:underline"
+                  className="text-[15px] text-neutral-charcoal/70 dark:text-white/70 transition-all duration-150 hover:text-brand-bright-blue dark:hover:text-white"
                 >
                   Accessibility
                 </Link>
                 <Link
                   href="/sitemap.xml"
-                  className="text-[13px] text-brand-bright-blue dark:text-brand-bright-blue transition-all duration-150 hover:underline"
+                  className="text-[15px] text-neutral-charcoal/70 dark:text-white/70 transition-all duration-150 hover:text-brand-bright-blue dark:hover:text-white"
                 >
                   Sitemap
                 </Link>
