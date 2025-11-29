@@ -174,17 +174,18 @@ export default function Home() {
                 </h3>
                 <div className="flex flex-wrap justify-center gap-3">
                   {[
-                    'Springfield & West Springfield',
-                    'Worcester County',
-                    'Northampton & Amherst',
-                    'North Central CT',
+                    { name: 'Springfield & West Springfield', href: '/locations/springfield-ma' },
+                    { name: 'Worcester County', href: '/locations/worcester-county-ma' },
+                    { name: 'Northampton & Amherst', href: '/locations/northampton-amherst-ma' },
+                    { name: 'North Central CT', href: '/locations/enfield-ct' },
                   ].map((location) => (
-                    <span
-                      key={location}
-                      className="inline-block px-5 py-2.5 rounded-full border-2 border-brand-deep-blue dark:border-brand-bright-blue bg-white dark:bg-slate-900 text-brand-deep-blue dark:text-brand-bright-blue font-semibold text-sm transition-all duration-200 hover:bg-brand-bright-blue hover:text-white hover:border-brand-bright-blue cursor-default"
+                    <Link
+                      key={location.href}
+                      href={location.href}
+                      className="inline-block px-5 py-2.5 rounded-full border-2 border-brand-deep-blue dark:border-brand-bright-blue bg-white dark:bg-slate-900 text-brand-deep-blue dark:text-brand-bright-blue font-semibold text-sm transition-all duration-200 hover:bg-brand-bright-blue hover:text-white hover:border-brand-bright-blue"
                     >
-                      {location}
-                    </span>
+                      {location.name}
+                    </Link>
                   ))}
                 </div>
               </div>
@@ -197,21 +198,22 @@ export default function Home() {
                 </h3>
                 <div className="flex flex-wrap justify-center gap-3">
                   {[
-                    'Office Buildings',
-                    'Corporate Campuses',
-                    'Medical Offices',
-                    'Clinics',
-                    'Educational Facilities',
-                    'Schools',
-                    'Retail Stores',
-                    'Warehouses',
+                    { name: 'Office Buildings', href: '/industries/corporate-offices' },
+                    { name: 'Corporate Campuses', href: '/industries/corporate-offices' },
+                    { name: 'Medical Offices', href: '/industries/healthcare' },
+                    { name: 'Clinics', href: '/industries/healthcare' },
+                    { name: 'Educational Facilities', href: '/industries/educational-facilities' },
+                    { name: 'Schools', href: '/industries/educational-facilities' },
+                    { name: 'Retail Stores', href: '/industries/retail-stores' },
+                    { name: 'Warehouses', href: '/industries/manufacturing-warehouses' },
                   ].map((facility) => (
-                    <span
-                      key={facility}
-                      className="inline-block px-5 py-2.5 rounded-full border-2 border-brand-deep-blue dark:border-brand-bright-blue bg-white dark:bg-slate-900 text-brand-deep-blue dark:text-brand-bright-blue font-semibold text-sm transition-all duration-200 hover:bg-brand-bright-blue hover:text-white hover:border-brand-bright-blue cursor-default"
+                    <Link
+                      key={facility.name}
+                      href={facility.href}
+                      className="inline-block px-5 py-2.5 rounded-full border-2 border-brand-deep-blue dark:border-brand-bright-blue bg-white dark:bg-slate-900 text-brand-deep-blue dark:text-brand-bright-blue font-semibold text-sm transition-all duration-200 hover:bg-brand-bright-blue hover:text-white hover:border-brand-bright-blue"
                     >
-                      {facility}
-                    </span>
+                      {facility.name}
+                    </Link>
                   ))}
                 </div>
               </div>
