@@ -61,10 +61,11 @@ function ClientLogo({ client }: { client: Client }) {
           isHovered ? 'opacity-0' : 'opacity-100'
         }`}
       />
-      {/* Color logo (visible on hover) */}
+      {/* Color logo (visible on hover) - decorative, hidden from screen readers */}
       <Image
         src={client.colorLogo}
-        alt={`${client.name} logo`}
+        alt=""
+        aria-hidden="true"
         width={150}
         height={60}
         className={`absolute h-[60px] w-auto object-contain transition-opacity duration-300 ease-out ${
@@ -78,14 +79,14 @@ function ClientLogo({ client }: { client: Client }) {
 export default function ClientLogos() {
   return (
     <section
-      className="py-8 bg-white dark:bg-slate-900 border-t border-brand-deep-blue/10 dark:border-white/10"
+      className="py-20 bg-white dark:bg-slate-900 border-t border-brand-deep-blue/10 dark:border-white/10"
       aria-label="Our trusted clients"
     >
-      <div className="max-w-6xl mx-auto px-4">
-        <h2 className="text-sm uppercase tracking-wide text-neutral-charcoal/50 dark:text-white/50 text-center mb-8 font-medium">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 className="text-sm uppercase tracking-wide text-neutral-charcoal/50 dark:text-white/50 text-center mb-12 font-medium">
           Trusted By Leading Businesses
         </h2>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center justify-items-center">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-12 items-center justify-items-center">
           {clients.map((client) => (
             <ClientLogo key={client.name} client={client} />
           ))}
