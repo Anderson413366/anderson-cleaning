@@ -206,8 +206,17 @@ export default function Header() {
         <div className="flex lg:hidden">
           <button
             type="button"
-            className="-m-2.5 inline-flex items-center justify-center rounded-lg p-3 text-neutral-charcoal dark:text-white border-2 border-neutral-charcoal/20 dark:border-white/20 hover:bg-neutral-charcoal/5 dark:hover:bg-white/10 transition-colors min-h-[56px] min-w-[56px]"
-            onClick={() => setMobileMenuOpen(true)}
+            className="-m-2.5 inline-flex items-center justify-center rounded-lg p-3 text-neutral-charcoal dark:text-white border-2 border-neutral-charcoal/20 dark:border-white/20 hover:bg-neutral-charcoal/5 dark:hover:bg-white/10 transition-colors min-h-[56px] min-w-[56px] relative z-10"
+            onClick={(e) => {
+              e.preventDefault()
+              e.stopPropagation()
+              setMobileMenuOpen(true)
+            }}
+            onTouchEnd={(e) => {
+              e.preventDefault()
+              e.stopPropagation()
+              setMobileMenuOpen(true)
+            }}
             aria-label="Open main menu"
             aria-expanded={mobileMenuOpen}
           >
