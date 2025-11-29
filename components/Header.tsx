@@ -75,7 +75,8 @@ export default function Header() {
   const [hideHeader, setHideHeader] = useState(false)
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
   const pathname = usePathname()
-  const dropdownTimerRef = useRef<NodeJS.Timeout | null>(null)
+  const dropdownCloseTimerRef = useRef<NodeJS.Timeout | null>(null)
+  const dropdownOpenTimerRef = useRef<NodeJS.Timeout | null>(null)
   const lastScrollY = useRef(0)
   const { theme } = useTheme()
 
@@ -148,34 +149,52 @@ export default function Header() {
     []
   )
 
-  // Dropdown hover handlers with delay for better UX
+  // Dropdown hover handlers with 150ms delay for better UX (desktop only)
   const handleDropdownEnter = (dropdown: string) => {
-    if (dropdownTimerRef.current) {
-      clearTimeout(dropdownTimerRef.current)
+    // Clear any pending close timer
+    if (dropdownCloseTimerRef.current) {
+      clearTimeout(dropdownCloseTimerRef.current)
+      dropdownCloseTimerRef.current = null
     }
-    setActiveDropdown(dropdown)
+    // Clear any pending open timer for a different dropdown
+    if (dropdownOpenTimerRef.current) {
+      clearTimeout(dropdownOpenTimerRef.current)
+    }
+    // If already open on this dropdown, keep it open immediately
+    if (activeDropdown === dropdown) return
+    // Add 150ms delay before opening (hover intent)
+    dropdownOpenTimerRef.current = setTimeout(() => {
+      setActiveDropdown(dropdown)
+    }, 150)
   }
 
   const handleDropdownLeave = () => {
-    dropdownTimerRef.current = setTimeout(() => {
+    // Clear any pending open timer
+    if (dropdownOpenTimerRef.current) {
+      clearTimeout(dropdownOpenTimerRef.current)
+      dropdownOpenTimerRef.current = null
+    }
+    // Add 150ms delay before closing
+    dropdownCloseTimerRef.current = setTimeout(() => {
       setActiveDropdown(null)
     }, 150)
   }
 
   const closeDropdown = () => {
+    if (dropdownOpenTimerRef.current) {
+      clearTimeout(dropdownOpenTimerRef.current)
+    }
+    if (dropdownCloseTimerRef.current) {
+      clearTimeout(dropdownCloseTimerRef.current)
+    }
     setActiveDropdown(null)
   }
 
-  // Toggle dropdown on click (for Resources button)
-  const handleDropdownClick = (dropdown: string) => {
-    setActiveDropdown(activeDropdown === dropdown ? null : dropdown)
-  }
-
-  // Keyboard support for dropdown toggle
+  // Keyboard support for dropdown toggle (accessible)
   const handleDropdownKeyDown = (e: React.KeyboardEvent, dropdown: string) => {
     if (e.key === 'Enter' || e.key === ' ') {
       e.preventDefault()
-      handleDropdownClick(dropdown)
+      setActiveDropdown(activeDropdown === dropdown ? null : dropdown)
     }
   }
 
@@ -443,7 +462,6 @@ export default function Header() {
             onMouseLeave={handleDropdownLeave}
           >
             <button
-              onClick={() => handleDropdownClick('resources')}
               onKeyDown={(e) => handleDropdownKeyDown(e, 'resources')}
               className={`flex items-center gap-1 text-sm font-medium tracking-wide leading-6 transition-all duration-150 ${
                 pathname.startsWith('/blog') || pathname.startsWith('/faq') || pathname.startsWith('/case-studies') || pathname.startsWith('/testimonials') || pathname.startsWith('/careers') || pathname.startsWith('/promotions')
@@ -512,15 +530,16 @@ export default function Header() {
           ))}
         </div>
 
-        {/* Desktop Contact Actions - Apple-style simplified */}
-        <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:gap-x-6">
+        {/* Desktop Contact Actions - Phone with visible number + Quote CTA */}
+        <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:gap-x-4">
           <a
             href={phoneLink.href}
-            className="inline-flex items-center justify-center h-8 w-8 rounded-full bg-transparent border-2 border-brand-deep-blue dark:border-white text-brand-deep-blue dark:text-white hover:bg-brand-deep-blue/10 dark:hover:bg-white/10 transition-all duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-deep-blue focus-visible:ring-offset-2"
+            className="inline-flex items-center gap-2 px-3 py-2 rounded-full bg-transparent border-2 border-brand-deep-blue dark:border-white text-brand-deep-blue dark:text-white hover:bg-brand-deep-blue/10 dark:hover:bg-white/10 transition-all duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-deep-blue focus-visible:ring-offset-2"
             onClick={() => trackPhoneClick('header-desktop')}
             aria-label={`Call Anderson Cleaning Company at ${phoneLink.formatted}`}
           >
-            <Phone className="h-4 w-4" />
+            <Phone className="h-5 w-5" />
+            <span className="text-sm font-semibold">{phoneLink.formatted}</span>
           </a>
           <Link
             href="/quote"
