@@ -7,6 +7,7 @@ import { GlassIcon } from '@/components/ui/GlassIcon'
 import QuoteAdvancedModal from '@/components/forms/QuoteAdvancedModal'
 import HomepageQuoteForm from '@/components/forms/HomepageQuoteForm'
 import PromotionalModal from '@/components/PromotionalModal'
+import ClientLogos from '@/components/ClientLogos'
 import {
   ArrowRight,
   Building2,
@@ -62,6 +63,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Trusted By Section - Client Logos */}
+      <ClientLogos />
 
       {/* Services Overview Section - Apple-style hierarchy */}
       <section id="services" className="py-20 bg-white dark:bg-slate-900 transition-colors">
