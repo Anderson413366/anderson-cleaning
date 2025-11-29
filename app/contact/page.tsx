@@ -55,18 +55,20 @@ export default function ContactPage() {
                 </h3>
 
                 <div className="space-y-4">
-                  {/* Phone */}
+                  {/* Phone - Primary Contact */}
                   <div className="flex items-start space-x-3 pb-4 border-b border-[#E5E7EB] dark:border-slate-600">
-                    <Phone className="h-5 w-5 text-brand-bright-blue mt-1 flex-shrink-0" />
+                    <div className="flex-shrink-0 w-10 h-10 rounded-full bg-brand-bright-blue flex items-center justify-center">
+                      <Phone className="h-5 w-5 text-white" />
+                    </div>
                     <div>
-                      <p className="font-semibold text-neutral-charcoal dark:text-white">Phone</p>
+                      <p className="text-sm font-medium text-neutral-charcoal/70 dark:text-white/70 mb-1">Call Us</p>
                       <a
                         href="tel:+14133065053"
-                        className="text-brand-bright-blue hover:underline"
+                        className="text-xl font-bold text-brand-bright-blue hover:text-brand-deep-blue dark:hover:text-white transition-colors"
                       >
                         (413) 306-5053
                       </a>
-                      <p className="text-sm text-neutral-charcoal/70 dark:text-white/80">
+                      <p className="text-sm text-neutral-charcoal/70 dark:text-white/80 mt-1">
                         24/7 emergency line for current clients
                       </p>
                     </div>
@@ -74,25 +76,29 @@ export default function ContactPage() {
 
                   {/* Email */}
                   <div className="flex items-start space-x-3 pb-4 border-b border-[#E5E7EB] dark:border-slate-600">
-                    <Mail className="h-5 w-5 text-brand-bright-blue mt-1 flex-shrink-0" />
+                    <div className="flex-shrink-0 w-10 h-10 rounded-full bg-brand-deep-blue/10 dark:bg-white/10 flex items-center justify-center">
+                      <Mail className="h-5 w-5 text-brand-deep-blue dark:text-white" />
+                    </div>
                     <div>
-                      <p className="font-semibold text-neutral-charcoal dark:text-white">Email</p>
+                      <p className="text-sm font-medium text-neutral-charcoal/70 dark:text-white/70 mb-1">Email</p>
                       <a
                         href="mailto:info@andersoncleaning.com"
-                        className="text-brand-bright-blue hover:underline"
+                        className="font-semibold text-brand-bright-blue hover:underline"
                       >
                         info@andersoncleaning.com
                       </a>
-                      <p className="text-sm text-neutral-charcoal/70 dark:text-white/80">General Inquiries</p>
+                      <p className="text-sm text-neutral-charcoal/70 dark:text-white/80 mt-1">General Inquiries</p>
                     </div>
                   </div>
 
                   {/* Office */}
                   <div className="flex items-start space-x-3">
-                    <MapPin className="h-5 w-5 text-brand-bright-blue mt-1 flex-shrink-0" />
+                    <div className="flex-shrink-0 w-10 h-10 rounded-full bg-brand-deep-blue/10 dark:bg-white/10 flex items-center justify-center">
+                      <MapPin className="h-5 w-5 text-brand-deep-blue dark:text-white" />
+                    </div>
                     <div>
-                      <p className="font-semibold text-neutral-charcoal dark:text-white">Office</p>
-                      <address className="text-neutral-charcoal/80 dark:text-white/80 not-italic">
+                      <p className="text-sm font-medium text-neutral-charcoal/70 dark:text-white/70 mb-1">Office</p>
+                      <address className="text-neutral-charcoal/80 dark:text-white/80 not-italic font-medium">
                         103 Wayside Avenue
                         <br />
                         West Springfield, MA 01089

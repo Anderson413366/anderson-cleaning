@@ -309,7 +309,7 @@ export default function QuoteFormSimplified({ onSuccess }: QuoteFormSimplifiedPr
                 }`}
               >
                 <div
-                  className={`flex items-center justify-center w-10 h-10 rounded-full font-semibold transition-all ${
+                  className={`flex items-center justify-center w-12 h-12 rounded-full font-semibold text-lg transition-all ${
                     num < currentStep
                       ? 'bg-brand-bright-blue text-white'
                       : num === currentStep

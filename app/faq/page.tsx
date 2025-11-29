@@ -279,7 +279,7 @@ export default function FAQPage() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-4xl mx-auto">
               <nav aria-label="FAQ Categories">
-                <div className="flex flex-wrap gap-3">
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2">
                   {Object.keys(faqCategories).map((category) => {
                     const isActive = category === activeCategory
                     return (
@@ -287,10 +287,10 @@ export default function FAQPage() {
                         key={category}
                         type="button"
                         onClick={() => scrollToCategory(category)}
-                        className={`inline-flex items-center px-4 py-2 rounded-lg font-medium text-[14px] transition-all duration-200 ${
+                        className={`flex items-center justify-center px-3 py-3 rounded-lg font-medium text-[13px] sm:text-[14px] transition-all duration-200 min-h-[48px] ${
                           isActive
-                            ? 'bg-brand-bright-blue text-white'
-                            : 'bg-white dark:bg-slate-800 text-[#666666] dark:text-white/70 hover:text-brand-bright-blue dark:hover:text-brand-bright-blue border border-[#E0E0E0] dark:border-slate-600'
+                            ? 'bg-brand-bright-blue text-white shadow-md'
+                            : 'bg-white dark:bg-slate-800 text-[#666666] dark:text-white/70 hover:text-brand-bright-blue hover:border-brand-bright-blue dark:hover:text-brand-bright-blue border border-[#E0E0E0] dark:border-slate-600'
                         }`}
                         aria-current={isActive ? 'true' : undefined}
                       >
@@ -353,18 +353,18 @@ export default function FAQPage() {
                             <h3>
                               <button
                                 onClick={() => toggleQuestion(questionId)}
-                                className="group w-full px-6 py-4 text-left flex items-center justify-between hover:bg-[#F5F7FB] dark:hover:bg-slate-600 transition-colors duration-200 min-h-[44px]"
+                                className="group w-full px-6 py-5 text-left flex items-center justify-between hover:bg-[#F5F7FB] dark:hover:bg-slate-600 transition-colors duration-200 min-h-[56px]"
                                 aria-expanded={isOpen}
                                 aria-controls={`faq-answer-${questionId}`}
                               >
-                                <span className="font-semibold text-neutral-charcoal dark:text-white text-body pr-4">
+                                <span className="font-semibold text-neutral-charcoal dark:text-white text-body pr-4 group-hover:text-brand-bright-blue transition-colors">
                                   {faq.question}
                                 </span>
                                 <ChevronRight
-                                  className={`w-5 h-5 flex-shrink-0 ${
+                                  className={`w-6 h-6 flex-shrink-0 ${
                                     isOpen
                                       ? 'rotate-90 text-brand-red'
-                                      : 'rotate-0 text-brand-bright-blue'
+                                      : 'rotate-0 text-brand-bright-blue group-hover:text-brand-deep-blue'
                                   }`}
                                   style={{ transition: 'transform 200ms ease-in-out, color 200ms ease-in-out' }}
                                   aria-hidden="true"

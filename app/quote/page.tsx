@@ -22,17 +22,10 @@ export default function QuotePage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="font-extrabold mb-6 leading-tight">Get Your Free Quote</h1>
-            <p className="text-xl md:text-2xl text-white/90 mb-12 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed">
               Tell us about your facility and we'll provide a customized cleaning proposal within 24
               hours.
             </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link href="/quote">
-                <Button variant="accent" size="lg" className="min-w-[220px]">
-                  Request a Quote
-                </Button>
-              </Link>
-            </div>
           </div>
         </div>
       </section>
