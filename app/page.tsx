@@ -28,7 +28,7 @@ export default function Home() {
       <PromotionalModal />
 
       {/* Hero Section - Apple-style single focus with clear hierarchy */}
-      <section className="relative bg-white dark:bg-slate-900 pt-32 pb-16 md:pt-40 md:pb-20 lg:pt-48 lg:pb-24">
+      <section className="relative bg-white dark:bg-slate-900 pt-32 pb-20 md:pt-40 md:pb-28 lg:pt-[240px] lg:pb-[180px]">
         {/* Subtle gradient overlay for visual depth */}
         <div className="absolute inset-0 bg-gradient-to-b from-brand-deep-blue/5 to-transparent pointer-events-none" aria-hidden="true" />
         <div className="container mx-auto px-6 lg:px-8 relative z-10">
@@ -47,14 +47,14 @@ export default function Home() {
               {/* Primary CTA - Quote form conversion */}
               <Link
                 href="/quote"
-                className="inline-flex items-center justify-center h-12 px-6 rounded-full bg-brand-bright-blue text-white font-bold text-base hover:bg-[#0066CC] transition-colors"
+                className="inline-flex items-center justify-center h-14 min-w-[220px] px-8 rounded-full bg-brand-bright-blue text-white font-semibold text-lg hover:bg-[#0066CC] transition-colors"
               >
                 Get Your Free Quote
               </Link>
               {/* Secondary - Phone link with Apple-level polish */}
               <a
                 href="tel:+14133065053"
-                className="inline-flex items-center justify-center min-h-[48px] px-4 text-lg font-semibold text-brand-bright-blue hover:underline transition-all dark:text-brand-bright-blue"
+                className="inline-flex items-center justify-center min-h-[48px] px-5 py-3 text-base font-semibold text-brand-bright-blue hover:underline transition-all dark:text-brand-bright-blue"
                 aria-label="Call us at (413) 306-5053"
               >
                 (413) 306-5053
@@ -122,18 +122,18 @@ export default function Home() {
               <Link
                 key={service.href}
                 href={service.href}
-                className="h-[240px] bg-white dark:bg-slate-800 rounded p-6 border border-neutral-light-grey dark:border-slate-700 hover:border-brand-bright-blue hover:scale-[1.02] hover:shadow-[0_4px_12px_rgba(0,42,134,0.1)] transition-all duration-200 ease-in-out flex flex-col group"
+                className="bg-white dark:bg-slate-800 rounded-lg p-10 border border-neutral-light-grey dark:border-slate-700 hover:border-brand-bright-blue hover:scale-[1.02] hover:shadow-[0_4px_12px_rgba(0,42,134,0.1)] transition-all duration-200 ease-in-out flex flex-col group"
               >
-                {/* Icon */}
-                <div className="mb-4">
+                {/* Icon - 64px */}
+                <div className="mb-6">
                   <GlassIcon icon={service.icon} size="lg" variant="solid" label={service.title} />
                 </div>
-                {/* Title - 16px bold #002A86 */}
-                <h3 className="text-base font-bold text-brand-deep-blue dark:text-white mb-2 group-hover:text-brand-bright-blue transition-colors">
+                {/* Title - 24px bold #002A86 */}
+                <h3 className="text-2xl font-bold text-brand-deep-blue dark:text-white mb-3 leading-tight group-hover:text-brand-bright-blue transition-colors">
                   {service.title}
                 </h3>
-                {/* Description - 14px #666666, single line */}
-                <p className="text-sm text-[#666666] dark:text-white/70">
+                {/* Description - 16px with 1.65 line-height */}
+                <p className="text-base leading-[1.65] text-[#1C2526]/70 dark:text-white/70 max-w-[36ch]">
                   {service.description}
                 </p>
               </Link>
@@ -143,7 +143,7 @@ export default function Home() {
           <div className="text-center mt-8">
             <Link
               href="/services"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-brand-bright-blue text-white font-semibold rounded hover:bg-[#0066CC] transition-all duration-150 group"
+              className="inline-flex items-center gap-2 px-8 py-3.5 border-2 border-brand-deep-blue text-brand-deep-blue font-semibold rounded-md hover:bg-brand-deep-blue hover:text-white transition-all duration-150 group dark:border-white dark:text-white dark:hover:bg-white dark:hover:text-brand-deep-blue"
             >
               View All Services
               <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />

@@ -47,18 +47,18 @@ function ClientLogo({ client }: { client: Client }) {
 
   return (
     <div
-      className="relative flex items-center justify-center p-4 transition-transform duration-300 ease-out hover:scale-105"
+      className="relative flex items-center justify-center transition-transform duration-300 ease-out hover:scale-105"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      {/* Grayscale logo (visible by default) */}
+      {/* Grayscale logo (visible by default) - standardized 48px height */}
       <Image
         src={client.grayLogo}
         alt={`${client.name} logo`}
-        width={150}
-        height={60}
-        className={`h-[60px] w-auto object-contain transition-opacity duration-300 ease-out ${
-          isHovered ? 'opacity-0' : 'opacity-100'
+        width={120}
+        height={48}
+        className={`h-[48px] w-auto object-contain grayscale transition-opacity duration-300 ease-out ${
+          isHovered ? 'opacity-0' : 'opacity-60'
         }`}
       />
       {/* Color logo (visible on hover) - decorative, hidden from screen readers */}
@@ -66,9 +66,9 @@ function ClientLogo({ client }: { client: Client }) {
         src={client.colorLogo}
         alt=""
         aria-hidden="true"
-        width={150}
-        height={60}
-        className={`absolute h-[60px] w-auto object-contain transition-opacity duration-300 ease-out ${
+        width={120}
+        height={48}
+        className={`absolute h-[48px] w-auto object-contain transition-opacity duration-300 ease-out ${
           isHovered ? 'opacity-100' : 'opacity-0'
         }`}
       />
@@ -83,10 +83,10 @@ export default function ClientLogos() {
       aria-label="Our trusted clients"
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-sm uppercase tracking-wide text-neutral-charcoal/50 dark:text-white/50 text-center mb-12 font-medium">
+        <h2 className="text-[13px] uppercase tracking-[1.5px] text-[#1C2526]/60 dark:text-white/60 text-center mb-12 font-semibold">
           Trusted By Leading Businesses
         </h2>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-12 items-center justify-items-center">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-x-12 gap-y-8 items-center justify-items-center">
           {clients.map((client) => (
             <ClientLogo key={client.name} client={client} />
           ))}
